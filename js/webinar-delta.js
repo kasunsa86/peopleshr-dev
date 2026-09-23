@@ -2,11 +2,12 @@
   "featured": {
     "title": "Is Your Payroll Ready for the Year-End?",
     "language": "English",
-    "description": "December does not create payroll errors, it exposes them. Join Sharon Aytona for a live look at where year-end payroll gaps usually start &mdash; annualization reconciliation, data quality issues, and taxable/non-taxable benefit classification &mdash; while there's still time to fix them.",
+    "description": "December does not create payroll errors, it exposes them. Join Sharon Aytona for a live look at where year-end payroll gaps usually start (annualization reconciliation, data quality issues, and taxable/non-taxable benefit classification) while there's still time to fix them.",
     "date": "2026-10-09T15:00:00+08:00",
     "dateLabel": "9 Oct 2026",
     "timeLabel": "3:00 PM PHT",
     "registerUrl": "/webinar-year-end-payroll-ph.html",
+    "coverImage": "/uploads/2026/10/upcoming_cover.webp",
     "speakers": [
       { "initials": "SA", "name": "Sharon Aytona", "role": "Consultant, Bridge PayDay Solutions &amp; President, Thinktank Professional Services Inc.", "photo": "/uploads/2026/10/Sharon.jpg", "color": "#fce7f3", "textColor": "#be185d" }
     ]
