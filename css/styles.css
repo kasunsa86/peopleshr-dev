@@ -9337,3 +9337,24 @@ button.btn-primary {
   .idn-whatsapp-float{right:16px;bottom:16px;width:52px;height:52px;}
   .idn-whatsapp-float svg{width:24px;height:24px;}
 }
+/* index.html — keep home page content in a centred 1200px column on wide
+   screens (matches the customers page). Section backgrounds stay full-bleed;
+   below ~1300px the side padding stays 48px as before. Scoped to .home-page
+   because .hero and friends are shared with ~20 other pages. */
+@media (min-width:1025px){
+  .home-page .hero,
+  .home-page .lexi-section,
+  .home-page .modules-section,
+  .home-page .industries-section,
+  .home-page .personas-section,
+  .home-page .case-studies-section,
+  .home-page .domain-section,
+  .home-page .testimonial-section,
+  .home-page .cta-banner,
+  .home-page .accreditations-section{
+    padding-left:max(48px, calc((100% - 1200px) / 2));
+    padding-right:max(48px, calc((100% - 1200px) / 2));
+  }
+  /* the flex gap already separates the columns; give the banner the full column */
+  .home-page .hero-right{padding-left:0;}
+}
