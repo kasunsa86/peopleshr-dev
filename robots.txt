@@ -1,36 +1,5 @@
-# Default rules
 User-agent: *
 Allow: /
 Allow: /llms.txt
-Disallow: /capability-details/
 
-# OpenAI / ChatGPT Search
-User-agent: OAI-SearchBot
-Allow: /
-Allow: /llms.txt
-Disallow: /capability-details/
-
-# Anthropic / Claude Search
-User-agent: Claude-SearchBot
-Allow: /
-Allow: /llms.txt
-Disallow: /capability-details/
-
-User-agent: Claude-User
-Allow: /
-Allow: /llms.txt
-Disallow: /capability-details/
-
-# Perplexity
-User-agent: PerplexityBot
-Allow: /
-Allow: /llms.txt
-Disallow: /capability-details/
-
-User-agent: Perplexity-User
-Allow: /
-Allow: /llms.txt
-Disallow: /capability-details/
-
-# Sitemap
 Sitemap: https://peopleshr.com/sitemap.xml
