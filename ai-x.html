@@ -1,0 +1,773 @@
+<?php require_once __DIR__ . '/inc/geo.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI-Powered HR with Lexi Assistant • PeoplesHR</title>
+  <meta name="description" content="Discover PeoplesHR X, the AI-driven HR platform with Lexi assistant, smarter workflows, and seamless integrations — built to cut admin busywork and free HR leaders to focus on people." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://peopleshr.com/ai-x/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PeoplesHR" />
+  <meta property="og:title" content="AI-Powered HR with Lexi Assistant" />
+  <meta property="og:description" content="Discover PeoplesHR X, the AI-driven HR platform with Lexi assistant, smarter workflows, and seamless integrations — built to cut admin busywork and free HR leaders to focus on people." />
+  <meta property="og:url" content="https://peopleshr.com/ai-x/" />
+  <meta property="og:image" content="https://peopleshr.com/uploads/2024/03/PeoplesHR-Logo-1200x630-1.webp" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI-Powered HR with Lexi Assistant" />
+  <meta name="twitter:description" content="Discover PeoplesHR X, the AI-driven HR platform with Lexi assistant, smarter workflows, and seamless integrations — built to cut admin busywork and free HR leaders to focus on people." />
+  <meta name="twitter:image" content="https://peopleshr.com/uploads/2024/03/PeoplesHR-Logo-1200x630-1.webp" />
+
+  <?php include __DIR__ . '/inc/seo-schema.php'; ?>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="<?php echo asset_v('/css/styles.css'); ?>" />
+   <link rel="stylesheet" href="<?php echo asset_v('/css/navbar.css'); ?>" />
+   <link rel="stylesheet" href="<?php echo asset_v('/css/footer.css'); ?>" />
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/45700506.js"></script>
+  <!-- End of HubSpot Embed Code -->
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+</head>
+
+<body>
+
+
+
+<div class="nv-root">
+
+  <!-- ============================= NAVBAR ============================= -->
+  <header class="nv-bar" id="nvBar">
+    <div class="nv-inner">
+
+      <a class="nv-logo" href="/index.html" aria-label="PeoplesHR home">
+        <img src="/uploads/2021/07/logo.webp" alt="PeoplesHR">
+      </a>
+
+      <nav aria-label="Primary">
+        <ul class="nv-menu" id="nvMenu">
+
+          <!-- PRODUCTS (mega) -->
+          <li class="nv-item has-mega" data-nv="dropdown">
+            <a class="nv-link" href="/products/" aria-expanded="false" aria-haspopup="true">
+              Products
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-mega">
+                  <div class="nv-grid">
+                    <div class="nv-tile">
+                      <span class="nv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17.5" cy="8" r="2.4"/><path d="M16 13.5a5 5 0 0 1 5.5 4"/></svg></span>
+                      <span class="nv-tt"><b>HR</b><span>The foundation that actually thinks</span></span>
+                      <a href="/products/core-hr.html" class="lqd-overlay z-index-2" target="_self" aria-label="HR"></a>
+                    </div>
+                    <a class="nv-tile" href="/products/payroll-system.html">
+                      <span class="nv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="13" rx="2.5"/><path d="M2.5 10h19"/><circle cx="17" cy="14.5" r="1.6"/></svg></span>
+                      <span class="nv-tt"><b>Pay</b><span>Globally compliant, less complicated</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/talent-acquisition.html">
+                      <span class="nv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="8" r="3.4"/><path d="M3.5 20a6.5 6.5 0 0 1 13 0"/><path d="M19 7v6M16 10h6"/></svg></span>
+                      <span class="nv-tt"><b>Talent</b><span>Hiring smarter, not harder</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/time-and-attendance.html">
+                      <span class="nv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
+                      <span class="nv-tt"><b>Time</b><span>Beyond clock watching</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/people-engagement.html">
+                      <span class="nv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5C7 17 3.5 13.8 3.5 9.6A4.1 4.1 0 0 1 12 7a4.1 4.1 0 0 1 8.5 2.6c0 4.2-3.5 7.4-8.5 10.9Z"/></svg></span>
+                      <span class="nv-tt"><b>Engagement</b><span>Engagement beyond annual surveys</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/people-analytics.html">
+                      <span class="nv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V4"/><path d="M4 20h16"/><rect x="7" y="12" width="3" height="5"/><rect x="12.5" y="8" width="3" height="9"/><rect x="18" y="5" width="3" height="12"/></svg></span>
+                      <span class="nv-tt"><b>Insight</b><span>Intelligence that drives action</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/mobile-app.html">
+                      <span class="nv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2.4"/><path d="M11 18h2"/></svg></span>
+                      <span class="nv-tt"><b>Mobile App</b><span>Work happens everywhere</span></span>
+                    </a>
+                  </div>
+                  <div class="nv-mega-foot">
+                    <p><b>Meet Lexi — PeoplesHR AI</b>Turn any HR action into a simple conversation.</p>
+                    <a class="nv-ghost" href="/ai-x.html">
+                      Explore PeoplesHR AI
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- SOLUTIONS (mega columns) -->
+          <li class="nv-item has-mega" data-nv="dropdown">
+            <a class="nv-link" href="/solutions/" aria-expanded="false" aria-haspopup="true">
+              Solutions
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card">
+                  <div class="nv-cols">
+                    <div class="nv-col">
+                      <p class="nv-eyebrow">Industries</p>
+                      <ul class="nv-list">
+                        <li><a href="/solutions/banking-finance-insurance-industries.html">Banking, Finance &amp; Insurance<small>Compliance, accuracy and control</small></a></li>
+                        <li><a href="/solutions/hr-software-for-hospitality-industry.html">Hospitality<small>Control labour costs across every shift</small></a></li>
+                        <li><a href="/solutions/hr-software-for-manufacturing-industry.html">Manufacturing<small>Keep your production lines moving</small></a></li>
+                        <li><a href="/solutions/hr-software-for-professional-and-business-services-industry.html">Professional &amp; Business Services<small>Scales with projects, clients and people</small></a></li>
+                        <li><a href="/solutions/hr-software-for-retail-industry.html">Retail<small>Keep stores staffed and on target</small></a></li>
+                        <li><a href="/solutions/hr-software-for-it-and-ites-industry.html">IT &amp; ITES<small>Connected, compliant teams anywhere</small></a></li>
+                        <li><a href="/solutions/hr-software-for-transportation-and-logistics-industry.html">Transportation &amp; Logistics<small>Moves as fast as your fleet</small></a></li>
+                      </ul>
+                    </div>
+                    <div class="nv-col">
+                      <p class="nv-eyebrow">By Role</p>
+                      <ul class="nv-list">
+                        <li><a href="/solutions/chro.html">People Strategy Leaders<small>When the board asks about ROI</small></a></li>
+                        <li><a href="/solutions/cfo.html">Financial Strategy Leaders<small>When the numbers finally add up</small></a></li>
+                        <li><a href="/solutions/cio.html">Technology Strategy Leaders<small>Technology that works with you</small></a></li>
+                      </ul>
+                    </div>
+                    <div class="nv-col">
+                      <p class="nv-eyebrow">Specialized Solutions</p>
+                      <ul class="nv-list">
+                        <li><a href="/solutions/peopleshr-academy.html">PeoplesHR Academy<small>Master PeoplesHR, transform operations</small></a></li>
+                        <li><a href="/solutions/outsourcing.html">Payroll Outsourcing<small>Accuracy, compliance &amp; cost savings</small></a></li>
+                        <li><a href="/solutions/peopleshr-tracking.html">Access & Attendance Devices<small>Secure your workforce &amp; assets</small></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- CUSTOMERS (direct) -->
+          <li class="nv-item">
+            <a class="nv-link" href="/customers.html">Customers</a>
+          </li>
+
+          <!-- RESOURCES (simple) -->
+          <li class="nv-item has-simple" data-nv="dropdown">
+            <button class="nv-link" aria-expanded="false" aria-haspopup="true">
+              Resources
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-simple">
+                  <ul class="nv-list">
+                    <li><a href="/success-stories.html">Case Studies<small>Transformative journeys</small></a></li>
+                    <li><a href="/webinars.html">Webinars<small>Learn from the HR experts</small></a></li>
+                    <li><a href="/blog.html">Blog<small>Insights, stories and updates</small></a></li>
+                    <li><a href="/events.html">Events<small>Insights and networking</small></a></li>
+                    <li><a href="/hr-ebooks-and-guides.html">HR eBooks &amp; Guides<small>Build your HR knowledge</small></a></li>
+                    <li><a href="/news.html">News<small>Latest from PeoplesHR</small></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- COMPANY (simple) -->
+          <li class="nv-item has-simple" data-nv="dropdown">
+            <button class="nv-link" aria-expanded="false" aria-haspopup="true">
+              Company
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-simple">
+                  <ul class="nv-list">
+                    <li><a href="/company.html">About PeoplesHR<small>Our journey as an HR powerhouse</small></a></li>
+                    <li><a href="/careers.html">Careers<small>Thrive in your career at PeoplesHR</small></a></li>
+                    <li><a href="/community.html">Community<small>Your hub for the HR landscape</small></a></li>
+                    <li><a href="/partner-with-peopleshr.html">Partners<small>Unlock endless growth</small></a></li>
+                    <li><a href="/regions.html">Regions<small>Growth across APAC and MEA</small></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- PRICING (dropdown) -->
+          <li class="nv-item has-simple" data-nv="dropdown">
+            <a class="nv-link" href="/view-plans.html" aria-expanded="false" aria-haspopup="true">
+              Pricing
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-simple nv-card--wide">
+                  <ul class="nv-list">
+                    <li><a href="/view-plans.html">View Pricing Plans<small>Plans built around your team's size</small></a></li>
+                  </ul>
+                  <a class="nv-promo-tile" href="/roi-calculator.html">
+                    <span class="nv-promo-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/></svg>
+                    </span>
+                    <span class="nv-promo-text">
+                      <b>PeoplesHR ROI Calculator</b>
+                      <span>Run the Numbers. Let the ROI Speak. Instant, clear results tailored for your business.</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- INTERACTIVE DEMOS (direct + badge) -->
+          <li class="nv-item">
+            <a class="nv-link" href="/interactive-demos.html">
+              Interactive Demos
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <div class="nv-actions">
+        <a class="nv-cta" href="/get-in-touch.html">Request a Demo</a>
+        <button class="nv-burger" id="nvBurger" aria-label="Open menu" aria-expanded="false"><span></span></button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ===================== ANNOUNCEMENT BAR ===================== -->
+  <div class="nv-ann" id="nvAnn" role="region" aria-label="Site announcement">
+    <div class="nv-ann-inner">
+      <span class="nv-ann-badge">New</span>
+      <p class="nv-ann-text">Lexi just got smarter for HR leaders. Strategic AI that thinks at the level your role demands.
+        <a href="/ai-x.html">See what's new
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </p>
+      <button class="nv-ann-close" id="nvAnnClose" aria-label="Dismiss announcement">&times;</button>
+    </div>
+  </div>
+
+  <!-- ===================== MOBILE PANEL ===================== -->
+  <div class="nv-scrim" id="nvScrim"></div>
+  <aside class="nv-panel" id="nvPanel" aria-label="Mobile menu" aria-hidden="true">
+    <div class="nv-panel-head">
+      <img src="/uploads/2021/07/logo.webp" alt="PeoplesHR">
+      <button class="nv-close" id="nvClose" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="nv-panel-body">
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Products
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/products/core-hr.html">HR</a>
+          <a href="/products/payroll-system.html">Pay</a>
+          <a href="/products/talent-acquisition.html">Talent</a>
+          <a href="/products/time-and-attendance.html">Time</a>
+          <a href="/products/people-engagement.html">Engagement</a>
+          <a href="/products/people-analytics.html">Insight</a>
+          <a href="/products/mobile-app.html">Mobile App</a>
+          <a href="/ai-x.html">Explore PeoplesHR AI</a>
+        </div></div>
+      </div>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Solutions
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <p class="nv-sub-label">Industries</p>
+          <a href="/solutions/banking-finance-insurance-industries.html">Banking, Finance &amp; Insurance</a>
+          <a href="/solutions/hr-software-for-hospitality-industry.html">Hospitality</a>
+          <a href="/solutions/hr-software-for-manufacturing-industry.html">Manufacturing</a>
+          <a href="/solutions/hr-software-for-professional-and-business-services-industry.html">Professional &amp; Business Services</a>
+          <a href="/solutions/hr-software-for-retail-industry.html">Retail</a>
+          <a href="/solutions/hr-software-for-it-and-ites-industry.html">IT &amp; ITES</a>
+          <a href="/solutions/hr-software-for-transportation-and-logistics-industry.html">Transportation &amp; Logistics</a>
+          <p class="nv-sub-label">By Role</p>
+          <a href="/solutions/chro.html">People Strategy Leaders</a>
+          <a href="/solutions/cfo.html">Financial Strategy Leaders</a>
+          <a href="/solutions/cio.html">Technology Strategy Leaders</a>
+          <p class="nv-sub-label">Specialized Solutions</p>
+          <a href="/solutions/peopleshr-academy.html">PeoplesHR Academy</a>
+          <a href="/solutions/outsourcing.html">Payroll Outsourcing</a>
+          <a href="/solutions/peopleshr-tracking.html">Access & Attendance Devices</a>
+        </div></div>
+      </div>
+
+      <a class="nv-mlink" href="/customers.html">Customers</a>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Resources
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/success-stories.html">Case Studies</a>
+          <a href="/webinars.html">Webinars</a>
+          <a href="/blog.html">Blog</a>
+          <a href="/events.html">Events</a>
+          <a href="/hr-ebooks-and-guides.html">HR eBooks &amp; Guides</a>
+          <a href="/news.html">News</a>
+        </div></div>
+      </div>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Company
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/company.html">About PeoplesHR</a>
+          <a href="/careers.html">Careers</a>
+          <a href="/community.html">Community</a>
+          <a href="/partner-with-peopleshr.html">Partners</a>
+          <a href="/regions.html">Regions</a>
+        </div></div>
+      </div>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Pricing
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/view-plans.html">View Pricing Plans</a>
+          <a href="/roi-calculator.html">PeoplesHR ROI Calculator</a>
+        </div></div>
+      </div>
+
+      <a class="nv-mlink" href="/interactive-demos.html">Interactive Demos</a>
+
+    </div>
+    <div class="nv-panel-foot">
+      <a class="nv-cta" href="/get-in-touch.html">Request a Demo</a>
+    </div>
+  </aside>
+
+</div><!-- /.nv-root -->
+
+<!-- end of navbar -->
+<!-- ═══════════════════════════════════════════════
+     SECTION 01 — VIDEO HERO
+     ═══════════════════════════════════════════════ -->
+<section class="aix-hero-video">
+  <div class="aix-hv-inner">
+    <h1 class="sr-only">AI-Powered HR with Lexi Assistant</h1>
+    <img src="/uploads/2025/11/image-6.png" alt="PeoplesHR AI — Intelligence, Simplicity, Flexibility">
+    <button class="aix-play-btn" id="aixVideoTrigger" data-video-id="LuQE5wqelyE" aria-label="Play video">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7Z"/></svg>
+    </button>
+  </div>
+</section>
+
+<!-- Video modal (shared .video-modal-overlay pattern) -->
+<div class="video-modal-overlay" id="aixVideoModal" aria-hidden="true">
+  <div class="video-modal-box">
+    <button class="video-modal-close" id="aixVideoClose" aria-label="Close">&times;</button>
+    <iframe id="aixVideoIframe" src="" title="PeoplesHR AI video" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+</div>
+
+<script>
+(function () {
+  var trigger = document.getElementById('aixVideoTrigger');
+  var modal = document.getElementById('aixVideoModal');
+  var iframe = document.getElementById('aixVideoIframe');
+  var closeBtn = document.getElementById('aixVideoClose');
+  if (!trigger || !modal) return;
+
+  function openModal() {
+    var videoId = trigger.getAttribute('data-video-id');
+    iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+  }
+  function closeModal() {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    iframe.src = '';
+  }
+
+  trigger.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.classList.contains('active')) closeModal(); });
+})();
+</script>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 02 — DESIGNED FOR HUMANS (feature stack)
+     ═══════════════════════════════════════════════ -->
+<section class="aix-df-wrap">
+
+  <div class="aix-df-intro">
+    <span class="aix-df-eyebrow">&#10022; The Everyday Hero</span>
+    <h2>Designed for Humans, Built for Impact</h2>
+    <p>You didn't become an HR leader to click through endless screens or chase people for overdue approvals. You're here to drive performance, develop talent, and create workplaces where people thrive.</p>
+    <p>PeoplesHR X puts the focus back where it belongs, on your people, not your platform.</p>
+  </div>
+
+  <div class="aix-feature-card blue aix-fc-1">
+    <h3>Search Like You Think</h3>
+    <p>Forget hunting through menus. Type "pending performance reviews" or "Sarah's leave balance" &amp; get instant answers. No training needed, no user manual required. It's like having your go to generative AI for your HR data.</p>
+    <img src="/uploads/2025/08/Search-Bar-With-Interface-01.png" alt="Search any action and data">
+  </div>
+
+  <div class="aix-feature-card lavender aix-fc-2">
+    <h3>Talk Instead of Type</h3>
+    <p>Running between meetings? Say "Apply for annual leave, December 23rd to January 2nd" and watch it happen. Voice commands for the tasks that eat up your time. Because sometimes speaking is faster than clicking.</p>
+    <img src="/uploads/2025/08/Ask-Lexi-01--e1755055917729.webp" alt="Ask Lexi voice commands on mobile">
+  </div>
+
+  <div class="aix-feature-card blue aix-fc-3">
+    <h3>Evaluations on the go</h3>
+    <p>Complete performance reviews on the go. Approve requests from the coffee queue. Everything you need, wherever you. No more "I'll do this when I get back to my desk."</p>
+    <img src="/uploads/2025/08/Goal-Planning-Interface.png" alt="Goal planning interface">
+  </div>
+
+  <div class="aix-feature-card lavender aix-fc-4">
+    <h3>AI that Speaks HR</h3>
+    <p>Need to draft development goals? The AI suggests relevant options based on role and performance history. Writing performance feedback? Get intelligent prompts that help you say what you mean, professionally. It's like having an experienced HR mentor in your corner.</p>
+    <img src="/uploads/2025/11/WebsiteImage.webp" alt="AI-assisted goal planning">
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 03 — MEET LEXI (Smarter Workflows, Instant Results)
+     ═══════════════════════════════════════════════ -->
+<section class="aix-lexi">
+  <div class="aix-lexi-grid">
+
+    <div class="aix-lexi-img">
+      <img src="/uploads/2025/11/lexi-1.webp" alt="Ask Lexi chat interface">
+    </div>
+
+    <div class="aix-lexi-content">
+      <span class="aix-lexi-eyebrow">&#10022; Meet Lexi &ndash; Your HR Co-Pilot</span>
+      <h2>Smarter Workflows, <span class="muted">Instant Results</span></h2>
+      <p>Think of Lexi as that experienced HR colleague who always knows the answer. Except she's available 24/7, never gets tired of questions, and remembers every policy detail perfectly.</p>
+
+      <div class="phr-faq">
+        <div class="phr-faq-item">
+          <button class="phr-faq-item__trigger" aria-expanded="false">Answers the Questions You Get Asked 100 Times<span class="phr-faq-item__icon"><svg width="12" height="12" fill="none" stroke="#1976D2" stroke-width="2.5" stroke-linecap="round" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="phr-faq-item__body"><p class="phr-faq-item__body-inner">"How much annual leave do I get?" "What's our flexible working policy?" "How do I book training?" Lexi handles these instantly, with answers specific to your company and location. Your employees get help right away, you get your time back.</p></div>
+        </div>
+        <div class="phr-faq-item">
+          <button class="phr-faq-item__trigger" aria-expanded="false">Does the Groundwork for You<span class="phr-faq-item__icon"><svg width="12" height="12" fill="none" stroke="#1976D2" stroke-width="2.5" stroke-linecap="round" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="phr-faq-item__body"><p class="phr-faq-item__body-inner">Rank CVs for your latest hire. Draft job descriptions. Create recruitment checklists. Schedule interview panels. All the important groundwork that frees up your time for high-impact strategic decisions.</p></div>
+        </div>
+        <div class="phr-faq-item">
+          <button class="phr-faq-item__trigger" aria-expanded="false">Guides Without Getting in the Way<span class="phr-faq-item__icon"><svg width="12" height="12" fill="none" stroke="#1976D2" stroke-width="2.5" stroke-linecap="round" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="phr-faq-item__body"><p class="phr-faq-item__body-inner">New manager doesn't know how to conduct a performance review? Lexi walks them through it step-by-step. One search, instant answer. Support when you need it, invisible when you don't.</p></div>
+        </div>
+        <div class="phr-faq-item">
+          <button class="phr-faq-item__trigger" aria-expanded="false">Makes the Complex Simple<span class="phr-faq-item__icon"><svg width="12" height="12" fill="none" stroke="#1976D2" stroke-width="2.5" stroke-linecap="round" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="phr-faq-item__body"><p class="phr-faq-item__body-inner">Multi-country policies? Different employment types? Various leave entitlements? Lexi knows your exact setup and gives the right answer to the right person, every time. No more "let me check and get back to you."</p></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 04 — THE POWER OF PEOPLE (Hire Smarter, Grow Stronger)
+     ═══════════════════════════════════════════════ -->
+<section class="aix-hire">
+  <div class="aix-hire-divider">
+    <svg viewBox="0 0 1000 100" preserveAspectRatio="none"><path d="M0,6V0h1000v100L0,6z" fill="#ffffff"></path></svg>
+  </div>
+
+  <div class="aix-hire-intro">
+    <span class="aix-hire-eyebrow">&#10022; The Power of People</span>
+    <h2>Hire Smarter, Grow Stronger &ndash; Where Performance Meets Potential</h2>
+    <p><b>The Reality Check:</b> You post a job, get 200 CVs, spend hours screening, interview 10 people, and still wonder if you picked the right one. Then you cross your fingers and hope they stick around.</p>
+    <p><b>The Solution:</b> Let AI do the heavy lifting so you can focus on the human decisions that actually matter.</p>
+  </div>
+
+  <div class="aix-hire-grid">
+    <div class="aix-hire-groups">
+
+      <div class="aix-hire-group">
+        <span class="aix-hire-group-label">Elevate Your Hiring Game</span>
+
+        <div class="aix-hire-item">
+          <span class="aix-hire-ic"><svg viewBox="0 0 512 512" fill="currentColor"><path d="M512 199.652c0 23.625-20.65 43.826-44.8 43.826h-99.851c16.34 17.048 18.346 49.766-6.299 70.944 14.288 22.829 2.147 53.017-16.45 62.315C353.574 425.878 322.654 448 272 448c-2.746 0-13.276-.203-16-.195-61.971.168-76.894-31.065-123.731-38.315C120.596 407.683 112 397.599 112 385.786V214.261l.002-.001c.011-18.366 10.607-35.889 28.464-43.845 28.886-12.994 95.413-49.038 107.534-77.323 7.797-18.194 21.384-29.084 40-29.092 34.222-.014 57.752 35.098 44.119 66.908-3.583 8.359-8.312 16.67-14.153 24.918H467.2c23.45 0 44.8 20.543 44.8 43.826zM96 200v192c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V200c0-13.255 10.745-24 24-24h48c13.255 0 24 10.745 24 24zM68 368c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20z"/></svg></span>
+          <p><b>Intelligent Job Creation AI</b> analyzes your top performers to write job descriptions that attract the right people. Insights from your actual success stories, not generic templates.</p>
+        </div>
+        <div class="aix-hire-item">
+          <span class="aix-hire-ic"><svg viewBox="0 0 512 512" fill="currentColor"><path d="M512 199.652c0 23.625-20.65 43.826-44.8 43.826h-99.851c16.34 17.048 18.346 49.766-6.299 70.944 14.288 22.829 2.147 53.017-16.45 62.315C353.574 425.878 322.654 448 272 448c-2.746 0-13.276-.203-16-.195-61.971.168-76.894-31.065-123.731-38.315C120.596 407.683 112 397.599 112 385.786V214.261l.002-.001c.011-18.366 10.607-35.889 28.464-43.845 28.886-12.994 95.413-49.038 107.534-77.323 7.797-18.194 21.384-29.084 40-29.092 34.222-.014 57.752 35.098 44.119 66.908-3.583 8.359-8.312 16.67-14.153 24.918H467.2c23.45 0 44.8 20.543 44.8 43.826zM96 200v192c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V200c0-13.255 10.745-24 24-24h48c13.255 0 24 10.745 24 24zM68 368c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20z"/></svg></span>
+          <p><b>Smart CV Screening</b> Rank candidates on likelihood of success in your environment. See the genuinely qualified top 10, not a random sample from 200 applications.</p>
+        </div>
+        <div class="aix-hire-item">
+          <span class="aix-hire-ic"><svg viewBox="0 0 512 512" fill="currentColor"><path d="M512 199.652c0 23.625-20.65 43.826-44.8 43.826h-99.851c16.34 17.048 18.346 49.766-6.299 70.944 14.288 22.829 2.147 53.017-16.45 62.315C353.574 425.878 322.654 448 272 448c-2.746 0-13.276-.203-16-.195-61.971.168-76.894-31.065-123.731-38.315C120.596 407.683 112 397.599 112 385.786V214.261l.002-.001c.011-18.366 10.607-35.889 28.464-43.845 28.886-12.994 95.413-49.038 107.534-77.323 7.797-18.194 21.384-29.084 40-29.092 34.222-.014 57.752 35.098 44.119 66.908-3.583 8.359-8.312 16.67-14.153 24.918H467.2c23.45 0 44.8 20.543 44.8 43.826zM96 200v192c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V200c0-13.255 10.745-24 24-24h48c13.255 0 24 10.745 24 24zM68 368c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20z"/></svg></span>
+          <p><b>Video Interview Intelligence</b> Beyond what they say&mdash;how they communicate, their engagement style, their presence. Objective insights that support your instincts and eliminate bias.</p>
+        </div>
+        <div class="aix-hire-item">
+          <span class="aix-hire-ic"><svg viewBox="0 0 512 512" fill="currentColor"><path d="M512 199.652c0 23.625-20.65 43.826-44.8 43.826h-99.851c16.34 17.048 18.346 49.766-6.299 70.944 14.288 22.829 2.147 53.017-16.45 62.315C353.574 425.878 322.654 448 272 448c-2.746 0-13.276-.203-16-.195-61.971.168-76.894-31.065-123.731-38.315C120.596 407.683 112 397.599 112 385.786V214.261l.002-.001c.011-18.366 10.607-35.889 28.464-43.845 28.886-12.994 95.413-49.038 107.534-77.323 7.797-18.194 21.384-29.084 40-29.092 34.222-.014 57.752 35.098 44.119 66.908-3.583 8.359-8.312 16.67-14.153 24.918H467.2c23.45 0 44.8 20.543 44.8 43.826zM96 200v192c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V200c0-13.255 10.745-24 24-24h48c13.255 0 24 10.745 24 24zM68 368c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20z"/></svg></span>
+          <p><b>Performance Prediction</b> Connect recruitment data to actual performance outcomes. See which hiring indicators predicted your best hires, then use that intelligence.</p>
+        </div>
+      </div>
+
+      <div class="aix-hire-group">
+        <span class="aix-hire-group-label">Predictive Insights That Actually Help</span>
+
+        <div class="aix-hire-item">
+          <span class="aix-hire-ic"><svg viewBox="0 0 512 512" fill="currentColor"><path d="M512 199.652c0 23.625-20.65 43.826-44.8 43.826h-99.851c16.34 17.048 18.346 49.766-6.299 70.944 14.288 22.829 2.147 53.017-16.45 62.315C353.574 425.878 322.654 448 272 448c-2.746 0-13.276-.203-16-.195-61.971.168-76.894-31.065-123.731-38.315C120.596 407.683 112 397.599 112 385.786V214.261l.002-.001c.011-18.366 10.607-35.889 28.464-43.845 28.886-12.994 95.413-49.038 107.534-77.323 7.797-18.194 21.384-29.084 40-29.092 34.222-.014 57.752 35.098 44.119 66.908-3.583 8.359-8.312 16.67-14.153 24.918H467.2c23.45 0 44.8 20.543 44.8 43.826zM96 200v192c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V200c0-13.255 10.745-24 24-24h48c13.255 0 24 10.745 24 24zM68 368c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20z"/></svg></span>
+          <p><b>Retention Intelligence</b> "Sarah shows engagement patterns similar to your highest performers." Have the development conversation now, not after she's gone.</p>
+        </div>
+        <div class="aix-hire-item">
+          <span class="aix-hire-ic"><svg viewBox="0 0 512 512" fill="currentColor"><path d="M512 199.652c0 23.625-20.65 43.826-44.8 43.826h-99.851c16.34 17.048 18.346 49.766-6.299 70.944 14.288 22.829 2.147 53.017-16.45 62.315C353.574 425.878 322.654 448 272 448c-2.746 0-13.276-.203-16-.195-61.971.168-76.894-31.065-123.731-38.315C120.596 407.683 112 397.599 112 385.786V214.261l.002-.001c.011-18.366 10.607-35.889 28.464-43.845 28.886-12.994 95.413-49.038 107.534-77.323 7.797-18.194 21.384-29.084 40-29.092 34.222-.014 57.752 35.098 44.119 66.908-3.583 8.359-8.312 16.67-14.153 24.918H467.2c23.45 0 44.8 20.543 44.8 43.826zM96 200v192c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V200c0-13.255 10.745-24 24-24h48c13.255 0 24 10.745 24 24zM68 368c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20z"/></svg></span>
+          <p><b>Succession Planning That Works</b> AI identifies your future stars before you desperately need them. Performance trends and leadership indicators reveal who's ready.</p>
+        </div>
+        <div class="aix-hire-item">
+          <span class="aix-hire-ic"><svg viewBox="0 0 512 512" fill="currentColor"><path d="M512 199.652c0 23.625-20.65 43.826-44.8 43.826h-99.851c16.34 17.048 18.346 49.766-6.299 70.944 14.288 22.829 2.147 53.017-16.45 62.315C353.574 425.878 322.654 448 272 448c-2.746 0-13.276-.203-16-.195-61.971.168-76.894-31.065-123.731-38.315C120.596 407.683 112 397.599 112 385.786V214.261l.002-.001c.011-18.366 10.607-35.889 28.464-43.845 28.886-12.994 95.413-49.038 107.534-77.323 7.797-18.194 21.384-29.084 40-29.092 34.222-.014 57.752 35.098 44.119 66.908-3.583 8.359-8.312 16.67-14.153 24.918H467.2c23.45 0 44.8 20.543 44.8 43.826zM96 200v192c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V200c0-13.255 10.745-24 24-24h48c13.255 0 24 10.745 24 24zM68 368c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20z"/></svg></span>
+          <p><b>Pattern Recognition</b> Spot trends in workload, engagement, and team dynamics before small issues become big problems. Act proactively, not reactively.</p>
+        </div>
+      </div>
+
+      <div class="aix-hire-group">
+        <span class="aix-hire-group-label">Performance Management That Flows</span>
+
+        <div class="aix-hire-item">
+          <span class="aix-hire-ic"><svg viewBox="0 0 512 512" fill="currentColor"><path d="M512 199.652c0 23.625-20.65 43.826-44.8 43.826h-99.851c16.34 17.048 18.346 49.766-6.299 70.944 14.288 22.829 2.147 53.017-16.45 62.315C353.574 425.878 322.654 448 272 448c-2.746 0-13.276-.203-16-.195-61.971.168-76.894-31.065-123.731-38.315C120.596 407.683 112 397.599 112 385.786V214.261l.002-.001c.011-18.366 10.607-35.889 28.464-43.845 28.886-12.994 95.413-49.038 107.534-77.323 7.797-18.194 21.384-29.084 40-29.092 34.222-.014 57.752 35.098 44.119 66.908-3.583 8.359-8.312 16.67-14.153 24.918H467.2c23.45 0 44.8 20.543 44.8 43.826zM96 200v192c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V200c0-13.255 10.745-24 24-24h48c13.255 0 24 10.745 24 24zM68 368c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20z"/></svg></span>
+          <p><b>Mobile Performance Excellence</b> Complete meaningful reviews anywhere with AI assistance. Performance management that fits real schedules, not ideal ones.</p>
+        </div>
+        <div class="aix-hire-item">
+          <span class="aix-hire-ic"><svg viewBox="0 0 512 512" fill="currentColor"><path d="M512 199.652c0 23.625-20.65 43.826-44.8 43.826h-99.851c16.34 17.048 18.346 49.766-6.299 70.944 14.288 22.829 2.147 53.017-16.45 62.315C353.574 425.878 322.654 448 272 448c-2.746 0-13.276-.203-16-.195-61.971.168-76.894-31.065-123.731-38.315C120.596 407.683 112 397.599 112 385.786V214.261l.002-.001c.011-18.366 10.607-35.889 28.464-43.845 28.886-12.994 95.413-49.038 107.534-77.323 7.797-18.194 21.384-29.084 40-29.092 34.222-.014 57.752 35.098 44.119 66.908-3.583 8.359-8.312 16.67-14.153 24.918H467.2c23.45 0 44.8 20.543 44.8 43.826zM96 200v192c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V200c0-13.255 10.745-24 24-24h48c13.255 0 24 10.745 24 24zM68 368c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20z"/></svg></span>
+          <p><b>Integrated Talent Development</b> Connect performance insights directly to development planning. Every conversation leads to growth.</p>
+        </div>
+        <div class="aix-hire-item">
+          <span class="aix-hire-ic"><svg viewBox="0 0 512 512" fill="currentColor"><path d="M512 199.652c0 23.625-20.65 43.826-44.8 43.826h-99.851c16.34 17.048 18.346 49.766-6.299 70.944 14.288 22.829 2.147 53.017-16.45 62.315C353.574 425.878 322.654 448 272 448c-2.746 0-13.276-.203-16-.195-61.971.168-76.894-31.065-123.731-38.315C120.596 407.683 112 397.599 112 385.786V214.261l.002-.001c.011-18.366 10.607-35.889 28.464-43.845 28.886-12.994 95.413-49.038 107.534-77.323 7.797-18.194 21.384-29.084 40-29.092 34.222-.014 57.752 35.098 44.119 66.908-3.583 8.359-8.312 16.67-14.153 24.918H467.2c23.45 0 44.8 20.543 44.8 43.826zM96 200v192c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V200c0-13.255 10.745-24 24-24h48c13.255 0 24 10.745 24 24zM68 368c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20z"/></svg></span>
+          <p><b>Always-On Support 24/7</b> support handles routine questions and requests. Your people get help when they need it, not just when you're available.</p>
+        </div>
+      </div>
+
+      <div class="aix-hire-cta">
+        <p>Curious to see Lexi in action?</p>
+        <a href="/get-in-touch.html" class="btn-blue-pill">
+          Let's get started
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="aix-hire-visual">
+      <img src="/uploads/2025/08/Job-Description.png" alt="Job Description AI assistant">
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 05 — THE AGILE ENGINE (Integration tabs)
+     ═══════════════════════════════════════════════ -->
+<section class="aix-agile">
+  <div class="aix-agile-intro">
+    <span class="aix-agile-eyebrow">&#10022; The Agile Engine</span>
+    <h2>The Freedom to Build HR Your Way &ndash; Integration Without the Complexity</h2>
+    <p>Integration That Doesn't Require an IT Degree. Your HR team stays agile, your IT team stays sane.</p>
+  </div>
+
+  <div class="aix-agile-tabs">
+    <div class="aix-agile-tabnav" role="tablist">
+      <button class="aix-agile-tabbtn active" data-tab="hr" role="tab" aria-selected="true">For HR Leaders: Configure Without Coding</button>
+      <button class="aix-agile-tabbtn" data-tab="it" role="tab" aria-selected="false">For IT Teams: Integration Without the Headache</button>
+    </div>
+
+    <div class="aix-agile-panel active" data-panel="hr">
+      <div class="aix-agile-item">
+        <h3>Accelerated Appraisal Logic Customization:</h3>
+        <p>Business requirements evolving? Customize performance appraisal logic efficiently to match your organizational needs. Our flexible configuration capabilities enable faster adjustments&mdash;significantly reducing implementation timelines.</p>
+      </div>
+      <div class="aix-agile-item">
+        <h3>Connects to Everything That Matters:</h3>
+        <p>Employee data from accounting, cost centers from ERP, team info from CRM&mdash;seamless integration across all your business systems provides a complete picture without platform jumping or data chasing, enabling faster decision-making and customization.</p>
+      </div>
+      <div class="aix-agile-item">
+        <h3>Rapid Field Extensions:</h3>
+        <p>New benefit category? Custom data field? Dynamic Data Structure (DDS) enhancements embedded across core modules enable swift configuration changes. Your system evolves with your business at the pace you need.</p>
+      </div>
+    </div>
+
+    <div class="aix-agile-panel" data-panel="it">
+      <div class="aix-agile-item">
+        <h3>Modern API Architecture</h3>
+        <p>Plays nicely with your existing tech stack. Broader third-party integrations, reduced development complexity, and faster connection setups. Your IT team will actually thank you.</p>
+      </div>
+      <div class="aix-agile-item">
+        <h3>Pre-Built Connectors</h3>
+        <p>For the tools you already use. Seamless integration across modules and external platforms. Connect once, work everywhere.</p>
+      </div>
+      <div class="aix-agile-item">
+        <h3>Digital Signatures Built In</h3>
+        <p>Auto-signing of letters, reports, and approval workflows. Because nobody has time for printing, signing, and scanning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var tabs = document.querySelectorAll('.aix-agile-tabbtn');
+  var panels = document.querySelectorAll('.aix-agile-panel');
+  tabs.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var target = btn.getAttribute('data-tab');
+      tabs.forEach(function (b) { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+      panels.forEach(function (p) { p.classList.remove('active'); });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      document.querySelector('.aix-agile-panel[data-panel="' + target + '"]').classList.add('active');
+    });
+  });
+})();
+</script>
+
+<!-- footer start -->
+
+<div class="ft-root">
+  <footer class="ft-wrap">
+
+    <div class="ft-top">
+
+      <!-- ===================== BRAND ===================== -->
+      <div class="ft-brand">
+        <div class="ft-brand-inner">
+          <div>
+            <a class="ft-logo" href="/index.html" aria-label="PeoplesHR home">
+              <img src="/uploads/2021/07/logo.webp" alt="PeoplesHR">
+            </a>
+            <p class="ft-blurb">PeoplesHR is one of the most trusted names in the HR Tech industry in Asia Pacific and African regions, capturing all HR needs with HCM solutions along with an HR ecosystem.</p>
+
+            <?php include __DIR__ . '/inc/office-block.php'; ?>
+
+            <div class="ft-social">
+              <a href="https://www.linkedin.com/company/peopleshr/?originalSubdomain=sg" aria-label="LinkedIn" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C21.4 8.65 22 11 22 14.1V21h-4v-6.1c0-1.45-.03-3.32-2.02-3.32-2.02 0-2.33 1.58-2.33 3.21V21h-4V9Z"/></svg>
+              </a>
+              <a href="https://www.facebook.com/PeoplesHR/" aria-label="Facebook" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H17V3.6c-.29-.04-1.27-.12-2.41-.12-2.38 0-4.02 1.45-4.02 4.12v2.3H7.9V13h2.67v8h2.93Z"/></svg>
+              </a>
+              <a href="https://www.instagram.com/peopleshr/?hl=en" aria-label="Instagram" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>
+              </a>
+              <a href="https://www.youtube.com/@PeoplesHR" aria-label="YouTube" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3.3-.42-4.88a2.55 2.55 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.78.32a2.55 2.55 0 0 0-1.8 1.8C2 8.7 2 12 2 12s0 3.3.42 4.88a2.55 2.55 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.78-.32a2.55 2.55 0 0 0 1.8-1.8C22 15.3 22 12 22 12Zm-12 3.2V8.8l5.2 3.2-5.2 3.2Z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="ft-certs">
+            <div class="ft-cert"><img src="/uploads/2021/07/certificate004.png" alt="Certificate"></div>
+            <div class="ft-cert"><img src="/uploads/2021/07/certificate002.png" alt="Certificate"></div>
+            <div class="ft-cert"><img src="/uploads/2025/12/ISO_9001.webp" alt="ISO 9001"></div>
+            <div class="ft-cert"><img src="/uploads/2025/12/thumbnail_BVCER_withUKAS-ISO-27001.webp" alt="ISO 27001 UKAS"></div>
+            <div class="ft-cert"><img src="/uploads/2026/04/Star-Level-One.webp" alt="CSA STAR Level One"></div>
+            <div class="ft-cert"><img src="/uploads/2026/05/dpo.jpg" alt="HP"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===================== PRODUCTS ===================== -->
+      <div class="ft-col">
+        <h2 class="ft-h">Products</h2>
+        <ul class="ft-links">
+          <li><a href="/products/core-hr.html">HR</a></li>
+          <li><a href="/products/payroll-system.html">Pay</a></li>
+          <li><a href="/products/talent-acquisition.html">Talent</a></li>
+          <li><a href="/products/time-and-attendance.html">Time</a></li>
+          <li><a href="/products/people-engagement.html">Engagement</a></li>
+          <li><a href="/products/people-analytics.html">Insight</a></li>
+          <li><a href="/products/mobile-app.html">Mobile App</a></li>
+          <li><a href="/ai-x.html">Explore PeoplesHR AI</a></li>
+        </ul>
+        <p class="ft-sub">Specialized Solutions</p>
+        <ul class="ft-links">
+          <li><a href="/solutions/peopleshr-tracking.html">Access &amp; Attendance Devices</a></li>
+          <li><a href="/solutions/outsourcing.html">Payroll Outsourcing</a></li>
+          <li><a href="/solutions/peopleshr-academy.html">PeoplesHR Academy</a></li>
+        </ul>
+      </div>
+
+      <!-- ===================== INDUSTRIES ===================== -->
+      <div class="ft-col">
+        <h2 class="ft-h">Industries</h2>
+        <ul class="ft-links">
+          <li><a href="/solutions/banking-finance-insurance-industries.html">Banking, Finance &amp; Insurance</a></li>
+          <li><a href="/solutions/hr-software-for-hospitality-industry.html">Hospitality</a></li>
+          <li><a href="/solutions/hr-software-for-manufacturing-industry.html">Manufacturing</a></li>
+          <li><a href="/solutions/hr-software-for-professional-and-business-services-industry.html">Professional &amp; Business Services</a></li>
+          <li><a href="/solutions/hr-software-for-retail-industry.html">Retail</a></li>
+          <li><a href="/solutions/hr-software-for-it-and-ites-industry.html">IT &amp; ITES</a></li>
+          <li><a href="/solutions/hr-software-for-transportation-and-logistics-industry.html">Transportation &amp; Logistics</a></li>
+        </ul>
+      </div>
+
+      <!-- ===================== RESOURCES / COMPANY ===================== -->
+      <div class="ft-col">
+        <h2 class="ft-h">Resources</h2>
+        <ul class="ft-links">
+          <li><a href="/success-stories.html">Case Studies</a></li>
+          <li><a href="/webinars.html">Webinars</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/events.html">Events</a></li>
+          <li><a href="/hr-ebooks-and-guides.html">HR eBooks &amp; Guides</a></li>
+          <li><a href="/news.html">News</a></li>
+        </ul>
+        <p class="ft-sub">Company</p>
+        <ul class="ft-links">
+          <li><a href="/company.html">About PeoplesHR</a></li>
+          <li><a href="/careers.html">Careers</a></li>
+          <li><a href="/community.html">Community</a></li>
+          <li><a href="/partner-with-peopleshr.html">Partners</a></li>
+          <li><a href="/regions.html">Regions</a></li>
+          <li><a href="/llms.txt">For AI agents</a></li>
+        </ul>
+      </div>
+
+      <!-- ===================== TOOLS / EXPLORE ===================== -->
+      <div class="ft-col">
+        <h2 class="ft-h">Calculators</h2>
+        <ul class="ft-links">
+          <li><a href="/tax-calculator-philippines.html">Philippines Tax Calculator</a></li>
+          <li><a href="/roi-calculator.html">ROI Calculator</a></li>
+        </ul>
+        <p class="ft-sub">Explore</p>
+        <ul class="ft-links">
+          <li><a href="/customers.html">Customers</a></li>
+          <li><a href="/view-plans.html">Pricing</a></li>
+          <li><a href="/interactive-demos.html">Interactive Demos</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- ===================== BOTTOM BAR ===================== -->
+    <div class="ft-bottom">
+      <ul class="ft-legal">
+        <li><a href="/trust-portal.html">Trust Portal</a></li>
+        <li><a href="/legal.html">Legal</a></li>
+        <li><a href="/cookie-policy.html">Cookie policy</a></li>
+        <li><a href="/terms-of-use.html">Terms of use</a></li>
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+      </ul>
+      <p class="ft-copy">Copyright &copy;2026 PeoplesHR. All Rights Reserved.</p>
+    </div>
+
+  </footer>
+</div>
+
+<!-- footer end -->
+
+<!-- JS -->
+<script src="<?php echo asset_v('/js/phr.js'); ?>"></script>
+<script src="<?php echo asset_v('/js/navbar.js'); ?>"></script>
+
+</body>
+</html>

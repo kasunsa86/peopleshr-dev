@@ -1,0 +1,912 @@
+<?php
+require_once __DIR__ . '/inc/geo.php';
+// TEST-ONLY: RO (Romania) and NL (Netherlands) added alongside ID so the
+// Bahasa content can be verified via a free VPN's available exit nodes.
+// Remove before go-live.
+$phrShowBahasa = in_array($phrCountry, ['ID', 'RO', 'NL'], true);
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plans & Pricing for Every Stage of Your HR Journey &bull; PeoplesHR</title>
+  <meta name="description" content="Compare PeoplesHR pricing plans and find the right HR, payroll, and talent package for your team, from growing businesses to global enterprises." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://peopleshr.com/view-plans/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PeoplesHR" />
+  <meta property="og:title" content="Plans & Pricing for Every Stage of Your HR Journey" />
+  <meta property="og:description" content="Compare PeoplesHR pricing plans and find the right HR, payroll, and talent package for your team, from growing businesses to global enterprises." />
+  <meta property="og:url" content="https://peopleshr.com/view-plans/" />
+  <meta property="og:image" content="https://peopleshr.com/uploads/2024/03/PeoplesHR-Logo-1200x630-1.webp" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Plans & Pricing for Every Stage of Your HR Journey" />
+  <meta name="twitter:description" content="Compare PeoplesHR pricing plans and find the right HR, payroll, and talent package for your team, from growing businesses to global enterprises." />
+  <meta name="twitter:image" content="https://peopleshr.com/uploads/2024/03/PeoplesHR-Logo-1200x630-1.webp" />
+
+  <?php include __DIR__ . '/inc/seo-schema.php'; ?>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="<?php echo asset_v('/css/styles.css'); ?>" />
+   <link rel="stylesheet" href="<?php echo asset_v('/css/navbar.css'); ?>" />
+   <link rel="stylesheet" href="<?php echo asset_v('/css/footer.css'); ?>" />
+   <link rel="stylesheet" href="<?php echo asset_v('/css/pricing.css'); ?>" />
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/45700506.js"></script>
+  <!-- End of HubSpot Embed Code -->
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+</head>
+
+<body>
+
+
+
+<div class="nv-root">
+
+  <!-- ============================= NAVBAR ============================= -->
+  <header class="nv-bar" id="nvBar">
+    <div class="nv-inner">
+
+      <a class="nv-logo" href="/index.html" aria-label="PeoplesHR home">
+        <img src="/uploads/2021/07/logo.webp" alt="PeoplesHR">
+      </a>
+
+      <nav aria-label="Primary">
+        <ul class="nv-menu" id="nvMenu">
+
+          <!-- PRODUCTS (mega) -->
+          <li class="nv-item has-mega" data-nv="dropdown">
+            <a class="nv-link" href="/products/" aria-expanded="false" aria-haspopup="true">
+              Products
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-mega">
+                  <div class="nv-grid">
+                    <div class="nv-tile">
+                      <span class="nv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17.5" cy="8" r="2.4"/><path d="M16 13.5a5 5 0 0 1 5.5 4"/></svg></span>
+                      <span class="nv-tt"><b>HR</b><span>The foundation that actually thinks</span></span>
+                      <a href="/products/core-hr.html" class="lqd-overlay z-index-2" target="_self" aria-label="HR"></a>
+                    </div>
+                    <a class="nv-tile" href="/products/payroll-system.html">
+                      <span class="nv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="13" rx="2.5"/><path d="M2.5 10h19"/><circle cx="17" cy="14.5" r="1.6"/></svg></span>
+                      <span class="nv-tt"><b>Pay</b><span>Globally compliant, less complicated</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/talent-acquisition.html">
+                      <span class="nv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="8" r="3.4"/><path d="M3.5 20a6.5 6.5 0 0 1 13 0"/><path d="M19 7v6M16 10h6"/></svg></span>
+                      <span class="nv-tt"><b>Talent</b><span>Hiring smarter, not harder</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/time-and-attendance.html">
+                      <span class="nv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
+                      <span class="nv-tt"><b>Time</b><span>Beyond clock watching</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/people-engagement.html">
+                      <span class="nv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5C7 17 3.5 13.8 3.5 9.6A4.1 4.1 0 0 1 12 7a4.1 4.1 0 0 1 8.5 2.6c0 4.2-3.5 7.4-8.5 10.9Z"/></svg></span>
+                      <span class="nv-tt"><b>Engagement</b><span>Engagement beyond annual surveys</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/people-analytics.html">
+                      <span class="nv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V4"/><path d="M4 20h16"/><rect x="7" y="12" width="3" height="5"/><rect x="12.5" y="8" width="3" height="9"/><rect x="18" y="5" width="3" height="12"/></svg></span>
+                      <span class="nv-tt"><b>Insight</b><span>Intelligence that drives action</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/mobile-app.html">
+                      <span class="nv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2.4"/><path d="M11 18h2"/></svg></span>
+                      <span class="nv-tt"><b>Mobile App</b><span>Work happens everywhere</span></span>
+                    </a>
+                  </div>
+                  <div class="nv-mega-foot">
+                    <p><b>Meet Lexi - PeoplesHR AI</b>Turn any HR action into a simple conversation.</p>
+                    <a class="nv-ghost" href="/ai-x.html">
+                      Explore PeoplesHR AI
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- SOLUTIONS (mega columns) -->
+          <li class="nv-item has-mega" data-nv="dropdown">
+            <a class="nv-link" href="/solutions/" aria-expanded="false" aria-haspopup="true">
+              Solutions
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card">
+                  <div class="nv-cols">
+                    <div class="nv-col">
+                      <p class="nv-eyebrow">Industries</p>
+                      <ul class="nv-list">
+                        <li><a href="/solutions/banking-finance-insurance-industries.html">Banking, Finance &amp; Insurance<small>Compliance, accuracy and control</small></a></li>
+                        <li><a href="/solutions/hr-software-for-hospitality-industry.html">Hospitality<small>Control labour costs across every shift</small></a></li>
+                        <li><a href="/solutions/hr-software-for-manufacturing-industry.html">Manufacturing<small>Keep your production lines moving</small></a></li>
+                        <li><a href="/solutions/hr-software-for-professional-and-business-services-industry.html">Professional &amp; Business Services<small>Scales with projects, clients and people</small></a></li>
+                        <li><a href="/solutions/hr-software-for-retail-industry.html">Retail<small>Keep stores staffed and on target</small></a></li>
+                        <li><a href="/solutions/hr-software-for-it-and-ites-industry.html">IT &amp; ITES<small>Connected, compliant teams anywhere</small></a></li>
+                        <li><a href="/solutions/hr-software-for-transportation-and-logistics-industry.html">Transportation &amp; Logistics<small>Moves as fast as your fleet</small></a></li>
+                      </ul>
+                    </div>
+                    <div class="nv-col">
+                      <p class="nv-eyebrow">By Role</p>
+                      <ul class="nv-list">
+                        <li><a href="/solutions/chro.html">People Strategy Leaders<small>When the board asks about ROI</small></a></li>
+                        <li><a href="/solutions/cfo.html">Financial Strategy Leaders<small>When the numbers finally add up</small></a></li>
+                        <li><a href="/solutions/cio.html">Technology Strategy Leaders<small>Technology that works with you</small></a></li>
+                      </ul>
+                    </div>
+                    <div class="nv-col">
+                      <p class="nv-eyebrow">Specialized Solutions</p>
+                      <ul class="nv-list">
+                        <li><a href="/solutions/peopleshr-academy.html">PeoplesHR Academy<small>Master PeoplesHR, transform operations</small></a></li>
+                        <li><a href="/solutions/outsourcing.html">Payroll Outsourcing<small>Accuracy, compliance &amp; cost savings</small></a></li>
+                        <li><a href="/solutions/peopleshr-tracking.html">Access & Attendance Devices<small>Secure your workforce &amp; assets</small></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- CUSTOMERS (direct) -->
+          <li class="nv-item">
+            <a class="nv-link" href="/customers.html">Customers</a>
+          </li>
+
+          <!-- RESOURCES (simple) -->
+          <li class="nv-item has-simple" data-nv="dropdown">
+            <button class="nv-link" aria-expanded="false" aria-haspopup="true">
+              Resources
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-simple">
+                  <ul class="nv-list">
+                    <li><a href="/success-stories.html">Case Studies<small>Transformative journeys</small></a></li>
+                    <li><a href="/webinars.html">Webinars<small>Learn from the HR experts</small></a></li>
+                    <li><a href="/blog.html">Blog<small>Insights, stories and updates</small></a></li>
+                    <li><a href="/events.html">Events<small>Insights and networking</small></a></li>
+                    <li><a href="/hr-ebooks-and-guides.html">HR eBooks &amp; Guides<small>Build your HR knowledge</small></a></li>
+                    <li><a href="/news.html">News<small>Latest from PeoplesHR</small></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- COMPANY (simple) -->
+          <li class="nv-item has-simple" data-nv="dropdown">
+            <button class="nv-link" aria-expanded="false" aria-haspopup="true">
+              Company
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-simple">
+                  <ul class="nv-list">
+                    <li><a href="/company.html">About PeoplesHR<small>Our journey as an HR powerhouse</small></a></li>
+                    <li><a href="/careers.html">Careers<small>Thrive in your career at PeoplesHR</small></a></li>
+                    <li><a href="/community.html">Community<small>Your hub for the HR landscape</small></a></li>
+                    <li><a href="/partner-with-peopleshr.html">Partners<small>Unlock endless growth</small></a></li>
+                    <li><a href="/regions.html">Regions<small>Growth across APAC and MEA</small></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- PRICING (dropdown) -->
+          <li class="nv-item has-simple" data-nv="dropdown">
+            <a class="nv-link" href="/view-plans.html" aria-expanded="false" aria-haspopup="true">
+              Pricing
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-simple nv-card--wide">
+                  <ul class="nv-list">
+                    <li><a href="/view-plans.html">View Pricing Plans<small>Plans built around your team's size</small></a></li>
+                  </ul>
+                  <a class="nv-promo-tile" href="/roi-calculator.html">
+                    <span class="nv-promo-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/></svg>
+                    </span>
+                    <span class="nv-promo-text">
+                      <b>PeoplesHR ROI Calculator</b>
+                      <span>Run the Numbers. Let the ROI Speak. Instant, clear results tailored for your business.</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- INTERACTIVE DEMOS (direct + badge) -->
+          <li class="nv-item">
+            <a class="nv-link" href="/interactive-demos.html">
+              Interactive Demos
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <div class="nv-actions">
+        <a class="nv-cta" href="/get-in-touch.html">Request a Demo</a>
+        <button class="nv-burger" id="nvBurger" aria-label="Open menu" aria-expanded="false"><span></span></button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ===================== ANNOUNCEMENT BAR ===================== -->
+  <div class="nv-ann" id="nvAnn" role="region" aria-label="Site announcement">
+    <div class="nv-ann-inner">
+      <span class="nv-ann-badge">New</span>
+      <p class="nv-ann-text">Lexi just got smarter for HR leaders. Strategic AI that thinks at the level your role demands.
+        <a href="/ai-x.html">See what's new
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </p>
+      <button class="nv-ann-close" id="nvAnnClose" aria-label="Dismiss announcement">&times;</button>
+    </div>
+  </div>
+
+  <!-- ===================== MOBILE PANEL ===================== -->
+  <div class="nv-scrim" id="nvScrim"></div>
+  <aside class="nv-panel" id="nvPanel" aria-label="Mobile menu" aria-hidden="true">
+    <div class="nv-panel-head">
+      <img src="/uploads/2021/07/logo.webp" alt="PeoplesHR">
+      <button class="nv-close" id="nvClose" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="nv-panel-body">
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Products
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/products/core-hr.html">HR</a>
+          <a href="/products/payroll-system.html">Pay</a>
+          <a href="/products/talent-acquisition.html">Talent</a>
+          <a href="/products/time-and-attendance.html">Time</a>
+          <a href="/products/people-engagement.html">Engagement</a>
+          <a href="/products/people-analytics.html">Insight</a>
+          <a href="/products/mobile-app.html">Mobile App</a>
+          <a href="/ai-x.html">Explore PeoplesHR AI</a>
+        </div></div>
+      </div>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Solutions
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <p class="nv-sub-label">Industries</p>
+          <a href="/solutions/banking-finance-insurance-industries.html">Banking, Finance &amp; Insurance</a>
+          <a href="/solutions/hr-software-for-hospitality-industry.html">Hospitality</a>
+          <a href="/solutions/hr-software-for-manufacturing-industry.html">Manufacturing</a>
+          <a href="/solutions/hr-software-for-professional-and-business-services-industry.html">Professional &amp; Business Services</a>
+          <a href="/solutions/hr-software-for-retail-industry.html">Retail</a>
+          <a href="/solutions/hr-software-for-it-and-ites-industry.html">IT &amp; ITES</a>
+          <a href="/solutions/hr-software-for-transportation-and-logistics-industry.html">Transportation &amp; Logistics</a>
+          <p class="nv-sub-label">By Role</p>
+          <a href="/solutions/chro.html">People Strategy Leaders</a>
+          <a href="/solutions/cfo.html">Financial Strategy Leaders</a>
+          <a href="/solutions/cio.html">Technology Strategy Leaders</a>
+          <p class="nv-sub-label">Specialized Solutions</p>
+          <a href="/solutions/peopleshr-academy.html">PeoplesHR Academy</a>
+          <a href="/solutions/outsourcing.html">Payroll Outsourcing</a>
+          <a href="/solutions/peopleshr-tracking.html">Access & Attendance Devices</a>
+        </div></div>
+      </div>
+
+      <a class="nv-mlink" href="/customers.html">Customers</a>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Resources
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/success-stories.html">Case Studies</a>
+          <a href="/webinars.html">Webinars</a>
+          <a href="/blog.html">Blog</a>
+          <a href="/events.html">Events</a>
+          <a href="/hr-ebooks-and-guides.html">HR eBooks &amp; Guides</a>
+          <a href="/news.html">News</a>
+        </div></div>
+      </div>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Company
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/company.html">About PeoplesHR</a>
+          <a href="/careers.html">Careers</a>
+          <a href="/community.html">Community</a>
+          <a href="/partner-with-peopleshr.html">Partners</a>
+          <a href="/regions.html">Regions</a>
+        </div></div>
+      </div>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Pricing
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/view-plans.html">View Pricing Plans</a>
+          <a href="/roi-calculator.html">PeoplesHR ROI Calculator</a>
+        </div></div>
+      </div>
+
+      <a class="nv-mlink" href="/interactive-demos.html">Interactive Demos</a>
+
+    </div>
+    <div class="nv-panel-foot">
+      <a class="nv-cta" href="/get-in-touch.html">Request a Demo</a>
+    </div>
+  </aside>
+
+</div><!-- /.nv-root -->
+
+
+<!-- end of navbar -->
+
+<?php if ($phrShowBahasa): ?>
+<div class="pc-scope" data-lang="id">
+<main>
+
+  <section class="pc-hero">
+    <div class="pc-wrap">
+      <h1>Solusi Tepat untuk Setiap Kebutuhan Manajemen HR</h1>
+      <p class="pc-sub">Pilih paket yang Anda butuhkan saat ini, lalu tambahkan fiturnya seiring perkembangan perusahaan Anda.</p>
+      <p class="pc-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Setiap paket dirancang sesuai skala dan kebutuhan perusahaan</p>
+    </div>
+  </section>
+
+  <section class="pc-modules">
+    <div class="pc-wrap">
+      <h2 class="sr-only">Modul PeoplesHR</h2>
+      <div class="pc-modules-grid">
+        <div class="pc-module-card">
+          <span class="pc-module-ic pc-module-ic-img"><img src="/uploads/2026/07/HRIcon.webp" alt=""></span>
+          <h3>HR</h3>
+          <p>Kelola data karyawan, struktur organisasi, dan seluruh proses administrasi dari awal hingga akhir dalam satu sistem.</p>
+        </div>
+        <div class="pc-module-card">
+          <span class="pc-module-ic pc-module-ic-img"><img src="/uploads/2026/07/TimeIcon.webp" alt=""></span>
+          <h3>Time</h3>
+          <p>Urus absensi, jadwal shift, lembur, hingga cuti karyawan dengan lebih praktis dan efisien.</p>
+        </div>
+        <div class="pc-module-card">
+          <span class="pc-module-ic pc-module-ic-img"><img src="/uploads/2026/07/PayIcon.webp" alt=""></span>
+          <h3>Pay</h3>
+          <p>Proses gaji dan tunjangan karyawan dengan tepat, akurat, dan sesuai regulasi berlaku.</p>
+        </div>
+        <div class="pc-module-card">
+          <span class="pc-module-ic pc-module-ic-img"><img src="/uploads/2026/07/TalentIcon.webp" alt=""></span>
+          <h3>Talent</h3>
+          <p>Atur target, evaluasi performa, dan pengembangan serta perencanaan karier karyawan secara efektif.</p>
+        </div>
+        <div class="pc-module-card">
+          <span class="pc-module-ic pc-module-ic-img"><img src="/uploads/2026/07/EngagementIcon.webp" alt=""></span>
+          <h3>Engagement</h3>
+          <p>Dengarkan masukan karyawan, berikan apresiasi, dan perkuat keterlibatan karyawan dalam perusahaan.</p>
+        </div>
+        <div class="pc-module-card">
+          <span class="pc-module-ic pc-module-ic-img"><img src="/uploads/2026/07/Recruitment.webp" alt=""></span>
+          <h3>Recruitment</h3>
+          <p>Temukan kandidat terbaik dan kelola proses rekrutmen hingga onboarding dalam satu platform.</p>
+        </div>
+        <div class="pc-module-card">
+          <span class="pc-module-ic pc-module-ic-img"><img src="/uploads/2026/07/InsightsIcon.webp" alt=""></span>
+          <h3>Insights</h3>
+          <p>Ubah data karyawan menjadi insight yang membantu pengambilan keputusan lewat report, analitik, dan Lexi AI.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pc-ladder" id="pcLadderSection">
+    <div class="pc-wrap">
+      <div class="pc-ladder-head">
+        <h2>Jelajahi PeoplesHR</h2>
+        <p class="pc-ladder-sub">Solusi HR yang dirancang sesuai kebutuhan, mulai dari proses perekrutan hingga setiap perjalanan karyawan.</p>
+        <form class="pc-search" id="pcSearchForm" role="search">
+          <svg class="pc-search-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <input type="search" id="pcSearchInput" class="pc-search-input" placeholder="Cari fitur - misal: pencairan sisa cuti, absensi biometrik, laporan kustom" aria-label="Cari fitur">
+          <button type="button" class="pc-search-clear" id="pcSearchClear" aria-label="Hapus pencarian" hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </button>
+          <button type="submit" class="pc-search-btn">Cari</button>
+        </form>
+        <div class="pc-search-status" id="pcSearchStatus" hidden></div>
+      </div>
+      <div class="pc-cmp-layout">
+        <nav class="pc-cmp-nav" id="pcCmpNav" aria-label="Modul"></nav>
+        <div class="pc-right-col">
+          <div class="pc-tier-tabs" id="pcTierTabs"></div>
+          <div class="pc-ladder-grid" id="pcLadder"></div>
+          <div class="pc-cmp" id="pcCmp">
+            <span class="pc-version">Versi: v1.0.1</span>
+            <div class="pc-panel-head" id="pcPanelHead"></div>
+            <div class="pc-th-row">
+              <div class="pc-lead" id="pcLead"></div>
+              <div class="pc-th" data-tier="manage"><div class="pc-n">Manage</div><div class="pc-t">Kelola operasional perusahaan</div></div>
+              <div class="pc-th" data-tier="grow"><div class="pc-n">Grow</div><div class="pc-t">Dukung pertumbuhan karyawan</div></div>
+              <div class="pc-th" data-tier="transform"><div class="pc-n">Transform</div><div class="pc-t">Pimpin berdasarkan insight karyawan</div></div>
+            </div>
+            <div id="pcGroups"></div>
+          </div>
+          <div class="pc-search-feed" id="pcSearchFeed" hidden></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pc-enterprise">
+    <div class="pc-wrap">
+      <div class="pc-enterprise-head">
+        <div class="pc-eyebrow">Enterprise Add-Ons</div>
+        <h2>Rangkaian Esensial yang Dibutuhkan HR&nbsp;Enterprise&nbsp;dalam Satu Solusi</h2>
+        <p class="pc-enterprise-sub">Dukungan khusus, infrastruktur premium, dan sistem keamanan yang dirancang untuk memenuhi kebutuhan perusahaan berskala besar.</p>
+      </div>
+      <div class="pc-enterprise-grid" id="pcEnterpriseGrid">
+        <div class="pc-enterprise-card">
+          <span class="pc-enterprise-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3.5v5c0 4.5-3 7.8-7 9-4-1.2-7-4.5-7-9v-5L12 3z"/><path d="M9 12l2 2 4-4.5"/></svg></span>
+          <h3>Tata Kelola Identitas &amp; Akses</h3>
+          <p>Setiap perubahan data karyawan mengalir otomatis ke direktori dan sistem terkait lainnya.</p>
+        </div>
+        <div class="pc-enterprise-card">
+          <span class="pc-enterprise-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13.5a8 8 0 0 1 16 0"/><rect x="3" y="13.5" width="4.2" height="6.5" rx="2"/><rect x="16.8" y="13.5" width="4.2" height="6.5" rx="2"/><path d="M20 19.7v.8a3 3 0 0 1-3 3h-2.3"/></svg></span>
+          <h3>Customer Success Manager Khusus</h3>
+          <p>Dapatkan Customer Success Manager pribadi yang memahami kebutuhan perusahaan Anda untuk pendampingan yang lebih personal.</p>
+        </div>
+        <div class="pc-enterprise-card">
+          <span class="pc-enterprise-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 8l-4.5 4 4.5 4"/><path d="M15 8l4.5 4-4.5 4"/></svg></span>
+          <h3>Integrasi API Custom</h3>
+          <p>Hubungkan PeoplesHR dengan sistem yang digunakan perusahaan melalui integrasi API yang dirancang sesuai kebutuhan, bukan sekadar konektor standar.</p>
+        </div>
+        <div class="pc-enterprise-card">
+          <span class="pc-enterprise-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v18"/><path d="M5 4h11l-2 3.5L16 11H5"/></svg></span>
+          <h3>Onboarding &amp; Implementasi Pendampingan Khusus</h3>
+          <p>Proses implementasi didampingi tim ahli khusus, mulai dari tahap awal hingga sistem siap digunakan.</p>
+        </div>
+        <div class="pc-enterprise-card">
+          <span class="pc-enterprise-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 8l10 5 10-5-10-5z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/><path d="M22 8v6"/></svg></span>
+          <h3>Pelatihan Khusus</h3>
+          <p>Pelatihan untuk administrator maupun pengguna agar setiap tim dapat menggunakan sistem secara optimal.</p>
+        </div>
+        <div class="pc-enterprise-card">
+          <span class="pc-enterprise-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6L4 18a2 2 0 0 0 1.8 3h12.4A2 2 0 0 0 20 18l-5-10V2"/><path d="M9 2h6"/><path d="M8.5 14h7"/></svg></span>
+          <h3>Lingkungan UAT Khusus</h3>
+          <p>Uji dan validasi setiap perubahan atau pembaruan fitur sebelum resmi diluncurkan ke sistem utama (production).</p>
+        </div>
+        <div class="pc-enterprise-card">
+          <span class="pc-enterprise-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg></span>
+          <h3>Infrastruktur Khusus Enterprise</h3>
+          <p>Pilihan sistem yang bisa disesuaikan dengan standar keamanan dan kecepatan perusahaan Anda.</p>
+        </div>
+        <div class="pc-enterprise-card">
+          <span class="pc-enterprise-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg></span>
+          <h3>Business Continuity yang Andal</h3>
+          <p>Pemulihan bencana (disaster recovery) kelas premium dengan komitmen RPO/RTO yang lebih kuat dan terjamin.</p>
+        </div>
+        <div class="pc-enterprise-card">
+          <span class="pc-enterprise-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M8.5 12.5 7 21l5-3 5 3-1.5-8.5"/></svg></span>
+          <h3>Dukungan Premium</h3>
+          <p>Nikmati waktu respons yang lebih cepat serta akses prioritas ke tim support senior.</p>
+        </div>
+      </div>
+      <button type="button" class="pc-enterprise-more" id="pcEnterpriseMore" data-more-label="Lihat 6 fitur lainnya" data-less-label="Tampilkan lebih sedikit">Lihat 6 fitur lainnya</button>
+    </div>
+  </section>
+
+  <section class="pc-ladder" id="pcStandoutSection">
+    <div class="pc-wrap">
+      <div class="pc-ladder-head">
+        <h2>Nikmati Kemudahan HR untuk Semua Level di Perusahaan</h2>
+        <p class="pc-ladder-sub">Dapatkan jawaban instan dengan AI, akses melalui perangkat mobile dari mana saja, dan layanan mandiri untuk mempermudah aktivitas karyawan sehari-hari. Tersedia di setiap paket.</p>
+      </div>
+      <div class="pc-cmp-layout">
+        <nav class="pc-cmp-nav" id="pcStandoutNav" aria-label="Fitur unggulan"></nav>
+        <div class="pc-right-col">
+          <div class="pc-feature-panel" id="pcFeaturePanel">
+            <div class="pc-panel-head" id="pcFeatureHead"></div>
+            <div class="pc-feature-grid" id="pcFeatureGrid"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pc-cta" id="pcBuildQuote">
+    <div class="pc-wrap">
+      <div class="pc-cta-inner">
+        <h2>Masih Bingung Memilih Paket yang Tepat?</h2>
+        <p>Tim kami siap membantu memilih solusi yang paling sesuai dengan kebutuhan Anda. Mudah, tanpa paksaan, dan tepat sasaran.</p>
+        <a href="#" class="pc-btn pc-btn-lg" data-open-hs>Hubungi Kami</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+</div>
+<?php else: ?>
+<div class="pc-scope">
+<main>
+
+  <section class="pc-hero">
+    <div class="pc-wrap">
+      <h1>Plans Built for Every Stage of Your HR Journey</h1>
+      <p class="pc-sub">Start with what you need today, add more as your HR processes mature.</p>
+      <p class="pc-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Every package scoped to the scale that fits your HR</p>
+    </div>
+  </section>
+
+  <section class="pc-modules">
+    <div class="pc-wrap">
+      <h2 class="sr-only">PeoplesHR Modules</h2>
+      <div class="pc-modules-grid">
+        <div class="pc-module-card">
+          <span class="pc-module-ic pc-module-ic-img"><img src="/uploads/2026/07/HRIcon.webp" alt=""></span>
+          <h3>HR</h3>
+          <p>Maintain HR records, structure your organisation & run the employee lifecycle.</p>
+        </div>
+        <div class="pc-module-card">
+          <span class="pc-module-ic pc-module-ic-img"><img src="/uploads/2026/07/TimeIcon.webp" alt=""></span>
+          <h3>Time</h3>
+          <p>Manage attendance, shifts, overtime & leave.</p>
+        </div>
+        <div class="pc-module-card">
+          <span class="pc-module-ic pc-module-ic-img"><img src="/uploads/2026/07/PayIcon.webp" alt=""></span>
+          <h3>Pay</h3>
+          <p>Run accurate payroll, benefits & statutory compliance.</p>
+        </div>
+        <div class="pc-module-card">
+          <span class="pc-module-ic pc-module-ic-img"><img src="/uploads/2026/07/TalentIcon.webp" alt=""></span>
+          <h3>Talent</h3>
+          <p>Set goals, manage performance, and develop & plan your people.</p>
+        </div>
+        <div class="pc-module-card">
+          <span class="pc-module-ic pc-module-ic-img"><img src="/uploads/2026/07/EngagementIcon.webp" alt=""></span>
+          <h3>Engagement</h3>
+          <p>Listen to employees, recognise contribution & strengthen engagement.</p>
+        </div>
+        <div class="pc-module-card">
+          <span class="pc-module-ic pc-module-ic-img"><img src="/uploads/2026/07/Recruitment.webp" alt=""></span>
+          <h3>Recruitment</h3>
+          <p>Hire the right people and onboard new joiners.</p>
+        </div>
+        <div class="pc-module-card">
+          <span class="pc-module-ic pc-module-ic-img"><img src="/uploads/2026/07/InsightsIcon.webp" alt=""></span>
+          <h3>Insights</h3>
+          <p>Turn workforce data into decisions with reports, analytics & Lexi AI.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pc-ladder" id="pcLadderSection">
+    <div class="pc-wrap">
+      <div class="pc-ladder-head">
+        <h2>Explore PeoplesHR</h2>
+        <p class="pc-ladder-sub">The tools to run HR your way, from your first hire onward.</p>
+        <form class="pc-search" id="pcSearchForm" role="search">
+          <svg class="pc-search-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <input type="search" id="pcSearchInput" class="pc-search-input" placeholder="Search capabilities - e.g. leave encashment, biometric login, custom reports" aria-label="Search capabilities">
+          <button type="button" class="pc-search-clear" id="pcSearchClear" aria-label="Clear search" hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </button>
+          <button type="submit" class="pc-search-btn">Search</button>
+        </form>
+        <div class="pc-search-status" id="pcSearchStatus" hidden></div>
+      </div>
+      <div class="pc-cmp-layout">
+        <nav class="pc-cmp-nav" id="pcCmpNav" aria-label="Module"></nav>
+        <div class="pc-right-col">
+          <div class="pc-tier-tabs" id="pcTierTabs"></div>
+          <div class="pc-ladder-grid" id="pcLadder"></div>
+          <div class="pc-cmp" id="pcCmp">
+            <span class="pc-version">Version: v1.0.1</span>
+            <div class="pc-panel-head" id="pcPanelHead"></div>
+            <div class="pc-th-row">
+              <div class="pc-lead" id="pcLead"></div>
+              <div class="pc-th" data-tier="manage"><div class="pc-n">Manage</div><div class="pc-t">Run the organisation</div></div>
+              <div class="pc-th" data-tier="grow"><div class="pc-n">Grow</div><div class="pc-t">Invest in your people</div></div>
+              <div class="pc-th" data-tier="transform"><div class="pc-n">Transform</div><div class="pc-t">Lead with people intelligence</div></div>
+            </div>
+            <div id="pcGroups"></div>
+          </div>
+          <div class="pc-search-feed" id="pcSearchFeed" hidden></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pc-enterprise">
+    <div class="pc-wrap">
+      <div class="pc-enterprise-head">
+        <div class="pc-eyebrow">Enterprise Add-Ons</div>
+        <h2>The Essential Inclusions Enterprise-scale HR&nbsp;Actually&nbsp;Needs</h2>
+        <p class="pc-enterprise-sub">Dedicated support, premium infrastructure, and the most secure environment enterprise HR demands.</p>
+      </div>
+      <div class="pc-enterprise-grid" id="pcEnterpriseGrid">
+        <div class="pc-enterprise-card">
+          <span class="pc-enterprise-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3.5v5c0 4.5-3 7.8-7 9-4-1.2-7-4.5-7-9v-5L12 3z"/><path d="M9 12l2 2 4-4.5"/></svg></span>
+          <h3>Identity &amp; Access Governance</h3>
+          <p>Every employee change flows out to your directory and downstream systems, automatically.</p>
+        </div>
+        <div class="pc-enterprise-card">
+          <span class="pc-enterprise-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13.5a8 8 0 0 1 16 0"/><rect x="3" y="13.5" width="4.2" height="6.5" rx="2"/><rect x="16.8" y="13.5" width="4.2" height="6.5" rx="2"/><path d="M20 19.7v.8a3 3 0 0 1-3 3h-2.3"/></svg></span>
+          <h3>Dedicated Customer Success Manager</h3>
+          <p>A named customer success manager who knows your setup, not a ticket queue.</p>
+        </div>
+        <div class="pc-enterprise-card">
+          <span class="pc-enterprise-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 8l-4.5 4 4.5 4"/><path d="M15 8l4.5 4-4.5 4"/></svg></span>
+          <h3>Custom API Integrations</h3>
+          <p>Built-to-your-setup API connections, not just standard connectors.</p>
+        </div>
+        <div class="pc-enterprise-card">
+          <span class="pc-enterprise-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v18"/><path d="M5 4h11l-2 3.5L16 11H5"/></svg></span>
+          <h3>White-Glove Onboarding &amp; Implementation</h3>
+          <p>End-to-end implementation led by dedicated experts.</p>
+        </div>
+        <div class="pc-enterprise-card">
+          <span class="pc-enterprise-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 8l10 5 10-5-10-5z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/><path d="M22 8v6"/></svg></span>
+          <h3>Dedicated Training</h3>
+          <p>Role-based training for administrators and end users.</p>
+        </div>
+        <div class="pc-enterprise-card">
+          <span class="pc-enterprise-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6L4 18a2 2 0 0 0 1.8 3h12.4A2 2 0 0 0 20 18l-5-10V2"/><path d="M9 2h6"/><path d="M8.5 14h7"/></svg></span>
+          <h3>Dedicated UAT Environment</h3>
+          <p>Validate every change before it reaches production.</p>
+        </div>
+        <div class="pc-enterprise-card">
+          <span class="pc-enterprise-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg></span>
+          <h3>Enterprise Infrastructure</h3>
+          <p>Deployment options tailored to your security and performance needs.</p>
+        </div>
+        <div class="pc-enterprise-card">
+          <span class="pc-enterprise-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg></span>
+          <h3>Enhanced Business Continuity</h3>
+          <p>Premium disaster recovery with stronger RPO/RTO commitments.</p>
+        </div>
+        <div class="pc-enterprise-card">
+          <span class="pc-enterprise-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M8.5 12.5 7 21l5-3 5 3-1.5-8.5"/></svg></span>
+          <h3>Premium Support</h3>
+          <p>Faster SLAs with priority access to senior support engineers.</p>
+        </div>
+      </div>
+      <button type="button" class="pc-enterprise-more" id="pcEnterpriseMore" data-more-label="View 6 more features" data-less-label="Show less">View 6 more features</button>
+    </div>
+  </section>
+
+  <section class="pc-ladder" id="pcStandoutSection">
+    <div class="pc-wrap">
+      <div class="pc-ladder-head">
+        <h2>Simpler HR, From the Front Line to the Boardroom</h2>
+        <p class="pc-ladder-sub">Mobile access and self-service put everyday tasks in employees' hands - Lexi AI gives leaders instant answers. Built into every plan.</p>
+      </div>
+      <div class="pc-cmp-layout">
+        <nav class="pc-cmp-nav" id="pcStandoutNav" aria-label="Standout capability"></nav>
+        <div class="pc-right-col">
+          <div class="pc-feature-panel" id="pcFeaturePanel">
+            <div class="pc-panel-head" id="pcFeatureHead"></div>
+            <div class="pc-feature-grid" id="pcFeatureGrid"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pc-cta" id="pcBuildQuote">
+    <div class="pc-wrap">
+      <div class="pc-cta-inner">
+        <h2>Not Sure Which Plan Is Right?</h2>
+        <p>Contact us and we'll help you figure out the best fit. No pressure, no guesswork.</p>
+        <a href="#" class="pc-btn pc-btn-lg" data-open-hs>Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+</div>
+<?php endif; ?>
+
+<!-- Contact Us modal - same hs-modal-overlay/.hs-modal shell used
+     sitewide for HubSpot-embedded lead forms, its own form instance -->
+<div class="hs-modal-overlay" id="pcContactModal" aria-hidden="true">
+  <div class="hs-modal" role="dialog" aria-modal="true" aria-labelledby="pcContactModalTitle">
+    <div class="hs-modal-header">
+      <button class="hs-modal-close" type="button" aria-label="<?php echo $phrShowBahasa ? 'Tutup' : 'Close'; ?>" id="pcContactModalClose">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <h3 id="pcContactModalTitle"><?php echo $phrShowBahasa ? 'Mari Berdiskusi' : "Let's Talk"; ?></h3>
+      <p><?php echo $phrShowBahasa ? 'Ceritakan sedikit tentang perusahaan Anda dan tim kami akan segera menghubungi Anda.' : "Tell us a bit about your organisation and we'll be in touch shortly."; ?></p>
+    </div>
+    <div class="hs-modal-body">
+      <div id="pcContactFormContainer"></div>
+    </div>
+  </div>
+</div>
+
+<?php if (!$phrShowBahasa): ?>
+<!-- Capability-details gate modal - shown before a visitor is allowed
+     through to /capability-details.html from any linked capability in the
+     comparison table. Same hs-modal-overlay/.hs-modal shell, its own
+     form instance. On submit, the visitor is sent on to the capability
+     page they originally clicked. -->
+<div class="hs-modal-overlay" id="pcCapGateModal" aria-hidden="true">
+  <div class="hs-modal" role="dialog" aria-modal="true" aria-labelledby="pcCapGateModalTitle">
+    <div class="hs-modal-header">
+      <button class="hs-modal-close" type="button" aria-label="Close" id="pcCapGateModalClose">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <h3 id="pcCapGateModalTitle">Just one more step</h3>
+      <p>Tell us a bit about yourself to see the detailed capability breakdown.</p>
+    </div>
+    <div class="hs-modal-body">
+      <div id="pcCapGateFormContainer"></div>
+    </div>
+  </div>
+</div>
+<?php endif; ?>
+
+<?php if ($phrShowBahasa): ?>
+<script id="pcMatrix" type="application/json">{"tiers": {"manage": {"name": "Manage", "tag": "Kelola operasional perusahaan", "color": "green"}, "grow": {"name": "Grow", "tag": "Dukung pertumbuhan karyawan", "color": "blue"}, "transform": {"name": "Transform", "tag": "Pimpin berdasarkan insight karyawan", "color": "purple"}}, "modules": [{"name": "HR", "color": "green", "groups": [{"name": "Atur Struktur Perusahaan Anda", "items": [{"label": "Susun struktur perusahaan dan hierarki jabatan", "info": "Bangun struktur perusahaan, divisi, hingga jenjang organisasi sebagai dasar untuk mengelola karyawan, alur pelaporan, dan kebijakan perusahaan.", "manage": "Hingga 3 level perusahaan", "grow": "Hingga 5 level perusahaan", "transform": "Talk to Sales", "children": []}, {"label": "Kelola data karyawan dalam satu sistem", "info": "Pusat data yang menyimpan informasi karyawan, mulai dari data pribadi, riwayat karier, hingga dokumen resmi sejak hari pertama bergabung hingga resign dengan kolom data yang bisa disesuaikan.", "manage": "[Kolom data standar](#)", "grow": "Data standar + 10 kolom data khusus", "transform": "Talk to Sales", "children": []}, {"label": "Validasi otomatis data karyawan", "info": "Setiap data dan perubahan profil karyawan divalidasi secara otomatis berdasarkan aturan perusahaan, sehingga data pusat tetap akurat dan mudah dilacak.", "manage": "[Validasi data standar](#)", "grow": "Maksimal 2 validasi custom", "transform": "Talk to Sales", "children": []}, {"label": "Pencatatan dokumen wajib karyawan", "info": "Simpan seluruh data administrasi wajib karyawan, seperti NPWP, BPJS, dan identitas resmi, dalam satu profil terpusat untuk mendukung proses payroll dan kepatuhan terhadap regulasi.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Penyimpanan dokumen kerja terpusat", "info": "Semua dokumen penting karyawan tersimpan dalam satu tempat yang mudah diakses kapan saja, mulai dari kontrak kerja, sertifikat, salinan identitas, hingga dokumen lainnya.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Pembuatan surat HR & dokumen resmi otomatis", "info": "Otomatisasi pembuatan surat-surat HR dengan template siap pakai, mulai dari surat penawaran kerja, pengangkatan, mutasi, hingga surat resmi lainnya.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Tanda tangan elektronik", "info": "Percepat proses persetujuan dokumen HR (kontrak kerja, surat penawaran, surat konfirmasi, dll) dengan fitur tanda tangan elektronik langsung di aplikasi PeoplesHR.", "manage": "Talk to Sales", "grow": "Talk to Sales", "transform": "Talk to Sales", "children": []}, {"label": "Pembaruan profil mandiri karyawan", "info": "Karyawan dapat memperbarui informasi kontak, rekening bank, dan data pribadi mereka sendiri tanpa harus mengajukannya secara manual ke tim HR.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}]}, {"name": "Kelola Siklus Kerja Karyawan", "items": [{"label": "Atur siklus kerja, mutasi, promosi, dan perubahan jabatan karyawan", "info": "Permudah mutasi, promosi, perubahan jabatan, hingga resign melalui proses persetujuan yang terstruktur. Dilengkapi alasan, ketentuan berlaku, hingga tanggal efektif, dan dapat diterapkan untuk satu atau banyak karyawan sekaligus.", "manage": "Hingga 5 [jenis siklus kerja](#)", "grow": "Hingga 10 [jenis siklus kerja](#) & 10 [validasi](#)", "transform": "Talk to Sales", "children": []}, {"label": "Kelola proses offboarding karyawan", "info": "Sederhanakan proses offboarding dengan tipe keluar yang dapat disesuaikan, exit interview, dan checklist antar departemen untuk memastikan pengembalian aset, penonaktifan akses, serta penyelesaian dokumen berjalan lancar.", "manage": "Hanya lewat alur lifecycle karyawan", "grow": "yes", "transform": "yes", "children": []}, {"label": "Hak akhir karyawan & surat paklaring otomatis", "info": "Selesaikan proses akhir karyawan lebih cepat dengan perhitungan pembayaran akhir yang otomatis dan pembuatan paklaring secara instan.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Pengelolaan exit clearance otomatis", "info": "Jalankan exit clearance terstruktur untuk memastikan pengembalian aset, penyelesaian tanggung jawab, dan serah terima pekerjaan berjalan lancar sebelum karyawan keluar.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Dashboard terpadu untuk atasan", "info": "Satu dashboard khusus bagi manajer untuk memproses pengajuan cuti, klaim biaya, dan persetujuan lainnya secara langsung tanpa perlu berpindah aplikasi.", "manage": "Tampilan standar", "grow": "Tampilan standar + dashboard", "transform": "Tampilan standar + dashboard", "children": []}, {"label": "Aplikasi mobile PeoplesHR", "info": "Akses aplikasi Android dan iOS untuk mendukung konektivitas karyawan kapan saja. Dilengkapi dengan login sidik jari, absensi berbasis lokasi, akses slip gaji, pembaruan kebijakan, dan push notification.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Notifikasi otomatis", "info": "Pemberitahuan otomatis via email dan aplikasi seluler yang menginfokan karyawan maupun manajer terkait persetujuan tertunda, pengajuan baru, atau agenda HR penting secara real-time.", "manage": "[Email standar](#) + 5 kustom notifikasi", "grow": "[Email standar](#) + 10 kustom notifikasi", "transform": "Talk to Sales", "children": []}, {"label": "Riwayat [aktivitas sistem](#) yang lengkap & aman", "info": "Catatan sistem lengkap dan bebas dimanipulasi untuk merekam setiap impor data, penyuntingan, override, dan tindakan pengguna - mencakup siapa, apa, kapan, dan dari mana - demi menjaga kepatuhan, keamanan, serta penyelesaian konflik.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Hubungkan dan pertukarkan data dengan [sistem eksternal melalui API](#)", "info": "API terstruktur yang memungkinkan sistem eksternal, perangkat, dan aplikasi pihak ketiga mengirim dan mengambil data secara aman, sehingga sinkronisasi data dapat berlangsung real-time di ekosistem teknologi perusahaan.", "manage": "Talk to Sales", "grow": "Talk to Sales", "transform": "Talk to Sales", "children": []}, {"label": "Single Sign-On (SSO)", "info": "Akses sistem dengan mudah menggunakan akun perusahaan yang telah tersedia hanya dalam satu kali login. Setiap perubahan data karyawan mengalir otomatis ke direktori dan sistem terkait lainnya.", "manage": null, "grow": null, "transform": "Talk to Sales", "children": []}]}], "blurb": "Kelola data HR, susun struktur organisasi, dan dukung seluruh siklus karyawan"}, {"name": "Time", "color": "green", "groups": [{"name": "Kelola Absensi & Shift", "items": [{"label": "Atur jadwal shift & roster kerja", "info": "Rencanakan, atur, dan kelola jadwal shift untuk berbagai tim, lokasi, dan pola kerja dengan lebih mudah. Dilengkapi pengaturan toleransi keterlambatan (grace period) yang fleksibel dan berlaku konsisten di setiap shift.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Beragam pola shift untuk berbagai tim, departemen, & lokasi", "info": "Jalankan berbagai pola shift secara bersamaan antar tim, departemen, dan lokasi - masing-masing dengan aturan jam kerjanya sendiri - dari satu sistem pusat.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Pengaturan shift fleksibel & shift bertahap", "info": "Atur waktu clock-in yang fleksibel serta bedakan jam mulai dan selesai kerja antar tim sesuai dengan ritme operasional perusahaan Anda.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Penyesuaian & pengalihan jadwal shift (admin/supervisor)", "info": "Supervisor dan admin dapat langsung mengubah, memindahkan, atau menukar shift karyawan untuk mengisi kekosongan jadwal kerja secara praktis.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Pertukaran shift antar karyawan", "info": "Fasilitasi karyawan dengan kemudahan bertukar shift secara mandiri yang dilengkapi dengan sistem persetujuan oleh manajer.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Pengelolaan multi-shift", "tag": "soon", "info": "Tugaskan karyawan untuk bekerja lebih dari satu shift di hari yang sama, dengan akumulasi kehadiran dan lembur yang dihitung otomatis dari seluruh shift tersebut.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Pengaturan jam istirahat & toleransi keterlambatan", "info": "Tentukan durasi istirahat serta batas toleransi keterlambatan atau kepulangan awal, sehingga perhitungan kehadiran dan lembur tetap adil dan konsisten.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Integrasi perangkat biometrik & mesin absensi", "info": "Hubungkan mesin biometrik (sidik jari, pemindai wajah, atau kartu) atau perangkat absensi lainnya agar data clock-in/out langsung terintegrasi dengan sistem absensi dan payroll.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Absensi mobile & web dengan verifikasi lokasi", "info": "Izinkan karyawan clock-in/out secara remote melalui aplikasi HP atau desktop, lengkap dengan pembatasan lokasi absensi - sangat cocok untuk tim lapangan atau yang tersebar di banyak lokasi.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Geofencing untuk pembatasan lokasi absensi", "info": "Batasi absensi hanya di area/radius yang disetujui untuk mencegah titip absen atau absen di luar lokasi. Tersedia fitur keamanan opsional mencakup foto live (tanpa galeri) dan verifikasi wajah berbasis liveness check untuk memastikan karyawan benar-benar berada di lokasi.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Analitik absensi tim & lintas departemen real-time", "info": "Live dashboard yang menampilkan siapa yang hadir, terlambat, serta tren kehadiran di seluruh tim dan departemen tanpa perlu membuat laporan manual.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Persetujuan absensi sebelum payroll", "info": "Tinjau dan setujui data kehadiran karyawan sebelum diproses ke payroll, sehingga perhitungan gaji selalu berdasarkan jam kerja yang telah disetujui.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Pemantauan keterlambatan & kepulangan lebih awal", "info": "Catat keterlambatan dan kepulangan lebih awal berdasarkan jadwal kerja karyawan, sehingga pelanggaran kehadiran di setiap tim dapat dipantau jelas.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Pengelolaan & pelacakan lembur", "info": "Hitung lembur secara otomatis saat karyawan bekerja sebelum shift dimulai atau setelah shift berakhir, sehingga seluruh jam kerja di luar jadwal normal tetap tercatat sebagai lembur.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Pengajuan lembur", "info": "Ajukan lembur di awal dan dapatkan persetujuan atasan sebelum jam kerja tambahan dimulai, sehingga setiap lembur telah disetujui sebelum dijalankan, bukan hanya dicatat setelah selesai.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Pengaturan perhitungan lembur", "info": "Atur perhitungan lembur berdasarkan kebijakan perusahaan, dengan rumus dan pengali yang dapat disesuaikan supaya selaras dengan aturan kehadiran dan payroll yang berlaku.", "manage": "Hanya [perhitungan standar](#)", "grow": "Hanya [perhitungan standar](#)", "transform": "TTS:Perhitungan kustom", "children": []}, {"label": "Pelacakan waktu & biaya proyek", "info": "Kelola proyek dan tugas, lacak jam kerja yang dicatat setiap anggota tim, lalu hitung biaya proyek secara otomatis berdasarkan tarif per jam yang dapat disesuaikan untuk masing-masing karyawan.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Dashboard supervisor real-time", "info": "Pantau seluruh aktivitas tim dalam satu dashboard, mulai dari kehadiran, cuti, hingga persetujuan tertunda, sehingga atasan dapat menindaklanjutinya dari satu tempat.", "manage": null, "grow": "yes", "transform": "yes", "children": []}]}, {"name": "Kelola Cuti & Kepatuhan Regulasi", "items": [{"label": "Kalender hari libur perusahaan & lokasi tertentu", "info": "Atur hari libur nasional dan perusahaan dalam satu sistem - termasuk kalender libur yang berbeda antar-lokasi atau cabang - sehingga proses cuti, kehadiran, dan payroll otomatis mengenali hari non-kerja.", "manage": "Hingga 2 kalender hari libur perusahaan", "grow": "Beberapa kalender hari libur", "transform": "TTS:Sesuai kebutuhan", "children": []}, {"label": "Pantau saldo, akumulasi, dan carry forward cuti", "info": "Lacak semua jenis cuti secara bersamaan, seperti cuti tahunan, cuti sakit, cuti darurat, maupun cuti yang diwajibkan undang-undang, masing-masing dengan aturan dan saldo yang berbeda untuk setiap karyawan.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Pelacakan akumulasi hak cuti", "info": "Akumulasikan jatah cuti tahunan secara otomatis seiring bertambahnya masa kerja karyawan, dengan saldo yang terus diperbarui real-time serta siap digunakan ke periode berikutnya.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Aturan dan kebijakan cuti", "info": "Konfigurasikan jenis cuti sesuai regulasi yang berlaku, lalu tambahkan jenis cuti khusus sesuai kebijakan perusahaan.", "manage": "Hanya [jenis cuti sesuai regulasi](#)", "grow": "[Cuti sesuai regulasi](#) + 3 jenis cuti perusahaan", "transform": "[Cuti sesuai regulasi](#) + 5 jenis cuti perusahaan", "children": []}, {"label": "Kalender dan perencanaan cuti tim", "info": "Bantu karyawan dan manajer merencanakan cuti lebih awal melalui kalender bersama yang menampilkan ketersediaan anggota tim dan potensi benturan jadwal sebelum pengajuan cuti dilakukan.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Alur persetujuan cuti", "info": "Kirim setiap pengajuan cuti ke approval yang tepat secara otomatis, sehingga cuti hanya disetujui oleh pihak yang berwenang sebelum dikonfirmasi.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Validasi pengajuan cuti sesuai regulasi", "info": "Cek setiap pengajuan cuti secara otomatis berdasarkan saldo cuti, hak cuti, dan kebijakan perusahaan sebelum disetujui, sehingga potensi konflik dapat terdeteksi lebih awal.", "manage": "Hanya [validasi cuti standar](#)", "grow": "Hanya [validasi cuti standar](#)", "transform": "TTS:Validasi cuti standar + custom", "children": []}, {"label": "Opsi cuti per jam dan cuti singkat", "info": "Izinkan karyawan mengajukan cuti dalam hitungan jam atau durasi singkat, seperti beberapa jam atau setengah hari, sehingga pencatatan cuti menjadi lebih fleksibel dan akurat.", "manage": null, "grow": null, "transform": "yes", "children": []}]}], "blurb": "Kelola absensi, shift, lembur, dan cuti karyawan"}, {"name": "Pay", "color": "green", "groups": [{"name": "Kelola Payroll dengan Akurat", "items": [{"label": "Pemrosesan payroll perusahaan", "info": "Kelola seluruh proses payroll secara end-to-end, mulai dari pendapatan, potongan, iuran wajib, hingga gaji bersih di berbagai kelompok gaji dan pemrosesan paralel menggunakan rumus payroll standar maupun yang disesuaikan.", "manage": "2 proses payroll paralel", "grow": "2 proses payroll paralel + 5 rumus perhitungan kustom", "transform": "Talk to Sales", "children": []}, {"label": "Kelola beberapa proses payroll", "info": "Jalankan beberapa proses payroll sekaligus untuk mengelola kelompok karyawan, siklus pembayaran, atau jenis payroll yang berbeda dalam satu sistem.", "manage": "4 proses payroll", "grow": "7 proses payroll", "transform": "Talk to Sales", "children": []}, {"label": "Payroll berbasis hasil kerja (piece-rate)", "info": "Hitung gaji berdasarkan hasil kerja yang dihasilkan, khusus untuk tenaga kerja yang dibayar per jumlah output, bukan berdasarkan jam kerja.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Payroll multi-mata uang", "info": "Kelola payroll di berbagai negara dengan kepatuhan terhadap regulasi setempat yang sudah terintegrasi. Pajak, potongan, dan file pelaporan akan disesuaikan secara otomatis sesuai ketentuan di masing-masing negara.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Pembuatan berkas pembayaran bank", "info": "Hasilkan berkas pembayaran bank secara otomatis dari setiap proses payroll untuk pembayaran gaji yang cepat dan bebas dari kesalahan.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Pemetaan General Ledger (GL)", "info": "Petakan biaya payroll ke kode General Ledger (GL) yang sesuai, lalu kirim langsung ke bagian keuangan tanpa perlu membuat jurnal manual.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Laporan payroll lengkap", "info": "Catat seluruh rincian gaji tiap karyawan, termasuk gaji pokok, lembur, insentif shift malam, tunjangan, potongan, hingga iuran wajib.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Pembuatan slip gaji digital", "info": "Buat dan bagikan slip gaji digital yang aman dan dapat diakses kapan saja oleh karyawan, lengkap dengan rincian penghasilan, potongan, dan iuran.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Alur persetujuan bertingkat", "info": "Arahkan setiap proses payroll ke alur persetujuan yang sesuai sebelum diproses. Setelah disetujui, data payroll akan dikunci dan tidak dapat diubah lagi.", "manage": "yes", "grow": "yes", "transform": "Talk to Sales", "children": []}, {"label": "Deteksi kesalahan sebelum payroll diproses dengan AI", "tag": "new", "info": "Deteksi dan tandai kesalahan pada lembur, potongan, serta kalkulasi lainnya sebelum payroll diproses.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Kelola penyesuaian gaji dengan rapel otomatis", "info": "Kelola kenaikan gaji, promosi, dan perubahan struktur gaji mulai dari tanggal efektif yang ditentukan. Seluruh komponen gaji, tunjangan, iuran wajib, dan pajak akan dihitung ulang secara otomatis sesuai paket kompensasi terbaru.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Kelola penyesuaian gaji berlaku surut", "info": "Lakukan penyesuaian gaji secara berlaku surut untuk memperbaiki pembayaran pada periode sebelumnya, misalnya saat komponen payroll masih menunggu persetujuan ketika payroll diproses dan baru disetujui pada periode berikutnya.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Proses komponen penghasilan yang fleksibel", "info": "Urus komponen gaji fleksibel yang nilainya berubah dari satu periode ke periode berikutnya, sehingga setiap penyesuaian bisa diterapkan otomatis pada setiap proses payroll.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Kelola benefit non-tunai, tunjangan, dan hak karyawan", "info": "Atur benefit non-tunai seperti uang makan, subsidi seragam, serta tunjangan kesehatan atau asuransi, dengan aturan kelayakan yang dapat disesuaikan untuk setiap karyawan.", "manage": "3 [jenis benefit](#)", "grow": "8 [jenis benefit](#)", "transform": "Talk to Sales", "children": []}, {"label": "Pinjaman karyawan beserta saldo dan jadwal pembayaran", "info": "Catat pinjaman karyawan dengan mengatur jadwal pelunasan, pantau sisa pinjaman, dan pemotongan angsuran secara otomatis di setiap siklus payroll.", "manage": null, "grow": "Hingga 5 jenis pinjaman", "transform": "Talk to Sales", "children": []}, {"label": "Pencairan sisa cuti menjadi uang (Leave Encashment)", "info": "Cairkan sisa jatah cuti yang tidak terpakai menjadi uang tunai melalui payroll, baik saat karyawan offboarding maupun pada periode pencairan cuti yang telah ditentukan.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Integrasikan sistem payroll dengan ERP", "info": "Hubungkan payroll dengan sistem ERP agar data penggajian dan biaya tersinkronisasi secara otomatis antar sistem. Tersedia integrasi standar maupun yang dapat disesuaikan dengan kebutuhan perusahaan.", "manage": null, "grow": "Integrasi standar", "transform": "TTS:Integrasi custom", "children": []}]}, {"name": "Penuhi Kepatuhan terhadap Regulasi", "items": [{"label": "Perhitungan pajak otomatis", "info": "Hitung pajak secara otomatis menggunakan tabel pajak dan aturan pemotongan yang selalu diperbarui sesuai tarif resmi terbaru.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Otomatisasi potongan wajib, pembaruan tarif, dan pelaporan kepatuhan", "info": "Otomatisasi perhitungan iuran wajib dan pembuatan laporan penyetoran untuk program jaminan sosial, kesehatan, dana pensiun, dan lainnya, dengan tabel iuran yang selalu diperbarui mengikuti perubahan regulasi.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}]}], "blurb": "Kelola payroll, benefit, dan kepatuhan terhadap regulasi dengan akurat"}, {"name": "Talent", "color": "blue", "groups": [{"name": "Tetapkan Goal & Tingkatkan Kinerja", "items": [{"label": "Penilaian kinerja dengan Balanced Scorecard", "info": "Kerangka penilaian kinerja multidimensi yang mengevaluasi karyawan berdasarkan kombinasi target kuantitatif (KPI) dan kompetensi kualitatif yang telah ditentukan.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Feedback 180° antara atasan dan karyawan", "info": "Proses feedback dua arah yang terstruktur antara karyawan dan atasan, mencakup penilaian diri dan atasan untuk gambaran kinerja yang seimbang.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Feedback 360° dari atasan, rekan kerja, dan bawahan", "info": "Pengumpulan feedback secara terstruktur dari rekan kerja, bawahan, dan atasan, sehingga karyawan mendapatkan penilaian dari perspektif yang menyeluruh.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Libatkan pihak eksternal untuk feedback 360°", "info": "Perluas feedback 360° dengan melibatkan pihak eksternal seperti klien, mitra bisnis, atau vendor, sehingga memberikan perspektif lengkap terhadap kinerja karyawan.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Kelola target dan OKR", "info": "Pencatatan target individu dan tim secara berkelanjutan, dengan status perkembangan yang dapat dipantau karyawan maupun atasan selama periode penilaian.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Rencanakan dan pantau pencapaian KPI", "info": "Tetapkan rencana pencapaian setiap KPI dan pantau progresnya secara berkelanjutan hingga target tercapai.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Kalibrasi hasil penilaian antar tim agar lebih objektif", "info": "Proses yang memungkinkan para manajer mendiskusikan dan menyelaraskan hasil penilaian karyawan agar evaluasi lebih konsisten dan minim bias.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Standarisasi hasil penilaian untuk mengurangi bias", "info": "Samakan standar hasil penilaian kinerja di berbagai tim dan penilai agar hasil evaluasi lebih adil, konsisten, dan mengurangi bias.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Rencana pengembangan individu pasca penilaian", "info": "Ubah hasil penilaian kinerja menjadi rencana pengembangan individu, lengkap dengan tujuan dan langkah pengembangan yang perlu dilakukan setiap karyawan.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Rencana perbaikan kinerja bagi karyawan yang belum mencapai target", "info": "Dukung karyawan yang belum memenuhi target kinerja melalui program perbaikan yang terstruktur, dengan target dan jangka waktu yang jelas.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Kenaikan gaji berdasarkan kinerja dan pencapaian", "info": "Berikan kenaikan gaji berdasarkan hasil penilaian kinerja dan pencapaian karyawan, sehingga keputusan lebih objektif dan berbasis prestasi.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Insentif berkala berdasarkan pencapaian KPI", "info": "Kelola pemberian insentif berkala berdasarkan pencapaian KPI, sehingga penghargaan diberikan sesuai hasil yang dicapai.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Evaluasi masa probation hingga pengangkatan karyawan tetap", "info": "Kelola seluruh proses masa probation, mulai dari menetapkan periodenya, menjadwalkan dan melakukan evaluasi, hingga memutuskan status karyawan berdasarkan hasil penilaian.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Integrasi data kinerja dan KPI dengan ERP", "info": "Sinkronkan data kinerja dan KPI dengan sistem ERP agar data performa karyawan dan hasil bisnis tetap terhubung di seluruh sistem.", "manage": null, "grow": null, "transform": "yes", "children": []}]}, {"name": "Kembangkan & Pertahankan Talenta Terbaik", "items": [{"label": "Kalibrasi kinerja, potensi, dan kesiapan suksesi dengan 9-Box Grid", "tag": "soon", "info": "Alat visual untuk memetakan karyawan berdasarkan kinerja dan potensi, sehingga identifikasi talenta potensial lebih mudah demi mendukung keputusan suksesi jabatan. Hanya tersedia untuk pengguna Lexi AI Insights.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Kelola talent pool untuk perencanaan suksesi pada posisi strategis", "tag": "soon", "info": "Daftar kandidat internal yang siap mengisi posisi-posisi penting, dikelola dan ditinjau secara berkala sebagai bagian dari perencanaan talenta. Hanya tersedia untuk pengguna Lexi AI Insights.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Temukan kesenjangan kompetensi sesuai kebutuhan posisi dan prioritaskan pengembangannya", "info": "Bandingkan kompetensi karyawan saat ini dengan kompetensi yang dibutuhkan untuk posisi mereka, sehingga kebutuhan pengembangan diketahui dengan jelas.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Identifikasi kesenjangan keterampilan dan susun rencana pengembangan karyawan", "info": "Temukan kompetensi yang perlu ditingkatkan, susun rencana pengembangan sesuai tujuan setiap karyawan, dan tetapkan pelatihan yang tepat untuk mendukung pertumbuhan karier mereka.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Sediakan pelatihan e-learning dan pantau progres pembelajaran", "info": "Selenggarakan pelatihan secara online melalui e-learning, serta pantau progres dan penyelesaian pelatihan setiap karyawan.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Atasi kesenjangan keterampilan dengan rekomendasi jalur pembelajaran berbasis AI", "info": "Gunakan AI untuk mengidentifikasi kebutuhan pelatihan, merekomendasikan pelatihan yang tepat, serta memantau progres dan penyelesaian pelatihan.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Kelola program pelatihan offline maupun online", "info": "Rencanakan dan atur pelatihan tatap muka maupun online, serta daftarkan karyawan semuanya dalam satu tempat.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Atur kalender pelatihan yang dapat diakses bersama", "info": "Sediakan kalender bersama untuk jadwal pelatihan mendatang agar karyawan dan manajer bisa merencanakan kegiatan lebih awal.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Kelola data trainer serta riwayat sesi pelatihan", "info": "Kelola profil instruktur, bidang keahlian mereka, beserta riwayat sesi pelatihan yang pernah dibawakan.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Kumpulkan feedback setelah pelatihan untuk mengukur dampaknya", "info": "Kumpulkan feedback dari peserta setelah setiap agenda pelatihan untuk mengukur seberapa efektif sesi tersebut.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Evaluasi efektivitas pelatihan", "info": "Nilai pelatihan berdasarkan tujuannya untuk melihat apa yang sudah berjalan baik dan area mana yang perlu ditingkatkan.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Atur ikatan dinas dan tarik kembali biaya bila karyawan resign lebih awal", "info": "Atur ikatan dinas pelatihan serta lakukan klaim kembali biaya apabila karyawan mengundurkan diri sebelum masa berlaku ikatan berakhir.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Setujui permintaan pelatihan sesuai anggaran yang tersedia", "info": "Arahkan pengajuan pelatihan melalui alur persetujuan yang otomatis mengecek ketersediaan anggaran sebelum dikonfirmasi.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Kelola profil, riwayat pelatihan, dan poin CPD setiap karyawan", "info": "Simpan profil pelatihan tiap karyawan lengkap dengan riwayat pelatihan dan kalkulasi otomatis poin CPD (continuing professional development).", "manage": null, "grow": "yes", "transform": "yes", "children": []}]}, {"name": "Rencanakan Kebutuhan Tenaga Kerja Anda", "items": [{"label": "Simulasi pertumbuhan tenaga kerja berdasarkan hierarki, departemen, dan level jabatan", "info": "Proyeksikan pertumbuhan perusahaan di masa depan dengan merencanakan jumlah karyawan dan anggaran sesuai struktur hierarki, departemen, serta tingkatan jabatan.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Rencanakan kebutuhan headcount di setiap kelompok/divisi", "info": "Tetapkan target kebutuhan tenaga kerja berdasarkan kelompok karyawan, jenjang jabatan, departemen, dan lokasi sebagai dasar anggaran, rekrutmen, dan perencanaan SDM.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Optimasi alokasi dan penugasan karyawan", "info": "Sesuaikan rencana headcount seiring perkembangan kebutuhan bisnis, dan delegasikan kepemilikan perencanaan kepada kepala departemen atau unit bisnis, sambil tetap mempertahankan visibilitas menyeluruh dan persetujuan akhir yang tersentralisasi.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Persetujuan rekrutmen sesuai anggaran & headcount", "info": "Pastikan setiap permintaan rekrutmen sesuai dengan anggaran dan kuota karyawan yang telah disetujui sebelum lowongan dibuka, sehingga proses perekrutan tetap sesuai rencana.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Kelola data outsourcing beserta dokumennya", "info": "Kelola data dan dokumen pendukung karyawan outsourcing serta kontrak dalam satu sistem bersama data karyawan tetap.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Proyeksi anggaran gaji hingga satu tahun ke depan", "info": "Estimasikan total biaya gaji satu tahun ke depan berdasarkan jumlah karyawan saat ini dan rencana penambahannya, sehingga Anda mendapatkan gambaran mengenai pengeluaran tenaga kerja.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Tetapkan pengganti sementara saat pimpinan berhalangan", "info": "Tunjuk pengganti sementara untuk posisi penting agar proses persetujuan, pengambilan keputusan, dan akses sistem tetap berjalan saat pimpinan sedang cuti atau berhalangan.", "manage": null, "grow": "yes", "transform": "yes", "children": []}]}], "blurb": "Tetapkan tujuan, kelola kinerja, serta kembangkan potensi karyawan"}, {"name": "Engagement", "color": "blue", "groups": [{"name": "Perkuat Keterikatan Karyawan", "items": [{"label": "Survei karyawan & pulse survey terarah", "info": "Buat dan jadwalkan survei sekali jalan, berkala, atau berbasis momen tertentu. Targetkan survei berdasarkan hierarki, segmen, atau karyawan, lalu atur visibilitas hasilnya, dan kumpulkan masukan secara terstruktur untuk memantau sentimen karyawan dari waktu ke waktu.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Pemberian apresiasi karyawan", "info": "Fasilitasi manajer maupun rekan kerja untuk memberikan poin penghargaan saat karyawan berkontribusi, merayakan pencapaian melalui feed bersama, dan karyawan dapat menukarkan poin yang terkumpul dengan berbagai pilihan hadiah.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Kanal masukan & aspirasi karyawan", "info": "Berikan ruang bagi karyawan untuk menyampaikan saran, aspirasi, dan keluhan langsung agar dapat segera ditindaklanjuti.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Pengelolaan keluhan & proses banding", "info": "Karyawan, manajer, maupun kepala departemen dapat mengajukan keluhan berdasarkan alasan yang jelas, memprosesnya melalui alur penanganan hingga proses banding dengan seluruh riwayat kasus tersimpan rapi.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Penanganan kasus pelanggaran & manajemen disiplin", "info": "Catat dan kelola kasus pelanggaran secara terstruktur langsung pada profil karyawan, lengkap dengan penerbitan surat resmi di setiap tahapannya.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}]}], "blurb": "Dengarkan suara karyawan, berikan apresiasi, dan bangun keterlibatan yang lebih kuat"}, {"name": "Recruitment", "color": "blue", "groups": [{"name": "Rekrut Kandidat Terbaik", "items": [{"label": "Persetujuan kebutuhan rekrutmen dengan alur yang tepat", "info": "Ajukan kebutuhan rekrutmen dengan persetujuan bertingkat (dari manajer langsung → kepala unit → HR), lalu publikasikan lowongan secara internal, eksternal, atau keduanya, serta tampilkan di portal karier perusahaan dengan pertanyaan penyaringan yang disesuaikan untuk setiap lowongan.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Unggah dan publikasikan lowongan kerja di berbagai platform", "info": "Publikasikan lowongan kerja dalam satu klik ke 25.000+ job board, termasuk LinkedIn dan Indeed. Seluruh lamaran akan otomatis masuk ke PeoplesHR, dengan kontrol kanal untuk memastikan lowongan dipublikasikan ke platform yang tepat.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Portal lamaran yang interaktif untuk kandidat", "info": "Sediakan portal karier berlogo perusahaan yang memungkinkan kandidat melihat lowongan, melamar pekerjaan, dan memantau status lamaran mereka secara real-time.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Pemeringkatan dan shortlist kandidat", "info": "Beri peringkat kandidat secara otomatis berdasarkan kesesuaian dengan posisi yang dilamar, sehingga rekruter dapat lebih fokus pada kandidat yang paling memenuhi kualifikasi.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Jalankan wawancara bertahap & seleksi terstruktur", "info": "Atur jadwal wawancara bertahap dengan panel berbeda di tiap tahapnya, gunakan lembar penilaian untuk hasil evaluasi yang konsisten, serta jalankan wawancara video melalui Zoom, Teams, atau Google Meet.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Pencarian rekaman wawancara berbasis AI", "info": "AI akan membuat transkrip dan indeks dari rekaman wawancara, sehingga Anda dapat melakukan pencarian, melompat ke bagian penting, dan membandingkan kandidat tanpa harus menonton ulang seluruh rekaman.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Pengelolaan penawaran kerja & onboarding", "info": "Sederhanakan proses penawaran kerja dengan pemantauan status, pengumpulan dokumen, dan transisi otomatis kandidat yang diterima ke proses onboarding.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Otomatisasi penawaran kompensasi, negosiasi, & offering letter", "info": "Susun paket gaji dan kompensasi, kelola proses negosiasi penawaran bersama kandidat, serta terbitkan offering letter secara otomatis.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Kumpulkan dan simpan CV dari luar sistem", "info": "Simpan CV yang diterima dari luar sistem, baik melalui lamaran langsung, referensi karyawan, maupun agen rekrutmen, ke dalam satu database.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Unggah CV massal", "info": "Unggah banyak CV kandidat sekaligus dalam satu proses, tanpa perlu menambahkannya satu per satu.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Ekstraksi CV massal (bulk parsing)", "info": "Ekstrak informasi penting dari banyak CV secara otomatis, seperti data kontak, pengalaman kerja, dan keahlian kerja.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Pemeringkatan CV berbasis AI", "info": "AI akan mengekstrak informasi dari setiap CV dan memeringkat kandidat sesuai kriteria posisi yang ditentukan, sehingga kandidat yang paling sesuai akan muncul secara otomatis.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Pantau performa & biaya rekrutmen", "info": "Analisis performa kanal rekrutmen, kelola anggaran, dan pastikan setiap lowongan sesuai dengan rencana kebutuhan tenaga kerja dan jumlah posisi yang telah disetujui.", "manage": null, "grow": null, "transform": "yes", "children": []}]}, {"name": "Onboarding Karyawan Baru", "items": [{"label": "Ubah status kandidat menjadi karyawan secara otomatis", "info": "Saat kandidat resmi diterima, sistem akan membuat rekam data dan nomor induk karyawan secara otomatis serta memindahkannya ke proses onboarding tanpa perlu input data manual ulang.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Checklist dokumen onboarding secara terstruktur", "info": "Sediakan ruang digital bagi karyawan baru untuk mengisi formulir, mengunggah dokumen, dan mempelajari kebijakan perusahaan sebelum hari pertama bekerja.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Pantau & lacak onboarding lintas tim", "info": "Atur dan pantau tugas onboarding untuk HR, IT, atasan langsung, dan karyawan baru. Jadwalkan setiap tugas sesuai tahapan onboarding, serta kirimkan pengingat otomatis agar semua pihak menyelesaikan tugas tepat waktu.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Checklist penyerahan aset untuk karyawan baru", "info": "Pantau penyerahan aset seperti laptop, ponsel, kartu akses, dan perlengkapan kerja lainnya kepada setiap karyawan baru selama proses onboarding.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Perencanaan & pelacakan program orientasi karyawan baru", "info": "Susun program orientasi untuk minggu atau bulan pertama agar karyawan baru dapat mengenal tim, menyelesaikan pelatihan yang diperlukan, dan lebih cepat beradaptasi serta produktif.", "manage": null, "grow": "yes", "transform": "yes", "children": []}]}], "blurb": "Temukan kandidat terbaik dan onboarding karyawan baru dengan lebih mudah"}, {"name": "Insights", "color": "purple", "groups": [{"name": "Ubah Data Karyawan Menjadi Keputusan Tepat", "items": [{"label": "Akses [ratusan laporan standar](#) yang mencakup seluruh modul", "info": "Kumpulan laporan siap pakai dari seluruh modul yang dapat diakses kapan saja, sehingga tim HR dapat mengambil data yang dibutuhkan tanpa harus membuat laporan dari awal.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Buat laporan sendiri kapan saja sesuai kebutuhan", "info": "Fitur pembuat laporan mandiri yang memberi kebebasan bagi pengguna untuk menyusun laporan sesuai kebutuhan, tanpa bergantung pada template yang tersedia.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Personalisasi laporan berdasarkan metrik yang ingin dipantau", "info": "Laporan yang dirancang sesuai KPI dan metrik perusahaan, sehingga siap digunakan kapan saja saat dibutuhkan.", "manage": null, "grow": "Hingga 10 laporan kustom", "transform": "Talk to Sales", "children": []}, {"label": "Jadwalkan pengiriman laporan secara otomatis", "info": "Otomatisasi pengiriman laporan sesuai jadwal agar informasi penting selalu tersampaikan kepada semua pihak di waktu yang tepat.", "manage": null, "grow": "Hingga 3 penjadwalan laporan", "transform": "Talk to Sales", "children": []}, {"label": "Analisis data karyawan secara interaktif di seluruh organisasi", "info": "Analisis data SDM dari seluruh modul dalam satu tampilan, sehingga manajemen mendapatkan insight terkait kondisi karyawan di perusahaan.", "manage": null, "grow": "3 [dashboard standar](#)", "transform": "talk to sales", "children": []}, {"label": "Pantau metrik karyawan secara real-time serta hubungkan data payroll, performa, dan engagement dalam satu tampilan", "info": "Dashboard real-time yang menghubungkan data dari berbagai modul, seperti biaya payroll, jumlah karyawan, tingkat turnover, dan skor engagement, sehingga pimpinan selalu mendapatkan informasi yang akurat dan terkini.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}]}, {"name": "Ask Lexi AI", "items": [{"label": "Lexi Ai Insights", "tag": "new", "info": "Dua kemampuan AI sesuai modul yang diaktifkan:<br><br><b>Jawaban instan untuk setiap pertanyaan HR.</b> Cukup ajukan pertanyaan dan Lexi akan memberikan jawaban berbasis data dari seluruh modul HR, termasuk mengajukan pertanyaan lanjutan bila diperlukan.<br><br><b>Insight, laporan, dan grafik otomatis sesuai permintaan.</b> Lexi akan menyusunnya secara otomatis, menggali insight lebih dalam, serta menampilkan sumber data yang dapat diverifikasi.", "manage": "Add-on", "grow": "Add-on", "transform": "Add-on", "children": []}, {"label": "Lexi Super Agent", "info": "Selesaikan kebutuhan HR secara mandiri lewat AI. Cukup tanyakan seputar slip gaji, sisa cuti, benefit, atau kebijakan perusahaan, atau ajukan cuti atau akses benefit hanya dengan percakapan. (Bergantung pada modul yang diaktifkan. Penggunaan AI mengikuti batas token.)", "manage": "Add-on", "grow": "yes", "transform": "yes", "children": []}, {"label": "Lexi Smart Navigator", "info": "Akses fitur lebih cepat dengan pencarian cerdas. Ketik halaman, fitur, atau data yang dibutuhkan, dan Lexi akan langsung mengarahkan ke halaman tujuan tanpa perlu menelusuri satu per satu. (Penggunaan AI mengikuti batas token.)", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}]}], "blurb": "Ubah data karyawan menjadi keputusan tepat melalui laporan, analitik & Lexi AI"}]}</script>
+<?php else: ?>
+<script id="pcMatrix" type="application/json">{"tiers": {"manage": {"name": "Manage", "tag": "Run the organisation", "color": "green"}, "grow": {"name": "Grow", "tag": "Invest in your people", "color": "blue"}, "transform": {"name": "Transform", "tag": "Lead with people intelligence", "color": "purple"}}, "modules": [{"name": "HR", "color": "green", "groups": [{"name": "Structure Your Organization", "items": [{"label": "Define your company or group structure and hierarchy levels", "info": "Set up your organisation's legal and structural hierarchy &mdash; companies, divisions, and levels &mdash; as the foundation against which employees, reporting lines, and policies are organised.", "manage": "Upto 3 Company Levels", "grow": "Upto 5 Company Levels", "transform": "Talk to Sales", "children": []}, {"label": "Structure and maintain employee master records", "info": "A single, structured record per employee holding all personal, professional, and statutory information from day one through to separation, extendable with configurable (dynamic) fields.", "manage": "[Standard Information Fields](/capability-details.html#standard-information-fields)", "grow": "[Standard Info. Fields](/capability-details.html#standard-information-fields) + upto 10 custom info. fields", "transform": "Talk to Sales", "children": []}, {"label": "Automated employee information validation", "info": "Automated checks that validate employee-submitted information and profile changes against defined rules before they are accepted, keeping master data accurate and audit-ready.", "manage": "[Standard info. validations](/capability-details.html#standard-info-validations)", "grow": "upto 2 custom info. validations", "transform": "Talk to Sales", "children": []}, {"label": "Capture statutory registration details for every employee", "info": "A structured record of each employee's statutory registration identifiers &mdash; tax, social security, and other regulatory numbers &mdash; held on the profile and applied automatically across payroll and compliance processing.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Store employment documents centrally", "info": "A centralised store for employment contracts, certificates, ID copies, and signed acknowledgements, accessible and auditable at any time.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Easily generate HR and statutory letters", "info": "Templated generation of HR letters &mdash; offers, confirmations, transfers, and statutory notices.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Electronic document signing", "info": "Enables e-signature workflows for HR documents (contracts, offer letters, confirmations, etc.) directly within PeoplesHR", "manage": "Talk to Sales", "grow": "Talk to Sales", "transform": "Talk to Sales", "children": []}, {"label": "Flexibility for employees to update their profile information", "info": "Employees can maintain their own contact, banking, and personal details without routing every change through HR.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}]}, {"name": "Run the Employee Lifecycle", "items": [{"label": "Manage employee lifecycle, transfers, promotions and role changes", "info": "Structured approval and documentation for processing employee movements, transfers, promotions, redesignations, and exits, each with its own reasons, eligibility rules, and effective dating, raised individually or in bulk.", "manage": "Upto 5 [life cycle types](/capability-details.html#lifecycle-types)", "grow": "Upto 10 [life cycle types](/capability-details.html#lifecycle-types) and 10 [validations](/capability-details.html#lifecycle-validations)", "transform": "Talk to Sales", "children": []}, {"label": "Manage employee exits", "info": "Raise resignations and exits with configurable exit types, capture exit questionnaires and interviews to understand why people leave, and run guided clearance checklists that coordinate asset returns, system access removal, and final documentation across departments.", "manage": "Exits only processed through employee lifecycle", "grow": "yes", "transform": "yes", "children": []}, {"label": "Automate final settlement and relieving documents on exit", "info": "Automatically calculate and settle a departing employee's final pay, and generate their relieving documents.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Automate exiting employees clearance process", "info": "Run a structured exit clearance workflow so a departing employee settles all outstanding obligations, returns company assets, and hands over their job duties before their departure.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Supervisor approval dashboard for leaves, expense claims and team requests", "info": "A single view for managers to action leave requests, expense claims, and other pending approvals without switching between systems.", "manage": "Standard View", "grow": "Standard View + Dashboards", "transform": "Standard View + Dashboards", "children": []}, {"label": "PeoplesHR Mobile App", "info": "Access to PeoplesHR Android and iOS compatible Mobile Application to keep your workforce always connected.\n\nKey Features : Secure fingerprint login, location verified attendance tracking, access to payslips, policy updates, push notifications.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Alerts", "info": "Automated email and mobile notifications that keep employees and managers informed of pending approvals, requests, and key HR events as they happen.", "manage": "[Standard email alerts](/capability-details.html#standard-email-alerts) + 5 custom alerts", "grow": "[Standard email alerts](/capability-details.html#standard-email-alerts) + 10 custom alerts", "transform": "Talk to Sales", "children": []}, {"label": "Publish company-wide announcements to employees", "info": "Publish and broadcast company-wide announcements and news to all employees or targeted groups, viewable in the app and portal.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Maintain a complete, tamper-evident [audit trail of system activity](/capability-details.html#audit-trail)", "info": "A complete, tamper-evident record of every data import, edit, override, and user action across the system &mdash; capturing who changed what, when, and from where &mdash; for compliance, security, and dispute resolution.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Connect and exchange data with [external systems via API](/capability-details.html#api-external-systems)", "info": "Structured API endpoints that let external systems, devices, and third-party applications securely push data into and pull data out of the platform, enabling real-time integration across your tech stack.", "manage": "Talk to Sales", "grow": "Talk to Sales", "transform": "Talk to Sales", "children": []}, {"label": "Raise and track HR queries through a help desk", "info": "A dedicated HR help desk where employees log HR-related queries and requests as tickets, and HR tracks and resolves them - separate from opinions, feedback, or grievances.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Maintain and share company policy documents", "info": "A central library of company policies that employees can access and acknowledge, kept version-controlled and separate from personal employment documents.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Single Sign-On (SSO)", "info": "Sign in through your existing identity provider &mdash; one login, enterprise-controlled. Every employee change flows out to your directory and downstream systems, automatically.", "manage": null, "grow": null, "transform": "Talk to Sales", "children": []}]}], "blurb": "Maintain HR records, structure your organisation & run the employee lifecycle"}, {"name": "Time", "color": "green", "groups": [{"name": "Track Attendance & Shifts", "items": [{"label": "Schedule shifts and manage rosters", "info": "Tools to plan, publish, and manage shift schedules across teams, locations, and work patterns. Includes configurable grace periods and lateness thresholds applied consistently across shifts.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Manage multiple shift patterns across teams, departments, and sites", "info": "Run different shift patterns side by side across teams, departments, and sites &mdash; each with its own timing rules &mdash; from one place.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Configure flexi shift and staggered shift", "info": "Set flexible clock-in windows and stagger start/end times across teams to match how the business actually runs.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Adjust and reassign shifts (admin & supervisor)", "info": "Supervisors and admins adjust, reassign, or swap employees' shifts directly to cover gaps and changes.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Enable employee-initiated mutual shift swaps", "info": "Let employees request and accept shift swaps directly with one another, subject to manager approval.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Multi-shift management", "tag": "soon", "info": "Assign an employee to more than one shift in the same day, with attendance and overtime calculated across all of them.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Configure and manage employee break periods, grace hours", "info": "Define break periods and grace windows for late-in or early-out, so attendance and overtime are calculated fairly and consistently.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Integrate biometric and attendance capture devices", "info": "Connect biometric devices (fingerprint, face, or card readers) and other attendance terminals so clock-in and clock-out data flows straight into attendance and payroll.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Geo-tagged remote mobile & web clock-in/clock-out", "info": "Remote clock in/out from mobile or desktop, capturing or limiting clock-in location per your policy &mdash; ideal for field and multi-site teams.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Restrict clock-in to designated location zones (geo-fencing)", "info": "Restrict clock-in to one or more approved location zones &mdash; employees can only clock in when they're physically inside a designated radius, preventing off-site or proxy check-ins. Optional advanced modes include a live camera photo (no gallery uploads) and face-recognition liveness checks to confirm it's genuinely the employee, on-site.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Real-time team & cross-department attendance analytics", "info": "Live dashboards showing who's in, who's late, and how attendance is trending across teams and departments, without pulling manual reports.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Approve attendance records before payroll is processed", "info": "Review and sign off each employee&rsquo;s attendance for the period before it feeds into payroll, so pay is always based on approved hours.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Track late arrivals and early departures", "info": "Record when employees arrive late or leave early against their scheduled hours, giving a clear view of attendance exceptions across teams.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Manage and track overtime worked around scheduled shifts", "info": "Automatically captures the extra hours an employee works before a shift starts or after it ends, so time beyond their normal schedule is recognised as overtime.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Prior overtime application process", "info": "Employees apply for overtime in advance, and supervisors review and approve it before the extra hours are worked &mdash; so overtime is authorised up front, not just recorded after the fact.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Configure statutory overtime calculations", "info": "Configurable overtime calculation logic that applies your organisation's own rules and multipliers to worked hours, going beyond standard formulas to match custom attendance and pay policies.", "manage": "[Standard calculations](/capability-details.html#standard-overtime-calculations) only", "grow": "[Standard calculations](/capability-details.html#standard-overtime-calculations) only", "transform": "TTS:Custom calculations", "children": []}, {"label": "Track project time and calculate project costs", "info": "Set up projects and tasks, track the hours team members log against each, and turn utilised time into project costs using configurable per-member billing rates.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Give supervisors a live view of their team's time, attendance & approvals", "info": "A single dashboard where supervisors see their team's attendance, leave, and pending approvals &mdash; and act on them in one place.", "manage": null, "grow": "yes", "transform": "yes", "children": []}]}, {"name": "Manage Leaves & Compliance", "items": [{"label": "Maintain multiple company-wide and location-specific holiday calendars", "info": "Define public and company holidays once &mdash; including calendars that differ by location or branch &mdash; so leave, attendance, and payroll all recognise non-working days automatically.", "manage": "Upto 2 company holiday calendars", "grow": "Multiple holiday calendars", "transform": "TTS:Custom requirements", "children": []}, {"label": "Track leave balance, accruals & carry-forward", "info": "Simultaneous tracking of all leave categories, annual, sick, emergency, statutory, each with their own rules and balances per employee.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Earned Leave Tracking", "info": "Automatic accrual of earned (annual) leave as employees complete service, with balances updated continuously and available for application or carry-forward.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Set statutory leaves and configure leave rules", "info": "Configure the statutory leave types required in your jurisdiction, then add your own organisation-specific leave types on top.", "manage": "[Statutory leaves](/capability-details.html#statutory-leaves) only", "grow": "[Statutory leaves](/capability-details.html#statutory-leaves) + 3 [org leave types](/capability-details.html#org-leave-types)", "transform": "[Statutory leaves](/capability-details.html#statutory-leaves) + 5 [org leave types](/capability-details.html#org-leave-types)", "children": []}, {"label": "Plan and coordinate leave on a shared team calendar", "info": "Let employees and managers plan time off ahead on a shared calendar &mdash; seeing team availability and potential clashes before requests are submitted.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Route leave requests to the right approvers", "info": "Send each leave request through the right approval chain automatically, so time off is signed off by the right people before it's confirmed.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Validate leave requests against balances and policy rules", "info": "Automatically check every leave request against the employee&rsquo;s balance, entitlement, and your policy rules before approval &mdash; flagging conflicts up front.", "manage": "[Standard leave validations](/capability-details.html#standard-leave-validations) only", "grow": "[Standard leave validations](/capability-details.html#standard-leave-validations) only", "transform": "TTS:Standard + custom leave validations", "children": []}, {"label": "Support hourly-based and short leave types", "info": "Let employees apply for leave in hours or short durations &mdash; such as a couple of hours or a half-day &mdash; rather than only in full days, for finer-grained leave tracking.", "manage": null, "grow": null, "transform": "yes", "children": []}]}], "blurb": "Manage attendance, shifts, overtime & leave"}, {"name": "Pay", "color": "green", "groups": [{"name": "Run Your Payroll Accurately", "items": [{"label": "Run Your Organisation Payroll", "info": "Process end-to-end payroll for your organisation &mdash; earnings, deductions, statutory contributions, and net pay &mdash; across pay groups and parallel pay-runs using standard or custom payroll formulas.", "manage": "2 Parallel Pay-runs", "grow": "2 Parallel Pay-runs, 5 custom formulas", "transform": "Talk to Sales", "children": []}, {"label": "Run multiple payroll processes", "info": "Configure and run multiple payroll processes to handle different employee groups, pay cycles, or run types within a single payroll.", "manage": "4 pay processes", "grow": "7 pay processes", "transform": "Talk to Sales", "children": []}, {"label": "Run piece-rate (output-based) payroll", "info": "Calculate pay based on units produced or output delivered, for workforces paid per piece rather than by time.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Run multi-currency payroll", "info": "Run independent payrolls across multiple countries, each with local statutory compliance built in . Tax, deductions, filing exports applied automatically per jurisdiction", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Bank payment file generation", "info": "Export ready-to-upload bank files from each payroll run for fast, error-free salary payments.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "General Ledger Mapping", "info": "Map payroll costs to the right GL codes in your accounts and post straight to finance, no manual journals.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Comprehensive pay register", "info": "Capture all pay items per employee including base pay, overtime, night differential, allowances, deductions, and statutory contributions", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Digital payslip generation", "info": "Generate and distribute secure digital payslips employees can access anytime, with a full breakdown of earnings, deductions, and contributions.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Multi-level approval workflows", "info": "Once a payroll run is uploaded, route it through the right approval levels for sign-off before it is finalised &mdash; after which the run is locked from any further data changes.", "manage": "yes", "grow": "yes", "transform": "Talk to Sales", "children": []}, {"label": "Flag errors before processing payroll with an AI-driven anomaly detector", "tag": "new", "info": "Flag errors in overtime, deductions, and other calculations before processing", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Apply salary revisions with automatic retro pay", "info": "Process increments, promotions, and pay-structure changes from a set effective date, with all dependent pay items, allowances, statutory contributions, and tax, recalculated automatically under the new package.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Apply backdated salary adjustments to correct prior-period pay", "info": "Correct prior-period pay with backdated adjustments &mdash; most often to settle items that were still pending approval when payroll ran, then applied in a later run once approved.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Process flexible pay components", "info": "Handle flexible pay components that change from one period to the next, applied automatically in each payroll run.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Manage non-cash benefits, allowances, and entitlements", "info": "Administration of non-cash benefits such as meal allowances, uniform subsidies, and medical/health coverage, with per-employee eligibility rules.", "manage": "3 [Benefit Types](/capability-details.html#benefit-types)", "grow": "8 [Benefit Types](/capability-details.html#benefit-types)", "transform": "Talk to Sales", "children": []}, {"label": "Issue employee loans and track balances and repayment schedules", "info": "Record company loans against employees, set repayment schedules, and track outstanding balances with installments deducted automatically each payroll cycle.", "manage": null, "grow": "Up to 5 Loan Types", "transform": "Talk to Sales", "children": []}, {"label": "Settle unused leave as a cash payment (leave encashment)", "info": "Convert unused leave balances into a cash payment and settle them through payroll &mdash; at separation or at defined encashment windows.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Integrate payroll with your ERP", "info": "Connect payroll with your ERP so pay and cost data flow between systems &mdash; standard connectors out of the box, or custom integrations built to your setup.", "manage": null, "grow": "[Standard integrations](/capability-details.html#standard-integrations)", "transform": "TTS:Custom integrations", "children": []}]}, {"name": "Stay Compliant", "items": [{"label": "Apply tax rates automatically", "info": "Maintained tax tables and withholding rules aligned to current statutory rates, applied automatically to each employee's earnings profile.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Automate statutory deductions, rate updates, and compliance reporting.", "info": "Preconfigured contribution tables and remittance report generation for statutory social security, health, and provident fund schemes, updated to reflect regulatory changes.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}]}], "blurb": "Run accurate payroll, benefits & statutory compliance"}, {"name": "Talent", "color": "blue", "groups": [{"name": "Set Goals & Improve Performance", "items": [{"label": "Run balanced scorecard appraisals across quantitative and qualitative criteria", "info": "Multi-dimensional performance frameworks that evaluate employees against a defined mix of quantitative targets and qualitative competencies.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Run 180 feedback reviews between employees and managers", "info": "Structured two-way feedback between an employee and their line manager, capturing both self-assessment and manager input to give a balanced view of performance.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Run 360 feedback assessments with input from peers, managers, and reports", "info": "Structured input collection from peers, direct reports, and managers that gives employees a rounded view of their performance beyond the line manager's perspective.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Include external parties in 360 feedback assessments", "info": "Extend 360 reviews to external parties &mdash; clients, partners, or vendors &mdash; for a fuller, outside-in view of performance.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Manage and track goals & OKRs", "info": "A running record of individual and team objectives, with progress visible to both employees and managers throughout the review cycle.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Plan and track how KPIs will be achieved", "info": "Set out how each KPI will be achieved and track progress toward the target across the cycle.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Calibrate appraisal ratings across teams (moderation)", "info": "A structured moderation process where groups of managers review and discuss employee ratings together &mdash; sharing evidence to defend each rating &mdash; to keep standards consistent across the company, reduce bias, and adjust outlier scores to a fair consensus.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Normalise performance scores and mitigate appraisal bias", "info": "Normalise appraisal scores across teams and reviewers to keep ratings fair and comparable, reducing individual bias.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Create post-review personal development plans for employees", "info": "Turn appraisal outcomes into a personal development plan for each employee, with actions and goals to work on next.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Support employees who miss targets with a structured improvement plan", "info": "Support employees who fall short of expectations with a structured, time-bound improvement plan and clear milestones.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Award salary increments based on performance and merit", "info": "Award salary increments based on performance and merit outcomes, tied directly to appraisal results.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Pay out periodic incentives based on KPI achievement", "info": "Pay out periodic incentives linked to KPI achievement, rewarding results against targets.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Run the full probation evaluation and confirmation process", "info": "Set probation periods, schedule and conduct probation reviews, and confirm, extend, or end employment based on the outcome &mdash; managing the whole evaluation from joining through to confirmation.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Integrate performance and KPI data with your ERP", "info": "Sync performance and KPI data with your ERP so business results and people performance stay connected across systems.", "manage": null, "grow": null, "transform": "yes", "children": []}]}, {"name": "Develop & Retain Your Best People", "items": [{"label": "Calibrate performance, potential, and succession readiness using 9-box grids", "tag": "soon", "info": "A visual tool for calibrating employees across performance and potential dimensions, used to identify high-potentials and inform succession decisions. Available only with a Lexi AI Insights seat.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Manage succession planning pools for critical roles and leadership pipelines", "tag": "soon", "info": "Defined shortlists of internal candidates ready to step into critical roles, maintained and reviewed as part of ongoing talent planning. Available only with a Lexi AI Insights seat.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Identify competency gaps against role requirements and prioritise development priorities", "info": "Side-by-side mapping of an employee's current capabilities against the requirements of their current or target role, surfacing development priorities.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Identify skills gaps and plan employee development", "info": "Pinpoint skills gaps, build personalised development plans against individual goals, and assign training to employees as part of their growth path.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Deliver e-learning courses and track learning progress", "info": "Deliver training courses digitally through e-learning, and track each employee&rsquo;s progress and completion.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Close skill gaps with AI-recommended paths", "info": "Identify individual skill gaps with AI, recommend and deliver targeted courses through an integrated learning platform, and track learning journeys, completion, and compliance across the workforce.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Administer offline and online training programmes", "info": "Plan and administer both classroom and online training, and enrol employees, in one place.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Maintain a shared training course calendar", "info": "Maintain a shared calendar of upcoming training courses so employees and managers can plan ahead.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Maintain trainer profiles and session history", "info": "Maintain trainer profiles, their expertise, and a history of the sessions they have run.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Collect feedback after training to measure impact", "info": "Collect feedback from participants after each session to measure how effective the training was.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Evaluate training effectiveness", "info": "Evaluate training against its objectives to see what is working and where to improve.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Manage training bonds and recover costs on early exit", "info": "Manage training bonds and recover training costs when employees leave before the agreed period.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Approve training requests against available budget", "info": "Route training requests through an approval flow that checks them against the available training budget before they are confirmed.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Maintain employee training profiles, history, and CPD points", "info": "Keep a training profile for each employee with their full training history and automatically calculated CPD (continuing professional development) points.", "manage": null, "grow": "yes", "transform": "yes", "children": []}]}, {"name": "Plan Your Workforce", "items": [{"label": "Model future workforce growth by hierarchy, department and job level", "info": "Model future growth by planning headcount and budgets according to your specific company hierarchy, departments, and job levels.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Plan and maintain headcount across staffing groups", "info": "Structured headcount planning by staffing group, grade, department, and location, setting target staffing levels that serve as the baseline for budgeting, hiring, and workforce decisions.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Optimise headcount and delegate planning", "info": "Fine-tune headcount plans as business needs evolve, and delegate planning ownership to department or business-unit heads, while keeping overall visibility and final sign-off centralised.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Cross-check job requisitions against your approved organizational budget and headcount", "info": "Check every job requisition against your approved organisational budget and headcount before it is opened, so hiring stays within plan.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Manage and maintain outsourced staffing details and supporting documents", "info": "Maintain records and supporting documents for your outsourced or contract workforce alongside your permanent staff.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Forecast workforce salary cost for the year ahead", "info": "Project your total salary cost for the year ahead based on current and planned headcount, giving an early view of workforce spend.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Plan temporary delegation of duties when leaders are away", "info": "Set temporary coverage for key employees such as managers and supervisors, so approvals, task decisions, and system permissions are routed to a backup employee when a leader is on leave or unavailable.", "manage": null, "grow": "yes", "transform": "yes", "children": []}]}], "blurb": "Set goals, manage performance, and develop & plan your people"}, {"name": "Engagement", "color": "blue", "groups": [{"name": "Strengthen Engagement", "items": [{"label": "Run targeted employee surveys and pulse checks", "info": "Build and schedule one-time, recurring, or event-based surveys, target them by hierarchy, segment, or specific employees, and control result visibility, collecting structured feedback to track sentiment over time.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Recognise contributions in the moment", "info": "Let managers and peers recognise great work as it happens &mdash; award points for specific contributions, celebrate wins in a shared feed, and let employees redeem their points from a catalogue of rewards.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Give employees a direct channel to voice opinions", "info": "A dedicated channel for employees to send suggestions, opinions, and concerns directly to the HR team, so feedback reaches the people who can act on it.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Raise and resolve grievances with appeals", "info": "Employees, managers, and department heads raise grievances against defined grounds, route them through a structured handling and resolution workflow, and escalate to appeal, with the full case history retained.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Disciplinary & Case Management", "info": "Log disciplinary incidents and manage structured case tracking against employee profiles, with letter generation at each step.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Manage employee meals and canteen", "info": "Track employee meal entitlements, canteen usage, and meal deductions or subsidies.", "manage": null, "grow": null, "transform": "yes", "children": []}]}], "blurb": "Listen to employees, recognise contribution & strengthen engagement"}, {"name": "Recruitment", "color": "blue", "groups": [{"name": "Hire the Right People", "items": [{"label": "Create and approve vacancies with the right sign-off", "info": "Raise job requisitions with multi-level approval (line manager &rarr; unit head &rarr; HR), post internally, externally, or both, and publish to a branded careers portal with vacancy-specific screening questions.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Post job openings once and advertise everywhere", "info": "Publish a vacancy once to 25,000+ external job boards including LinkedIn and Indeed via integration, with applications flowing straight back into PeoplesHR and channel controls preventing mis-posts.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Give candidates an interactive application portal", "info": "A branded, self-service portal where candidates browse openings, apply, and track their application status in real time.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Rank and shortlist candidates", "info": "Automatically rank applicants against the role and surface the strongest shortlist, so recruiters focus on the best-fit candidates.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Run multi-stage interviews and structured selection", "info": "Schedule multi-stage interviews with per-stage panels, assign scorecards for consistent feedback, and run video interviews through Zoom, Teams, or Google Meet.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Index and search interview video with AI", "info": "AI transcribes and indexes recorded interviews, so you can search, jump to key moments, and compare candidates without rewatching the full recording.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Make offers and hand off to onboarding", "info": "Manage offer proposals with acceptance and rejection tracking, capture required documents during application, and pass accepted candidates straight into onboarding.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Automate compensation offers, negotiation, and offer-letter generation", "info": "Build salary and compensation packages, run the offer negotiation workflow with candidates, and automatically generate the offer letters.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Capture and store CVs from outside the system", "info": "Capture and store CVs received from outside the system &mdash; direct applications, referrals, and agency submissions &mdash; into a single candidate pool for screening.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Bulk CV upload", "info": "Upload many candidate CVs at once in a single batch, rather than adding them one at a time.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Bulk CV parsing", "info": "Automatically extract structured candidate information &mdash; contact details, experience, and skills &mdash; from CVs in bulk.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "CV ranking with AI", "info": "AI extracts the information from each CV and ranks candidates against your defined job criteria, surfacing the best-fit applicants automatically.", "manage": null, "grow": null, "transform": "yes", "children": []}, {"label": "Track hiring performance and cost", "info": "Report on recruitment channels and pipeline in-system, and set and manage recruitment budgets by company or business-unit hierarchy. Hiring is validated against your budgeted workforce plan, so every vacancy is checked against approved headcount before it's filled.", "manage": null, "grow": null, "transform": "yes", "children": []}]}, {"name": "Onboard New Joiners", "items": [{"label": "Automatically convert hired candidates into employees", "info": "When a candidate is hired, automatically create their employee record and employee number and move them into onboarding &mdash; no manual re-entry.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Structured onboarding documentation checklist", "info": "A pre-arrival digital environment where incoming employees can complete forms, submit documents, and review policies before their first day.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Assign and track onboarding tasks across teams", "info": "Assigned action lists for HR, IT, line managers, and the new joiner, with each task scheduled relative to the joining date (before, on, or after Day 1) and alerts that keep every stakeholder on track to completion.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Maintain asset assignments checklist for new joiners", "info": "Track the assets &mdash; laptop, phone, access cards, and more &mdash; assigned to each new joiner as part of onboarding.", "manage": null, "grow": "yes", "transform": "yes", "children": []}, {"label": "Plan and track new-hire induction", "info": "Structured first-week or first-month programmes that ensure new hires meet the right people, complete required training, and reach productivity faster.", "manage": null, "grow": "yes", "transform": "yes", "children": []}]}], "blurb": "Hire the right people and onboard new joiners"}, {"name": "Insights", "color": "purple", "groups": [{"name": "Turn Workforce Data into Decisions", "items": [{"label": "Access a library of [standard reports](/capability-details.html#standard-reports) spanning every module", "info": "A library of pre-built standard reports across every module, available on demand so HR can pull common data views without building them from scratch.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Build your own reports on demand, from scratch", "info": "A front-end, on-demand report builder where any user can create a report from scratch themselves, without waiting on a pre-configured template.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Custom reports tailored to the metrics you care about", "info": "Reports tailored to the specific metrics and KPIs you care about, configured for your organisation and ready to run whenever you need them.", "manage": null, "grow": "Upto 10 custom reports", "transform": "Talk to Sales", "children": []}, {"label": "Schedule automated reports", "info": "Automated report generation and distribution on set frequencies, ensuring the right data reaches the right people on time.", "manage": null, "grow": "upto 3 scheduled reports", "transform": "Talk to Sales", "children": []}, {"label": "Individual employee dashboards with daily insights", "info": "A personal dashboard for each employee surfacing their own daily insights - attendance, leave, tasks, and key updates at a glance.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}, {"label": "Overall view of your workforce with dashboards", "info": "Explore and analyse workforce data in dashboards that update as data changes, connecting metrics across modules - payroll cost to headcount, attrition to engagement.", "manage": "[Standard dashboards](/capability-details.html#standard-dashboards)", "grow": "[Standard dashboards](/capability-details.html#standard-dashboards)", "transform": "TTS:Customised dashboards", "children": []}, {"label": "Integrate with third-party analytics tools", "info": "Connect your workforce data with external analytics and BI tools, so you can analyse it alongside the rest of your business data.", "manage": null, "grow": null, "transform": "yes", "children": []}]}, {"name": "Ask Lexi AI", "items": [{"label": "Lexi Ai Insights", "tag": "new", "info": "Two AI capabilities, both subject to your enabled modules:<br><br><b>Get instant AI answers to any workforce question, in plain language &mdash; pose questions conversationally and get instant, data-backed answers across every HR module, with Lexi asking clarifying follow-ups like an analyst would.<br><br><b>Let AI surface insights and build your reports &mdash; Lexi generates reports and charts on demand, drills deeper through follow-up questions while remembering context, and traces every answer back to the source data you can verify.", "manage": "Add-on", "grow": "Add-on", "transform": "Add-on", "children": []}, {"label": "Lexi Super Agent", "info": "Let employees self-serve and complete tasks by asking AI &mdash; a conversational assistant that answers employees' own HR questions (payslips, leave balances, benefits, policies) and completes tasks like filing leave or applying for benefits, just by asking. (Capabilities are subject to enabled modules.) Usage is subject to token limitations.", "manage": "Add-on", "grow": "yes", "transform": "yes", "children": []}, {"label": "Lexi Smart Navigator", "info": "Navigate to any screen by a simple search &mdash; jump straight to any screen, feature, or record by typing what you need; Lexi interprets the request and takes you there, removing the need to click through menus. Usage is subject to token limitations.", "manage": "yes", "grow": "yes", "transform": "yes", "children": []}]}], "blurb": "Turn workforce data into decisions with reports, analytics & Lexi AI"}]}</script>
+<?php endif; ?>
+
+<!-- footer start -->
+
+<div class="ft-root">
+  <footer class="ft-wrap">
+
+    <div class="ft-top">
+
+      <!-- ===================== BRAND ===================== -->
+      <div class="ft-brand">
+        <div class="ft-brand-inner">
+          <div>
+            <a class="ft-logo" href="/index.html" aria-label="PeoplesHR home">
+              <img src="/uploads/2021/07/logo.webp" alt="PeoplesHR">
+            </a>
+            <p class="ft-blurb">PeoplesHR is one of the most trusted names in the HR Tech industry in Asia Pacific and African regions, capturing all HR needs with HCM solutions along with an HR ecosystem.</p>
+
+            <?php include __DIR__ . '/inc/office-block.php'; ?>
+
+            <div class="ft-social">
+              <a href="https://www.linkedin.com/company/peopleshr/?originalSubdomain=sg" aria-label="LinkedIn" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C21.4 8.65 22 11 22 14.1V21h-4v-6.1c0-1.45-.03-3.32-2.02-3.32-2.02 0-2.33 1.58-2.33 3.21V21h-4V9Z"/></svg>
+              </a>
+              <a href="https://www.facebook.com/PeoplesHR/" aria-label="Facebook" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H17V3.6c-.29-.04-1.27-.12-2.41-.12-2.38 0-4.02 1.45-4.02 4.12v2.3H7.9V13h2.67v8h2.93Z"/></svg>
+              </a>
+              <a href="https://www.instagram.com/peopleshr/?hl=en" aria-label="Instagram" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>
+              </a>
+              <a href="https://www.youtube.com/@PeoplesHR" aria-label="YouTube" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3.3-.42-4.88a2.55 2.55 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.78.32a2.55 2.55 0 0 0-1.8 1.8C2 8.7 2 12 2 12s0 3.3.42 4.88a2.55 2.55 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.78-.32a2.55 2.55 0 0 0 1.8-1.8C22 15.3 22 12 22 12Zm-12 3.2V8.8l5.2 3.2-5.2 3.2Z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="ft-certs">
+            <div class="ft-cert"><img src="/uploads/2021/07/certificate004.png" alt="Certificate"></div>
+            <div class="ft-cert"><img src="/uploads/2021/07/certificate002.png" alt="Certificate"></div>
+            <div class="ft-cert"><img src="/uploads/2025/12/ISO_9001.webp" alt="ISO 9001"></div>
+            <div class="ft-cert"><img src="/uploads/2025/12/thumbnail_BVCER_withUKAS-ISO-27001.webp" alt="ISO 27001 UKAS"></div>
+            <div class="ft-cert"><img src="/uploads/2026/04/Star-Level-One.webp" alt="CSA STAR Level One"></div>
+            <div class="ft-cert"><img src="/uploads/2026/05/dpo.jpg" alt="HP"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===================== PRODUCTS ===================== -->
+      <div class="ft-col">
+        <h2 class="ft-h">Products</h2>
+        <ul class="ft-links">
+          <li><a href="/products/core-hr.html">HR</a></li>
+          <li><a href="/products/payroll-system.html">Pay</a></li>
+          <li><a href="/products/talent-acquisition.html">Talent</a></li>
+          <li><a href="/products/time-and-attendance.html">Time</a></li>
+          <li><a href="/products/people-engagement.html">Engagement</a></li>
+          <li><a href="/products/people-analytics.html">Insight</a></li>
+          <li><a href="/products/mobile-app.html">Mobile App</a></li>
+          <li><a href="/ai-x.html">Explore PeoplesHR AI</a></li>
+        </ul>
+        <p class="ft-sub">Specialized Solutions</p>
+        <ul class="ft-links">
+          <li><a href="/solutions/peopleshr-tracking.html">Access &amp; Attendance Devices</a></li>
+          <li><a href="/solutions/outsourcing.html">Payroll Outsourcing</a></li>
+          <li><a href="/solutions/peopleshr-academy.html">PeoplesHR Academy</a></li>
+        </ul>
+      </div>
+
+      <!-- ===================== INDUSTRIES ===================== -->
+      <div class="ft-col">
+        <h2 class="ft-h">Industries</h2>
+        <ul class="ft-links">
+          <li><a href="/solutions/banking-finance-insurance-industries.html">Banking, Finance &amp; Insurance</a></li>
+          <li><a href="/solutions/hr-software-for-hospitality-industry.html">Hospitality</a></li>
+          <li><a href="/solutions/hr-software-for-manufacturing-industry.html">Manufacturing</a></li>
+          <li><a href="/solutions/hr-software-for-professional-and-business-services-industry.html">Professional &amp; Business Services</a></li>
+          <li><a href="/solutions/hr-software-for-retail-industry.html">Retail</a></li>
+          <li><a href="/solutions/hr-software-for-it-and-ites-industry.html">IT &amp; ITES</a></li>
+          <li><a href="/solutions/hr-software-for-transportation-and-logistics-industry.html">Transportation &amp; Logistics</a></li>
+        </ul>
+      </div>
+
+      <!-- ===================== RESOURCES / COMPANY ===================== -->
+      <div class="ft-col">
+        <h2 class="ft-h">Resources</h2>
+        <ul class="ft-links">
+          <li><a href="/success-stories.html">Case Studies</a></li>
+          <li><a href="/webinars.html">Webinars</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/events.html">Events</a></li>
+          <li><a href="/hr-ebooks-and-guides.html">HR eBooks &amp; Guides</a></li>
+          <li><a href="/news.html">News</a></li>
+        </ul>
+        <p class="ft-sub">Company</p>
+        <ul class="ft-links">
+          <li><a href="/company.html">About PeoplesHR</a></li>
+          <li><a href="/careers.html">Careers</a></li>
+          <li><a href="/community.html">Community</a></li>
+          <li><a href="/partner-with-peopleshr.html">Partners</a></li>
+          <li><a href="/regions.html">Regions</a></li>
+          <li><a href="/llms.txt">For AI agents</a></li>
+        </ul>
+      </div>
+
+      <!-- ===================== TOOLS / EXPLORE ===================== -->
+      <div class="ft-col">
+        <h2 class="ft-h">Calculators</h2>
+        <ul class="ft-links">
+          <li><a href="/tax-calculator-philippines.html">Philippines Tax Calculator</a></li>
+          <li><a href="/roi-calculator.html">ROI Calculator</a></li>
+        </ul>
+        <p class="ft-sub">Explore</p>
+        <ul class="ft-links">
+          <li><a href="/customers.html">Customers</a></li>
+          <li><a href="/view-plans.html">Pricing</a></li>
+          <li><a href="/interactive-demos.html">Interactive Demos</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- ===================== BOTTOM BAR ===================== -->
+    <div class="ft-bottom">
+      <ul class="ft-legal">
+        <li><a href="/trust-portal.html">Trust Portal</a></li>
+        <li><a href="/legal.html">Legal</a></li>
+        <li><a href="/cookie-policy.html">Cookie policy</a></li>
+        <li><a href="/terms-of-use.html">Terms of use</a></li>
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+      </ul>
+      <p class="ft-copy">Copyright &copy;2026 PeoplesHR. All Rights Reserved.</p>
+    </div>
+
+  </footer>
+</div>
+
+<!-- footer end -->
+
+<!-- JS -->
+<script src="<?php echo asset_v('/js/phr.js'); ?>"></script>
+<script src="<?php echo asset_v('/js/navbar.js'); ?>"></script>
+<script src="<?php echo asset_v('/js/pricing.js'); ?>"></script>
+
+</body>
+</html>

@@ -1,0 +1,552 @@
+/* ==========================================================================
+   tracking.css — delta stylesheet for the Tracking page
+   (Access & Attendance Devices — /solutions/peopleshr-tracking/)
+
+   Loaded AFTER the shared styles.css/navbar.css/footer.css and must only
+   extend them, never modify them. Navbar (.nv-*) and footer (.ft-*) support
+   styles already live in the shared navbar.css/footer.css, so nothing for
+   those is duplicated here. Everything below is .tk-, specific to this
+   page only.
+   ========================================================================== */
+
+/* Reserve scrollbar space so opening an accordion (FAQ, etc.) never
+   shifts page width when it pushes the document past viewport height. */
+html{scrollbar-gutter:stable;}
+
+.tk-scope{
+  --tk-ink:#0d1b3e;
+  --tk-text:#3a4254;
+  --tk-muted:#6b7280;
+  --tk-border:#e6e8ee;
+  --tk-blue:#2563eb;
+  --tk-blue-dark:#1d4ed8;
+  --tk-blue-soft:#eff4ff;
+  --tk-surface:#fafbfe;
+  --tk-ease:cubic-bezier(.22,.61,.36,1);
+  font-family:"Plus Jakarta Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--tk-text);
+}
+.tk-scope *{box-sizing:border-box;}
+.tk-scope h1,.tk-scope h2,.tk-scope h3{color:var(--tk-ink);}
+
+/* --- Buttons (shared by hero + final CTA) ------------------------- */
+.tk-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:14.5px;font-weight:700;line-height:1;
+  padding:13px 22px;border-radius:11px;text-decoration:none;
+  transition:transform .18s var(--tk-ease),box-shadow .18s var(--tk-ease),background .18s var(--tk-ease);
+}
+.tk-btn-primary{
+  color:#fff;background:var(--tk-blue);
+  box-shadow:0 8px 20px -10px rgba(37,99,235,.7);
+}
+.tk-btn-primary:hover{background:var(--tk-blue-dark);transform:translateY(-1px);}
+.tk-btn-ghost{
+  color:var(--tk-ink);background:#fff;border:1px solid var(--tk-border);
+}
+.tk-btn-ghost:hover{background:#f4f6fb;}
+.tk-btn-lg{padding:15px 28px;font-size:15.5px;}
+
+/* --- Hero ---------------------------------------------------------- */
+.tk-hero{
+  max-width:1240px;margin:0 auto;padding:48px 24px;
+  min-height:calc(100vh - 60px);
+  display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center;
+}
+.tk-hero-text{text-align:left;min-width:0;}
+.tk-hero h1{
+  font-size:clamp(32px,4.5vw,52px);
+  font-weight:800;line-height:1.12;letter-spacing:-.01em;
+  margin:0 0 18px;
+}
+.tk-hero p{
+  max-width:520px;margin:0 0 32px;
+  font-size:17px;line-height:1.6;color:var(--tk-text);
+}
+.tk-hero-actions{display:flex;align-items:center;justify-content:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:22px;}
+.tk-hero .tk-hero-badge{
+  display:block;max-width:none;margin:0;
+  font-size:13px;font-weight:600;color:var(--tk-muted);white-space:nowrap;
+}
+.tk-hero-badge svg{
+  display:inline-block;width:16px;height:16px;
+  margin-right:6px;vertical-align:-3px;color:var(--tk-blue);
+}
+.tk-hero-visual{position:relative;min-width:0;}
+.tk-hero-img-wrap{
+  border-radius:24px;overflow:hidden;position:relative;
+  aspect-ratio:4/5;box-shadow:0 24px 64px -24px rgba(13,27,62,.35);
+}
+.tk-hero-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
+
+/* --- Stats bar (compact blue strip) ---------------------------------- */
+.tk-stats{
+  background:#1b2c5e;
+  box-sizing:border-box;
+}
+.tk-stats-head{max-width:640px;margin:0 auto;padding:44px 24px 0;text-align:center;}
+.tk-stats-head .tk-eyebrow-label{color:#bfdbfe;}
+.tk-stats-head h2{font-size:clamp(21px,2.4vw,26px);font-weight:800;line-height:1.2;letter-spacing:-.01em;margin:0 0 8px;color:#fff;}
+.tk-stats-head p{font-size:13.5px;line-height:1.6;color:#dbe6fd;margin:0;}
+.tk-stats ul{
+  max-width:1240px;margin:0 auto;padding:28px 24px 40px;
+  list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:16px;
+}
+.tk-stats li{
+  display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;
+  border:1px solid rgba(255,255,255,.35);border-radius:14px;padding:20px 14px;
+}
+.tk-stat-ic{
+  width:38px;height:38px;border-radius:10px;display:grid;place-items:center;
+  background:rgba(255,255,255,.14);color:#fff;margin-bottom:6px;
+}
+.tk-stat-ic svg{width:19px;height:19px;}
+.tk-compliance-row{
+  display:flex;flex-wrap:nowrap;justify-content:space-between;align-items:center;gap:16px;
+  max-width:1140px;margin:56px auto 0;padding:0 24px;
+}
+.tk-compliance-badge{
+  background:#fff;border-radius:16px;padding:14px 16px;height:120px;
+  display:flex;align-items:center;justify-content:center;flex:1 1 0;min-width:0;
+}
+/* max-height/max-width are % of the (shrinkable) flex item, not fixed px,
+   so every badge scales down together and all 6 always stay on one line
+   instead of wrapping when their combined natural width exceeds 1140px. */
+.tk-compliance-badge img{max-height:100%;max-width:100%;width:auto;height:auto;display:block;object-fit:contain;}
+.tk-stats strong{font-size:17px;font-weight:800;color:#fff;line-height:1.2;}
+.tk-stats span{font-size:12px;font-weight:600;color:#dbe6fd;}
+.tk-stats p{font-size:11px;line-height:1.5;color:#bcd0f7;margin:5px 0 0;opacity:.9;}
+
+/* --- Generic content section --------------------------------------- */
+.tk-section{
+  max-width:1240px;margin:0 auto;padding:80px 24px;box-sizing:border-box;
+  min-height:80vh;min-height:80dvh;width:100%;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.tk-section>*{min-width:0;width:100%;}
+.tk-section-alt{max-width:none;background:var(--tk-surface);}
+.tk-section-alt>*{max-width:1240px;margin-left:auto;margin-right:auto;}
+
+/* Brandix case-study spotlight: .cs-company-logo swaps the card's plain-text
+   company name for its logo (styles.css only styles it as text, so the
+   image needs its own sizing here). --lg is the larger standalone mark used
+   in the .tk-split feature (vs. the small inline size elsewhere). */
+.cs-company-logo{display:flex;align-items:center;}
+.cs-company-logo img{height:16px;width:auto;display:block;}
+.cs-company-logo--lg{margin:0 0 20px;}
+.cs-company-logo--lg img{height:28px;}
+/* Remove the left/right white fade-out mask on the logo scroller, and the
+   dimmed-until-hover opacity on each logo -- both read as "faded". */
+.client-logos::before,.client-logos::after{content:none;}
+.client-logo{opacity:1;}
+/* Compact: minor sections (e.g. FAQ) that shouldn't force full-viewport
+   height. Also sidesteps flex-stretch on children, so nothing can change
+   width when content height changes (accordions, etc.). */
+.tk-section-compact{min-height:0;display:block;padding-top:56px;padding-bottom:56px;}
+.tk-section-head{max-width:720px;margin:0 auto 44px;text-align:center;}
+.tk-section-head--device{margin-bottom:57px;}
+.tk-section-head-narrow{max-width:560px;}
+.tk-section-head h2{font-size:clamp(24px,3vw,34px);font-weight:800;line-height:1.2;letter-spacing:-.01em;margin:0 0 14px;}
+.tk-section-head p{font-size:15.5px;line-height:1.65;color:var(--tk-text);margin:0;}
+
+/* --- Industry switcher (Manufacturing / Retail / Office / etc.) ----- */
+.tk-eyebrow-label{
+  display:inline-block;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--tk-blue);margin:0 0 10px;
+}
+.tk-ind{max-width:1080px;margin:0 auto;}
+.tk-ind-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center;min-height:280px;}
+.tk-ind-content{min-width:0;transition:opacity .22s ease,transform .22s ease;}
+.tk-ind-content.tk-ind-out{opacity:0;transform:translateY(-10px);pointer-events:none;}
+.tk-ind-content.tk-ind-in{opacity:0;transform:translateY(12px);}
+.tk-ind-title{font-size:24px;font-weight:800;color:var(--tk-ink);margin:0 0 14px;letter-spacing:-.01em;}
+/* Height consistency across tabs is handled by JS (tracking.js measures
+   every industry's real rendered height and locks #tkIndContent to the
+   tallest) rather than guessed min-heights here -- text length varies
+   too unpredictably across viewport widths/devices for CSS alone. */
+.tk-ind-body{font-size:15px;line-height:1.7;color:var(--tk-muted);margin:0 0 20px;}
+.tk-ind-tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tk-ind-tag{
+  font-size:12px;font-weight:700;color:var(--tk-blue);background:var(--tk-blue-soft);
+  border-radius:999px;padding:6px 12px;
+}
+.tk-ind-visual{position:relative;min-width:0;}
+.tk-ind-img-wrap{
+  border-radius:20px;overflow:hidden;position:relative;height:320px;
+  box-shadow:0 8px 40px rgba(13,27,62,.14);background:var(--tk-surface);
+}
+.tk-ind-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease,opacity .3s ease;}
+.tk-ind-img.tk-ind-img-out{opacity:0;transform:scale(1.04);}
+.tk-ind-tabs{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--tk-border);margin-bottom:36px;}
+.tk-ind-tab{
+  flex:1 1 0;min-width:140px;background:none;border:none;cursor:pointer;font-family:inherit;
+  padding:16px 10px;font-size:13px;font-weight:700;color:#94a3b8;text-align:center;position:relative;
+  transition:color .2s ease;
+}
+.tk-ind-tab::after{
+  content:"";position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--tk-blue);
+  transform:scaleX(0);transition:transform .25s ease;
+}
+.tk-ind-tab.active::after{transform:scaleX(1);}
+.tk-ind-tab.active,.tk-ind-tab:hover{color:var(--tk-ink);}
+
+/* --- Device grid (Fingerprint / Face / Kiosk / Card) ---------------- */
+.tk-device-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.tk-device{border:1px solid var(--tk-border);border-radius:16px;background:#fff;overflow:hidden;}
+.tk-device-img{height:190px;overflow:hidden;background:var(--tk-blue-soft);}
+.tk-device-img img{width:100%;height:100%;object-fit:cover;display:block;}
+.tk-device-body{padding:22px;}
+.tk-device h3{font-size:15.5px;font-weight:700;margin:0 0 8px;}
+.tk-device p{font-size:13.5px;line-height:1.6;color:var(--tk-muted);margin:0;}
+
+/* --- Checklist (Partner trust) --------------------------------------- */
+.tk-checklist{
+  max-width:760px;margin:0 auto;padding:0;list-style:none;
+  display:grid;grid-template-columns:1fr;gap:14px;
+}
+.tk-checklist-left{max-width:none;margin:0;}
+.tk-partner-badge{
+  display:inline-flex;align-items:center;gap:14px;
+  padding:12px 20px;border-radius:12px;margin-bottom:20px;
+  background:#fff;border:1px solid var(--tk-border);
+  box-shadow:0 6px 16px rgba(13,27,62,.06);
+}
+.tk-partner-badge img{height:26px;width:auto;display:block;}
+.tk-partner-badge-divider{width:1px;height:22px;background:var(--tk-border);flex:0 0 auto;}
+.tk-partner-badge-label{font-size:13px;font-weight:700;color:var(--tk-ink);white-space:nowrap;}
+
+/* --- Time/Pay icon row (Payroll & T&A integration section) ---------- */
+.tk-integ-icons{display:flex;gap:10px;margin:16px 0 20px;}
+.tk-integ-icon{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:7px 16px 7px 7px;border-radius:999px;
+  background:#fff;border:1px solid var(--tk-border);
+  box-shadow:0 6px 16px rgba(13,27,62,.06);
+  font-size:13.5px;font-weight:700;color:var(--tk-ink);
+}
+.tk-integ-icon img{width:28px;height:28px;border-radius:9px;display:block;}
+.tk-checklist li{
+  position:relative;padding-left:34px;font-size:14.5px;line-height:1.55;color:var(--tk-text);
+}
+.tk-checklist li::before{
+  content:"";position:absolute;left:0;top:1px;width:22px;height:22px;border-radius:50%;
+  background:var(--tk-blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='5 13 10 18 19 7'/%3E%3C/svg%3E") center/13px no-repeat;
+}
+
+/* --- Checklist row (used by the Connected-to-PeoplesHR section) ----- */
+.tk-access-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;}
+.tk-access-list li{
+  display:flex;align-items:center;gap:12px;min-width:0;
+  background:#fff;border:1px solid var(--tk-border);border-radius:12px;padding:14px 16px;
+  font-size:14px;font-weight:600;color:var(--tk-ink);
+}
+.tk-access-check{
+  flex:0 0 auto;width:22px;height:22px;border-radius:50%;
+  background:var(--tk-blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='5 13 10 18 19 7'/%3E%3C/svg%3E") center/13px no-repeat;
+}
+
+/* --- Large-photo split sections (Integration / Industries / Why-us) - */
+.tk-split{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center;}
+.tk-cs-cta-row{max-width:1140px;margin:72px auto 0;text-align:center;}
+.tk-split-visual{min-width:0;border-radius:20px;overflow:hidden;box-shadow:0 16px 48px -20px rgba(13,27,62,.28);}
+.tk-split-visual img{width:100%;height:100%;aspect-ratio:4/3.4;object-fit:cover;display:block;}
+
+/* --- Geo visual: device photo + floating check-in UI card ----------- */
+/* Title/body split the same way as the connected-devices section above,
+   so the image can sit between them on mobile via order -- desktop keeps
+   the image spanning both rows in column 1 (it's first here, not column
+   2, so this needs its own placement rather than reusing .tk-split-title). */
+.tk-geo-title{grid-column:2;grid-row:1;}
+.tk-geo-body{grid-column:2;grid-row:2;}
+.tk-split-visual.tk-geo-visual{overflow:visible;box-shadow:none;border-radius:0;position:relative;grid-column:1;grid-row:1/3;}
+.tk-geo-photo{border-radius:20px;overflow:hidden;box-shadow:0 16px 48px -20px rgba(13,27,62,.28);}
+.tk-geo-photo img{width:100%;height:100%;aspect-ratio:4/3.4;object-fit:cover;display:block;}
+.tk-geo-phone{
+  position:absolute;right:-22px;bottom:-22px;width:168px;
+  border-radius:18px;overflow:hidden;border:2px solid #fff;
+  box-shadow:0 18px 36px -12px rgba(13,27,62,.5);
+}
+.tk-geo-phone img{
+  display:block;width:100%;height:auto;aspect-ratio:3/5;object-fit:cover;
+}
+
+/* --- Sync visual: laptop photo + floating dashboard UI card --------- */
+.tk-split-visual.tk-sync-visual{overflow:visible;box-shadow:none;border-radius:0;position:relative;}
+.tk-sync-photo{border-radius:20px;overflow:hidden;box-shadow:0 16px 48px -20px rgba(13,27,62,.28);}
+.tk-sync-photo img{width:100%;height:100%;aspect-ratio:4/3.4;object-fit:cover;display:block;}
+.tk-sync-card{
+  position:absolute;right:-24px;bottom:-24px;width:240px;
+  border-radius:14px;overflow:hidden;border:2px solid #fff;
+  box-shadow:0 18px 36px -12px rgba(13,27,62,.5);
+}
+.tk-sync-card img{
+  display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top left;
+}
+.tk-split-text{text-align:left;min-width:0;}
+.tk-split-text h2{font-size:clamp(24px,3vw,34px);font-weight:800;line-height:1.2;letter-spacing:-.01em;margin:0 0 14px;}
+.tk-split-text>p{font-size:15.5px;line-height:1.65;color:var(--tk-text);margin:0 0 32px;}
+.tk-split-list{display:flex;flex-direction:column;gap:22px;}
+.tk-split-list-2col{display:grid;grid-template-columns:1fr 1fr;gap:22px 28px;}
+.tk-split-item{border-left:3px solid var(--tk-blue);border-radius:4px;padding:4px 0 4px 18px;}
+.tk-split-item h3{font-size:15.5px;font-weight:700;margin:0 0 8px;}
+.tk-split-item p{font-size:13.5px;line-height:1.6;color:var(--tk-muted);margin:0;}
+/* Case-study metrics row: same .tk-split-item accent, but the number reads
+   as a stat (bigger, blue) rather than a feature-bullet subheading. */
+.tk-split-list-3col{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 16px;margin:0 0 28px;}
+.tk-split-list-3col .tk-split-item h3{font-size:24px;font-weight:800;color:var(--tk-blue);margin:0 0 4px;}
+.tk-split-list-3col .tk-split-item p{font-size:12.5px;}
+
+/* --- Campus deployment map: full-width diagram ------------------------ */
+.tk-deploy-visual{
+  position:relative;max-width:1140px;margin:130px auto 0;
+}
+.tk-deploy-photo{position:relative;}
+.tk-deploy-photo-crop{overflow:hidden;}
+.tk-deploy-photo-crop>img{width:100%;height:auto;display:block;will-change:transform;transform:scale(1.04);transition:transform .5s var(--tk-ease);}
+.tk-deploy-point{position:absolute;z-index:3;transform:translate(-50%,-50%);}
+.tk-deploy-beacon{position:relative;display:flex;width:22px;height:22px;align-items:center;justify-content:center;padding:0;border:0;background:transparent;cursor:pointer;}
+.tk-deploy-beacon:hover,.tk-deploy-beacon:focus-visible{z-index:1;}
+.tk-deploy-beacon-dot{position:relative;width:14px;height:14px;flex:0 0 auto;border-radius:50%;background:var(--tk-blue);box-shadow:0 0 0 3px rgba(255,255,255,.95),0 2px 8px rgba(13,27,62,.35);transition:transform .22s var(--tk-ease),box-shadow .22s var(--tk-ease);}
+.tk-deploy-beacon:hover .tk-deploy-beacon-dot,.tk-deploy-beacon:focus-visible .tk-deploy-beacon-dot{transform:scale(1.35);box-shadow:0 0 0 4px rgba(255,255,255,.98),0 4px 14px rgba(13,27,62,.45);}
+.tk-deploy-beacon-dot::before,.tk-deploy-beacon-dot::after{content:"";position:absolute;inset:0;border-radius:50%;background:rgba(37,99,235,.55);animation:tk-beacon-ping 2.4s cubic-bezier(0,0,.2,1) infinite;}
+.tk-deploy-beacon-dot::after{animation-delay:1.2s;}
+.tk-deploy-beacon:hover .tk-deploy-beacon-dot::before,.tk-deploy-beacon:hover .tk-deploy-beacon-dot::after,
+.tk-deploy-beacon:focus-visible .tk-deploy-beacon-dot::before,.tk-deploy-beacon:focus-visible .tk-deploy-beacon-dot::after{animation-play-state:paused;opacity:0;}
+@keyframes tk-beacon-ping{0%{transform:scale(1);opacity:.7;}75%,100%{transform:scale(3.4);opacity:0;}}
+.tk-deploy-beacon-name{position:absolute;left:50%;top:calc(100% + 8px);--label-tx:-50%;--label-ty:0px;transform:translate(var(--label-tx),var(--label-ty));font-size:10px;font-weight:700;line-height:1.15;white-space:nowrap;color:#fff;background:rgba(13,27,62,.88);padding:3px 7px;border-radius:6px;box-shadow:0 2px 6px rgba(13,27,62,.25);pointer-events:none;transition:transform .22s var(--tk-ease),background-color .22s var(--tk-ease),box-shadow .22s var(--tk-ease);}
+.tk-deploy-beacon:hover .tk-deploy-beacon-name,.tk-deploy-beacon:focus-visible .tk-deploy-beacon-name{background-color:var(--tk-blue);box-shadow:0 4px 12px -2px rgba(37,99,235,.6);--label-ty:-2px;}
+.tk-deploy-point.is-open .tk-deploy-beacon-name{opacity:0;transition:opacity .15s var(--tk-ease);}
+.tk-deploy-point--label-above .tk-deploy-beacon-name{top:auto;bottom:calc(100% + 8px);}
+.tk-deploy-point--label-stagger .tk-deploy-beacon-name{top:calc(100% + 36px);}
+.tk-deploy-point--label-tier3 .tk-deploy-beacon-name{top:calc(100% + 62px);}
+.tk-deploy-point--label-tier3.tk-deploy-point--label-above .tk-deploy-beacon-name{top:auto;bottom:calc(100% + 62px);}
+.tk-deploy-point--label-shift-right .tk-deploy-beacon-name{--label-tx:calc(-50% + 22px);}
+.tk-deploy-point--label-shift-left .tk-deploy-beacon-name{--label-tx:calc(-50% - 20px);}
+.tk-deploy-point--label-stagger.tk-deploy-point--label-above .tk-deploy-beacon-name{top:auto;bottom:calc(100% + 30px);}
+.tk-deploy-point--label-side .tk-deploy-beacon-name{top:50%;left:calc(100% + 8px);--label-tx:0px;--label-ty:-50%;}
+.tk-deploy-point--label-side .tk-deploy-beacon:hover .tk-deploy-beacon-name,.tk-deploy-point--label-side .tk-deploy-beacon:focus-visible .tk-deploy-beacon-name{--label-ty:-50%;}
+.tk-deploy-card{position:absolute;left:50%;bottom:calc(100% + 10px);width:220px;max-width:78vw;background:#fff;border-radius:14px;box-shadow:0 20px 45px -20px rgba(13,27,62,.45),0 6px 16px -8px rgba(13,27,62,.25);overflow:hidden;text-align:left;opacity:0;visibility:hidden;pointer-events:none;transform:translateX(var(--card-tx,-50%)) translateY(6px) scale(.96);transition:opacity .2s var(--tk-ease),transform .2s var(--tk-ease),visibility .2s var(--tk-ease);}
+.tk-deploy-point--card-below .tk-deploy-card{bottom:auto;top:calc(100% + 10px);transform:translateX(var(--card-tx,-50%)) translateY(-6px) scale(.96);}
+.tk-deploy-point.is-open .tk-deploy-card{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(var(--card-tx,-50%)) translateY(0) scale(1);}
+.tk-deploy-point--card-side-right .tk-deploy-card{left:calc(100% + 14px);bottom:auto;top:50%;transform:translate(0,calc(-50% + 6px)) scale(.96);}
+.tk-deploy-point--card-side-right.is-open .tk-deploy-card{transform:translate(0,-50%) scale(1);}
+.tk-deploy-card img{width:100%;height:180px;object-fit:cover;display:block;background:#f3f6fc;}
+.tk-deploy-card-body{padding:10px 12px 12px;}
+.tk-deploy-card-body h4{margin:0 0 4px;font-size:13px;font-weight:700;color:var(--tk-ink);}
+.tk-deploy-card-body p{margin:0;font-size:11.5px;line-height:1.45;color:var(--tk-muted);}
+
+/* --- Connected-devices network diagram -------------------------------- */
+/* Title and body are split into separate .tk-split grid items (instead of
+   one .tk-split-text block) so the network diagram can sit between them
+   on mobile via `order`, while desktop keeps both stacked in the left
+   column with the diagram spanning the full right column as before. */
+.tk-split-title{grid-column:1;grid-row:1;}
+.tk-split-body{grid-column:1;grid-row:2;}
+.tk-network{display:flex;align-items:center;justify-content:center;min-width:0;grid-column:2;grid-row:1/3;}
+/* ZKTeco partner section: title/badge/body are 3 independent grid items
+   (not the 2-row .tk-split-title/.tk-split-body shape used elsewhere)
+   since the badge needs its own row -- desktop stacks them top to
+   bottom in column 1 exactly as before, image spans all 3 rows in
+   column 2; mobile reorders so the image sits right after the title. */
+.tk-zk-title{grid-column:1;grid-row:1;}
+.tk-zk-badge-wrap{grid-column:1;grid-row:2;}
+.tk-zk-body{grid-column:1;grid-row:3;}
+.tk-zk-visual{grid-column:2;grid-row:1/4;}
+.tk-zk-body{display:flex;flex-direction:column;}
+.tk-zk-body>p{order:2;margin-top:24px;}
+.tk-zk-body>ul{order:1;}
+.tk-network-svg{display:block;width:100%;max-width:620px;height:auto;overflow:visible;}
+.tk-network-line{fill:none;stroke:var(--tk-border);stroke-width:2;}
+.tk-network-node circle{
+  fill:#fff;stroke:var(--tk-border);stroke-width:1.5;
+  filter:drop-shadow(0 6px 16px rgba(13,27,62,.12));
+}
+.tk-network-node{color:var(--tk-blue);}
+.tk-network-label{
+  font-family:"Plus Jakarta Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:12px;font-weight:700;fill:var(--tk-ink);text-anchor:middle;
+}
+.tk-network-hub{
+  fill:#fff;stroke:var(--tk-border);stroke-width:1.5;
+  filter:drop-shadow(0 6px 16px rgba(13,27,62,.12));
+}
+.tk-network-dot{fill:var(--tk-blue);filter:drop-shadow(0 0 6px rgba(37,99,235,.65));}
+.tk-network-dot--return{fill:#f97316;filter:drop-shadow(0 0 6px rgba(249,115,22,.65));}
+
+/* --- Device category tabs + large preview panel (mirrors the homepage's --- */
+/* --- module-tabs / module-preview-panel pattern) ---------------------- */
+.tk-devtab-wrap{display:flex;gap:28px;align-items:center;max-width:1160px;margin:0 auto;}
+.tk-devtabs{flex:0 0 264px;display:flex;flex-direction:column;gap:4px;align-self:flex-start;margin-top:177px;}
+.tk-devtab{
+  display:flex;align-items:center;gap:12px;width:100%;text-align:left;
+  padding:14px 16px;border-radius:12px;cursor:pointer;
+  transition:all .2s ease;color:var(--tk-muted);
+  font-size:14.5px;font-weight:600;font-family:inherit;
+  border:1.5px solid transparent;background:none;position:relative;
+}
+.tk-devtab:hover{background:#fff;color:var(--tk-ink);border-color:var(--tk-border);}
+.tk-devtab.active{background:#fff;color:var(--tk-blue);border-color:var(--tk-blue-soft);box-shadow:0 2px 12px rgba(37,99,235,.1);}
+.tk-devtab-ic{width:20px;height:20px;flex-shrink:0;display:flex;transition:transform .25s ease;}
+.tk-devtab.active .tk-devtab-ic{transform:scale(1.08);}
+.tk-devtab span:not(.tk-devtab-ic){flex:1;}
+.tk-devtab-arrow{flex-shrink:0;opacity:0;transform:translateX(-4px);transition:opacity .25s ease,transform .25s ease;}
+.tk-devtab.active .tk-devtab-arrow{opacity:1;transform:translateX(0);color:var(--tk-blue);}
+.tk-devtab::before{
+  content:"";position:absolute;left:0;top:20%;bottom:20%;width:3px;border-radius:2px;
+  background:var(--tk-blue);opacity:0;transform:scaleY(.4);transform-origin:center;
+  transition:opacity .25s ease,transform .25s ease;
+}
+.tk-devtab.active::before{opacity:1;transform:scaleY(1);}
+
+.tk-devpreview-panel{flex:1;min-width:0;background:#fff;border-radius:20px;border:1px solid var(--tk-border);overflow:hidden;box-shadow:0 8px 40px rgba(13,27,62,.08);}
+.tk-devpreview-content{display:none;}
+.tk-devpreview-content.active{display:block;animation:tkDevFadeIn .45s ease;}
+.tk-devpreview-img-wrap{width:100%;height:500px;overflow:hidden;}
+.tk-devpreview-img{width:100%;height:100%;object-fit:cover;display:block;animation:tkDevImgIn .5s ease;}
+@keyframes tkDevFadeIn{
+  from{opacity:0;transform:translateY(14px);}
+  to{opacity:1;transform:translateY(0);}
+}
+@keyframes tkDevImgIn{
+  from{opacity:0;transform:scale(1.05);}
+  to{opacity:1;transform:scale(1);}
+}
+.tk-devpreview-text{padding:26px 32px 32px;}
+.tk-devpreview-text h3{font-size:21px;font-weight:800;color:var(--tk-ink);margin:0 0 14px;letter-spacing:-.01em;}
+/* Height consistency across device tabs is handled by JS (tracking.js
+   measures every tab's real rendered height and locks .tk-devpreview-text
+   to the tallest) rather than guessed min-heights here. */
+.tk-devpreview-text p{font-size:14.5px;line-height:1.7;color:var(--tk-muted);margin:0;}
+.tk-devpreview-specs{
+  display:flex;margin:0 0 20px;
+  border-top:1px solid var(--tk-border);border-bottom:1px solid var(--tk-border);
+}
+.tk-devpreview-spec{flex:1;min-width:0;padding:12px 18px;border-right:1px solid var(--tk-border);}
+.tk-devpreview-spec:last-child{border-right:none;}
+.tk-devpreview-spec-label{display:block;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--tk-muted);margin-bottom:4px;}
+.tk-devpreview-spec-value{display:block;font-size:13.5px;font-weight:700;color:var(--tk-ink);}
+
+/* --- FAQ accordion ----------------------------------------------------- */
+.tk-faq-list{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+.tk-faq-list details{
+  width:100%;box-sizing:border-box;
+  border:1px solid var(--tk-border);border-radius:14px;background:#fff;
+  padding:6px 20px;
+}
+.tk-faq-list summary{
+  list-style:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:16px 0;font-size:15px;font-weight:700;
+}
+.tk-faq-list summary::-webkit-details-marker{display:none;}
+.tk-faq-chevron{width:18px;height:18px;flex:0 0 auto;color:var(--tk-muted);transition:transform .22s var(--tk-ease);}
+.tk-faq-list details[open] .tk-faq-chevron{transform:rotate(180deg);}
+.tk-faq-list details p{font-size:14px;line-height:1.65;color:var(--tk-text);margin:0 0 18px;}
+
+/* --- Final CTA banner --------------------------------------------------- */
+.tk-final-cta{
+  max-width:1140px;margin:80px auto 64px;padding:64px 32px;
+  border-radius:24px;text-align:center;
+  background:linear-gradient(100deg,#0d1b3e,#1b2c5e);
+}
+.tk-final-cta h2{font-size:clamp(24px,3vw,32px);font-weight:800;color:#fff;margin:0 0 14px;}
+.tk-final-cta p{max-width:560px;margin:0 auto 28px;font-size:15.5px;line-height:1.6;color:#cdd6ee;}
+
+/* --- Responsive ----------------------------------------------------- */
+@media (max-width:1080px){
+  .tk-device-grid{grid-template-columns:repeat(2,1fr);}
+  /* 5 stat cards in a 3-col grid leave the last row's 2 items hugging the
+     left edge with a gap on the right -- flex+center balances that
+     incomplete row instead (same fix as the device tabs elsewhere). */
+  .tk-stats ul{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;}
+  .tk-stats li{flex:0 0 calc(33.333% - 11px);}
+  .tk-deploy-beacon-name{display:none;}
+}
+@media (max-width:900px){
+  /* Reduce the top space above the logo scroller on this page only --
+     styles.css's own mobile tiers (80px <=1200px, 60px <=768px) are
+     wider than needed here. */
+  .industries-section{padding-top:24px;}
+  /* Shrink-to-fit (base rule) would squash 6 badges into illegible
+     slivers on phone widths -- scroll horizontally instead, each badge
+     keeping a comfortable, fixed minimum size. */
+  /* All 6 badges visible at once, wrapped 3-per-row (2 rows), instead of
+     the desktop shrink-to-one-line or a horizontally-scrolling strip. */
+  .tk-compliance-row{flex-wrap:wrap;justify-content:center;gap:12px;}
+  .tk-compliance-badge{flex:0 0 calc(33.333% - 8px);width:auto;height:76px;min-width:0;padding:10px 12px;}
+  .tk-devtab-wrap{flex-direction:column;gap:20px;align-items:stretch;}
+  .tk-devtabs{flex:none;width:100%;margin-top:0;}
+  .tk-devpreview-img-wrap{height:440px;}
+  .tk-split{grid-template-columns:minmax(0,1fr);gap:32px;}
+  .tk-split-visual img{aspect-ratio:16/10;}
+  .tk-why-text h2{margin-bottom:28px;}
+  /* Connected-devices section: stack as title -> diagram -> body copy. */
+  .tk-split-title{grid-column:1;grid-row:auto;order:1;}
+  .tk-network{grid-column:1;grid-row:auto;order:2;}
+  /* ZKTeco partner section: title -> image -> badge -> body copy. */
+  .tk-zk-title{grid-column:1;grid-row:auto;order:1;}
+  .tk-zk-visual{grid-column:1;grid-row:auto;order:2;}
+  .tk-zk-badge-wrap{grid-column:1;grid-row:auto;order:3;}
+  .tk-zk-body{grid-column:1;grid-row:auto;order:4;}
+  .tk-split-body{grid-column:1;grid-row:auto;order:3;}
+  /* Within that body block, show the 3-point checklist before the
+     paragraph on mobile (desktop keeps paragraph-then-list). */
+  .tk-split-body{display:flex;flex-direction:column;}
+  .tk-split-body>p{order:2;margin-top:24px;}
+  .tk-split-body>ul{order:1;}
+  /* Geo-clock-in section: stack as title -> image -> body copy. */
+  .tk-geo-title{grid-column:1;grid-row:auto;order:1;}
+  .tk-split-visual.tk-geo-visual{grid-column:1;grid-row:auto;order:2;}
+  .tk-geo-body{grid-column:1;grid-row:auto;order:3;}
+  /* Within that body block, show the checklist before the paragraph
+     (desktop keeps paragraph-then-list). */
+  .tk-geo-body{display:flex;flex-direction:column;}
+  .tk-geo-body>p{order:2;margin-top:24px;}
+  .tk-geo-body>ul{order:1;}
+  .tk-ind-layout{grid-template-columns:minmax(0,1fr);gap:28px;}
+  .tk-ind-img-wrap{height:240px;}
+  .tk-ind-content{text-align:center;}
+  .tk-ind-tags{justify-content:center;}
+  .tk-split-text{text-align:center;}
+  .tk-integ-icons{justify-content:center;}
+  .tk-split-item{border-left:0;border-top:3px solid var(--tk-blue);padding:14px 0 0;text-align:left;}
+  .tk-hero{grid-template-columns:minmax(0,1fr);min-height:0;gap:36px;padding:48px 20px;}
+  .tk-hero-visual{order:-1;}
+  .tk-hero-img-wrap{aspect-ratio:1200/1000;}
+  .tk-deploy-visual{margin-top:8px;}
+}
+@media (max-width:640px){
+  .tk-hero{padding:40px 20px;}
+  .tk-hero .tk-hero-badge{white-space:normal;}
+  .tk-section{padding:56px 20px;}
+  .tk-device-grid{grid-template-columns:1fr;}
+  .tk-devtabs{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;gap:0;border-bottom:2px solid var(--tk-border);}
+  .tk-devtab{flex:0 0 33.333%;max-width:33.333%;flex-direction:column;gap:5px;padding:12px 6px;min-width:0;text-align:center;border:none;border-radius:0;border-bottom:3px solid transparent;margin-bottom:-2px;font-size:11px;}
+  .tk-devtab.active{border-color:var(--tk-blue);box-shadow:none;background:transparent;}
+  .tk-devtab.active::before{display:none;}
+  .tk-devtab-arrow{display:none;}
+  .tk-devtab-ic{width:20px;height:20px;margin:0 auto;}
+  .tk-devpreview-img-wrap{height:300px;}
+  .tk-devpreview-specs{flex-direction:column;}
+  .tk-devpreview-spec{border-right:none;border-bottom:1px solid var(--tk-border);}
+  .tk-devpreview-spec:last-child{border-bottom:none;}
+  .tk-devpreview-text{padding:20px 20px 24px;}
+  .tk-split-list-2col{grid-template-columns:1fr;}
+  .tk-split-list-3col{grid-template-columns:repeat(3,1fr);gap:14px 10px;}
+  .tk-geo-visual{margin-bottom:24px;}
+  .tk-geo-phone{right:-12px;bottom:-16px;width:126px;}
+  .tk-sync-visual{margin-bottom:24px;}
+  .tk-sync-card{right:-12px;bottom:-16px;width:150px;}
+  .tk-stats-head{padding:40px 20px 0;}
+  .tk-stats ul{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;gap:12px;padding:28px 20px 40px;}
+  .tk-stats li{flex:0 0 calc(50% - 6px);}
+  /* Card has no explicit width, so max-width:1140px+margin:auto has no
+     effect once the viewport itself is under 1140px -- it stretches
+     edge-to-edge. Small fixed side margin insets it on mobile instead. */
+  .tk-final-cta{padding:48px 24px;border-radius:18px;margin-left:16px;margin-right:16px;}
+  .tk-ind-tabs{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;}
+  .tk-ind-tab{flex:0 0 auto;min-width:auto;padding:14px 12px;white-space:nowrap;}
+  .tk-partner-badge{flex-wrap:wrap;justify-content:center;}
+  .tk-partner-badge-label{white-space:normal;text-align:left;}
+  .tk-deploy-section{display:none;}
+}

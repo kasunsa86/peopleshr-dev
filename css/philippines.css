@@ -1,0 +1,1294 @@
+/* ═══════════════════════════════════════════════════════════════════
+   philippines.css — delta stylesheet for the PeoplesHR Philippines
+   landing page (/philippines.html)
+
+   Loaded AFTER the shared css/styles.css, css/navbar.css and
+   css/footer.css and must only extend them, never modify them. All
+   new classes here are prefixed .ph- and scoped under .ph-scope so
+   nothing can leak onto/clash with other pages.
+   ═══════════════════════════════════════════════════════════════════ */
+
+html{scrollbar-gutter:stable;}
+
+.ph-scope{
+  --ph-ink:#0d1b3e;
+  --ph-text:#3a4254;
+  --ph-muted:#6b7280;
+  --ph-border:#e6e8ee;
+  --ph-blue:#2563eb;
+  --ph-blue-dark:#1d4ed8;
+  --ph-blue-soft:#eff4ff;
+  --ph-surface:#fafbfe;
+  --ph-ease:cubic-bezier(.22,.61,.36,1);
+  font-family:"Plus Jakarta Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--ph-text);
+}
+.ph-scope *{box-sizing:border-box;}
+.ph-scope h1,.ph-scope h2,.ph-scope h3{color:var(--ph-ink);}
+
+/* --- ph-section / ph-card ------------------------------------------
+   NOTE: styles.css defines TWO conflicting rules for the bare
+   `.phr-section` and `.phr-module-card` class names — one for the
+   generic "Philippines HRIS" component library, and an unrelated
+   later one for a different legacy "SMSGT" page that silently wins
+   the cascade (dark navy bg on .phr-section, glass-card style on
+   .phr-module-card). Rather than touch the shared master file, this
+   page uses its own `.ph-section`/`.ph-card` names — safe copies of
+   the *intended* (first) rules — for the section wrapper and card
+   grid. Everything else (.phr-hero, .phr-section__*, .phr-modules,
+   .phr-lexi*, .phr-getstarted*, .warn-*) is unaffected by the
+   collision and reused directly. ---------------- */
+.ph-section{padding:88px 0;}
+.ph-section--alt{background:var(--phr-blue-30);}
+.ph-card{
+  background:var(--phr-white);
+  border:1px solid var(--phr-border);
+  border-radius:var(--phr-radius-md);
+  padding:32px 28px 28px;
+  position:relative;
+  overflow:hidden;
+  transition:transform var(--phr-transition),box-shadow var(--phr-transition),border-color var(--phr-transition);
+}
+.ph-card:hover{transform:translateY(-6px);box-shadow:var(--phr-shadow-hover);border-color:var(--phr-blue-200);}
+.ph-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--phr-blue-700),var(--phr-blue-500));opacity:0;transition:opacity var(--phr-transition);}
+.ph-card:hover::before{opacity:1;}
+.ph-card__icon{width:48px;height:48px;border-radius:12px;background:var(--phr-blue-50);display:flex;align-items:center;justify-content:center;margin-bottom:20px;transition:background var(--phr-transition);}
+.ph-card:hover .ph-card__icon{background:var(--phr-blue-700);}
+.ph-card:hover .ph-card__icon svg{stroke:var(--phr-white);}
+.ph-card__icon svg{stroke:var(--phr-blue-700);}
+.ph-card__name{font-size:18px;font-weight:800;color:var(--phr-text-dark);letter-spacing:-.3px;margin-bottom:8px;}
+.ph-card__desc{font-size:14.5px;color:var(--phr-text-mid);line-height:1.6;}
+@media(max-width:640px){.ph-section{padding:52px 0;}}
+
+/* --- 4. We've Solved: 5 cards in a 3-col grid. .phr-modules is a
+   fixed 3-track grid, so the leftover 2-card row sits left-aligned.
+   Override with flex+wrap so the last row centers instead. Card
+   widths/gaps mirror styles.css's own .phr-modules breakpoints
+   (960px: 2/row, 640px: 1/row) so the reflow matches the rest of the
+   grid exactly. */
+.ph-solved-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:24px;}
+.ph-solved-grid .ph-card{flex:0 1 calc(33.333% - 16px);}
+@media(max-width:960px){.ph-solved-grid{gap:18px;}.ph-solved-grid .ph-card{flex:0 1 calc(50% - 9px);}}
+@media(max-width:640px){.ph-solved-grid{gap:14px;}.ph-solved-grid .ph-card{flex:0 1 100%;}}
+
+/* --- Icon color extensions (icons use stroke="currentColor"; master
+   defines the icon containers but not a default icon color) ------- */
+.warn-icon{color:#ef4444;}
+
+/* --- 3. The Problem: intro split (copy + "payroll chaos" composition)
+   The composition is 3 real UI screenshots plus data-driven
+   notification cards (content array lives in philippines.js,
+   positions/rotation/timing live here per index via
+   .ph-chaos-alert--N). All movement uses one parameterised keyframe
+   (--rot/--fx/--fy/--rd custom props per element) so speed/direction
+   differs without duplicating @keyframes, and --scale lets mobile
+   halve the travel distance by just being inherited from .ph-chaos,
+   no JS viewport checks. ------ */
+.ph-problem-intro{
+  display:flex;
+  align-items:center;
+  gap:56px;
+  margin-bottom:64px;
+}
+.ph-problem-intro-copy{flex:0 0 420px;max-width:420px;}
+.ph-problem-intro-copy .phr-section__sub{margin:16px 0 0;}
+.ph-problem-list{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-direction:column;gap:12px;}
+.ph-problem-list li{
+  position:relative;
+  padding-left:22px;
+  font-size:16px;
+  color:var(--phr-text-mid);
+  line-height:1.5;
+}
+.ph-problem-list li::before{
+  content:'';
+  position:absolute;
+  left:0;top:8px;
+  width:8px;height:8px;
+  border-radius:50%;
+  background:#ef4444;
+}
+
+.ph-chaos{
+  position:relative;
+  flex:1;
+  max-width:680px;
+  min-width:0;
+  min-height:560px;
+}
+.ph-chaos-glow{position:absolute;border-radius:50%;filter:blur(50px);pointer-events:none;z-index:0;}
+.ph-chaos-glow--main{width:70%;height:70%;top:8%;left:15%;background:radial-gradient(circle,rgba(99,102,241,.16) 0%,transparent 70%);}
+.ph-chaos-glow--error{width:220px;height:220px;top:-4%;right:4%;background:radial-gradient(circle,rgba(239,68,68,.14) 0%,transparent 70%);}
+.ph-chaos-glow--warn{width:200px;height:200px;bottom:4%;left:-2%;background:radial-gradient(circle,rgba(245,158,11,.14) 0%,transparent 70%);}
+.ph-chaos-connector{position:absolute;color:var(--phr-border);opacity:.7;pointer-events:none;z-index:1;}
+.ph-chaos-connector--1{top:4%;left:0%;width:210px;}
+.ph-chaos-connector--2{bottom:8%;right:-2%;width:170px;}
+.ph-chaos-particle{position:absolute;border-radius:50%;filter:blur(2px);pointer-events:none;z-index:1;}
+.ph-chaos-particle--1{width:8px;height:8px;background:rgba(239,68,68,.4);top:20%;right:28%;}
+.ph-chaos-particle--2{width:6px;height:6px;background:rgba(245,158,11,.5);bottom:16%;left:36%;}
+
+@keyframes ph-chaos-float{
+  0%,100%{transform:translate(0,0) rotate(var(--rot,0deg));}
+  50%{transform:translate(calc(var(--fx,6px) * var(--scale,1)),calc(var(--fy,-6px) * var(--scale,1))) rotate(calc(var(--rot,0deg) + var(--rd,.5deg)));}
+}
+.ph-chaos-ui{
+  position:absolute;
+  border-radius:12px;
+  background:var(--phr-white);
+  box-shadow:0 24px 60px rgba(20,29,48,.12),0 8px 24px rgba(20,29,48,.08);
+  overflow:hidden;
+  animation:ph-chaos-float 7s ease-in-out infinite;
+}
+.ph-chaos-ui img{display:block;width:100%;height:100%;object-fit:contain;}
+.ph-chaos-ui--secondary{
+  width:45%;aspect-ratio:16/10;top:0%;left:-4%;
+  --rot:-5deg;--fx:-8px;--fy:6px;
+  z-index:2;box-shadow:0 16px 40px rgba(20,29,48,.10);
+  animation-duration:6.5s;animation-delay:.4s;
+}
+.ph-chaos-ui--tertiary{
+  width:42%;aspect-ratio:16/10;bottom:12%;right:-3%;
+  --rot:4deg;--fx:7px;--fy:7px;
+  z-index:3;box-shadow:0 16px 40px rgba(20,29,48,.10);
+  animation-duration:7.5s;animation-delay:1s;
+}
+.ph-chaos-ui--main{
+  width:72%;aspect-ratio:16/10;top:22%;left:14%;
+  --rot:-1deg;--fx:6px;--fy:-7px;
+  z-index:5;
+  animation-duration:8s;
+}
+
+.ph-chaos-alerts{position:absolute;inset:0;}
+.ph-chaos-alert{
+  position:absolute;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:var(--phr-white);
+  border:1px solid var(--phr-border);
+  border-radius:12px;
+  box-shadow:0 24px 60px rgba(20,29,48,.12),0 8px 24px rgba(20,29,48,.08);
+  padding:9px 14px 9px 12px;
+  font-size:12.5px;
+  font-weight:600;
+  color:var(--phr-text-dark);
+  white-space:nowrap;
+  animation:ph-chaos-float 6s ease-in-out infinite;
+}
+.ph-chaos-alert--error{border-left:3px solid #ef4444;}
+.ph-chaos-alert--warn{border-left:3px solid #f59e0b;}
+.ph-chaos-alert-icon{display:flex;align-items:center;justify-content:center;flex-shrink:0;width:17px;height:17px;}
+.ph-chaos-alert-icon svg{width:16px;height:16px;}
+.ph-chaos-alert--error .ph-chaos-alert-icon svg{color:#ef4444;}
+.ph-chaos-alert--warn .ph-chaos-alert-icon svg{color:#f59e0b;}
+.ph-chaos-alert-icon--dot{width:8px;height:8px;border-radius:50%;}
+.ph-chaos-alert--error .ph-chaos-alert-icon--dot{background:#ef4444;}
+.ph-chaos-alert--warn .ph-chaos-alert-icon--dot{background:#f59e0b;}
+
+/* Per-notification position, rotation, timing (index order matches
+   the CHAOS_ALERTS array in philippines.js). */
+.ph-chaos-alert--1{top:10%;right:6%;z-index:7;--rot:-3deg;--fx:6px;--fy:-8px;animation-duration:6.5s;}
+.ph-chaos-alert--2{top:34%;left:0%;z-index:1;--rot:2deg;--fx:-5px;--fy:6px;animation-duration:8s;animation-delay:.8s;}
+.ph-chaos-alert--3{top:4%;left:20%;z-index:6;--rot:-2deg;--fx:7px;--fy:5px;animation-duration:5.5s;animation-delay:.3s;}
+.ph-chaos-alert--4{bottom:22%;left:4%;z-index:6;--rot:3deg;--fx:-6px;--fy:-6px;animation-duration:7s;animation-delay:1.2s;}
+.ph-chaos-alert--5{top:48%;right:-6%;z-index:4;--rot:-4deg;--fx:5px;--fy:8px;animation-duration:6s;animation-delay:.5s;font-size:11.5px;padding:7px 11px 7px 10px;}
+.ph-chaos-alert--6{bottom:0%;left:36%;z-index:6;--rot:1deg;--fx:-7px;--fy:4px;animation-duration:7.5s;animation-delay:1.6s;}
+.ph-chaos-alert--7{top:-4%;left:26%;z-index:6;--rot:-1deg;--fx:4px;--fy:-6px;animation-duration:5s;animation-delay:.2s;}
+.ph-chaos-alert--8{
+  top:46%;left:40%;z-index:8;--rot:2deg;--fx:-5px;--fy:5px;animation-duration:6.8s;animation-delay:1s;
+  animation-name:ph-chaos-float,ph-chaos-pulse;animation-duration:6.8s,5s;animation-delay:1s,2.5s;animation-iteration-count:infinite,infinite;animation-timing-function:ease-in-out,ease-in-out;
+}
+@keyframes ph-chaos-pulse{
+  0%,88%,100%{box-shadow:0 24px 60px rgba(20,29,48,.12),0 8px 24px rgba(20,29,48,.08);}
+  94%{box-shadow:0 0 0 5px rgba(239,68,68,.16),0 24px 60px rgba(20,29,48,.12),0 8px 24px rgba(20,29,48,.08);}
+}
+
+.ph-chaos:hover .ph-chaos-ui,
+.ph-chaos:hover .ph-chaos-alert{animation-play-state:paused;}
+@media(prefers-reduced-motion:reduce){
+  .ph-chaos-ui,.ph-chaos-alert{animation:none;}
+}
+
+@media(max-width:900px){
+  .ph-problem-intro{flex-direction:column;align-items:stretch;gap:36px;}
+  .ph-problem-intro-copy{max-width:100%;flex:none;text-align:center;}
+  .ph-problem-intro-copy .phr-section__sub{margin-left:auto;margin-right:auto;}
+  .ph-problem-list{max-width:420px;margin-left:auto;margin-right:auto;text-align:left;}
+  .ph-chaos{max-width:520px;min-height:460px;margin:0 auto;width:100%;}
+  .ph-chaos-alert--5{right:0%;}
+  .ph-chaos-alert--7{top:0%;}
+}
+@media(max-width:640px){
+  .ph-chaos{--scale:.5;min-height:380px;}
+  .ph-chaos-ui--main{width:90%;left:5%;top:24%;}
+  .ph-chaos-ui--secondary{width:46%;top:0%;left:0%;}
+  .ph-chaos-ui--tertiary{width:44%;bottom:10%;right:0%;}
+  .ph-chaos-alert{font-size:11px;padding:7px 11px 7px 9px;}
+  .ph-chaos-alert--2,.ph-chaos-alert--6,.ph-chaos-alert--7{display:none;}
+  .ph-chaos-connector{display:none;}
+  .ph-chaos-alert--1{--rot:-2deg;}
+  .ph-chaos-alert--3{--rot:-1deg;top:0%;}
+  .ph-chaos-alert--4{--rot:2deg;}
+  .ph-chaos-alert--5{--rot:-2deg;right:0%;top:54%;}
+  .ph-chaos-alert--8{--rot:1deg;}
+}
+
+/* --- 1. Hero: full viewport height + green tint + bottom fade ----- */
+.phr-hero{min-height:100vh;background:linear-gradient(160deg,#EEF6F0 0%,#F5FAF6 55%,#E9F5EC 100%);}
+.phr-hero::after{
+  content:'';
+  position:absolute;
+  bottom:0;
+  left:50%;
+  width:160vw;
+  height:640px;
+  transform:translate(-50%,58%);
+  border-radius:50%;
+  background:radial-gradient(ellipse at center,#fff 0%,#fff 32%,rgba(255,255,255,.75) 52%,rgba(255,255,255,0) 78%);
+  pointer-events:none;
+  z-index:1;
+}
+.phr-hero__split{justify-content:space-between;gap:40px;}
+.phr-hero__copy{max-width:500px;}
+.phr-hero__visual{flex:1;max-width:600px;width:100%;align-self:stretch;display:flex;align-items:flex-end;position:relative;z-index:0;}
+.ph-hero-img{
+  width:100%;
+  max-width:600px;
+  aspect-ratio:3/4;
+  object-fit:cover;
+  object-position:center top;
+  display:block;
+  position:relative;
+  z-index:2;
+}
+.ph-hero-float{
+  position:absolute;
+  width:190px;
+  height:190px;
+  background:var(--phr-white);
+  border:1.5px dashed var(--phr-blue-200);
+  border-radius:var(--phr-radius-lg);
+  box-shadow:0 20px 40px -12px rgba(13,27,62,.2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:12px;
+  font-size:13px;
+  font-weight:600;
+  color:var(--phr-text-light);
+  animation:ph-hero-float-bob 5s ease-in-out infinite;
+}
+/* Peeks out from behind her shoulder — sits under the photo. */
+.ph-hero-float--1{top:30%;left:-54px;z-index:1;}
+/* Overlaps her arm in front — sits over the photo. */
+.ph-hero-float--2{top:38%;right:-30px;z-index:4;animation-delay:1.4s;animation-duration:6s;}
+/* Once a float has a real screenshot, drop the dashed "needs an
+   asset" border/padding for a finished card and let the image fill
+   it edge to edge. */
+.ph-hero-float--filled{
+  width:210px;
+  height:auto;
+  border:none;
+  border-radius:var(--phr-radius-lg);
+  padding:0;
+  overflow:hidden;
+}
+/* Each widget's own aspect-ratio, matching its own image file exactly
+   (attendance_widget_hero.webp is 500x492, payslip_widget_phr.webp is
+   500x323 — no longer the same shape, so this can't be one shared
+   rule without object-fit:cover cropping one of them). */
+.ph-hero-float--1.ph-hero-float--filled{aspect-ratio:500/492;}
+.ph-hero-float--2.ph-hero-float--filled{aspect-ratio:500/323;}
+.ph-hero-float--filled img{width:100%;height:100%;object-fit:cover;display:block;}
+@keyframes ph-hero-float-bob{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-14px);}
+}
+@media(prefers-reduced-motion:reduce){.ph-hero-float{animation:none;}}
+
+/* Small product-icon chips scattered around her — HR, Pay, Time, Talent. */
+.ph-hero-icon{
+  position:absolute;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  background:var(--phr-white);
+  box-shadow:0 14px 28px -10px rgba(13,27,62,.25);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--phr-blue-500);
+  z-index:5;
+  animation:ph-hero-float-bob 5s ease-in-out infinite;
+}
+.ph-hero-icon svg{width:26px;height:26px;}
+.ph-hero-icon img{width:28px;height:28px;object-fit:contain;display:block;}
+.ph-hero-icon--hr{top:9%;left:20%;animation-duration:5.5s;}
+.ph-hero-icon--pay{top:15%;right:2%;z-index:1;animation-duration:4.5s;animation-delay:.6s;}
+.ph-hero-icon--time{top:64%;left:-6%;animation-duration:6.5s;animation-delay:1.1s;}
+.ph-hero-icon--talent{top:80%;right:14%;z-index:1;animation-duration:5s;animation-delay:1.9s;}
+@media(prefers-reduced-motion:reduce){.ph-hero-icon{animation:none;}}
+
+@media(max-width:960px){
+  .phr-hero__visual{max-width:420px;margin:0 auto;}
+  .ph-hero-img{max-width:420px;}
+  .ph-hero-float{width:130px;height:130px;font-size:11px;}
+  .ph-hero-float--1{left:-20px;top:26%;}
+  .ph-hero-float--2{right:-16px;top:46%;}
+  .ph-hero-float--filled{width:150px;height:auto;}
+  .ph-hero-icon{width:46px;height:46px;}
+  .ph-hero-icon svg{width:20px;height:20px;}
+  .ph-hero-icon img{width:22px;height:22px;}
+}
+
+/* .ph-hero-cta wraps a single .btn-primary <a>. The shared .btn-primary
+   is display:flex (block-level), so without a width constraint it
+   stretches to fill the wrapper instead of sizing to its content. */
+.ph-hero-cta{margin-top:28px;}
+.ph-hero-cta .btn-primary{width:max-content;}
+
+/* G2 rating badge, reused from customer-page's .cs-hero-g2* pattern */
+.ph-hero-g2{display:inline-flex;align-items:center;gap:10px;margin-top:20px;text-decoration:none;}
+.ph-hero-g2-mark{width:24px;height:24px;display:block;flex-shrink:0;}
+.ph-hero-g2-stars{position:relative;display:inline-flex;}
+.ph-hero-g2-stars-bg,.ph-hero-g2-stars-fg{display:flex;gap:1px;}
+.ph-hero-g2-stars-bg svg{color:#e2e8f0;}
+.ph-hero-g2-stars-fg{position:absolute;inset:0;overflow:hidden;white-space:nowrap;}
+.ph-hero-g2-stars-fg svg{color:#f59e0b;flex-shrink:0;}
+.ph-hero-g2-stars svg{width:15px;height:15px;fill:currentColor;display:block;}
+.ph-hero-g2-text{font-size:13.5px;font-weight:500;color:var(--phr-text-mid);}
+.ph-hero-g2-text strong{color:var(--phr-text-dark);font-weight:800;}
+.ph-hero-g2-count{transition:color .15s;}
+.ph-hero-g2:hover .ph-hero-g2-count{color:var(--phr-blue-600);text-decoration:underline;}
+
+.ph-trust-strip{margin-top:56px;}
+.ph-trust-label{
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--phr-text-light);
+  margin:0 0 14px;
+}
+.ph-trust-strip .client-logos{padding:0;min-height:auto;}
+.ph-trust-strip .client-logos::before,
+.ph-trust-strip .client-logos::after{display:none;}
+.ph-trust-strip .client-logos .client-logo img{height:36px !important;max-width:88px !important;}
+/* The shared .client-logo dims to 65% opacity by default (a subtle-trust-bar
+   convention elsewhere on the site), but here the strip sits right where
+   .phr-hero::after's white glow fades in — dimmed logos blend straight into
+   it. Full opacity keeps them legible regardless of what's behind them. */
+.ph-trust-strip .client-logo{opacity:1;}
+.ph-trust-strip .logo-slider-track{gap:36px;animation-duration:43.2s;}
+
+/* --- 2. Compliance strip (title + badge row, right after hero) ---- */
+.ph-compliance-strip{padding:56px 0;}
+.ph-compliance-strip .phr-section__title{font-size:clamp(16px,1.4vw,19px);font-weight:700;}
+.ph-compliance-badges{justify-content:center;margin-top:28px;}
+.ph-compliance-badge{gap:8px;font-size:14.5px;}
+.ph-compliance-badge-icon{flex-shrink:0;width:16px;height:16px;object-fit:contain;display:block;}
+
+/* --- 5. Modules tabs: icon+label tab row, one panel visible at a time */
+.ph-mod-tabs{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  margin-top:44px;
+}
+.ph-mod-tab{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  background:var(--phr-white);
+  border:1.5px solid var(--phr-border);
+  border-radius:100px;
+  padding:10px 20px 10px 12px;
+  font-family:inherit;
+  font-size:14px;
+  font-weight:700;
+  color:var(--phr-text-mid);
+  cursor:pointer;
+  transition:border-color var(--phr-transition),color var(--phr-transition),background var(--phr-transition);
+}
+.ph-mod-tab img{width:24px;height:24px;object-fit:contain;flex-shrink:0;}
+.ph-mod-tab:hover{border-color:var(--phr-blue-200);color:var(--phr-blue-700);}
+.ph-mod-tab.is-active{background:var(--phr-blue-700);border-color:var(--phr-blue-700);color:var(--phr-white);}
+
+.ph-mod-panels{margin-top:40px;}
+.ph-mod-panel[hidden]{display:none;}
+.ph-mod-panel{
+  display:flex;
+  gap:48px;
+  align-items:flex-start;
+  background:var(--phr-white);
+  border:1px solid var(--phr-border);
+  border-radius:var(--phr-radius-lg);
+  padding:44px 48px;
+  max-width:1200px;
+  margin:0 auto;
+}
+.ph-mod-panel-content{flex:1;display:flex;gap:24px;align-items:flex-start;min-width:0;}
+.ph-mod-panel-media{flex:0 0 520px;max-width:520px;align-self:stretch;}
+.ph-mod-ui-placeholder{
+  width:100%;
+  height:100%;
+  min-height:440px;
+  border-radius:var(--phr-radius-md);
+  border:1.5px dashed var(--phr-blue-200);
+  background:var(--phr-blue-50);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  text-align:center;
+  padding:24px;
+}
+.ph-mod-ui-placeholder-icon{width:52px;height:52px;object-fit:contain;opacity:.6;}
+.ph-mod-ui-placeholder span{font-size:14px;font-weight:600;color:var(--phr-text-light);}
+/* Real product screenshots (HR/Pay/Time/Engagement/Talent/Insights) —
+   own frame instead of the dashed "needs asset" placeholder. contain
+   (not cover) so a real screenshot's text/UI never gets cropped;
+   background mat fills the rest of the panel's height. */
+.ph-mod-media-frame{
+  width:100%;
+  height:100%;
+  min-height:440px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.ph-mod-media-frame img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:14px;
+  box-shadow:0 20px 48px -14px rgba(20,29,48,.3);
+}
+@media(max-width:860px){.ph-mod-media-frame{height:auto;aspect-ratio:4/3;min-height:0;}}
+.ph-mod-panel-icon{
+  flex:0 0 auto;
+  width:56px;
+  height:56px;
+  border-radius:14px;
+  background:var(--phr-blue-50);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.ph-mod-panel-icon img{width:32px;height:32px;object-fit:contain;}
+.ph-mod-panel-body{min-width:0;}
+.ph-mod-panel-body h3{font-size:22px;font-weight:800;color:var(--phr-text-dark);line-height:1.3;margin:0 0 24px;}
+.ph-mod-panel-label{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--phr-text-light);margin:0 0 14px;}
+.ph-mod-outcome-group{margin-bottom:20px;}
+.ph-mod-outcome-group:last-child{margin-bottom:0;}
+.ph-mod-outcome-group-title{font-size:14.5px;font-weight:800;color:var(--phr-text-dark);margin:0 0 10px;}
+.ph-mod-outcomes{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;}
+.ph-mod-outcomes li{
+  position:relative;
+  padding-left:26px;
+  font-size:14.5px;
+  color:var(--phr-text-dark);
+  line-height:1.5;
+}
+.ph-mod-outcomes li::before{
+  content:'';
+  position:absolute;
+  left:0;top:5px;
+  width:16px;height:16px;
+  border-radius:50%;
+  background:var(--phr-blue-50);
+  box-shadow:inset 0 0 0 5px var(--phr-blue-500);
+}
+@media(max-width:860px){
+  .ph-mod-panel{flex-direction:column;align-items:stretch;}
+  .ph-mod-panel-media{flex:none;max-width:100%;order:-1;}
+  .ph-mod-ui-placeholder{height:auto;aspect-ratio:4/3;min-height:0;}
+}
+@media(max-width:640px){
+  .ph-mod-tab span{display:none;}
+  .ph-mod-tab{padding:10px;border-radius:50%;}
+  .ph-mod-panel{padding:28px 24px;}
+  .ph-mod-panel-content{flex-direction:column;}
+}
+
+/* --- 4. Compliance security strip ---------------------------------- */
+.ph-security-strip{justify-content:center;margin-top:40px;}
+
+/* --- 6. Lexi AI Insights: tab row above a two-up panel — a vibrant
+   blue/purple/green gradient card carries the copy (this is the one
+   AI-flavoured surface on the page, so it earns the color), a
+   UI-preview video sits alongside it at matching height. ---------- */
+.ph-lexi-ins-eyebrow-badge{
+  display:inline-flex;align-items:center;justify-content:center;
+  background:var(--phr-navy);border-radius:999px;
+  padding:10px 20px;margin-bottom:14px;
+}
+.ph-lexi-ins-eyebrow-logo{height:22px;width:auto;display:block;}
+.ph-lexi-ins-tabs{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  margin-top:44px;
+}
+.ph-lexi-ins-tab{
+  display:flex;
+  align-items:center;
+  background:var(--phr-white);
+  border:1.5px solid var(--phr-border);
+  border-radius:100px;
+  padding:11px 22px;
+  font-family:inherit;
+  font-size:14px;
+  font-weight:700;
+  color:var(--phr-text-mid);
+  cursor:pointer;
+  transition:border-color var(--phr-transition),color var(--phr-transition),background var(--phr-transition);
+}
+.ph-lexi-ins-tab.is-active{color:var(--phr-white);}
+/* Each audience gets its own color from the gradient card below (same
+   hex stops), so the tab you're on previews the card you're about to
+   see: HR Leaders = purple, Managers = blue, Employees = green. */
+.ph-lexi-ins-tab[data-lexi-ins-tab="leaders"]:hover:not(.is-active){border-color:#C4B5FD;color:#8B5CF6;}
+.ph-lexi-ins-tab[data-lexi-ins-tab="leaders"].is-active{background:#8B5CF6;border-color:#8B5CF6;}
+.ph-lexi-ins-tab[data-lexi-ins-tab="managers"]:hover:not(.is-active){border-color:#93C5FD;color:#3B82F6;}
+.ph-lexi-ins-tab[data-lexi-ins-tab="managers"].is-active{background:#3B82F6;border-color:#3B82F6;}
+.ph-lexi-ins-tab[data-lexi-ins-tab="employees"]:hover:not(.is-active){border-color:#6EE7B7;color:#10B981;}
+.ph-lexi-ins-tab[data-lexi-ins-tab="employees"].is-active{background:#10B981;border-color:#10B981;}
+
+/* Panels are grid-stacked into the same cell (not display:none'd) so
+   the grid row's auto height is always the tallest panel — switching
+   tabs can't change the box height, since the inactive panels are
+   still there sizing the row, just visibility:hidden. */
+.ph-lexi-ins-panels{margin-top:40px;display:grid;max-width:1120px;margin-left:auto;margin-right:auto;}
+.ph-lexi-ins-panel{
+  grid-column:1;
+  grid-row:1;
+  visibility:hidden;
+  pointer-events:none;
+  display:flex;
+  gap:40px;
+  align-items:stretch;
+  padding:44px;
+  border-radius:36px;
+  background:linear-gradient(135deg,#3B82F6 0%,#8B5CF6 55%,#10B981 100%);
+  box-shadow:0 28px 56px -24px rgba(99,102,241,.5);
+}
+.ph-lexi-ins-panel.is-active{visibility:visible;pointer-events:auto;}
+.ph-lexi-ins-content{
+  flex:0 0 400px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.ph-lexi-ins-content h3{font-size:25px;font-weight:800;color:var(--phr-white);line-height:1.3;margin:0 0 14px;}
+.ph-lexi-ins-desc{font-size:15.5px;color:rgba(255,255,255,.88);line-height:1.6;margin:0 0 26px;}
+.ph-lexi-ins-checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:13px;}
+.ph-lexi-ins-checks li{
+  position:relative;
+  padding-left:30px;
+  font-size:14.5px;
+  color:var(--phr-white);
+  line-height:1.5;
+}
+.ph-lexi-ins-checks li::before{
+  content:'';
+  position:absolute;
+  left:0;top:1px;
+  width:20px;height:20px;
+  border-radius:50%;
+  background:rgba(255,255,255,.22);
+}
+.ph-lexi-ins-checks li::after{
+  content:'';
+  position:absolute;
+  left:6px;top:7px;
+  width:9px;height:5px;
+  border-left:2px solid var(--phr-white);
+  border-bottom:2px solid var(--phr-white);
+  transform:rotate(-45deg);
+}
+.ph-lexi-ins-video{
+  position:relative;
+  flex:1;
+  min-width:0;
+  border-radius:22px;
+  background:rgba(255,255,255,.14);
+  overflow:hidden;
+}
+.ph-lexi-ins-video-el{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  /* Slight overscale + center crop: hides a hairline edge artifact
+     baked into the source export (its 592x370 native size matches
+     this box's own rendered size almost exactly, so cover has near
+     nothing to crop and the video's own edge is left exposed). */
+  transform:scale(1.04);
+}
+.ph-lexi-ins-video-label{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  text-align:center;
+  font-size:13px;
+  font-weight:600;
+  color:rgba(255,255,255,.85);
+  pointer-events:none;
+}
+@media(max-width:1080px){
+  .ph-lexi-ins-panel{flex-direction:column;padding:32px;}
+  .ph-lexi-ins-content{flex:none;}
+  .ph-lexi-ins-video{flex:none;width:100%;aspect-ratio:16/9;}
+}
+@media(max-width:640px){
+  .ph-lexi-ins-tab{padding:9px 16px;font-size:13px;}
+  .ph-lexi-ins-panel{border-radius:24px;padding:24px;gap:24px;}
+  .ph-lexi-ins-content h3{font-size:21px;}
+  .ph-lexi-ins-video{border-radius:18px;}
+}
+
+/* --- 7. Industry selector: tab row + one dynamically-rendered card
+   (content comes from PH_INDUSTRIES in philippines.js). Card uses
+   grid-template-areas so the DOM order (intro, media, caps) can read
+   top-to-bottom on mobile while desktop places media as a full-height
+   right column without needing separate mobile/desktop markup. ------ */
+.ph-industry-sub{max-width:640px;}
+.ph-industry-tabs{
+  display:flex;
+  gap:10px;
+  overflow-x:auto;
+  scrollbar-width:none;
+  -ms-overflow-style:none;
+  margin-top:44px;
+  padding:4px 2px 6px;
+}
+.ph-industry-tabs::-webkit-scrollbar{display:none;}
+.ph-industry-tab{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  flex:0 0 auto;
+  min-height:44px;
+  background:var(--phr-white);
+  border:1.5px solid var(--phr-border);
+  border-radius:100px;
+  padding:10px 20px 10px 16px;
+  font-family:inherit;
+  font-size:14px;
+  font-weight:700;
+  color:var(--phr-text-mid);
+  cursor:pointer;
+  transition:border-color var(--phr-transition),color var(--phr-transition),background var(--phr-transition);
+}
+.ph-industry-tab svg{width:19px;height:19px;flex-shrink:0;}
+.ph-industry-tab:hover{border-color:var(--phr-blue-200);color:var(--phr-blue-700);}
+.ph-industry-tab.is-active{background:var(--phr-blue-700);border-color:var(--phr-blue-700);color:var(--phr-white);}
+.ph-industry-tab:focus-visible{outline:2px solid var(--phr-blue-500);outline-offset:2px;}
+@media(min-width:861px){
+  .ph-industry-tabs{flex-wrap:wrap;justify-content:center;overflow-x:visible;}
+}
+
+.ph-industry-panel{margin-top:40px;}
+.ph-industry-card{
+  display:grid;
+  grid-template-columns:1fr;
+  grid-template-areas:"intro" "media" "caps";
+  gap:28px;
+  background:var(--phr-blue-30);
+  border:1px solid var(--phr-border);
+  border-radius:32px;
+  padding:28px;
+  max-width:1120px;
+  margin:0 auto;
+  min-height:0;
+  opacity:1;
+  transform:translateY(0);
+  transition:opacity .25s ease,transform .25s ease;
+}
+.ph-industry-card.is-hidden{opacity:0;transform:translateY(10px);}
+@media(prefers-reduced-motion:reduce){
+  .ph-industry-card{transition:none;}
+}
+@media(min-width:861px){
+  .ph-industry-card{
+    grid-template-columns:58% 42%;
+    grid-template-areas:"intro media" "caps media";
+    gap:8px 44px;
+    padding:48px;
+    min-height:560px;
+  }
+}
+.ph-industry-intro{grid-area:intro;}
+.ph-industry-eyebrow{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--phr-blue-700);margin:0 0 12px;}
+.ph-industry-title{font-size:24px;font-weight:800;color:var(--phr-text-dark);line-height:1.28;margin:0 0 14px;}
+.ph-industry-desc{
+  font-size:15.5px;
+  color:var(--phr-text-mid);
+  line-height:1.6;
+  margin:0;
+}
+@media(min-width:861px){
+  /* The two-line cap is a desktop layout constraint (keeps the intro
+     column balanced against the image column) — mobile stacks full
+     width with room to spare, so let the copy wrap freely there
+     instead of truncating it. */
+  .ph-industry-desc{
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+    overflow:hidden;
+  }
+}
+.ph-industry-media{
+  grid-area:media;
+  border-radius:22px;
+  padding:20px;
+  background:linear-gradient(160deg,var(--phr-blue-50) 0%,#EAF1FF 55%,var(--phr-blue-30) 100%);
+  display:flex;
+}
+.ph-industry-media img{width:100%;height:100%;min-height:220px;object-fit:cover;border-radius:16px;display:block;}
+.ph-industry-media-placeholder{
+  width:100%;
+  min-height:220px;
+  border-radius:16px;
+  border:1.5px dashed var(--phr-blue-200);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:24px;
+  text-align:center;
+  color:var(--phr-text-light);
+}
+.ph-industry-media-placeholder span{font-size:12.5px;font-weight:600;line-height:1.4;}
+.ph-industry-caps{grid-area:caps;margin-top:8px;}
+.ph-industry-caps-label{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--phr-text-light);margin:0 0 16px;}
+.ph-industry-cap-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:16px;}
+.ph-industry-cap-item{display:flex;align-items:flex-start;gap:12px;}
+.ph-industry-cap-check{flex:0 0 auto;width:24px;height:24px;border-radius:50%;background:var(--phr-blue-50);display:flex;align-items:center;justify-content:center;}
+.ph-industry-cap-check svg{width:13px;height:13px;color:var(--phr-blue-700);}
+.ph-industry-cap-text{font-size:14.5px;color:var(--phr-text-dark);line-height:1.5;padding-top:2px;}
+@media(min-width:861px){
+  .ph-industry-cap-list{grid-template-columns:repeat(2,1fr);gap:18px 24px;}
+}
+@media(max-width:640px){
+  .ph-industry-card{padding:22px;border-radius:24px;gap:22px;}
+  .ph-industry-title{font-size:21px;}
+  .ph-industry-media{padding:14px;border-radius:18px;}
+}
+
+/* --- 7. Interactive demo: card placed right, copy left, mirroring
+   the interactive-demos page hero (.dg-hero/.dg-hero-demo* classes
+   reused as-is from styles.css; only the split wrapper is new).
+   Background matches .phr-hero's light green gradient so the two
+   green sections bookend the white ones between them. ------------- */
+.ph-demo-section--green{background:linear-gradient(160deg,#EEF6F0 0%,#F5FAF6 55%,#E9F5EC 100%);}
+.ph-demo-split{
+  display:flex;
+  align-items:center;
+  gap:64px;
+}
+.ph-demo-copy{flex:1;max-width:480px;}
+.ph-demo-split .dg-hero-demo{flex:1;}
+/* .dg-hero-img has no sizing rule anywhere in the shared CSS — without
+   this it renders at its native pixel size instead of filling
+   .dg-hero-demo-frame (aspect-ratio:16/10), overflowing and getting
+   cropped by the frame's own overflow:hidden on wide viewports, or
+   leaving visible gaps around it on narrower ones. */
+.dg-hero-img{width:100%;height:100%;object-fit:cover;display:block;}
+@media(max-width:1024px){
+  .ph-demo-split{flex-direction:column;gap:40px;}
+  .ph-demo-copy{max-width:100%;}
+  .ph-demo-split .dg-hero-demo{width:100%;}
+}
+
+/* "Start Demo" pill, visible at rest (not just on hover). Overrides
+   the shared .dg-hero-play-btn (a plain 68x68 circle) with a wider
+   auto-width hit target, scoped via .ph-demo-play-btn so the shared
+   class's default styling elsewhere is untouched. Uses a fixed-px
+   border-radius rather than the base class's 50% — 50% on a wide
+   rectangle draws elliptical corners (an "oval"), not a clean pill. */
+.ph-demo-play-btn{
+  width:auto !important;
+  height:auto !important;
+  padding:14px 26px 14px 20px !important;
+  font-size:inherit !important;
+  color:inherit !important;
+  gap:10px;
+  border-radius:999px;
+  overflow:hidden;
+  white-space:nowrap;
+  background:var(--phr-blue-500);
+  box-shadow:0 12px 40px rgba(37,99,235,.35);
+  transition:background .3s ease,transform .2s,box-shadow .2s;
+}
+.ph-demo-play-btn__icon{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  font-size:18px;
+  color:#fff;
+  padding-left:2px;
+}
+.ph-demo-play-btn__label{
+  font-size:14.5px;
+  font-weight:700;
+  color:#fff;
+  white-space:nowrap;
+}
+.dg-hero-demo-frame:hover .ph-demo-play-btn{
+  background:var(--phr-blue-700);
+  box-shadow:0 16px 48px rgba(37,99,235,.45);
+  transform:translate(-50%,-50%) scale(1.05);
+}
+
+/* --- 10. Customer proof: same small case-study cards as customer-page
+   (.cs-card and friends, ported from customer-page/style.css — logo/
+   thumb/headline/teaser/metrics/tags/CTA) for Brandix, SMSGT and
+   Government of Uganda, plus a "View More Case Studies" link. The
+   stats row that used to trail this section now lives on its own as
+   .ph-impact-* (see below). -------------------------------------------- */
+.ph-cs-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.cs-card{
+  background:var(--phr-white);
+  border-radius:16px;
+  border:1px solid var(--phr-border);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  transition:box-shadow .2s,transform .2s;
+}
+.cs-card:hover{box-shadow:0 8px 32px rgba(13,27,62,.09);transform:translateY(-2px);}
+.cs-card-thumb{width:100%;height:190px;overflow:hidden;background:var(--phr-blue-50);flex-shrink:0;}
+.cs-card-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;}
+.cs-card:hover .cs-card-thumb img{transform:scale(1.04);}
+.ph-cs-thumb-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--phr-text-light);}
+.ph-cs-thumb-placeholder span{font-size:12px;font-weight:600;}
+.cs-card-body{padding:20px 22px 22px;flex:1;display:flex;flex-direction:column;}
+.cs-card-top{display:flex;align-items:center;margin-bottom:14px;}
+.cs-card-logo{height:32px;width:auto;display:block;}
+.cs-card-anon{justify-content:space-between;gap:10px;}
+.cs-card-anon-left{display:flex;align-items:center;gap:10px;}
+.cs-card-anon-icon{width:34px;height:34px;flex-shrink:0;border-radius:8px;background:var(--phr-blue-50);display:flex;align-items:center;justify-content:center;color:var(--phr-blue-500);}
+.cs-card-anon-icon svg{width:17px;height:17px;}
+.cs-card-anon-industry{font-size:14px;font-weight:800;color:var(--phr-text-dark);}
+.cs-card-headline{font-size:14.5px;font-weight:700;color:var(--phr-text-dark);line-height:1.42;margin-bottom:10px;}
+.cs-card-teaser{font-size:13px;color:var(--phr-text-mid);line-height:1.6;margin-bottom:16px;flex:1;}
+.cs-card-metrics{display:flex;gap:16px;padding:14px 0;border-top:1px solid var(--phr-border);margin-bottom:14px;}
+.cs-card-metric-num{font-size:19px;font-weight:800;color:var(--phr-text-dark);letter-spacing:-.5px;line-height:1;}
+.cs-card-metric-label{font-size:10px;font-weight:500;color:var(--phr-text-light);margin-top:3px;line-height:1.3;}
+.cs-card-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;padding-top:14px;border-top:1px solid var(--phr-border);}
+.cs-card-tags{display:flex;gap:4px;flex-wrap:wrap;}
+.cs-card-tag{font-size:9px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:3px 8px;border-radius:5px;background:var(--phr-blue-30);color:var(--phr-text-mid);border:1px solid var(--phr-border);}
+.cs-card-cta{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:var(--phr-blue-500);text-decoration:none;white-space:nowrap;transition:gap .14s;flex-shrink:0;}
+.cs-card-cta:hover{gap:8px;}
+.cs-card-cta svg{width:13px;height:13px;}
+.ph-cs-more{text-align:center;margin-top:44px;}
+.ph-cs-more .btn-outline{display:inline-flex;}
+@media(max-width:900px){.ph-cs-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:640px){.ph-cs-grid{grid-template-columns:1fr;}}
+
+/* --- 11. Proven impact: intro column + 3 stat cards. Figures reuse
+   the site's existing card/border/shadow tokens (.ph-card-adjacent
+   look) — see .ph-impact-count in philippines.js for the count-up-once
+   animation. -- */
+.ph-impact-layout{display:flex;gap:56px;align-items:center;}
+.ph-impact-intro{flex:0 0 32%;}
+.ph-impact-title{font-size:32px;font-weight:800;color:var(--phr-text-dark);line-height:1.25;margin:14px 0 16px;}
+.ph-impact-desc{font-size:15px;color:var(--phr-text-mid);line-height:1.6;margin:0;}
+.ph-impact-stats{flex:1;min-width:0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.ph-impact-stat{
+  background:var(--phr-white);
+  border:1px solid var(--phr-border);
+  border-radius:20px;
+  padding:32px 26px;
+  box-shadow:var(--phr-shadow-card);
+}
+.ph-impact-stat-accent{display:block;width:28px;height:3px;border-radius:2px;background:var(--phr-blue-500);margin-bottom:20px;}
+.ph-impact-stat-num{display:flex;align-items:baseline;gap:6px;margin-bottom:12px;font-variant-numeric:tabular-nums;}
+.ph-impact-count{font-size:42px;font-weight:800;color:var(--phr-blue-700);letter-spacing:-1px;line-height:1;white-space:nowrap;}
+.ph-impact-stat-unit{font-size:18px;font-weight:700;color:var(--phr-blue-700);}
+.ph-impact-stat-label{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--phr-text-dark);margin:0 0 10px;}
+.ph-impact-stat-desc{font-size:13.5px;color:var(--phr-text-light);line-height:1.55;margin:0;}
+@media(max-width:900px){
+  .ph-impact-layout{flex-direction:column;align-items:stretch;gap:32px;}
+  .ph-impact-intro{flex:none;max-width:640px;}
+  .ph-impact-stats{grid-template-columns:repeat(2,1fr);}
+  .ph-impact-stats .ph-impact-stat:nth-child(3){grid-column:1/-1;}
+}
+@media(max-width:640px){
+  .ph-impact-stats{grid-template-columns:1fr;}
+  .ph-impact-stats .ph-impact-stat:nth-child(3){grid-column:auto;}
+  .ph-impact-title{font-size:26px;}
+  .ph-impact-count{font-size:36px;}
+}
+
+/* --- 12. HR expertise: "30 years" badge + heading + copy on the left,
+   a divided list of feature rows on the right. --------------------- */
+.ph-exp-layout{display:flex;gap:64px;align-items:flex-start;}
+.ph-exp-intro{flex:0 0 32%;}
+.ph-exp-badge{display:flex;align-items:center;gap:16px;margin-bottom:28px;}
+.ph-exp-badge-num{font-size:56px;font-weight:800;color:var(--phr-blue-700);line-height:1;letter-spacing:-1px;}
+.ph-exp-badge-text{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  padding:12px 16px;
+  background:var(--phr-blue-50);
+  border-radius:var(--phr-radius-md);
+}
+.ph-exp-badge-text strong{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--phr-text-dark);}
+.ph-exp-badge-text span{font-size:12.5px;color:var(--phr-text-light);}
+.ph-exp-title{font-size:30px;font-weight:800;color:var(--phr-text-dark);line-height:1.28;margin:0 0 16px;}
+.ph-exp-desc{font-size:15px;color:var(--phr-text-mid);line-height:1.65;margin:0;}
+.ph-exp-features{flex:1;min-width:0;}
+.ph-exp-feature{display:flex;gap:20px;padding:26px 0;border-top:1px solid var(--phr-border);}
+.ph-exp-feature:first-child{border-top:none;padding-top:0;}
+.ph-exp-feature-icon{
+  flex:0 0 auto;
+  width:52px;height:52px;
+  border-radius:14px;
+  background:var(--phr-blue-50);
+  color:var(--phr-blue-700);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.ph-exp-feature-icon svg{width:24px;height:24px;}
+.ph-exp-feature-body{min-width:0;}
+.ph-exp-feature-body h3{font-size:17px;font-weight:800;color:var(--phr-text-dark);margin:0 0 6px;}
+.ph-exp-feature-body p{font-size:14.5px;color:var(--phr-text-mid);line-height:1.6;margin:0;}
+@media(max-width:900px){
+  .ph-exp-layout{flex-direction:column;gap:36px;}
+  .ph-exp-intro{flex:none;max-width:640px;}
+}
+@media(max-width:640px){
+  .ph-exp-title{font-size:24px;}
+  .ph-exp-badge-num{font-size:44px;}
+  .ph-exp-feature{gap:14px;padding:20px 0;}
+  .ph-exp-feature-icon{width:44px;height:44px;border-radius:12px;}
+  .ph-exp-feature-icon svg{width:20px;height:20px;}
+}
+
+/* --- 7. Problem -> solution table ----------------------------------- */
+.ph-solution-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.ph-solution-table{
+  width:100%;
+  min-width:640px;
+  border-collapse:collapse;
+  background:var(--phr-white);
+  border:1px solid var(--phr-border);
+  border-radius:var(--phr-radius-md);
+  overflow:hidden;
+}
+.ph-solution-table th{
+  text-align:left;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  color:var(--phr-text-light);
+  padding:16px 24px;
+  background:var(--phr-blue-30);
+  border-bottom:1px solid var(--phr-border);
+}
+.ph-solution-table td{
+  padding:18px 24px;
+  font-size:14.5px;
+  color:var(--phr-text-mid);
+  line-height:1.55;
+  border-bottom:1px solid var(--phr-border);
+  vertical-align:top;
+}
+.ph-solution-table tr:last-child td{border-bottom:0;}
+.ph-solution-table td:first-child{color:var(--phr-text-dark);font-weight:600;width:42%;}
+.ph-solution-table td:last-child{color:var(--phr-blue-700);}
+.ph-solution-table tbody tr:hover{background:var(--phr-blue-50);}
+
+/* --- 11. Filipino customer voices: one featured video+quote card,
+   then a written-testimonial slider below it (3 cards/2/1 visible at
+   desktop/tablet/mobile — see PH_VOICES in philippines.js). ------------ */
+.ph-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+.ph-voices-section{background:#F5F6F8;}
+.ph-voices-sub{max-width:640px;}
+
+/* -- Featured video + quote card -- */
+.ph-voices-featured{
+  display:grid;
+  grid-template-columns:38% 1fr;
+  background:var(--phr-white);
+  border:1px solid var(--phr-border);
+  border-radius:32px;
+  overflow:hidden;
+  box-shadow:var(--phr-shadow-card);
+  max-width:1120px;
+  margin:44px auto 0;
+}
+.ph-voices-featured-video{
+  display:flex;
+  align-items:stretch;
+  justify-content:center;
+}
+.ph-voices-vid{
+  width:100%;
+  height:100%;
+  box-shadow:0 20px 50px -20px rgba(13,27,62,.4);
+  border-radius:0;
+}
+.ph-voices-vid .cs-vid-play-btn{opacity:1;}
+.ph-voices-vid:hover .cs-vid-play-btn,
+.ph-voices-vid:focus-visible .cs-vid-play-btn{
+  background:var(--phr-blue-500);border-color:var(--phr-blue-500);
+  transform:translate(-50%,-50%) scale(1.08);
+}
+.ph-voices-vid:focus-visible{outline:2px solid var(--phr-blue-500);outline-offset:3px;}
+.ph-voices-watch-label{
+  position:absolute;left:0;right:0;bottom:18px;
+  text-align:center;
+  font-size:12.5px;font-weight:700;letter-spacing:.02em;
+  color:#fff;
+  pointer-events:none;
+}
+.ph-voices-featured-content{padding:48px 48px 48px 40px;display:flex;flex-direction:column;justify-content:center;min-width:0;}
+.ph-voices-featured-logo{
+  height:36px;width:auto;max-width:170px;
+  object-fit:contain;object-position:left center;
+  display:block;margin-bottom:22px;
+}
+.ph-voices-featured-eyebrow{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--phr-blue-700);margin:0 0 16px;}
+.ph-voices-featured-quote{margin:0;}
+.ph-voices-featured-quote>.ph-voices-quote-mark{display:block;color:var(--phr-blue-200);margin-bottom:12px;}
+.ph-voices-featured-quote>p{font-size:27px;font-weight:500;font-style:normal;color:var(--phr-text-dark);line-height:1.45;margin:0 0 28px;}
+.ph-voices-featured-cite{display:block;font-style:normal;}
+.ph-voices-featured-name{display:block;font-size:16.5px;font-weight:700;color:var(--phr-text-dark);}
+.ph-voices-featured-role{display:block;font-size:13.5px;color:var(--phr-text-light);margin-top:4px;}
+@media(max-width:900px){
+  .ph-voices-featured{grid-template-columns:1fr;border-radius:24px;}
+  .ph-voices-featured-video{padding:28px 28px 0;}
+  .ph-voices-vid{width:100%;height:auto;max-width:220px;aspect-ratio:9/16;border-radius:18px;}
+  .ph-voices-featured-content{padding:28px;}
+  .ph-voices-featured-quote>p{font-size:22px;}
+}
+
+/* -- Written testimonial slider -- */
+.ph-voices-more{margin-top:56px;}
+.ph-voices-more-head{
+  display:flex;align-items:center;justify-content:space-between;
+  max-width:1120px;margin:0 auto 22px;
+}
+.ph-voices-more-label{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--phr-text-light);margin:0;}
+.ph-voices-nav{display:flex;gap:8px;}
+.ph-voices-arrow{
+  width:40px;height:40px;border-radius:50%;flex-shrink:0;
+  background:var(--phr-white);border:1.5px solid var(--phr-border);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--phr-text-mid);cursor:pointer;
+  transition:border-color var(--phr-transition),color var(--phr-transition);
+}
+.ph-voices-arrow svg{width:18px;height:18px;}
+.ph-voices-arrow:hover:not(:disabled){border-color:var(--phr-blue-200);color:var(--phr-blue-700);}
+.ph-voices-arrow:focus-visible{outline:2px solid var(--phr-blue-500);outline-offset:2px;}
+.ph-voices-arrow:disabled{opacity:.35;cursor:default;}
+
+.ph-voices-track{
+  display:flex;
+  gap:22px;
+  list-style:none;
+  margin:0 auto;
+  padding:2px 2px 10px;
+  max-width:1120px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scrollbar-width:none;-ms-overflow-style:none;
+}
+.ph-voices-track::-webkit-scrollbar{display:none;}
+.ph-voices-card{
+  scroll-snap-align:start;
+  flex:0 0 calc((100% - 44px)/3);
+  min-height:320px;
+  background:var(--phr-white);
+  border:1px solid var(--phr-border);
+  border-radius:22px;
+  padding:30px;
+  display:flex;
+  flex-direction:column;
+  box-shadow:0 2px 10px rgba(13,27,62,.04);
+}
+.ph-voices-card-logo-wrap{height:48px;display:flex;align-items:center;margin-bottom:16px;}
+.ph-voices-card-logo{max-width:120px;max-height:48px;width:auto;height:auto;object-fit:contain;display:block;}
+.ph-voices-card-logo-fallback{
+  display:inline-flex;align-items:center;
+  padding:7px 14px;
+  border-radius:8px;
+  background:var(--phr-blue-50);
+  color:var(--phr-blue-700);
+  font-size:12px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;
+}
+.ph-voices-card-industry{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--phr-text-light);margin:0 0 14px;}
+.ph-voices-card-quote-mark{display:block;color:var(--phr-blue-200);width:22px;height:18px;margin-bottom:10px;}
+.ph-voices-card-quote{margin:0 0 22px;flex:1;}
+.ph-voices-card-quote p{font-size:18px;font-weight:400;font-style:normal;color:var(--phr-text-dark);line-height:1.6;margin:0;}
+.ph-voices-card-cite{display:block;font-style:normal;margin-top:auto;}
+.ph-voices-card-name{display:block;font-size:15px;font-weight:600;color:var(--phr-text-dark);}
+.ph-voices-card-role{display:block;font-size:13px;color:var(--phr-text-light);margin-top:3px;line-height:1.4;}
+
+.ph-voices-dots{display:flex;justify-content:center;gap:8px;margin-top:24px;}
+.ph-voices-dot{width:8px;height:8px;border-radius:50%;background:var(--phr-border);border:none;padding:0;cursor:pointer;transition:background .2s,transform .2s;}
+.ph-voices-dot.is-active{background:var(--phr-blue-700);transform:scale(1.3);}
+.ph-voices-dot:focus-visible{outline:2px solid var(--phr-blue-500);outline-offset:2px;}
+
+@media(max-width:1024px){
+  .ph-voices-card{flex-basis:calc((100% - 22px)/2);}
+}
+@media(max-width:640px){
+  .ph-voices-card{flex-basis:86%;min-height:0;}
+  .ph-voices-more-head{padding:0 4px;}
+}
+@media(prefers-reduced-motion:reduce){
+  .ph-voices-track{scroll-behavior:auto;}
+}
+
+/* --- Video card component + modal, ported from customer-page's
+   .cs-vid-* / .wb-modal-* (single featured card, not the full
+   draggable carousel). This part doesn't exist anywhere else in
+   styles.css yet, so it lives here in full. -- */
+.cs-vid-card{
+  border-radius:18px;
+  overflow:hidden;
+  position:relative;
+  cursor:pointer;
+  transition:transform .22s;
+  background:#111;
+}
+.cs-vid-card:hover{transform:scale(1.025);}
+.cs-vid-bg{position:absolute;inset:0;background:var(--phr-navy);}
+.cs-vid-thumb-img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:top center;display:block;
+  transition:transform .4s ease;-webkit-user-drag:none;
+}
+.cs-vid-card:hover .cs-vid-thumb-img{transform:scale(1.03);}
+.cs-vid-scrim{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.1) 0%,transparent 30%,transparent 45%,rgba(0,0,0,.65) 100%);
+}
+.cs-vid-play-btn{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:52px;height:52px;background:rgba(255,255,255,.14);
+  border:1.5px solid rgba(255,255,255,.32);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  backdrop-filter:blur(6px);opacity:0;
+  transition:opacity .2s,background .2s,transform .2s;
+}
+.cs-vid-card:hover .cs-vid-play-btn{
+  opacity:1;background:var(--phr-blue-500);border-color:var(--phr-blue-500);
+  transform:translate(-50%,-50%) scale(1.08);
+}
+.cs-vid-play-btn svg{width:20px;height:20px;color:#fff;margin-left:3px;}
+
+.wb-modal-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:2000;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px);}
+.wb-modal-backdrop.open{display:flex;}
+.wb-modal-box{background:#000;border-radius:16px;overflow:hidden;width:100%;max-width:920px;position:relative;box-shadow:0 32px 80px rgba(0,0,0,.7);}
+.wb-modal-close{position:absolute;top:12px;right:12px;background:rgba(255,255,255,.15);border:none;color:#fff;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;z-index:10;transition:background .2s;line-height:1;}
+.wb-modal-close:hover{background:rgba(255,255,255,.35);}
+.wb-modal-iframe-wrap{position:relative;padding-bottom:56.25%;height:0;}
+.wb-modal-iframe-wrap iframe{position:absolute;inset:0;width:100%;height:100%;}
+.wb-modal-title{padding:14px 20px;font-size:13px;font-weight:600;color:rgba(255,255,255,.75);background:#111;line-height:1.4;}
+
+/* --- 13. FAQ ---------------------------------------------------------- */
+.ph-faq-section .phr-faq-item__trigger span:first-child{flex:1;}
+
+/* --- 14. Form CTA: headline left, live HubSpot form right ---- */
+/* Offsets the anchor-scroll target so the sticky nav bar (~52-60px)
+   doesn't cover the top of the section when "Book a Demo" CTAs jump
+   straight to the on-page form. */
+.ph-form-cta-section{background:var(--phr-white);scroll-margin-top:90px;}
+.ph-faq-section{background:#F5F6F8;}
+.ph-form-cta-split{display:flex;align-items:center;gap:64px;}
+.ph-form-cta-copy{flex:1;max-width:440px;}
+.ph-form-cta-form{flex:1;max-width:480px;width:100%;}
+.ph-form-embed{
+  width:100%;
+  min-height:420px;
+  border-radius:var(--phr-radius-lg);
+  border:1px solid var(--phr-border);
+  background:var(--phr-white);
+  box-shadow:var(--phr-shadow-card);
+  padding:28px;
+}
+.ph-form-loading{
+  height:100%;min-height:360px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+  color:var(--phr-text-light);font-size:14px;
+}
+.ph-form-loading-spinner{
+  width:26px;height:26px;
+  border:2.5px solid var(--phr-border);
+  border-top-color:var(--phr-blue-500);
+  border-radius:50%;
+  animation:ph-form-spin .8s linear infinite;
+}
+@keyframes ph-form-spin{to{transform:rotate(360deg);}}
+@media(prefers-reduced-motion:reduce){
+  .ph-form-loading-spinner{animation:none;}
+}
+@media(max-width:900px){
+  .ph-form-cta-split{flex-direction:column;gap:32px;}
+  .ph-form-cta-copy,.ph-form-cta-form{max-width:100%;}
+}
+
+/* --- Sticky CTA (runs the whole page) --------------------------------- */
+.ph-sticky-cta{
+  position:fixed;left:0;right:0;bottom:0;z-index:500;
+  background:linear-gradient(100deg,#0d1b3e,#1b2c5e);
+  box-shadow:0 -8px 30px -12px rgba(13,27,62,.4);
+  transform:translateY(110%);
+  transition:transform .3s cubic-bezier(.22,.61,.36,1);
+}
+.ph-sticky-cta.is-visible{transform:translateY(0);}
+.ph-sticky-cta__inner{
+  max-width:1240px;margin:0 auto;padding:14px 24px;
+  display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;
+}
+.ph-sticky-cta__text{margin:0;color:#dde4f4;font-size:14px;font-weight:600;}
+.ph-sticky-cta__actions{display:flex;align-items:center;gap:12px;flex-shrink:0;}
+.ph-sticky-cta__btn{
+  display:inline-flex;align-items:center;background:var(--phr-blue-500);color:#fff;
+  font-size:14px;font-weight:700;padding:11px 22px;border-radius:10px;
+  text-decoration:none;transition:background .2s;white-space:nowrap;
+}
+.ph-sticky-cta__btn:hover{background:#1E88E5;}
+.ph-sticky-cta__close{
+  background:rgba(255,255,255,.12);border:0;color:#aebbd8;
+  width:30px;height:30px;border-radius:8px;cursor:pointer;font-size:18px;line-height:1;
+  display:grid;place-items:center;flex-shrink:0;
+}
+.ph-sticky-cta__close:hover{background:rgba(255,255,255,.22);color:#fff;}
+@media(max-width:640px){
+  .ph-sticky-cta__text{display:none;}
+  .ph-sticky-cta__inner{justify-content:space-between;padding:12px 16px;}
+}
+
+@media(max-width:1080px){
+  .ph-proof-grid{grid-template-columns:repeat(2,1fr);}
+  .ph-proof-card,.ph-proof-card--featured{grid-column:span 1;}
+}
+@media(max-width:768px){
+  .ph-proof-grid{grid-template-columns:1fr;}
+  .ph-proof-card,.ph-proof-card--featured{grid-column:span 1;}
+}

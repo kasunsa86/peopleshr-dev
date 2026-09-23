@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(npx --yes playwright install chromium 2>&1)",
+      "PowerShell(Get-Process node -ErrorAction SilentlyContinue)",
+      "PowerShell(node \"C:\\\\Users\\\\kasunsa\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--wamp64-www-Peopleshr-HTML\\\\beebbf8c-9f74-44e6-9e01-0be06742a682\\\\scratchpad\\\\diag_cs2.js\")"
+    ]
+  }
+}

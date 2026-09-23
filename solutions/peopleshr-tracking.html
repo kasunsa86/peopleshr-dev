@@ -1,0 +1,1328 @@
+<?php require_once __DIR__ . '/../inc/geo.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attendance, Access Control &amp; Security Devices • PeoplesHR</title>
+  <meta name="description" content="PeoplesHR Tracking brings biometric attendance, access control and real-time workforce visibility onto one platform, connected directly to PeoplesHR Time and Pay." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://peopleshr.com/solutions/peopleshr-tracking/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PeoplesHR" />
+  <meta property="og:title" content="Attendance, Access Control &amp; Security Devices" />
+  <meta property="og:description" content="PeoplesHR Tracking brings biometric attendance, access control and real-time workforce visibility onto one platform, connected directly to PeoplesHR Time and Pay." />
+  <meta property="og:url" content="https://peopleshr.com/solutions/peopleshr-tracking/" />
+  <meta property="og:image" content="/uploads/2024/03/PeoplesHR-Logo-1200x630-1.webp" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Attendance, Access Control &amp; Security Devices" />
+  <meta name="twitter:description" content="PeoplesHR Tracking brings biometric attendance, access control and real-time workforce visibility onto one platform, connected directly to PeoplesHR Time and Pay." />
+  <meta name="twitter:image" content="/uploads/2024/03/PeoplesHR-Logo-1200x630-1.webp" />
+
+  <?php include __DIR__ . '/../inc/seo-schema.php'; ?>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="<?php echo asset_v('/css/navbar.css'); ?>" />
+   <link rel="stylesheet" href="<?php echo asset_v('/css/styles.css'); ?>" />
+   <link rel="stylesheet" href="<?php echo asset_v('/css/footer.css'); ?>" />
+   <link rel="stylesheet" href="<?php echo asset_v('/css/tracking.css'); ?>" />
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/45700506.js"></script>
+  <!-- End of HubSpot Embed Code -->
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+</head>
+
+<body>
+
+
+
+<div class="nv-root">
+
+  <!-- ============================= NAVBAR ============================= -->
+  <header class="nv-bar" id="nvBar">
+    <div class="nv-inner">
+
+      <a class="nv-logo" href="/index.html" aria-label="PeoplesHR home">
+        <img src="/uploads/2021/07/logo.webp" alt="PeoplesHR">
+      </a>
+
+      <nav aria-label="Primary">
+        <ul class="nv-menu" id="nvMenu">
+
+          <!-- PRODUCTS (mega) -->
+          <li class="nv-item has-mega" data-nv="dropdown">
+            <a class="nv-link" href="/products/" aria-expanded="false" aria-haspopup="true">
+              Products
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-mega">
+                  <div class="nv-grid">
+                    <div class="nv-tile">
+                      <span class="nv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17.5" cy="8" r="2.4"/><path d="M16 13.5a5 5 0 0 1 5.5 4"/></svg></span>
+                      <span class="nv-tt"><b>HR</b><span>The foundation that actually thinks</span></span>
+                      <a href="/products/core-hr.html" class="lqd-overlay z-index-2" target="_self" aria-label="HR"></a>
+                    </div>
+                    <a class="nv-tile" href="/products/payroll-system.html">
+                      <span class="nv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="13" rx="2.5"/><path d="M2.5 10h19"/><circle cx="17" cy="14.5" r="1.6"/></svg></span>
+                      <span class="nv-tt"><b>Pay</b><span>Globally compliant, less complicated</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/talent-acquisition.html">
+                      <span class="nv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="8" r="3.4"/><path d="M3.5 20a6.5 6.5 0 0 1 13 0"/><path d="M19 7v6M16 10h6"/></svg></span>
+                      <span class="nv-tt"><b>Talent</b><span>Hiring smarter, not harder</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/time-and-attendance.html">
+                      <span class="nv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
+                      <span class="nv-tt"><b>Time</b><span>Beyond clock watching</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/people-engagement.html">
+                      <span class="nv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5C7 17 3.5 13.8 3.5 9.6A4.1 4.1 0 0 1 12 7a4.1 4.1 0 0 1 8.5 2.6c0 4.2-3.5 7.4-8.5 10.9Z"/></svg></span>
+                      <span class="nv-tt"><b>Engagement</b><span>Engagement beyond annual surveys</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/people-analytics.html">
+                      <span class="nv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V4"/><path d="M4 20h16"/><rect x="7" y="12" width="3" height="5"/><rect x="12.5" y="8" width="3" height="9"/><rect x="18" y="5" width="3" height="12"/></svg></span>
+                      <span class="nv-tt"><b>Insight</b><span>Intelligence that drives action</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/mobile-app.html">
+                      <span class="nv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2.4"/><path d="M11 18h2"/></svg></span>
+                      <span class="nv-tt"><b>Mobile App</b><span>Work happens everywhere</span></span>
+                    </a>
+                  </div>
+                  <div class="nv-mega-foot">
+                    <p><b>Meet Lexi — PeoplesHR AI</b>Turn any HR action into a simple conversation.</p>
+                    <a class="nv-ghost" href="/ai-x.html">
+                      Explore PeoplesHR AI
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- SOLUTIONS (mega columns) -->
+          <li class="nv-item has-mega" data-nv="dropdown">
+            <a class="nv-link" href="/solutions/" aria-expanded="false" aria-haspopup="true">
+              Solutions
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card">
+                  <div class="nv-cols">
+                    <div class="nv-col">
+                      <p class="nv-eyebrow">Industries</p>
+                      <ul class="nv-list">
+                        <li><a href="/solutions/banking-finance-insurance-industries.html">Banking, Finance &amp; Insurance<small>Compliance, accuracy and control</small></a></li>
+                        <li><a href="/solutions/hr-software-for-hospitality-industry.html">Hospitality<small>Control labour costs across every shift</small></a></li>
+                        <li><a href="/solutions/hr-software-for-manufacturing-industry.html">Manufacturing<small>Keep your production lines moving</small></a></li>
+                        <li><a href="/solutions/hr-software-for-professional-and-business-services-industry.html">Professional &amp; Business Services<small>Scales with projects, clients and people</small></a></li>
+                        <li><a href="/solutions/hr-software-for-retail-industry.html">Retail<small>Keep stores staffed and on target</small></a></li>
+                        <li><a href="/solutions/hr-software-for-it-and-ites-industry.html">IT &amp; ITES<small>Connected, compliant teams anywhere</small></a></li>
+                        <li><a href="/solutions/hr-software-for-transportation-and-logistics-industry.html">Transportation &amp; Logistics<small>Moves as fast as your fleet</small></a></li>
+                      </ul>
+                    </div>
+                    <div class="nv-col">
+                      <p class="nv-eyebrow">By Role</p>
+                      <ul class="nv-list">
+                        <li><a href="/solutions/chro.html">People Strategy Leaders<small>When the board asks about ROI</small></a></li>
+                        <li><a href="/solutions/cfo.html">Financial Strategy Leaders<small>When the numbers finally add up</small></a></li>
+                        <li><a href="/solutions/cio.html">Technology Strategy Leaders<small>Technology that works with you</small></a></li>
+                      </ul>
+                    </div>
+                    <div class="nv-col">
+                      <p class="nv-eyebrow">Specialized Solutions</p>
+                      <ul class="nv-list">
+                        <li><a href="/solutions/peopleshr-academy.html">PeoplesHR Academy<small>Master PeoplesHR, transform operations</small></a></li>
+                        <li><a href="/solutions/outsourcing.html">Payroll Outsourcing<small>Accuracy, compliance &amp; cost savings</small></a></li>
+                        <li><a href="/solutions/peopleshr-tracking.html">Access & Attendance Devices<small>Secure your workforce &amp; assets</small></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- CUSTOMERS (direct) -->
+          <li class="nv-item">
+            <a class="nv-link" href="/customers.html">Customers</a>
+          </li>
+
+          <!-- RESOURCES (simple) -->
+          <li class="nv-item has-simple" data-nv="dropdown">
+            <button class="nv-link" aria-expanded="false" aria-haspopup="true">
+              Resources
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-simple">
+                  <ul class="nv-list">
+                    <li><a href="/success-stories.html">Case Studies<small>Transformative journeys</small></a></li>
+                    <li><a href="/webinars.html">Webinars<small>Learn from the HR experts</small></a></li>
+                    <li><a href="/blog.html">Blog<small>Insights, stories and updates</small></a></li>
+                    <li><a href="/events.html">Events<small>Insights and networking</small></a></li>
+                    <li><a href="/hr-ebooks-and-guides.html">HR eBooks &amp; Guides<small>Build your HR knowledge</small></a></li>
+                    <li><a href="/news.html">News<small>Latest from PeoplesHR</small></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- COMPANY (simple) -->
+          <li class="nv-item has-simple" data-nv="dropdown">
+            <button class="nv-link" aria-expanded="false" aria-haspopup="true">
+              Company
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-simple">
+                  <ul class="nv-list">
+                    <li><a href="/company.html">About PeoplesHR<small>Our journey as an HR powerhouse</small></a></li>
+                    <li><a href="/careers.html">Careers<small>Thrive in your career at PeoplesHR</small></a></li>
+                    <li><a href="/community.html">Community<small>Your hub for the HR landscape</small></a></li>
+                    <li><a href="/partner-with-peopleshr.html">Partners<small>Unlock endless growth</small></a></li>
+                    <li><a href="/regions.html">Regions<small>Growth across APAC and MEA</small></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- PRICING (dropdown) -->
+          <li class="nv-item has-simple" data-nv="dropdown">
+            <a class="nv-link" href="/view-plans.html" aria-expanded="false" aria-haspopup="true">
+              Pricing
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-simple nv-card--wide">
+                  <ul class="nv-list">
+                    <li><a href="/view-plans.html">View Pricing Plans<small>Plans built around your team's size</small></a></li>
+                  </ul>
+                  <a class="nv-promo-tile" href="/roi-calculator.html">
+                    <span class="nv-promo-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/></svg>
+                    </span>
+                    <span class="nv-promo-text">
+                      <b>PeoplesHR ROI Calculator</b>
+                      <span>Run the Numbers. Let the ROI Speak. Instant, clear results tailored for your business.</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- INTERACTIVE DEMOS (direct + badge) -->
+          <li class="nv-item">
+            <a class="nv-link" href="/interactive-demos.html">
+              Interactive Demos
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <div class="nv-actions">
+        <a class="nv-cta" href="/get-in-touch.html">Request a Demo</a>
+        <button class="nv-burger" id="nvBurger" aria-label="Open menu" aria-expanded="false"><span></span></button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ===================== ANNOUNCEMENT BAR ===================== -->
+  <div class="nv-ann" id="nvAnn" role="region" aria-label="Site announcement">
+    <div class="nv-ann-inner">
+      <span class="nv-ann-badge">New</span>
+      <p class="nv-ann-text">Lexi just got smarter for HR leaders. Strategic AI that thinks at the level your role demands.
+        <a href="/ai-x.html">See what's new
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </p>
+      <button class="nv-ann-close" id="nvAnnClose" aria-label="Dismiss announcement">&times;</button>
+    </div>
+  </div>
+
+  <!-- ===================== MOBILE PANEL ===================== -->
+  <div class="nv-scrim" id="nvScrim"></div>
+  <aside class="nv-panel" id="nvPanel" aria-label="Mobile menu" aria-hidden="true">
+    <div class="nv-panel-head">
+      <img src="/uploads/2021/07/logo.webp" alt="PeoplesHR">
+      <button class="nv-close" id="nvClose" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="nv-panel-body">
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Products
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/products/core-hr.html">HR</a>
+          <a href="/products/payroll-system.html">Pay</a>
+          <a href="/products/talent-acquisition.html">Talent</a>
+          <a href="/products/time-and-attendance.html">Time</a>
+          <a href="/products/people-engagement.html">Engagement</a>
+          <a href="/products/people-analytics.html">Insight</a>
+          <a href="/products/mobile-app.html">Mobile App</a>
+          <a href="/ai-x.html">Explore PeoplesHR AI</a>
+        </div></div>
+      </div>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Solutions
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <p class="nv-sub-label">Industries</p>
+          <a href="/solutions/banking-finance-insurance-industries.html">Banking, Finance &amp; Insurance</a>
+          <a href="/solutions/hr-software-for-hospitality-industry.html">Hospitality</a>
+          <a href="/solutions/hr-software-for-manufacturing-industry.html">Manufacturing</a>
+          <a href="/solutions/hr-software-for-professional-and-business-services-industry.html">Professional &amp; Business Services</a>
+          <a href="/solutions/hr-software-for-retail-industry.html">Retail</a>
+          <a href="/solutions/hr-software-for-it-and-ites-industry.html">IT &amp; ITES</a>
+          <a href="/solutions/hr-software-for-transportation-and-logistics-industry.html">Transportation &amp; Logistics</a>
+          <p class="nv-sub-label">By Role</p>
+          <a href="/solutions/chro.html">People Strategy Leaders</a>
+          <a href="/solutions/cfo.html">Financial Strategy Leaders</a>
+          <a href="/solutions/cio.html">Technology Strategy Leaders</a>
+          <p class="nv-sub-label">Specialized Solutions</p>
+          <a href="/solutions/peopleshr-academy.html">PeoplesHR Academy</a>
+          <a href="/solutions/outsourcing.html">Payroll Outsourcing</a>
+          <a href="/solutions/peopleshr-tracking.html">Access & Attendance Devices</a>
+        </div></div>
+      </div>
+
+      <a class="nv-mlink" href="/customers.html">Customers</a>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Resources
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/success-stories.html">Case Studies</a>
+          <a href="/webinars.html">Webinars</a>
+          <a href="/blog.html">Blog</a>
+          <a href="/events.html">Events</a>
+          <a href="/hr-ebooks-and-guides.html">HR eBooks &amp; Guides</a>
+          <a href="/news.html">News</a>
+        </div></div>
+      </div>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Company
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/company.html">About PeoplesHR</a>
+          <a href="/careers.html">Careers</a>
+          <a href="/community.html">Community</a>
+          <a href="/partner-with-peopleshr.html">Partners</a>
+          <a href="/regions.html">Regions</a>
+        </div></div>
+      </div>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Pricing
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/view-plans.html">View Pricing Plans</a>
+          <a href="/roi-calculator.html">PeoplesHR ROI Calculator</a>
+        </div></div>
+      </div>
+
+      <a class="nv-mlink" href="/interactive-demos.html">Interactive Demos</a>
+
+    </div>
+    <div class="nv-panel-foot">
+      <a class="nv-cta" href="/get-in-touch.html">Request a Demo</a>
+    </div>
+  </aside>
+
+</div><!-- /.nv-root -->
+
+
+<!-- end of navbar -->
+
+<!-- ============================= PAGE CONTENT ============================= -->
+<div class="tk-scope">
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="tk-hero">
+      <div class="tk-hero-text">
+        <h1>One Platform for Attendance, Access Control &amp; Security</h1>
+        <p>PeoplesHR Tracking brings together biometric attendance capture, physical
+          access control, and real-time workforce visibility, connected directly
+          to PeoplesHR Time and Pay for pay that's accurate every single cycle.</p>
+        <div class="tk-hero-actions">
+          <a class="tk-btn tk-btn-primary" href="/get-in-touch.html">Talk to Us</a>
+        </div>
+        <p class="tk-hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6l-9-4Z"/><path d="m9 12 2 2 4-4"/></svg>Authorized ZKTeco Partner: Genuine Hardware, Manufacturer-Backed Warranty</p>
+      </div>
+      <div class="tk-hero-visual">
+        <div class="tk-hero-img-wrap">
+          <picture>
+            <source media="(max-width:900px)" srcset="/uploads/2026/08/hero-fingerprint-checkin-mobile.webp">
+            <img src="/uploads/2026/08/hero-fingerprint-checkin.webp" alt="Employee using a fingerprint machine and face recognition kiosk for workplace attendance and access control" loading="lazy">
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DEVICE TYPES CAROUSEL ===================== -->
+    <section class="tk-section tk-section-alt">
+      <div class="tk-section-head tk-section-head--device">
+        <h2>A Complete Device Ecosystem Built Around Your Workplace</h2>
+        <p>From a single-door reader to a fleet of AI-enhanced terminals, PeoplesHR
+          Tracking hardware scales to match the site. Pick the category that
+          fits, mix and match across locations.</p>
+      </div>
+
+      <div class="tk-devtab-wrap">
+        <div class="tk-devtabs" id="tkDevTabs">
+          <button class="tk-devtab active" data-dev="tna">
+            <span class="tk-devtab-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3.2 2"/></svg></span>
+            <span>Time &amp; Attendance and Access Control Systems</span>
+            <svg class="tk-devtab-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+          <button class="tk-devtab" data-dev="entrance">
+            <span class="tk-devtab-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-3"/><path d="M10 8l4 4-4 4"/><path d="M14 12H4"/></svg></span>
+            <span>Smart Entrance Control Systems</span>
+            <svg class="tk-devtab-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+          <button class="tk-devtab" data-dev="inspection">
+            <span class="tk-devtab-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3.5v5c0 5-3.2 8.3-7 9.5-3.8-1.2-7-4.5-7-9.5v-5L12 3Z"/><path d="M9 12.3l2 2 4-4.5"/></svg></span>
+            <span>Security Inspection Systems</span>
+            <svg class="tk-devtab-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+          <button class="tk-devtab" data-dev="parking">
+            <span class="tk-devtab-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11.5l1.4-4.2A2 2 0 0 1 8.3 6h7.4a2 2 0 0 1 1.9 1.3l1.4 4.2"/><rect x="3" y="11.5" width="18" height="6" rx="2"/><circle cx="7.5" cy="17.5" r="1.3" fill="currentColor" stroke="none"/><circle cx="16.5" cy="17.5" r="1.3" fill="currentColor" stroke="none"/></svg></span>
+            <span>Smart Parking Systems</span>
+            <svg class="tk-devtab-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+          <button class="tk-devtab" data-dev="whiteboard">
+            <span class="tk-devtab-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="1.5"/><path d="M8 9l3 3 2-2 3 3"/><path d="M8 21h8M12 17v4"/></svg></span>
+            <span>Interactive Whiteboard Systems</span>
+            <svg class="tk-devtab-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+
+        <div class="tk-devpreview-panel">
+          <div class="tk-devpreview-content active" id="tkdev-tna">
+            <div class="tk-devpreview-img-wrap"><img class="tk-devpreview-img" src="/uploads/2026/08/time-and-att-access-control-systems.webp" alt="ZKTeco time and attendance terminal" loading="lazy"></div>
+            <div class="tk-devpreview-text">
+              <h3>Time &amp; Attendance and Access Control Systems</h3>
+              <div class="tk-devpreview-specs">
+                <div class="tk-devpreview-spec"><span class="tk-devpreview-spec-label">Core Focus</span><span class="tk-devpreview-spec-value">Access Control + Time &amp; Attendance</span></div>
+                <div class="tk-devpreview-spec"><span class="tk-devpreview-spec-label">Product Line</span><span class="tk-devpreview-spec-value">Panels, Readers &amp; Standalone Devices</span></div>
+                <div class="tk-devpreview-spec"><span class="tk-devpreview-spec-label">Key Value</span><span class="tk-devpreview-spec-value">One-Stop R&amp;D + Manufacturing</span></div>
+              </div>
+              <p>The Access Control Product line is comprised of IP-based
+                standalone access control device, networked access control
+                panel, readers, guard patrol and accessories with
+                network-based one-stop access control and T&amp;A software,
+                backed by one-stop R&amp;D and manufacturing services for
+                business partners.</p>
+            </div>
+          </div>
+          <div class="tk-devpreview-content" id="tkdev-entrance">
+            <div class="tk-devpreview-img-wrap"><img class="tk-devpreview-img" src="/uploads/2026/08/smart-entrance-control-systems.webp" alt="Turnstile entrance gate for access control" loading="lazy"></div>
+            <div class="tk-devpreview-text">
+              <h3>Smart Entrance Control Systems</h3>
+              <div class="tk-devpreview-specs">
+                <div class="tk-devpreview-spec"><span class="tk-devpreview-spec-label">Core Focus</span><span class="tk-devpreview-spec-value">Entrance &amp; People Management</span></div>
+                <div class="tk-devpreview-spec"><span class="tk-devpreview-spec-label">Product Line</span><span class="tk-devpreview-spec-value">Tripod, Full-Height &amp; Flap Barrier Turnstiles</span></div>
+                <div class="tk-devpreview-spec"><span class="tk-devpreview-spec-label">Key Value</span><span class="tk-devpreview-spec-value">Biometric-Integrated Management</span></div>
+              </div>
+              <p>Entrance control is the management of people. General
+                management methods include access control system, parking
+                management system and visitor management system using
+                intelligent turnstiles. In different environments, different
+                types of entrance control devices are required. For example,
+                the tripod turnstiles and full height turnstiles are
+                installed in public venues, and flap barrier turnstiles are
+                often installed in private enterprises, with biometrics
+                integrated into entrance control to provide more intelligent
+                management solutions.</p>
+            </div>
+          </div>
+          <div class="tk-devpreview-content" id="tkdev-inspection">
+            <div class="tk-devpreview-img-wrap"><img class="tk-devpreview-img" src="/uploads/2026/08/security-inspection-systems.webp" alt="Security inspection checkpoint equipment" loading="lazy"></div>
+            <div class="tk-devpreview-text">
+              <h3>Security Inspection Systems</h3>
+              <div class="tk-devpreview-specs">
+                <div class="tk-devpreview-spec"><span class="tk-devpreview-spec-label">Core Focus</span><span class="tk-devpreview-spec-value">Entrance Security</span></div>
+                <div class="tk-devpreview-spec"><span class="tk-devpreview-spec-label">Product Line</span><span class="tk-devpreview-spec-value">People, Freight &amp; Vehicle Inspection</span></div>
+                <div class="tk-devpreview-spec"><span class="tk-devpreview-spec-label">Key Value</span><span class="tk-devpreview-spec-value">Flexible, Intelligent Security</span></div>
+              </div>
+              <p>These security inspection products offer a dependable and
+                flexible intelligence security solution. We build a
+                comprehensive security system to protect your entrance
+                security, including People Inspection, Freight Inspection
+                and Vehicle Inspection.</p>
+            </div>
+          </div>
+          <div class="tk-devpreview-content" id="tkdev-parking">
+            <div class="tk-devpreview-img-wrap"><img class="tk-devpreview-img" src="/uploads/2026/08/smart-parking-systems.webp" alt="Smart parking barrier and guidance equipment" loading="lazy"></div>
+            <div class="tk-devpreview-text">
+              <h3>Smart Parking Systems</h3>
+              <div class="tk-devpreview-specs">
+                <div class="tk-devpreview-spec"><span class="tk-devpreview-spec-label">Core Focus</span><span class="tk-devpreview-spec-value">Vehicle &amp; Parking Management</span></div>
+                <div class="tk-devpreview-spec"><span class="tk-devpreview-spec-label">Product Line</span><span class="tk-devpreview-spec-value">LPR, UHF, Barrier &amp; Guidance Products</span></div>
+                <div class="tk-devpreview-spec"><span class="tk-devpreview-spec-label">Key Value</span><span class="tk-devpreview-spec-value">End-to-End Parking Experience</span></div>
+              </div>
+              <p>There has been a growing number of vehicles with the rapid
+                development of the global economy and living standards. To
+                manage vehicles efficiently, the number of parking lots has
+                dramatically increased. By adopting License Plate
+                Recognition Products (LPR), Ultra-High Frequency (UHF)
+                products, Parking Barrier products, and Parking Guidance
+                products, the system offers convenient user experiences from
+                the entrance to the parking space.</p>
+            </div>
+          </div>
+          <div class="tk-devpreview-content" id="tkdev-whiteboard">
+            <div class="tk-devpreview-img-wrap"><img class="tk-devpreview-img" src="/uploads/2026/08/interactive-whiteboard-systems.webp" alt="Interactive whiteboard in a conference room" loading="lazy"></div>
+            <div class="tk-devpreview-text">
+              <h3>Interactive Whiteboard Systems</h3>
+              <div class="tk-devpreview-specs">
+                <div class="tk-devpreview-spec"><span class="tk-devpreview-spec-label">Core Focus</span><span class="tk-devpreview-spec-value">Education &amp; Conference Collaboration</span></div>
+                <div class="tk-devpreview-spec"><span class="tk-devpreview-spec-label">Product Line</span><span class="tk-devpreview-spec-value">4K UHD Interactive Whiteboards</span></div>
+                <div class="tk-devpreview-spec"><span class="tk-devpreview-spec-label">Key Value</span><span class="tk-devpreview-spec-value">Screen Sharing + Video Conferencing</span></div>
+              </div>
+              <p>These interactive whiteboards are widely applied to
+                education and conference scenarios, which integrated with
+                screen sharing, annotation writing, video conferencing and
+                document viewing functions. The 4K UHD screen displays
+                delicate images and multiple colors. The smooth touch screen
+                writing experience allows unlimited extension of ideas. The
+                built-in camera makes video conference more convenient and
+                efficient.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CASE STUDY: BRANDIX ===================== -->
+    <!-- Single real case study (Brandix) gets the spotlight treatment via this
+         page's own .tk-split image-left/text-right pattern (already used
+         elsewhere on this page), rather than a 3-card grid padded out with
+         generic cross-industry stories -- the logo scroller right below
+         handles breadth/volume of other clients instead. -->
+    <section class="tk-section">
+      <div class="tk-split">
+        <div class="tk-split-visual">
+          <img src="/uploads/2026/04/How-Brandix-Digitized-HR.webp" alt="Brandix apparel manufacturing floor" loading="lazy">
+        </div>
+        <div class="tk-split-text">
+          <span class="tk-eyebrow-label">Case Study — Manufacturing</span>
+          <div class="cs-company-logo cs-company-logo--lg"><img src="/uploads/2026/04/brandix.webp" alt="Brandix"></div>
+          <h2>Bringing Real-Time Attendance Tracking to the Factory Floor</h2>
+          <p>A leading Sri Lankan apparel manufacturer modernized attendance tracking across its entire factory network, replacing manual processes with accurate, real-time data and measurable gains in operational efficiency.</p>
+          <div class="tk-split-list tk-split-list-3col">
+            <div class="tk-split-item">
+              <h3>32,000+</h3>
+              <p>Employees</p>
+            </div>
+            <div class="tk-split-item">
+              <h3>21</h3>
+              <p>Factories in 2 Countries</p>
+            </div>
+            <div class="tk-split-item">
+              <h3>386</h3>
+              <p>Devices</p>
+            </div>
+          </div>
+          <a href="/hris-success-stories-brandix-case-study.html" class="read-more">Read Case Study &rarr;</a>
+        </div>
+      </div>
+      <div class="tk-cs-cta-row">
+        <a href="/customers.html" class="tk-btn tk-btn-ghost">View All Case Studies &rarr;</a>
+      </div>
+    </section>
+
+    <!-- ===================== TRUSTED BY (LOGO SCROLLER) ===================== -->
+    <!-- Reuses the homepage's .client-logos/.logo-slider-track/.client-logo marquee.
+         Skips phr.js's industry-tab-driven renderLogos() (not needed here) and
+         hardcodes the list duplicated once instead, the same way that function does
+         it at runtime, for a seamless CSS-only loop. Duration follows its formula
+         (logo count x 2.2s) for a consistent scroll speed sitewide. -->
+    <section class="industries-section">
+      <div class="client-logos">
+        <div class="logo-slider-track" style="animation-duration:33s;">
+          <span class="client-logo"><img src="/uploads/2026/08/capital-maharaja.png" alt="Capital Maharaja" loading="lazy"></span>
+          <span class="client-logo"><img src="/uploads/2026/08/hemas.svg" alt="Hemas" loading="lazy"></span>
+          <span class="client-logo"><img src="/uploads/2026/08/wso2.png" alt="WSO2" loading="lazy"></span>
+          <span class="client-logo"><img src="/uploads/2026/04/brandix.webp" alt="Brandix" loading="lazy"></span>
+          <span class="client-logo"><img src="/uploads/2026/08/ctc.png" alt="CTC" loading="lazy"></span>
+          <span class="client-logo"><img src="/uploads/2026/04/sri-lankan-airlines.webp" alt="SriLankan Airlines" loading="lazy"></span>
+          <span class="client-logo"><img src="/uploads/2026/08/dilmah.svg" alt="Dilmah" loading="lazy"></span>
+          <span class="client-logo"><img src="/uploads/2026/08/nestle.svg" alt="Nestle" loading="lazy"></span>
+          <span class="client-logo"><img src="/uploads/2026/08/unilever.png" alt="Unilever" loading="lazy"></span>
+          <span class="client-logo"><img src="/uploads/2026/08/maliban.jpg" alt="Maliban" loading="lazy"></span>
+          <span class="client-logo"><img src="/uploads/2026/08/sri-lanka-telecom.svg" alt="Sri Lanka Telecom" loading="lazy"></span>
+          <span class="client-logo"><img src="/uploads/2026/08/david-pieris.png" alt="David Pieris" loading="lazy"></span>
+          <span class="client-logo"><img src="/uploads/2026/08/cargills.png" alt="Cargills Ceylon PLC" loading="lazy"></span>
+          <span class="client-logo"><img src="/uploads/2026/04/ansell.webp" alt="Ansell" loading="lazy"></span>
+          <span class="client-logo"><img src="/uploads/2026/08/hayleys.png" alt="Hayleys Group" loading="lazy"></span>
+          <span class="client-logo"><img src="/uploads/2026/08/capital-maharaja.png" alt="Capital Maharaja" loading="lazy"></span>
+          <span class="client-logo"><img src="/uploads/2026/08/hemas.svg" alt="Hemas" loading="lazy"></span>
+          <span class="client-logo"><img src="/uploads/2026/08/wso2.png" alt="WSO2" loading="lazy"></span>
+          <span class="client-logo"><img src="/uploads/2026/04/brandix.webp" alt="Brandix" loading="lazy"></span>
+          <span class="client-logo"><img src="/uploads/2026/08/ctc.png" alt="CTC" loading="lazy"></span>
+          <span class="client-logo"><img src="/uploads/2026/04/sri-lankan-airlines.webp" alt="SriLankan Airlines" loading="lazy"></span>
+          <span class="client-logo"><img src="/uploads/2026/08/dilmah.svg" alt="Dilmah" loading="lazy"></span>
+          <span class="client-logo"><img src="/uploads/2026/08/nestle.svg" alt="Nestle" loading="lazy"></span>
+          <span class="client-logo"><img src="/uploads/2026/08/unilever.png" alt="Unilever" loading="lazy"></span>
+          <span class="client-logo"><img src="/uploads/2026/08/maliban.jpg" alt="Maliban" loading="lazy"></span>
+          <span class="client-logo"><img src="/uploads/2026/08/sri-lanka-telecom.svg" alt="Sri Lanka Telecom" loading="lazy"></span>
+          <span class="client-logo"><img src="/uploads/2026/08/david-pieris.png" alt="David Pieris" loading="lazy"></span>
+          <span class="client-logo"><img src="/uploads/2026/08/cargills.png" alt="Cargills Ceylon PLC" loading="lazy"></span>
+          <span class="client-logo"><img src="/uploads/2026/04/ansell.webp" alt="Ansell" loading="lazy"></span>
+          <span class="client-logo"><img src="/uploads/2026/08/hayleys.png" alt="Hayleys Group" loading="lazy"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CAMPUS DEPLOYMENT MAP ===================== -->
+    <section class="tk-section tk-deploy-section">
+      <div class="tk-section-head">
+        <span class="tk-eyebrow-label">Deployment Example</span>
+        <h2>One Connected Attendance<br>and Security System.</h2>
+        <p>A single site rarely needs a single device. Barrier gates, turnstiles,
+          fixed and PTZ cameras, and facial payment kiosks can all be mixed
+          across offices, R&amp;D centers, canteens, and loading docks, with
+          every device feeding the same PeoplesHR attendance and access
+          record.</p>
+      </div>
+      <div class="tk-deploy-visual">
+        <div class="tk-deploy-photo">
+          <div class="tk-deploy-photo-crop">
+            <img src="/uploads/2026/08/zkteco-solutions-highlight-map.webp" alt="Cutaway diagram of a corporate office building showing ZKTeco biometric access control and attendance devices deployed at the lobby turnstiles, elevators, lockers, and meeting rooms across three floors" loading="lazy">
+          </div>
+          <div class="tk-deploy-point tk-deploy-point--label-above" style="left:55.7%;top:48.8%;--card-tx:calc(-50% - 170px)">
+            <button type="button" class="tk-deploy-beacon" aria-expanded="false">
+              <span class="tk-deploy-beacon-dot"></span>
+              <span class="tk-deploy-beacon-name">ABS Cabinet (including Lock)</span>
+            </button>
+            <div class="tk-deploy-card">
+              <img src="/uploads/2026/08/abs-cabinet.webp" alt="ABS Cabinet (including Lock)" loading="lazy">
+              <div class="tk-deploy-card-body">
+                <h4>ABS Cabinet (including Lock)</h4>
+                <p>A rugged ABS storage cabinet with an integrated lock for securing devices, cards, and accessories on site.</p>
+              </div>
+            </div>
+          </div>
+          <div class="tk-deploy-point" style="left:52.1%;top:51.3%;--card-tx:calc(-50% - 180px)">
+            <button type="button" class="tk-deploy-beacon" aria-expanded="false">
+              <span class="tk-deploy-beacon-dot"></span>
+              <span class="tk-deploy-beacon-name">Locker Pad</span>
+            </button>
+            <div class="tk-deploy-card">
+              <img src="/uploads/2026/08/locker-pad-g4-pro.webp" alt="Locker Pad" loading="lazy">
+              <div class="tk-deploy-card-body">
+                <h4>Locker Pad</h4>
+                <p>LockerPad-G4 Pro lets staff unlock personal lockers with a biometric or card tap, no keys required.</p>
+              </div>
+            </div>
+          </div>
+          <div class="tk-deploy-point tk-deploy-point--label-shift-right" style="left:33.6%;top:78.7%">
+            <button type="button" class="tk-deploy-beacon" aria-expanded="false">
+              <span class="tk-deploy-beacon-dot"></span>
+              <span class="tk-deploy-beacon-name">Face KIOSK</span>
+            </button>
+            <div class="tk-deploy-card">
+              <img src="/uploads/2026/08/face-kiosk-h13c.webp" alt="Face KIOSK" loading="lazy">
+              <div class="tk-deploy-card-body">
+                <h4>Face KIOSK</h4>
+                <p>A standalone facial recognition kiosk for fast, contactless check-in at high-traffic entry points.</p>
+              </div>
+            </div>
+          </div>
+          <div class="tk-deploy-point" style="left:55.9%;top:20.7%">
+            <button type="button" class="tk-deploy-beacon" aria-expanded="false">
+              <span class="tk-deploy-beacon-dot"></span>
+              <span class="tk-deploy-beacon-name">Face KIOSK</span>
+            </button>
+            <div class="tk-deploy-card">
+              <img src="/uploads/2026/08/face-kiosk-h10a.webp" alt="Face KIOSK" loading="lazy">
+              <div class="tk-deploy-card-body">
+                <h4>Face KIOSK</h4>
+                <p>A compact facial recognition kiosk for lobby and floor-level attendance and access verification.</p>
+              </div>
+            </div>
+          </div>
+          <div class="tk-deploy-point" style="left:17.9%;top:74.5%;--card-tx:calc(-50% + 60px)">
+            <button type="button" class="tk-deploy-beacon" aria-expanded="false">
+              <span class="tk-deploy-beacon-dot"></span>
+              <span class="tk-deploy-beacon-name">Time &amp; Attendance Terminal</span>
+            </button>
+            <div class="tk-deploy-card">
+              <img src="/uploads/2026/08/time-and-att-terminal-facepot-4a.webp" alt="Time &amp; Attendance Terminal" loading="lazy">
+              <div class="tk-deploy-card-body">
+                <h4>Time &amp; Attendance Terminal</h4>
+                <p>Captures every clock-in and clock-out at the source, so attendance data feeding payroll is accurate from day one.</p>
+              </div>
+            </div>
+          </div>
+          <div class="tk-deploy-point" style="left:69.5%;top:22.2%">
+            <button type="button" class="tk-deploy-beacon" aria-expanded="false">
+              <span class="tk-deploy-beacon-dot"></span>
+              <span class="tk-deploy-beacon-name">COP (3rd Party Integration)</span>
+            </button>
+            <div class="tk-deploy-card">
+              <img src="/uploads/2026/08/cop-3rd-party-integration.webp" alt="COP (3rd Party Integration)" loading="lazy">
+              <div class="tk-deploy-card-body">
+                <h4>COP (3rd Party Integration)</h4>
+                <p>Control Operator Panel that connects third-party building systems into the same verification network.</p>
+              </div>
+            </div>
+          </div>
+          <div class="tk-deploy-point tk-deploy-point--label-above" style="left:70.0%;top:48.9%">
+            <button type="button" class="tk-deploy-beacon" aria-expanded="false">
+              <span class="tk-deploy-beacon-dot"></span>
+              <span class="tk-deploy-beacon-name">DOP (3rd Party DCS Integration)</span>
+            </button>
+            <div class="tk-deploy-card">
+              <img src="/uploads/2026/08/dop-3rd-party-dcs-integration.webp" alt="DOP (3rd Party DCS Integration)" loading="lazy">
+              <div class="tk-deploy-card-body">
+                <h4>DOP (3rd Party DCS Integration)</h4>
+                <p>Deviation Operator Panel that integrates third-party DCS systems for exception handling and monitoring.</p>
+              </div>
+            </div>
+          </div>
+          <div class="tk-deploy-point tk-deploy-point--card-below" style="left:40.6%;top:93.8%">
+            <button type="button" class="tk-deploy-beacon" aria-expanded="false">
+              <span class="tk-deploy-beacon-dot"></span>
+              <span class="tk-deploy-beacon-name">Entrance Gate</span>
+            </button>
+            <div class="tk-deploy-card">
+              <img src="/uploads/2026/08/entrance-gate-comet-series.webp" alt="Entrance Gate" loading="lazy">
+              <div class="tk-deploy-card-body">
+                <h4>Entrance Gate</h4>
+                <p>A turnstile entrance gate paired with biometric verification to manage access at building entry points.</p>
+              </div>
+            </div>
+          </div>
+          <div class="tk-deploy-point tk-deploy-point--label-side tk-deploy-point--card-side-right" style="left:42.9%;top:86.3%">
+            <button type="button" class="tk-deploy-beacon" aria-expanded="false">
+              <span class="tk-deploy-beacon-dot"></span>
+              <span class="tk-deploy-beacon-name">Integrated Facial Recognition</span>
+            </button>
+            <div class="tk-deploy-card">
+              <img src="/uploads/2026/08/integrated-facial-recognition.webp" alt="Integrated Facial Recognition" loading="lazy">
+              <div class="tk-deploy-card-body">
+                <h4>Integrated Facial Recognition</h4>
+                <p>Facial recognition built directly into the entrance flow for one-step verified entry, no separate card tap needed.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONNECTED TO PEOPLESHR ===================== -->
+    <section class="tk-section">
+      <div class="tk-split">
+        <div class="tk-split-text tk-split-title">
+          <h2>All Your Devices, Connected to PeoplesHR</h2>
+        </div>
+        <div class="tk-network">
+          <svg class="tk-network-svg" viewBox="0 0 660 500" role="img" aria-label="Diagram showing fingerprint, face recognition, kiosk, mobile, and access gate devices connected to PeoplesHR, with data flowing onward into PeoplesHR Time and Pay, and PeoplesHR sending data back to each device">
+            <defs>
+              <clipPath id="tkHubClip"><circle cx="0" cy="0" r="32"/></clipPath>
+              <clipPath id="tkTimeClip"><circle cx="0" cy="0" r="22"/></clipPath>
+              <clipPath id="tkPayClip"><circle cx="0" cy="0" r="22"/></clipPath>
+            </defs>
+            <path id="tkPath0" class="tk-network-line" d="M 70,70 C 210,70 210,250 350,250"/>
+            <path id="tkPath1" class="tk-network-line" d="M 70,160 C 230,160 230,250 350,250"/>
+            <path id="tkPath2" class="tk-network-line" d="M 70,250 C 260,250 260,250 350,250"/>
+            <path id="tkPath3" class="tk-network-line" d="M 70,340 C 230,340 230,250 350,250"/>
+            <path id="tkPath4" class="tk-network-line" d="M 70,430 C 210,430 210,250 350,250"/>
+            <path id="tkPath5" class="tk-network-line" d="M 350,250 L 490,250"/>
+            <path id="tkPath6" class="tk-network-line" d="M 490,250 L 610,250"/>
+
+            <!-- Phase 1 (0s-3s of a 6s cycle): device data flows in to PeoplesHR, on to Time, then Pay.
+                 Every animateMotion below shares begin="0s" with the stagger folded into keyTimes
+                 instead -- circles with a later begin would otherwise sit at an undefined position
+                 (visible as a stray dot near the top-left) until that begin time was first reached. -->
+            <circle class="tk-network-dot" r="5">
+              <animateMotion dur="6s" begin="0s" repeatCount="indefinite" keyTimes="0;0.35;1" keyPoints="0;1;1" calcMode="linear">
+                <mpath href="#tkPath0"/>
+              </animateMotion>
+            </circle>
+            <circle class="tk-network-dot" r="5">
+              <animateMotion dur="6s" begin="0s" repeatCount="indefinite" keyTimes="0;0.025;0.375;1" keyPoints="0;0;1;1" calcMode="linear">
+                <mpath href="#tkPath1"/>
+              </animateMotion>
+            </circle>
+            <circle class="tk-network-dot" r="5">
+              <animateMotion dur="6s" begin="0s" repeatCount="indefinite" keyTimes="0;0.05;0.4;1" keyPoints="0;0;1;1" calcMode="linear">
+                <mpath href="#tkPath2"/>
+              </animateMotion>
+            </circle>
+            <circle class="tk-network-dot" r="5">
+              <animateMotion dur="6s" begin="0s" repeatCount="indefinite" keyTimes="0;0.075;0.425;1" keyPoints="0;0;1;1" calcMode="linear">
+                <mpath href="#tkPath3"/>
+              </animateMotion>
+            </circle>
+            <circle class="tk-network-dot" r="5">
+              <animateMotion dur="6s" begin="0s" repeatCount="indefinite" keyTimes="0;0.1;0.45;1" keyPoints="0;0;1;1" calcMode="linear">
+                <mpath href="#tkPath4"/>
+              </animateMotion>
+            </circle>
+            <circle class="tk-network-dot" r="5">
+              <animateMotion dur="6s" begin="0s" repeatCount="indefinite" keyTimes="0;0.3;0.5;1" keyPoints="0;0;1;1" calcMode="linear">
+                <mpath href="#tkPath5"/>
+              </animateMotion>
+            </circle>
+            <circle class="tk-network-dot" r="5">
+              <animateMotion dur="6s" begin="0s" repeatCount="indefinite" keyTimes="0;0.383;0.553;1" keyPoints="0;0;1;1" calcMode="linear">
+                <mpath href="#tkPath6"/>
+              </animateMotion>
+            </circle>
+
+            <!-- Phase 2 (3s-6s of the same cycle): PeoplesHR sends data back out to every device -->
+            <circle class="tk-network-dot tk-network-dot--return" r="5">
+              <animateMotion dur="6s" begin="0s" repeatCount="indefinite" keyTimes="0;0.5;0.7;1" keyPoints="1;1;0;0" calcMode="linear">
+                <mpath href="#tkPath5"/>
+              </animateMotion>
+            </circle>
+            <circle class="tk-network-dot tk-network-dot--return" r="5">
+              <animateMotion dur="6s" begin="0s" repeatCount="indefinite" keyTimes="0;0.7;0.94;1" keyPoints="1;1;0;0" calcMode="linear">
+                <mpath href="#tkPath0"/>
+              </animateMotion>
+            </circle>
+            <circle class="tk-network-dot tk-network-dot--return" r="5">
+              <animateMotion dur="6s" begin="0s" repeatCount="indefinite" keyTimes="0;0.71;0.95;1" keyPoints="1;1;0;0" calcMode="linear">
+                <mpath href="#tkPath1"/>
+              </animateMotion>
+            </circle>
+            <circle class="tk-network-dot tk-network-dot--return" r="5">
+              <animateMotion dur="6s" begin="0s" repeatCount="indefinite" keyTimes="0;0.72;0.96;1" keyPoints="1;1;0;0" calcMode="linear">
+                <mpath href="#tkPath2"/>
+              </animateMotion>
+            </circle>
+            <circle class="tk-network-dot tk-network-dot--return" r="5">
+              <animateMotion dur="6s" begin="0s" repeatCount="indefinite" keyTimes="0;0.73;0.97;1" keyPoints="1;1;0;0" calcMode="linear">
+                <mpath href="#tkPath3"/>
+              </animateMotion>
+            </circle>
+            <circle class="tk-network-dot tk-network-dot--return" r="5">
+              <animateMotion dur="6s" begin="0s" repeatCount="indefinite" keyTimes="0;0.74;0.98;1" keyPoints="1;1;0;0" calcMode="linear">
+                <mpath href="#tkPath4"/>
+              </animateMotion>
+            </circle>
+
+            <g class="tk-network-node" transform="translate(70,70)">
+              <circle r="32"/>
+              <svg x="-11" y="-11" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 11a3 3 0 0 1 3 3c0 3-1 5-2 6"/><path d="M8 15c0-3 1.5-5 4-5"/><path d="M6 17c-.5-2 0-6 2-8a7 7 0 0 1 10 2"/><path d="M4 19c-1-3-1-8 1.5-11A10 10 0 0 1 20 8.5"/><path d="M12 6a5 5 0 0 1 5 5c0 1 0 2-.3 3"/></svg>
+              <text class="tk-network-label" y="52">Fingerprint</text>
+            </g>
+
+            <g class="tk-network-node" transform="translate(70,160)">
+              <circle r="32"/>
+              <svg x="-11" y="-11" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V6a2 2 0 0 1 2-2h2"/><path d="M16 4h2a2 2 0 0 1 2 2v2"/><path d="M20 16v2a2 2 0 0 1-2 2h-2"/><path d="M8 20H6a2 2 0 0 1-2-2v-2"/><circle cx="9" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="10" r="1" fill="currentColor" stroke="none"/><path d="M9 15c1 1 5 1 6 0"/></svg>
+              <text class="tk-network-label" y="52">Face ID</text>
+            </g>
+
+            <g class="tk-network-node" transform="translate(70,250)">
+              <circle r="32"/>
+              <svg x="-11" y="-11" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="14" rx="1.5"/><path d="M9 21h6M12 17v4"/></svg>
+              <text class="tk-network-label" y="52">Kiosk</text>
+            </g>
+
+            <g class="tk-network-node" transform="translate(70,340)">
+              <circle r="32"/>
+              <svg x="-11" y="-11" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4v16M19 4v16"/><path d="M5 12h14"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/></svg>
+              <text class="tk-network-label" y="52">Access Gate</text>
+            </g>
+
+            <g class="tk-network-node" transform="translate(70,430)">
+              <circle r="32"/>
+              <svg x="-11" y="-11" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
+              <text class="tk-network-label" y="52">Mobile</text>
+            </g>
+
+            <g transform="translate(350,250)">
+              <circle r="48" class="tk-network-hub"/>
+              <circle r="34" fill="#fff"/>
+              <image href="/uploads/2026/08/peopleshr.jpeg" x="-32" y="-32" width="64" height="64" clip-path="url(#tkHubClip)" preserveAspectRatio="xMidYMid slice"/>
+            </g>
+
+            <g class="tk-network-node" transform="translate(490,250)">
+              <circle r="32"/>
+              <image href="/uploads/2026/08/time-icon.webp" x="-22" y="-22" width="44" height="44" clip-path="url(#tkTimeClip)" preserveAspectRatio="xMidYMid slice"/>
+              <text class="tk-network-label" y="52">Time</text>
+            </g>
+
+            <g class="tk-network-node" transform="translate(610,250)">
+              <circle r="32"/>
+              <image href="/uploads/2026/08/pay-icon.webp" x="-22" y="-22" width="44" height="44" clip-path="url(#tkPayClip)" preserveAspectRatio="xMidYMid slice"/>
+              <text class="tk-network-label" y="52">Pay</text>
+            </g>
+          </svg>
+        </div>
+        <div class="tk-split-text tk-split-body">
+          <p>Fingerprint machines, face recognition kiosks, self-service terminals,
+            mobile check-ins, and access gates all connect to PeoplesHR through
+            a secure middleware that keeps attendance data up-to-date without
+            manual exports or reconciliation between systems.</p>
+          <ul class="tk-access-list">
+            <li><span class="tk-access-check"></span>Devices connect through a secure middleware, not a third-party software layer</li>
+            <li><span class="tk-access-check"></span>Attendance and access events stay up-to-date in PeoplesHR, not stuck in overnight batch imports</li>
+            <li><span class="tk-access-check"></span>One unified employee attendance record, no matter which device captured the event</li>
+            <li><span class="tk-access-check"></span>Assign, transfer, or revoke access from PeoplesHR, and every device reflects the change immediately</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PAYROLL & TIME-ATTENDANCE INTEGRATION ===================== -->
+    <section class="tk-section tk-section-alt">
+      <div class="tk-split">
+        <div class="tk-split-visual tk-sync-visual">
+          <div class="tk-sync-photo">
+            <img src="/uploads/2026/08/employee-checking-in-using-a-peopleshr-self-service-kiosk-machine.webp" alt="Employee checking in using a PeoplesHR biometric face and fingerprint self-service kiosk machine" loading="lazy">
+          </div>
+          <div class="tk-sync-card">
+            <img src="/uploads/2026/08/peopleshr-attendance-dashboard-displaying-employee-check-in-and-check-out-times.webp" alt="PeoplesHR Attendance Summary dashboard showing employee check-in and check-out times, overtime, and leave status">
+          </div>
+        </div>
+        <div class="tk-split-text">
+          <h2>Attendance Data Connected to PeoplesHR Time and Pay</h2>
+          <div class="tk-integ-icons">
+            <span class="tk-integ-icon"><img src="/uploads/2026/08/time-icon.webp" alt="">Time</span>
+            <span class="tk-integ-icon"><img src="/uploads/2026/08/pay-icon.webp" alt="">Pay</span>
+          </div>
+          <p>PeoplesHR Tracking connects directly with PeoplesHR Time and Pay,
+            so every punch and access event flows straight through to
+            attendance, shift management, overtimes and payroll calculation,
+            with no exports, no re-keying, and no reconciliation headaches at
+            month-end.</p>
+          <div class="tk-split-list">
+            <div class="tk-split-item">
+              <h3>Automatic Hours &amp; Overtime</h3>
+              <p>Worked hours, late arrivals, early departures, and overtime are calculated automatically from device data.</p>
+            </div>
+            <div class="tk-split-item">
+              <h3>Exception Handling</h3>
+              <p>Missed punches, shift mismatches, and unusual access patterns are flagged for review before payroll runs.</p>
+            </div>
+            <div class="tk-split-item">
+              <h3>Audit-Ready Records</h3>
+              <p>Every attendance and access event is timestamped and stored, giving you a defensible record for audits and disputes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== INDUSTRIES / USE CASES ===================== -->
+    <section class="tk-section">
+      <div class="tk-section-head">
+        <span class="tk-eyebrow-label">Industries</span>
+        <h2>Built for Every Kind of Workplace</h2>
+      </div>
+
+      <div class="tk-ind">
+        <div class="tk-ind-tabs" id="tkIndTabs">
+          <button class="tk-ind-tab active" data-idx="0">Manufacturing &amp; Factories</button>
+          <button class="tk-ind-tab" data-idx="1">Retail &amp; Multi-Branch</button>
+          <button class="tk-ind-tab" data-idx="2">Corporate Offices</button>
+          <button class="tk-ind-tab" data-idx="3">Healthcare Facilities</button>
+          <button class="tk-ind-tab" data-idx="4">Warehousing &amp; Logistics</button>
+          <button class="tk-ind-tab" data-idx="5">Educational Institutions</button>
+        </div>
+        <div class="tk-ind-layout">
+          <div class="tk-ind-content" id="tkIndContent"><!-- JS --></div>
+          <div class="tk-ind-visual">
+            <div class="tk-ind-img-wrap">
+              <img class="tk-ind-img" id="tkIndImg" src="" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== REMOTE / GEO-BASED CLOCK-IN ===================== -->
+    <section class="tk-section tk-section-alt">
+      <div class="tk-split">
+        <div class="tk-split-text tk-geo-title">
+          <span class="tk-eyebrow-label">Geo-Based Attendance</span>
+          <h2>Remote Clock-In &amp; Clock-Out for Field Teams</h2>
+        </div>
+        <div class="tk-split-visual tk-geo-visual">
+          <div class="tk-geo-photo">
+            <img src="/uploads/2026/08/remote-clock-in-terminal.webp" alt="Rugged handheld biometric terminal used for on-site clock-ins" loading="lazy">
+          </div>
+          <div class="tk-geo-phone">
+            <img src="/uploads/2026/08/attendance-tracking-and-geo-fencing-showing-employee-check-in-status-on-an-interactive-location-map.webp" alt="PeoplesHR mobile app check-in screen showing an employee's location on a map with clock-in details">
+          </div>
+        </div>
+        <div class="tk-split-text tk-geo-body">
+          <p>Not every employee sits at a fixed device. For field, site, and
+            mobile teams, PeoplesHR Time and Attendance connects with remote
+            attendance devices and supports geo-based tracking, so staff can
+            clock in and out from the PeoplesHR mobile app or a portable
+            biometric terminal, with the system checking that they're within
+            an approved work radius before the record is accepted.</p>
+          <ul class="tk-checklist tk-checklist-left">
+            <li>Approved locations and radius, set per site, branch, or project</li>
+            <li>Clock-in from the mobile app or a handheld biometric device</li>
+            <li>Clock-ins outside the radius are flagged, not silently missed</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== WHY PEOPLESHR TRACKING ===================== -->
+    <section class="tk-section">
+      <div class="tk-split">
+        <div class="tk-split-visual">
+          <img src="/uploads/2026/08/man-smiling-while-badging-through-a-turnstile-gate-with-an-access-card-carrying-a-laptop-bag.webp" alt="Employee badging through a turnstile access gate with a card, carrying a laptop bag" loading="lazy">
+        </div>
+        <div class="tk-split-text tk-why-text">
+          <h2>Why Organizations Trust PeoplesHR Tracking</h2>
+          <div class="tk-split-list tk-split-list-2col">
+            <div class="tk-split-item">
+              <h3>Trusted, Trained Staff</h3>
+              <p>Every technician is vetted and trained before they're deployed to your site, so the people handling your attendance and access systems are people you can trust.</p>
+            </div>
+            <div class="tk-split-item">
+              <h3>ISO-Certified Team</h3>
+              <p>Our installation and support team is ISO certified and legally bound to follow protocol, so every engagement meets a documented standard instead of ad hoc practice.</p>
+            </div>
+            <div class="tk-split-item">
+              <h3>A Higher Standard of Professionalism</h3>
+              <p>From the first site visit through ongoing support, our team holds a standard of professionalism that reflects on your organization, not just ours.</p>
+            </div>
+            <div class="tk-split-item">
+              <h3>Built for Business Continuity</h3>
+              <p>Reliable hardware backed by accountable, trained staff keeps your attendance and access systems running, so a vendor issue never becomes your downtime.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tk-compliance-row">
+        <div class="tk-compliance-badge"><img src="/uploads/2025/12/ISO_9001.webp" alt="ISO 9001 Certified"></div>
+        <div class="tk-compliance-badge"><img src="/uploads/2025/12/thumbnail_BVCER_withUKAS-ISO-27001.webp" alt="ISO 27001 Certified, Bureau Veritas with UKAS accreditation"></div>
+        <div class="tk-compliance-badge"><img src="/uploads/2021/07/certificate004.png" alt="ISO 27017 Certified, Information Security Management"></div>
+        <div class="tk-compliance-badge"><img src="/uploads/2026/04/Star-Level-One.webp" alt="STAR Level One Security Trust Assurance & Risk self-assessment"></div>
+        <div class="tk-compliance-badge"><img src="/uploads/2021/07/certificate002.png" alt="NCE Sri Lanka Certificate of Ethical Trading"></div>
+        <div class="tk-compliance-badge"><img src="/uploads/2026/05/dpo.jpg" alt="National Privacy Commission DPO/DPS Registered"></div>
+      </div>
+    </section>
+
+    <!-- ===================== TESTIMONIAL ===================== -->
+    <!-- Reuses the homepage's .testimonial-section/.testimonial-slide component,
+         stripped of .testimonial-track-wrap/.testimonial-controls since this is a
+         single static quote, not a carousel (phr.js's carousel IIFE guards on
+         a missing #testimonial-track element, so no JS wiring needed here). -->
+    <section class="testimonial-section">
+      <div class="testimonial-slide">
+        <p class="testimonial-quote">"Partnering with PeoplesHR was a pivotal step in our digital transformation. Moving from manual processes to a fully digital HR system empowered our people — managing attendance, leave, and employee data with greater efficiency while laying the foundation for payroll and performance systems to follow."</p>
+        <div class="testimonial-meta">
+          <div class="t-avatar"><img decoding="async" src="/uploads/2026/04/D-M-M-Disanayake.webp" alt="D.M.M Dissanayake" width="56" height="56" style="border-radius:50%;object-fit:cover;"></div>
+          <div class="t-meta-text"><div class="testimonial-author">D.M.M Dissanayake</div><div class="testimonial-title">Deputy General Manager HR, People's Bank Sri Lanka</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TRUST / STATS BAR ===================== -->
+    <section class="tk-stats">
+      <div class="tk-stats-head">
+        <span class="tk-eyebrow-label">Trusted Experience</span>
+        <h2>Built on Nearly 30 Years of Proven Reliability</h2>
+        <p>PeoplesHR is backed by close to three decades of industry
+          experience with a team that's supported attendance and security
+          systems for organizations, offering genuine devices, dependable
+          support, and a platform organizations rely on today.</p>
+      </div>
+      <ul>
+        <li>
+          <div class="tk-stat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6l-9-4Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <strong>Authorized</strong><span>ZKTeco Partner</span>
+          <p>Genuine devices, backed by a full manufacturer warranty.</p>
+        </li>
+        <li>
+          <div class="tk-stat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r=".7" fill="currentColor" stroke="none"/></svg></div>
+          <strong>99.9%</strong><span>Attendance capture accuracy</span>
+          <p>Biometric capture accurate enough to eliminate missed punches.</p>
+        </li>
+        <li>
+          <div class="tk-stat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v5h5"/><path d="M20 20v-5h-5"/><path d="M5.5 15A8 8 0 0 0 19 9"/><path d="M18.5 9A8 8 0 0 0 5 15"/></svg></div>
+          <strong>Up-to-date</strong><span>Sync with Payroll &amp; T&amp;A</span>
+          <p>Every clock-in flows directly into payroll calculations.</p>
+        </li>
+        <li>
+          <div class="tk-stat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-11a7 7 0 1 0-14 0c0 4.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <strong>Multi-site</strong><span>Deployment across branches</span>
+          <p>One platform, covering every site you operate.</p>
+        </li>
+        <li>
+          <div class="tk-stat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M8.5 13.5 6 22l6-3 6 3-2.5-8.5"/></svg></div>
+          <strong>ISO-Certified</strong><span>Installation &amp; support team</span>
+          <p>Every engagement follows a documented, certified standard, not ad hoc practice.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===================== AUTHORIZED PARTNER TRUST ===================== -->
+    <section class="tk-section">
+      <div class="tk-split">
+        <div class="tk-split-text tk-zk-title">
+          <h2>An Authorized ZKTeco Partner</h2>
+        </div>
+        <div class="tk-zk-badge-wrap">
+          <div class="tk-partner-badge">
+            <img src="/uploads/2026/08/zkteco_sri_lanka.png" alt="ZKTeco">
+            <span class="tk-partner-badge-divider"></span>
+            <span class="tk-partner-badge-label">Enterprise Solution Partner, Sri Lanka</span>
+          </div>
+        </div>
+        <div class="tk-split-visual tk-zk-visual">
+          <img src="/uploads/2026/08/biometrics-door-entry-with-rfid.webp" alt="Genuine ZKTeco biometric access control device with RFID card entry mounted at a door" loading="lazy">
+        </div>
+        <div class="tk-split-text tk-zk-body">
+          <ul class="tk-checklist tk-checklist-left">
+            <li>Genuine hardware, guaranteed</li>
+            <li>Full manufacturer-backed warranty on every device</li>
+            <li>Certified installation and technical support</li>
+            <li>Direct access to official firmware and security updates</li>
+          </ul>
+          <p>We are ZKTeco's Enterprise Solution Partner in Sri Lanka, and every
+            fingerprint machine, face recognition kiosk, and access control
+            device we supply comes through that official partnership. Devices
+            bought through unauthorized channels carry real risks. With
+            PeoplesHR Tracking, every device is genuine, warrantied, and
+            backed by ZKTeco directly.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FINAL CTA ===================== -->
+    <section id="demo" class="tk-final-cta">
+      <h2>Let's Design the Right Setup for Your Organization</h2>
+      <p>Every site is different. Talk to our team about your specific
+        requirements, and we'll recommend the right solution for you.</p>
+      <a href="/get-in-touch.html" class="tk-btn tk-btn-primary tk-btn-lg">Talk to Sales</a>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="tk-section tk-section-compact">
+      <div class="tk-section-head tk-section-head-narrow">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="tk-faq-list">
+        <details>
+          <summary>What types of devices does PeoplesHR Tracking support?
+            <svg class="tk-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <p>PeoplesHR Tracking works with fingerprint machines, face recognition
+            kiosks, card readers, and PIN terminals, so you can choose the
+            check-in method that fits each site, or mix methods across
+            locations.</p>
+        </details>
+        <details>
+          <summary>Is PeoplesHR Tracking an authorized ZKTeco partner?
+            <svg class="tk-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <p>Yes. PeoplesHR Tracking is a fully authorized ZKTeco partner, which
+            means every fingerprint machine, face recognition kiosk, and access
+            control device we supply is genuine, backed by manufacturer warranty,
+            and eligible for official firmware and security updates. Buying
+            through an unauthorized reseller can mean voided warranties,
+            counterfeit hardware, and no direct support line back to the
+            manufacturer. These are risks you avoid by working with an
+            authorized partner.</p>
+        </details>
+        <details>
+          <summary>How do devices actually connect to PeoplesHR?
+            <svg class="tk-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <p>Through ZKTeco's authorized WDMS middleware, which we deploy as
+            part of every installation. It pulls attendance and access events
+            off each device and pushes them straight into PeoplesHR, so
+            there's no third-party software layer or manual export step
+            sitting between your hardware and your data.</p>
+        </details>
+        <details>
+          <summary>Does attendance data flow automatically into payroll?
+            <svg class="tk-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <p>Not directly. Attendance and access data flows into the Time and
+            Attendance module of PeoplesHR, where hours, overtime, and
+            exceptions are calculated automatically. That accurate record of
+            shifts worked is what payroll runs on, so pay is based on real
+            attendance data instead of manual entry.</p>
+        </details>
+        <details>
+          <summary>Can PeoplesHR Tracking be deployed across multiple branches?
+            <svg class="tk-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <p>Yes. Devices at every site sync back to a single central platform, so
+            you get one consolidated view of attendance and access across your
+            entire organization.</p>
+        </details>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- footer start -->
+
+<div class="ft-root">
+  <footer class="ft-wrap">
+
+    <div class="ft-top">
+
+      <!-- ===================== BRAND ===================== -->
+      <div class="ft-brand">
+        <div class="ft-brand-inner">
+          <div>
+            <a class="ft-logo" href="/index.html" aria-label="PeoplesHR home">
+              <img src="/uploads/2021/07/logo.webp" alt="PeoplesHR">
+            </a>
+            <p class="ft-blurb">PeoplesHR is one of the most trusted names in the HR Tech industry in Asia Pacific and African regions, capturing all HR needs with HCM solutions along with an HR ecosystem.</p>
+
+            <?php include __DIR__ . '/../inc/office-block.php'; ?>
+
+            <div class="ft-social">
+              <a href="https://www.linkedin.com/company/peopleshr/?originalSubdomain=sg" aria-label="LinkedIn" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C21.4 8.65 22 11 22 14.1V21h-4v-6.1c0-1.45-.03-3.32-2.02-3.32-2.02 0-2.33 1.58-2.33 3.21V21h-4V9Z"/></svg>
+              </a>
+              <a href="https://www.facebook.com/PeoplesHR/" aria-label="Facebook" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H17V3.6c-.29-.04-1.27-.12-2.41-.12-2.38 0-4.02 1.45-4.02 4.12v2.3H7.9V13h2.67v8h2.93Z"/></svg>
+              </a>
+              <a href="https://www.instagram.com/peopleshr/?hl=en" aria-label="Instagram" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>
+              </a>
+              <a href="https://www.youtube.com/@PeoplesHR" aria-label="YouTube" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3.3-.42-4.88a2.55 2.55 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.78.32a2.55 2.55 0 0 0-1.8 1.8C2 8.7 2 12 2 12s0 3.3.42 4.88a2.55 2.55 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.78-.32a2.55 2.55 0 0 0 1.8-1.8C22 15.3 22 12 22 12Zm-12 3.2V8.8l5.2 3.2-5.2 3.2Z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="ft-certs">
+            <div class="ft-cert"><img src="/uploads/2021/07/certificate004.png" alt="Certificate"></div>
+            <div class="ft-cert"><img src="/uploads/2021/07/certificate002.png" alt="Certificate"></div>
+            <div class="ft-cert"><img src="/uploads/2025/12/ISO_9001.webp" alt="ISO 9001"></div>
+            <div class="ft-cert"><img src="/uploads/2025/12/thumbnail_BVCER_withUKAS-ISO-27001.webp" alt="ISO 27001 UKAS"></div>
+            <div class="ft-cert"><img src="/uploads/2026/04/Star-Level-One.webp" alt="CSA STAR Level One"></div>
+            <div class="ft-cert"><img src="/uploads/2026/05/dpo.jpg" alt="HP"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===================== PRODUCTS ===================== -->
+      <div class="ft-col">
+        <h2 class="ft-h">Products</h2>
+        <ul class="ft-links">
+          <li><a href="/products/core-hr.html">HR</a></li>
+          <li><a href="/products/payroll-system.html">Pay</a></li>
+          <li><a href="/products/talent-acquisition.html">Talent</a></li>
+          <li><a href="/products/time-and-attendance.html">Time</a></li>
+          <li><a href="/products/people-engagement.html">Engagement</a></li>
+          <li><a href="/products/people-analytics.html">Insight</a></li>
+          <li><a href="/products/mobile-app.html">Mobile App</a></li>
+          <li><a href="/ai-x.html">Explore PeoplesHR AI</a></li>
+        </ul>
+        <p class="ft-sub">Specialized Solutions</p>
+        <ul class="ft-links">
+          <li><a href="/solutions/peopleshr-tracking.html">Access &amp; Attendance Devices</a></li>
+          <li><a href="/solutions/outsourcing.html">Payroll Outsourcing</a></li>
+          <li><a href="/solutions/peopleshr-academy.html">PeoplesHR Academy</a></li>
+        </ul>
+      </div>
+
+      <!-- ===================== INDUSTRIES ===================== -->
+      <div class="ft-col">
+        <h2 class="ft-h">Industries</h2>
+        <ul class="ft-links">
+          <li><a href="/solutions/banking-finance-insurance-industries.html">Banking, Finance &amp; Insurance</a></li>
+          <li><a href="/solutions/hr-software-for-hospitality-industry.html">Hospitality</a></li>
+          <li><a href="/solutions/hr-software-for-manufacturing-industry.html">Manufacturing</a></li>
+          <li><a href="/solutions/hr-software-for-professional-and-business-services-industry.html">Professional &amp; Business Services</a></li>
+          <li><a href="/solutions/hr-software-for-retail-industry.html">Retail</a></li>
+          <li><a href="/solutions/hr-software-for-it-and-ites-industry.html">IT &amp; ITES</a></li>
+          <li><a href="/solutions/hr-software-for-transportation-and-logistics-industry.html">Transportation &amp; Logistics</a></li>
+        </ul>
+      </div>
+
+      <!-- ===================== RESOURCES / COMPANY ===================== -->
+      <div class="ft-col">
+        <h2 class="ft-h">Resources</h2>
+        <ul class="ft-links">
+          <li><a href="/success-stories.html">Case Studies</a></li>
+          <li><a href="/webinars.html">Webinars</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/events.html">Events</a></li>
+          <li><a href="/hr-ebooks-and-guides.html">HR eBooks &amp; Guides</a></li>
+          <li><a href="/news.html">News</a></li>
+        </ul>
+        <p class="ft-sub">Company</p>
+        <ul class="ft-links">
+          <li><a href="/company.html">About PeoplesHR</a></li>
+          <li><a href="/careers.html">Careers</a></li>
+          <li><a href="/community.html">Community</a></li>
+          <li><a href="/partner-with-peopleshr.html">Partners</a></li>
+          <li><a href="/regions.html">Regions</a></li>
+          <li><a href="/llms.txt">For AI agents</a></li>
+        </ul>
+      </div>
+
+      <!-- ===================== TOOLS / EXPLORE ===================== -->
+      <div class="ft-col">
+        <h2 class="ft-h">Calculators</h2>
+        <ul class="ft-links">
+          <li><a href="/tax-calculator-philippines.html">Philippines Tax Calculator</a></li>
+          <li><a href="/roi-calculator.html">ROI Calculator</a></li>
+        </ul>
+        <p class="ft-sub">Explore</p>
+        <ul class="ft-links">
+          <li><a href="/customers.html">Customers</a></li>
+          <li><a href="/view-plans.html">Pricing</a></li>
+          <li><a href="/interactive-demos.html">Interactive Demos</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- ===================== BOTTOM BAR ===================== -->
+    <div class="ft-bottom">
+      <ul class="ft-legal">
+        <li><a href="/trust-portal.html">Trust Portal</a></li>
+        <li><a href="/legal.html">Legal</a></li>
+        <li><a href="/cookie-policy.html">Cookie policy</a></li>
+        <li><a href="/terms-of-use.html">Terms of use</a></li>
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+      </ul>
+      <p class="ft-copy">Copyright &copy;2026 PeoplesHR. All Rights Reserved.</p>
+    </div>
+
+  </footer>
+</div>
+
+<!-- footer end -->
+
+<!-- JS -->
+<script src="<?php echo asset_v('/js/phr.js'); ?>"></script>
+<script src="<?php echo asset_v('/js/navbar.js'); ?>"></script>
+<script src="<?php echo asset_v('/js/tracking.js'); ?>"></script>
+
+</body>
+</html>

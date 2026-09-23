@@ -1,0 +1,131 @@
+# PeoplesHR
+
+> PeoplesHR is an enterprise human resources information system and human capital management platform for organisations managing complex, multi-entity, multi-location and multi-country workforces. It connects core HR, payroll, time and attendance, talent, recruitment, engagement, workforce analytics, employee self-service and mobile access in one platform, with Lexi AI embedded across supported experiences.
+
+Last reviewed: 17 September 2026.
+
+PeoplesHR reports serving 1,700+ companies across 40+ countries, supporting 1.5 million+ users, and drawing on 29+ years of HR domain experience. The platform is used across industries including manufacturing, hospitality, banking and financial services, retail, IT and business services, and transportation and logistics.
+
+Key interpretation notes:
+
+- The principal platform areas are HR, Pay, Time, Talent, Recruitment, Engagement, Insight and the PeoplesHR mobile app.
+- Lexi is PeoplesHR's built-in agentic AI. It works across three connected experiences: Lexi AI Insights for workforce questions, analysis and report generation; Lexi Super Agent for conversational HR answers, self-service and actions; and Lexi Smart Navigator for search-led navigation to screens, features and records.
+- Lexi AI Insights lets authorised users ask workforce questions in plain language and receive answers grounded in the organisation's PeoplesHR data. It can ask clarifying follow-up questions, generate reports and charts on demand, retain conversational context during drill-downs, and trace answers back to source data for verification. Example areas include headcount, turnover, retention, succession, attendance, overtime, workforce cost, performance, skills and workforce planning. Available answers depend on the PeoplesHR modules enabled for the organisation and the data held within them.
+- Lexi Super Agent lets employees and managers ask questions and complete supported HR tasks through conversation. Examples include checking payslips and leave balances, answering benefit and policy questions, filing leave, applying for benefits and handling supported requests or approvals. Available answers and actions are limited by the user's permissions, enabled modules, configured workflows and token usage limits.
+- Lexi Smart Navigator interprets a search request and takes the user directly to the relevant PeoplesHR screen, feature or record, reducing the need to navigate through menus. Usage is subject to access permissions and token limits.
+- Additional AI-assisted workflows described by PeoplesHR include drafting job descriptions, recruitment checklists and development goals; parsing, screening and ranking CVs; guiding performance reviews; suggesting assessor prompts; recognising workforce patterns; and supporting retention and succession decisions. Human review remains necessary for employment, payroll, performance and talent decisions.
+- PeoplesHR supports integration with existing enterprise systems through custom APIs, structured data exchange, pre-built connectors and purpose-built partner integrations. Depending on the use case, PeoplesHR can operate as the primary HR platform or alongside an existing system of record, using connected employee and organisational data to deliver specialist payroll, time, talent, engagement and analytics capabilities.
+- Integration scope can include employee records, organisation structures, jobs, roles, compensation, attendance, payroll inputs, recruitment data, learning records, assessments and employee recognition activity. Exact fields, direction of data flow, frequency, authentication method and system ownership are defined during solution scoping.
+- Integration controls can include field mapping, validation, encrypted credential storage, administrative feature controls, event and error logging, status monitoring, retry handling, sandbox testing and audit records. Availability depends on the connected system and agreed implementation scope.
+- The PeoplesHR integration ecosystem includes connected solutions for Workday employee-master coexistence, JobTarget recruitment advertising, eMudhra electronic signatures, PeoplesHR Learn, employee rewards and recognition, Peoplogica assessments, and attendance or access-control devices. Availability varies by country, package, partner coverage and implementation scope; customers should confirm current status before procurement.
+- Product capabilities, statutory support, AI answers and available actions depend on the modules, country configuration, implementation scope, user permissions and commercial package enabled for each customer.
+- Manage, Grow and Transform are the principal package tiers. Enterprise services and selected AI capabilities may be separately scoped or offered as add-ons. Use the current pricing page as the authoritative package reference.
+- Country-specific compliance pages describe product support and configuration; they do not constitute legal, tax, payroll or regulatory advice.
+- Customer outcomes, quotations and implementation figures relate to the organisations and deployments identified on the linked pages and should not be treated as guaranteed results.
+- Use the linked page as the source of truth when a figure, capability, certification, price or availability statement changes after the review date above.
+
+## Start Here
+
+- [PeoplesHR overview](https://peopleshr.com/): Primary overview of the platform, Lexi AI, product areas, business use cases, customer evidence and current company scale.
+- [Interactive product demos](https://peopleshr.com/interactive-demos/): Guided demonstrations of PeoplesHR modules and common HR processes.
+- [Pricing and packages](https://peopleshr.com/view-plans/): Current Manage, Grow and Transform packages, enterprise inclusions, add-ons and capability comparison.
+- [Detailed capability reference](https://peopleshr.com/capability-details/): Field lists, templates, validations, leave types, benefit types, reports, dashboards and other details referenced by the pricing comparison.
+- [Customers](https://peopleshr.com/customers/): Customer quotations, deployment examples and evidence from organisations using PeoplesHR.
+- [Request a demonstration](https://peopleshr.com/get-in-touch/): Contact the PeoplesHR team for a scoped product demonstration or commercial discussion.
+
+## Core Platform
+
+- [Core HR](https://peopleshr.com/products/core-hr/): Employee records, organisational structures, lifecycle processes, documents, workflows, approvals and HR administration.
+- [Payroll](https://peopleshr.com/products/payroll-system/): Payroll processing, earnings and deductions, statutory configurations, benefits, loans, payment outputs and reporting.
+- [Time and attendance](https://peopleshr.com/products/time-and-attendance/): Attendance capture, shifts, rosters, overtime, leave, exceptions, approvals and workforce time visibility.
+- [Talent](https://peopleshr.com/products/talent-acquisition/): Recruitment, onboarding, goals, performance, feedback, learning, succession and workforce planning capabilities.
+- [Engagement](https://peopleshr.com/products/people-engagement/): Surveys, employee feedback, recognition, grievances and other engagement processes.
+- [People analytics and Insight](https://peopleshr.com/products/people-analytics/): Reports, dashboards, workforce analytics and decision-support capabilities.
+- [Mobile app](https://peopleshr.com/products/mobile-app/): Mobile employee and manager self-service, HR information, requests, approvals and supported attendance experiences.
+
+## Integrations and Connected Systems
+
+- [API and external-system connectivity](https://peopleshr.com/capability-details/#api-external-systems): Custom API and structured data-exchange capabilities for securely sending data to and receiving data from enterprise applications, devices and third-party platforms. Exact endpoints, fields, authentication and update frequency are defined for each implementation.
+- [Enterprise integration services](https://peopleshr.com/view-plans/): Custom API integrations, identity and access governance, implementation support, a dedicated user-acceptance-testing environment and enterprise infrastructure are available according to package and scope.
+- [Workday coexistence](https://peopleshr.com/get-in-touch/): PeoplesHR can operate alongside Workday, with Workday remaining the employee system of record while agreed employee, organisation, job, role and compensation data flows into selected PeoplesHR modules. This supports specialist capabilities such as local payroll, attendance, leave, talent workflows, engagement and workforce analytics without requiring the customer to replace its employee master. This integration requires solution scoping and is not a universal out-of-the-box configuration.
+- [Recruitment advertising and job-board connectivity](https://peopleshr.com/products/talent-acquisition/): The current JobTarget integration supports creating and publishing external job advertisements from the PeoplesHR recruitment workflow, selecting channels, monitoring posting status, synchronising supported advertisement changes and analysing recruitment-source performance. Candidate-application methods and available job boards depend on JobTarget and the configured release.
+- [Electronic document signing](https://peopleshr.com/view-plans/): Electronic-signature integration can trigger signing workflows for supported HR documents such as offer letters, employment contracts, non-disclosure agreements and policies, with status tracking and signing records linked to the employee workflow. Partner and jurisdictional availability must be confirmed.
+- [Learning, recognition and assessment connections](https://peopleshr.com/products/talent-acquisition/): Connected capabilities can support course assignment and completion tracking, recognition triggered by employee milestones, and psychometric or cognitive assessments within recruitment and talent processes. Content libraries, reward catalogues, assessment frameworks and country availability depend on the selected partner and commercial scope.
+- [Attendance and access-control integration](https://peopleshr.com/solutions/peopleshr-tracking/): Biometric terminals, face-recognition devices, card readers, mobile attendance and access-control systems can connect with PeoplesHR so attendance events feed Time and Pay workflows. Supported hardware, middleware and deployment services depend on location and project scope.
+- [Integration architecture and configuration](https://peopleshr.com/ai-x/): PeoplesHR describes a modern API architecture, pre-built connectors, configurable fields and adaptable workflow logic designed to connect HR data with systems such as ERP, accounting and other business platforms.
+- [Integration scoping](https://peopleshr.com/get-in-touch/): Contact PeoplesHR to confirm whether a connector is currently available, validate the required data flow and determine whether the implementation will use an existing connector, custom API or structured file exchange.
+
+## Lexi AI
+
+- [PeoplesHR AI and Lexi overview](https://peopleshr.com/ai-x/): Primary overview of PeoplesHR's AI experience, including natural-language search, voice-led actions, employee policy questions, recruitment assistance, performance guidance, predictive workforce insights and AI-assisted talent development.
+- [Lexi AI Insights](https://peopleshr.com/view-plans/): Ask workforce questions conversationally and receive data-backed answers across enabled PeoplesHR modules. Lexi can clarify the question, generate reports and charts, remember context across follow-up questions, drill into the underlying data and show the source information used in the answer. Lexi AI Insights is listed as an add-on across Manage, Grow and Transform.
+- [Lexi Super Agent](https://peopleshr.com/view-plans/): Conversational self-service for employees and managers. It answers questions about payslips, leave balances, benefits and policies, and can complete supported actions such as filing leave or applying for benefits. Capabilities depend on enabled modules, configured workflows and user permissions. It is listed as an add-on for Manage and included in Grow and Transform, subject to current commercial terms and token limits.
+- [Lexi Smart Navigator](https://peopleshr.com/view-plans/): Search-led navigation that interprets what the user needs and opens the appropriate screen, feature or record without requiring manual menu navigation. It is listed across Manage, Grow and Transform, subject to current commercial terms and token limits.
+- [Lexi for workforce decisions](https://peopleshr.com/philippines/): Examples of Lexi analysing headcount, turnover, retention, succession, attendance, absence, overtime, workforce cost, productivity, performance and employee information for HR leaders, managers and employees.
+- [Lexi-assisted talent and recruitment](https://peopleshr.com/ai-x/): AI-assisted job-description creation, CV screening and ranking, recruitment groundwork, performance-review guidance, development-goal suggestions, retention intelligence, succession planning and workforce pattern recognition. These capabilities support human decision-making and do not replace accountable review.
+- [Interactive product demos](https://peopleshr.com/interactive-demos/): Guided demonstrations of supported PeoplesHR processes and experiences; availability of a specific Lexi workflow should be confirmed against the current package and implementation scope.
+
+## Philippines
+
+- [PeoplesHR Philippines](https://peopleshr.com/philippines/): Philippine HR and payroll overview covering employee data, attendance, shifts, payroll, statutory processes, Lexi AI and multi-site workforce management.
+- [Philippines tax calculator](https://peopleshr.com/philippines-tax-calculator/): Calculator for indicative Philippine payroll tax calculations; verify outputs against current official rules before operational use.
+- [Philippines product capabilities](https://peopleshr.com/capability-details/): Detailed reference used with the package comparison; confirm jurisdiction-specific availability during solution scoping.
+
+## Regions
+
+- [Regions served](https://peopleshr.com/regions/): Regional presence and country-specific PeoplesHR pages across Asia-Pacific, the Middle East and Africa.
+- [Indonesia](https://peopleshr.com/indonesia/): Indonesian-language overview of HR, attendance, payroll, BPJS, PPh21, THR and local implementation support.
+
+## Industries
+
+- [Banking, finance and insurance](https://peopleshr.com/solutions/banking-finance-insurance-industries/): HR technology for regulated financial-services workforces requiring control, accuracy and auditability.
+- [Hospitality](https://peopleshr.com/solutions/hr-software-for-hospitality-industry/): Workforce scheduling, attendance, payroll and people management for hospitality operations.
+- [Manufacturing](https://peopleshr.com/solutions/hr-software-for-manufacturing-industry/): Multi-site workforce, shift, attendance, payroll and employee-management capabilities for manufacturers.
+- [Professional and business services](https://peopleshr.com/solutions/hr-software-for-professional-and-business-services-industry/): HR capabilities for project-based and service-oriented organisations.
+- [Retail](https://peopleshr.com/solutions/hr-software-for-retail-industry/): Multi-location workforce, scheduling, attendance and people operations for retail businesses.
+- [IT and IT-enabled services](https://peopleshr.com/solutions/hr-software-for-it-and-ites-industry/): HR and workforce management for distributed technology and business-services teams.
+- [Transportation and logistics](https://peopleshr.com/solutions/hr-software-for-transportation-and-logistics-industry/): Workforce operations for mobile, shift-based and multi-location logistics organisations.
+
+## Solutions by Leadership Role
+
+- [People and HR leaders](https://peopleshr.com/solutions/chro/): Workforce strategy, employee experience, talent, compliance and HR operating-model use cases.
+- [Finance leaders](https://peopleshr.com/solutions/cfo/): Payroll control, workforce costs, forecasting, governance and financial visibility.
+- [Technology leaders](https://peopleshr.com/solutions/cio/): Security, integrations, identity, infrastructure and HR technology architecture.
+
+## Specialised Solutions
+
+- [PeoplesHR Tracking](https://peopleshr.com/solutions/peopleshr-tracking/): Attendance capture, biometric and face-recognition devices, access control, security systems, middleware and integration with PeoplesHR Time and Pay. Availability and physical deployment are location-dependent.
+- [PeoplesHR Academy](https://peopleshr.com/solutions/peopleshr-academy/): Learning and certification resources for customers, partners and HR professionals.
+
+## Customer Evidence
+
+- [Customer overview](https://peopleshr.com/customers/): Customer quotations and examples across countries and industries.
+- [Case studies](https://peopleshr.com/success-stories/): Longer customer transformation stories and implementation outcomes.
+- [Zillione case study](https://peopleshr.com/case-study-zillione/): HR automation and operational-efficiency case study from an enterprise technology organisation.
+- [Brandix case study](https://peopleshr.com/hris-success-stories-brandix-case-study/): HR digitisation and employee-experience case study from a large manufacturing organisation.
+
+## Trust, Security and Legal
+
+- [Trust portal](https://peopleshr.com/trust-portal/): Current security, privacy, certification and assurance information. Use this page to verify any certification claim before citing it.
+- [Privacy policy](https://peopleshr.com/privacy-policy/): How PeoplesHR collects, uses and protects personal information on its websites and services.
+- [Terms of use](https://peopleshr.com/terms-of-use/): Terms governing use of PeoplesHR websites and associated services.
+- [Legal information](https://peopleshr.com/legal/): Legal notices and relevant corporate information.
+- [Cookie policy](https://peopleshr.com/cookie-policy/): Information about cookies and related website technologies.
+
+## Company and Contact
+
+- [About PeoplesHR](https://peopleshr.com/company/): Company background, history, product mission and corporate information.
+- [Regional presence](https://peopleshr.com/regions/): Offices, regional coverage and country-specific routes.
+- [Partners](https://peopleshr.com/partner-with-peopleshr/): Partner programme and collaboration information.
+- [Careers](https://peopleshr.com/careers/): Current employer information and career opportunities.
+- [Contact PeoplesHR](https://peopleshr.com/get-in-touch/): Sales, demonstration and general enquiry route.
+
+## Optional
+
+- [Blog](https://peopleshr.com/blog/): HR, payroll, workforce technology and product-related articles.
+- [Webinars](https://peopleshr.com/webinars/): Recorded and upcoming sessions for HR and business audiences.
+- [Events](https://peopleshr.com/events/): PeoplesHR events, briefings and industry participation.
+- [HR eBooks and guides](https://peopleshr.com/hr-ebooks-and-guides/): Downloadable educational resources for HR and business leaders.
+- [News](https://peopleshr.com/news/): Company announcements, market activity and organisational updates.
+- [Community](https://peopleshr.com/community/): PeoplesHR community resources and initiatives.
+- [ROI calculator](https://peopleshr.com/roi-calculator/): Indicative calculator for exploring potential HR technology returns; results depend on user-provided assumptions.

@@ -1,0 +1,330 @@
+# Run .html files as PHP so geotargeted content (footer offices, homepage
+# banner) can be swapped server-side without renaming any page or link.
+# Works with WAMP (mod_php) locally. On Namecheap cPanel, if this doesn't
+# take effect, use MultiPHP Manager (or ask support) to map .html to PHP â€”
+# the exact handler name can vary by PHP version/config, so try the
+# SetHandler block below first; the AddType line is a fallback for classic
+# mod_php setups like WAMP.
+
+<FilesMatch "\.html$">
+    SetHandler application/x-httpd-php
+</FilesMatch>
+
+AddType application/x-httpd-php .html .htm
+
+DirectoryIndex index.html index.php
+
+# Never show a raw file listing for a folder with no index (e.g. products/,
+# which has no index.html of its own) â€” return a normal 403 instead.
+Options -Indexes
+
+# Custom 404 page: see 404.html, and the "genuine 404" rewrite rule
+# further down that serves it as the PRIMARY mechanism. That rewrite
+# rule relies on mod_rewrite restarting rule processing after an [L]
+# match (so a missing page gets a second pass: "foo" -> "foo.html",
+# still missing -> "/404.html") -- true on WAMP's Apache, but on the
+# live LiteSpeed host that second pass apparently doesn't happen, so a
+# genuinely missing page falls through to LiteSpeed's own generic error
+# page instead of ours. ErrorDocument below is the fallback that
+# actually makes it work there: unlike the rewrite rule, it doesn't
+# depend on any multi-pass behaviour, just a real 404 from the server
+# core. We originally avoided ErrorDocument entirely because of a
+# WAMP/mod_fcgid bug (its internal error-subrequest keeps SCRIPT_FILENAME
+# pointed at the ORIGINAL missing path instead of 404.html, so PHP
+# throws "script ... not found or unable to stat" and the response
+# comes back with a correct 404 status but an empty body) -- but that
+# only fires if Apache's core actually reaches a 404 error state, and
+# on WAMP the rewrite rule below already resolves the request
+# successfully before that ever happens, so this fallback should be a
+# no-op locally and the thing that makes it actually work live.
+ErrorDocument 404 /404.html
+
+# ============================================================
+# BLOCK DIRECT ACCESS to files that should never be served over HTTP:
+# local backup archives that sometimes end up dropped in the web root
+# during development (e.g. 09-16-www.zip), the IP2Location geo database
+# (inc/data/*.BIN -- only ever read server-side by inc/geo.php; the
+# LITE license isn't meant for public redistribution like a direct
+# download), and the local-only PHP built-in-server router (see its own
+# header comment -- never meant to be deployed at all). Belt-and-braces:
+# these files shouldn't be pushed to the live server in the first place,
+# but this means an accidental upload still can't be downloaded.
+# ============================================================
+<FilesMatch "(?i)\.(zip|rar|7z|bin|sql|bak|old)$">
+    Require all denied
+</FilesMatch>
+<Files "dev-server-router.php">
+    Require all denied
+</Files>
+
+# ============================================================
+# COMPRESSION â€” text-based responses (HTML/CSS/JS/SVG/fonts) are sent
+# gzip-compressed. styles.css alone is ~380 KB uncompressed (it's one
+# monolithic sitewide stylesheet covering every page's styles, not just
+# this one) and compresses to a fraction of that over the wire.
+# ============================================================
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml text/javascript
+    AddOutputFilterByType DEFLATE application/javascript application/x-javascript application/json
+    AddOutputFilterByType DEFLATE application/xml application/rss+xml
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE font/ttf font/otf application/vnd.ms-fontobject
+</IfModule>
+
+# ============================================================
+# CACHING â€” long-lived Cache-Control for static assets so a repeat
+# visit (or a second page view in the same session) doesn't re-fetch
+# unchanged CSS/JS/images/fonts. Safe to cache CSS/JS aggressively
+# because every <link>/<script> tag loads them through asset_v(), which
+# appends a content-hash query string that changes whenever the file's
+# contents change -- a stale cached copy is never served under a URL
+# that's still in use. Images/fonts/favicon have no such versioning, so
+# they get a shorter (still long) max-age instead of "immutable".
+# HTML is deliberately excluded (no directive here = server default,
+# effectively no caching) since these .html files are PHP-rendered per
+# request (geo-targeted footer/banner content) and must not be cached.
+# ============================================================
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 month"
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    <FilesMatch "\.(webp|png|jpe?g|svg|ico|woff2?|ttf|otf)$">
+        Header set Cache-Control "public, max-age=2592000"
+    </FilesMatch>
+</IfModule>
+
+# ============================================================
+# SECURITY HEADERS
+# Wrapped in <IfModule> so a server without mod_headers loaded
+# just skips this block instead of failing to start.
+#
+# CSP note: this site relies heavily on inline <script>/<style>
+# blocks (nav toggles, video modals, the ROI/tax calculators,
+# webinar page, etc.), so script-src/style-src need 'unsafe-inline'
+# -- tightening that to nonces/hashes would need every inline block
+# across all pages updated in lockstep and is a separate follow-up,
+# not something to flip on blind. Third-party origins are scoped to
+# what this site actually loads: Google Fonts, HubSpot (forms,
+# tracking, live chat widget, na2 portal), and YouTube (video modal
+# embeds). HubSpot's chat widget needs usemessages.com and
+# hscollectedforms.net in addition to hs-scripts.com/hubspot.com,
+# or the loader script runs but the chat bubble never renders.
+#
+# form-action must explicitly allow hsforms.com/hsforms.net too --
+# every HubSpot form embed (hbspt.forms.create) submits as a genuine
+# <form action="https://forms-naN.hsforms.com/..."> POST, not a
+# fetch/XHR, so with form-action left at just 'self' the browser
+# silently blocks the submission outright: the click does nothing,
+# no error is shown to the visitor, and only the browser console
+# shows the CSP violation. Every embedded form on the site was
+# broken by this until it was added.
+#
+# reCAPTCHA note: forms embedded via the older "hs-form-frame" snippet
+# (webinars.html's notify-me form) load Google's reCAPTCHA Enterprise
+# script from bare https://google.com or https://recaptcha.net (a
+# region-fallback domain), NOT https://www.google.com like the newer
+# hbspt.forms.create embed's own reCAPTCHA does -- both bare domains
+# need their own script-src/frame-src/connect-src entries alongside
+# www.google.com, or reCAPTCHA silently never initializes and the
+# submit button does nothing when clicked, with no visible error.
+# ============================================================
+<IfModule mod_headers.c>
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()"
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://*.hs-scripts.com https://*.hsforms.net https://*.hsforms.com https://*.hubspot.com https://*.hsappstatic.net https://*.usemessages.com https://*.hscollectedforms.net https://*.hs-analytics.net https://www.google.com https://google.com https://www.recaptcha.net https://recaptcha.net https://www.gstatic.com https://www.youtube.com https://www.youtube-nocookie.com https://*.supademo.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.hsappstatic.net; font-src 'self' https://fonts.gstatic.com https://*.hsappstatic.net data:; img-src 'self' data: https:; media-src 'self' https:; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://*.hsforms.net https://*.hsforms.com https://*.hubspot.com https://*.usemessages.com https://www.google.com https://google.com https://www.recaptcha.net https://recaptcha.net https://*.supademo.com; connect-src 'self' https://peopleshr.com https://blog.peopleshr.com https://*.hsforms.net https://*.hsforms.com https://*.hs-scripts.com https://*.hubspot.com https://*.hubapi.com https://*.hsappstatic.net https://*.usemessages.com https://*.hscollectedforms.net https://*.hs-analytics.net https://www.google.com https://google.com https://www.recaptcha.net https://recaptcha.net https://www.gstatic.com https://*.supademo.com; object-src 'none'; base-uri 'self'; form-action 'self' https://*.hsforms.com https://*.hsforms.net; frame-ancestors 'self'; upgrade-insecure-requests"
+</IfModule>
+
+# ============================================================
+# CLEAN URLS â€” matches the old WordPress permalink structure
+# (e.g. /products/core-hr/ instead of /products/core-hr.html),
+# so the sitemap/canonical tags/redirects below all agree on
+# one URL form. Internal <a href> links in the page source are
+# left as .html â€” this only affects how the server answers.
+# ============================================================
+RewriteEngine On
+
+# ============================================================
+# OLD WORDPRESS URL REDIRECTS â€” ported from the Rank Math
+# "Redirections" export (rank-math-settings export, 2026-08-20).
+# Exact-match old permalinks, same 301/302/410 codes as configured.
+# Placed first so they win before any clean-URL rewrite below.
+# ============================================================
+RewriteRule ^webinar-peopleshr-walkthrough-v10-3/?$ /webinars/ [R=301,L]
+RewriteRule ^view-pricing-plans/?$ /view-plans/ [R=302,L]
+RewriteRule ^pricing/?$ /view-pricing-plans/ [R=301,L]
+RewriteRule ^success-stories(\.html)?/?$ /customers/ [R=301,L]
+RewriteRule ^case-study-flintec-transducers/?$ /customers/ [R=301,L]
+RewriteRule ^webinars-and-events/?$ /webinars [R=301,L]
+RewriteRule ^data-driven-hr-decisions-for-mid-sized-companies-2/?$ - [G,L]
+# Was a 410 (Gone) with no replacement -- wasted whatever inbound links
+# and search rankings the old /resources/ hub still had. Redirected to
+# the blog instead: the broadest, most frequently-updated content hub on
+# the current site, and the closest single page to what a general
+# "Resources" landing used to be. 301 (permanent) since the old page
+# itself is genuinely gone, unlike the temporary blog-migration rule
+# below. If a dedicated resources hub page gets built later, point this
+# at that instead.
+RewriteRule ^resources/?$ /blog.html [R=301,L]
+RewriteRule ^products/people-management/?$ /products/people-engagement/ [R=301,L]
+RewriteRule ^products/compensation-and-benefits/?$ /products/payroll-system [R=301,L]
+RewriteRule ^peopleshr-vs-mekari/?$ - [G,L]
+RewriteRule ^webinar-registration-2026/?$ - [G,L]
+RewriteRule ^peopleshr-tracking/?$ /solutions/peopleshr-tracking/ [R=301,L]
+RewriteRule ^outsourcing/?$ /solutions/outsourcing/ [R=301,L]
+RewriteRule ^peopleshr-academy/?$ /solutions/peopleshr-academy/ [R=301,L]
+RewriteRule ^cio/?$ /solutions/cio/ [R=301,L]
+RewriteRule ^cfo/?$ /solutions/cfo/ [R=301,L]
+RewriteRule ^chro/?$ /solutions/chro/ [R=301,L]
+RewriteRule ^hr-software-for-transportation-and-logistics-industry/?$ /solutions/hr-software-for-transportation-and-logistics-industry/ [R=301,L]
+RewriteRule ^hr-software-for-it-and-ites-industry/?$ /solutions/hr-software-for-it-and-ites-industry/ [R=301,L]
+RewriteRule ^hr-software-for-retail-industry/?$ /solutions/hr-software-for-retail-industry/ [R=301,L]
+RewriteRule ^hr-software-for-professional-and-business-services-industry/?$ /solutions/hr-software-for-professional-and-business-services-industry/ [R=301,L]
+RewriteRule ^hr-software-for-manufacturing-industry/?$ /solutions/hr-software-for-manufacturing-industry/ [R=301,L]
+RewriteRule ^hr-software-for-hospitality-industry/?$ /solutions/hr-software-for-hospitality-industry/ [R=301,L]
+RewriteRule ^banking-finance-insurance-industries/?$ /solutions/banking-finance-insurance-industries/ [R=301,L]
+RewriteRule ^ph-tax-calculator/?$ /tax-calculator-philippines [R=301,L]
+RewriteRule ^people-analytics/?$ /products/people-analytics/ [R=301,L]
+RewriteRule ^people-management/?$ /products/people-management/ [R=301,L]
+RewriteRule ^compensation-and-benefits/?$ /products/compensation-and-benefits/ [R=301,L]
+RewriteRule ^talent-acquisition/?$ /products/talent-acquisition/ [R=301,L]
+RewriteRule ^time-and-attendance/?$ /products/time-and-attendance/ [R=301,L]
+RewriteRule ^payroll-system/?$ /products/payroll-system/ [R=301,L]
+RewriteRule ^core-hr/?$ /products/core-hr/ [R=301,L]
+RewriteRule ^case-study-pyramid-wilmar-branding/?$ - [G,L]
+RewriteRule ^resources/e-book-tech-trends/?$ /hr-ebooks-and-guides/ [R=301,L]
+RewriteRule ^2022/05/17/employee-champions-why-you-need-one/?$ /employee-champions-why-you-need-one/ [R=301,L]
+RewriteRule ^2021/06/08/what-is-the-role-of-hr-in-customer-experience/?$ /what-is-the-role-of-hr-in-customer-experience/ [R=301,L]
+RewriteRule ^2021/03/27/need-real-proof-that-your-employees-are-happy/?$ /need-real-proof-that-your-employees-are-happy/ [R=301,L]
+RewriteRule ^hr-management-software/?$ /people-management/ [R=301,L]
+RewriteRule ^2020/12/07/is-your-technology-skills-ready-for-tomorrows-hr/?$ /is-your-technology-skills-ready-for-tomorrows-hr/ [R=301,L]
+RewriteRule ^managing-people-and-driving-performance/?$ - [G,L]
+RewriteRule ^other-products/?$ - [G,L]
+RewriteRule ^products-peopleshr/?$ - [G,L]
+RewriteRule ^2021/02/16/is-your-performance-management-keeping-up-with-the-pace/?$ /is-your-performance-management-keeping-up-with-the-pace/ [R=301,L]
+RewriteRule ^case-study-ploples-bank/?$ - [G,L]
+RewriteRule ^12-best-hris-software-in-indonesia-for-growing-businesses/?$ /best-software-hris-indonesia [R=301,L]
+RewriteRule ^hr-metrics-that-matter-in-2024/?$ /hr-metrics-that-matter-in-2025 [R=301,L]
+RewriteRule ^contacts/?$ /get-in-touch/ [R=301,L]
+RewriteRule ^payroll/?$ /payroll-system/ [R=301,L]
+RewriteRule ^manufacturing-industry/?$ /hr-software-for-manufacturing-industry [R=301,L]
+RewriteRule ^hospitality-industry/?$ /hr-software-for-hospitality-industry [R=301,L]
+RewriteRule ^category/landing-pages/?$ /regions/ [R=301,L]
+RewriteRule ^category/regions/?$ /regions/ [R=301,L]
+RewriteRule ^ai-readiness-in-hr-quiz/?$ / [R=301,L]
+RewriteRule ^hcm/?$ / [R=301,L]
+RewriteRule ^privacy-and-policy/?$ /privacy-policy/ [R=301,L]
+RewriteRule ^landing-page-indonesia-fb/?$ /landing-page-indonesia-id/ [R=301,L]
+RewriteRule ^about-us/?$ /company/ [R=301,L]
+RewriteRule ^sm-philippines/?$ /philippines/ [R=301,L]
+RewriteRule ^webinar-registration-facebook/?$ /webinar-registration/ [R=301,L]
+RewriteRule ^2023/08/10/barbie-meets-hr/?$ /barbie-meets-hr/ [R=301,L]
+RewriteRule ^region-middle-east/?$ /middle-east/ [R=301,L]
+
+# index.html itself always canonicalizes to its folder's root, never to
+# "/index/" or "/solutions/index/". These three special cases are matched
+# against the RewriteRule's own per-directory pattern space (not
+# %{THE_REQUEST}) so they're anchored to the actual filename regardless of
+# how deep the site happens to be nested under the server root â€” a plain
+# %{THE_REQUEST} anchor like "\s/+index\.html" only matches when index.html
+# is the very FIRST path segment after "GET /", which silently fails (and
+# falls through to the generic rule below with the wrong result) whenever
+# the site isn't served from the true domain root, e.g. local WAMP testing
+# from "/Peopleshr HTML/...". Matching the rule pattern itself has no such
+# assumption. NE (No Escape) still guards against Apache double-encoding
+# any "%"-escaped character in a backreference (e.g. a "%20" from a local
+# path with a space) when it's fed back into a new redirect target.
+RewriteRule ^index\.html$ /? [R=301,L,NE]
+RewriteRule ^([^/]+)/index\.html$ /$1/ [R=301,L,NE]
+
+# solutions.html and products.html both used to need an exception here:
+# their clean URL ("/solutions/" / "/products/") is claimed by a
+# subfolder that already exists on disk (solutions/cio.html,
+# products/core-hr.html, etc.), and neither subfolder had a real
+# index.html of its own -- solutions/ had only a stub duplicating the
+# homepage hero, products/ had no index file at all (so "/products/"
+# 403'd: Options -Indexes blocks the raw directory listing Apache would
+# otherwise show). Both are now fixed by giving each subfolder a real
+# index.html with the actual hub page's content, so neither .html file
+# needs special-casing any more: both 301 into their clean-URL form like
+# every other page, and that URL serves real content.
+
+# Any other direct *.html hit 301s to its clean equivalent.
+# %{THE_REQUEST} is the ORIGINAL request line, so this only fires for a
+# genuine browser/crawler hit on the .html URL â€” not for the internal
+# rewrite below (which doesn't change THE_REQUEST), avoiding a redirect
+# loop. (This one still needs THE_REQUEST, unlike the three rules above,
+# because it must capture and preserve the full path before ".html" â€”
+# there's no fixed filename to anchor a plain RewriteRule pattern to.)
+RewriteCond %{THE_REQUEST} \s/+(.+)\.html[?\s] [NC]
+RewriteRule ^ /%1/ [R=301,L,NE]
+
+# Serve the clean URL from its real .html file, invisibly.
+# Existing real files/directories (images, css, js, uploads/,
+# solutions/ which has its own index.html) are left untouched.
+#
+# [^/.]+ (not [^/]+) in both patterns -- excluding the dot is what stops
+# a MISSING page from looping forever. When the target ".html" file
+# doesn't exist, mod_rewrite's [L] still triggers an internal re-run of
+# the whole ruleset for the rewritten URI ("whatever.html"); with the
+# original [^/]+ pattern that URI matches this SAME rule again (it's just
+# another slash-free segment) and gets ANOTHER ".html" appended --
+# "whatever.html" -> "whatever.html.html" -> ... -- forever, since it
+# never becomes a real file, until Apache's internal-redirect limit (10)
+# aborts the request with a 500. Excluding "." from the character class
+# means a segment that already ends in ".html" can never match a second
+# time, so a genuinely missing page falls through cleanly to the 404
+# rule below after exactly one rewrite attempt instead of looping.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/.]+)/([^/.]+)/?$ $1/$2.html [L]
+
+# TEMPORARY BLOG-MIGRATION REDIRECT -- all blog posts have moved off this
+# domain to blog.peopleshr.com. A single-segment slug with no matching
+# local page here (checked below by testing for "$1.html" on disk, not
+# just the extension-less "$1" that every clean URL uses) is assumed to
+# be an old post and sent to the same slug on blog.peopleshr.com instead
+# of falling through to our own 404. 302 (temporary), not 301, since
+# blog.peopleshr.com is explicitly a temporary home for this content --
+# remove this block (and the rewrite above stays untouched) once/if that
+# changes. Placed before the generic "$1.html" rewrite immediately below
+# so a genuine local page (e.g. "company" -> company.html) still wins:
+# its .html file exists, so the third condition fails and this rule is
+# skipped entirely for it.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/$1.html !-f
+RewriteRule ^([^/.]+)/?$ https://blog.peopleshr.com/$1/ [R=302,L,NE]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/.]+)/?$ $1.html [L]
+
+# Nothing above matched a real file, directory, or page -- this is a
+# genuine 404. Rewrite straight to the real, existing 404.html (see the
+# note near the top of this file for why that's a plain rewrite here
+# rather than the standard ErrorDocument directive) -- 404.html sets the
+# actual 404 status itself via http_response_code(), since a plain
+# internal rewrite like this one otherwise defaults to 200.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ /404.html [L]
+
