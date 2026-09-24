@@ -177,7 +177,7 @@ nav{
   transition:all .2s;
 }
 .btn-outline:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px);}
-.trust-line{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-body);}
+.trust-line{display:flex;flex-direction:column;align-items:flex-start;gap:10px;font-size:14px;color:var(--text-body);}
 .trust-avatars{display:flex;align-items:center;}
 .trust-avatar{
   width:36px;height:36px;border-radius:50%;
@@ -259,6 +259,9 @@ nav{
 .module-tab:hover{background:#fff;color:#0d1b3e;border-color:#e2e8f0;}
 .module-tab.active{background:#fff;color:var(--blue);border-color:#bfdbfe;box-shadow:0 2px 12px rgba(37,99,235,0.1);}
 .mtab-icon{width:20px;height:20px;flex-shrink:0;display:flex;}
+.mtab-icon img{width:100%;height:100%;object-fit:contain;}
+/* full-colour module icons (same as pricing page) need more room than the old line icons */
+.module-tabs .mtab-icon:has(img){width:28px;height:28px;}
 .module-tab span{flex:1;}
 .mtab-arrow{flex-shrink:0;opacity:0;transition:opacity .2s;}
 .module-tab.active .mtab-arrow{opacity:1;color:var(--blue);}
@@ -273,7 +276,7 @@ nav{
   height:auto;
   object-fit:contain;
   display:block;
-  border-radius:0 0 16px 16px;
+  border-radius:16px;
 }
 
 .preview-sidebar{width:140px;flex-shrink:0;background:#1e293b;padding:16px 0;display:flex;flex-direction:column;gap:2px;}
@@ -833,6 +836,7 @@ svg{display:block;}
   .mtab-arrow{display:none;}
   .mtab-icon{width:22px;height:22px;margin:0 auto;}
   .module-preview-panel{width:100%;border-radius:0 0 16px 16px;border-top:none;}
+  .preview-img{border-radius:0 0 16px 16px;} /* panel top is flat under the tab strip */
   .preview-content.active{display:block;}
   .preview-sidebar{width:100%;height:44px;flex-direction:row;align-items:center;gap:0;padding:0;}
   .psb-logo{display:none;}
@@ -9367,15 +9371,20 @@ button.btn-primary {
     padding-left:calc(max(48px, (100% - 1200px) / 2) + 48px);
     padding-right:calc(max(48px, (100% - 1200px) / 2) + 48px);
   }
-  /* size the hero to its content instead of the full viewport height */
-  .home-page .hero{min-height:0;padding-top:96px;padding-bottom:96px;gap:48px;}
+  /* hero fills the first screen exactly: viewport height minus the
+     header above it (61px nav + 43px announcement bar = 104px, or just
+     the 61px nav once the announcement is dismissed), so none of the
+     next section peeks in. Content stays vertically centred. */
+  .home-page .hero{min-height:calc(100vh - 104px);min-height:calc(100svh - 104px);padding-top:96px;padding-bottom:96px;gap:48px;}
+  .home-page:has(.nv-ann.is-dismissed) .hero{min-height:calc(100vh - 61px);min-height:calc(100svh - 61px);}
   /* the flex gap already separates the columns; give the banner the full column */
   .home-page .hero-right{padding-left:0;min-width:0;}
   .home-page .hero-left{flex:0 1 540px;}
   /* Hero-banner-PeoplesHR.webp (1920x1080) has ~230px of transparent
      margin each side (visible art spans x 244-1690) - crop it off so the
      visible art fills the column. */
-  .home-page .hero-banner-img{max-width:none;aspect-ratio:1460/1080;object-fit:cover;}
+  .home-page .hero-banner-img{max-width:none;aspect-ratio:1460/1080;object-fit:cover;
+    transform:scale(1.1);} /* ~10% larger; grows evenly around its centre without reflowing the text */
 }
 
 /* ============================================================

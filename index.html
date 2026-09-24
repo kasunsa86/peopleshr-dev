@@ -27,6 +27,7 @@
   <link rel="stylesheet" href="<?php echo asset_v('/css/styles.css'); ?>" />
    <link rel="stylesheet" href="<?php echo asset_v('/css/navbar.css'); ?>" />
    <link rel="stylesheet" href="<?php echo asset_v('/css/footer.css'); ?>" />
+   <link rel="stylesheet" href="<?php echo asset_v('/css/lexi-insights.css'); ?>" />
   <!-- Start of HubSpot Embed Code -->
   <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/45700506.js"></script>
   <!-- End of HubSpot Embed Code -->
@@ -366,6 +367,8 @@
       <a href="/get-in-touch.html" class="btn-primary">Request a Demo &rarr;</a>
       <a href="/interactive-demos.html" class="btn-outline">See It in Action</a>
     </div>
+    <div class="trust-line">
+      <span>Trusted by <b>&nbsp;1,700+&nbsp;</b> companies across <b>&nbsp;40+&nbsp;</b> countries</span>
       <div class="trust-avatars">
         <div class="trust-avatar">
           <img src="/uploads/2026/04/Sri-Lankan-airlines_2.webp" alt="Sri Lankan Airlines"/>
@@ -377,7 +380,6 @@
           <img src="/uploads/2026/04/brandix_3.webp" alt="Brandix"/>
         </div>
       </div>
-      Trusted by <b>&nbsp;1,700+&nbsp;</b> companies across <b>&nbsp;40+&nbsp;</b> countries
     </div>
   </div>
   <div class="hero-right">
@@ -387,35 +389,78 @@
   </div>
 </section>
 
-<!-- LEXI -->
-<section class="lexi-section">
-  <img src="/uploads/2026/04/Lexi-UI.webp"
-       alt="Lexi AI Interface"
-       class="lexi-ui-img"/>
-  <div class="lexi-copy">
-    <div class="section-label">AI THAT EXECUTES &amp; THINKS</div>
-    <h2>Meet Lexi. The AI Behind Every <span>Smart HR Decision.</span></h2>
-    <p>Lexi is PeoplesHR's Agentic AI, built to turn any HR action into a simple conversation.</p>
-    <p>Lexi doesn't just execute tasks, it thinks at the strategic level your role demands. The kind of intelligence that used to require a team of analysts, now available in a single conversation.</p>
-    <p>Lexi meets you where you are. Executing for your teams. Thinking strategically for your leaders.</p>
-    <div class="lexi-chips">
-      <div class="lexi-chip">
-        <div class="chip-icon">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="white" stroke-width="2"/><path d="M12 7v5l3 3" stroke="white" stroke-width="2"/></svg>
+<!-- ===================== 6. LEXI AI INSIGHTS ===================== -->
+<section class="ph-section ph-lexi-ins-section">
+  <div class="phr-container">
+    <div class="phr-section__header phr-section__header--center">
+      <span class="ph-lexi-ins-eyebrow-badge">
+        <img class="ph-lexi-ins-eyebrow-logo" src="https://peopleshr.com/uploads/2026/09/lexi-ai-logo.webp" alt="Lexi AI">
+      </span>
+      <h2 class="phr-section__title">One AI Agent. Workforce Answers For Everyone.</h2>
+      <p class="phr-section__sub" style="margin:0 auto;">Lexi AI Insights uses the information already within PeoplesHR to answer questions, uncover patterns and turn workforce data into clear next steps for HR leaders, managers and employees.</p>
+    </div>
+
+    <div class="ph-lexi-ins-tabs" role="tablist" aria-label="Lexi AI Insights audiences">
+      <button class="ph-lexi-ins-tab is-active" data-lexi-ins-tab="leaders" role="tab" aria-selected="true">
+        <span>For HR Leaders</span>
+      </button>
+      <button class="ph-lexi-ins-tab" data-lexi-ins-tab="managers" role="tab" aria-selected="false">
+        <span>For Managers</span>
+      </button>
+      <button class="ph-lexi-ins-tab" data-lexi-ins-tab="employees" role="tab" aria-selected="false">
+        <span>For Employees</span>
+      </button>
+    </div>
+
+    <div class="ph-lexi-ins-panels">
+      <div class="ph-lexi-ins-panel is-active" data-lexi-ins-panel="leaders" role="tabpanel" aria-hidden="false">
+        <div class="ph-lexi-ins-content">
+          <h3>Turn Workforce Questions Into AI-Powered Decisions.</h3>
+          <p class="ph-lexi-ins-desc">Ask Lexi complex questions about your workforce and get immediate answers grounded in your organisation&rsquo;s PeoplesHR data.</p>
+          <ul class="ph-lexi-ins-checks">
+            <li>Analyse headcount, turnover and workforce trends</li>
+            <li>Identify promotion, retention and succession priorities</li>
+            <li>Uncover overtime, workforce cost and productivity risks</li>
+            <li>Generate reports and drill into the underlying employee data</li>
+          </ul>
         </div>
-        Lexi Insights
+        <div class="ph-lexi-ins-video">
+          <video class="ph-lexi-ins-video-el" autoplay muted playsinline aria-label="HR leader Lexi AI Insights walkthrough">
+            <source src="https://peopleshr.com/uploads/2026/09/lexi-for-hr-leaders.mp4" type="video/mp4">
+          </video>
+        </div>
       </div>
-      <div class="lexi-chip">
-        <div class="chip-icon">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="white" stroke-width="2"/></svg>
+      <div class="ph-lexi-ins-panel" data-lexi-ins-panel="managers" role="tabpanel" aria-hidden="true">
+        <div class="ph-lexi-ins-content">
+          <h3>Let AI Show You What Your Team Needs.</h3>
+          <p class="ph-lexi-ins-desc">Ask Lexi about your team and quickly identify what needs attention, without waiting for HR to prepare another report.</p>
+          <ul class="ph-lexi-ins-checks">
+            <li>Spot attendance, absence and overtime patterns</li>
+            <li>Track performance and identify employees who need support</li>
+            <li>Compare workforce trends across teams or departments</li>
+            <li>Ask follow-up questions to understand what is driving the numbers</li>
+          </ul>
         </div>
-        Lexi Super Agent
+        <div class="ph-lexi-ins-video">
+          <img class="ph-lexi-ins-video-el" src="https://peopleshr.com/uploads/2026/09/lexi-for-managers.webp" alt="Manager Lexi AI Insights walkthrough">
+        </div>
       </div>
-      <div class="lexi-chip">
-        <div class="chip-icon">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="white" stroke-width="2"/><path d="m16.5 16.5 3.5 3.5" stroke="white" stroke-width="2"/></svg>
+      <div class="ph-lexi-ins-panel" data-lexi-ins-panel="employees" role="tabpanel" aria-hidden="true">
+        <div class="ph-lexi-ins-content">
+          <h3>Ask AI. Understand Your Work Information.</h3>
+          <p class="ph-lexi-ins-desc">Ask Lexi questions using text or voice and get clear answers based on your own information within PeoplesHR.</p>
+          <ul class="ph-lexi-ins-checks">
+            <li>Understand your leave, attendance and overtime information</li>
+            <li>Review payslip details and payment history</li>
+            <li>Identify missing or inconsistent personal records</li>
+            <li>Access answers securely from desktop or mobile</li>
+          </ul>
         </div>
-        Lexi Smart Navigator
+        <div class="ph-lexi-ins-video">
+          <video class="ph-lexi-ins-video-el" autoplay muted playsinline aria-label="Employee Lexi AI Insights walkthrough">
+            <source src="https://peopleshr.com/uploads/2026/09/lexi-for-employees.mp4" type="video/mp4">
+          </video>
+        </div>
       </div>
     </div>
   </div>
@@ -433,50 +478,32 @@
     <!-- Left: tab list -->
     <div class="module-tabs">
       <div class="module-tab active" data-module="hr">
-        <div class="mtab-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/></svg></div>
+        <div class="mtab-icon"><img src="/uploads/2026/07/HRIcon.webp" alt="" width="24" height="24"></div>
         <span>HR</span>
         <svg class="mtab-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
       </div>
       <div class="module-tab" data-module="pay">
-        <div class="mtab-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M2 10h20" stroke="currentColor" stroke-width="2"/></svg></div>
+        <div class="mtab-icon"><img src="/uploads/2026/07/PayIcon.webp" alt="" width="24" height="24"></div>
         <span>Pay</span>
         <svg class="mtab-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
       </div>
       <div class="module-tab" data-module="time">
-        <div class="mtab-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <div class="mtab-icon"><img src="/uploads/2026/07/TimeIcon.webp" alt="" width="24" height="24"></div>
         <span>Time</span>
         <svg class="mtab-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
       </div>
       <div class="module-tab" data-module="talent">
-        <div class="mtab-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/></svg></div>
+        <div class="mtab-icon"><img src="/uploads/2026/07/TalentIcon.webp" alt="" width="24" height="24"></div>
         <span>Talent</span>
         <svg class="mtab-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
       </div>
       <div class="module-tab" data-module="engagement">
-        <div class="mtab-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="2"/></svg></div>
+        <div class="mtab-icon"><img src="/uploads/2026/07/EngagementIcon.webp" alt="" width="24" height="24"></div>
         <span>Engagement</span>
         <svg class="mtab-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
       </div>
       <div class="module-tab" data-module="insight">
-        <div class="mtab-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="star-grad" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#a78bfa"/>
-                <stop offset="100%" stop-color="#6366f1"/>
-              </linearGradient>
-            </defs>
-            <!-- 4-point star / beacon shape -->
-            <path d="M12 2 L13.5 10.5 L22 12 L13.5 13.5 L12 22 L10.5 13.5 L2 12 L10.5 10.5 Z"
-              fill="url(#star-grad)"/>
-            <!-- Small sparkle top-right -->
-            <path d="M19 3 L19.7 5.3 L22 6 L19.7 6.7 L19 9 L18.3 6.7 L16 6 L18.3 5.3 Z"
-              fill="#c4b5fd" opacity="0.85"/>
-            <!-- Tiny sparkle bottom-left -->
-            <path d="M5 16 L5.4 17.6 L7 18 L5.4 18.4 L5 20 L4.6 18.4 L3 18 L4.6 17.6 Z"
-              fill="#a78bfa" opacity="0.7"/>
-          </svg>
-        </div>
+        <div class="mtab-icon"><img src="/uploads/2026/07/InsightsIcon.webp" alt="" width="24" height="24"></div>
         <span>Insight</span>
         <svg class="mtab-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
       </div>
@@ -1074,6 +1101,7 @@
 <!-- JS -->
 <script src="<?php echo asset_v('/js/phr.js'); ?>"></script>
 <script src="<?php echo asset_v('/js/navbar.js'); ?>"></script>
+<script src="<?php echo asset_v('/js/lexi-insights.js'); ?>"></script>
 
 </body>
 </html>
