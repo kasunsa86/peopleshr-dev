@@ -9337,3 +9337,117 @@ button.btn-primary {
   .idn-whatsapp-float{right:16px;bottom:16px;width:52px;height:52px;}
   .idn-whatsapp-float svg{width:24px;height:24px;}
 }
+/* index.html — keep home page content in a centred 1200px column on wide
+   screens (matches the customers page). Section backgrounds stay full-bleed;
+   below ~1300px the side padding stays 48px as before. Scoped to .home-page
+   because .hero and friends are shared with ~20 other pages. */
+@media (min-width:1025px){
+  .home-page .hero,
+  .home-page .lexi-section,
+  .home-page .modules-section,
+  .home-page .industries-section,
+  .home-page .personas-section,
+  .home-page .case-studies-section,
+  .home-page .domain-section,
+  .home-page .testimonial-section,
+  .home-page .cta-banner,
+  .home-page .accreditations-section{
+    padding-left:max(48px, calc((100% - 1200px) / 2));
+    padding-right:max(48px, calc((100% - 1200px) / 2));
+  }
+  /* Industries: the navy stats band runs edge to edge, so the section drops
+     its side padding and each child is inset instead (the band via padding,
+     so its background stays full-bleed while the stats keep the column). */
+  .home-page .industries-section{padding-top:100px;padding-left:0;padding-right:0;}
+  .home-page .industries-section > :not(.stats-bar){
+    margin-left:max(48px, calc((100% - 1200px) / 2));
+    margin-right:max(48px, calc((100% - 1200px) / 2));
+  }
+  .home-page .industries-section > .stats-bar{
+    padding-left:calc(max(48px, (100% - 1200px) / 2) + 48px);
+    padding-right:calc(max(48px, (100% - 1200px) / 2) + 48px);
+  }
+  /* size the hero to its content instead of the full viewport height */
+  .home-page .hero{min-height:0;padding-top:96px;padding-bottom:96px;gap:48px;}
+  /* the flex gap already separates the columns; give the banner the full column */
+  .home-page .hero-right{padding-left:0;min-width:0;}
+  .home-page .hero-left{flex:0 1 540px;}
+  /* Hero-banner-PeoplesHR.webp (1920x1080) has ~230px of transparent
+     margin each side (visible art spans x 244-1690) - crop it off so the
+     visible art fills the column. */
+  .home-page .hero-banner-img{max-width:none;aspect-ratio:1460/1080;object-fit:cover;}
+}
+
+/* ============================================================
+   WIDE-SCREEN CONTENT COLUMN (all pages)
+   On screens wider than 1296px, keep section content in a centred
+   1200px column (as on the customers page) while section backgrounds
+   stay full-bleed. Each value is max(<current padding>, gutter), so at
+   1296px and below nothing changes -- laptop, tablet and mobile layouts
+   are untouched. Gutter = (100% - 1200px) / 2.
+   ============================================================ */
+@media (min-width:1297px){
+  /* sections whose content sits directly inside ~48px side padding */
+  .lexi-section, .modules-section, .personas-section, .case-studies-section,
+  .domain-section, .testimonial-section, .accreditations-section,
+  .milestones-section, .team-section, .community-why-section,
+  .why-team-section, .feature-sticky-section, .indo-trust-section,
+  .final-cta-section, .roi-explain-section, .roi-consult-section,
+  .ebk-discover-section, .wbr-agenda-section, .stats-bar{
+    padding-left:max(48px, calc((100% - 1200px) / 2));
+    padding-right:max(48px, calc((100% - 1200px) / 2));
+  }
+  /* same, for sections with 24 / 64 / 80px side padding */
+  .values-section, .gallery-section{
+    padding-left:max(24px, calc((100% - 1200px) / 2));
+    padding-right:max(24px, calc((100% - 1200px) / 2));
+  }
+  .cs-spotlight-section, .services-row-wrap, .hero-wrap .hero{
+    padding-left:max(64px, calc((100% - 1200px) / 2));
+    padding-right:max(64px, calc((100% - 1200px) / 2));
+  }
+  .cta-banner{
+    padding-left:max(80px, calc((100% - 1200px) / 2));
+    padding-right:max(80px, calc((100% - 1200px) / 2));
+  }
+  /* interactive-demos hero */
+  .dg-hero{
+    padding-left:max(48px, calc((100% - 1200px) / 2));
+    padding-right:max(48px, calc((100% - 1200px) / 2));
+  }
+
+  /* industries: navy stats band stays edge to edge, everything else is
+     inset (same treatment as the home page) */
+  .industries-section{padding-left:0;padding-right:0;}
+  .industries-section > :not(.stats-bar){
+    margin-left:max(48px, calc((100% - 1200px) / 2));
+    margin-right:max(48px, calc((100% - 1200px) / 2));
+  }
+  .industries-section > .stats-bar{
+    padding-left:calc(max(48px, (100% - 1200px) / 2) + 48px);
+    padding-right:calc(max(48px, (100% - 1200px) / 2) + 48px);
+  }
+
+  /* product & region feature sections: .phr-container had its width cap
+     removed (max-width:none) -- restore a 1200px content column */
+  .phr-feat-section .phr-container{max-width:1296px;}
+  /* product page hero: same max-width:none override (48px side padding) */
+  .phr-hero__split{max-width:1296px;margin-left:auto;margin-right:auto;}
+  /* products page Lexi / Get Started bands (28px side margin) */
+  .phr-lexi, .phr-getstarted{
+    margin-left:max(28px, calc((100% - 1200px) / 2));
+    margin-right:max(28px, calc((100% - 1200px) / 2));
+  }
+
+  /* solutions / industry pages: inner containers were capped at 1280px;
+     bring them to the same 1200px column as the rest of the site */
+  .governance-inner, .why-grid-inner, .casestudy-grid, .dark-section-inner,
+  .connecting-inner, .reality-inner, .section-inner, .cta-final-inner,
+  .integration-inner, .int-advantage-inner, .pillars-max, .cio-section-inner,
+  .demo-hero-inner, .why-team-grid, .feature-sticky-grid, .lexi-grid,
+  .cs-spotlight-grid, .pubsec-why-grid, .pubsec-proof-grid, .pubsec-cta-grid{
+    max-width:1200px;
+  }
+  /* same, for 1280px containers with 64px side padding built in */
+  .s-wrap, .ai-wrap, .proven-wrap, .proven-outer{max-width:1328px;}
+}
