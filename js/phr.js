@@ -358,7 +358,7 @@ const LAZY_SECTIONS = {
   pay:        `      <div class="dg-cat-header">
         <div class="dg-cat-header-left">
           <h2 class="dg-section-heading">Accurate payroll. Zero compliance risk.</h2>
-          <p class="dg-cat-desc">From timesheets to final payslips Ã¢â‚¬ÂÃ¢â‚¬Â automate your entire payroll cycle with built-in statutory compliance for Sri Lanka and beyond.</p>
+          <p class="dg-cat-desc">From timesheets to final payslips, automate your entire payroll cycle with built-in statutory compliance for Sri Lanka and beyond.</p>
         </div>
         <div class="dg-cat-count-box">
           <div class="dg-cat-count-num">3</div>
@@ -398,7 +398,7 @@ const LAZY_SECTIONS = {
           <div class="dg-card-body">
             <div class="dg-card-tag">Leave</div>
             <div class="dg-card-title">Leave &amp; Absence Management</div>
-            <div class="dg-card-desc">Configure leave policies, approval workflows, accrual rules, and carry-forward limits Ã¢â‚¬ÂÃ¢â‚¬Â all without IT support.</div>
+            <div class="dg-card-desc">Configure leave policies, approval workflows, accrual rules, and carry-forward limits, all without IT support.</div>
             <div class="dg-card-footer">
               <button class="dg-card-cta">Watch Demo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
             </div>
@@ -427,7 +427,7 @@ const LAZY_SECTIONS = {
   time:       `      <div class="dg-cat-header">
         <div class="dg-cat-header-left">
           <h2 class="dg-section-heading">Real-time visibility across every hour worked.</h2>
-          <p class="dg-cat-desc">Biometric integrations, shift scheduling, overtime controls, and live attendance dashboards Ã¢â‚¬ÂÃ¢â‚¬Â across every site and shift pattern.</p>
+          <p class="dg-cat-desc">Biometric integrations, shift scheduling, overtime controls, and live attendance dashboards across every site and shift pattern.</p>
         </div>
         <div class="dg-cat-count-box">
           <div class="dg-cat-count-num">2</div>
@@ -444,7 +444,7 @@ const LAZY_SECTIONS = {
           <div class="dg-card-body">
             <div class="dg-card-tag">Leave</div>
             <div class="dg-card-title">Manage Leave Applications &amp; Approvals</div>
-            <div class="dg-card-desc">Request leave, approve pending applications, and review leave analytics Ã¢â‚¬ÂÃ¢â‚¬Â all in one streamlined workflow.</div>
+            <div class="dg-card-desc">Request leave, approve pending applications, and review leave analytics, all in one streamlined workflow.</div>
             <div class="dg-card-footer">
               <button class="dg-card-cta">Watch Demo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
             </div>
@@ -522,7 +522,7 @@ const LAZY_SECTIONS = {
           <div class="dg-card-body">
             <div class="dg-card-tag">Recruitment</div>
             <div class="dg-card-title">CV Ranking</div>
-            <div class="dg-card-desc">Let AI score and rank candidates against your job criteria automatically Ã¢â‚¬ÂÃ¢â‚¬Â so your team focuses on the best-fit applicants first.</div>
+            <div class="dg-card-desc">Let AI score and rank candidates against your job criteria automatically, so your team focuses on the best-fit applicants first.</div>
             <div class="dg-card-footer">
               <button class="dg-card-cta">Watch Demo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
             </div>
@@ -560,7 +560,7 @@ const LAZY_SECTIONS = {
           <div class="dg-card-body">
             <div class="dg-card-tag">Recruitment</div>
             <div class="dg-card-title">Candidate Application</div>
-            <div class="dg-card-desc">Experience the candidate application journey first-hand Ã¢â‚¬ÂÃ¢â‚¬Â from discovering a role to submitting a complete application.</div>
+            <div class="dg-card-desc">Experience the candidate application journey first-hand, from discovering a role to submitting a complete application.</div>
             <div class="dg-card-footer">
               <button class="dg-card-cta">Watch Demo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
             </div>
@@ -571,7 +571,7 @@ const LAZY_SECTIONS = {
   engagement: `      <div class="dg-cat-header">
         <div class="dg-cat-header-left">
           <h2 class="dg-section-heading">Build a culture people don't want to leave.</h2>
-          <p class="dg-cat-desc">Measure, understand, and act on employee sentiment in real time Ã¢â‚¬ÂÃ¢â‚¬Â so you can fix problems before they become attrition.</p>
+          <p class="dg-cat-desc">Measure, understand, and act on employee sentiment in real time, so you can fix problems before they become attrition.</p>
         </div>
         <div class="dg-cat-count-box">
           <div class="dg-cat-count-num">3</div>
@@ -592,7 +592,7 @@ const LAZY_SECTIONS = {
           <div class="dg-card-body">
             <div class="dg-card-tag">Engagement</div>
             <div class="dg-card-title">Employee Surveys &amp; Pulse Checks</div>
-            <div class="dg-card-desc">Deploy pulse surveys, eNPS, and custom questionnaires Ã¢â‚¬ÂÃ¢â‚¬Â then visualise sentiment trends in real-time dashboards.</div>
+            <div class="dg-card-desc">Deploy pulse surveys, eNPS, and custom questionnaires, then visualise sentiment trends in real-time dashboards.</div>
             <div class="dg-card-footer">
               <button class="dg-card-cta">Watch Demo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
             </div>
@@ -611,7 +611,7 @@ const LAZY_SECTIONS = {
           <div class="dg-card-body">
             <div class="dg-card-tag">Recognition</div>
             <div class="dg-card-title">Recognition &amp; Rewards Programme</div>
-            <div class="dg-card-desc">Peer-to-peer shoutouts, manager nominations, milestone awards, and a points-based reward marketplace Ã¢â‚¬ÂÃ¢â‚¬Â all in-platform.</div>
+            <div class="dg-card-desc">Peer-to-peer shoutouts, manager nominations, milestone awards, and a points-based reward marketplace, all in-platform.</div>
             <div class="dg-card-footer">
               <button class="dg-card-cta">Watch Demo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
             </div>
@@ -630,7 +630,7 @@ const LAZY_SECTIONS = {
           <div class="dg-card-body">
             <div class="dg-card-tag">Manager Intelligence</div>
             <div class="dg-card-title">Manager Effectiveness Scores</div>
-            <div class="dg-card-desc">Track team-level eNPS, 1:1 completion rates, and upward feedback scores to surface your best Ã¢â‚¬ÂÃ¢â‚¬Â and riskiest Ã¢â‚¬ÂÃ¢â‚¬Â managers.</div>
+            <div class="dg-card-desc">Track team-level eNPS, 1:1 completion rates, and upward feedback scores to surface your best (and riskiest) managers.</div>
             <div class="dg-card-footer">
               <button class="dg-card-cta">Watch Demo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
             </div>
@@ -640,7 +640,7 @@ const LAZY_SECTIONS = {
   insight:    `      <div class="dg-cat-header">
         <div class="dg-cat-header-left">
           <h2 class="dg-section-heading">Turn your people data into strategic decisions.</h2>
-          <p class="dg-cat-desc">Real-time workforce intelligence Ã¢â‚¬ÂÃ¢â‚¬Â from pre-built dashboards to AI-powered natural language queries with Lexi, your HR copilot.</p>
+          <p class="dg-cat-desc">Real-time workforce intelligence, from pre-built dashboards to AI-powered natural language queries with Lexi, your HR copilot.</p>
           <div class="lexi-powered-badge">
             <span class="lpb-text">Powered by</span>
             <img src="../uploads/2026/05/lexi-s.png" alt="Lexi" class="lpb-logo-img">
@@ -652,58 +652,46 @@ const LAZY_SECTIONS = {
         </div>
       </div>
       <div class="dg-grid">
-        <div class="dg-card" onclick="gatedDemo('REPLACE_INSIGHT_ANALYTICS_ID')">
+        <div class="dg-card" onclick="gatedDemo('cmsr2xph3023azj0jppp4zqmc')">
           <div class="dg-thumb dg-thumb-insights">
-            <div class="dg-thumb-ui">
-              <div class="dg-ui-bar"></div>
-              <div class="dg-ui-row"><div class="dg-ui-pill"></div><div class="dg-ui-pill w55"></div></div>
-              <div class="dg-ui-bar s"></div>
-            </div>
-            <div class="dg-thumb-overlay"><div class="dg-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
-            
-          </div>
-          <div class="dg-card-body">
-            <div class="dg-card-tag">Analytics</div>
-            <div class="dg-card-title">Workforce Analytics Dashboard</div>
-            <div class="dg-card-desc">100+ pre-built reports covering attrition, headcount, diversity, time-to-hire, and more Ã¢â‚¬ÂÃ¢â‚¬Â updated in real time.</div>
-            <div class="dg-card-footer">
-              <button class="dg-card-cta">Watch Demo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-            </div>
-          </div>
-        </div>
-        <div class="dg-card" onclick="gatedDemo('REPLACE_INSIGHT_LEXI_ID')">
-          <div class="dg-thumb dg-thumb-insights">
-            <div class="dg-thumb-ui">
-              <div class="dg-ui-bar"></div>
-              <div class="dg-ui-row"><div class="dg-ui-pill"></div><div class="dg-ui-pill w55"></div></div>
-              <div class="dg-ui-bar s"></div>
-            </div>
+            <img src="../uploads/2026/10/contracted-hours-analysis.webp" alt="Lexi AI Insights: departments working beyond contracted hours" class="dg-thumb-image">
             <div class="dg-thumb-overlay"><div class="dg-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
             <div class="dg-thumb-new"><span class="new-tag">NEW</span></div>
           </div>
           <div class="dg-card-body">
-            <div class="dg-card-tag">AI</div>
-            <div class="dg-card-title">Lexi Ã¢â‚¬ÂÃ¢â‚¬Â Your HR AI Copilot</div>
-            <div class="dg-card-desc">Ask Lexi anything in plain English. Get instant attrition forecasts, anomaly alerts, and recommended actions Ã¢â‚¬ÂÃ¢â‚¬Â no SQL required.</div>
+            <div class="dg-card-tag">Lexi AI Insights</div>
+            <div class="dg-card-title">Which Departments Work Beyond Contracted Hours?</div>
+            <div class="dg-card-desc">Ask Lexi in plain language and instantly see which departments are consistently working beyond their contracted hours.</div>
             <div class="dg-card-footer">
               <button class="dg-card-cta">Watch Demo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
             </div>
           </div>
         </div>
-        <div class="dg-card" onclick="gatedDemo('REPLACE_INSIGHT_REPORTS_ID')">
+        <div class="dg-card" onclick="gatedDemo('cmsr026bi0c1xqmm7mxnkwwam')">
           <div class="dg-thumb dg-thumb-insights">
-            <div class="dg-thumb-ui">
-              <div class="dg-ui-bar"></div>
-              <div class="dg-ui-row"><div class="dg-ui-pill"></div><div class="dg-ui-pill w55"></div></div>
-              <div class="dg-ui-bar s"></div>
-            </div>
+            <img src="../uploads/2026/10/promotion-retention-analysis.webp" alt="Lexi AI Insights: are promoted employees more likely to stay" class="dg-thumb-image">
             <div class="dg-thumb-overlay"><div class="dg-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
-            
+            <div class="dg-thumb-new"><span class="new-tag">NEW</span></div>
           </div>
           <div class="dg-card-body">
-            <div class="dg-card-tag">Reporting</div>
-            <div class="dg-card-title">Custom Report Builder</div>
-            <div class="dg-card-desc">Drag-and-drop report builder with scheduled delivery, role-based access controls, and PDF/Excel export built in.</div>
+            <div class="dg-card-tag">Lexi AI Insights</div>
+            <div class="dg-card-title">Are Promoted Employees More Likely to Stay?</div>
+            <div class="dg-card-desc">See how Lexi connects promotion history with retention data to show whether promoted employees stay longer.</div>
+            <div class="dg-card-footer">
+              <button class="dg-card-cta">Watch Demo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            </div>
+          </div>
+        </div>
+        <div class="dg-card" onclick="gatedDemo('cmsr4wi1t029bzj0jot73obit')">
+          <div class="dg-thumb dg-thumb-insights">
+            <img src="../uploads/2026/10/workforce-insights-mobile.webp" alt="Lexi AI Insights on mobile" class="dg-thumb-image">
+            <div class="dg-thumb-overlay"><div class="dg-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
+            <div class="dg-thumb-new"><span class="new-tag">NEW</span></div>
+          </div>
+          <div class="dg-card-body">
+            <div class="dg-card-tag">Mobile</div>
+            <div class="dg-card-title">Lexi AI Insights on Mobile</div>
+            <div class="dg-card-desc">Ask strategic workforce questions and get clear, data-driven insights directly from your mobile device.</div>
             <div class="dg-card-footer">
               <button class="dg-card-cta">Watch Demo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
             </div>

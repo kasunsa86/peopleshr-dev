@@ -1,0 +1,158 @@
+/* ═══════════════════════════════════════════════════════════════════
+   lexi-insights.css — "One AI Agent. Workforce Answers For Everyone."
+   Lexi AI Insights section, shared by the home page (index.html) and
+   the Philippines page (philippines.html). Behaviour: js/lexi-insights.js
+   Moved here from philippines.css so both pages use one copy.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Section spacing (same as .ph-section on the Philippines page, which
+   the home page doesn't load) */
+.ph-lexi-ins-section{padding:88px 0;}
+@media(max-width:640px){.ph-lexi-ins-section{padding:52px 0;}}
+/* title colour comes from .ph-scope on the Philippines page; pin it so
+   the home page copy matches exactly */
+.ph-lexi-ins-section .phr-section__title{color:#0d1b3e;}
+
+/* --- 6. Lexi AI Insights: tab row above a two-up panel — a vibrant
+   blue/purple/green gradient card carries the copy (this is the one
+   AI-flavoured surface on the page, so it earns the color), a
+   UI-preview video sits alongside it at matching height. ---------- */
+.ph-lexi-ins-eyebrow-badge{
+  display:inline-flex;align-items:center;justify-content:center;
+  background:var(--phr-navy);border-radius:999px;
+  padding:10px 20px;margin-bottom:14px;
+}
+.ph-lexi-ins-eyebrow-logo{height:22px;width:auto;display:block;}
+.ph-lexi-ins-tabs{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  margin-top:44px;
+}
+.ph-lexi-ins-tab{
+  display:flex;
+  align-items:center;
+  background:var(--phr-white);
+  border:1.5px solid var(--phr-border);
+  border-radius:100px;
+  padding:11px 22px;
+  font-family:inherit;
+  font-size:14px;
+  font-weight:700;
+  color:var(--phr-text-mid);
+  cursor:pointer;
+  transition:border-color var(--phr-transition),color var(--phr-transition),background var(--phr-transition);
+}
+.ph-lexi-ins-tab.is-active{color:var(--phr-white);}
+/* Each audience gets its own color from the gradient card below (same
+   hex stops), so the tab you're on previews the card you're about to
+   see: HR Leaders = purple, Managers = blue, Employees = green. */
+.ph-lexi-ins-tab[data-lexi-ins-tab="leaders"]:hover:not(.is-active){border-color:#C4B5FD;color:#8B5CF6;}
+.ph-lexi-ins-tab[data-lexi-ins-tab="leaders"].is-active{background:#8B5CF6;border-color:#8B5CF6;}
+.ph-lexi-ins-tab[data-lexi-ins-tab="managers"]:hover:not(.is-active){border-color:#93C5FD;color:#3B82F6;}
+.ph-lexi-ins-tab[data-lexi-ins-tab="managers"].is-active{background:#3B82F6;border-color:#3B82F6;}
+.ph-lexi-ins-tab[data-lexi-ins-tab="employees"]:hover:not(.is-active){border-color:#6EE7B7;color:#10B981;}
+.ph-lexi-ins-tab[data-lexi-ins-tab="employees"].is-active{background:#10B981;border-color:#10B981;}
+
+/* Panels are grid-stacked into the same cell (not display:none'd) so
+   the grid row's auto height is always the tallest panel — switching
+   tabs can't change the box height, since the inactive panels are
+   still there sizing the row, just visibility:hidden. */
+.ph-lexi-ins-panels{margin-top:40px;display:grid;max-width:1120px;margin-left:auto;margin-right:auto;}
+.ph-lexi-ins-panel{
+  grid-column:1;
+  grid-row:1;
+  visibility:hidden;
+  pointer-events:none;
+  display:flex;
+  gap:40px;
+  align-items:stretch;
+  padding:44px;
+  border-radius:36px;
+  background:linear-gradient(135deg,#3B82F6 0%,#8B5CF6 55%,#10B981 100%);
+  box-shadow:0 28px 56px -24px rgba(99,102,241,.5);
+}
+.ph-lexi-ins-panel.is-active{visibility:visible;pointer-events:auto;}
+.ph-lexi-ins-content{
+  flex:0 0 400px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.ph-lexi-ins-content h3{font-size:25px;font-weight:800;color:var(--phr-white);line-height:1.3;margin:0 0 14px;}
+.ph-lexi-ins-desc{font-size:15.5px;color:rgba(255,255,255,.88);line-height:1.6;margin:0 0 26px;}
+.ph-lexi-ins-checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:13px;}
+.ph-lexi-ins-checks li{
+  position:relative;
+  padding-left:30px;
+  font-size:14.5px;
+  color:var(--phr-white);
+  line-height:1.5;
+}
+.ph-lexi-ins-checks li::before{
+  content:'';
+  position:absolute;
+  left:0;top:1px;
+  width:20px;height:20px;
+  border-radius:50%;
+  background:rgba(255,255,255,.22);
+}
+.ph-lexi-ins-checks li::after{
+  content:'';
+  position:absolute;
+  left:6px;top:7px;
+  width:9px;height:5px;
+  border-left:2px solid var(--phr-white);
+  border-bottom:2px solid var(--phr-white);
+  transform:rotate(-45deg);
+}
+.ph-lexi-ins-video{
+  position:relative;
+  flex:1;
+  min-width:0;
+  border-radius:22px;
+  background:rgba(255,255,255,.14);
+  overflow:hidden;
+}
+.ph-lexi-ins-video-el{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  /* Slight overscale + center crop: hides a hairline edge artifact
+     baked into the source export (its 592x370 native size matches
+     this box's own rendered size almost exactly, so cover has near
+     nothing to crop and the video's own edge is left exposed). */
+  transform:scale(1.04);
+}
+.ph-lexi-ins-video-label{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  text-align:center;
+  font-size:13px;
+  font-weight:600;
+  color:rgba(255,255,255,.85);
+  pointer-events:none;
+}
+/* "For Employees" clip: its content (chat avatars) runs to the frame's
+   left/right edges, so the cover + 1.04 overscale above clips it. Show
+   the whole frame, slightly inset, on a white box that blends with the
+   clip's white background. */
+.ph-lexi-ins-panel[data-lexi-ins-panel="employees"] .ph-lexi-ins-video{background:#fff;}
+.ph-lexi-ins-panel[data-lexi-ins-panel="employees"] .ph-lexi-ins-video-el{object-fit:contain;transform:scale(.94);}
+@media(max-width:1080px){
+  .ph-lexi-ins-panel{flex-direction:column;padding:32px;}
+  .ph-lexi-ins-content{flex:none;}
+  .ph-lexi-ins-video{flex:none;width:100%;aspect-ratio:16/9;}
+}
+@media(max-width:640px){
+  .ph-lexi-ins-tab{padding:9px 16px;font-size:13px;}
+  .ph-lexi-ins-panel{border-radius:24px;padding:24px;gap:24px;}
+  .ph-lexi-ins-content h3{font-size:21px;}
+  .ph-lexi-ins-video{border-radius:18px;}
+}
