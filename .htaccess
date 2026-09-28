@@ -135,6 +135,16 @@ ErrorDocument 404 /404.html
 # shows the CSP violation. Every embedded form on the site was
 # broken by this until it was added.
 #
+# Ad pixels note: the Meta (486110809373599), Google Ads (AW-310981729)
+# and LinkedIn (4684273) pixels are not in the page source -- HubSpot
+# Ads injects them through the hs-scripts loader, which pulls
+# js-na2.hsadspixel.net/pixels.js, which in turn loads fbevents.js,
+# gtag.js and the LinkedIn Insight Tag. Every one of those origins
+# (plus their beacon/iframe endpoints under connect-src/frame-src)
+# must be allowed here, or no ad platform ever sees a page view or
+# conversion while HubSpot itself keeps receiving leads normally.
+# hs-banner.com is HubSpot's cookie consent banner, same loader.
+#
 # reCAPTCHA note: forms embedded via the older "hs-form-frame" snippet
 # (webinars.html's notify-me form) load Google's reCAPTCHA Enterprise
 # script from bare https://google.com or https://recaptcha.net (a
@@ -150,7 +160,7 @@ ErrorDocument 404 /404.html
     Header always set X-Content-Type-Options "nosniff"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
     Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()"
-    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://*.hs-scripts.com https://*.hsforms.net https://*.hsforms.com https://*.hubspot.com https://*.hsappstatic.net https://*.usemessages.com https://*.hscollectedforms.net https://*.hs-analytics.net https://www.google.com https://google.com https://www.recaptcha.net https://recaptcha.net https://www.gstatic.com https://www.youtube.com https://www.youtube-nocookie.com https://*.supademo.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.hsappstatic.net; font-src 'self' https://fonts.gstatic.com https://*.hsappstatic.net data:; img-src 'self' data: https:; media-src 'self' https:; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://*.hsforms.net https://*.hsforms.com https://*.hubspot.com https://*.usemessages.com https://www.google.com https://google.com https://www.recaptcha.net https://recaptcha.net https://*.supademo.com; connect-src 'self' https://peopleshr.com https://blog.peopleshr.com https://*.hsforms.net https://*.hsforms.com https://*.hs-scripts.com https://*.hubspot.com https://*.hubapi.com https://*.hsappstatic.net https://*.usemessages.com https://*.hscollectedforms.net https://*.hs-analytics.net https://www.google.com https://google.com https://www.recaptcha.net https://recaptcha.net https://www.gstatic.com https://*.supademo.com; object-src 'none'; base-uri 'self'; form-action 'self' https://*.hsforms.com https://*.hsforms.net; frame-ancestors 'self'; upgrade-insecure-requests"
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://*.hs-scripts.com https://*.hsforms.net https://*.hsforms.com https://*.hubspot.com https://*.hsappstatic.net https://*.usemessages.com https://*.hscollectedforms.net https://*.hs-analytics.net https://*.hsadspixel.net https://*.hs-banner.com https://connect.facebook.net https://snap.licdn.com https://www.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com https://google.com https://www.recaptcha.net https://recaptcha.net https://www.gstatic.com https://www.youtube.com https://www.youtube-nocookie.com https://*.supademo.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.hsappstatic.net; font-src 'self' https://fonts.gstatic.com https://*.hsappstatic.net data:; img-src 'self' data: https:; media-src 'self' https:; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://td.doubleclick.net https://www.googletagmanager.com https://*.facebook.com https://*.hsforms.net https://*.hsforms.com https://*.hubspot.com https://*.usemessages.com https://www.google.com https://google.com https://www.recaptcha.net https://recaptcha.net https://*.supademo.com; connect-src 'self' https://peopleshr.com https://blog.peopleshr.com https://*.hsforms.net https://*.hsforms.com https://*.hs-scripts.com https://*.hubspot.com https://*.hubapi.com https://*.hsappstatic.net https://*.usemessages.com https://*.hscollectedforms.net https://*.hs-analytics.net https://*.hsadspixel.net https://*.hs-banner.com https://*.facebook.com https://px.ads.linkedin.com https://*.linkedin.com https://www.googletagmanager.com https://*.google-analytics.com https://*.doubleclick.net https://www.googleadservices.com https://www.google.com https://google.com https://www.recaptcha.net https://recaptcha.net https://www.gstatic.com https://*.supademo.com; object-src 'none'; base-uri 'self'; form-action 'self' https://*.hsforms.com https://*.hsforms.net; frame-ancestors 'self'; upgrade-insecure-requests"
 </IfModule>
 
 # ============================================================
