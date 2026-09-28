@@ -231,6 +231,12 @@ RewriteRule ^other-products/?$ - [G,L]
 RewriteRule ^products-peopleshr/?$ - [G,L]
 RewriteRule ^2021/02/16/is-your-performance-management-keeping-up-with-the-pace/?$ /is-your-performance-management-keeping-up-with-the-pace/ [R=301,L]
 RewriteRule ^case-study-ploples-bank/?$ - [G,L]
+# Page and its PDF deliberately withdrawn (2026-09-28). 410 so search
+# engines drop the URL, rather than letting it fall through to the
+# blog-migration redirect below.
+RewriteRule ^limitations-for-configuration(\.html)?/?$ - [G,L]
+RewriteRule ^wp-content/uploads/2025/07/PRM-L3-PHR-Limitations-for-Configuration-UPDATED-April-2025-V2\.pdf$ - [G,L]
+RewriteRule ^uploads/2025/07/PRM-L3-PHR-Limitations-for-Configuration-UPDATED-April-2025-V2\.pdf$ - [G,L]
 RewriteRule ^12-best-hris-software-in-indonesia-for-growing-businesses/?$ /best-software-hris-indonesia [R=301,L]
 RewriteRule ^hr-metrics-that-matter-in-2024/?$ /hr-metrics-that-matter-in-2025 [R=301,L]
 RewriteRule ^contacts/?$ /get-in-touch/ [R=301,L]
