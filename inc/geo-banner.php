@@ -5,13 +5,13 @@
  * the homepage exactly as before, no banner.
  */
 $phrBanners = [
-    'SG' => ['text' => 'Serving HR teams across Singapore.', 'cta' => 'See our Singapore page', 'href' => 'region-singapore.html'],
-    'PH' => ['text' => 'Revolutionize HR in the Philippines with PeoplesHR.', 'cta' => 'See our Philippines page', 'href' => 'philippines.html'],
-    'ID' => ['text' => 'HCM berbasis AI, dipercaya oleh perusahaan terkemuka di Indonesia.', 'cta' => 'Lihat halaman Indonesia', 'href' => 'indonesia.html'],
-    'KE' => ['text' => 'Revolutionize HR in Kenya with PeoplesHR.', 'cta' => 'See our Kenya page', 'href' => 'region-kenya.html'],
-    'BD' => ['text' => 'Revolutionize HR in Bangladesh with PeoplesHR.', 'cta' => 'See our Bangladesh page', 'href' => 'region-bangladesh.html'],
-    'LK' => ['text' => 'Revolutionize HR in Sri Lanka with PeoplesHR.', 'cta' => 'See our Sri Lanka page', 'href' => 'region-sri-lanka.html'],
-    'AE' => ['text' => 'Revolutionize HR in the Middle East with PeoplesHR.', 'cta' => 'See our Middle East page', 'href' => 'middle-east.html'],
+    'SG' => ['text' => 'Serving HR teams across Singapore.', 'cta' => 'See our Singapore page', 'href' => '/region-singapore/'],
+    'PH' => ['text' => 'Revolutionize HR in the Philippines with PeoplesHR.', 'cta' => 'See our Philippines page', 'href' => '/philippines/'],
+    'ID' => ['text' => 'HCM berbasis AI, dipercaya oleh perusahaan terkemuka di Indonesia.', 'cta' => 'Lihat halaman Indonesia', 'href' => '/indonesia/'],
+    'KE' => ['text' => 'Revolutionize HR in Kenya with PeoplesHR.', 'cta' => 'See our Kenya page', 'href' => '/region-kenya/'],
+    'BD' => ['text' => 'Revolutionize HR in Bangladesh with PeoplesHR.', 'cta' => 'See our Bangladesh page', 'href' => '/region-bangladesh/'],
+    'LK' => ['text' => 'Revolutionize HR in Sri Lanka with PeoplesHR.', 'cta' => 'See our Sri Lanka page', 'href' => '/region-sri-lanka/'],
+    'AE' => ['text' => 'Revolutionize HR in the Middle East with PeoplesHR.', 'cta' => 'See our Middle East page', 'href' => '/middle-east/'],
 ];
 ?>
 <?php if (!empty($phrCountry) && isset($phrBanners[$phrCountry])): $phrB = $phrBanners[$phrCountry]; ?>

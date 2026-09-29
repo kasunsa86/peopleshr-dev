@@ -1109,7 +1109,7 @@ function calculatePeoplesHRROI() {
     '<div class="phr-cookie-banner__inner">' +
       '<p class="phr-cookie-banner__text">' +
         '<strong>We use cookies.</strong> They help us run the site and understand how it&rsquo;s used. ' +
-        'See our <a href="/cookie-policy.html">Cookie Policy</a> and <a href="/privacy-policy.html">Privacy Policy</a> for details.' +
+        'See our <a href="/cookie-policy/">Cookie Policy</a> and <a href="/privacy-policy/">Privacy Policy</a> for details.' +
       '</p>' +
       '<div class="phr-cookie-banner__actions">' +
         '<button type="button" class="phr-cookie-btn phr-cookie-btn--reject" id="phrCookieReject">Reject Non-Essential</button>' +
@@ -1127,6 +1127,9 @@ function calculatePeoplesHRROI() {
     if (typeof window.gtag === 'function') { // GA4 (inc/ga4.php): apply the choice live
       var v = choice === 'accepted' ? 'granted' : 'denied';
       window.gtag('consent', 'update', {analytics_storage: v, ad_storage: v, ad_user_data: v, ad_personalization: v});
+    }
+    if (typeof window.clarity === 'function') { // Microsoft Clarity (inc/clarity.php)
+      if (choice === 'accepted') window.clarity('consent'); else window.clarity('consent', false);
     }
     banner.classList.remove('is-visible');
     setTimeout(function () { banner.remove(); }, 400);

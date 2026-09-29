@@ -98,7 +98,31 @@
   });
   /* Route the initially-active panel through activateLexiInsTab (rather
      than a plain play/pause loop) so it also arms the image timer when
-     that panel's media turns out to be an image, not a video. */
+     that panel's media turns out to be an image, not a video.
+
+     The videos are preload="none" with no autoplay attribute, so nothing
+     downloads until play() is called here. Hold off until the section is
+     about to scroll into view, so visitors who never reach it skip the
+     ~2MB clips and the cycle starts from the first tab when they do. */
   var lexiInsInitialActive = document.querySelector('.ph-lexi-ins-panel.is-active');
-  if(lexiInsInitialActive) activateLexiInsTab(lexiInsInitialActive.getAttribute('data-lexi-ins-panel'));
+  var lexiInsStarted = false;
+  var startLexiIns = function(){
+    if(lexiInsStarted) return;
+    lexiInsStarted = true;
+    var current = document.querySelector('.ph-lexi-ins-panel.is-active') || lexiInsInitialActive;
+    if(current) activateLexiInsTab(current.getAttribute('data-lexi-ins-panel'));
+  };
+  lexiInsTabs.forEach(function(tab){ tab.addEventListener('click', function(){ lexiInsStarted = true; }); });
+  var lexiInsSection = document.querySelector('.ph-lexi-ins-panels');
+  if(lexiInsSection && 'IntersectionObserver' in window){
+    var lexiInsObserver = new IntersectionObserver(function(entries){
+      if(entries.some(function(e){ return e.isIntersecting; })){
+        lexiInsObserver.disconnect();
+        startLexiIns();
+      }
+    }, { rootMargin: '600px 0px' });
+    lexiInsObserver.observe(lexiInsSection);
+  } else {
+    startLexiIns();
+  }
 })();

@@ -158,3 +158,6 @@
   .ph-lexi-ins-content h3{font-size:21px;}
   .ph-lexi-ins-video{border-radius:18px;}
 }
+/* "Meet Lexi AI" link under the section intro (homepage) */
+.ph-lexi-ins-more{display:inline-block;margin-top:14px;font-size:15px;font-weight:700;color:var(--blue,#2563eb);text-decoration:none;}
+.ph-lexi-ins-more:hover{text-decoration:underline;}
