@@ -148,7 +148,9 @@
 @media(max-width:1080px){
   .ph-lexi-ins-panel{flex-direction:column;padding:32px;}
   .ph-lexi-ins-content{flex:none;}
-  .ph-lexi-ins-video{flex:none;width:100%;aspect-ratio:16/9;}
+  /* Match the clips' native 16:10 (592x370 / 1800x1125) so cover doesn't
+     crop the top/bottom of the frame when stacked. */
+  .ph-lexi-ins-video{flex:none;width:100%;aspect-ratio:16/10;}
 }
 @media(max-width:640px){
   .ph-lexi-ins-tab{padding:9px 16px;font-size:13px;}
