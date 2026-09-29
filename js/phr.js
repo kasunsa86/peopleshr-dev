@@ -903,7 +903,7 @@ window.addEventListener('message', function(e) {
 
 /* ==========================================================================
    smsgt-lexi-ph-page.js
-   Page-specific interactions for SMSGT â€” AI-Powered HR Intelligence (Philippines).
+   Page-specific interactions for SMSGT — AI-Powered HR Intelligence (Philippines).
    Requires: phrhome.js loaded first.
    ========================================================================== */
 

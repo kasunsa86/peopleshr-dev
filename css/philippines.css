@@ -254,6 +254,7 @@ html{scrollbar-gutter:stable;}
 .phr-hero__visual{flex:1;max-width:600px;width:100%;align-self:stretch;display:flex;align-items:flex-end;position:relative;z-index:0;}
 .ph-hero-img{
   width:100%;
+  height:auto; /* the <img> carries height="1600" to reserve space; without this it would win over aspect-ratio */
   max-width:600px;
   aspect-ratio:3/4;
   object-fit:cover;
@@ -341,6 +342,19 @@ html{scrollbar-gutter:stable;}
   .ph-hero-icon{width:46px;height:46px;}
   .ph-hero-icon svg{width:20px;height:20px;}
   .ph-hero-icon img{width:22px;height:22px;}
+}
+/* Tablet/phone: a plain 1fr track won't shrink below the logo scroller's
+   width, so the copy column held its 500px max and overflowed the screen. */
+@media(max-width:960px){
+  .phr-hero__split{grid-template-columns:minmax(0,1fr);}
+  .phr-hero__copy{max-width:100%;min-width:0;}
+  .phr-hero__visual{max-width:min(420px,100%);min-width:0;}
+}
+@media(max-width:640px){
+  .phr-hero__visual{max-width:min(340px,100%);}
+  .ph-hero-float--filled{width:128px;}
+  .ph-hero-float--1{left:-8px;}
+  .ph-hero-float--2{right:-6px;}
 }
 
 /* .ph-hero-cta wraps a single .btn-primary <a>. The shared .btn-primary

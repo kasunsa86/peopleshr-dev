@@ -22,3 +22,7 @@
 .nv-tile{position:relative}
 .lqd-overlay{position:absolute;inset:0;display:block}
 .lqd-overlay.z-index-2{z-index:2}
+
+/* --- Products mega menu: module image icons --- */
+.nv-ic-img,.nv-tile:hover .nv-ic-img{background:#f3f6fc}
+.nv-ic-img img{width:26px;height:26px;object-fit:contain;display:block}
