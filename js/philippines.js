@@ -498,7 +498,7 @@
       var primaryName = voice.personName || voice.jobTitle;
       var secondaryLine = voice.personName
         ? [voice.jobTitle, voice.companyName].filter(function(v){ return v; }).join(', ')
-        : [voice.industry, 'Philippines'].filter(function(v){ return v; }).join(' â€” ');
+        : [voice.industry, 'Philippines'].filter(function(v){ return v; }).join(', ');
       return '<li class="ph-voices-card">' +
         '<div class="ph-voices-card-logo-wrap">' + logoHtml + '</div>' +
         industryPill +

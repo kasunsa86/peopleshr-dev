@@ -343,6 +343,19 @@ html{scrollbar-gutter:stable;}
   .ph-hero-icon svg{width:20px;height:20px;}
   .ph-hero-icon img{width:22px;height:22px;}
 }
+/* Tablet/phone: a plain 1fr track won't shrink below the logo scroller's
+   width, so the copy column held its 500px max and overflowed the screen. */
+@media(max-width:960px){
+  .phr-hero__split{grid-template-columns:minmax(0,1fr);}
+  .phr-hero__copy{max-width:100%;min-width:0;}
+  .phr-hero__visual{max-width:min(420px,100%);min-width:0;}
+}
+@media(max-width:640px){
+  .phr-hero__visual{max-width:min(340px,100%);}
+  .ph-hero-float--filled{width:128px;}
+  .ph-hero-float--1{left:-8px;}
+  .ph-hero-float--2{right:-6px;}
+}
 
 /* .ph-hero-cta wraps a single .btn-primary <a>. The shared .btn-primary
    is display:flex (block-level), so without a width constraint it

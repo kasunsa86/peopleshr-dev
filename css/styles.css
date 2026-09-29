@@ -9505,6 +9505,8 @@ button.btn-primary {
 .home-hero-card--filled img{display:block;width:100%;height:auto;}
 .home-hero-card--back{top:13%;left:-19%;z-index:1;}
 .home-hero-card--front{top:52%;right:-4%;z-index:3;animation-delay:1.5s;animation-duration:7s;}
+/* The search bar is a wide, short strip; at the default 58% its text is unreadable. */
+.home-hero-card--front.home-hero-card--filled{width:82%;}
 .home-hero-icon{
   position:absolute;
   width:56px;height:56px;border-radius:50%;
@@ -9616,4 +9618,26 @@ button.btn-primary {
   .home-hero-icon img{width:20px;height:20px;}
   .home-hero-icon--hr,.home-hero-icon--pay{width:52px;height:52px;}
   .home-hero-icon--hr img,.home-hero-icon--pay img{width:24px;height:24px;}
+}
+/* Tablet/phone: the logo scroller's track is thousands of px wide, and a
+   flex item won't shrink below its content by default, so the copy column
+   was stretching to its 620px desktop max and getting clipped. */
+@media(max-width:1024px){
+  .home-hero .hero-left{width:100%;max-width:100%;min-width:0;margin-bottom:0;}
+  .home-hero .hero-ctas{flex-wrap:wrap;}
+}
+/* Phones: show a compact version of the photo + cards instead of hiding it
+   (same approach as the Philippines hero). Cards stay inside the screen. */
+@media(max-width:768px){
+  .home-hero .hero-right.home-hero-right{display:flex;width:100%;justify-content:center;padding:0;margin:8px 0 -60px;}
+  .home-hero-visual{width:min(100%, 320px);}
+  .home-hero-card--back{left:-6%;width:56%;}
+  .home-hero-card--front{right:-2%;width:54%;}
+  .home-hero-card--front.home-hero-card--filled{width:80%;z-index:5;} /* above the fade (z 3), like the icon chips */
+  .home-hero-lexi{right:10%;}
+  .home-hero-icon{width:40px;height:40px;}
+  .home-hero-icon img{width:18px;height:18px;}
+  .home-hero-icon--hr,.home-hero-icon--pay{width:46px;height:46px;}
+  .home-hero-icon--hr img,.home-hero-icon--pay img{width:21px;height:21px;}
+  .home-hero-icon--time{left:2%;}
 }
