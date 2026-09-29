@@ -6621,10 +6621,10 @@ button.btn-primary {
 .dg-thumb-engage:has(.dg-thumb-image)::after{background:linear-gradient(135deg,rgba(124,45,18,.3) 0%,rgba(234,88,12,.2) 100%);}
 .dg-thumb-insights:has(.dg-thumb-image)::after{background:linear-gradient(135deg,rgba(12,74,110,.3) 0%,rgba(2,132,199,.2) 100%);}
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Demo Gate Popup Overlay Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
-   New popup gate Ã¢â‚¬â€ scoped to .dg-gate-overlay to avoid
+/* ── Demo Gate Popup Overlay ────────────────────────────────────
+   New popup gate — scoped to .dg-gate-overlay to avoid
    conflicts with existing .dg-gate-* modal classes above.
-Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
+─────────────────────────────────────────────────────────────── */
 .dg-gate-overlay{
   z-index:99999;
   position:fixed;
@@ -6669,7 +6669,7 @@ button.btn-primary {
   margin:0 auto 16px;
 }
 
-/* Scoped overrides Ã¢â‚¬â€ prevent old .dg-gate-title/.dg-gate-sub rules from applying */
+/* Scoped overrides — prevent old .dg-gate-title/.dg-gate-sub rules from applying */
 .dg-gate-overlay .dg-gate-title{
   font-size:22px;font-weight:800;
   color:#0d1b3e;letter-spacing:-.5px;
@@ -6711,11 +6711,11 @@ button.btn-primary {
 
 /* ==========================================================================
    smsgt-lexi-ph-page.css
-   Page-specific styles for SMSGT â€” AI-Powered HR Intelligence (Philippines).
+   Page-specific styles for SMSGT — AI-Powered HR Intelligence (Philippines).
    Requires: phrhome.css loaded first.
    ========================================================================== */
 
-/* â”€â”€ Meet PeoplesHR section â”€â”€ */
+/* ── Meet PeoplesHR section ── */
 .smsgtlx-section {
   padding: 100px 0;
   background: radial-gradient(ellipse at top right, #1e3a8a 0%, #0d1b3e 55%);
@@ -6793,7 +6793,7 @@ button.btn-primary {
   line-height: 1.55;
 }
 
-/* â”€â”€ Meet Lexi â€” Three Cards section â”€â”€ */
+/* ── Meet Lexi — Three Cards section ── */
 .lexi-intro-section {
   padding: 100px 0;
   background: #fff;
@@ -6893,7 +6893,7 @@ button.btn-primary {
 .lexi-card.featured .lexi-card-orb { background: #60a5fa; opacity: 0.15; }
 .lexi-card:not(.featured) .lexi-card-orb { background: var(--blue-light); }
 
-/* â”€â”€ Why SMSGT section â”€â”€ */
+/* ── Why SMSGT section ── */
 .smsgt-section {
   padding: 100px 0;
   background: var(--bg-light);
@@ -7012,8 +7012,8 @@ button.btn-primary {
   margin-top: 4px;
 }
 
-/* â”€â”€ CTA Banner overrides â”€â”€ */
-/* overrides phrhome.css .cta-banner â€” page uses 0 horizontal padding (padding via .page-wrap) */
+/* ── CTA Banner overrides ── */
+/* overrides phrhome.css .cta-banner — page uses 0 horizontal padding (padding via .page-wrap) */
 .cta-banner {
   padding: 90px 0;
 }
@@ -7037,7 +7037,7 @@ button.btn-primary {
   color: rgba(255,255,255,0.4);
 }
 
-/* â”€â”€ Accreditations overrides â”€â”€ */
+/* ── Accreditations overrides ── */
 /* overrides phrhome.css .accreditations-section */
 .accreditations-section {
   padding: 48px 0;
@@ -7069,7 +7069,7 @@ button.btn-primary {
 }
 .accreditations-section .accred-badge img:hover { filter: grayscale(0%); }
 
-/* â”€â”€ Responsive â”€â”€ */
+/* ── Responsive ── */
 @media (max-width: 1200px) {
   .phr-section,
   .lexi-intro-section,

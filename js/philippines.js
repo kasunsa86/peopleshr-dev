@@ -1,5 +1,5 @@
 ﻿/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   philippines.js â€” delta script for the PeoplesHR Philippines landing
+   philippines.js — delta script for the PeoplesHR Philippines landing
    page (/philippines.html)
 
    Loaded AFTER the shared js/phr.js and js/navbar.js (which already
@@ -13,10 +13,10 @@
   if(!scope) return; // guard: absent on non-philippines pages
 
   /* FAQ accordion: already wired up globally by the shared js/phr.js
-     (targets .phr-faq-item__trigger site-wide) â€” nothing to add here,
+     (targets .phr-faq-item__trigger site-wide) — nothing to add here,
      just reusing the shared .phr-faq markup. */
 
-  /* Payroll-chaos composition â€” notification content lives here as
+  /* Payroll-chaos composition — notification content lives here as
      data and gets rendered into DOM nodes; each alert's on-screen
      POSITION/rotation/timing comes from its .ph-chaos-alert--N class
      in philippines.css (index-based, N = array position + 1), so this
@@ -56,7 +56,7 @@
     });
   }
 
-  /* Modules tabs â€” click a tab, show its panel, hide the rest. */
+  /* Modules tabs — click a tab, show its panel, hide the rest. */
   var modTabs = document.querySelectorAll('.ph-mod-tab');
   modTabs.forEach(function(tab){
     tab.addEventListener('click', function(){
@@ -74,7 +74,7 @@
     });
   });
 
-  /* Industry selector â€” six industries, one data-driven card instead of
+  /* Industry selector — six industries, one data-driven card instead of
      six duplicated ones. PH_INDUSTRIES is the single source of truth for
      copy/capabilities/images; renderTabs()/renderPanel() build the DOM
      from it, selectIndustry() swaps the active one with a brief fade +
@@ -340,7 +340,7 @@
   /* Lexi AI Insights tabs: moved to js/lexi-insights.js (shared with
      the home page). */
 
-  /* Video testimonial modal â€” ported from customer-page/script.js's
+  /* Video testimonial modal — ported from customer-page/script.js's
      "2. Video Modal" IIFE, retargeted at this page's own element ids. */
   var vidModal = document.getElementById('phVidModal');
   var vidIframe = document.getElementById('phVidIframe');
@@ -367,7 +367,7 @@
       };
       card.addEventListener('click', trigger);
       /* Cards with tabindex (e.g. the featured testimonial video) are
-         keyboard-focusable divs, not real buttons â€” wire up Enter/Space
+         keyboard-focusable divs, not real buttons — wire up Enter/Space
          so they behave like one. */
       card.addEventListener('keydown', function(e){
         if(e.key === 'Enter' || e.key === ' '){
@@ -381,10 +381,10 @@
     document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && vidModal.classList.contains('open')) closeVidModal(); });
   }
 
-  /* Written testimonial slider â€” cards render from PH_VOICES (single
+  /* Written testimonial slider — cards render from PH_VOICES (single
      source of truth) into the empty <ul id="phVoicesTrack">. Logo files
      only exist for SMSGT and LaVie so far (companyLogo:null falls back
-     to a text badge, per buildVoiceCard above) â€” the rest render fine
+     to a text badge, per buildVoiceCard above) — the rest render fine
      without one, just add a logo path here once an asset is provided. */
   var voicesTrack = document.getElementById('phVoicesTrack');
   if(voicesTrack){
@@ -644,7 +644,7 @@
     startVoicesAutoplay();
   }
 
-  /* Proven Impact stat count-up â€” runs once when the section first
+  /* Proven Impact stat count-up — runs once when the section first
      scrolls into view, counting each .ph-impact-count from 0 to its
      data-target and formatting to data-decimals/data-suffix along the
      way. Skips straight to the final value under prefers-reduced-motion
@@ -690,7 +690,7 @@
     }
   }
 
-  /* HubSpot form embed â€” loaded lazily instead of a static <script> tag in
+  /* HubSpot form embed — loaded lazily instead of a static <script> tag in
      <head>, so a below-the-fold third-party embed isn't competing for
      bandwidth with above-the-fold assets on initial load. rootMargin gives
      it a head start (starts fetching ~600px before the form scrolls into
@@ -717,7 +717,7 @@
     }
   }
 
-  /* Sticky CTA â€” visible once scrolled past the hero, hidden again near
+  /* Sticky CTA — visible once scrolled past the hero, hidden again near
      the Final CTA section so the ask isn't duplicated on top of itself.
      Dismiss persists for the tab session, same pattern as the nv-ann
      announcement-bar dismiss in js/navbar.js. */

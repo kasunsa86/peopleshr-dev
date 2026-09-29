@@ -5,7 +5,7 @@
 (function(){
   if(!document.querySelector('.ph-lexi-ins-tab')) return;
 
-  /* Lexi AI Insights tabs â€” panels are grid-stacked in CSS (all three
+  /* Lexi AI Insights tabs — panels are grid-stacked in CSS (all three
      occupy the same cell) rather than hidden/display:none'd, so the
      box height stays locked to the tallest panel across tab switches.
      That means toggling visibility here, not the `hidden` attribute
@@ -13,7 +13,7 @@
      and pull the panel back out of the grid's height calculation).
 
      Because all three panels stay in the DOM, all three <video>s would
-     autoplay at once the moment real <source>s are uncommented â€” only
+     autoplay at once the moment real <source>s are uncommented — only
      one is ever visible, so play/pause them in lockstep with the tab
      switch instead of leaving the other two decoding in the background. */
   var lexiInsTabs = document.querySelectorAll('.ph-lexi-ins-tab');
@@ -35,7 +35,7 @@
      placeholder would stall the cycle there forever. hasRealMedia/
      nextTargetWithMedia walk forward past any placeholder panels to
      the next one that can actually play or display and continue the
-     chain â€” remove this skip once every panel has real media, it
+     chain — remove this skip once every panel has real media, it
      becomes a no-op at that point anyway. */
   var hasRealMedia = function(target){
     var panel = document.querySelector('.ph-lexi-ins-panel[data-lexi-ins-panel="' + target + '"]');
@@ -71,7 +71,7 @@
       lexiInsImageTimer = null;
     }
     /* Images have no 'ended' event, so drive their auto-advance off a
-       fixed timer instead â€” mirrors how a video panel advances itself
+       fixed timer instead — mirrors how a video panel advances itself
        below once its clip finishes playing. */
     if(activePanel && activePanel.querySelector('img.ph-lexi-ins-video-el')){
       lexiInsImageTimer = setTimeout(function(){
@@ -85,7 +85,7 @@
       activateLexiInsTab(tab.getAttribute('data-lexi-ins-tab'));
     });
   });
-  /* Auto-advance to the next tab when its video finishes â€” leaders ->
+  /* Auto-advance to the next tab when its video finishes — leaders ->
      managers -> employees -> back to leaders. Videos aren't set to loop
      for this reason (loop would mean 'ended' never fires). */
   lexiInsPanels.forEach(function(panel){
