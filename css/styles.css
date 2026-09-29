@@ -8355,6 +8355,7 @@ button.btn-primary {
 .csd-fact svg{width:14px;height:14px;color:var(--blue);flex-shrink:0;margin-top:4px;}
 .csd-fact-label{font-size:13.5px;color:var(--text-muted);margin:0 0 2px;}
 .csd-fact-value{font-size:14.5px;font-weight:700;color:var(--navy);margin:0;}
+.csd-fact-value a{color:var(--blue);text-decoration:none;border-bottom:1px solid rgba(37,99,235,.3);}.csd-fact-value a:hover{border-bottom-color:var(--blue);}
 
 .csd-main p{font-size:15px;color:var(--text-body);line-height:1.8;margin:0 0 28px;}
 .csd-video{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:16/9;margin-bottom:28px;cursor:pointer;background:#000;}
@@ -9641,3 +9642,27 @@ button.btn-primary {
   .home-hero-icon--hr img,.home-hero-icon--pay img{width:21px;height:21px;}
   .home-hero-icon--time{left:2%;}
 }
+
+/* Product pages: "Customer story / Works with" related-links strip above the closing CTA */
+.phr-related{padding:48px 0 56px}
+.phr-related-box{border:1px solid var(--border);border-radius:16px;background:var(--bg-light);padding:18px 24px;display:flex;flex-direction:column;gap:12px}
+.phr-related-row{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+.phr-related-label{flex:0 0 130px;font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--text-muted)}
+.phr-related-story{font-size:15px;font-weight:700;color:var(--blue);text-decoration:none}
+.phr-related-story:hover{text-decoration:underline}
+.phr-related-links{display:flex;flex-wrap:wrap;gap:8px}
+.phr-related-links a{font-size:13.5px;font-weight:600;color:var(--navy);text-decoration:none;background:#fff;border:1px solid var(--border);border-radius:999px;padding:6px 14px;transition:border-color .15s,color .15s}
+.phr-related-links a:hover{border-color:var(--blue);color:var(--blue)}
+@media (max-width:640px){.phr-related{padding:32px 0 40px}.phr-related-box{padding:16px}.phr-related-row{flex-direction:column;gap:6px}.phr-related-label{flex:none}}
+
+/* Industry pages: "more customer stories" line under the proof block */
+.proven-more{margin:16px 0 0;font-size:14px;line-height:1.6;color:rgba(255,255,255,.85)}
+.proven-more a{color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.proven-more--light{color:var(--text-muted)}
+.proven-more--light a{color:var(--blue)}
+
+/* Contextual one-line links: CIO/CFO accordions (dark), Payroll + Philippines feature notes (light) */
+.pillar-more{margin:24px 0 0;font-size:.93rem;line-height:1.7;color:rgba(255,255,255,.75)}
+.pillar-more a{color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.phr-feat-note,.ph-mod-note{margin:0 0 16px;font-size:14px;line-height:1.6;color:var(--text-muted)}
+.phr-feat-note a,.ph-mod-note a{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:3px}
