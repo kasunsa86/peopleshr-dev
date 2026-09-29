@@ -1128,6 +1128,9 @@ function calculatePeoplesHRROI() {
       var v = choice === 'accepted' ? 'granted' : 'denied';
       window.gtag('consent', 'update', {analytics_storage: v, ad_storage: v, ad_user_data: v, ad_personalization: v});
     }
+    if (typeof window.clarity === 'function') { // Microsoft Clarity (inc/clarity.php)
+      if (choice === 'accepted') window.clarity('consent'); else window.clarity('consent', false);
+    }
     banner.classList.remove('is-visible');
     setTimeout(function () { banner.remove(); }, 400);
   }

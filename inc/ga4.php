@@ -2,6 +2,7 @@
 /**
  * Google Analytics 4 (stream "PeoplesHR new", G-HLKRR01ZPD).
  * Included in every page's <head>, right after the HubSpot embed code.
+ * Also pulls in inc/clarity.php (Microsoft Clarity) at the end.
  *
  * Production only: dev.peopleshr.com and localhost previews don't load it,
  * so test traffic never lands in the GA4 property.
@@ -28,3 +29,4 @@ if (in_array($phr_ga4_host, ['peopleshr.com', 'www.peopleshr.com'], true)):
     gtag('config', 'G-HLKRR01ZPD');
   </script>
 <?php endif; ?>
+<?php include __DIR__ . '/clarity.php'; ?>
