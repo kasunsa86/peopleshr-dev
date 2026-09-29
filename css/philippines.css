@@ -254,7 +254,6 @@ html{scrollbar-gutter:stable;}
 .phr-hero__visual{flex:1;max-width:600px;width:100%;align-self:stretch;display:flex;align-items:flex-end;position:relative;z-index:0;}
 .ph-hero-img{
   width:100%;
-  height:auto; /* the <img> carries height="1600" to reserve space; without this it would win over aspect-ratio */
   max-width:600px;
   aspect-ratio:3/4;
   object-fit:cover;

@@ -22,7 +22,6 @@
  */
 
 require_once __DIR__ . '/asset-version.php';
-require_once __DIR__ . '/company-years.php';
 
 $phrSupportedCountries = ['SG', 'PH', 'ID', 'KE', 'BD', 'LK', 'AE'];
 $phrCountry = null;
