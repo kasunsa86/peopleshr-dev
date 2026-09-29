@@ -6,7 +6,7 @@
     "date": "2026-10-09T15:00:00+08:00",
     "dateLabel": "9 Oct 2026",
     "timeLabel": "3:00 PM PHT",
-    "registerUrl": "/webinar-year-end-payroll-ph.html",
+    "registerUrl": "/webinar-year-end-payroll-ph/",
     "coverImage": "/uploads/2026/10/upcoming_cover.webp",
     "speakers": [
       { "initials": "SA", "name": "Sharon Aytona", "role": "Consultant, Bridge PayDay Solutions &amp; President, Thinktank Professional Services Inc.", "photo": "/uploads/2026/10/Sharon.jpg", "color": "#fce7f3", "textColor": "#be185d" }

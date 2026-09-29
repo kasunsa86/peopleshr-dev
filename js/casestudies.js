@@ -345,7 +345,7 @@
       challenge: 'Pyramid Wilmar’s workforce spanned manufacturing plants, corporate offices and island-wide sales teams, but payroll and HR processes were split across different systems, paper workflows and location-based access limitations.',
       solution:  'PeoplesHR brought payroll, self-service, mobile access, kiosks and workforce visibility into one platform, giving 670+ employees real-time HR access and helping the rollout reach 95% completion in just 3.5 months.',
       img:       '/uploads/2026/08/Pyramid-Wilmar.webp',
-      href:      '/case-study-pyramid-wilmar.html'
+      href:      '/case-study-pyramid-wilmar/'
     },
     {
       logo:      BRANDIX_LOGO,
@@ -355,7 +355,7 @@
       challenge: 'Brandix had a large, factory-led workforce across multiple locations, but HR operations were affected by fragmented HCM systems, paper-based requests and limited digital access for frontline employees.',
       solution:  'With OneClick, powered by PeoplesHR, Brandix gave employees real-time access to HR services through mobile and self-service channels, increasing attendance self-service adoption from 4% to 96% and leave self-service adoption from 31% to 99% in just eight months.',
       img:       '/uploads/2026/08/Brandix.webp',
-      href:      '/hris-success-stories-brandix-case-study.html'
+      href:      '/hris-success-stories-brandix-case-study/'
     }
   ];
 

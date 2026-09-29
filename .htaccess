@@ -167,8 +167,9 @@ ErrorDocument 404 /404.html
 # CLEAN URLS â€” matches the old WordPress permalink structure
 # (e.g. /products/core-hr/ instead of /products/core-hr.html),
 # so the sitemap/canonical tags/redirects below all agree on
-# one URL form. Internal <a href> links in the page source are
-# left as .html â€” this only affects how the server answers.
+# one URL form. Internal links in the page source point straight at
+# the clean form too, so visitors and crawlers never go through the
+# .html -> clean 301 below; it stays only for old external links.
 # ============================================================
 RewriteEngine On
 

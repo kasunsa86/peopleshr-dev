@@ -13,11 +13,11 @@
  * "http://localhost/Peopleshr HTML/..." alongside other projects (which is
  * what breaks the root-relative "/css/..." style paths used everywhere).
  *
- * This only makes .html files execute as PHP (like the real .htaccess
- * does) — it does not simulate the clean-URL rewrite rules or the old-URL
- * redirects from .htaccess, so use plain .html links while browsing
- * (e.g. http://localhost:8899/products/core-hr.html). Those rewrite rules
- * only matter on a real Apache server and were already verified separately.
+ * This makes .html files execute as PHP (like the real .htaccess does) and
+ * serves clean URLs (/products/core-hr/ -> products/core-hr.html), since
+ * every internal link now points at the clean form. It does not simulate
+ * the old-URL redirects from .htaccess; those only matter on a real Apache
+ * server and were already verified separately.
  */
 $docroot = __DIR__;
 $path = urldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
@@ -28,6 +28,10 @@ if ($path === '/') {
 }
 if (is_dir($file)) {
     $file = rtrim($file, '/') . '/index.html';
+}
+// Clean URL (/company/ or /company) -> company.html, like .htaccess does.
+if (!file_exists($file) && is_file($docroot . rtrim($path, '/') . '.html')) {
+    $file = $docroot . rtrim($path, '/') . '.html';
 }
 
 if (file_exists($file) && preg_match('/\.html?$/i', $file)) {

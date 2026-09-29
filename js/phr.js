@@ -1109,7 +1109,7 @@ function calculatePeoplesHRROI() {
     '<div class="phr-cookie-banner__inner">' +
       '<p class="phr-cookie-banner__text">' +
         '<strong>We use cookies.</strong> They help us run the site and understand how it&rsquo;s used. ' +
-        'See our <a href="/cookie-policy.html">Cookie Policy</a> and <a href="/privacy-policy.html">Privacy Policy</a> for details.' +
+        'See our <a href="/cookie-policy/">Cookie Policy</a> and <a href="/privacy-policy/">Privacy Policy</a> for details.' +
       '</p>' +
       '<div class="phr-cookie-banner__actions">' +
         '<button type="button" class="phr-cookie-btn phr-cookie-btn--reject" id="phrCookieReject">Reject Non-Essential</button>' +
