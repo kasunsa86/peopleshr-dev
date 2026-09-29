@@ -1124,6 +1124,10 @@ function calculatePeoplesHRROI() {
 
   function dismiss(choice) {
     setCookie(COOKIE_NAME, choice, COOKIE_DAYS);
+    if (typeof window.gtag === 'function') { // GA4 (inc/ga4.php): apply the choice live
+      var v = choice === 'accepted' ? 'granted' : 'denied';
+      window.gtag('consent', 'update', {analytics_storage: v, ad_storage: v, ad_user_data: v, ad_personalization: v});
+    }
     banner.classList.remove('is-visible');
     setTimeout(function () { banner.remove(); }, 400);
   }
