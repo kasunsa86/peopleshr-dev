@@ -381,7 +381,7 @@
       +   '<div class="sf2-block-heading">Solution</div>'
       +   '<p class="sf2-block-text">' + s.solution + '</p>'
       + '</div>'
-      + '<a href="' + s.href + '" class="sf2-read" target="_blank">Read Case Study ' + ARROW + '</a>';
+      + '<a href="' + s.href + '" class="sf2-read" target="_blank">Read the ' + s.company + ' case study ' + ARROW + '</a>';
   }
 
   function switchTo(idx) {
