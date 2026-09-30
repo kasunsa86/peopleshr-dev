@@ -242,12 +242,30 @@ RewriteRule ^other-products/?$ - [G,L]
 RewriteRule ^products-peopleshr/?$ - [G,L]
 RewriteRule ^2021/02/16/is-your-performance-management-keeping-up-with-the-pace/?$ /is-your-performance-management-keeping-up-with-the-pace/ [R=301,L]
 RewriteRule ^case-study-ploples-bank/?$ - [G,L]
-# Page and its PDF deliberately withdrawn (2026-09-28). 410 so search
-# engines drop the URL, rather than letting it fall through to the
-# blog-migration redirect below.
-RewriteRule ^limitations-for-configuration(\.html)?/?$ - [G,L]
-RewriteRule ^wp-content/uploads/2025/07/PRM-L3-PHR-Limitations-for-Configuration-UPDATED-April-2025-V2\.pdf$ - [G,L]
-RewriteRule ^uploads/2025/07/PRM-L3-PHR-Limitations-for-Configuration-UPDATED-April-2025-V2\.pdf$ - [G,L]
+# /limitations-for-configuration/ serves the Limitations for Configuration
+# PDF itself (internal rewrite, so the URL stays as-is and the browser
+# opens the PDF inline). Replaces the 2026-09-28 410. Must stay above the
+# blog-migration redirect below, which would otherwise claim this slug.
+# The old WordPress PDF paths 301 here so existing links keep working.
+RewriteRule ^limitations-for-configuration(\.html)?/?$ /uploads/legal/PRM-L3-PHR-Limitations-for-Configuration-April-2025-V2.0.pdf [L]
+RewriteRule ^wp-content/uploads/2025/07/PRM-L3-PHR-Limitations-for-Configuration-UPDATED-April-2025-V2\.pdf$ /limitations-for-configuration/ [R=301,L]
+RewriteRule ^uploads/2025/07/PRM-L3-PHR-Limitations-for-Configuration-UPDATED-April-2025-V2\.pdf$ /limitations-for-configuration/ [R=301,L]
+<Files "PRM-L3-PHR-Limitations-for-Configuration-April-2025-V2.0.pdf">
+    <IfModule mod_headers.c>
+        Header set Content-Disposition "inline; filename=\"PeoplesHR-Limitations-for-Configuration-V2.0.pdf\""
+        # The sitewide CSP's object-src 'none' can stop the browser's
+        # built-in PDF viewer rendering it inline; a PDF needs no page CSP.
+        Header always unset Content-Security-Policy
+    </IfModule>
+</Files>
+# /report/ serves the Standard Reports PDF itself, same approach as above.
+RewriteRule ^report(\.html)?/?$ /uploads/legal/PRM-L3-PHR-Standard-Reports-May-2026-V3.0.pdf [L]
+<Files "PRM-L3-PHR-Standard-Reports-May-2026-V3.0.pdf">
+    <IfModule mod_headers.c>
+        Header set Content-Disposition "inline; filename=\"PeoplesHR-Standard-Reports-V3.0.pdf\""
+        Header always unset Content-Security-Policy
+    </IfModule>
+</Files>
 RewriteRule ^12-best-hris-software-in-indonesia-for-growing-businesses/?$ /best-software-hris-indonesia [R=301,L]
 RewriteRule ^hr-metrics-that-matter-in-2024/?$ /hr-metrics-that-matter-in-2025 [R=301,L]
 RewriteRule ^contacts/?$ /get-in-touch/ [R=301,L]
