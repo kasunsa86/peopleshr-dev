@@ -5,7 +5,8 @@
  * without a per-page include.
  *
  * Production only, same as GA4: dev.peopleshr.com and localhost previews
- * don't load it, so test sessions never show up in Clarity.
+ * don't load it, so test sessions never show up in Clarity. origin.peopleshr.com
+ * is the live site as CloudFront requests it.
  *
  * Consent: follows the site's cookie banner (phr_cookie_consent, see
  * js/phr.js). If the visitor rejected non-essential cookies, Clarity is told
@@ -15,7 +16,7 @@
  * and https://c.bing.com (connect-src), or the tag is silently blocked.
  */
 $phr_clarity_host = strtolower(preg_replace('/:\d+$/', '', $_SERVER['HTTP_HOST'] ?? ''));
-if (in_array($phr_clarity_host, ['peopleshr.com', 'www.peopleshr.com'], true)):
+if (in_array($phr_clarity_host, ['peopleshr.com', 'www.peopleshr.com', 'origin.peopleshr.com'], true)):
 ?>
   <!-- Microsoft Clarity -->
   <script type="text/javascript">
