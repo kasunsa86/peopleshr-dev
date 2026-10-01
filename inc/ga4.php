@@ -5,7 +5,8 @@
  * Also pulls in inc/clarity.php (Microsoft Clarity) at the end.
  *
  * Production only: dev.peopleshr.com and localhost previews don't load it,
- * so test traffic never lands in the GA4 property.
+ * so test traffic never lands in the GA4 property. origin.peopleshr.com is
+ * the live site as CloudFront requests it (the origin only answers the CDN).
  *
  * Consent: if the visitor clicked "Reject Non-Essential" on the site's cookie
  * banner (phr_cookie_consent=rejected, see js/phr.js), GA4 starts with
@@ -13,7 +14,7 @@
  * updates it live via gtag('consent','update', ...).
  */
 $phr_ga4_host = strtolower(preg_replace('/:\d+$/', '', $_SERVER['HTTP_HOST'] ?? ''));
-if (in_array($phr_ga4_host, ['peopleshr.com', 'www.peopleshr.com'], true)):
+if (in_array($phr_ga4_host, ['peopleshr.com', 'www.peopleshr.com', 'origin.peopleshr.com'], true)):
 ?>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLKRR01ZPD"></script>

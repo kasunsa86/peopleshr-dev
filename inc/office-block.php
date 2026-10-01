@@ -1,11 +1,13 @@
 <?php
 /**
  * Footer office block. Head Office (Singapore) always shows as-is.
- * "Regional Office" shows the visitor's matching local office when we have
- * one on file; otherwise it falls back to Sri Lanka (the site default).
+ * "Regional Office" carries every regional office; the CSS in
+ * inc/geo-head.php shows the visitor's matching one, or Sri Lanka (the
+ * site default, .geo-default) when we have no office for their country.
+ * Same markup for every visitor, so the page can be cached.
  */
 $phrOffices = [
-    'LK' => [
+    'default' => [
         'address' => '67/1, Hudson Road, Off Perahera Mw, Colombo 03, Sri Lanka',
         'phone'   => '+94 72 759 7252',
         'tel'     => '+94727597252',
@@ -36,9 +38,6 @@ $phrOffices = [
         'tel'     => '+97144542200',
     ],
 ];
-
-// Visitor's matching office if we have one on file, otherwise Sri Lanka (default).
-$phrRegional = (!empty($phrCountry) && isset($phrOffices[$phrCountry])) ? $phrOffices[$phrCountry] : $phrOffices['LK'];
 ?>
             <div class="ft-office">
               <p class="ft-office-label">Head Office</p>
@@ -47,6 +46,8 @@ $phrRegional = (!empty($phrCountry) && isset($phrOffices[$phrCountry])) ? $phrOf
             </div>
             <div class="ft-office">
               <p class="ft-office-label">Regional Office</p>
-              <address><?php echo htmlspecialchars($phrRegional['address']); ?><?php if (!empty($phrRegional['phone'])): ?><br>
+<?php foreach ($phrOffices as $phrCode => $phrRegional): ?>
+              <address class="geo geo-<?php echo $phrCode; ?>"><?php echo htmlspecialchars($phrRegional['address']); ?><?php if (!empty($phrRegional['phone'])): ?><br>
                 <a href="tel:<?php echo htmlspecialchars($phrRegional['tel']); ?>"><?php echo htmlspecialchars($phrRegional['phone']); ?></a><?php endif; ?></address>
+<?php endforeach; ?>
             </div>

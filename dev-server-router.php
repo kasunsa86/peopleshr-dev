@@ -23,6 +23,19 @@ $docroot = __DIR__;
 $path = urldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 $file = $docroot . $path;
 
+// Clean URLs that serve a PDF directly, mirroring the RewriteRules in .htaccess.
+$pdfUrls = [
+    'limitations-for-configuration' => ['/uploads/legal/PRM-L3-PHR-Limitations-for-Configuration-April-2025-V2.0.pdf', 'PeoplesHR-Limitations-for-Configuration-V2.0.pdf'],
+    'report' => ['/uploads/legal/PRM-L3-PHR-Standard-Reports-May-2026-V3.0.pdf', 'PeoplesHR-Standard-Reports-V3.0.pdf'],
+];
+$slug = trim(preg_replace('/\.html$/', '', $path), '/');
+if (isset($pdfUrls[$slug])) {
+    header('Content-Type: application/pdf');
+    header('Content-Disposition: inline; filename="' . $pdfUrls[$slug][1] . '"');
+    readfile($docroot . $pdfUrls[$slug][0]);
+    return true;
+}
+
 if ($path === '/') {
     $file = $docroot . '/index.html';
 }
@@ -32,6 +45,14 @@ if (is_dir($file)) {
 // Clean URL (/company/ or /company) -> company.html, like .htaccess does.
 if (!file_exists($file) && is_file($docroot . rtrim($path, '/') . '.html')) {
     $file = $docroot . rtrim($path, '/') . '.html';
+}
+
+// Versioned asset (/css/styles.v1695634000.css -> css/styles.css), like
+// the "VERSIONED ASSETS" rule in .htaccess; see inc/asset-version.php.
+if (!file_exists($file) && preg_match('/^(.+)\.v[0-9]+\.(css|js)$/', $path, $m) && is_file($docroot . $m[1] . '.' . $m[2])) {
+    header('Content-Type: ' . ($m[2] === 'css' ? 'text/css' : 'application/javascript') . '; charset=utf-8');
+    readfile($docroot . $m[1] . '.' . $m[2]);
+    return true;
 }
 
 if (file_exists($file) && preg_match('/\.html?$/i', $file)) {

@@ -1,1 +1,7 @@
 .DS_Store
+
+# CloudFront origin-lock secret. It belongs in ../PHR Website Deploy/
+# (see deploy.sh); these only catch a copy dropped in here by mistake.
+origin-lock.txt
+.htaccess-origin-lock
+PHR Website Deploy/

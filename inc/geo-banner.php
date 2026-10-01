@@ -1,8 +1,12 @@
 <?php
 /**
- * Homepage geotargeted banner. Only renders when the visitor's country
- * (see geo.php) is one of our 7 supported markets — everyone else sees
- * the homepage exactly as before, no banner.
+ * Homepage geotargeted banner. All 7 market banners are in the markup,
+ * hidden; the CSS in inc/geo-head.php shows the visitor's one when their
+ * country is one of our 7 supported markets -- everyone else sees the
+ * homepage exactly as before, no banner. Same markup for every visitor,
+ * so the page can be cached. Only shown when the country is known at
+ * first paint (see data-geo-late in inc/geo-head.php), so it never
+ * pushes the page down after it has rendered.
  */
 $phrBanners = [
     'SG' => ['text' => 'Serving HR teams across Singapore.', 'cta' => 'See our Singapore page', 'href' => '/region-singapore/'],
@@ -14,9 +18,9 @@ $phrBanners = [
     'AE' => ['text' => 'Revolutionize HR in the Middle East with PeoplesHR.', 'cta' => 'See our Middle East page', 'href' => '/middle-east/'],
 ];
 ?>
-<?php if (!empty($phrCountry) && isset($phrBanners[$phrCountry])): $phrB = $phrBanners[$phrCountry]; ?>
-<div style="background:#eef4ff;border-bottom:1px solid #d7e3fb;padding:12px 24px;text-align:center;font-size:14px;color:#1b2b4b;">
+<?php foreach ($phrBanners as $phrCode => $phrB): ?>
+<div class="geo geo-banner geo-<?php echo $phrCode; ?>" style="background:#eef4ff;border-bottom:1px solid #d7e3fb;padding:12px 24px;text-align:center;font-size:14px;color:#1b2b4b;">
   <?php echo htmlspecialchars($phrB['text']); ?>
   <a href="<?php echo htmlspecialchars($phrB['href']); ?>" style="color:#2554ea;font-weight:700;text-decoration:none;margin-left:6px;"><?php echo htmlspecialchars($phrB['cta']); ?> &rarr;</a>
 </div>
-<?php endif; ?>
+<?php endforeach; ?>
