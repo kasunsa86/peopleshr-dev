@@ -3,8 +3,10 @@
 # origin lock" block (RewriteEngine On + an X-Origin-Verify secret check).
 # The secret is only on the server, so the block is NOT in this repo copy.
 # When deploying, never upload this file over the server's one as-is:
-# paste the server's block back in here unchanged, or the whole site
-# returns 403 through the CDN.
+# paste the server's block back in here unchanged. Without the block,
+# anyone can bypass CloudFront (and its WAF) by requesting the origin
+# directly; with a mistyped secret, the whole site returns 403 through
+# the CDN. Never commit the pasted secret to git.
 # ===== end origin lock placeholder =====
 
 # Run .html files as PHP so the shared includes (asset_v(), footer,
@@ -61,7 +63,7 @@ ErrorDocument 404 /404.html
 # these files shouldn't be pushed to the live server in the first place,
 # but this means an accidental upload still can't be downloaded.
 # ============================================================
-<FilesMatch "(?i)\.(zip|rar|7z|bin|sql|bak|old)$">
+<FilesMatch "(?i)\.(zip|rar|7z|bin|sql|bak|old|sh)$">
     Require all denied
 </FilesMatch>
 <Files "dev-server-router.php">
