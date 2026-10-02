@@ -59,11 +59,13 @@ ErrorDocument 404 /404.html
 # (inc/data/*.BIN -- only ever read server-side by inc/geo.php; the
 # LITE license isn't meant for public redistribution like a direct
 # download), and the local-only PHP built-in-server router (see its own
-# header comment -- never meant to be deployed at all). Belt-and-braces:
+# header comment -- never meant to be deployed at all), and deploy files
+# (deploy.sh, .cpanel.yml -- readable on dev.peopleshr.com, which is the
+# cPanel checkout). Belt-and-braces:
 # these files shouldn't be pushed to the live server in the first place,
 # but this means an accidental upload still can't be downloaded.
 # ============================================================
-<FilesMatch "(?i)\.(zip|rar|7z|bin|sql|bak|old|sh)$">
+<FilesMatch "(?i)\.(zip|rar|7z|bin|sql|bak|old|sh|ya?ml)$">
     Require all denied
 </FilesMatch>
 <Files "dev-server-router.php">
