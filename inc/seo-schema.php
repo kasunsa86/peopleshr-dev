@@ -37,7 +37,6 @@ $phrCrumbs = [
   'cookie-policy.html'           => ['Cookie Policy', null],
   'customers.html'               => ['Customers', null],
   'events.html'                  => ['Events', null],
-  'functional-proposal.html'     => ['Functional Proposal', null],
   'get-in-touch.html'            => ['Contact Us', null],
   'hr-ebooks-and-guides.html'    => ['HR eBooks & Guides', null],
   'interactive-demos.html'       => ['Interactive Demos', null],
