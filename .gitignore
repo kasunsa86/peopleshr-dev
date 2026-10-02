@@ -8,3 +8,11 @@ PHR Website Deploy/
 
 # Site backups/archives -- never commit (www.zip was a 70 MB copy of the old site).
 *.zip
+
+# Files the server creates in the cPanel checkout (dev.peopleshr.com). Left
+# untracked, they count as uncommitted changes and disable "Deploy HEAD Commit".
+error_log
+.well-known/
+cgi-bin/
+.user.ini
+php.ini
