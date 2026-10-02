@@ -1,14 +1,13 @@
----
 # cPanel Git deployment ("Deploy HEAD Commit" after "Update from Remote").
-# deploy.sh copies the site into the live folder and builds its .htaccess
-# with IT's CloudFront origin lock block, which is kept on the server
-# outside the site and the repo (it holds a secret, so it is never in git).
+# deploy.sh copies the site files into the live folder. It never touches
+# the live .htaccess (IT's CloudFront origin lock lives there and the file
+# is maintained by hand on the server), and keeps files that exist only on
+# the server.
 #
-# Server setup, once (IT):
+# Server setup, once:
 #  - The cPanel repository path must be OUTSIDE the live folder,
 #    e.g. /home/<account>/repositories/peopleshr-dev
-#  - Put the origin lock block in $HOME/origin-lock.txt (not web-accessible).
 #  - Confirm the live folder path below.
 deployment:
   tasks:
-    - /bin/bash ./deploy.sh "$HOME/origin.peopleshr.com" "$HOME/origin-lock.txt"
+    - /bin/bash ./deploy.sh "$HOME/origin.peopleshr.com"
