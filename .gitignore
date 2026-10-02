@@ -5,3 +5,6 @@
 origin-lock.txt
 .htaccess-origin-lock
 PHR Website Deploy/
+
+# Site backups/archives -- never commit (www.zip was a 70 MB copy of the old site).
+*.zip
