@@ -1,0 +1,95 @@
+/* ============================================================
+   philippines-payroll-lp.html -- page-specific styles, loaded after
+   styles.css on that page only. Shared .pay-* pieces (split layout,
+   quote cards, accent colour, alt section background) stay in
+   styles.css because philippines-hris.html / indonesia-lp.html use
+   them too.
+   ============================================================ */
+
+.pay-subhead{font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:-1px;color:var(--blue);margin-top:6px;}
+.pay-lede{max-width:720px;margin:20px auto 0;color:var(--text-body);line-height:1.7;}
+.pay-lede--strong{max-width:720px;margin:16px auto 0;color:var(--navy);font-weight:700;line-height:1.7;}
+
+.pay-tag-cloud{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:900px;margin:44px auto 0;}
+.pay-tag-chip{
+  display:inline-flex;align-items:center;
+  padding:9px 18px;border-radius:100px;
+  border:1px solid transparent;
+  font-size:13.5px;font-weight:700;
+  box-shadow:0 2px 10px rgba(13,27,62,.05);
+  /* "Falling in" reveal: starts above and faded out, JS adds
+     .is-inview to the parent .pay-tag-cloud (with a per-chip
+     transition-delay it sets inline) once the cloud scrolls into
+     view, and this transition animates each chip down into place. */
+  opacity:0;
+  transform:translateY(-36px) rotate(var(--r,0deg));
+  transition:opacity .5s ease,transform .6s cubic-bezier(.34,1.56,.64,1);
+}
+.pay-tag-cloud.is-inview .pay-tag-chip{
+  opacity:1;
+  transform:translateY(0) rotate(var(--r,0deg));
+}
+@media(prefers-reduced-motion:reduce){
+  .pay-tag-chip{transition:none;opacity:1;transform:none;}
+}
+/* Theme-colored chips, cycling through the site's accent palette
+   (blue/orange/green/purple/navy/teal) so the cloud reads as varied
+   but still on-brand rather than one flat color. */
+.pay-tag-chip:nth-child(6n+1){background:rgba(37,99,235,.10);color:#2563eb;--r:-2deg;}
+.pay-tag-chip:nth-child(6n+2){background:rgba(247,143,33,.14);color:#c2670f;--r:1.5deg;}
+.pay-tag-chip:nth-child(6n+3){background:rgba(16,185,129,.12);color:#059669;--r:-1deg;}
+.pay-tag-chip:nth-child(6n+4){background:rgba(139,92,246,.12);color:#7c3aed;--r:2deg;}
+.pay-tag-chip:nth-child(6n+5){background:rgba(13,27,62,.08);color:#0d1b3e;--r:-1.5deg;}
+.pay-tag-chip:nth-child(6n+6){background:rgba(6,182,212,.12);color:#0e7490;--r:1deg;}
+
+.pay-banner{
+  display:inline-block;
+  max-width:720px;
+  margin:0 auto;
+  padding:16px 32px;
+  border-radius:14px;
+  background:#F78F21;
+  color:#fff;
+  font-size:18px;
+  font-weight:700;
+  line-height:1.4;
+  text-align:center;
+  transform:rotate(-3deg);
+  box-shadow:0 12px 30px rgba(247,143,33,.35);
+}
+.pay-banner-wrap{text-align:center;padding:8px 24px;}
+
+@media(max-width:760px){
+  .pay-banner{font-size:16px;padding:14px 22px;}
+}
+
+/* Match this page's content width to customers.html's 1200px centered
+   column (.cs-section-inner) — scoped to .pay-lp on <body> so it can't
+   leak onto other pages that share .hero-wrap/.phr-container/.mac-grid. */
+.pay-lp .hero-wrap .hero{max-width:1200px;margin:0 auto;}
+.pay-lp .phr-container{max-width:1200px;}
+.pay-lp .mac-grid{max-width:1200px;}
+
+/* Trust-strip logo row: fixed (no marquee scroll) with clear breathing
+   room below the "Trusted by..." heading. Scoped so the shared
+   .industries-section/.client-logos/.logo-slider-track classes keep
+   scrolling normally everywhere else they're used (including the stats
+   band further down this same page). */
+.pay-lp .pay-trust-section{padding-top:56px;}
+.pay-lp .pay-trust-section .client-logos{overflow:visible;padding-top:32px;padding-bottom:24px;min-height:0;}
+.pay-lp .pay-trust-section .client-logos::before,
+.pay-lp .pay-trust-section .client-logos::after{display:none;}
+.pay-lp .logo-slider-track.pay-logos-fixed{
+  animation:none;
+  width:100%;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:48px 56px;
+}
+
+/* Wide screens: styles.css pads .hero-wrap .hero by (100% - 1200px)/2,
+   sized off the full viewport; inside the 1200px cap above that squeezed
+   the hero to a ~500px sliver. Let the padding alone form the column. */
+@media (min-width:1297px){
+  .pay-lp .hero-wrap .hero{max-width:none;}
+}
