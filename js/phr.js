@@ -120,7 +120,8 @@ window.addEventListener('resize', () => {
 });
 
 const phrScriptTag = document.currentScript;
-const phrAssetBase = phrScriptTag ? phrScriptTag.src.replace(/js\/phr\.js(?:[?#].*)?$/, '') : '';
+// site root, from this script's own URL; asset_v() serves it as js/phr.v<mtime>.js
+const phrAssetBase = phrScriptTag ? phrScriptTag.src.replace(/js\/phr(?:\.v\d+)?\.js(?:[?#].*)?$/, '') : '';
 
 /* Logo marquee: keeps the CSS translateX(-50%) loop (.logo-slider-track /
    .logo-track, see styles.css) seamless when a page only has a handful of
