@@ -18,7 +18,7 @@ $phrOffices = [
         'tel'     => '+63282711150',
     ],
     'ID' => [
-        'address' => 'GoWork Plaza Indonesia Level 5, Unit E021AB Jl. M.H. Thamrin No. Kav. 28-30 Jakarta Pusat 10350',
+        'address' => 'GoWork Sampoerna Strategic Square, 12th Floor, North Tower, Jalan Jenderal Sudirman, Karet Semanggi, Special Capital Region of Jakarta 12930, Indonesia',
         'phone'   => null,
         'tel'     => null,
     ],
