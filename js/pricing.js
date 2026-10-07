@@ -528,7 +528,7 @@
     },
   } : {
     lexi: {
-      name: 'Lexi Ai', tagline: 'Turn any HR action into a simple conversation.',
+      name: 'Lexi AI', tagline: 'Turn any HR action into a simple conversation.',
       icon: '<img class="pc-nav-ic" src="' + LEXI_X_ICON_SRC + '" alt="Lexi">',
       panelIcon: '<img class="pc-mod-ic" src="' + LEXI_X_ICON_SRC + '" alt="Lexi">',
       /* Lexi is three separate products, each rendered as its own
@@ -596,7 +596,7 @@
           accent: 'blue',
           includedIn: ['Manage', 'Grow', 'Transform'],
           tagline: 'A centralised search layer that cuts navigation time across the platform.',
-          footnote: 'Highlighted as a key differentiator alongside Lexi Ai — built to significantly reduce the time HR users and employees spend navigating a complex system.',
+          footnote: 'Highlighted as a key differentiator alongside Lexi AI — built to significantly reduce the time HR users and employees spend navigating a complex system.',
           includedHeading: 'Key Capabilities',
           included: [
             'Intelligent Navigation — quickly locate and jump to any menu, module, or function without manually browsing the interface',
