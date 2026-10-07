@@ -262,6 +262,21 @@
       "categoryColor": "#d97706",
       "videos": [
         {
+          "id": "rec-24",
+          "title": "The Compliance and Data Governance Risk Clinic",
+          "date": "7 Oct 2026",
+          "duration": "",
+          "views": "",
+          "language": "English",
+          "youtubeId": "pNKSu-Fp_BA",
+          "thumbnailGradient": "linear-gradient(135deg,#78350f,#f59e0b)",
+          "speakers": [
+            { "initials": "KG", "name": "Kapila Gajapala", "role": "Director, PeoplesHR Tracking", "color": "#fef3c7", "textColor": "#b45309" },
+            { "initials": "MP", "name": "Mahinda Pathirana", "role": "Chief Information Security Officer, PeoplesHR", "photo": "/uploads/2026/10/mahinda_pathirana.webp", "color": "#dbeafe", "textColor": "#2563eb" }
+          ],
+          "watchUrl": "https://youtu.be/pNKSu-Fp_BA"
+        },
+        {
           "id": "rec-10",
           "title": "Fixing Philippines Payroll: What HR needs to get right in 2026",
           "date": "18 Sep 2025",
