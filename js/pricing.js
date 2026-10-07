@@ -61,7 +61,7 @@
     Pay: {
       manage: { desc: 'Jalankan proses payroll dengan akurat dan tepat waktu. Kelola persetujuan, buat file transfer bank, slip gaji, serta laporan payroll lengkap, sekaligus memastikan kepatuhan terhadap pajak dan potongan wajib secara otomatis.',
         bullets: ['Proses payroll, file transfer bank, dan slip gaji', 'Laporan payroll lengkap', 'Alur persetujuan', 'Perhitungan pajak dan potongan wajib secara otomatis'] },
-      grow: { desc: 'Sistem payroll untuk sistem penggajian yang lebih kompleks. Dilengkapi fitur multi-mata uang, pemetaan General Ledger (GL), deteksi anomali sebelum proses penggajian, penyesuaian gaji berlaku surut (backdated), pengelolaan pinjaman karyawan, serta pilihan benefit yang beragam.',
+      grow: { desc: 'Sistem payroll untuk mendukung kebutuhan penggajian yang lebih kompleks. Dilengkapi fitur multi-mata uang, pemetaan General Ledger (GL), deteksi anomali sebelum proses penggajian, penyesuaian gaji berlaku surut (backdated), pengelolaan pinjaman karyawan, serta pilihan benefit yang beragam.',
         bullets: ['Payroll multi-mata uang & pemetaan General Ledger (GL)', 'Deteksi anomali sebelum payroll diproses', 'Revisi gaji & penyesuaian berlaku surut (backdated)', 'Pinjaman karyawan & lebih banyak pilihan benefit'] },
       transform: { desc: 'Solusi payroll yang dirancang khusus sesuai kebutuhan perusahaan Anda. Mulai dari alur penggajian, persetujuan, skema pinjaman, hingga struktur benefit dapat dikonfigurasi penuh untuk menangani payroll bervolume tinggi tanpa hambatan.',
         bullets: ['Proses payroll & alur persetujuan yang dapat disesuaikan', 'Jenis pinjaman & skema benefit yang dapat dikustomisasi', 'Mendukung payroll dalam skala besar'] }
@@ -349,7 +349,7 @@
   var LEXI_X_ICON_SRC = IMG_BASE + 'lexi_x_icon.svg';
   var STANDOUT = LANG === 'id' ? {
     lexi: {
-      name: 'Lexi Ai', tagline: 'Selesaikan berbagai kebutuhan HR dengan percakapan sederhana.',
+      name: 'Lexi AI', tagline: 'Selesaikan berbagai kebutuhan HR dengan percakapan sederhana.',
       icon: '<img class="pc-nav-ic" src="' + LEXI_X_ICON_SRC + '" alt="Lexi">',
       panelIcon: '<img class="pc-mod-ic" src="' + LEXI_X_ICON_SRC + '" alt="Lexi">',
       pricingCards: [
@@ -408,12 +408,12 @@
           accent: 'blue',
           includedIn: ['Manage', 'Grow', 'Transform'],
           tagline: 'Layanan pencarian terpusat yang memangkas waktu navigasi di seluruh platform.',
-          footnote: 'Menjadi keunggulan utama bersama Lexi Ai — dirancang khusus untuk secara signifikan mengurangi waktu yang dihabiskan pengguna HR dan karyawan saat menavigasi sistem yang rumit.',
+          footnote: 'Menjadi keunggulan utama bersama Lexi AI — dirancang khusus untuk secara signifikan mengurangi waktu yang dihabiskan pengguna HR dan karyawan saat menavigasi sistem yang rumit.',
           includedHeading: 'Kemampuan Utama',
           included: [
-            'Navigasi Cerdas — temukan dan buka menu, modul, atau fungsi apa pun secara cepat tanpa harus mencari manual satu per satu di tampilan layar',
-            'Berbasis AI — gunakan AI untuk memahami apa yang ingin Anda cari dan langsung tampilkan hasil yang paling relevan',
-            'Akses Universal — fitur pencarian terpusat untuk seluruh platform PeoplesHR'
+            'Navigasi Cerdas — Temukan dan buka menu, modul, atau fungsi apa pun secara cepat tanpa harus mencari manual satu per satu di tampilan layar',
+            'Berbasis AI — Gunakan AI untuk memahami apa yang ingin Anda cari dan langsung tampilkan hasil yang paling relevan',
+            'Akses Universal — Fitur pencarian terpusat untuk seluruh platform PeoplesHR'
           ]
         }
       ]
@@ -786,7 +786,7 @@
         '</div></div>';
     return '<div class="pc-lexi-row">' +
       '<div class="pc-cta-inner pc-lexi-card' + (p.accent === 'blue' ? ' pc-lexi-card-blue' : '') + '">' +
-        '<div class="pc-lexi-brand"><div class="pc-lexi-brand-logo"><img src="' + LEXI_LOGO_SRC + '" alt="Lexi" height="20"><span class="pc-pill" style="--tint:#fff;--accent:#1d4ed8">Ai</span></div><div class="pc-eyebrow">' + p.badge + '</div></div>' +
+        '<div class="pc-lexi-brand"><div class="pc-lexi-brand-logo"><img src="' + LEXI_LOGO_SRC + '" alt="Lexi" height="20"><span class="pc-pill" style="--tint:#fff;--accent:#1d4ed8">AI</span></div><div class="pc-eyebrow">' + p.badge + '</div></div>' +
         priceHtml +
         '<p>' + (p.tagline ? p.tagline + (p.footnote ? ' ' + p.footnote : '') : (p.footnote || '')) + '</p>' +
       '</div>' +
