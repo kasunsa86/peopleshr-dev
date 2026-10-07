@@ -145,7 +145,17 @@
   .pay-lp .mac-store-badge img{height:36px;} /* keeps both badges on one row */
 }
 
-/* G2 badges: smaller than the shared .g2-badge-img sizing */
-.pay-lp .g2-badge-img{width:100px;}
+/* G2 badges: tighter section, a rating line with a reviews link under the
+   heading, more air between heading and badges, and smaller badges than the
+   shared .g2-badge-img sizing that lift on hover. */
+.pay-lp .g2-badges-section{padding:64px 48px 72px;}
+.pay-lp .g2-badges-section h2{margin-bottom:10px;}
+.pay-lp .g2-badges-section .pay-g2-sub{font-size:15.5px;color:var(--text-muted);margin:0 auto 36px;}
+.pay-lp .pay-g2-sub strong{color:var(--navy);}
+.pay-lp .pay-g2-sub a{color:var(--blue);font-weight:600;text-decoration:none;white-space:nowrap;}
+.pay-lp .pay-g2-sub a:hover{text-decoration:underline;}
+.pay-lp .g2-badges-row{gap:20px;}
+.pay-lp .g2-badge-img{width:100px;transition:transform .2s;}
+.pay-lp .g2-badge-img:hover{transform:translateY(-4px);}
 @media(max-width:900px){.pay-lp .g2-badge-img{width:86px;}}
-@media(max-width:560px){.pay-lp .g2-badge-img{width:64px;}}
+@media(max-width:560px){.pay-lp .pay-g2-sep{display:block;height:0;overflow:hidden;}.pay-lp .g2-badges-row{gap:12px;}.pay-lp .g2-badge-img{width:64px;}}

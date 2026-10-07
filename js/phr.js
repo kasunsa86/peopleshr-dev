@@ -1140,7 +1140,7 @@ function calculatePeoplesHRROI() {
   document.getElementById('phrCookieReject').addEventListener('click', function () { dismiss('rejected'); });
 }());
 
-/* Video testimonial cards (.cs-vid-card in a .pay-voices section) open the
+/* Video testimonial cards (.cs-vid-card in a .pay-voices or .ph-voices-section section) open the
    YouTube player in #pay-vid-modal -- same behaviour as the customers
    page's modal in js/casestudies.js. Used on philippines-payroll-lp.html
    and philippines-hris.html; does nothing on pages without #pay-vid-modal. */
@@ -1164,7 +1164,7 @@ function calculatePeoplesHRROI() {
     document.body.style.overflow = '';
   }
 
-  document.querySelectorAll('.pay-voices .cs-vid-card[data-youtube]').forEach(function (card) {
+  document.querySelectorAll('.pay-voices .cs-vid-card[data-youtube], .ph-voices-section .cs-vid-card[data-youtube]').forEach(function (card) {
     function play() { openModal(card.getAttribute('data-youtube'), card.getAttribute('data-title')); }
     card.addEventListener('click', play);
     card.addEventListener('keydown', function (e) {
@@ -1252,4 +1252,291 @@ function calculatePeoplesHRROI() {
   });
 
   setTimeout(reveal, 15000);
+}());
+
+/* Module tabs (.ph-mod-tab) on philippines.html and philippines-hris.html:
+   click a tab, show its panel, hide the rest. */
+(function () {
+  var modTabs = document.querySelectorAll('.ph-mod-tab');
+  modTabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      var target = tab.getAttribute('data-mod-tab');
+      modTabs.forEach(function (t) {
+        var isActive = t === tab;
+        t.classList.toggle('is-active', isActive);
+        t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+      document.querySelectorAll('.ph-mod-panel').forEach(function (panel) {
+        var isActive = panel.getAttribute('data-mod-panel') === target;
+        panel.classList.toggle('is-active', isActive);
+        panel.hidden = !isActive;
+      });
+    });
+  });
+}());
+
+(function () {
+  /* "In Their Own Words" written testimonial slider (philippines.html and
+     philippines-hris.html) — cards render from PH_VOICES (single
+     source of truth) into the empty <ul id="phVoicesTrack">. Logo files
+     only exist for SMSGT and LaVie so far (companyLogo:null falls back
+     to a text badge, per buildVoiceCard above) — the rest render fine
+     without one, just add a logo path here once an asset is provided. */
+  var voicesTrack = document.getElementById('phVoicesTrack');
+  if(voicesTrack){
+    var PH_VOICES = [
+      {
+        id:'lavie',
+        quote:'What stands out the most is the team’s passion, commitment and willingness to listen to client feedback. As they continue innovating, learning and improving, the dedication behind the system is clearly visible and believe it will continue to grow stronger over time.',
+        personName:'Russel De Guzman',
+        jobTitle:'Senior Manager, HR',
+        companyName:'LaVie Resort & Casino',
+        industry:'Hospitality',
+        companyLogo:'https://peopleshr.com/uploads/2026/09/lavie_logo.webp',
+        companyLogoAlt:'LaVie Resort & Casino logo'
+      },
+      {
+        id:'smsgt-annamae',
+        quote:'PeoplesHR has truly transformed the way we manage our HR operations. By automating routine processes and centralizing employee data, we’ve been able to eliminate inefficiencies and focus more on strategic HR initiatives. Our partnership with PeoplesHR has been instrumental in modernizing our systems and fostering a more agile, responsive workplace.',
+        personName:'Anna Mae Rotoni',
+        jobTitle:'HR Supervisor',
+        companyName:'SMS Global Technologies, Inc.',
+        industry:'Technology',
+        companyLogo:'https://peopleshr.com/uploads/2026/09/smsgt-logo.svg',
+        companyLogoAlt:'SMS Global Technologies, Inc. logo'
+      },
+      {
+        id:'sandstone',
+        quote:'PayrollPlus by PeoplesHR has been instrumental in overcoming our payroll challenges by providing us with complete control over the process and ensuring timely completion. Its flexibility allows for last-minute changes, while the mobile app and self-service options enhance our employees’ experience by giving them easy access to view their leave balances.',
+        personName:'Gizelle Mangahas',
+        jobTitle:'Talent Acquisition Specialist',
+        companyName:'Sandstone Technology Phils., Inc.',
+        industry:'Technology',
+        companyLogo:'https://peopleshr.com/uploads/2026/09/Sandstone-logo.svg',
+        companyLogoAlt:'Sandstone Technology Phils., Inc. logo'
+      },
+      {
+        id:'uy-dental',
+        quote:'PayrollPlus by PeoplesHR has made a significant impact on our operations. Prior to using the system, managing payroll manually was time-consuming and prone to errors, especially as our team continued to grow. From the initial consultation to go-live, the PeoplesHR team provided exceptional support. The system has helped us streamline salary computation and payslip distribution.',
+        personName:'Cherry',
+        jobTitle:'HR Admin',
+        companyName:'Uy Dental Clinic Group',
+        industry:'Healthcare',
+        companyLogo:'https://peopleshr.com/uploads/2026/04/UY-Dental.webp',
+        companyLogoAlt:'Uy Dental Clinic Group logo'
+      },
+      {
+        id:'smsgt-peaches',
+        quote:'Our experience with PeoplesHR has been positive. The system efficiently generates attendance reports, including overtime and employee timesheets, while also simplifying the management of employee information and leave requests. The platform is user-friendly, easy to navigate, and highly customizable to our organizational needs.',
+        personName:'Peaches G. Lazatin',
+        jobTitle:'HR Practitioner',
+        companyName:'SMS Global Technologies, Inc.',
+        industry:'Technology',
+        companyLogo:'https://peopleshr.com/uploads/2026/09/smsgt-logo.svg',
+        companyLogoAlt:'SMS Global Technologies, Inc. logo'
+      },
+      {
+        id:'area29',
+        quote:'Thank you PayrollPlus by PeoplesHR, we’ve been looking for a better payroll system since our previous payroll system could not deliver an accurate and consistent output. With the help of PayrollPlus by PeoplesHR we can now enjoy the privilege of having our payroll processed within an hour.',
+        personName:'Sygrid Joy Oliveros',
+        jobTitle:'Vice President & CFO',
+        companyName:'Area29 Construction Corporation',
+        industry:'Construction',
+        companyLogo:'https://peopleshr.com/uploads/2026/09/area29.svg',
+        companyLogoAlt:'Area29 Construction Corporation logo'
+      },
+      {
+        id:'universal-canning',
+        quote:'I cannot speak highly enough of the PayrollPlus by PeoplesHR support team. Their dedication to providing timely and effective assistance is truly commendable. Whenever I’ve reached out with questions or concerns, they’ve been incredibly responsive, knowledgeable, and proactive in resolving any issues.',
+        personName:'Jhun Godoy',
+        jobTitle:'ICT Manager',
+        companyName:'Universal Canning Inc.',
+        industry:'Manufacturing',
+        companyLogo:'https://peopleshr.com/uploads/2026/09/universal_canning.svg',
+        companyLogoAlt:'Universal Canning Inc. logo'
+      },
+      {
+        id:'anako',
+        quote:'Using PayrollPlus has improved our payroll workflows—it’s easy to use, produces accurate results, and has been very stable. Their customer service is responsive and consistently helpful.',
+        personName:'Jennilyn Reza',
+        jobTitle:'HR Supervisor',
+        companyName:'Anako Philippines Corporation',
+        industry:'Manufacturing',
+        companyLogo:'https://peopleshr.com/uploads/2026/09/anako.svg',
+        companyLogoAlt:'Anako Philippines Corporation logo'
+      },
+      {
+        id:'punta-baler',
+        quote:'Payroll Plus has transformed our payroll process with its high-tech, real-time biometric tracking, eliminating the need for manual computations. The software is user-friendly, and their support team is always accessible, making it a truly efficient and reliable system.',
+        personName:'Goldie Frenz Nazareno',
+        jobTitle:'HR-Accounting Department',
+        companyName:'Punta Baler Food Ventures Inc.',
+        industry:'Food & Beverage',
+        companyLogo:'https://peopleshr.com/uploads/2026/09/punta_baler_logo.svg',
+        companyLogoAlt:'Punta Baler Hotel logo'
+      }
+    ];
+
+    var voicesPrev = document.getElementById('phVoicesPrev');
+    var voicesNext = document.getElementById('phVoicesNext');
+    var voicesDots = document.getElementById('phVoicesDots');
+    var voicesStatus = document.getElementById('phVoicesStatus');
+    var voicesReduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var VOICES_GAP = 22;
+
+    var QUOTE_MARK_SVG = '<svg class="ph-voices-card-quote-mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.5 6C4.5 8 3 11 3 14c0 2.8 1.9 4.5 4 4.5 2 0 3.5-1.5 3.5-3.5 0-1.8-1.2-3.2-3-3.5.4-1.8 1.7-3.5 3.5-4.8L7.5 6Zm9 0c-3 2-4.5 5-4.5 8 0 2.8 1.9 4.5 4 4.5 2 0 3.5-1.5 3.5-3.5 0-1.8-1.2-3.2-3-3.5.4-1.8 1.7-3.5 3.5-4.8L16.5 6Z"/></svg>';
+
+    var buildVoiceCard = function(voice){
+      var logoHtml = voice.companyLogo
+        ? '<img class="ph-voices-card-logo" src="' + voice.companyLogo + '" alt="' + voice.companyLogoAlt + '" loading="lazy">'
+        : '<span class="ph-voices-card-logo-fallback">' + (voice.companyName || voice.industry || 'PeoplesHR Customer') + '</span>';
+      var industryPill = (voice.companyLogo && voice.industry) ? '<p class="ph-voices-card-industry">' + voice.industry + '</p>' : '';
+      var primaryName = voice.personName || voice.jobTitle;
+      var secondaryLine = voice.personName
+        ? [voice.jobTitle, voice.companyName].filter(function(v){ return v; }).join(', ')
+        : [voice.industry, 'Philippines'].filter(function(v){ return v; }).join(', ');
+      return '<li class="ph-voices-card">' +
+        '<div class="ph-voices-card-logo-wrap">' + logoHtml + '</div>' +
+        industryPill +
+        QUOTE_MARK_SVG +
+        '<blockquote class="ph-voices-card-quote"><p>' + voice.quote + '</p></blockquote>' +
+        '<cite class="ph-voices-card-cite">' +
+          '<span class="ph-voices-card-name">' + primaryName + '</span>' +
+          '<span class="ph-voices-card-role">' + secondaryLine + '</span>' +
+        '</cite>' +
+      '</li>';
+    };
+
+    voicesTrack.innerHTML = PH_VOICES.map(buildVoiceCard).join('');
+
+    var getVisibleCount = function(){
+      var w = window.innerWidth;
+      if(w <= 640) return 1;
+      if(w <= 1024) return 2;
+      return 3;
+    };
+    var getPageCount = function(){
+      return Math.max(1, Math.ceil(PH_VOICES.length / getVisibleCount()));
+    };
+    /* currentPage is explicit state, not derived from scrollLeft on every
+       render: a smooth-scroll animation takes a few hundred ms to settle,
+       so deriving "current page" purely from scroll position made the
+       dots/arrows/status lag visibly behind a click. Nav actions set it
+       immediately; the scroll-settle listener below only exists to
+       resync it after an organic swipe/trackpad scroll. */
+    var currentPage = 0;
+    var getCurrentPageFromScroll = function(){
+      var cards = voicesTrack.querySelectorAll('.ph-voices-card');
+      if(!cards.length) return 0;
+      var cardWidth = cards[0].getBoundingClientRect().width + VOICES_GAP;
+      var visibleCount = getVisibleCount();
+      var index = Math.round(voicesTrack.scrollLeft / cardWidth);
+      return Math.min(getPageCount() - 1, Math.floor(index / visibleCount));
+    };
+    var renderDots = function(){
+      if(!voicesDots) return;
+      var pageCount = getPageCount();
+      var html = '';
+      for(var i = 0; i < pageCount; i++){
+        html += '<button type="button" class="ph-voices-dot' + (i === currentPage ? ' is-active' : '') + '" data-page="' + i + '" aria-label="Go to testimonials page ' + (i + 1) + ' of ' + pageCount + '"' + (i === currentPage ? ' aria-current="true"' : '') + '></button>';
+      }
+      voicesDots.innerHTML = html;
+      voicesDots.style.display = pageCount <= 1 ? 'none' : '';
+    };
+    var updateArrows = function(){
+      if(!voicesPrev || !voicesNext) return;
+      var pageCount = getPageCount();
+      voicesPrev.disabled = currentPage <= 0;
+      voicesNext.disabled = currentPage >= pageCount - 1;
+    };
+    var updateStatus = function(){
+      if(!voicesStatus) return;
+      var visibleCount = getVisibleCount();
+      var start = currentPage * visibleCount + 1;
+      var end = Math.min(PH_VOICES.length, start + visibleCount - 1);
+      voicesStatus.textContent = 'Showing testimonials ' + start + ' to ' + end + ' of ' + PH_VOICES.length;
+    };
+    var refresh = function(){
+      renderDots();
+      updateArrows();
+      updateStatus();
+    };
+    var scrollToPage = function(page){
+      var cards = voicesTrack.querySelectorAll('.ph-voices-card');
+      var visibleCount = getVisibleCount();
+      var index = page * visibleCount;
+      var target = cards[index];
+      if(!target) return;
+      voicesTrack.scrollTo({left: target.offsetLeft - voicesTrack.offsetLeft, behavior: voicesReduceMotion ? 'auto' : 'smooth'});
+    };
+    var goToPage = function(page){
+      var pageCount = getPageCount();
+      if(page < 0 || page >= pageCount || page === currentPage) return;
+      currentPage = page;
+      refresh();
+      scrollToPage(currentPage);
+    };
+    var goToAdjacentPage = function(dir){ goToPage(currentPage + dir); };
+
+    if(voicesPrev) voicesPrev.addEventListener('click', function(){ goToAdjacentPage(-1); startVoicesAutoplay(); });
+    if(voicesNext) voicesNext.addEventListener('click', function(){ goToAdjacentPage(1); startVoicesAutoplay(); });
+    if(voicesDots){
+      voicesDots.addEventListener('click', function(e){
+        var dot = e.target.closest('.ph-voices-dot');
+        if(!dot) return;
+        goToPage(parseInt(dot.getAttribute('data-page'), 10));
+        startVoicesAutoplay();
+      });
+    }
+
+    /* Resyncs currentPage after a manual swipe/trackpad scroll (nav
+       clicks already update state immediately via goToPage above, so
+       this listener is purely a safety net for organic scrolling). */
+    var voicesScrollTimer;
+    voicesTrack.addEventListener('scroll', function(){
+      clearTimeout(voicesScrollTimer);
+      voicesScrollTimer = setTimeout(function(){
+        currentPage = getCurrentPageFromScroll();
+        refresh();
+      }, 120);
+    }, {passive:true});
+
+    var voicesResizeTimer;
+    window.addEventListener('resize', function(){
+      clearTimeout(voicesResizeTimer);
+      voicesResizeTimer = setTimeout(function(){
+        currentPage = Math.min(currentPage, getPageCount() - 1);
+        refresh();
+        startVoicesAutoplay();
+      }, 150);
+    });
+
+    /* Auto-advance every 3s, looping back to page 0 after the last page.
+       Paused on hover/focus so a reader isn't fighting the slider, and
+       skipped entirely under prefers-reduced-motion like the other
+       animations on this page. */
+    var voicesAutoplayTimer = null;
+    var stopVoicesAutoplay = function(){
+      if(voicesAutoplayTimer){ clearInterval(voicesAutoplayTimer); voicesAutoplayTimer = null; }
+    };
+    var startVoicesAutoplay = function(){
+      stopVoicesAutoplay();
+      if(voicesReduceMotion || getPageCount() <= 1) return;
+      voicesAutoplayTimer = setInterval(function(){
+        currentPage = (currentPage + 1) % getPageCount();
+        refresh();
+        scrollToPage(currentPage);
+      }, 3000);
+    };
+    var voicesMore = document.querySelector('.ph-voices-more');
+    if(voicesMore){
+      voicesMore.addEventListener('mouseenter', stopVoicesAutoplay);
+      voicesMore.addEventListener('mouseleave', startVoicesAutoplay);
+      voicesMore.addEventListener('focusin', stopVoicesAutoplay);
+      voicesMore.addEventListener('focusout', startVoicesAutoplay);
+    }
+
+    refresh();
+    startVoicesAutoplay();
+  }
 }());

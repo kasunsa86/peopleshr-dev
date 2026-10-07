@@ -1,5 +1,6 @@
 /* lexi-insights.js — tabs + video auto-advance for the Lexi AI Insights
-   section (css/lexi-insights.css). Shared by index.html and
+   section (css/lexi-insights.css). Shared by index.html,
+   philippines-hris.html and
    philippines.html; moved here from philippines.js. No-ops on pages
    without the section. */
 (function(){

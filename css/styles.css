@@ -9100,6 +9100,10 @@ button.btn-primary {
 .pay-cta-band .section-center{margin-bottom:24px;}
 .pay-cta-band__actions{text-align:center;}
 .pay-cta-band__btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;}
+/* Philippines HRIS: a taller final CTA band */
+.hris-lp .pay-cta-band{padding:112px 48px;}
+@media(max-width:900px){.hris-lp .pay-cta-band{padding:88px 32px;}}
+@media(max-width:560px){.hris-lp .pay-cta-band{padding:72px 20px;}}
 
 /* Match this page's content width to customers.html's 1200px centered
    column, same treatment as philippines-payroll-lp.html's .pay-lp rules —
@@ -9109,18 +9113,102 @@ button.btn-primary {
 .hris-lp .phr-container{max-width:1200px;}
 .hris-lp .mac-grid{max-width:1200px;}
 
+/* Hero "Trusted by 1,700+" logo scroller: the home page's .home-trust-strip,
+   same logos and pace as philippines-payroll-lp.html. min-width:0 lets the
+   flex column shrink so the scrolling track can't widen the hero. */
+.hris-lp .hero-left-col{min-width:0;}
+/* G2 rating above the logos, as on the payroll LP: kept to its own width in the flex column */
+.hris-lp .home-hero-g2{align-self:flex-start;margin-top:20px;}
+.hris-lp .home-trust-strip{margin-top:28px;}
+.hris-lp .home-trust-strip .logo-slider-track{animation-duration:43.2s;}
+/* Hero labels as a clean checklist instead of the shared bordered chips
+   (five stacked chips of uneven width read as ragged next to the big
+   heading): no box, a green tick in a soft green circle, larger text. */
+.hris-lp .hero-wrap .trust-badges{flex-direction:column;align-items:flex-start;gap:12px;margin-top:12px;}
+.hris-lp .hero-wrap .trust-badge-item{background:none;border:0;border-radius:0;padding:0;gap:12px;font-size:15px;font-weight:600;line-height:1.4;color:var(--text-dark);align-items:flex-start;}
+.hris-lp .hero-wrap .trust-badge-item svg{width:22px;height:22px;padding:5px;box-sizing:border-box;border-radius:50%;background:#dcfce7;color:#16a34a;margin-top:-1px;}
+@media(max-width:560px){.hris-lp .hero-wrap .trust-badge-item{font-size:14px;gap:10px;}}
+
+/* "HR in Your Pocket" section: same official store badges and phone-image
+   layout as philippines-payroll-lp.html (css/philippines-payroll-lp.css,
+   which this page doesn't load). */
+.hris-lp .mac-store-badges{display:flex;flex-wrap:wrap;gap:10px;}
+.hris-lp .mac-store-badge{display:block;line-height:0;border-radius:7px;transition:opacity .2s,transform .2s;}
+.hris-lp .mac-store-badge:hover{opacity:.88;transform:translateY(-1px);}
+.hris-lp .mac-store-badge img{height:40px;width:auto;}
+/* side by side: the copy column sets the row height and the phone fits
+   into it, lining up with the heading and the badges */
+@media(min-width:901px){
+  .hris-lp .mac-grid{align-items:stretch;}
+  .hris-lp .mac-img{height:0;min-height:100%;object-fit:contain;}
+}
+/* stacked: phone right after the intro paragraph, above the ticks and badges */
+@media(max-width:900px){
+  .hris-lp .mac-grid{display:flex;flex-direction:column;align-items:stretch;gap:0;}
+  .hris-lp .mac-copy{display:contents;}
+  .hris-lp .mac-copy>h2{order:1;}
+  .hris-lp .mac-copy>p{order:2;}
+  .hris-lp .mac-img{order:3;margin:0 auto 32px;}
+  .hris-lp .mac-checklist{order:4;}
+  .hris-lp .mac-store-badges{order:5;justify-content:center;}
+}
+@media(max-width:560px){
+  .hris-lp .mobileapp-cta-section{padding-left:32px;padding-right:32px;}
+  .hris-lp .mac-img{max-width:280px;}
+  .hris-lp .mac-store-badge img{height:36px;} /* keeps both badges on one row */
+}
+
+/* G2 badges: smaller than the shared .g2-badge-img sizing, as on the payroll LP */
+.hris-lp .g2-badge-img{width:100px;}
+@media(max-width:900px){.hris-lp .g2-badge-img{width:86px;}}
+@media(max-width:560px){.hris-lp .g2-badge-img{width:64px;}}
+
 /* .pay-accent forces font-weight:800 for its usual use inside a normal-
    weight paragraph (philippines-payroll-lp.html's hero-subtitle). Inside
    this page's <h1>, the heading is already bold, so the accent color
    should just inherit that weight instead of forcing its own. */
-.hris-lp .hero h1 .pay-accent{font-weight:inherit;}
+.hris-lp .hero h1 .pay-accent{font-weight:inherit;color:var(--blue);}
 
-/* Trust-strip logo carousel: slower scroll (was the shared 20s default,
-   which reads as too fast with 27 logos in the track). Scoped so the
-   shared .logo-slider-track animation keeps its normal speed everywhere
-   else it's used. */
-.hris-logo-strip .logo-slider-track{animation-duration:55s;}
-.hris-logo-strip{padding:48px 48px 0;background:#fff;}
+/* "From Spreadsheets..." section: the home page hero visual (.home-hero-*)
+   on the left, the "What you get" feature list on the right; stacks
+   (image first) on tablet/phone. The visual is sized to its column
+   instead of the viewport, with room around it for the floating cards. */
+.hris-sheets-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center;max-width:1200px;margin:0 auto;}
+.hris-sheets-visual{display:flex;justify-content:center;padding:40px 0 0 48px;}
+.hris-lp .hris-sheets-visual .home-hero-visual{width:min(100%,420px);}
+.hris-sheets-copy .pay-feat-row-eyebrow{margin:0;}
+.hris-sheets-copy .pay-feat-row-list{max-width:none;margin:24px 0 0;}
+@media(max-width:1024px){
+  .hris-sheets-split{grid-template-columns:1fr;gap:48px;}
+  .hris-sheets-visual{padding:32px 24px 0;}
+  .hris-lp .hris-sheets-visual .home-hero-visual{width:min(100%,360px);}
+  .hris-sheets-copy{max-width:640px;margin:0 auto;width:100%;}
+}
+@media(max-width:560px){
+  .hris-lp .hris-sheets-visual .home-hero-visual{width:min(100%,290px);}
+}
+/* She sits flush on the section's bottom edge, and that edge fades into
+   the white section below (same idea as .home-hero::after). The icon
+   chips (z 5) and the copy stay above the fade; on tablet/phone she moves
+   below the list so she's still the part that fades out. */
+.hris-sheets-section{position:relative;padding-bottom:0;overflow:hidden;}
+.hris-sheets-split{align-items:end;}
+.hris-sheets-copy{align-self:center;padding-bottom:100px;position:relative;z-index:6;}
+/* Desktop: top-align both columns so the floating Lexi "X" lines up with
+   "What you get with PeoplesHR", and size her so she still reaches the
+   section's bottom edge (and its fade). */
+@media(min-width:1025px){
+  .hris-sheets-split{align-items:start;}
+  .hris-sheets-visual{padding-top:12px;} /* the X sits a touch above the visual box */
+  .hris-lp .hris-sheets-visual .home-hero-visual{width:min(100%,480px);}
+  .hris-sheets-copy{align-self:start;}
+}
+.hris-sheets-section::after{content:'';position:absolute;left:0;right:0;bottom:0;height:240px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,.75) 55%,#fff 100%);pointer-events:none;z-index:4;}
+@media(max-width:1024px){
+  .hris-sheets-copy{order:-1;padding-bottom:0;}
+  .hris-sheets-section::after{height:180px;}
+}
+}
 
 /* "Does this sound like you?" pain-point list: single-line items (icon
    only, no description paragraph), so center the icon against the text
@@ -9728,3 +9816,299 @@ a.phr-inline-link:hover{text-decoration-color:var(--blue)}
 .pay-faq-more:focus-visible{outline:2px solid var(--blue);outline-offset:2px;}
 .pay-faq-more svg{width:16px;height:16px;transition:transform .25s;}
 .pay-faq-more[aria-expanded="true"] svg{transform:rotate(180deg);}
+
+/* Module tabs (.ph-mod-*): icon+label tab row, one panel visible at a time.
+   Used on philippines.html and philippines-hris.html; tab switching in js/phr.js. */
+.ph-mod-tabs{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  margin-top:44px;
+}
+.ph-mod-tab{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  background:var(--phr-white);
+  border:1.5px solid var(--phr-border);
+  border-radius:100px;
+  padding:10px 20px 10px 12px;
+  font-family:inherit;
+  font-size:14px;
+  font-weight:700;
+  color:var(--phr-text-mid);
+  cursor:pointer;
+  transition:border-color var(--phr-transition),color var(--phr-transition),background var(--phr-transition);
+}
+.ph-mod-tab img{width:24px;height:24px;object-fit:contain;flex-shrink:0;}
+.ph-mod-tab:hover{border-color:var(--phr-blue-200);color:var(--phr-blue-700);}
+.ph-mod-tab.is-active{background:var(--phr-blue-700);border-color:var(--phr-blue-700);color:var(--phr-white);}
+
+.ph-mod-panels{margin-top:40px;}
+.ph-mod-panel[hidden]{display:none;}
+.ph-mod-panel{
+  display:flex;
+  gap:48px;
+  align-items:flex-start;
+  background:var(--phr-white);
+  border:1px solid var(--phr-border);
+  border-radius:var(--phr-radius-lg);
+  padding:44px 48px;
+  max-width:1200px;
+  margin:0 auto;
+}
+.ph-mod-panel-content{flex:1;display:flex;gap:24px;align-items:flex-start;min-width:0;}
+.ph-mod-panel-media{flex:0 0 520px;max-width:520px;align-self:stretch;}
+.ph-mod-ui-placeholder{
+  width:100%;
+  height:100%;
+  min-height:440px;
+  border-radius:var(--phr-radius-md);
+  border:1.5px dashed var(--phr-blue-200);
+  background:var(--phr-blue-50);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  text-align:center;
+  padding:24px;
+}
+.ph-mod-ui-placeholder-icon{width:52px;height:52px;object-fit:contain;opacity:.6;}
+.ph-mod-ui-placeholder span{font-size:14px;font-weight:600;color:var(--phr-text-light);}
+/* Real product screenshots (HR/Pay/Time/Engagement/Talent/Insights) —
+   own frame instead of the dashed "needs asset" placeholder. contain
+   (not cover) so a real screenshot's text/UI never gets cropped;
+   background mat fills the rest of the panel's height. */
+.ph-mod-media-frame{
+  width:100%;
+  height:100%;
+  min-height:440px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.ph-mod-media-frame img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:14px;
+  box-shadow:0 20px 48px -14px rgba(20,29,48,.3);
+}
+@media(max-width:860px){.ph-mod-media-frame{height:auto;aspect-ratio:4/3;min-height:0;}}
+.ph-mod-panel-icon{
+  flex:0 0 auto;
+  width:56px;
+  height:56px;
+  border-radius:14px;
+  background:var(--phr-blue-50);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.ph-mod-panel-icon img{width:32px;height:32px;object-fit:contain;}
+.ph-mod-panel-body{min-width:0;}
+.ph-mod-panel-body h3{font-size:22px;font-weight:800;color:var(--phr-text-dark);line-height:1.3;margin:0 0 24px;}
+.ph-mod-panel-label{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--phr-text-light);margin:0 0 14px;}
+.ph-mod-outcome-group{margin-bottom:20px;}
+.ph-mod-outcome-group:last-child{margin-bottom:0;}
+.ph-mod-outcome-group-title{font-size:14.5px;font-weight:800;color:var(--phr-text-dark);margin:0 0 10px;}
+.ph-mod-outcomes{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;}
+.ph-mod-outcomes li{
+  position:relative;
+  padding-left:26px;
+  font-size:14.5px;
+  color:var(--phr-text-dark);
+  line-height:1.5;
+}
+.ph-mod-outcomes li::before{
+  content:'';
+  position:absolute;
+  left:0;top:5px;
+  width:16px;height:16px;
+  border-radius:50%;
+  background:var(--phr-blue-50);
+  box-shadow:inset 0 0 0 5px var(--phr-blue-500);
+}
+@media(max-width:860px){
+  .ph-mod-panel{flex-direction:column;align-items:stretch;}
+  .ph-mod-panel-media{flex:none;max-width:100%;order:-1;}
+  .ph-mod-ui-placeholder{height:auto;aspect-ratio:4/3;min-height:0;}
+}
+@media(max-width:640px){
+  .ph-mod-tab span{display:none;}
+  .ph-mod-tab{padding:10px;border-radius:50%;}
+  .ph-mod-panel{padding:28px 24px;}
+  .ph-mod-panel-content{flex-direction:column;}
+}
+
+/* "In Their Own Words" customer voices (.ph-voices-*): one featured
+   video+quote card, then a written-testimonial slider below it (3/2/1
+   cards visible at desktop/tablet/mobile -- see PH_VOICES in js/phr.js).
+   Used on philippines.html and philippines-hris.html. */
+.ph-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+.ph-voices-section{background:#F5F6F8;}
+.ph-voices-sub{max-width:640px;}
+
+/* -- Featured video + quote card -- */
+.ph-voices-featured{
+  display:grid;
+  grid-template-columns:38% 1fr;
+  background:var(--phr-white);
+  border:1px solid var(--phr-border);
+  border-radius:32px;
+  overflow:hidden;
+  box-shadow:var(--phr-shadow-card);
+  max-width:1120px;
+  margin:44px auto 0;
+}
+.ph-voices-featured-video{
+  display:flex;
+  align-items:stretch;
+  justify-content:center;
+}
+.ph-voices-vid{
+  width:100%;
+  height:100%;
+  box-shadow:0 20px 50px -20px rgba(13,27,62,.4);
+  border-radius:0;
+}
+.ph-voices-vid .cs-vid-play-btn{opacity:1;}
+.ph-voices-vid:hover .cs-vid-play-btn,
+.ph-voices-vid:focus-visible .cs-vid-play-btn{
+  background:var(--phr-blue-500);border-color:var(--phr-blue-500);
+  transform:translate(-50%,-50%) scale(1.08);
+}
+.ph-voices-vid:focus-visible{outline:2px solid var(--phr-blue-500);outline-offset:3px;}
+.ph-voices-watch-label{
+  position:absolute;left:0;right:0;bottom:18px;
+  text-align:center;
+  font-size:12.5px;font-weight:700;letter-spacing:.02em;
+  color:#fff;
+  pointer-events:none;
+}
+.ph-voices-featured-content{padding:48px 48px 48px 40px;display:flex;flex-direction:column;justify-content:center;min-width:0;}
+.ph-voices-featured-logo{
+  height:36px;width:auto;max-width:170px;
+  object-fit:contain;object-position:left center;
+  display:block;margin-bottom:22px;
+}
+.ph-voices-featured-eyebrow{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--phr-blue-700);margin:0 0 16px;}
+.ph-voices-featured-quote{margin:0;}
+.ph-voices-featured-quote>.ph-voices-quote-mark{display:block;color:var(--phr-blue-200);margin-bottom:12px;}
+.ph-voices-featured-quote>p{font-size:27px;font-weight:500;font-style:normal;color:var(--phr-text-dark);line-height:1.45;margin:0 0 28px;}
+.ph-voices-featured-cite{display:block;font-style:normal;}
+.ph-voices-featured-name{display:block;font-size:16.5px;font-weight:700;color:var(--phr-text-dark);}
+.ph-voices-featured-role{display:block;font-size:13.5px;color:var(--phr-text-light);margin-top:4px;}
+@media(max-width:900px){
+  .ph-voices-featured{grid-template-columns:1fr;border-radius:24px;}
+  .ph-voices-featured-video{padding:28px 28px 0;}
+  .ph-voices-vid{width:100%;height:auto;max-width:220px;aspect-ratio:9/16;border-radius:18px;}
+  .ph-voices-featured-content{padding:28px;}
+  .ph-voices-featured-quote>p{font-size:22px;}
+}
+
+/* -- Written testimonial slider -- */
+.ph-voices-more{margin-top:56px;}
+.ph-voices-more-head{
+  display:flex;align-items:center;justify-content:space-between;
+  max-width:1120px;margin:0 auto 22px;
+}
+.ph-voices-more-label{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--phr-text-light);margin:0;}
+.ph-voices-nav{display:flex;gap:8px;}
+.ph-voices-arrow{
+  width:40px;height:40px;border-radius:50%;flex-shrink:0;
+  background:var(--phr-white);border:1.5px solid var(--phr-border);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--phr-text-mid);cursor:pointer;
+  transition:border-color var(--phr-transition),color var(--phr-transition);
+}
+.ph-voices-arrow svg{width:18px;height:18px;}
+.ph-voices-arrow:hover:not(:disabled){border-color:var(--phr-blue-200);color:var(--phr-blue-700);}
+.ph-voices-arrow:focus-visible{outline:2px solid var(--phr-blue-500);outline-offset:2px;}
+.ph-voices-arrow:disabled{opacity:.35;cursor:default;}
+
+.ph-voices-track{
+  display:flex;
+  gap:22px;
+  list-style:none;
+  margin:0 auto;
+  padding:2px 2px 10px;
+  max-width:1120px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scrollbar-width:none;-ms-overflow-style:none;
+}
+.ph-voices-track::-webkit-scrollbar{display:none;}
+.ph-voices-card{
+  scroll-snap-align:start;
+  flex:0 0 calc((100% - 44px)/3);
+  min-height:320px;
+  background:var(--phr-white);
+  border:1px solid var(--phr-border);
+  border-radius:22px;
+  padding:30px;
+  display:flex;
+  flex-direction:column;
+  box-shadow:0 2px 10px rgba(13,27,62,.04);
+}
+.ph-voices-card-logo-wrap{height:48px;display:flex;align-items:center;margin-bottom:16px;}
+.ph-voices-card-logo{max-width:120px;max-height:48px;width:auto;height:auto;object-fit:contain;display:block;}
+.ph-voices-card-logo-fallback{
+  display:inline-flex;align-items:center;
+  padding:7px 14px;
+  border-radius:8px;
+  background:var(--phr-blue-50);
+  color:var(--phr-blue-700);
+  font-size:12px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;
+}
+.ph-voices-card-industry{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--phr-text-light);margin:0 0 14px;}
+.ph-voices-card-quote-mark{display:block;color:var(--phr-blue-200);width:22px;height:18px;margin-bottom:10px;}
+.ph-voices-card-quote{margin:0 0 22px;flex:1;}
+.ph-voices-card-quote p{font-size:18px;font-weight:400;font-style:normal;color:var(--phr-text-dark);line-height:1.6;margin:0;}
+.ph-voices-card-cite{display:block;font-style:normal;margin-top:auto;}
+.ph-voices-card-name{display:block;font-size:15px;font-weight:600;color:var(--phr-text-dark);}
+.ph-voices-card-role{display:block;font-size:13px;color:var(--phr-text-light);margin-top:3px;line-height:1.4;}
+
+.ph-voices-dots{display:flex;justify-content:center;gap:8px;margin-top:24px;}
+.ph-voices-dot{width:8px;height:8px;border-radius:50%;background:var(--phr-border);border:none;padding:0;cursor:pointer;transition:background .2s,transform .2s;}
+.ph-voices-dot.is-active{background:var(--phr-blue-700);transform:scale(1.3);}
+.ph-voices-dot:focus-visible{outline:2px solid var(--phr-blue-500);outline-offset:2px;}
+
+@media(max-width:1024px){
+  .ph-voices-card{flex-basis:calc((100% - 22px)/2);}
+}
+@media(max-width:640px){
+  .ph-voices-card{flex-basis:86%;min-height:0;}
+  .ph-voices-more-head{padding:0 4px;}
+}
+@media(prefers-reduced-motion:reduce){
+  .ph-voices-track{scroll-behavior:auto;}
+}
+/* Featured video card base styles for pages without the customers page's
+   .cs-vid-* (philippines.css keeps its own unscoped copy). */
+.hris-lp .ph-voices-section .cs-vid-card{border-radius:18px;overflow:hidden;position:relative;cursor:pointer;transition:transform .22s;background:#111;}
+.hris-lp .ph-voices-section .cs-vid-card:hover{transform:scale(1.025);}
+.hris-lp .ph-voices-section .cs-vid-bg{position:absolute;inset:0;background:var(--phr-navy);}
+.hris-lp .ph-voices-section .cs-vid-thumb-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .4s ease;-webkit-user-drag:none;}
+.hris-lp .ph-voices-section .cs-vid-card:hover .cs-vid-thumb-img{transform:scale(1.03);}
+.hris-lp .ph-voices-section .cs-vid-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.1) 0%,transparent 30%,transparent 45%,rgba(0,0,0,.65) 100%);}
+.hris-lp .ph-voices-section .cs-vid-play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.32);border-radius:50%;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);transition:background .2s,transform .2s;}
+.hris-lp .ph-voices-section .cs-vid-play-btn svg{width:20px;height:20px;color:#fff;margin-left:3px;}
+
+/* "Built On Philippine Statutory and Data Privacy Compliance" strip:
+   BIR/SSS/PhilHealth/Pag-IBIG/ISO badges (philippines.html, philippines-hris.html) */
+.ph-compliance-strip{padding:56px 0;}
+.ph-compliance-strip .phr-section__title{font-size:clamp(16px,1.4vw,19px);font-weight:700;}
+.ph-compliance-badges{justify-content:center;margin-top:28px;}
+.ph-compliance-badge{gap:8px;font-size:14.5px;}
+.ph-compliance-badge-icon{flex-shrink:0;width:16px;height:16px;object-fit:contain;display:block;}
+/* HRIS page: 30% more space between the compliance heading and its badges
+   (52px header margin + 28px = 80px -> 104px) */
+.hris-lp .ph-compliance-badges{margin-top:52px;}
+/* HRIS "Does this sound like you?": the photo is taller than the list, and
+   the shared .why-phr-body bottom-aligns both columns, leaving a gap above
+   the list -- start the list right under the divider instead. */
+.hris-lp .why-phr-list-col{align-self:flex-start;}
+
