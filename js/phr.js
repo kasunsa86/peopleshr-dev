@@ -1139,3 +1139,117 @@ function calculatePeoplesHRROI() {
   document.getElementById('phrCookieAccept').addEventListener('click', function () { dismiss('accepted'); });
   document.getElementById('phrCookieReject').addEventListener('click', function () { dismiss('rejected'); });
 }());
+
+/* Video testimonial cards (.cs-vid-card in a .pay-voices section) open the
+   YouTube player in #pay-vid-modal -- same behaviour as the customers
+   page's modal in js/casestudies.js. Used on philippines-payroll-lp.html
+   and philippines-hris.html; does nothing on pages without #pay-vid-modal. */
+(function () {
+  var modal = document.getElementById('pay-vid-modal');
+  var iframe = document.getElementById('pay-vid-iframe');
+  var closeBtn = document.getElementById('pay-vid-modal-close');
+  var titleEl = document.getElementById('pay-vid-modal-title');
+  if (!modal || !iframe || !closeBtn) return;
+
+  function openModal(ytId, title) {
+    iframe.src = 'https://www.youtube.com/embed/' + ytId + '?autoplay=1&rel=0&modestbranding=1';
+    if (titleEl) titleEl.textContent = title || '';
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+  function closeModal() {
+    modal.classList.remove('open');
+    iframe.src = '';
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.pay-voices .cs-vid-card[data-youtube]').forEach(function (card) {
+    function play() { openModal(card.getAttribute('data-youtube'), card.getAttribute('data-title')); }
+    card.addEventListener('click', play);
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); play(); }
+    });
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+  });
+}());
+
+/* Folding dropdown lists (.phr-faq.phr-faq--fold): show the first 4 items,
+   with a "View N more" button below that reveals the rest (and becomes
+   "Show less"). Opt-in per list via the class. Done in JS so every item
+   stays visible if scripts don't run. */
+(function () {
+  var SHOW = 4;
+  document.querySelectorAll('.phr-faq.phr-faq--fold').forEach(function (faq) {
+    var extra = Array.prototype.slice.call(faq.querySelectorAll('.phr-faq-item')).slice(SHOW);
+    if (!extra.length) return;
+
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'pay-faq-more';
+    btn.setAttribute('aria-expanded', 'false');
+    faq.insertAdjacentElement('afterend', btn);
+
+    function set(expanded) {
+      extra.forEach(function (item) {
+        item.hidden = !expanded;
+        // collapsing: close any open item that's being hidden
+        if (!expanded && item.classList.contains('phr-faq-item--open')) {
+          item.classList.remove('phr-faq-item--open');
+          item.querySelector('.phr-faq-item__body').style.maxHeight = '0';
+          item.querySelector('.phr-faq-item__trigger').setAttribute('aria-expanded', 'false');
+        }
+      });
+      btn.setAttribute('aria-expanded', String(expanded));
+      btn.innerHTML = (expanded ? 'Show less' : 'View ' + extra.length + ' more') +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>';
+    }
+    set(false);
+
+    btn.addEventListener('click', function () {
+      var expanded = btn.getAttribute('aria-expanded') !== 'true';
+      set(expanded);
+      if (expanded) extra[0].querySelector('.phr-faq-item__trigger').focus({ preventScroll: true });
+    });
+  });
+}());
+
+/* Hero demo form: keep the "Loading form…" spinner up until HubSpot's form
+   iframe has actually been drawn (it gets its real height a moment after
+   hs-form-event:on-ready), then swap it for the form. on-ready plus a short
+   delay and a 15s timeout are fallbacks so a blocked or failed embed never
+   leaves the spinner spinning forever. */
+(function () {
+  var body = document.querySelector('.hero-form-body');
+  var loader = body && body.querySelector('.pay-form-loading');
+  var frame = body && body.querySelector('.hs-form-frame');
+  if (!loader || !frame) return;
+
+  var formId = frame.getAttribute('data-form-id');
+  var done = false;
+  body.classList.add('is-loading');
+
+  function reveal() {
+    if (done) return;
+    done = true;
+    loader.parentNode.removeChild(loader);
+    body.classList.remove('is-loading');
+  }
+
+  if ('ResizeObserver' in window) {
+    new ResizeObserver(function () {
+      if (frame.offsetHeight > 200) reveal();
+    }).observe(frame);
+  }
+
+  window.addEventListener('hs-form-event:on-ready', function (e) {
+    if (!e.detail || !e.detail.formId || e.detail.formId === formId) setTimeout(reveal, 800);
+  });
+
+  setTimeout(reveal, 15000);
+}());

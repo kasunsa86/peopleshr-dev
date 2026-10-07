@@ -9012,6 +9012,83 @@ button.btn-primary {
   .pay-quote-grid{grid-template-columns:1fr;}
 }
 
+/* Hero demo form card on philippines-payroll-lp.html and
+   philippines-hris.html: one line under the title telling visitors what
+   the form is for, and a spinner shown above the (still empty) form frame
+   until HubSpot says the form has rendered -- it sits outside
+   .hs-form-frame because HubSpot clears that box ~2s before the form
+   actually appears. Holds roughly the form's height so the card doesn't
+   jump; js/phr.js removes it and fades the form in. */
+.pay-lp .hero-form-header p,
+.hris-lp .hero-form-header p{margin-top:6px;font-size:14px;line-height:1.5;color:rgba(255,255,255,0.8);}
+.hero-form-body .hs-form-frame{transition:opacity .3s ease;}
+.hero-form-body.is-loading .hs-form-frame{opacity:0;}
+.pay-form-loading{min-height:323px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:var(--text-muted);font-size:14px;}
+.pay-form-loading-spinner{width:26px;height:26px;border:2.5px solid var(--border);border-top-color:var(--blue);border-radius:50%;animation:pay-form-spin .8s linear infinite;}
+@keyframes pay-form-spin{to{transform:rotate(360deg);}}
+@media(max-width:520px){.pay-form-loading{min-height:411px;}} /* name fields stack, form gets taller */
+@media(prefers-reduced-motion:reduce){.pay-form-loading-spinner{animation:none;}}
+
+/* Testimonials with videos (.pay-voices): video cards beside the written
+   .pay-quote-* quotes. Used on philippines-payroll-lp.html and
+   philippines-hris.html. The .cs-vid-* cards are the customers page's
+   (css/casestudies.css, which these pages don't load), scoped to
+   .pay-voices; clicking one opens #pay-vid-modal (see js/phr.js). */
+.pay-voices{display:flex;align-items:center;gap:40px;max-width:1200px;margin:44px auto 0;}
+.pay-voices .pay-vid-row{display:flex;justify-content:center;flex-wrap:wrap;gap:24px;flex:0 0 auto;}
+.pay-voices .pay-quote-grid{grid-template-columns:1fr;gap:20px;max-width:none;margin:0;flex:1 1 0;min-width:0;}
+@media(max-width:1100px){
+  .pay-voices{flex-direction:column;align-items:stretch;}
+  .pay-voices .pay-quote-grid{max-width:760px;margin:0 auto;}
+}
+.pay-voices .cs-vid-item{flex:0 0 240px;display:flex;flex-direction:column;}
+.pay-voices .cs-vid-card{border-radius:18px;overflow:hidden;position:relative;cursor:pointer;aspect-ratio:9/16;transition:transform .22s;background:#111;}
+.pay-voices .cs-vid-card:hover{transform:scale(1.025);}
+.pay-voices .cs-vid-card:focus-visible{outline:2px solid var(--blue);outline-offset:3px;}
+.pay-voices .cs-vid-bg{position:absolute;inset:0;background:#1a2d52;}
+.pay-voices .cs-vid-thumb-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .4s ease;}
+.pay-voices .cs-vid-card:hover .cs-vid-thumb-img{transform:scale(1.03);}
+.pay-voices .cs-vid-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.1) 0%,transparent 30%,transparent 45%,rgba(0,0,0,.65) 100%);}
+.pay-voices .cs-vid-play-btn{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:52px;height:52px;border-radius:50%;
+  background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.32);
+  display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);
+  transition:background .2s,transform .2s;
+}
+.pay-voices .cs-vid-card:hover .cs-vid-play-btn,
+.pay-voices .cs-vid-card:focus-visible .cs-vid-play-btn{background:var(--blue);border-color:var(--blue);transform:translate(-50%,-50%) scale(1.08);}
+.pay-voices .cs-vid-play-btn svg{width:20px;height:20px;color:#fff;margin-left:3px;}
+.pay-voices .cs-vid-info{position:absolute;bottom:0;left:0;right:0;padding:20px 18px;}
+.pay-voices .cs-vid-title{font-size:15px;font-weight:700;color:#fff;line-height:1.4;letter-spacing:-.2px;text-align:left;}
+.pay-voices .cs-vid-meta{margin-top:14px;padding:0 2px;text-align:left;}
+.pay-voices .cs-vid-name{font-size:13.5px;font-weight:700;color:var(--navy);line-height:1.3;}
+.pay-voices .cs-vid-role{font-size:12px;color:var(--text-muted);line-height:1.35;margin-top:2px;}
+.pay-voices .cs-vid-logo-below{margin-top:8px;padding-top:8px;border-top:1px solid var(--border);}
+.pay-voices .cs-vid-logo-below img{height:40px;width:auto;max-width:100%;display:block;object-fit:contain;object-position:left center;}
+@media(max-width:560px){.pay-voices .cs-vid-item{flex-basis:200px;}}
+
+/* Phones: videos and written quotes each become a swipeable row (cards
+   side by side, the next one peeking in, snapping into place). The rows
+   bleed to the screen edge through the section's 20px side padding. */
+@media(max-width:760px){
+  .pay-voices .pay-vid-row,
+  .pay-voices .pay-quote-grid{
+    display:flex;flex-wrap:nowrap;gap:14px;justify-content:flex-start;
+    overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;
+    margin:0 -20px;padding:4px 20px 8px;scroll-padding:0 20px;
+    max-width:none;scrollbar-width:none;-webkit-overflow-scrolling:touch;
+    flex:none; /* not the desktop flex:1 1 0, which collapses it in the stacked column */
+  }
+  .pay-voices .pay-vid-row::-webkit-scrollbar,
+  .pay-voices .pay-quote-grid::-webkit-scrollbar{display:none;}
+  .pay-voices .pay-vid-row .cs-vid-item{flex:0 0 62%;scroll-snap-align:start;}
+  .pay-voices .pay-quote-card{flex:0 0 84%;scroll-snap-align:start;}
+  .pay-voices{gap:28px;}
+  .pay-voices .cs-vid-title{font-size:13.5px;}
+  .pay-voices .cs-vid-info{padding:16px 14px;}
+}
+
 /* philippines-hris.html — appended styles.
    .phr-section__desc: centered intro paragraph under .phr-section__title
    (reused instead of repeating the same inline style on each section).
@@ -9637,3 +9714,17 @@ a.phr-inline-link{color:var(--blue);text-decoration:underline;text-decoration-co
 a.phr-inline-link:hover{text-decoration-color:var(--blue)}
 .phr-info-card a.phr-inline-link{color:#fff;text-decoration-color:rgba(255,255,255,.6)}
 .phr-info-card a.phr-inline-link:hover{text-decoration-color:#fff}
+
+/* Folding dropdown lists (.phr-faq.phr-faq--fold): "View N more" / "Show
+   less" button added under the list by js/phr.js */
+.phr-faq-item[hidden]{display:none;}
+.pay-faq-more{
+  display:flex;align-items:center;gap:8px;margin:18px auto 0;
+  padding:10px 20px;border-radius:999px;border:1px solid var(--border);
+  background:#fff;color:var(--blue);font-family:inherit;font-size:14px;font-weight:700;
+  cursor:pointer;transition:border-color .2s,background .2s;
+}
+.pay-faq-more:hover{border-color:var(--blue);background:#eff4ff;}
+.pay-faq-more:focus-visible{outline:2px solid var(--blue);outline-offset:2px;}
+.pay-faq-more svg{width:16px;height:16px;transition:transform .25s;}
+.pay-faq-more[aria-expanded="true"] svg{transform:rotate(180deg);}
