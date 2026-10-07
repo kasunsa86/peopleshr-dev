@@ -811,4 +811,31 @@ async function init() {
   }
 }
 
+/* Hero "Stay in the Loop" form: keep the "Loading form…" spinner up until
+   HubSpot has actually drawn the form iframe (it gets its real height a
+   moment after hs-form-event:on-ready). on-ready plus a short delay and a
+   15s timeout are fallbacks so a blocked embed never spins forever. */
+(function () {
+  const col = document.getElementById('wbHeroForm');
+  const loader = col && col.querySelector('.wb-form-loading');
+  const frame = col && col.querySelector('.hs-form-frame');
+  if (!loader || !frame) return;
+
+  const formId = frame.getAttribute('data-form-id');
+  let done = false;
+  function reveal() {
+    if (done) return;
+    done = true;
+    loader.remove();
+  }
+
+  if ('ResizeObserver' in window) {
+    new ResizeObserver(() => { if (frame.offsetHeight > 200) reveal(); }).observe(frame);
+  }
+  window.addEventListener('hs-form-event:on-ready', e => {
+    if (!e.detail || !e.detail.formId || e.detail.formId === formId) setTimeout(reveal, 800);
+  });
+  setTimeout(reveal, 15000);
+}());
+
 init();
