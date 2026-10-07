@@ -223,12 +223,28 @@ RewriteRule ^robots\.txt$ /robots-dev.txt [L]
 # Placed first so they win before any clean-URL rewrite below.
 # ============================================================
 RewriteRule ^webinar-peopleshr-walkthrough-v10-3/?$ /webinars/ [R=301,L]
+# Jollibee pitch page: the WordPress /jollibee/ page framed this file in
+# from the old uploads folder; it is now a real page, jollibee.html.
+RewriteRule ^(wp-content/)?uploads/2026/02/joliibee\.html$ /jollibee/ [R=301,L]
+# PeoplesHR vs Mekari comparison page, same story: now peopleshr-vs-mekari.html.
+RewriteRule ^(wp-content/)?uploads/2026/02/peopleshr-vs-Mekari\.html$ /peopleshr-vs-mekari/ [R=301,L]
+# The Everywhere Workforce webinar (8 April 2026) landing page, framed into the WordPress
+# /webinar-the-everywhere-workforce/ page from this file. Retired: the recording is on /webinars/.
+RewriteRule ^webinar-the-everywhere-workforce/?$ /webinars/ [R=301,L]
+RewriteRule ^(wp-content/)?uploads/2026/03/webinar-landing-march-v6\.html$ /webinars/ [R=301,L]
 RewriteRule ^view-pricing-plans/?$ /view-plans/ [R=302,L]
 RewriteRule ^pricing/?$ /view-pricing-plans/ [R=301,L]
 RewriteRule ^success-stories(\.html)?/?$ /customers/ [R=301,L]
 RewriteRule ^case-study-flintec-transducers/?$ /customers/ [R=301,L]
 RewriteRule ^webinars-and-events/?$ /webinars [R=301,L]
-RewriteRule ^data-driven-hr-decisions-for-mid-sized-companies-2/?$ - [G,L]
+# (was a 410 from the Rank Math export; the post is migrated, so it redirects now)
+RewriteRule ^data-driven-hr-decisions-for-mid-sized-companies-2/?$ /blog/data-driven-hr-decisions-for-mid-sized-companies-2/ [R=301,L]
+# Removed in the blog migration: a word-for-word copy of the UAE guide that had the
+# data-driven HR title (the real data-driven article is ...-2, above).
+RewriteRule ^data-driven-hr-decisions-for-mid-sized-companies/?$ /blog/how-to-choose-right-hr-payroll-software-uae/ [R=301,L]
+# Removed in the blog migration: had the offboarding article's text under the L&D
+# title since it was published (2020), so it goes to the offboarding post.
+RewriteRule ^(2020/10/28/)?bursting-the-stereotypical-ld-bubbles/?$ /blog/the-last-impression-matters-too/ [R=301,L]
 # Was a 410 (Gone) with no replacement -- wasted whatever inbound links
 # and search rankings the old /resources/ hub still had. Redirected to
 # the blog instead: the broadest, most frequently-updated content hub on
@@ -240,7 +256,8 @@ RewriteRule ^data-driven-hr-decisions-for-mid-sized-companies-2/?$ - [G,L]
 RewriteRule ^resources/?$ /blog.html [R=301,L]
 RewriteRule ^products/people-management/?$ /products/people-engagement/ [R=301,L]
 RewriteRule ^products/compensation-and-benefits/?$ /products/payroll-system [R=301,L]
-RewriteRule ^peopleshr-vs-mekari/?$ - [G,L]
+# (^peopleshr-vs-mekari/ was a 410 here, from the Rank Math export; removed
+# 2026-10-07 now that the page is rebuilt as peopleshr-vs-mekari.html.)
 RewriteRule ^webinar-registration-2026/?$ - [G,L]
 RewriteRule ^peopleshr-tracking/?$ /solutions/peopleshr-tracking/ [R=301,L]
 RewriteRule ^outsourcing/?$ /solutions/outsourcing/ [R=301,L]
@@ -265,15 +282,15 @@ RewriteRule ^payroll-system/?$ /products/payroll-system/ [R=301,L]
 RewriteRule ^core-hr/?$ /products/core-hr/ [R=301,L]
 RewriteRule ^case-study-pyramid-wilmar-branding/?$ - [G,L]
 RewriteRule ^resources/e-book-tech-trends/?$ /hr-ebooks-and-guides/ [R=301,L]
-RewriteRule ^2022/05/17/employee-champions-why-you-need-one/?$ /employee-champions-why-you-need-one/ [R=301,L]
-RewriteRule ^2021/06/08/what-is-the-role-of-hr-in-customer-experience/?$ /what-is-the-role-of-hr-in-customer-experience/ [R=301,L]
-RewriteRule ^2021/03/27/need-real-proof-that-your-employees-are-happy/?$ /need-real-proof-that-your-employees-are-happy/ [R=301,L]
+RewriteRule ^2022/05/17/employee-champions-why-you-need-one/?$ /blog/employee-champions-why-you-need-one/ [R=301,L]
+RewriteRule ^2021/06/08/what-is-the-role-of-hr-in-customer-experience/?$ /blog/what-is-the-role-of-hr-in-customer-experience/ [R=301,L]
+RewriteRule ^2021/03/27/need-real-proof-that-your-employees-are-happy/?$ /blog/need-real-proof-that-your-employees-are-happy/ [R=301,L]
 RewriteRule ^hr-management-software/?$ /people-management/ [R=301,L]
-RewriteRule ^2020/12/07/is-your-technology-skills-ready-for-tomorrows-hr/?$ /is-your-technology-skills-ready-for-tomorrows-hr/ [R=301,L]
+RewriteRule ^2020/12/07/is-your-technology-skills-ready-for-tomorrows-hr/?$ /blog/is-your-technology-skills-ready-for-tomorrows-hr/ [R=301,L]
 RewriteRule ^managing-people-and-driving-performance/?$ - [G,L]
 RewriteRule ^other-products/?$ - [G,L]
 RewriteRule ^products-peopleshr/?$ - [G,L]
-RewriteRule ^2021/02/16/is-your-performance-management-keeping-up-with-the-pace/?$ /is-your-performance-management-keeping-up-with-the-pace/ [R=301,L]
+RewriteRule ^2021/02/16/is-your-performance-management-keeping-up-with-the-pace/?$ /blog/is-your-performance-management-keeping-up-with-the-pace/ [R=301,L]
 RewriteRule ^case-study-ploples-bank/?$ - [G,L]
 # /limitations-for-configuration/ serves the Limitations for Configuration
 # PDF itself (internal rewrite, so the URL stays as-is and the browser
@@ -299,8 +316,11 @@ RewriteRule ^report(\.html)?/?$ /uploads/legal/PRM-L3-PHR-Standard-Reports-May-2
         Header always unset Content-Security-Policy
     </IfModule>
 </Files>
-RewriteRule ^12-best-hris-software-in-indonesia-for-growing-businesses/?$ /best-software-hris-indonesia [R=301,L]
-RewriteRule ^hr-metrics-that-matter-in-2024/?$ /hr-metrics-that-matter-in-2025 [R=301,L]
+# "12 Best Software HRIS Indonesia For 2025" was deleted from WordPress (only an
+# archived copy exists); both of its URLs go to the blog.
+RewriteRule ^12-best-hris-software-in-indonesia-for-growing-businesses/?$ /blog/ [R=301,L]
+RewriteRule ^best-software-hris-indonesia/?$ /blog/ [R=301,L]
+RewriteRule ^hr-metrics-that-matter-in-2024/?$ /blog/hr-metrics-that-matter-in-2025/ [R=301,L]
 RewriteRule ^contacts/?$ /get-in-touch/ [R=301,L]
 RewriteRule ^payroll/?$ /payroll-system/ [R=301,L]
 RewriteRule ^manufacturing-industry/?$ /hr-software-for-manufacturing-industry [R=301,L]
@@ -313,8 +333,8 @@ RewriteRule ^privacy-and-policy/?$ /privacy-policy/ [R=301,L]
 RewriteRule ^landing-page-indonesia-fb/?$ /landing-page-indonesia-id/ [R=301,L]
 RewriteRule ^about-us/?$ /company/ [R=301,L]
 RewriteRule ^sm-philippines/?$ /philippines/ [R=301,L]
-RewriteRule ^webinar-registration-facebook/?$ /webinar-registration/ [R=301,L]
-RewriteRule ^2023/08/10/barbie-meets-hr/?$ /barbie-meets-hr/ [R=301,L]
+RewriteRule ^webinar-registration-facebook/?$ /webinars/ [R=301,L]
+RewriteRule ^2023/08/10/barbie-meets-hr/?$ /blog/barbie-meets-hr/ [R=301,L]
 RewriteRule ^region-middle-east/?$ /middle-east/ [R=301,L]
 
 # index.html itself always canonicalizes to its folder's root, never to

@@ -51,7 +51,7 @@ rsync -rlt ${delete[@]+"${delete[@]}"} \
   --exclude '/.htaccess' --exclude '.htaccess*' --exclude 'origin-lock.txt' \
   --exclude '.git' --exclude '.gitignore' --exclude '.cpanel.yml' --exclude 'deploy.sh' \
   --exclude '.claude' --exclude '.vscode' --exclude '.DS_Store' --exclude '*.zip' \
-  --exclude 'dev-server-router.php' \
+  --exclude 'dev-server-router.php' --exclude '/tools' \
   "$repo/" "$target/"
 
 echo "Deployed to: $target (.htaccess not touched)"

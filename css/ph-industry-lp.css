@@ -1,0 +1,68 @@
+/* ============================================================
+   Philippines industry landing pages (hospitality / manufacturing):
+   ai-powered-operational-hr-for-*-in-the-philippines.html. Loaded after
+   styles.css and philippines-payroll-lp.css (the pages reuse its .pay-lp
+   hero, split, quote, G2 and mobile-app pieces). Scoped to .ind-lp.
+   ============================================================ */
+
+/* Hero intro paragraph (hospitality) */
+.ind-lp .ind-lp-hero-intro{font-size:16px;line-height:1.75;color:var(--text-body);margin:0 0 32px;max-width:560px;}
+
+/* Small uppercase label above a heading */
+.ind-lp .ind-lp-eyebrow{font-size:12.5px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:#F78F21;margin:0 0 10px;}
+.ind-lp .phr-section__header .pay-lede,
+.ind-lp .section-center .pay-lede{margin-left:auto;margin-right:auto;}
+
+/* Image + checklist rows */
+.ind-lp .ind-lp-split-title{font-size:clamp(1.3rem,2.2vw,1.65rem);font-weight:800;color:var(--navy);letter-spacing:-.02em;line-height:1.3;margin:0 0 18px;}
+.ind-lp .ind-lp-split-title--lg{font-size:clamp(1.6rem,3vw,2.2rem);}
+.ind-lp .ind-lp-body{font-size:15.5px;line-height:1.75;color:var(--text-body);margin:0 0 28px;}
+.ind-lp .pay-split-body .mac-checklist{margin-bottom:0;}
+.ind-lp .pay-split-body .mac-checklist li{align-items:flex-start;}
+.ind-lp .pay-split-body .mac-check-ic{flex-shrink:0;margin-top:2px;}
+.ind-lp .ind-lp-split--rev{flex-direction:row-reverse;}
+.ind-lp .pay-split + .pay-split{margin-top:72px;}
+.ind-lp .ind-lp-btn{display:inline-flex;}
+@media(max-width:900px){
+  .ind-lp .ind-lp-split--rev{flex-direction:row;}
+  .ind-lp .pay-split + .pay-split{margin-top:56px;}
+}
+
+/* Casino scheduling accordion: one readable column */
+.ind-lp .ind-lp-faq-narrow{max-width:820px;margin:0 auto;}
+
+/* AI cards (benefit-cards--4 with line icons) */
+.ind-lp .ind-lp-ai-cards{margin-top:48px;padding-bottom:0;}
+.ind-lp .ind-lp-ai-icon{width:56px;height:56px;border-radius:16px;background:rgba(37,99,235,.08);display:flex;align-items:center;justify-content:center;}
+.ind-lp .ind-lp-ai-cards .integration-card-body p{font-size:14.5px;}
+.ind-lp .ind-lp-ai-section{padding-bottom:100px;}
+@media(max-width:560px){
+  .ind-lp .ind-lp-ai-cards{padding-left:20px;padding-right:20px;}
+}
+
+/* Module-tab panels (landing-page-indonesia-id.html): demo button under the feature list */
+.ind-lp .ind-lp-tab-cta{margin-top:24px;}
+
+/* Floating Viber chat button (Philippines pages). Bottom-left: HubSpot's chat
+   bubble and its greeting pop-up own the bottom-right corner. Sits under the
+   cookie banner (z-index 5000) until that is dismissed. */
+.ind-viber-float{position:fixed;left:24px;bottom:24px;z-index:999;width:58px;height:58px;border-radius:50%;background:#7360F2;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 28px rgba(115,96,242,.38);transition:transform .2s ease;}
+.ind-viber-float:hover{transform:scale(1.08);}
+.ind-viber-float:focus-visible{outline:3px solid #fff;box-shadow:0 0 0 6px #7360F2;}
+.ind-viber-float svg{width:27px;height:27px;}
+
+/* Shown by js/ph-industry-lp.js when the Viber app didn't open (no desktop app) */
+.ind-viber-help{position:fixed;left:24px;bottom:96px;z-index:1000;width:300px;max-width:calc(100vw - 32px);background:#fff;border:1px solid var(--border);border-radius:16px;box-shadow:0 18px 48px rgba(13,27,62,.18);padding:20px 22px;}
+.ind-viber-help[hidden]{display:none;}
+.ind-viber-help__close{position:absolute;top:8px;right:10px;border:0;background:none;font-size:22px;line-height:1;color:var(--text-muted);cursor:pointer;padding:4px;}
+.ind-viber-help__title{font-weight:800;color:var(--navy);margin:0 0 6px;font-size:15px;}
+.ind-viber-help__text{font-size:14px;line-height:1.6;color:var(--text-body);margin:0 0 12px;}
+.ind-viber-help__text a{color:#7360F2;font-weight:700;white-space:nowrap;}
+.ind-viber-help__dl{font-size:13.5px;font-weight:700;color:var(--blue);text-decoration:none;}
+.ind-viber-help__dl:hover{text-decoration:underline;}
+
+@media(max-width:560px){
+  .ind-viber-float{left:16px;bottom:16px;width:52px;height:52px;}
+  .ind-viber-float svg{width:24px;height:24px;}
+  .ind-viber-help{left:16px;bottom:80px;}
+}
