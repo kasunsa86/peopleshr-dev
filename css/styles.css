@@ -6376,7 +6376,7 @@ button.btn-primary {
 .wb-slider-track{display:flex;gap:20px;transition:transform .45s cubic-bezier(.4,0,.2,1);}
 .wb-upcoming-card{flex:0 0 calc(33.333% - 14px);background:#fff;border-radius:18px;border:1.5px solid var(--border);overflow:hidden;transition:all .25s;cursor:pointer;text-decoration:none;display:block;}
 .wb-upcoming-card:hover{border-color:var(--blue);box-shadow:0 8px 32px rgba(37,99,235,.12);transform:translateY(-3px);}
-.wb-uc-thumb{height:150px;position:relative;display:flex;align-items:flex-end;padding:16px;}
+.wb-uc-thumb{aspect-ratio:16/9;position:relative;display:flex;align-items:flex-end;padding:16px;}
 .wb-uc-thumb-grad-1{background:linear-gradient(135deg,#1e40af 0%,#3b82f6 100%);}
 .wb-uc-thumb-grad-2{background:linear-gradient(135deg,#4f46e5 0%,#7c3aed 100%);}
 .wb-uc-thumb-grad-3{background:linear-gradient(135deg,#0f766e 0%,#06b6d4 100%);}
@@ -6410,7 +6410,7 @@ button.btn-primary {
 /* Recording card */
 .wb-rec-card{background:#fff;border-radius:18px;border:1.5px solid #cbd5e1;overflow:hidden;transition:all .25s;cursor:pointer;}
 .wb-rec-card:hover{border-color:rgba(37,99,235,.3);box-shadow:0 8px 32px rgba(13,27,62,.1);transform:translateY(-3px);}
-.wb-rec-thumb{height:160px;position:relative;overflow:hidden;}
+.wb-rec-thumb{aspect-ratio:16/9;position:relative;overflow:hidden;}
 .wb-rec-thumb-inner{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
 .wb-rec-play{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.95);box-shadow:0 4px 20px rgba(0,0,0,.2);display:flex;align-items:center;justify-content:center;transition:transform .2s;}
 .wb-rec-card:hover .wb-rec-play{transform:scale(1.1);}
@@ -6512,7 +6512,6 @@ button.btn-primary {
   .wb-rec-header{flex-wrap:wrap;gap:8px;margin-bottom:20px;}
   .wb-rec-count{margin-left:0;width:100%;}
   .wb-rec-grid{grid-template-columns:1fr;gap:14px;}
-  .wb-rec-thumb{height:150px;}
   .wb-rec-body{padding:14px 16px 16px;}
   .wb-rec-title{font-size:13px;line-height:1.45;}
   .wb-rec-footer{padding:12px 16px;}
@@ -6545,13 +6544,6 @@ button.btn-primary {
   .wb-speakers{flex-direction:column;gap:8px;}
   .wb-upcoming-card{flex:0 0 86vw;}
   .wb-rec-grid{gap:10px;}
-  .wb-rec-thumb{height:130px;}
-}
-
-/* Upcoming-webinar card cover taller on mobile (card is ~82vw there, so
-   the flat 150px desktop height reads too short) */
-@media(max-width:768px){
-  .wb-uc-thumb{height:220px;}
 }
 
 /* VIDEO PREVIEW ON HOVER */
@@ -6608,6 +6600,10 @@ button.btn-primary {
 .wb-notify-inner{padding:48px;}
 .wb-notify-title{font-size:1.4rem;font-weight:800;color:#0d1b3e;margin:0 0 8px;}
 .wb-notify-sub{font-size:.95rem;color:#6b7280;margin:0 0 24px;line-height:1.6;}
+.wb-form-loading{min-height:420px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#6b7280;font-size:14px;}
+.wb-form-loading-spinner{width:26px;height:26px;border:2.5px solid var(--border);border-top-color:var(--blue);border-radius:50%;animation:wb-form-spin .8s linear infinite;}
+@keyframes wb-form-spin{to{transform:rotate(360deg);}}
+@media(prefers-reduced-motion:reduce){.wb-form-loading-spinner{animation:none;}}
 .wb-notify-loader{display:flex;align-items:center;gap:10px;color:#6b7280;font-size:.9rem;padding:12px 0 20px;}
 @media(max-width:600px){.wb-notify-inner{padding:32px 20px;}.wb-modal-box--form .wb-modal-close{top:10px;right:10px;}}
 .wb-watch-btn{background:none;border:none;padding:0;cursor:pointer;display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;color:var(--blue);font-family:inherit;}
@@ -9205,8 +9201,15 @@ button.btn-primary {
 }
 .hris-sheets-section::after{content:'';position:absolute;left:0;right:0;bottom:0;height:240px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,.75) 55%,#fff 100%);pointer-events:none;z-index:4;}
 @media(max-width:1024px){
-  .hris-sheets-copy{order:-1;padding-bottom:0;}
-  .hris-sheets-section::after{height:180px;}
+  /* image above "What you get with PeoplesHR"; her bottom edge fades out
+     itself since she no longer sits on the section's bottom edge */
+  .hris-sheets-section{padding-bottom:64px;}
+  .hris-sheets-section::after{display:none;}
+  .hris-sheets-split{gap:28px;}
+  .hris-sheets-copy{padding-bottom:0;}
+  /* masked on the photo, not the whole visual, so the floating cards and
+     chips that poke outside her frame aren't clipped */
+  .hris-sheets-visual .home-hero-img{-webkit-mask-image:linear-gradient(to bottom,#000 72%,transparent);mask-image:linear-gradient(to bottom,#000 72%,transparent);}
 }
 }
 
@@ -10112,3 +10115,52 @@ a.phr-inline-link:hover{text-decoration-color:var(--blue)}
    the list -- start the list right under the divider instead. */
 .hris-lp .why-phr-list-col{align-self:flex-start;}
 
+/* ── HRIS page: phone/tablet polish ── */
+/* "Sound familiar?" card: smaller photo above the list, so the list isn't
+   pushed a full screen down */
+@media(max-width:1024px){
+  .hris-lp .why-phr-img{max-width:260px;margin:0 auto;}
+}
+/* Module tabs: one swipeable row from tablet down, never a second line,
+   and keep the labels on phones (the shared rule hides them, leaving
+   seven unlabelled icons) */
+@media(max-width:1024px){
+  .hris-lp .ph-mod-tabs{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none;padding-bottom:6px;scroll-snap-type:x proximity;
+    -webkit-mask-image:linear-gradient(to right,#000 85%,transparent);mask-image:linear-gradient(to right,#000 85%,transparent);}
+  .hris-lp .ph-mod-tabs::-webkit-scrollbar{display:none;}
+  .hris-lp .ph-mod-tab{flex:0 0 auto;padding:8px 16px 8px 10px;border-radius:100px;scroll-snap-align:start;}
+  .hris-lp .ph-mod-tab span{display:inline;}
+}
+/* Module panel: let the screenshot set its own height instead of
+   floating in a 4:3 box */
+@media(max-width:860px){
+  .hris-lp .ph-mod-media-frame{aspect-ratio:auto;}
+}
+/* "HR in Your Pocket" checklist: left-aligned lines in a centred block,
+   instead of centred text with ragged ticks */
+@media(max-width:900px){
+  .hris-lp .mac-checklist{width:100%;max-width:400px;margin-left:auto;margin-right:auto;}
+  .hris-lp .mac-checklist li{justify-content:flex-start;text-align:left;}
+}
+/* Phones: tighter "Sound familiar?" photo, shorter testimonial cards and
+   a smaller app phone */
+@media(max-width:640px){
+  .hris-lp .why-phr-img{max-width:190px;}
+  /* featured story: landscape crop of the video instead of a tall 9:16 card */
+  .hris-lp .ph-voices-featured-video{padding:20px 20px 0;}
+  .hris-lp .ph-voices-vid{max-width:none;aspect-ratio:16/10;}
+  .hris-lp .ph-voices-vid .cs-vid-thumb-img{object-position:center 20%;}
+  .hris-lp .ph-voices-featured-content{padding:20px 22px 24px;}
+  .hris-lp .ph-voices-featured-logo{height:28px;margin-bottom:14px;}
+  .hris-lp .ph-voices-featured-eyebrow{margin-bottom:10px;}
+  .hris-lp .ph-voices-featured-quote>p{font-size:18px;margin-bottom:16px;}
+  /* written testimonials: smaller type, tighter padding, long quotes clipped */
+  .hris-lp .ph-voices-card{padding:22px;}
+  .hris-lp .ph-voices-card-logo-wrap{height:36px;margin-bottom:10px;}
+  .hris-lp .ph-voices-card-logo{max-height:36px;}
+  .hris-lp .ph-voices-card-quote p{font-size:15px;line-height:1.55;display:-webkit-box;-webkit-line-clamp:7;-webkit-box-orient:vertical;overflow:hidden;}
+  .hris-lp .ph-voices-card-quote{margin-bottom:16px;}
+}
+@media(max-width:900px){
+  .hris-lp .mac-img{max-width:210px;}
+}

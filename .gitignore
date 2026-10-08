@@ -16,3 +16,7 @@ error_log
 cgi-bin/
 .user.ini
 php.ini
+
+# Blog migration tool: cached WordPress data and local virtualenv.
+tools/blog-migration/.cache/
+.venv/

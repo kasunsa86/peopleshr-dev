@@ -1,0 +1,1026 @@
+<?php require_once __DIR__ . '/inc/geo.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI-Powered Operational HR for Manufacturing in the Philippines • PeoplesHR</title>
+  <meta name="description" content="AI-powered HR and payroll built for manufacturing in the Philippines: multi-shift attendance, attendance-based payroll, statutory compliance and shift scheduling for enterprises." />
+  <meta name="robots" content="noindex, nofollow, noarchive, noimageindex, nosnippet" />
+  <link rel="canonical" href="https://peopleshr.com/ai-powered-operational-hr-for-manufacturing-in-the-philippines/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PeoplesHR" />
+  <meta property="og:title" content="AI-Powered Operational HR for Manufacturing in the Philippines • PeoplesHR" />
+  <meta property="og:description" content="AI-powered HR and payroll built for manufacturing in the Philippines: multi-shift attendance, attendance-based payroll, statutory compliance and shift scheduling for enterprises." />
+  <meta property="og:url" content="https://peopleshr.com/ai-powered-operational-hr-for-manufacturing-in-the-philippines/" />
+  <meta property="og:image" content="https://peopleshr.com/uploads/2024/03/PeoplesHR-Logo-1200x630-1.webp" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI-Powered Operational HR for Manufacturing in the Philippines • PeoplesHR" />
+  <meta name="twitter:description" content="AI-powered HR and payroll built for manufacturing in the Philippines: multi-shift attendance, attendance-based payroll, statutory compliance and shift scheduling for enterprises." />
+  <meta name="twitter:image" content="https://peopleshr.com/uploads/2024/03/PeoplesHR-Logo-1200x630-1.webp" />
+
+  <?php include __DIR__ . '/inc/seo-schema.php'; ?>
+
+  <!-- The demo form sits in the hero, so warm the HubSpot form hosts and start
+       downloading the embed script from the head (as on philippines-payroll-lp.html). -->
+  <link rel="preconnect" href="https://js-na2.hsforms.net" />
+  <link rel="preconnect" href="https://forms-na2.hsforms.com" crossorigin />
+  <script src="https://js-na2.hsforms.net/forms/embed/45700506.js" defer></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="<?php echo asset_v('/css/styles.css'); ?>" />
+  <link rel="stylesheet" href="<?php echo asset_v('/css/navbar.css'); ?>" />
+  <link rel="stylesheet" href="<?php echo asset_v('/css/footer.css'); ?>" />
+  <link rel="stylesheet" href="<?php echo asset_v('/css/philippines-payroll-lp.css'); ?>" />
+  <link rel="stylesheet" href="<?php echo asset_v('/css/ph-industry-lp.css'); ?>" />
+  <!-- No HubSpot chat widget (or its "Hi there!" greeting) on this page: the
+       demo form and the Viber button are the contact routes. Must be set
+       before the HubSpot script below loads; tracking and forms still work. -->
+  <script>window.hsConversationsSettings = { loadImmediately: false };</script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/45700506.js"></script>
+  <!-- End of HubSpot Embed Code -->
+  <?php include __DIR__ . '/inc/ga4.php'; ?>
+  <?php include __DIR__ . '/inc/geo-head.php'; ?>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <link rel="describedby" href="/llms.txt" type="text/markdown">
+</head>
+
+<body class="pay-lp ind-lp">
+
+<div class="nv-root">
+
+  <!-- ============================= NAVBAR ============================= -->
+  <header class="nv-bar" id="nvBar">
+    <div class="nv-inner">
+
+      <a class="nv-logo" href="/" aria-label="PeoplesHR home">
+        <img src="/uploads/2021/07/logo.webp" alt="PeoplesHR">
+      </a>
+
+      <nav aria-label="Primary">
+        <ul class="nv-menu" id="nvMenu">
+
+          <!-- PRODUCTS (mega) -->
+          <li class="nv-item has-mega" data-nv="dropdown">
+            <a class="nv-link" href="/products/" aria-expanded="false" aria-haspopup="true">
+              Products
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-mega">
+                  <div class="nv-grid">
+                    <div class="nv-tile">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/HRIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>HR</b><span>The foundation that actually thinks</span></span>
+                      <a href="/products/core-hr/" class="lqd-overlay z-index-2" target="_self" aria-label="HR"></a>
+                    </div>
+                    <a class="nv-tile" href="/products/payroll-system/">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/PayIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>Pay</b><span>Globally compliant, less complicated</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/talent-acquisition/">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/TalentIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>Talent</b><span>Hiring smarter, not harder</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/time-and-attendance/">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/TimeIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>Time</b><span>Beyond clock watching</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/people-engagement/">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/EngagementIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>Engagement</b><span>Engagement beyond annual surveys</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/people-analytics/">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/InsightsIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>Insight</b><span>Intelligence that drives action</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/mobile-app/">
+                      <span class="nv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2.4"/><path d="M11 18h2"/></svg></span>
+                      <span class="nv-tt"><b>Mobile App</b><span>Work happens everywhere</span></span>
+                    </a>
+                  </div>
+                  <div class="nv-mega-foot">
+                    <p><b>Meet Lexi — PeoplesHR AI</b>Turn any HR action into a simple conversation.</p>
+                    <a class="nv-ghost" href="/ai-x/">
+                      Explore PeoplesHR AI
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- SOLUTIONS (mega columns) -->
+          <li class="nv-item has-mega" data-nv="dropdown">
+            <a class="nv-link" href="/solutions/" aria-expanded="false" aria-haspopup="true">
+              Solutions
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card">
+                  <div class="nv-cols">
+                    <div class="nv-col">
+                      <p class="nv-eyebrow">Industries</p>
+                      <ul class="nv-list">
+                        <li><a href="/solutions/banking-finance-insurance-industries/">Banking, Finance &amp; Insurance<small>Compliance, accuracy and control</small></a></li>
+                        <li><a href="/solutions/hr-software-for-hospitality-industry/">Hospitality<small>Control labour costs across every shift</small></a></li>
+                        <li><a href="/solutions/hr-software-for-manufacturing-industry/">Manufacturing<small>Keep your production lines moving</small></a></li>
+                        <li><a href="/solutions/hr-software-for-professional-and-business-services-industry/">Professional &amp; Business Services<small>Scales with projects, clients and people</small></a></li>
+                        <li><a href="/solutions/hr-software-for-retail-industry/">Retail<small>Keep stores staffed and on target</small></a></li>
+                        <li><a href="/solutions/hr-software-for-it-and-ites-industry/">IT &amp; ITES<small>Connected, compliant teams anywhere</small></a></li>
+                        <li><a href="/solutions/hr-software-for-transportation-and-logistics-industry/">Transportation &amp; Logistics<small>Moves as fast as your fleet</small></a></li>
+                      </ul>
+                    </div>
+                    <div class="nv-col">
+                      <p class="nv-eyebrow">By Role</p>
+                      <ul class="nv-list">
+                        <li><a href="/solutions/chro/">People Strategy Leaders<small>When the board asks about ROI</small></a></li>
+                        <li><a href="/solutions/cfo/">Financial Strategy Leaders<small>When the numbers finally add up</small></a></li>
+                        <li><a href="/solutions/cio/">Technology Strategy Leaders<small>Technology that works with you</small></a></li>
+                      </ul>
+                    </div>
+                    <div class="nv-col">
+                      <p class="nv-eyebrow">Specialized Solutions</p>
+                      <ul class="nv-list">
+                        <li><a href="/solutions/peopleshr-academy/">PeoplesHR Academy<small>Master PeoplesHR, transform operations</small></a></li>
+                        <li><a href="/solutions/outsourcing/">Payroll Outsourcing<small>Accuracy, compliance &amp; cost savings</small></a></li>
+                        <li><a href="/solutions/peopleshr-tracking/">Access & Attendance Devices<small>Secure your workforce &amp; assets</small></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- CUSTOMERS (direct) -->
+          <li class="nv-item">
+            <a class="nv-link" href="/customers/">Customers</a>
+          </li>
+
+          <!-- RESOURCES (simple) -->
+          <li class="nv-item has-simple" data-nv="dropdown">
+            <button class="nv-link" aria-expanded="false" aria-haspopup="true">
+              Resources
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-simple">
+                  <ul class="nv-list">
+                    <li><a href="/customers/">Case Studies<small>Transformative journeys</small></a></li>
+                    <li><a href="/webinars/">Webinars<small>Learn from the HR experts</small></a></li>
+                    <li><a href="/blog/">Blog<small>Insights, stories and updates</small></a></li>
+                    <li><a href="/events/">Events<small>Insights and networking</small></a></li>
+                    <li><a href="/hr-ebooks-and-guides/">HR eBooks &amp; Guides<small>Build your HR knowledge</small></a></li>
+                    <li><a href="/news/">News<small>Latest from PeoplesHR</small></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- COMPANY (simple) -->
+          <li class="nv-item has-simple" data-nv="dropdown">
+            <button class="nv-link" aria-expanded="false" aria-haspopup="true">
+              Company
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-simple">
+                  <ul class="nv-list">
+                    <li><a href="/company/">About PeoplesHR<small>Our journey as an HR powerhouse</small></a></li>
+                    <li><a href="/careers/">Careers<small>Thrive in your career at PeoplesHR</small></a></li>
+                    <li><a href="/community/">Community<small>Your hub for the HR landscape</small></a></li>
+                    <li><a href="/partner-with-peopleshr/">Partners<small>Unlock endless growth</small></a></li>
+                    <li><a href="/regions/">Regions<small>Growth across APAC and MEA</small></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- PRICING (dropdown) -->
+          <li class="nv-item has-simple" data-nv="dropdown">
+            <button class="nv-link" aria-expanded="false" aria-haspopup="true">
+              Pricing
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-simple nv-card--wide">
+                  <ul class="nv-list">
+                    <li><a href="/view-plans/">View Pricing Plans<small>Plans built around your team's size</small></a></li>
+                  </ul>
+                  <a class="nv-promo-tile" href="/roi-calculator/">
+                    <span class="nv-promo-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/></svg>
+                    </span>
+                    <span class="nv-promo-text">
+                      <b>PeoplesHR ROI Calculator</b>
+                      <span>Run the Numbers. Let the ROI Speak. Instant, clear results tailored for your business.</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- INTERACTIVE DEMOS (direct + badge) -->
+          <li class="nv-item">
+            <a class="nv-link" href="/interactive-demos/">
+              Interactive Demos
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <div class="nv-actions">
+        <a class="nv-cta" href="/get-in-touch/">Request a Demo</a>
+        <button class="nv-burger" id="nvBurger" aria-label="Open menu" aria-expanded="false"><span></span></button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ===================== ANNOUNCEMENT BAR ===================== -->
+  <div class="nv-ann" id="nvAnn" role="region" aria-label="Site announcement">
+    <div class="nv-ann-inner">
+      <span class="nv-ann-badge">New</span>
+      <p class="nv-ann-text">PeoplesHR now comes in three clear packages for you to know exactly what you're buying &#x1F4B8;
+        <a href="/view-plans/">View Packages
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </p>
+      <button class="nv-ann-close" id="nvAnnClose" aria-label="Dismiss announcement">&times;</button>
+    </div>
+  </div>
+
+  <!-- ===================== MOBILE PANEL ===================== -->
+  <div class="nv-scrim" id="nvScrim"></div>
+  <aside class="nv-panel" id="nvPanel" aria-label="Mobile menu" aria-hidden="true">
+    <div class="nv-panel-head">
+      <img src="/uploads/2021/07/logo.webp" alt="PeoplesHR">
+      <button class="nv-close" id="nvClose" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="nv-panel-body">
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Products
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/products/core-hr/">HR</a>
+          <a href="/products/payroll-system/">Pay</a>
+          <a href="/products/talent-acquisition/">Talent</a>
+          <a href="/products/time-and-attendance/">Time</a>
+          <a href="/products/people-engagement/">Engagement</a>
+          <a href="/products/people-analytics/">Insight</a>
+          <a href="/products/mobile-app/">Mobile App</a>
+          <a href="/ai-x/">Explore PeoplesHR AI</a>
+        </div></div>
+      </div>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Solutions
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <p class="nv-sub-label">Industries</p>
+          <a href="/solutions/banking-finance-insurance-industries/">Banking, Finance &amp; Insurance</a>
+          <a href="/solutions/hr-software-for-hospitality-industry/">Hospitality</a>
+          <a href="/solutions/hr-software-for-manufacturing-industry/">Manufacturing</a>
+          <a href="/solutions/hr-software-for-professional-and-business-services-industry/">Professional &amp; Business Services</a>
+          <a href="/solutions/hr-software-for-retail-industry/">Retail</a>
+          <a href="/solutions/hr-software-for-it-and-ites-industry/">IT &amp; ITES</a>
+          <a href="/solutions/hr-software-for-transportation-and-logistics-industry/">Transportation &amp; Logistics</a>
+          <p class="nv-sub-label">By Role</p>
+          <a href="/solutions/chro/">People Strategy Leaders</a>
+          <a href="/solutions/cfo/">Financial Strategy Leaders</a>
+          <a href="/solutions/cio/">Technology Strategy Leaders</a>
+          <p class="nv-sub-label">Specialized Solutions</p>
+          <a href="/solutions/peopleshr-academy/">PeoplesHR Academy</a>
+          <a href="/solutions/outsourcing/">Payroll Outsourcing</a>
+          <a href="/solutions/peopleshr-tracking/">Access & Attendance Devices</a>
+        </div></div>
+      </div>
+
+      <a class="nv-mlink" href="/customers/">Customers</a>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Resources
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/customers/">Case Studies</a>
+          <a href="/webinars/">Webinars</a>
+          <a href="/blog/">Blog</a>
+          <a href="/events/">Events</a>
+          <a href="/hr-ebooks-and-guides/">HR eBooks &amp; Guides</a>
+          <a href="/news/">News</a>
+        </div></div>
+      </div>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Company
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/company/">About PeoplesHR</a>
+          <a href="/careers/">Careers</a>
+          <a href="/community/">Community</a>
+          <a href="/partner-with-peopleshr/">Partners</a>
+          <a href="/regions/">Regions</a>
+        </div></div>
+      </div>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Pricing
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/view-plans/">View Pricing Plans</a>
+          <a href="/roi-calculator/">PeoplesHR ROI Calculator</a>
+        </div></div>
+      </div>
+
+      <a class="nv-mlink" href="/interactive-demos/">Interactive Demos</a>
+
+    </div>
+    <div class="nv-panel-foot">
+      <a class="nv-cta" href="/get-in-touch/">Request a Demo</a>
+    </div>
+  </aside>
+
+</div><!-- /.nv-root -->
+
+<!-- end of navbar -->
+<!-- Philippines manufacturing landing page.
+     Rebuilt in the site's own components from the old WordPress page
+     blog.peopleshr.com/ai-powered-operational-hr-for-manufacturing-in-the-philippines/ (an Elementor page). Not indexed, not in the
+     sitemap. Shared styles: css/philippines-payroll-lp.css (.pay-lp) +
+     css/ph-industry-lp.css (.ind-lp). -->
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 1: HERO (demo form on the right)
+     ═══════════════════════════════════════════════ -->
+<div class="hero-wrap">
+  <div class="hero">
+
+    <div class="hero-left-col">
+      <h1><span class="pay-accent">AI-Powered</span> HR &amp; Payroll Built for <span class="pay-accent">Manufacturing</span> in the Philippines</h1>
+      <p class="hero-subtitle"><span class="pay-accent">Designed for Enterprises</span></p>
+
+      <div class="trust-badges">
+        <span class="trust-badge-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Seamless self-service for attendance, leave, and payroll
+        </span>
+        <span class="trust-badge-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Attendance-based payroll for 100% calculation accuracy
+        </span>
+        <span class="trust-badge-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Statutory-compliant and multi-currency ready
+        </span>
+        <span class="trust-badge-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Centralized master file and shift scheduling for complex operations
+        </span>
+      </div>
+
+      <a class="home-hero-g2" href="https://www.g2.com/products/peopleshr/reviews" target="_blank" rel="noopener">
+        <img class="home-hero-g2-mark" src="https://peopleshr.com/uploads/2026/09/g2-logo.svg" alt="G2" aria-hidden="true">
+        <span class="home-hero-g2-stars" aria-hidden="true">
+          <span class="home-hero-g2-stars-bg">
+            <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.7 1-5.8L1.5 7.6l5.9-.8z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.7 1-5.8L1.5 7.6l5.9-.8z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.7 1-5.8L1.5 7.6l5.9-.8z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.7 1-5.8L1.5 7.6l5.9-.8z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.7 1-5.8L1.5 7.6l5.9-.8z"/></svg>
+          </span>
+          <span class="home-hero-g2-stars-fg" style="width:86%">
+            <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.7 1-5.8L1.5 7.6l5.9-.8z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.7 1-5.8L1.5 7.6l5.9-.8z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.7 1-5.8L1.5 7.6l5.9-.8z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.7 1-5.8L1.5 7.6l5.9-.8z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.7 1-5.8L1.5 7.6l5.9-.8z"/></svg>
+          </span>
+        </span>
+        <span class="home-hero-g2-text"><strong>4.3</strong>/5 <span class="home-hero-g2-count">(81 reviews)</span></span>
+      </a>
+      <div class="home-trust-strip">
+        <p class="home-trust-label">Trusted by 1,700+ organisations across 40+ countries</p>
+        <div class="client-logos">
+          <div class="logo-slider-track">
+            <span class="client-logo"><img src="https://peopleshr.com/uploads/2026/09/lavie_logo.webp" alt="Lavie" loading="lazy"></span>
+            <span class="client-logo"><img src="https://peopleshr.com/uploads/2026/09/sunlight-logo.svg" alt="Sunlight" loading="lazy"></span>
+            <span class="client-logo"><img src="https://peopleshr.com/uploads/2026/09/casto_logo.svg" alt="Casto Travels" loading="lazy"></span>
+            <span class="client-logo"><img src="https://peopleshr.com/uploads/2026/09/smsgt-logo.svg" alt="SMSGT" loading="lazy"></span>
+            <span class="client-logo"><img src="https://peopleshr.com/uploads/2026/09/murata_logo.svg" alt="Murata" loading="lazy"></span>
+            <span class="client-logo"><img src="https://peopleshr.com/uploads/2026/09/axelum_logo.svg" alt="Axelum" loading="lazy"></span>
+            <span class="client-logo"><img src="https://peopleshr.com/uploads/2026/09/lavie_logo.webp" alt="Lavie" loading="lazy"></span>
+            <span class="client-logo"><img src="https://peopleshr.com/uploads/2026/09/sunlight-logo.svg" alt="Sunlight" loading="lazy"></span>
+            <span class="client-logo"><img src="https://peopleshr.com/uploads/2026/09/casto_logo.svg" alt="Casto Travels" loading="lazy"></span>
+            <span class="client-logo"><img src="https://peopleshr.com/uploads/2026/09/smsgt-logo.svg" alt="SMSGT" loading="lazy"></span>
+            <span class="client-logo"><img src="https://peopleshr.com/uploads/2026/09/murata_logo.svg" alt="Murata" loading="lazy"></span>
+            <span class="client-logo"><img src="https://peopleshr.com/uploads/2026/09/axelum_logo.svg" alt="Axelum" loading="lazy"></span>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+
+    <div class="hero-img-placeholder">
+      <div class="hero-form-card" id="demo-form">
+        <div class="hero-form-header">
+          <h2>See PeoplesHR in action!</h2>
+          <p>Fill in your details to explore a demo built around your HR needs.</p>
+        </div>
+        <div class="hero-form-body">
+          <div class="pay-form-loading" role="status">
+            <span class="pay-form-loading-spinner" aria-hidden="true"></span>
+            Loading form…
+          </div>
+          <div class="hs-form-frame" data-region="na2" data-form-id="9aeb1002-d301-479a-b063-0a4767ed12d4" data-portal-id="45700506"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 2: RESULTS
+     ═══════════════════════════════════════════════ -->
+<section class="industries-section pay-stats-section">
+  <div class="section-center">
+    <h2>We Let You Focus on the Outcome While We Automate the Processes</h2>
+  </div>
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-num">93%</div>
+      <div class="stat-label">Reduction in payroll processing time</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">80%</div>
+      <div class="stat-label">Reduction in payroll costs with RPA</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">90%</div>
+      <div class="stat-label">Increase in leave application efficiency</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">95%</div>
+      <div class="stat-label">Improvement in attendance and payroll accuracy</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 3: WHY CHOOSE PEOPLESHR
+     ═══════════════════════════════════════════════ -->
+<section class="phr-feat-section">
+  <div class="phr-container">
+    <div class="phr-section__header phr-section__header--center">
+      <h2 class="phr-section__title">Why Choose PeoplesHR for Your Manufacturing Business?</h2>
+    </div>
+    <div class="pay-split">
+      <div class="pay-split-media">
+        <img src="/uploads/2025/02/manufacturing_why-phr_.webp" alt="Manufacturing HR manager with a laptop on the factory floor" loading="lazy">
+      </div>
+      <div class="pay-split-body">
+        <ul class="mac-checklist ind-lp-why-list">
+        <li>
+          <span class="mac-check-ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span><strong>Easy Multi-Shift Management:</strong> simplify scheduling and attendance across all shifts.</span>
+        </li>
+        <li>
+          <span class="mac-check-ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span><strong>Automated Payroll &amp; Compliance:</strong> handle multi-currency payroll with built-in statutory compliance.</span>
+        </li>
+        <li>
+          <span class="mac-check-ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span><strong>Accurate Overtime Management:</strong> automatically calculate overtime, ensuring fair pay and controlled costs.</span>
+        </li>
+        <li>
+          <span class="mac-check-ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span><strong>Ongoing Performance Feedback:</strong> foster growth with continuous, context-driven performance reviews.</span>
+        </li>
+        <li>
+          <span class="mac-check-ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span><strong>Clear Career Pathing:</strong> empower your employees with transparent career and succession planning.</span>
+        </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 4: G2 REVIEW BADGES
+     ═══════════════════════════════════════════════ -->
+<section class="g2-badges-section">
+  <h2>G2 recognized us. Just saying &#128521;</h2>
+  <p class="pay-g2-sub">Rated <strong>4.3/5</strong> by HR teams on G2<span class="pay-g2-sep"> &middot; </span><a href="https://www.g2.com/products/peopleshr/reviews" target="_blank" rel="noopener">Read the reviews &rarr;</a></p>
+
+  <div class="g2-badges-row">
+    <img src="/uploads/2025/04/Offboarding_Leader_Leader-261x300.png" alt="G2 Spring 2025 Grid Leader badge" class="g2-badge-img">
+    <img src="/uploads/2025/04/Onboarding_HighPerformer_HighPerformer-261x300.png" alt="G2 Spring 2025 High Performer badge" class="g2-badge-img">
+    <img src="/uploads/2025/04/BenefitsAdministration_HighPerformer_Mid-Market_HighPerformer-1-261x300.png" alt="G2 Spring 2025 High Performer Mid-Market badge" class="g2-badge-img">
+    <img src="/uploads/2025/04/CoreHR_HighPerformer_Enterprise_HighPerformer-1-261x300.png" alt="G2 Spring 2025 High Performer Enterprise badge" class="g2-badge-img">
+    <img src="/uploads/2025/04/BenefitsAdministration_HighPerformer_Asia_HighPerformer-1-261x300.png" alt="G2 Spring 2025 Asia High Performer badge" class="g2-badge-img">
+    <img src="/uploads/2025/04/BenefitsAdministration_HighPerformer_AsiaPacific_HighPerformer-1-261x300.png" alt="G2 Spring 2025 Asia Pacific High Performer badge" class="g2-badge-img">
+    <img src="/uploads/2025/04/CoreHR_HighPerformer_Enterprise_Asia_HighPerformer-261x300.png" alt="G2 Spring 2025 Asia High Performer Enterprise badge" class="g2-badge-img">
+    <img src="/uploads/2025/04/CoreHR_HighPerformer_Enterprise_AsiaPacific_HighPerformer-261x300.png" alt="G2 Spring 2025 Asia Pacific High Performer Enterprise badge" class="g2-badge-img">
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 5: TESTIMONIALS
+     ═══════════════════════════════════════════════ -->
+<section class="modules-section" id="testimonials">
+  <div class="section-center">
+    <h2>They tried it. They're not looking back.</h2>
+  </div>
+  <div class="pay-quote-grid">
+    <div class="pay-quote-card">
+      <svg class="pay-quote-mark" width="30" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.5 6C4.5 8 3 11 3 14c0 2.8 1.9 4.5 4 4.5 2 0 3.5-1.5 3.5-3.5 0-1.8-1.2-3.2-3-3.5.4-1.8 1.7-3.5 3.5-4.8L7.5 6Zm9 0c-3 2-4.5 5-4.5 8 0 2.8 1.9 4.5 4 4.5 2 0 3.5-1.5 3.5-3.5 0-1.8-1.2-3.2-3-3.5.4-1.8 1.7-3.5 3.5-4.8L16.5 6Z"/></svg>
+      <p class="pay-quote-text">I can proudly say that we were able to bring in a lot of cost efficiencies in the HR processes to the organization. Most importantly our HR officers have more time to spend with our employees to understand and engage in our business activities to keep their motivation levels higher.</p>
+      <div class="pay-quote-foot">
+        <img class="pay-quote-logo" src="/uploads/2024/04/logo_brandix.webp" alt="Brandix">
+      </div>
+    </div>
+    <div class="pay-quote-card">
+      <svg class="pay-quote-mark" width="30" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.5 6C4.5 8 3 11 3 14c0 2.8 1.9 4.5 4 4.5 2 0 3.5-1.5 3.5-3.5 0-1.8-1.2-3.2-3-3.5.4-1.8 1.7-3.5 3.5-4.8L7.5 6Zm9 0c-3 2-4.5 5-4.5 8 0 2.8 1.9 4.5 4 4.5 2 0 3.5-1.5 3.5-3.5 0-1.8-1.2-3.2-3-3.5.4-1.8 1.7-3.5 3.5-4.8L16.5 6Z"/></svg>
+      <p class="pay-quote-text">The best part of PeoplesHR, It helps our organization to have a Centralized Data Management and improved efficiency by automating many HR/Finance processes like payroll, benefits administration and employee records management.</p>
+      <div class="pay-quote-foot">
+        <img class="pay-quote-logo" src="/uploads/2025/04/smsgt-e1744876560685-1024x411.png" alt="SMS Global Technologies">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 6: AI
+     ═══════════════════════════════════════════════ -->
+<section class="modules-section ind-lp-ai-section">
+  <div class="section-center">
+    <p class="ind-lp-eyebrow">We're using some AI behind the scenes</p>
+    <h2>Where AI Meets the Real Demands of Manufacturing &#129302;</h2>
+    <p class="pay-lede">Managing a manufacturing workforce demands precision, speed, and control. PeoplesHR&rsquo;s AI-powered solution reduces manual workload by automating critical HR tasks, helping your teams stay compliant, productive, and focused on meeting operational goals.</p>
+  </div>
+  <div class="benefit-cards benefit-cards--4 ind-lp-ai-cards">
+    <div class="benefit-card">
+      <div class="integration-icon ind-lp-ai-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><polyline points="14 3 14 8 19 8"/><path d="M9 14l2 2 4-4"/></svg></div>
+      <div class="integration-card-body">
+        <p>Automatically renews contracts, updates roles, and handles global workflows across languages.</p>
+      </div>
+    </div>
+    <div class="benefit-card">
+      <div class="integration-icon ind-lp-ai-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.6L18 9.4l-4.2 1.8L12 16l-1.8-4.8L6 9.4l4.2-1.8z"/><path d="M19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg></div>
+      <div class="integration-card-body">
+        <p><strong>Coming soon:</strong> auto-generated job ads and SMART goals, training budget tracking, and candidates applying via chatbot.</p>
+      </div>
+    </div>
+    <div class="benefit-card">
+      <div class="integration-icon ind-lp-ai-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg></div>
+      <div class="integration-card-body">
+        <p>Applies OT in bulk, logs time in/out, detects swaps, and updates rosters in real time.</p>
+      </div>
+    </div>
+    <div class="benefit-card">
+      <div class="integration-icon ind-lp-ai-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/><path d="M9 15l2 2 4-4"/></svg></div>
+      <div class="integration-card-body">
+        <p>AI approves leave requests, manages mass leave during off-seasons, and keeps salary and benefits info up to date.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 7: HR IN YOUR POCKET
+     ═══════════════════════════════════════════════ -->
+<section class="mobileapp-cta-section">
+  <div class="mac-grid">
+
+    <div class="mac-copy">
+      <h2>HR in Your Pocket: Everything You Need, Anywhere You Are</h2>
+      <p>No more waiting for HR to get back to you. No more digging through emails to find your payslip. No more &ldquo;Oops, I forgot to clock in.&rdquo;</p>
+
+      <ul class="mac-checklist">
+        <li>
+          <span class="mac-check-ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          Geo-tagged clock in/out for accurate location tracking.
+        </li>
+        <li>
+          <span class="mac-check-ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          Apply for leave and check your leave balances instantly.
+        </li>
+        <li>
+          <span class="mac-check-ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          View attendance summaries from anywhere.
+        </li>
+        <li>
+          <span class="mac-check-ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          Get check-in reminders so you never miss a beat, and more.
+        </li>
+        <li>
+          <span class="mac-check-ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          Access and print payslips.
+        </li>
+      </ul>
+
+      <div class="mac-store-badges">
+        <a href="https://apps.apple.com/us/app/peopleshr-mobile/id1450474794" target="_blank" rel="noopener" class="mac-store-badge">
+          <img src="/uploads/2026/10/app-store-badge.webp" alt="Download on the App Store" width="511" height="144">
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.peopleshr.hsenid" target="_blank" rel="noopener" class="mac-store-badge">
+          <img src="/uploads/2026/10/google-play-badge.webp" alt="Get it on Google Play" width="516" height="144">
+        </a>
+      </div>
+    </div>
+
+    <img src="/uploads/2026/10/ph_lp_mobile_app.webp" alt="PeoplesHR mobile app home screen" class="mac-img">
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 8: STATS
+     ═══════════════════════════════════════════════ -->
+<section class="industries-section pay-stats-section">
+  <div class="section-center">
+    <h2>Numbers HR Teams Trust</h2>
+  </div>
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-num">1,700+</div>
+      <div class="stat-label">Companies</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">1M+</div>
+      <div class="stat-label">Users</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">40+</div>
+      <div class="stat-label">Countries</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">28+</div>
+      <div class="stat-label">Years</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 9: BRANDIX SUCCESS STORY
+     ═══════════════════════════════════════════════ -->
+<section class="phr-feat-section pay-feat-section--alt">
+  <div class="phr-container">
+    <div class="pay-split">
+      <div class="pay-split-media">
+        <img src="/uploads/2024/07/case_studies-template-cover-brandix.webp" alt="Brandix case study cover" loading="lazy">
+      </div>
+      <div class="pay-split-body">
+        <p class="ind-lp-eyebrow">Success Story</p>
+        <h2 class="ind-lp-split-title ind-lp-split-title--lg">Brandix's Digital HR Revolution</h2>
+        <p class="ind-lp-body">Discover how Brandix, a renowned apparel manufacturer, transformed its HR operations by embracing digital solutions. This strategic shift not only enhanced employee experience but also drove impressive business growth.</p>
+        <a href="/hris-success-stories-brandix-case-study/" class="btn-primary ind-lp-btn">Read Now <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 10: TRUSTED BY TOP MANUFACTURERS (CTA)
+     ═══════════════════════════════════════════════ -->
+<section class="phr-feat-section">
+  <div class="phr-container">
+    <div class="pay-split ind-lp-split--rev">
+      <div class="pay-split-media">
+        <img src="/uploads/2025/02/manufacturing.webp" alt="Factory supervisors reviewing PeoplesHR on a tablet" loading="lazy">
+      </div>
+      <div class="pay-split-body">
+        <h2 class="ind-lp-split-title ind-lp-split-title--lg">Trusted by Top Manufacturers in the Philippines</h2>
+        <p class="ind-lp-body">Join industry leaders who rely on PeoplesHR to streamline HR operations, maintain compliance, and drive business growth.</p>
+        <a href="#demo-form" class="btn-primary ind-lp-btn">Book a demo today <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 11: FAQ
+     ═══════════════════════════════════════════════ -->
+<section class="phr-feat-section">
+  <div class="phr-container">
+    <div class="phr-section__header phr-section__header--center">
+      <h2 class="phr-section__title">General Questions</h2>
+    </div>
+
+    <div class="phr-faq phr-faq--fold">
+      <div class="phr-faq-item">
+        <button class="phr-faq-item__trigger" aria-expanded="false">
+          What is the pricing structure?
+          <span class="phr-faq-item__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#1565C0" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+        </button>
+        <div class="phr-faq-item__body">
+          <div class="phr-faq-item__body-inner">
+            Our pricing is customized based on your business needs and the size of your organization. Contact us for a tailored quote.
+          </div>
+        </div>
+      </div>
+
+      <div class="phr-faq-item">
+        <button class="phr-faq-item__trigger" aria-expanded="false">
+          Is PeoplesHR Payroll compliant with local regulations?
+          <span class="phr-faq-item__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#1565C0" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+        </button>
+        <div class="phr-faq-item__body">
+          <div class="phr-faq-item__body-inner">
+            Yes, PeoplesHR ensures full compliance with local payroll regulations, including statutory reporting and taxation requirements.
+          </div>
+        </div>
+      </div>
+
+      <div class="phr-faq-item">
+        <button class="phr-faq-item__trigger" aria-expanded="false">
+          Can the system generate statutory and payroll-related reports?
+          <span class="phr-faq-item__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#1565C0" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+        </button>
+        <div class="phr-faq-item__body">
+          <div class="phr-faq-item__body-inner">
+            Absolutely! PeoplesHR generates all required statutory and payroll-related reports to meet your regulatory obligations.
+          </div>
+        </div>
+      </div>
+
+      <div class="phr-faq-item">
+        <button class="phr-faq-item__trigger" aria-expanded="false">
+          Can I transfer data from my current system to PeoplesHR?
+          <span class="phr-faq-item__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#1565C0" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+        </button>
+        <div class="phr-faq-item__body">
+          <div class="phr-faq-item__body-inner">
+            Yes, our platform supports seamless data migration from your existing systems, ensuring a smooth transition.
+          </div>
+        </div>
+      </div>
+
+      <div class="phr-faq-item">
+        <button class="phr-faq-item__trigger" aria-expanded="false">
+          Does PeoplesHR support 3rd party integrations?
+          <span class="phr-faq-item__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#1565C0" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+        </button>
+        <div class="phr-faq-item__body">
+          <div class="phr-faq-item__body-inner">
+            Yes, PeoplesHR integrates with various 3rd party applications, including ERP, accounting, and other HR solutions.
+          </div>
+        </div>
+      </div>
+
+      <div class="phr-faq-item">
+        <button class="phr-faq-item__trigger" aria-expanded="false">
+          Is the mobile app free to use?
+          <span class="phr-faq-item__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#1565C0" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+        </button>
+        <div class="phr-faq-item__body">
+          <div class="phr-faq-item__body-inner">
+            Yes, the PeoplesHR mobile app is free for all users, providing convenient access to key features on the go.
+          </div>
+        </div>
+      </div>
+
+      <div class="phr-faq-item">
+        <button class="phr-faq-item__trigger" aria-expanded="false">
+          Can the system track employee locations during check-ins?
+          <span class="phr-faq-item__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#1565C0" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+        </button>
+        <div class="phr-faq-item__body">
+          <div class="phr-faq-item__body-inner">
+            Yes, our platform allows you to track employee check-in locations, ensuring accurate attendance and time management.
+          </div>
+        </div>
+      </div>
+
+      <div class="phr-faq-item">
+        <button class="phr-faq-item__trigger" aria-expanded="false">
+          Does PeoplesHR offer training and support?
+          <span class="phr-faq-item__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#1565C0" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+        </button>
+        <div class="phr-faq-item__body">
+          <div class="phr-faq-item__body-inner">
+            Yes, we provide comprehensive training and ongoing support to ensure you get the most out of the platform.
+          </div>
+        </div>
+      </div>
+
+      <div class="phr-faq-item">
+        <button class="phr-faq-item__trigger" aria-expanded="false">
+          Is the platform configurable to my business needs?
+          <span class="phr-faq-item__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#1565C0" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+        </button>
+        <div class="phr-faq-item__body">
+          <div class="phr-faq-item__body-inner">
+            Absolutely! PeoplesHR is highly configurable, allowing you to tailor workflows, modules, and features to match your specific business requirements.
+          </div>
+        </div>
+      </div>
+
+      <div class="phr-faq-item">
+        <button class="phr-faq-item__trigger" aria-expanded="false">
+          How does PeoplesHR ensure data security?
+          <span class="phr-faq-item__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#1565C0" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+        </button>
+        <div class="phr-faq-item__body">
+          <div class="phr-faq-item__body-inner">
+            We use industry-leading security protocols and are ISO 27001 certified, ensuring your data is protected at all times.
+          </div>
+        </div>
+      </div>
+
+      <div class="phr-faq-item">
+        <button class="phr-faq-item__trigger" aria-expanded="false">
+          What cloud platform does PeoplesHR use?
+          <span class="phr-faq-item__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#1565C0" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+        </button>
+        <div class="phr-faq-item__body">
+          <div class="phr-faq-item__body-inner">
+            PeoplesHR is hosted on Microsoft Azure, a secure and scalable cloud platform, ensuring reliability and performance.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     FLOATING VIBER CHAT BUTTON (PH sales line; was on the WordPress pages).
+     Bottom-left so it never sits under HubSpot's chat bubble (bottom-right).
+     Viber has no web link like WhatsApp's wa.me, so on desktop
+     js/ph-industry-lp.js shows #indViberHelp if the app didn't open.
+     ═══════════════════════════════════════════════ -->
+<a href="viber://chat?number=%2B639455465252" class="ind-viber-float" id="indViberFloat" aria-label="Chat with us on Viber">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 3.5h2.6l1.4 3.6-1.9 1.3a10.5 10.5 0 0 0 5.9 5.9l1.3-1.9 3.6 1.4v2.6a2 2 0 0 1-2.2 2A15.6 15.6 0 0 1 3.5 5.7a2 2 0 0 1 2-2.2Z"/><path d="M14 3.5a6.5 6.5 0 0 1 6.5 6.5"/><path d="M14 6.6a3.4 3.4 0 0 1 3.4 3.4"/></svg>
+</a>
+<div class="ind-viber-help" id="indViberHelp" role="dialog" aria-labelledby="indViberHelpTitle" hidden>
+  <button type="button" class="ind-viber-help__close" id="indViberHelpClose" aria-label="Close">&times;</button>
+  <p class="ind-viber-help__title" id="indViberHelpTitle">Chat with us on Viber</p>
+  <p class="ind-viber-help__text">Viber didn&rsquo;t open? Message our Philippines team on <a href="viber://chat?number=%2B639455465252">+63 945 546 5252</a>.</p>
+  <a class="ind-viber-help__dl" href="https://www.viber.com/en/download/" target="_blank" rel="noopener">Get Viber for desktop &rarr;</a>
+</div>
+
+<!-- footer start -->
+
+<div class="ft-root">
+  <footer class="ft-wrap">
+
+    <div class="ft-top">
+
+      <!-- ===================== BRAND ===================== -->
+      <div class="ft-brand">
+        <div class="ft-brand-inner">
+          <div>
+            <a class="ft-logo" href="/" aria-label="PeoplesHR home">
+              <img src="/uploads/2021/07/logo.webp" alt="PeoplesHR">
+            </a>
+            <p class="ft-blurb">PeoplesHR is one of the most trusted names in the HR Tech industry in Asia Pacific and African regions, capturing all HR needs with HCM solutions along with an HR ecosystem.</p>
+
+            <?php include __DIR__ . '/inc/office-block.php'; ?>
+
+            <div class="ft-social">
+              <a href="https://www.linkedin.com/company/peopleshr/?originalSubdomain=sg" aria-label="LinkedIn" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C21.4 8.65 22 11 22 14.1V21h-4v-6.1c0-1.45-.03-3.32-2.02-3.32-2.02 0-2.33 1.58-2.33 3.21V21h-4V9Z"/></svg>
+              </a>
+              <a href="https://www.facebook.com/PeoplesHR/" aria-label="Facebook" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H17V3.6c-.29-.04-1.27-.12-2.41-.12-2.38 0-4.02 1.45-4.02 4.12v2.3H7.9V13h2.67v8h2.93Z"/></svg>
+              </a>
+              <a href="https://www.instagram.com/peopleshr/?hl=en" aria-label="Instagram" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>
+              </a>
+              <a href="https://www.youtube.com/@PeoplesHR" aria-label="YouTube" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3.3-.42-4.88a2.55 2.55 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.78.32a2.55 2.55 0 0 0-1.8 1.8C2 8.7 2 12 2 12s0 3.3.42 4.88a2.55 2.55 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.78-.32a2.55 2.55 0 0 0 1.8-1.8C22 15.3 22 12 22 12Zm-12 3.2V8.8l5.2 3.2-5.2 3.2Z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="ft-certs">
+            <div class="ft-cert"><img src="/uploads/2021/07/certificate004.png" alt="Certificate"></div>
+            <div class="ft-cert"><img src="/uploads/2021/07/certificate002.png" alt="Certificate"></div>
+            <div class="ft-cert"><img src="/uploads/2025/12/ISO_9001.webp" alt="ISO 9001"></div>
+            <div class="ft-cert"><img src="/uploads/2025/12/thumbnail_BVCER_withUKAS-ISO-27001.webp" alt="ISO 27001 UKAS"></div>
+            <div class="ft-cert"><img src="/uploads/2026/04/Star-Level-One.webp" alt="CSA STAR Level One"></div>
+            <div class="ft-cert"><img src="/uploads/2026/05/dpo.jpg" alt="HP"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===================== PRODUCTS ===================== -->
+      <div class="ft-col">
+        <h2 class="ft-h">Products</h2>
+        <ul class="ft-links">
+          <li><a href="/products/core-hr/">HR</a></li>
+          <li><a href="/products/payroll-system/">Pay</a></li>
+          <li><a href="/products/talent-acquisition/">Talent</a></li>
+          <li><a href="/products/time-and-attendance/">Time</a></li>
+          <li><a href="/products/people-engagement/">Engagement</a></li>
+          <li><a href="/products/people-analytics/">Insight</a></li>
+          <li><a href="/products/mobile-app/">Mobile App</a></li>
+          <li><a href="/ai-x/">Explore PeoplesHR AI</a></li>
+        </ul>
+        <p class="ft-sub">Specialized Solutions</p>
+        <ul class="ft-links">
+          <li><a href="/solutions/peopleshr-tracking/">Access &amp; Attendance Devices</a></li>
+          <li><a href="/solutions/outsourcing/">Payroll Outsourcing</a></li>
+          <li><a href="/solutions/peopleshr-academy/">PeoplesHR Academy</a></li>
+        </ul>
+      </div>
+
+      <!-- ===================== INDUSTRIES ===================== -->
+      <div class="ft-col">
+        <h2 class="ft-h">Industries</h2>
+        <ul class="ft-links">
+          <li><a href="/solutions/banking-finance-insurance-industries/">Banking, Finance &amp; Insurance</a></li>
+          <li><a href="/solutions/hr-software-for-hospitality-industry/">Hospitality</a></li>
+          <li><a href="/solutions/hr-software-for-manufacturing-industry/">Manufacturing</a></li>
+          <li><a href="/solutions/hr-software-for-professional-and-business-services-industry/">Professional &amp; Business Services</a></li>
+          <li><a href="/solutions/hr-software-for-retail-industry/">Retail</a></li>
+          <li><a href="/solutions/hr-software-for-it-and-ites-industry/">IT &amp; ITES</a></li>
+          <li><a href="/solutions/hr-software-for-transportation-and-logistics-industry/">Transportation &amp; Logistics</a></li>
+        </ul>
+      </div>
+
+      <!-- ===================== RESOURCES / COMPANY ===================== -->
+      <div class="ft-col">
+        <h2 class="ft-h">Resources</h2>
+        <ul class="ft-links">
+          <li><a href="/customers/">Case Studies</a></li>
+          <li><a href="/webinars/">Webinars</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/events/">Events</a></li>
+          <li><a href="/hr-ebooks-and-guides/">HR eBooks &amp; Guides</a></li>
+          <li><a href="/news/">News</a></li>
+        </ul>
+        <p class="ft-sub">Company</p>
+        <ul class="ft-links">
+          <li><a href="/company/">About PeoplesHR</a></li>
+          <li><a href="/careers/">Careers</a></li>
+          <li><a href="/community/">Community</a></li>
+          <li><a href="/partner-with-peopleshr/">Partners</a></li>
+          <li><a href="/regions/">Regions</a></li>
+          <li><a href="/llms.txt">For AI agents</a></li>
+        </ul>
+      </div>
+
+      <!-- ===================== TOOLS / EXPLORE ===================== -->
+      <div class="ft-col">
+        <h2 class="ft-h">Calculators</h2>
+        <ul class="ft-links">
+          <li><a href="/tax-calculator-philippines/">Philippines Tax Calculator</a></li>
+          <li><a href="/roi-calculator/">ROI Calculator</a></li>
+        </ul>
+        <p class="ft-sub">Explore</p>
+        <ul class="ft-links">
+          <li><a href="/customers/">Customers</a></li>
+          <li><a href="/view-plans/">Pricing</a></li>
+          <li><a href="/interactive-demos/">Interactive Demos</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- ===================== BOTTOM BAR ===================== -->
+    <div class="ft-bottom">
+      <ul class="ft-legal">
+        <li><a href="/trust-portal/">Trust Portal</a></li>
+        <li><a href="/legal/">Legal</a></li>
+        <li><a href="/cookie-policy/">Cookie policy</a></li>
+        <li><a href="/terms-of-use/">Terms of use</a></li>
+        <li><a href="/privacy-policy/">Privacy Policy</a></li>
+      </ul>
+      <p class="ft-copy">Copyright &copy;2026 PeoplesHR. All Rights Reserved.</p>
+    </div>
+
+  </footer>
+</div>
+
+<!-- footer end -->
+
+<!-- JS -->
+<script src="<?php echo asset_v('/js/phr.js'); ?>"></script>
+<script src="<?php echo asset_v('/js/navbar.js'); ?>"></script>
+<script src="<?php echo asset_v('/js/ph-industry-lp.js'); ?>"></script>
+
+</body>
+</html>

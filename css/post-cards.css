@@ -1,0 +1,17 @@
+/* Blog / news / events post cards (the .cs-card markup written by
+   tools/blog-migration/build.py on blog/, news/, events, company and in
+   "More from the Blog" on post pages). Shows the whole featured image:
+   the shared .cs-img is a fixed 345px-tall box that crops these wide
+   images (mostly 1.5-1.8:1) at the sides. Case-study cards are unaffected. */
+.cs-img.cs-img--post{
+  height:auto;aspect-ratio:5/3;
+  background-size:contain;background-repeat:no-repeat;background-position:center;
+  background-color:#f1f5f9;
+}
+/* No featured image: keep the gradient fallback from .cs-img-1/2/3 */
+.cs-img.cs-img--post.cs-img--empty{background-color:transparent;}
+.cs-img.cs-img--post::before{display:none;}
+
+/* Category label above the title. ".cs-content p" (body text) outranks the
+   shared .cs-company style, so restate it for post cards. */
+.cs-card .cs-content p.cs-company{font-size:11px;font-weight:700;letter-spacing:1.2px;color:var(--blue);line-height:1.4;margin-bottom:10px;}

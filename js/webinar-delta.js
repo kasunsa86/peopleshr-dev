@@ -262,6 +262,21 @@
       "categoryColor": "#d97706",
       "videos": [
         {
+          "id": "rec-24",
+          "title": "The Compliance and Data Governance Risk Clinic",
+          "date": "7 Oct 2026",
+          "duration": "",
+          "views": "",
+          "language": "English",
+          "youtubeId": "pNKSu-Fp_BA",
+          "thumbnailGradient": "linear-gradient(135deg,#78350f,#f59e0b)",
+          "speakers": [
+            { "initials": "KG", "name": "Kapila Gajapala", "role": "Director, PeoplesHR Tracking", "color": "#fef3c7", "textColor": "#b45309" },
+            { "initials": "MP", "name": "Mahinda Pathirana", "role": "Chief Information Security Officer, PeoplesHR", "photo": "/uploads/2026/10/mahinda_pathirana.webp", "color": "#dbeafe", "textColor": "#2563eb" }
+          ],
+          "watchUrl": "https://youtu.be/pNKSu-Fp_BA"
+        },
+        {
           "id": "rec-10",
           "title": "Fixing Philippines Payroll: What HR needs to get right in 2026",
           "date": "18 Sep 2025",
@@ -810,5 +825,32 @@ async function init() {
     console.error('Webinar page error:', err);
   }
 }
+
+/* Hero "Stay in the Loop" form: keep the "Loading form…" spinner up until
+   HubSpot has actually drawn the form iframe (it gets its real height a
+   moment after hs-form-event:on-ready). on-ready plus a short delay and a
+   15s timeout are fallbacks so a blocked embed never spins forever. */
+(function () {
+  const col = document.getElementById('wbHeroForm');
+  const loader = col && col.querySelector('.wb-form-loading');
+  const frame = col && col.querySelector('.hs-form-frame');
+  if (!loader || !frame) return;
+
+  const formId = frame.getAttribute('data-form-id');
+  let done = false;
+  function reveal() {
+    if (done) return;
+    done = true;
+    loader.remove();
+  }
+
+  if ('ResizeObserver' in window) {
+    new ResizeObserver(() => { if (frame.offsetHeight > 200) reveal(); }).observe(frame);
+  }
+  window.addEventListener('hs-form-event:on-ready', e => {
+    if (!e.detail || !e.detail.formId || e.detail.formId === formId) setTimeout(reveal, 800);
+  });
+  setTimeout(reveal, 15000);
+}());
 
 init();

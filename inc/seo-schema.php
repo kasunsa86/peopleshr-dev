@@ -9,7 +9,8 @@
  *     understands the site hierarchy (helps sitelinks). Generated here from
  *     the including page's own <link rel="canonical">, so breadcrumb URLs
  *     always match the canonical URLs. Skipped on the home page and on
- *     noindex pages.
+ *     noindex pages. Blog and news posts (blog/*.html, news/*.html) set
+ *     $phrCrumbName to the post title before including this file.
  *
  * All URLs are absolute production URLs.
  */
@@ -24,13 +25,15 @@ $phrSections = [
   'regions'   => ['/regions/',              'Regions'],
   'webinars'  => ['/webinars/',             'Webinars'],
   'ebooks'    => ['/hr-ebooks-and-guides/', 'HR eBooks & Guides'],
+  'blog'      => ['/blog/',                 'Blog'],
+  'news'      => ['/news/',                 'News'],
 ];
 
 /* Page file (relative to the site root) => [short breadcrumb name, section key or null].
    Pages not listed here fall back to their <title> (minus " • PeoplesHR") under Home. */
 $phrCrumbs = [
   'ai-x.html'                    => ['Lexi AI', null],
-  'blog.html'                    => ['Blog', null],
+  'blog/index.html'              => ['Blog', null],
   'careers.html'                 => ['Careers', null],
   'community.html'               => ['Community', null],
   'company.html'                 => ['Company', null],
@@ -41,7 +44,7 @@ $phrCrumbs = [
   'hr-ebooks-and-guides.html'    => ['HR eBooks & Guides', null],
   'interactive-demos.html'       => ['Interactive Demos', null],
   'legal.html'                   => ['Legal', null],
-  'news.html'                    => ['News', null],
+  'news/index.html'              => ['News', null],
   'partner-with-peopleshr.html'  => ['Partner with PeoplesHR', null],
   'privacy-policy.html'          => ['Privacy Policy', null],
   'products.html'                => ['Products', null],
@@ -133,6 +136,11 @@ if ($phrPageFile && $phrRoot && strpos($phrPageFile, $phrRoot . DIRECTORY_SEPARA
   if ($phrCanonical && !$phrNoindex && rtrim($phrCanonical, '/') !== $phrSiteUrl) {
     if (isset($phrCrumbs[$phrRel])) {
       list($phrName, $phrSection) = $phrCrumbs[$phrRel];
+    } elseif (preg_match('#^(blog|news)/[^/]+\.html$#', $phrRel, $phrS)) {
+      // Migrated blog/news posts set $phrCrumbName (the post title) before
+      // including this file; their SEO <title> is too long for a crumb.
+      $phrSection = $phrS[1];
+      $phrName = isset($phrCrumbName) ? $phrCrumbName : null;
     } else {
       $phrSection = null;
       $phrName = ($phrSrc && preg_match('/<title>([^<]+)<\/title>/', $phrSrc, $phrT))
