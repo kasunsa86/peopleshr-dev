@@ -242,7 +242,9 @@ if (!function_exists('phr_partner_initials')) {
     }
 }
 
-$phrFirstRegion = array_key_first($phrPartnerRegions);
+// Not array_key_first(): it needs PHP 7.3+, and the server runs .html pages
+// on an older PHP than .php files (a fatal error there cut the page off).
+$phrFirstRegion = key(array_slice($phrPartnerRegions, 0, 1, true));
 ?>
 <section class="partner-directory-section" id="partner-directory">
   <div class="pd-inner">
