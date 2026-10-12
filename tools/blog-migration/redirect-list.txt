@@ -1,0 +1,350 @@
+Blog migration redirects (generated from redirect-map.csv)
+Every new URL is on https://peopleshr.com. 301 = permanent redirect.
+
+====================================================================================================
+OLD URLS ON blog.peopleshr.com (201)
+====================================================================================================
+
+--- Posts (89)
+CODE  OLD PATH                                                                                                               NEW PATH
+301   /3-ways-the-m-verse-can-impact-hr/                                                                                     /blog/3-ways-the-m-verse-can-impact-hr/
+301   /4-people-lessons-from-the-game-of-the-year-fifa-world-cup-22/                                                         /blog/4-people-lessons-from-the-game-of-the-year-fifa-world-cup-22/
+301   /7-game-changing-characteristics-of-hrm/                                                                               /blog/7-game-changing-characteristics-of-hrm/
+301   /8-reasons-to-convince-your-management-for-an-hr-tech-investment-in-2021/                                              /blog/8-reasons-to-convince-your-management-for-an-hr-tech-investment-in-2021/
+301   /a-5-step-guide-to-ensure-a-smooth-onboarding-experience-for-remote-employees/                                         /blog/a-5-step-guide-to-ensure-a-smooth-onboarding-experience-for-remote-employees/
+301   /a-guide-to-employee-retention-how-to-make-your-top-talent-stay/                                                       /blog/a-guide-to-employee-retention-how-to-make-your-top-talent-stay/
+301   /barbie-meets-hr/                                                                                                      /blog/barbie-meets-hr/
+301   /be-a-top-talent-like-maverick-6-lessons-from-top-gun/                                                                 /blog/be-a-top-talent-like-maverick-6-lessons-from-top-gun/
+301   /benefits-centralized-employee-database-hr-automation/                                                                 /blog/benefits-centralized-employee-database-hr-automation/
+301   /best-hr-software-in-uae/                                                                                              /blog/best-hr-software-in-uae/
+301   /best-hris-for-mid-size-companies-2026-guide/                                                                          /blog/best-hris-for-mid-size-companies-2026-guide/
+301   /best-hris-software-philippines-guide/                                                                                 /blog/best-hris-software-philippines-guide/
+301   /best-payroll-management-system-in-sri-lanka/                                                                          /blog/best-payroll-management-system-in-sri-lanka/
+301   /boosting-employee-engagement-in-2024-10-drivers-you-need-to-know/                                                     /blog/boosting-employee-engagement-in-2024-10-drivers-you-need-to-know/
+301   /cloud-vs-on-premise-hr-systems-enterprise-guide/                                                                      /blog/cloud-vs-on-premise-hr-systems-enterprise-guide/
+301   /ctricks-of-the-trade-in-an-era-of-passive-candidate-hunting/                                                          /blog/ctricks-of-the-trade-in-an-era-of-passive-candidate-hunting/
+301   /data-driven-hr-decisions-for-mid-sized-companies-2/                                                                   /blog/data-driven-hr-decisions-for-mid-sized-companies-2/
+301   /decoding-ai-for-hr-a-necessity-not-an-option/                                                                         /blog/decoding-ai-for-hr-a-necessity-not-an-option/
+301   /employee-champions-why-you-need-one/                                                                                  /blog/employee-champions-why-you-need-one/
+301   /employee-engagement-in-the-age-of-gen-z/                                                                              /blog/employee-engagement-in-the-age-of-gen-z/
+301   /enterprise-talent-acquisition-platform-guide/                                                                         /blog/enterprise-talent-acquisition-platform-guide/
+301   /everything-you-need-to-know-about-wfa-peopleshr-blog/                                                                 /blog/everything-you-need-to-know-about-wfa-peopleshr-blog/
+301   /five-quick-tips-for-managing-workplace-negativity/                                                                    /blog/five-quick-tips-for-managing-workplace-negativity/
+301   /five-ways-using-the-right-payroll-solution-can-save-you-money/                                                        /blog/five-ways-using-the-right-payroll-solution-can-save-you-money/
+301   /fortius-and-huawei-showcase-peopleshrs-ai-powered-hr-solutions/                                                       /news/fortius-and-huawei-showcase-peopleshrs-ai-powered-hr-solutions/
+301   /free-hcm-roi-calculator-calculate-your-human-capital-roi-and-optimize-hr-efficiency/                                  /blog/free-hcm-roi-calculator-calculate-your-human-capital-roi-and-optimize-hr-efficiency/
+301   /from-concept-to-icon-the-peopleshr-logo-decoded/                                                                      /news/from-concept-to-icon-the-peopleshr-logo-decoded/
+301   /gut-feelings-gone-wrong-its-time-for-simulations/                                                                     /blog/gut-feelings-gone-wrong-its-time-for-simulations/
+301   /hack-your-day-with-the-pomodoro-technique/                                                                            /blog/hack-your-day-with-the-pomodoro-technique/
+301   /hcm-your-guide-to-a-horror-free-hr-department/                                                                        /blog/hcm-your-guide-to-a-horror-free-hr-department/
+301   /how-can-hr-manage-employee-experience-in-2023/                                                                        /blog/how-can-hr-manage-employee-experience-in-2023/
+301   /how-to-choose-right-hr-payroll-software-uae/                                                                          /blog/how-to-choose-right-hr-payroll-software-uae/
+301   /how-to-train-employees-handbook-new-normal-edition-with-reasons-solutions/                                            /blog/how-to-train-employees-handbook-new-normal-edition-with-reasons-solutions/
+301   /hr-metrics-that-matter-in-2025/                                                                                       /blog/hr-metrics-that-matter-in-2025/
+301   /hr-tech-nexus-an-evening-of-innovation-and-inspiration-in-kenya/                                                      /news/hr-tech-nexus-an-evening-of-innovation-and-inspiration-in-kenya/
+301   /hrs-role-in-making-the-workplace-a-bully-free-zone-hsenidbiz-blog/                                                    /blog/hrs-role-in-making-the-workplace-a-bully-free-zone-hsenidbiz-blog/
+301   /hsenid-business-solutions-plc-claims-global-iso-iec-270012022-certification-reinforcing-commitment-to-data-security/  /news/hsenid-business-solutions-plc-claims-global-iso-iec-270012022-certification-reinforcing-commitment-to-data-security/
+301   /in-the-flood-of-hr-tech-is-your-hris-ready-for-2021-and-beyond/                                                       /blog/in-the-flood-of-hr-tech-is-your-hris-ready-for-2021-and-beyond/
+301   /is-your-performance-management-keeping-up-with-the-pace/                                                              /blog/is-your-performance-management-keeping-up-with-the-pace/
+301   /is-your-technology-skills-ready-for-tomorrows-hr/                                                                     /blog/is-your-technology-skills-ready-for-tomorrows-hr/
+301   /mirror-mirror-on-the-wall-can-hr-help-fight-imposter-syndrome-for-them-all/                                           /blog/mirror-mirror-on-the-wall-can-hr-help-fight-imposter-syndrome-for-them-all/
+301   /moonlighting-and-why-hr-gurus-and-managers-refuse-to-greenlight-it/                                                   /blog/moonlighting-and-why-hr-gurus-and-managers-refuse-to-greenlight-it/
+301   /need-real-proof-that-your-employees-are-happy/                                                                        /blog/need-real-proof-that-your-employees-are-happy/
+301   /payroll-outsourcing-taking-the-pain-out-of-payday/                                                                    /blog/payroll-outsourcing-taking-the-pain-out-of-payday/
+301   /people-analytics-the-latest-addition-to-hrs-ever-changing-role/                                                       /blog/people-analytics-the-latest-addition-to-hrs-ever-changing-role/
+301   /peopleshr-appoints-ishan-fernando-as-the-new-vice-president-for-engineering/                                          /news/peopleshr-appoints-ishan-fernando-as-the-new-vice-president-for-engineering/
+301   /peopleshr-appoints-manuel-garcia-ramos-as-country-sales-director/                                                     /news/peopleshr-appoints-manuel-garcia-ramos-as-country-sales-director/
+301   /peopleshr-appoints-new-vice-president-for-global-sales/                                                               /news/peopleshr-appoints-new-vice-president-for-global-sales/
+301   /peopleshr-at-the-3rd-national-hr-convention-and-expo-2023-in-maldives/                                                /news/peopleshr-at-the-3rd-national-hr-convention-and-expo-2023-in-maldives/
+301   /peopleshr-attends-10th-annual-national-hr-congress-in-kenya/                                                          /news/peopleshr-attends-10th-annual-national-hr-congress-in-kenya/
+301   /peopleshr-champions-rehumanizing-work-at-hr-leaders-hr-tech-strategy-meeting-in-philippines/                          /news/peopleshr-champions-rehumanizing-work-at-hr-leaders-hr-tech-strategy-meeting-in-philippines/
+301   /peopleshr-joins-mahrp-learning-development-conference-2023-as-the-official-hr-tech-partner/                           /news/peopleshr-joins-mahrp-learning-development-conference-2023-as-the-official-hr-tech-partner/
+301   /peopleshr-partners-at-the-cloud-business-summit-philippines/                                                          /news/peopleshr-partners-at-the-cloud-business-summit-philippines/
+301   /peopleshr-partners-to-spotlight-innovation-at-hr-workplace-indonesia-summit-2023/                                     /news/peopleshr-partners-to-spotlight-innovation-at-hr-workplace-indonesia-summit-2023/
+301   /peopleshr-partners-with-ensaan-technologies-to-expand-their-footprint-in-the-middle-east/                             /news/peopleshr-partners-with-ensaan-technologies-to-expand-their-footprint-in-the-middle-east/
+301   /peopleshr-partners-with-philippines-hr-expo-and-symposium-2023/                                                       /news/peopleshr-partners-with-philippines-hr-expo-and-symposium-2023/
+301   /peopleshr-redefines-the-hr-tech-landscape-of-the-philippines/                                                         /news/peopleshr-redefines-the-hr-tech-landscape-of-the-philippines/
+301   /peopleshr-revolutionizes-hr-with-ai-at-metrodata-solution-day-2024/                                                   /news/peopleshr-revolutionizes-hr-with-ai-at-metrodata-solution-day-2024/
+301   /peopleshr-showcases-talent-acquisition-product-enhancements-at-exclusive-client-event/                                /news/peopleshr-showcases-talent-acquisition-product-enhancements-at-exclusive-client-event/
+301   /peopleshr-sparks-innovation-at-amti-launch-in-manila/                                                                 /news/peopleshr-sparks-innovation-at-amti-launch-in-manila/
+301   /peopleshr-strengthens-its-security-and-compliance-with-iso-iec-270012013-certification/                               /news/peopleshr-strengthens-its-security-and-compliance-with-iso-iec-270012013-certification/
+301   /peopleshr-teams-up-with-soltius-indonesia-for-strategic-collaboration/                                                /news/peopleshr-teams-up-with-soltius-indonesia-for-strategic-collaboration/
+301   /peopleshr-tracking-unveils-its-rebranding-with-the-launch-of-the-new-experience-centre/                               /news/peopleshr-tracking-unveils-its-rebranding-with-the-launch-of-the-new-experience-centre/
+301   /peopleshr-unifies-traditional-filipino-hr-practices-with-global-innovations/                                          /news/peopleshr-unifies-traditional-filipino-hr-practices-with-global-innovations/
+301   /peopleshr-unlocks-new-frontiers-at-expand-north-star-2023/                                                            /blog/peopleshr-unlocks-new-frontiers-at-expand-north-star-2023/
+301   /quiet-quitting-the-fall-of-going-above-and-beyond/                                                                    /blog/quiet-quitting-the-fall-of-going-above-and-beyond/
+301   /reimagining-performance-management-the-new-talk-of-the-hr-town/                                                       /blog/reimagining-performance-management-the-new-talk-of-the-hr-town/
+301   /say-hello-to-your-new-hr-assistant-chatgpt-tried-tested-proof-for-5-hr-tasks/                                         /blog/say-hello-to-your-new-hr-assistant-chatgpt-tried-tested-proof-for-5-hr-tasks/
+301   /scalable-payroll-software-for-enterprises/                                                                            /blog/scalable-payroll-software-for-enterprises/
+301   /scaling-talent-with-technology-an-informative-gathering-in-malawi/                                                    /news/scaling-talent-with-technology-an-informative-gathering-in-malawi/
+301   /shift-scheduling-software-multi-shift-efficiency/                                                                     /blog/shift-scheduling-software-multi-shift-efficiency/
+301   /succession-planning-at-its-best-lessons-from-the-royal-family/                                                        /blog/succession-planning-at-its-best-lessons-from-the-royal-family/
+301   /talent-360-decoding-talent-with-technology-in-2025/                                                                   /news/talent-360-decoding-talent-with-technology-in-2025/
+301   /the-5-step-hr-holiday-guide/                                                                                          /blog/the-5-step-hr-holiday-guide/
+301   /the-art-of-performance-management-a-sushi-inspired-perspective/                                                       /blog/the-art-of-performance-management-a-sushi-inspired-perspective/
+301   /the-google-map-to-hr-tech-investments/                                                                                /blog/the-google-map-to-hr-tech-investments/
+301   /the-horrors-of-payroll/                                                                                               /blog/the-horrors-of-payroll/
+301   /the-last-impression-matters-too/                                                                                      /blog/the-last-impression-matters-too/
+301   /the-peopleshr-partner-conference-2024-a-recap-of-celebration-collaboration-and-innovation/                            /news/the-peopleshr-partner-conference-2024-a-recap-of-celebration-collaboration-and-innovation/
+301   /the-world-of-harry-potter-meets-the-world-of-human-resources/                                                         /blog/the-world-of-harry-potter-meets-the-world-of-human-resources/
+301   /top-10-payroll-outsourcing-companies-in-the-philippines/                                                              /blog/top-10-payroll-outsourcing-companies-in-the-philippines/
+301   /top-hr-lessons-for-gen-z-workforce-from-the-devil-wears-prada/                                                        /blog/top-hr-lessons-for-gen-z-workforce-from-the-devil-wears-prada/
+301   /two-ways-in-which-hr-can-support-mens-mental-health-at-work/                                                          /blog/two-ways-in-which-hr-can-support-mens-mental-health-at-work/
+301   /unlocking-hr-tech-trends-in-indonesia-key-insights-for-2025/                                                          /blog/unlocking-hr-tech-trends-in-indonesia-key-insights-for-2025/
+301   /wakanda-forever-broke-the-glass-ceiling-in-diversity-equity-inclusion-hr-example-on-dei/                              /blog/wakanda-forever-broke-the-glass-ceiling-in-diversity-equity-inclusion-hr-example-on-dei/
+301   /ways-in-which-hr-can-come-out-and-make-employees-proud-with-pride-month-initiatives/                                  /blog/ways-in-which-hr-can-come-out-and-make-employees-proud-with-pride-month-initiatives/
+301   /what-is-an-hris/                                                                                                      /blog/what-is-an-hris/
+301   /what-is-the-role-of-hr-in-customer-experience/                                                                        /blog/what-is-the-role-of-hr-in-customer-experience/
+301   /why-workforce-planning-demands-more-than-spreadsheets-and-automation/                                                 /blog/why-workforce-planning-demands-more-than-spreadsheets-and-automation/
+
+--- Removed duplicate posts (2)
+CODE  OLD PATH                                                                                                               NEW PATH
+301   /bursting-the-stereotypical-ld-bubbles/                                                                                /blog/the-last-impression-matters-too/
+301   /data-driven-hr-decisions-for-mid-sized-companies/                                                                     /blog/how-to-choose-right-hr-payroll-software-uae/
+
+--- Site pages (81)
+CODE  OLD PATH                                                                                                               NEW PATH
+301   /                                                                                                                      /
+301   /ai-powered-operational-hr-for-hospitality-in-the-philippines/                                                         /ai-powered-operational-hr-for-hospitality-in-the-philippines/
+301   /ai-powered-operational-hr-for-manufacturing-in-the-philippines/                                                       /ai-powered-operational-hr-for-manufacturing-in-the-philippines/
+301   /ai-x/                                                                                                                 /ai-x/
+301   /careers/                                                                                                              /careers/
+301   /case-study-peoples-bank/                                                                                              /case-study-peoples-bank/
+301   /case-study-pyramid-wilmar/                                                                                            /case-study-pyramid-wilmar/
+301   /case-study-sms-global-technologies-inc/                                                                               /case-study-sms-global-technologies-inc/
+301   /case-study-zillione/                                                                                                  /case-study-zillione/
+301   /community/                                                                                                            /community/
+301   /company/                                                                                                              /company/
+301   /cookie-policy/                                                                                                        /cookie-policy/
+301   /ebook-transform-your-hr-operations-in-manufacturing/                                                                  /ebook-transform-your-hr-operations-in-manufacturing/
+301   /functional-proposal/                                                                                                  /functional-proposal/
+301   /get-in-touch/                                                                                                         /get-in-touch/
+301   /hr-ebooks-and-guides/                                                                                                 /hr-ebooks-and-guides/
+301   /hr-tech-survey-indonesia-2025/                                                                                        /hr-tech-survey-indonesia-2025/
+301   /hris-success-stories-brandix-case-study/                                                                              /hris-success-stories-brandix-case-study/
+301   /hrsoftwareguide-en/                                                                                                   /hrsoftwareguide-en/
+301   /indonesia-lp/                                                                                                         /indonesia-lp/
+301   /indonesia/                                                                                                            /indonesia/
+301   /interactive-demos/                                                                                                    /interactive-demos/
+301   /jollibee/                                                                                                             /jollibee/
+301   /landing-page-indonesia-id/                                                                                            /landing-page-indonesia-id/
+301   /legal/                                                                                                                /legal/
+301   /limitations-for-configuration/                                                                                        /limitations-for-configuration/
+301   /middle-east/                                                                                                          /middle-east/
+301   /news/                                                                                                                 /news/
+301   /partner-with-peopleshr/                                                                                               /partner-with-peopleshr/
+301   /peopleshr-vs-mekari/                                                                                                  /peopleshr-vs-mekari/
+301   /philippines-hris/                                                                                                     /philippines-hris/
+301   /philippines-payroll-lp/                                                                                               /philippines-payroll-lp/
+301   /philippines/                                                                                                          /philippines/
+301   /pricing/                                                                                                              /view-plans/
+301   /privacy-policy/                                                                                                       /privacy-policy/
+301   /products/                                                                                                             /products/
+301   /products/compensation-and-benefits/                                                                                   /products/payroll-system/
+301   /products/core-hr/                                                                                                     /products/core-hr/
+301   /products/mobile-app/                                                                                                  /products/mobile-app/
+301   /products/payroll-system/                                                                                              /products/payroll-system/
+301   /products/people-analytics/                                                                                            /products/people-analytics/
+301   /products/people-engagement/                                                                                           /products/people-engagement/
+301   /products/people-management/                                                                                           /products/people-engagement/
+301   /products/talent-acquisition/                                                                                          /products/talent-acquisition/
+301   /products/time-and-attendance/                                                                                         /products/time-and-attendance/
+301   /region-bangladesh/                                                                                                    /region-bangladesh/
+301   /region-kenya/                                                                                                         /region-kenya/
+301   /region-singapore/                                                                                                     /region-singapore/
+301   /region-sri-lanka/                                                                                                     /region-sri-lanka/
+301   /regions/                                                                                                              /regions/
+301   /report/                                                                                                               /report/
+301   /resources/                                                                                                            /blog/
+301   /roi-calculator/                                                                                                       /roi-calculator/
+301   /solutions/                                                                                                            /solutions/
+301   /solutions/banking-finance-insurance-industries/                                                                       /solutions/banking-finance-insurance-industries/
+301   /solutions/cfo/                                                                                                        /solutions/cfo/
+301   /solutions/chro/                                                                                                       /solutions/chro/
+301   /solutions/cio/                                                                                                        /solutions/cio/
+301   /solutions/hr-software-for-hospitality-industry/                                                                       /solutions/hr-software-for-hospitality-industry/
+301   /solutions/hr-software-for-it-and-ites-industry/                                                                       /solutions/hr-software-for-it-and-ites-industry/
+301   /solutions/hr-software-for-manufacturing-industry/                                                                     /solutions/hr-software-for-manufacturing-industry/
+301   /solutions/hr-software-for-professional-and-business-services-industry/                                                /solutions/hr-software-for-professional-and-business-services-industry/
+301   /solutions/hr-software-for-retail-industry/                                                                            /solutions/hr-software-for-retail-industry/
+301   /solutions/hr-software-for-transportation-and-logistics-industry/                                                      /solutions/hr-software-for-transportation-and-logistics-industry/
+301   /solutions/outsourcing/                                                                                                /solutions/outsourcing/
+301   /solutions/peopleshr-academy/                                                                                          /solutions/peopleshr-academy/
+301   /solutions/peopleshr-tracking/                                                                                         /solutions/peopleshr-tracking/
+301   /success-stories/                                                                                                      /customers/
+301   /tax-calculator-philippines/                                                                                           /tax-calculator-philippines/
+301   /terms-of-use/                                                                                                         /terms-of-use/
+301   /thank-you-for-downloading-id/                                                                                         /thank-you-for-downloading-id/
+301   /thank-you-for-downloading/                                                                                            /thank-you-for-downloading/
+301   /thank-you-for-registering-event/                                                                                      /thank-you-for-registering-event/
+301   /thank-you-for-registering/                                                                                            /thank-you-for-registering/
+301   /thank-you-for-submission/                                                                                             /thank-you-for-submission/
+301   /top-8-trends-to-transform-your-workforce-in-2025/                                                                     /top-8-trends-to-transform-your-workforce-in-2025/
+301   /trust-portal/                                                                                                         /trust-portal/
+301   /webinar-registration-facebook/                                                                                        /webinars/
+301   /webinar-the-everywhere-workforce/                                                                                     /webinars/
+301   /webinars-and-events/                                                                                                  /webinars/
+301   /what-is-next-with-peopleshr/                                                                                          /what-is-next-with-peopleshr/
+
+--- Retired pages (18)
+CODE  OLD PATH                                                                                                               NEW PATH
+301   /cheatsheet-payroll/                                                                                                   /hr-ebooks-and-guides/
+301   /event-registration/                                                                                                   /events/
+301   /hello-middle-east/                                                                                                    /middle-east/
+301   /home-peopleshr-x/                                                                                                     /
+301   /home/                                                                                                                 /
+301   /hrsoftwareguide-id/                                                                                                   /hr-ebooks-and-guides/
+301   /logos/                                                                                                                /
+301   /middle-east-hris-lp/                                                                                                  /middle-east/
+301   /new-in-001/                                                                                                           /
+301   /payroll-quiz/                                                                                                         /products/payroll-system/
+301   /philippines-hris-lp/                                                                                                  /philippines-hris/
+301   /public-sector/                                                                                                        /solutions/public-sector/
+301   /solving-enterprise-hr-challenges-in-the-hospitality-industry/                                                         /solutions/hr-software-for-hospitality-industry/
+301   /talent-acquisition-journey-map/                                                                                       /products/talent-acquisition/
+301   /test-0002/                                                                                                            /
+301   /the-ultimate-hris-pitch-deck-for-hr-leaders/                                                                          /hr-ebooks-and-guides/
+301   /webinar-registration-peopleshr-2026-02/                                                                               /webinars/
+301   /webinar-registration/                                                                                                 /webinars/
+
+--- Other (9)
+CODE  OLD PATH                                                                                                               NEW PATH
+301   /12-best-hris-software-in-indonesia-for-growing-businesses/                                                            /blog/
+301   /best-software-hris-indonesia/                                                                                         /blog/
+301   /category/blogs/                                                                                                       /blog/
+301   /category/events/                                                                                                      /events/
+301   /category/news/                                                                                                        /news/
+301   /feed/                                                                                                                 /blog/
+301   /wp-content/uploads/2026/02/joliibee.html                                                                              /jollibee/
+301   /wp-content/uploads/2026/02/peopleshr-vs-Mekari.html                                                                   /peopleshr-vs-mekari/
+301   /wp-content/uploads/2026/03/webinar-landing-march-v6.html                                                              /webinars/
+
+--- Patterns (wildcards) (2)
+CODE  OLD PATH                                                                                                               NEW PATH
+301   /*                                                                                                                     /*
+301   /wp-content/uploads/*                                                                                                  /uploads/*
+
+====================================================================================================
+OLD URLS ON peopleshr.com (106)
+====================================================================================================
+
+--- Posts (89)
+CODE  OLD PATH                                                                                                               NEW PATH
+301   /3-ways-the-m-verse-can-impact-hr/                                                                                     /blog/3-ways-the-m-verse-can-impact-hr/
+301   /4-people-lessons-from-the-game-of-the-year-fifa-world-cup-22/                                                         /blog/4-people-lessons-from-the-game-of-the-year-fifa-world-cup-22/
+301   /7-game-changing-characteristics-of-hrm/                                                                               /blog/7-game-changing-characteristics-of-hrm/
+301   /8-reasons-to-convince-your-management-for-an-hr-tech-investment-in-2021/                                              /blog/8-reasons-to-convince-your-management-for-an-hr-tech-investment-in-2021/
+301   /a-5-step-guide-to-ensure-a-smooth-onboarding-experience-for-remote-employees/                                         /blog/a-5-step-guide-to-ensure-a-smooth-onboarding-experience-for-remote-employees/
+301   /a-guide-to-employee-retention-how-to-make-your-top-talent-stay/                                                       /blog/a-guide-to-employee-retention-how-to-make-your-top-talent-stay/
+301   /barbie-meets-hr/                                                                                                      /blog/barbie-meets-hr/
+301   /be-a-top-talent-like-maverick-6-lessons-from-top-gun/                                                                 /blog/be-a-top-talent-like-maverick-6-lessons-from-top-gun/
+301   /benefits-centralized-employee-database-hr-automation/                                                                 /blog/benefits-centralized-employee-database-hr-automation/
+301   /best-hr-software-in-uae/                                                                                              /blog/best-hr-software-in-uae/
+301   /best-hris-for-mid-size-companies-2026-guide/                                                                          /blog/best-hris-for-mid-size-companies-2026-guide/
+301   /best-hris-software-philippines-guide/                                                                                 /blog/best-hris-software-philippines-guide/
+301   /best-payroll-management-system-in-sri-lanka/                                                                          /blog/best-payroll-management-system-in-sri-lanka/
+301   /boosting-employee-engagement-in-2024-10-drivers-you-need-to-know/                                                     /blog/boosting-employee-engagement-in-2024-10-drivers-you-need-to-know/
+301   /cloud-vs-on-premise-hr-systems-enterprise-guide/                                                                      /blog/cloud-vs-on-premise-hr-systems-enterprise-guide/
+301   /ctricks-of-the-trade-in-an-era-of-passive-candidate-hunting/                                                          /blog/ctricks-of-the-trade-in-an-era-of-passive-candidate-hunting/
+301   /data-driven-hr-decisions-for-mid-sized-companies-2/                                                                   /blog/data-driven-hr-decisions-for-mid-sized-companies-2/
+301   /decoding-ai-for-hr-a-necessity-not-an-option/                                                                         /blog/decoding-ai-for-hr-a-necessity-not-an-option/
+301   /employee-champions-why-you-need-one/                                                                                  /blog/employee-champions-why-you-need-one/
+301   /employee-engagement-in-the-age-of-gen-z/                                                                              /blog/employee-engagement-in-the-age-of-gen-z/
+301   /enterprise-talent-acquisition-platform-guide/                                                                         /blog/enterprise-talent-acquisition-platform-guide/
+301   /everything-you-need-to-know-about-wfa-peopleshr-blog/                                                                 /blog/everything-you-need-to-know-about-wfa-peopleshr-blog/
+301   /five-quick-tips-for-managing-workplace-negativity/                                                                    /blog/five-quick-tips-for-managing-workplace-negativity/
+301   /five-ways-using-the-right-payroll-solution-can-save-you-money/                                                        /blog/five-ways-using-the-right-payroll-solution-can-save-you-money/
+301   /fortius-and-huawei-showcase-peopleshrs-ai-powered-hr-solutions/                                                       /news/fortius-and-huawei-showcase-peopleshrs-ai-powered-hr-solutions/
+301   /free-hcm-roi-calculator-calculate-your-human-capital-roi-and-optimize-hr-efficiency/                                  /blog/free-hcm-roi-calculator-calculate-your-human-capital-roi-and-optimize-hr-efficiency/
+301   /from-concept-to-icon-the-peopleshr-logo-decoded/                                                                      /news/from-concept-to-icon-the-peopleshr-logo-decoded/
+301   /gut-feelings-gone-wrong-its-time-for-simulations/                                                                     /blog/gut-feelings-gone-wrong-its-time-for-simulations/
+301   /hack-your-day-with-the-pomodoro-technique/                                                                            /blog/hack-your-day-with-the-pomodoro-technique/
+301   /hcm-your-guide-to-a-horror-free-hr-department/                                                                        /blog/hcm-your-guide-to-a-horror-free-hr-department/
+301   /how-can-hr-manage-employee-experience-in-2023/                                                                        /blog/how-can-hr-manage-employee-experience-in-2023/
+301   /how-to-choose-right-hr-payroll-software-uae/                                                                          /blog/how-to-choose-right-hr-payroll-software-uae/
+301   /how-to-train-employees-handbook-new-normal-edition-with-reasons-solutions/                                            /blog/how-to-train-employees-handbook-new-normal-edition-with-reasons-solutions/
+301   /hr-metrics-that-matter-in-2025/                                                                                       /blog/hr-metrics-that-matter-in-2025/
+301   /hr-tech-nexus-an-evening-of-innovation-and-inspiration-in-kenya/                                                      /news/hr-tech-nexus-an-evening-of-innovation-and-inspiration-in-kenya/
+301   /hrs-role-in-making-the-workplace-a-bully-free-zone-hsenidbiz-blog/                                                    /blog/hrs-role-in-making-the-workplace-a-bully-free-zone-hsenidbiz-blog/
+301   /hsenid-business-solutions-plc-claims-global-iso-iec-270012022-certification-reinforcing-commitment-to-data-security/  /news/hsenid-business-solutions-plc-claims-global-iso-iec-270012022-certification-reinforcing-commitment-to-data-security/
+301   /in-the-flood-of-hr-tech-is-your-hris-ready-for-2021-and-beyond/                                                       /blog/in-the-flood-of-hr-tech-is-your-hris-ready-for-2021-and-beyond/
+301   /is-your-performance-management-keeping-up-with-the-pace/                                                              /blog/is-your-performance-management-keeping-up-with-the-pace/
+301   /is-your-technology-skills-ready-for-tomorrows-hr/                                                                     /blog/is-your-technology-skills-ready-for-tomorrows-hr/
+301   /mirror-mirror-on-the-wall-can-hr-help-fight-imposter-syndrome-for-them-all/                                           /blog/mirror-mirror-on-the-wall-can-hr-help-fight-imposter-syndrome-for-them-all/
+301   /moonlighting-and-why-hr-gurus-and-managers-refuse-to-greenlight-it/                                                   /blog/moonlighting-and-why-hr-gurus-and-managers-refuse-to-greenlight-it/
+301   /need-real-proof-that-your-employees-are-happy/                                                                        /blog/need-real-proof-that-your-employees-are-happy/
+301   /payroll-outsourcing-taking-the-pain-out-of-payday/                                                                    /blog/payroll-outsourcing-taking-the-pain-out-of-payday/
+301   /people-analytics-the-latest-addition-to-hrs-ever-changing-role/                                                       /blog/people-analytics-the-latest-addition-to-hrs-ever-changing-role/
+301   /peopleshr-appoints-ishan-fernando-as-the-new-vice-president-for-engineering/                                          /news/peopleshr-appoints-ishan-fernando-as-the-new-vice-president-for-engineering/
+301   /peopleshr-appoints-manuel-garcia-ramos-as-country-sales-director/                                                     /news/peopleshr-appoints-manuel-garcia-ramos-as-country-sales-director/
+301   /peopleshr-appoints-new-vice-president-for-global-sales/                                                               /news/peopleshr-appoints-new-vice-president-for-global-sales/
+301   /peopleshr-at-the-3rd-national-hr-convention-and-expo-2023-in-maldives/                                                /news/peopleshr-at-the-3rd-national-hr-convention-and-expo-2023-in-maldives/
+301   /peopleshr-attends-10th-annual-national-hr-congress-in-kenya/                                                          /news/peopleshr-attends-10th-annual-national-hr-congress-in-kenya/
+301   /peopleshr-champions-rehumanizing-work-at-hr-leaders-hr-tech-strategy-meeting-in-philippines/                          /news/peopleshr-champions-rehumanizing-work-at-hr-leaders-hr-tech-strategy-meeting-in-philippines/
+301   /peopleshr-joins-mahrp-learning-development-conference-2023-as-the-official-hr-tech-partner/                           /news/peopleshr-joins-mahrp-learning-development-conference-2023-as-the-official-hr-tech-partner/
+301   /peopleshr-partners-at-the-cloud-business-summit-philippines/                                                          /news/peopleshr-partners-at-the-cloud-business-summit-philippines/
+301   /peopleshr-partners-to-spotlight-innovation-at-hr-workplace-indonesia-summit-2023/                                     /news/peopleshr-partners-to-spotlight-innovation-at-hr-workplace-indonesia-summit-2023/
+301   /peopleshr-partners-with-ensaan-technologies-to-expand-their-footprint-in-the-middle-east/                             /news/peopleshr-partners-with-ensaan-technologies-to-expand-their-footprint-in-the-middle-east/
+301   /peopleshr-partners-with-philippines-hr-expo-and-symposium-2023/                                                       /news/peopleshr-partners-with-philippines-hr-expo-and-symposium-2023/
+301   /peopleshr-redefines-the-hr-tech-landscape-of-the-philippines/                                                         /news/peopleshr-redefines-the-hr-tech-landscape-of-the-philippines/
+301   /peopleshr-revolutionizes-hr-with-ai-at-metrodata-solution-day-2024/                                                   /news/peopleshr-revolutionizes-hr-with-ai-at-metrodata-solution-day-2024/
+301   /peopleshr-showcases-talent-acquisition-product-enhancements-at-exclusive-client-event/                                /news/peopleshr-showcases-talent-acquisition-product-enhancements-at-exclusive-client-event/
+301   /peopleshr-sparks-innovation-at-amti-launch-in-manila/                                                                 /news/peopleshr-sparks-innovation-at-amti-launch-in-manila/
+301   /peopleshr-strengthens-its-security-and-compliance-with-iso-iec-270012013-certification/                               /news/peopleshr-strengthens-its-security-and-compliance-with-iso-iec-270012013-certification/
+301   /peopleshr-teams-up-with-soltius-indonesia-for-strategic-collaboration/                                                /news/peopleshr-teams-up-with-soltius-indonesia-for-strategic-collaboration/
+301   /peopleshr-tracking-unveils-its-rebranding-with-the-launch-of-the-new-experience-centre/                               /news/peopleshr-tracking-unveils-its-rebranding-with-the-launch-of-the-new-experience-centre/
+301   /peopleshr-unifies-traditional-filipino-hr-practices-with-global-innovations/                                          /news/peopleshr-unifies-traditional-filipino-hr-practices-with-global-innovations/
+301   /peopleshr-unlocks-new-frontiers-at-expand-north-star-2023/                                                            /blog/peopleshr-unlocks-new-frontiers-at-expand-north-star-2023/
+301   /quiet-quitting-the-fall-of-going-above-and-beyond/                                                                    /blog/quiet-quitting-the-fall-of-going-above-and-beyond/
+301   /reimagining-performance-management-the-new-talk-of-the-hr-town/                                                       /blog/reimagining-performance-management-the-new-talk-of-the-hr-town/
+301   /say-hello-to-your-new-hr-assistant-chatgpt-tried-tested-proof-for-5-hr-tasks/                                         /blog/say-hello-to-your-new-hr-assistant-chatgpt-tried-tested-proof-for-5-hr-tasks/
+301   /scalable-payroll-software-for-enterprises/                                                                            /blog/scalable-payroll-software-for-enterprises/
+301   /scaling-talent-with-technology-an-informative-gathering-in-malawi/                                                    /news/scaling-talent-with-technology-an-informative-gathering-in-malawi/
+301   /shift-scheduling-software-multi-shift-efficiency/                                                                     /blog/shift-scheduling-software-multi-shift-efficiency/
+301   /succession-planning-at-its-best-lessons-from-the-royal-family/                                                        /blog/succession-planning-at-its-best-lessons-from-the-royal-family/
+301   /talent-360-decoding-talent-with-technology-in-2025/                                                                   /news/talent-360-decoding-talent-with-technology-in-2025/
+301   /the-5-step-hr-holiday-guide/                                                                                          /blog/the-5-step-hr-holiday-guide/
+301   /the-art-of-performance-management-a-sushi-inspired-perspective/                                                       /blog/the-art-of-performance-management-a-sushi-inspired-perspective/
+301   /the-google-map-to-hr-tech-investments/                                                                                /blog/the-google-map-to-hr-tech-investments/
+301   /the-horrors-of-payroll/                                                                                               /blog/the-horrors-of-payroll/
+301   /the-last-impression-matters-too/                                                                                      /blog/the-last-impression-matters-too/
+301   /the-peopleshr-partner-conference-2024-a-recap-of-celebration-collaboration-and-innovation/                            /news/the-peopleshr-partner-conference-2024-a-recap-of-celebration-collaboration-and-innovation/
+301   /the-world-of-harry-potter-meets-the-world-of-human-resources/                                                         /blog/the-world-of-harry-potter-meets-the-world-of-human-resources/
+301   /top-10-payroll-outsourcing-companies-in-the-philippines/                                                              /blog/top-10-payroll-outsourcing-companies-in-the-philippines/
+301   /top-hr-lessons-for-gen-z-workforce-from-the-devil-wears-prada/                                                        /blog/top-hr-lessons-for-gen-z-workforce-from-the-devil-wears-prada/
+301   /two-ways-in-which-hr-can-support-mens-mental-health-at-work/                                                          /blog/two-ways-in-which-hr-can-support-mens-mental-health-at-work/
+301   /unlocking-hr-tech-trends-in-indonesia-key-insights-for-2025/                                                          /blog/unlocking-hr-tech-trends-in-indonesia-key-insights-for-2025/
+301   /wakanda-forever-broke-the-glass-ceiling-in-diversity-equity-inclusion-hr-example-on-dei/                              /blog/wakanda-forever-broke-the-glass-ceiling-in-diversity-equity-inclusion-hr-example-on-dei/
+301   /ways-in-which-hr-can-come-out-and-make-employees-proud-with-pride-month-initiatives/                                  /blog/ways-in-which-hr-can-come-out-and-make-employees-proud-with-pride-month-initiatives/
+301   /what-is-an-hris/                                                                                                      /blog/what-is-an-hris/
+301   /what-is-the-role-of-hr-in-customer-experience/                                                                        /blog/what-is-the-role-of-hr-in-customer-experience/
+301   /why-workforce-planning-demands-more-than-spreadsheets-and-automation/                                                 /blog/why-workforce-planning-demands-more-than-spreadsheets-and-automation/
+
+--- Removed duplicate posts (2)
+CODE  OLD PATH                                                                                                               NEW PATH
+301   /bursting-the-stereotypical-ld-bubbles/                                                                                /blog/the-last-impression-matters-too/
+301   /data-driven-hr-decisions-for-mid-sized-companies/                                                                     /blog/how-to-choose-right-hr-payroll-software-uae/
+
+--- Older post URLs (8)
+CODE  OLD PATH                                                                                                               NEW PATH
+301   /2020/10/28/bursting-the-stereotypical-ld-bubbles/                                                                     /blog/the-last-impression-matters-too/
+301   /2020/12/07/is-your-technology-skills-ready-for-tomorrows-hr/                                                          /blog/is-your-technology-skills-ready-for-tomorrows-hr/
+301   /2021/02/16/is-your-performance-management-keeping-up-with-the-pace/                                                   /blog/is-your-performance-management-keeping-up-with-the-pace/
+301   /2021/03/27/need-real-proof-that-your-employees-are-happy/                                                             /blog/need-real-proof-that-your-employees-are-happy/
+301   /2021/06/08/what-is-the-role-of-hr-in-customer-experience/                                                             /blog/what-is-the-role-of-hr-in-customer-experience/
+301   /2022/05/17/employee-champions-why-you-need-one/                                                                       /blog/employee-champions-why-you-need-one/
+301   /2023/08/10/barbie-meets-hr/                                                                                           /blog/barbie-meets-hr/
+301   /hr-metrics-that-matter-in-2024/                                                                                       /blog/hr-metrics-that-matter-in-2025/
+
+--- Other (6)
+CODE  OLD PATH                                                                                                               NEW PATH
+301   /12-best-hris-software-in-indonesia-for-growing-businesses/                                                            /blog/
+301   /best-software-hris-indonesia/                                                                                         /blog/
+301   /webinar-the-everywhere-workforce/                                                                                     /webinars/
+301   /wp-content/uploads/2026/02/joliibee.html                                                                              /jollibee/
+301   /wp-content/uploads/2026/02/peopleshr-vs-Mekari.html                                                                   /peopleshr-vs-mekari/
+301   /wp-content/uploads/2026/03/webinar-landing-march-v6.html                                                              /webinars/
+
+--- Patterns (wildcards) (1)
+CODE  OLD PATH                                                                                                               NEW PATH
+301   /wp-content/uploads/*                                                                                                  /uploads/*
