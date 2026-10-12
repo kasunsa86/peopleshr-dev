@@ -7667,6 +7667,58 @@ button.btn-primary {
   .pcg-item{flex:0 0 78%;}
 }
 
+/* PARTNER PAGE: Partner Network — region tabs (reuse .industry-tabs) + partner cards.
+   Markup and partner data live in inc/partner-directory.php. */
+.partner-directory-section{padding:100px 48px;background:#fff;}
+.pd-inner{max-width:1180px;margin:0 auto;}
+.pd-head{text-align:center;max-width:760px;margin:0 auto 36px;}
+.pd-head h2{font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:var(--navy);letter-spacing:-0.02em;margin-bottom:16px;}
+.pd-head p{font-size:15px;color:var(--text-muted);line-height:1.75;}
+.pd-legend{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:10px 24px;margin:24px 0 0;padding:0;}
+.pd-legend li{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-muted);}
+.pd-tabs{margin-bottom:40px;}
+
+.pd-type{display:inline-block;padding:4px 10px;border-radius:100px;font-size:11.5px;font-weight:700;line-height:1.4;white-space:nowrap;}
+.pd-type--strategic{background:#dcfce7;color:#15803d;}
+.pd-type--reseller{background:#eff6ff;color:var(--blue);}
+.pd-type--referral{background:#fef3c7;color:#92400e;}
+
+.pd-panel[hidden]{display:none;}
+/* flex (not grid) so a region with one or two partners stays centred */
+.pd-grid{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:24px;}
+.pd-card{flex:0 1 calc((100% - 48px) / 3);display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;}
+.pd-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(13,27,62,0.10);border-color:#bfdbfe;}
+.pd-thumb{aspect-ratio:16/9;overflow:hidden;background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:center;padding:24px 32px;}
+.pd-thumb img{width:100%;height:100%;object-fit:contain;display:block;transition:transform .3s ease;}
+.pd-card:hover .pd-thumb img{transform:scale(1.04);}
+.pd-logo-initials{width:96px;height:96px;border-radius:20px;background:var(--bg-card);color:var(--navy);font-size:32px;font-weight:800;display:flex;align-items:center;justify-content:center;letter-spacing:0.02em;}
+.pd-body{flex:1;display:flex;flex-direction:column;align-items:flex-start;padding:22px 26px 26px;}
+.pd-body .pd-type{margin-bottom:12px;}
+.pd-name{font-size:17px;font-weight:800;color:var(--navy);letter-spacing:-0.01em;margin-bottom:8px;}
+.pd-services{font-size:13px;font-weight:600;color:var(--text-body);margin:-2px 0 10px;}
+.pd-desc{font-size:14.5px;color:var(--text-muted);line-height:1.7;margin-bottom:20px;}
+.pd-contact{align-self:stretch;list-style:none;margin:auto 0 0;padding:16px 0 0;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:8px;}
+.pd-contact li{display:flex;align-items:center;gap:10px;font-size:14px;min-width:0;}
+.pd-contact svg{width:16px;height:16px;flex-shrink:0;color:var(--blue);}
+.pd-contact a{color:var(--text-body);overflow-wrap:anywhere;transition:color .2s;}
+.pd-contact a:hover{color:var(--blue);}
+.pd-empty{max-width:640px;margin:0 auto;text-align:center;padding:40px 28px;background:var(--bg-light);border:1px dashed var(--border);border-radius:var(--radius);font-size:15px;color:var(--text-muted);line-height:1.75;}
+.pd-empty a{color:var(--blue);font-weight:600;}
+
+@media(max-width:900px){
+  .pd-grid{gap:20px;}
+  .pd-card{flex-basis:calc((100% - 20px) / 2);}
+}
+@media(max-width:768px){
+  /* only five regions: wrap them all into view instead of the site-wide scrolling pill row */
+  .pd-tabs{flex-wrap:wrap;justify-content:center;overflow-x:visible;padding-bottom:0;}
+}
+@media(max-width:560px){
+  .partner-directory-section{padding:64px 20px;}
+  .pd-card{flex-basis:100%;}
+  .pd-legend{flex-direction:column;align-items:flex-start;width:fit-content;margin-left:auto;margin-right:auto;text-align:left;}
+}
+
 /* REGIONS PAGE: 7-tile hover-reveal preview grid linking to each region */
 .regions-preview-section{padding:90px 48px;background:#fff;}
 .rp-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(12,1fr);gap:16px;}
