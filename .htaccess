@@ -316,6 +316,17 @@ RewriteRule ^report(\.html)?/?$ /uploads/legal/PRM-L3-PHR-Standard-Reports-May-2
         Header always unset Content-Security-Policy
     </IfModule>
 </Files>
+# Keep every version of the Limitations for Configuration and Standard
+# Reports PDFs out of search and AI indexes. Matches the resolved file, so
+# it also covers /limitations-for-configuration/ and /report/. robots.txt
+# separately disallows these paths for AI crawlers; it does not disallow
+# them for all bots, or search engines could never fetch the file to see
+# this header and drop it from their index.
+<FilesMatch "(?i)(Limitations.for.Configuration|Standard.Reports).*\.pdf$">
+    <IfModule mod_headers.c>
+        Header set X-Robots-Tag "noindex, nofollow, noarchive"
+    </IfModule>
+</FilesMatch>
 # "12 Best Software HRIS Indonesia For 2025" was deleted from WordPress (only an
 # archived copy exists); both of its URLs go to the blog.
 RewriteRule ^12-best-hris-software-in-indonesia-for-growing-businesses/?$ /blog/ [R=301,L]
