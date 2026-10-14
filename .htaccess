@@ -318,10 +318,9 @@ RewriteRule ^report(\.html)?/?$ /uploads/legal/PRM-L3-PHR-Standard-Reports-May-2
 </Files>
 # Keep every version of the Limitations for Configuration and Standard
 # Reports PDFs out of search and AI indexes. Matches the resolved file, so
-# it also covers /limitations-for-configuration/ and /report/. robots.txt
-# separately disallows these paths for AI crawlers; it does not disallow
-# them for all bots, or search engines could never fetch the file to see
-# this header and drop it from their index.
+# it also covers /limitations-for-configuration/ and /report/. Deliberately
+# not listed in robots.txt: that file is public and would advertise the
+# paths, and a crawler that can't fetch the file never sees this header.
 <FilesMatch "(?i)(Limitations.for.Configuration|Standard.Reports).*\.pdf$">
     <IfModule mod_headers.c>
         Header set X-Robots-Tag "noindex, nofollow, noarchive"
