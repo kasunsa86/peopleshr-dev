@@ -447,11 +447,12 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
+<?php /* ═══════════════════════════════════════════════
      SECTION 3B: PARTNER NETWORK (BY REGION)
      Partner data lives in inc/partner-directory.php
-     ═══════════════════════════════════════════════ -->
-<?php include __DIR__ . '/inc/partner-directory.php'; ?>
+     ═══════════════════════════════════════════════ */ ?>
+<?php /* HIDDEN until the partner directory launches; uncomment to show:
+include __DIR__ . '/inc/partner-directory.php'; */ ?>
 
 <!-- ═══════════════════════════════════════════════
      SECTION 4: PARTNER TESTIMONIALS
@@ -704,7 +705,8 @@
 <script src="<?php echo asset_v('/js/phr.js'); ?>"></script>
 <script src="<?php echo asset_v('/js/navbar.js'); ?>"></script>
 <script src="<?php echo asset_v('/js/partner-conference-gallery.js'); ?>"></script>
-<script src="<?php echo asset_v('/js/partner-directory.js'); ?>"></script>
+<?php /* HIDDEN until the partner directory launches; uncomment to load:
+echo '<script src="' . asset_v('/js/partner-directory.js') . '"></script>'; */ ?>
 
 </body>
 </html>
