@@ -50,9 +50,14 @@
   padding:14px 8px;font-size:15px;cursor:pointer;
 }
 .cd-sidebar .mobile-nav-link:last-of-type{border-bottom:1px solid #f1f5f9;}
+.cd-group-label{display:flex;align-items:center;gap:10px;}
+.cd-mod-icon{width:20px;height:20px;flex-shrink:0;object-fit:contain;}
 
 /* Module body — reuses .mobile-sub (max-height collapse) */
 .cd-group-list{display:flex;flex-direction:column;padding:4px 0 10px;}
+/* Insights holds 14 links (dashboards + 13 report groups) — more than
+   .mobile-sub.open's 600px cap, so give the sidebar's groups room */
+.cd-sidebar .mobile-sub.open{max-height:1200px;}
 .cd-nav-link{
   display:block;padding:8px 10px 8px 16px;margin:1px 0;
   border-left:2px solid transparent;border-radius:0 8px 8px 0;
@@ -71,9 +76,12 @@
 
 .cd-section{scroll-margin-top:32px;}
 .cd-section + .cd-section{border-top:1px solid var(--border);margin-top:52px;padding-top:52px;}
-.cd-eyebrow{color:var(--cd-accent,var(--cd-blue));}
+.cd-eyebrow{display:flex;align-items:center;gap:8px;color:var(--cd-accent,var(--cd-blue));}
+.cd-eyebrow .cd-mod-icon{width:18px;height:18px;}
 .cd-title{margin-top:0;}
 .cd-intro{max-width:none;margin-bottom:26px;}
+/* plan / scope condition shown under a section's intro (item.note) */
+.cd-note{margin:-10px 0 26px;padding:12px 16px;border-left:3px solid var(--cd-accent,var(--cd-blue));border-radius:0 8px 8px 0;background:var(--cd-blue-tint);font-size:13.5px;line-height:1.6;color:var(--text-body);}
 
 /* section typography (this page's own reduced version of the sitewide
    section-header pattern — kept local since no other page shares it) */

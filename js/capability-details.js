@@ -18,11 +18,12 @@ var GROUP_FLAGS = {
 
 var MODULES = [
   {
-    module: "HR", accent: "var(--cd-hr)",
+    module: "HR", accent: "var(--cd-hr)", icon: "/uploads/2026/07/HRIcon.webp",
     items: [
       {
         id: "standard-information-fields", title: "Standard Information Fields", type: "table",
-        intro: "The default set of fields captured on every employee master record, available from day one before any custom fields are added.",
+        intro: "The default set of fields captured on every employee master record, included on all plans.",
+        note: "Grow adds up to 10 custom fields; on Transform, custom fields are as agreed with PeoplesHR. Manage uses the standard fields only.",
         data: {
           columns: ["Field", "Description"],
           rows: [
@@ -68,7 +69,7 @@ var MODULES = [
           { name: "Transfer", desc: "Movement between departments, locations, or business units, with effective dating and history retained." },
           { name: "Promotion", desc: "Elevation to a higher grade, designation, or role, recorded against the employee's history." },
           { name: "Resignation / exit", desc: "The employee's departure from the organisation, capturing resignation and exit details." },
-          { name: "Contract extension", desc: "Extension of a fixed-term or contract employee's engagement period, with the new dates recorded." }
+          { name: "Increment", desc: "A salary increase for an employee, recorded with its effective date against the employee's history." }
         ]
       },
       {
@@ -84,21 +85,22 @@ var MODULES = [
       {
         id: "hr-statutory-letters", title: "HR & statutory letter templates", type: "table",
         intro: "Pre-built letter templates covering the common HR and statutory documents employees and managers need generated on demand.",
+        note: "Your plan covers set-up of up to 5 standard letter templates, based on existing PeoplesHR formats. Additional templates depend on your plan&#39;s entitlements; where you need more than your plan allows, the next plan up provides it.",
         data: {
           columns: ["Template", "When used"],
           rows: [
-            ["Appointment letter", "Issued when a new employee is hired, confirming their appointment, role, and terms."],
-            ["Increment letter", "Issued when an employee receives a salary increment, confirming the revised pay."],
-            ["Confirmation letter", "Issued when an employee is confirmed from probation to permanent status."],
-            ["Probation extension letter", "Issued when an employee's probation is extended, stating the new confirmation date."],
-            ["Salary confirmation letter", "Issued on request to confirm an employee's current salary, typically for external verification (loans, visas, etc.)."]
+            ["Joining letter", "Issued when a new joiner's record is created, confirming the date of joining and initial terms."],
+            ["Promotion letter", "Issued when a promotion is approved, communicating the new designation, grade, and effective date."],
+            ["Confirmation letter", "Issued when an employee's probation review is approved, confirming them in their role."],
+            ["Increment letter", "Issued when a salary increment is approved, communicating the revised salary and its effective date."],
+            ["Transfer letter", "Issued when a transfer is approved, communicating the new division or location and the effective date."]
           ]
         }
       }
     ]
   },
   {
-    module: "Time", accent: "var(--cd-time)",
+    module: "Time", accent: "var(--cd-time)", icon: "/uploads/2026/07/TimeIcon.webp",
     items: [
       {
         id: "standard-overtime-calculations", title: "Standard overtime calculations", type: "list",
@@ -171,15 +173,25 @@ var MODULES = [
         data: { prose: [
           "OpenStreetMap is the default mapping provider for this service. Alternative mapping providers can be supported upon client request, subject to availability, configuration requirements and any applicable licensing costs."
         ] }
+      },
+      {
+        id: "attendance-devices", title: "Third-party attendance devices", type: "prose",
+        intro: "PeoplesHR can take attendance data from compatible third-party attendance capturing devices, subject to the conditions below.",
+        data: { prose: [
+          "Integration is at PeoplesHR's sole discretion and is subject to verification of the devices' compatibility.",
+          "The integration effort is estimated separately, and the related charges are payable by the customer.",
+          "Where the integration is agreed, the customer must ensure the devices record data to an intermediary database (MS SQL), which then pushes the attendance data to PeoplesHR."
+        ] }
       }
     ]
   },
   {
-    module: "Pay", accent: "var(--cd-pay)",
+    module: "Pay", accent: "var(--cd-pay)", icon: "/uploads/2026/07/PayIcon.webp",
     items: [
       {
         id: "benefit-types", title: "Benefit types", type: "list",
         intro: "Non-cash benefits, allowances, and entitlements that can be administered per employee, each with its own eligibility rules.",
+        note: "Manage includes up to 3 benefit types and Grow up to 8; Transform is as agreed with PeoplesHR. Benefit types beyond your plan&#39;s entitlement are subject to effort estimation and additional charges.",
         data: [
           { name: "Meal allowance", desc: "Recurring allowance paid alongside salary for eligible employees." },
           { name: "Medical reimbursement", desc: "Reimbursement of eligible medical expenses, tracked and paid through payroll." },
@@ -193,31 +205,18 @@ var MODULES = [
           { name: "Bank file export", desc: "Generates a bank-formatted payment file for salary disbursement." },
           { name: "Workday", desc: "Integration to exchange employee and payroll data with Workday." },
           { name: "SAP", desc: "Integration to exchange employee, payroll, and finance data with SAP." },
-          { name: "IFS", desc: "Integration to exchange payroll and finance data with IFS." },
-          { name: "Hive", desc: "[To confirm] Integration with Hive." }
+          { name: "IFS", desc: "Integration to exchange payroll and finance data with IFS." }
         ]
       }
     ]
   },
   {
-    module: "Insights", accent: "var(--cd-insights)",
+    module: "Insights", accent: "var(--cd-insights)", icon: "/uploads/2026/07/InsightsIcon.webp",
     items: [
-      {
-        id: "standard-reports", title: "Standard reports library", type: "table", hidden: true,
-        intro: "Pre-built reports spanning every module, available on demand so HR can pull common data views without building them from scratch.",
-        data: {
-          columns: ["Report", "Module", "What it shows"],
-          rows: [
-            ["Headcount summary", "HR", "Current headcount broken down by department, location, and employment type. <em>Example row — ready to use.</em>"],
-            ["[To be completed]", "[To be completed]", "[To be completed]"],
-            ["[To be completed]", "[To be completed]", "[To be completed]"],
-            ["[To be completed]", "[To be completed]", "[To be completed]"]
-          ]
-        }
-      },
       {
         id: "standard-dashboards", title: "Standard dashboards", type: "table",
         intro: "Pre-built dashboards that connect metrics across modules and update automatically as the underlying data changes.",
+        note: "Available with the Interactive Analytics module, which includes these existing dashboards and the module&#39;s existing data library. Additional dashboards or data libraries for specific requirements are priced separately after the effort is estimated.",
         data: {
           columns: ["Dashboard", "Description"],
           rows: [
@@ -232,6 +231,245 @@ var MODULES = [
             ["Monthly Payroll Overview", "A month-by-month view of payroll information."],
             ["ELC Movement Overview", "A summary of employee life-cycle movements and changes."],
             ["Absenteeism Summary", "A snapshot of employee absence across the organisation."]
+          ]
+        }
+      },
+      {
+        id: "reports-employee-information", title: "Employee information reports", type: "table",
+        intro: "Core reports on who your people are, how long they have served and where they sit, together with probation tracking and separation lists.",
+        note: "Your plan covers set-up of up to 5 standard reports per licensed module, chosen from this list. Additional or custom reports depend on your plan&#39;s entitlements; where you need more than your plan allows, the next plan up provides it.",
+        data: {
+          columns: ["Report", "What it shows"],
+          rows: [
+            ["Employee Summary Report", "Lists key details of all active employees (name, designation, department, grade, join date, status)."],
+            ["Employee Profile Report", "Complete single-employee record: personal, dependants, qualifications, movements, leave, work experience and address. Section selector lets the user print only what is needed."],
+            ["Consolidated Employee Summary Dashboard", "Management view of workforce composition: gender mix, cadre by corporate title, service analysis and age analysis with charts."],
+            ["Staff Directory", "Internal directory showing names, designations, departments and work contact details."],
+            ["Employee Contact Details", "HR-only report of full contact information (phone, email, residential and communication addresses)."],
+            ["Emergency Contact Details", "Lists each employee with next-of-kin / emergency contact details."],
+            ["Employee Relationships &amp; Dependants Details", "Details of employee relationships and dependants (spouse, children, parents) with their key details."],
+            ["Designation Wise Statistics", "Headcount by designation, showing how many employees hold each designation, optionally by department or grade."],
+            ["Birthday Report", "Employee birthdays grouped by date within a chosen period."],
+            ["Age Analysis Report", "Age-band summary with pie chart and drill-down to individual ages, categorised by department."],
+            ["Service Analysis Report", "Service-range summary with pie chart and drill-down to individual service length."],
+            ["Service Milestone Report", "Employees completing a specified number of years of service within a selected period."],
+            ["Pending Confirmations Report", "Employees whose probation / confirmation is pending (and overdue) as of the run date."],
+            ["Employee Joining Statistics", "Employees who joined within a specified period."],
+            ["Resignations &amp; Separations List", "Employees who resigned or separated in a period, with last working day and separation type."],
+            ["Previous Working Experience", "Prior work experience for a selected employee or group."],
+            ["Employee Qualification Register", "Register of qualifications held by employees."],
+            ["Professional Body Membership Statistics", "Membership statistics by professional body (e.g. CIMA, CA, IESL)."]
+          ]
+        }
+      },
+      {
+        id: "reports-absence", title: "Absence reports", type: "table",
+        intro: "Leave utilisation, pending leave requests and leave balances by department.",
+        note: "Your plan covers set-up of up to 5 standard reports per licensed module, chosen from this list. Additional or custom reports depend on your plan&#39;s entitlements; where you need more than your plan allows, the next plan up provides it.",
+        data: {
+          columns: ["Report", "What it shows"],
+          rows: [
+            ["Employee Leave Status Details", "Leave taken per active employee, grouped by department, for a chosen leave year."],
+            ["Employee Pending Leave Details", "Pending (unapproved) leave requests for active employees by department in the current leave year."],
+            ["Employee Leave Balance Summary", "Leave utilisation and remaining balances for all active employees in the current leave year."]
+          ]
+        }
+      },
+      {
+        id: "reports-time-attendance", title: "Time & attendance reports", type: "table",
+        intro: "Daily attendance control and period reports that support payroll: overtime, rosters, shift adjustments and timesheets.",
+        note: "Your plan covers set-up of up to 5 standard reports per licensed module, chosen from this list. Additional or custom reports depend on your plan&#39;s entitlements; where you need more than your plan allows, the next plan up provides it.",
+        data: {
+          columns: ["Report", "What it shows"],
+          rows: [
+            ["Daily Attendance Report", "Attendance for a selected date, with a status filter (present, late, absent, on leave)."],
+            ["Daily Late Report", "Employees who arrived late on a date, with late minutes."],
+            ["Daily Absence &amp; Leave Report", "Employees absent on a date, showing whether it is on approved leave or unexplained."],
+            ["Individual Attendance Report", "Attendance details for individual employee(s) for a date / period."],
+            ["Invalid Attendance (Missed Punch) Report", "Employees with invalid or missing in / out punches for a date."],
+            ["Overtime Details Report", "Overtime hours and values grouped by overtime type."],
+            ["Overtime Reasons Report", "Overtime hours grouped by reason and roster."],
+            ["Roster Schedules Report", "Roster schedules for a selected roster group for a month."],
+            ["Shift Adjustment Report", "Shift adjustments for a business unit within a period."],
+            ["Timesheet Report", "Timesheets for a business unit for a period."]
+          ]
+        }
+      },
+      {
+        id: "reports-employee-life-cycle", title: "Employee life cycle reports", type: "table",
+        intro: "Promotions, transfers and other movements, with views of applications still awaiting approval.",
+        note: "Your plan covers set-up of up to 5 standard reports per licensed module, chosen from this list. Additional or custom reports depend on your plan&#39;s entitlements; where you need more than your plan allows, the next plan up provides it.",
+        data: {
+          columns: ["Report", "What it shows"],
+          rows: [
+            ["Employee Promotion Details", "All promotions in a selected period with old / new designation and grade."],
+            ["Employee Transfer Details", "Employee movements by division for a selected movement type."],
+            ["Movement Type Variation Graph", "Trend of different movement types (promotion, transfer, etc.) plotted together."],
+            ["Pending Movement Applications", "Ongoing employee movement applications waiting for approval."],
+            ["Application Details by Stage &amp; Type", "Applications at a selected processing stage for a selected application type."],
+            ["Application History (Short-listed)", "History of short-listed applications for a selected application type."],
+            ["Movement Changes by Employee &amp; Type", "Applications made by a selected employee for a selected stage and type (initial, short-list, assessment)."]
+          ]
+        }
+      },
+      {
+        id: "reports-recruitment", title: "Recruitment reports", type: "table",
+        intro: "Vacancy, applicant and interview-process reports for recruitment teams and hiring managers.",
+        note: "Your plan covers set-up of up to 5 standard reports per licensed module, chosen from this list. Additional or custom reports depend on your plan&#39;s entitlements; where you need more than your plan allows, the next plan up provides it.",
+        data: {
+          columns: ["Report", "What it shows"],
+          rows: [
+            ["Applicant Details by Position", "Applicants for a selected position."],
+            ["Business Unit Vacancies", "Open vacancies in a selected business unit."],
+            ["Interview Panel &amp; Member Details", "Panel composition with member details and which panels each member sits on."],
+            ["Interview Process Statistics", "Applicant status per selected vacancy (applied, shortlisted, interviewed, offered, rejected)."],
+            ["Interview Profile Details", "Details of a selected interview profile (competencies, questions, criteria)."],
+            ["Vacancy Recruitment Stage Details", "Status for a recruitment stage for a selected vacancy."]
+          ]
+        }
+      },
+      {
+        id: "reports-payroll", title: "Payroll reports", type: "table",
+        intro: "Reports organised around the payroll cycle: pay slips, reconciliations, exception checks, bank and cash payment lists and tax reporting.",
+        note: "Your plan covers set-up of up to 5 standard reports per licensed module, chosen from this list. Additional or custom reports depend on your plan&#39;s entitlements; where you need more than your plan allows, the next plan up provides it.",
+        data: {
+          columns: ["Report", "What it shows"],
+          rows: [
+            ["Pay Slip", "Employee pay slip for a selected pay period, with a layout option (net and gross in one column, or gross-based)."],
+            ["Annual Pay History", "Pay summary per employee over a selected period."],
+            ["Payroll Grand Summary", "Grand totals of salaries and transactions in base currency for a single pay period or a date range."],
+            ["Pay Sheet Currency Wise", "Hierarchy-level transaction amounts per currency, with employee-wise totals."],
+            ["Monthly Basic Salary Reconciliation", "Month-on-month reconciliation of total basic salary, explaining movement (joiners, leavers, increments)."],
+            ["Monthly Bank &amp; Cash Summary", "Amounts paid by bank transfer and by cash, by company and employee."],
+            ["Bank Signature List", "Bank transactions list for employee signature or approval."],
+            ["Cash Signature List", "Cash payment list with employee signature column."],
+            ["Bank Account Reconciliation", "Bank reconciliation details for selected employee(s)."],
+            ["Negative Salary Exceptions", "Employees whose net salary is negative in a period."],
+            ["Tax Report", "Tax details for employees for a period and tax type."],
+            ["Salary Increments Report", "Salary increments by pay period and increment status (approved, pending, processed)."],
+            ["Revision Pay Slip", "Changed amounts on a revised pay slip (arrears, back-pay, corrections) for a selected employee and revision."],
+            ["Statutory Contributions Detail (EPF)", "EPF employee and employer contribution amounts processed for a month."]
+          ]
+        }
+      },
+      {
+        id: "reports-payroll-sri-lanka", title: "Payroll reports: Sri Lanka statutory", type: "table",
+        intro: "Country-specific reports for tax, gratuity and stamp duty. Customers should confirm current statutory formats with the relevant authorities.",
+        note: "Your plan covers set-up of up to 5 standard reports per licensed module, chosen from this list. Additional or custom reports depend on your plan&#39;s entitlements; where you need more than your plan allows, the next plan up provides it.",
+        data: {
+          columns: ["Report", "What it shows"],
+          rows: [
+            ["T09 Report", "Income tax details for employees (available in all three languages)."],
+            ["T6 Report", "Bi-annual tax deduction details for a particular employee in each month (available in all three languages)."],
+            ["T10 Report", "Bi-annual tax deduction details for a particular employee in each month (available in all three languages)."],
+            ["C Form Monthly", "Tax details of employer and employee for a given pay period."],
+            ["Monthly PAYE Details", "PAYE tax details per employee in a period, in company currency with an option to show by currency."],
+            ["Gratuity Eligibility Report", "Employees eligible for gratuity (more than 5 years' service) as of the run date."],
+            ["Stamp Duty Report", "Stamp duty on employee salaries for a period and tax type."],
+            ["Stamp Duty Summary Report", "Total stamp duty paid in a period."],
+            ["Coin Summary Report", "Coin summary details of employees' salaries for a selected pay frequency, year and tax name."]
+          ]
+        }
+      },
+      {
+        id: "reports-loans", title: "Loan reports", type: "table",
+        intro: "Loan schemes, monthly recovery, reconciliation and outstanding balances.",
+        note: "Your plan covers set-up of up to 5 standard reports per licensed module, chosen from this list. Additional or custom reports depend on your plan&#39;s entitlements; where you need more than your plan allows, the next plan up provides it.",
+        data: {
+          columns: ["Report", "What it shows"],
+          rows: [
+            ["Total Monthly Loan Summary", "Total loans for the organisation within a month, grouped by loan type, showing processed recoveries."],
+            ["Monthly Loan Reconciliation", "Monthly reconciliation of loans by loan type."],
+            ["Loan Summary Report", "Active, inactive and pending loan details for a selected loan type."],
+            ["Employee Loan Summary", "Complete loan history and balances for a selected employee."],
+            ["Loan Outstanding Report", "Processed loans with outstanding balances categorised by loan type."]
+          ]
+        }
+      },
+      {
+        id: "reports-performance", title: "Performance reports", type: "table",
+        intro: "Evaluation reports for supervisors, HR and leadership, from individual goal and competency details to 360-degree feedback summaries.",
+        note: "Your plan covers set-up of up to 5 standard reports per licensed module, chosen from this list. Additional or custom reports depend on your plan&#39;s entitlements; where you need more than your plan allows, the next plan up provides it.",
+        data: {
+          columns: ["Report", "What it shows"],
+          rows: [
+            ["Annual Assessment Report", "Annual assessment details per employee."],
+            ["Annual Assessment by Supervisor", "Mid-year and annual ratings given by a selected supervisor."],
+            ["Competency Evaluation Details", "Competency evaluation for an employee (available once both parties have submitted)."],
+            ["Critical Incident Journal by Type", "Critical incidents for a selected incident type."],
+            ["Critical Incident Journal by Employee", "Critical incident journal entries for one employee."],
+            ["Employees Assigned to Evaluation", "Employees assigned to a selected evaluation."],
+            ["Achievements Report", "All achievements recorded for an employee."],
+            ["Misses Report", "Misses recorded for an employee."],
+            ["Interests Report", "Interests submitted by an employee."],
+            ["Evaluation Details", "Evaluations in the system, with a status filter for ongoing evaluations."],
+            ["Form Submission Status", "Status of forms submitted by employees (submitted, pending, overdue)."],
+            ["Goal Planning Details", "Goal planning details for an employee (both parties must have submitted)."],
+            ["Goal Evaluation Details", "Goal results and goal-group weightages for an employee."],
+            ["Mid-Year Review Details", "Mid-year review details for an employee."],
+            ["Rating Details &amp; Training Needs", "Ratings with training needs based on goal evaluation results for a completed evaluation."],
+            ["Competency Group Summary", "Graphical comparison of functional vs core competencies across evaluator levels."],
+            ["Group-wise Assessment Participation Summary", "Planned vs actual assessment participation by level (peer, self, etc.)."],
+            ["Individual Competency Assessment Report", "Graphical comparison of feedback categories for an employee."],
+            ["Self vs Others Feedback Summary", "Compares self-evaluation with other categories for an employee."]
+          ]
+        }
+      },
+      {
+        id: "reports-training", title: "Training & development reports", type: "table",
+        intro: "Training needs, delivery, attendance, cost and employee training history.",
+        note: "Your plan covers set-up of up to 5 standard reports per licensed module, chosen from this list. Additional or custom reports depend on your plan&#39;s entitlements; where you need more than your plan allows, the next plan up provides it.",
+        data: {
+          columns: ["Report", "What it shows"],
+          rows: [
+            ["Annual T&amp;D Expenditure and Days", "Annual training spend and number of training days per month."],
+            ["Employee Training History", "All training attended by an employee."],
+            ["Employees Trained by Subject", "Employees trained in a period, categorised by subject."],
+            ["Program Register", "Attendance register for a programme for participant signatures."],
+            ["Training Attendance Analysis", "Number nominated, registered and present for a course."],
+            ["Training Cost per Employee", "Per-head cost for trainings in a period."],
+            ["Training Needs by Department", "Training needs requested, by department."],
+            ["Training Needs Summary", "Count of requests for each training need."],
+            ["Mandatory Training Due &amp; Overdue", "Employees yet to complete required training."]
+          ]
+        }
+      },
+      {
+        id: "reports-manpower-planning", title: "Manpower planning reports", type: "table",
+        intro: "Division-wise cadre planning, change requests, plan versions and deficits.",
+        note: "Your plan covers set-up of up to 5 standard reports per licensed module, chosen from this list. Additional or custom reports depend on your plan&#39;s entitlements; where you need more than your plan allows, the next plan up provides it.",
+        data: {
+          columns: ["Report", "What it shows"],
+          rows: [
+            ["HR Plan - Cadre Budget", "Division-wise budgeted cadre for a year."],
+            ["HR Plan - Change Requests &amp; Status", "Change requests to the HR plan with their approval status by division."],
+            ["HR Plan - Version History", "Version history of the HR plan by division."],
+            ["HR Plan - Deficit vs Prior Year", "Division-wise HR deficit, comparing last year and current year."]
+          ]
+        }
+      },
+      {
+        id: "reports-disciplinary", title: "Disciplinary reports", type: "table",
+        intro: "Open and completed incidents, proceedings and trends.",
+        note: "Your plan covers set-up of up to 5 standard reports per licensed module, chosen from this list. Additional or custom reports depend on your plan&#39;s entitlements; where you need more than your plan allows, the next plan up provides it.",
+        data: {
+          columns: ["Report", "What it shows"],
+          rows: [
+            ["Ongoing Disciplinary Incidents", "Disciplinary incidents pending approval or in progress."],
+            ["Completed Disciplinary Incidents", "Completed incidents from a selected date to the run date, grouped by incident type or by action taken."],
+            ["Disciplinary Proceedings", "Details of a selected incident for an employee."],
+            ["Disciplinary Trend by Period", "Graph of incidents by period (year, quarter, etc.)."]
+          ]
+        }
+      },
+      {
+        id: "reports-system-administration", title: "System administration reports", type: "table",
+        intro: "Reports that support administrators in monitoring workflow across modules.",
+        note: "Your plan covers set-up of up to 5 standard reports per licensed module, chosen from this list. Additional or custom reports depend on your plan&#39;s entitlements; where you need more than your plan allows, the next plan up provides it.",
+        data: {
+          columns: ["Report", "What it shows"],
+          rows: [
+            ["Pending Workflow Approvals", "Pending approvals across all modules, grouped by approval type and approver."]
           ]
         }
       }
@@ -249,6 +487,12 @@ var MODULES = [
   var navLinks = [];   // { id, linkEl, groupTriggerEl, groupBodyEl }
   var sections = [];   // { id, sectionEl }
 
+  /* same product icons the navbar's Products menu uses; modules
+     without an `icon` (e.g. Standard Reports) render label-only */
+  function moduleIcon(mod) {
+    return mod.icon ? "<img class=\"cd-mod-icon\" src=\"" + mod.icon + "\" alt=\"\" width=\"20\" height=\"20\">" : "";
+  }
+
   /* ---------- render sidebar ---------- */
   MODULES.forEach(function (mod, mi) {
     var group = document.createElement("div");
@@ -258,7 +502,7 @@ var MODULES = [
     trigger.type = "button";
     trigger.className = "mobile-nav-link";
     trigger.setAttribute("aria-expanded", "false");
-    trigger.innerHTML = "<span>" + mod.module + "</span>" +
+    trigger.innerHTML = "<span class=\"cd-group-label\">" + moduleIcon(mod) + mod.module + "</span>" +
       "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 9l6 6 6-6\"/></svg>";
 
     var body = document.createElement("div");
@@ -302,7 +546,7 @@ var MODULES = [
       var eyebrow = document.createElement("span");
       eyebrow.className = "phr-section__label cd-eyebrow";
       eyebrow.style.setProperty("--cd-accent", mod.accent);
-      eyebrow.textContent = mod.module;
+      eyebrow.innerHTML = moduleIcon(mod) + mod.module;
 
       var h2 = document.createElement("h2");
       h2.className = "phr-section__title cd-title";
@@ -315,6 +559,13 @@ var MODULES = [
       section.appendChild(eyebrow);
       section.appendChild(h2);
       section.appendChild(intro);
+      if (item.note) {
+        var note = document.createElement("p");
+        note.className = "cd-note";
+        note.style.setProperty("--cd-accent", mod.accent);
+        note.innerHTML = item.note;
+        section.appendChild(note);
+      }
       section.appendChild(renderBody(item));
 
       contentEl.appendChild(section);
