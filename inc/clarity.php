@@ -19,6 +19,13 @@ $phr_clarity_host = strtolower(preg_replace('/:\d+$/', '', $_SERVER['HTTP_HOST']
 if (in_array($phr_clarity_host, ['peopleshr.com', 'www.peopleshr.com', 'origin.peopleshr.com'], true)):
 ?>
   <!-- Microsoft Clarity -->
+<?php if (!empty($phr_defer_trackers)): /* see inc/tracker-defer.php */ ?>
+  <script type="text/javascript">
+    window.clarity = window.clarity || function(){(window.clarity.q=window.clarity.q||[]).push(arguments)};
+    phrDeferScript('https://www.clarity.ms/tag/k1zv4lyxlq');
+    if (/(?:^|; )phr_cookie_consent=rejected/.test(document.cookie)) window.clarity('consent', false);
+  </script>
+<?php else: ?>
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -27,4 +34,5 @@ if (in_array($phr_clarity_host, ['peopleshr.com', 'www.peopleshr.com', 'origin.p
     })(window, document, "clarity", "script", "k1zv4lyxlq");
     if (/(?:^|; )phr_cookie_consent=rejected/.test(document.cookie)) window.clarity('consent', false);
   </script>
+<?php endif; ?>
 <?php endif; ?>

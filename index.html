@@ -23,6 +23,11 @@
 
   <?php include __DIR__ . '/inc/seo-schema.php'; ?>
 
+  <!-- Hero photo is the LCP element: start it before the stylesheets.
+       imagesrcset/imagesizes must match the <img> in the hero exactly,
+       or the browser downloads it twice. -->
+  <link rel="preload" as="image" href="/uploads/2026/10/home_hero_cover.webp" imagesrcset="/uploads/2026/10/home_hero_cover-480w.webp 480w, /uploads/2026/10/home_hero_cover-720w.webp 720w, /uploads/2026/10/home_hero_cover-960w.webp 960w, /uploads/2026/10/home_hero_cover.webp 1086w" imagesizes="(max-width: 768px) 320px, (max-width: 1024px) 420px, 560px" fetchpriority="high" />
+
   <!-- CSS -->
   <link rel="stylesheet" href="<?php echo asset_v('/css/styles.css'); ?>" />
    <link rel="stylesheet" href="<?php echo asset_v('/css/navbar.css'); ?>" />
@@ -420,10 +425,10 @@
     <div class="home-hero-visual">
       <!-- Behind her: sits under the photo, peeks out past her shoulder. -->
       <div class="home-hero-card home-hero-card--back home-hero-card--filled"><img src="/uploads/2026/10/Hero_UI1.webp" alt="Lexi AI answering with a quarterly workforce overview chart of hires, exits and net change" width="650" height="406"></div>
-      <img class="home-hero-img" src="/uploads/2026/10/home_hero_cover.webp" alt="HR leader smiling, thinking about her workforce" width="1086" height="1448" fetchpriority="high"/>
+      <img class="home-hero-img" src="/uploads/2026/10/home_hero_cover.webp" srcset="/uploads/2026/10/home_hero_cover-480w.webp 480w, /uploads/2026/10/home_hero_cover-720w.webp 720w, /uploads/2026/10/home_hero_cover-960w.webp 960w, /uploads/2026/10/home_hero_cover.webp 1086w" sizes="(max-width: 768px) 320px, (max-width: 1024px) 420px, 560px" alt="HR leader smiling, thinking about her workforce" width="1086" height="1448" fetchpriority="high"/>
       <!-- In front of her: overlaps her arm. -->
       <div class="home-hero-card home-hero-card--front home-hero-card--filled"><img src="/uploads/2026/10/Hero_UI2.webp" alt="Lexi AI search bar asking: What are the three workforce signals I should act on this quarter?" width="600" height="200"></div>
-      <img class="home-hero-lexi" src="/uploads/2026/10/lexi_3d_icon.webp" alt="" width="1000" height="1000" aria-hidden="true">
+      <img class="home-hero-lexi" src="/uploads/2026/10/lexi_3d_icon-240w.webp" alt="" width="240" height="240" aria-hidden="true">
       <div class="home-hero-icon home-hero-icon--hr" title="HR"><img src="/uploads/2026/07/HRIcon.webp" alt="" width="24" height="24"></div>
       <div class="home-hero-icon home-hero-icon--pay" title="Pay"><img src="/uploads/2026/07/PayIcon.webp" alt="" width="24" height="24"></div>
       <div class="home-hero-icon home-hero-icon--time" title="Time"><img src="/uploads/2026/07/TimeIcon.webp" alt="" width="24" height="24"></div>

@@ -23,13 +23,21 @@
 
   <?php include __DIR__ . '/inc/seo-schema.php'; ?>
 
+  <!-- The demo form sits in the hero, so warm the HubSpot form hosts and start
+       downloading the v2 embed from the head (defer runs it before
+       DOMContentLoaded, where the inline script below creates the form). -->
+  <link rel="preconnect" href="https://js-na2.hsforms.net" />
+  <link rel="preconnect" href="https://forms-na2.hsforms.com" crossorigin />
+  <script src="https://js-na2.hsforms.net/forms/embed/v2.js" defer></script>
+
   <!-- CSS -->
   <link rel="stylesheet" href="<?php echo asset_v('/css/styles.css'); ?>" />
   <link rel="stylesheet" href="<?php echo asset_v('/css/navbar.css'); ?>" />
   <link rel="stylesheet" href="<?php echo asset_v('/css/footer.css'); ?>" />
   <link rel="stylesheet" href="<?php echo asset_v('/css/lexi-insights.css'); ?>" />
-  <!-- Start of HubSpot Embed Code -->
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/45700506.js"></script>
+  <!-- Start of HubSpot Embed Code (held until the hero form is ready, see inc/tracker-defer.php) -->
+  <?php $phr_defer_trackers = true; include __DIR__ . '/inc/tracker-defer.php'; ?>
+  <script>phrDeferScript('https://js-na2.hs-scripts.com/45700506.js', 'hs-script-loader');</script>
   <!-- End of HubSpot Embed Code -->
   <?php include __DIR__ . '/inc/ga4.php'; ?>
   <?php include __DIR__ . '/inc/geo-head.php'; ?>
@@ -445,11 +453,11 @@
 
 <!-- This is a legacy HubSpot form, which the newer .hs-form-frame embed
      (used on philippines-payroll-lp.html) can't render, so it uses the v2
-     embed. The "Loading form…" spinner above is removed once the form is
-     ready, or after 15s so a blocked embed never leaves it spinning. -->
-<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+     embed (loaded deferred from the head). The "Loading form…" spinner above
+     is removed once the form is ready, or after 15s so a blocked embed never
+     leaves it spinning. Form ready also releases the held-back trackers. -->
 <script>
-  (function () {
+  document.addEventListener('DOMContentLoaded', function () {
     function hideLoader() {
       var loader = document.querySelector('.hero-form-body .pay-form-loading');
       if (loader) loader.parentNode.removeChild(loader);
@@ -461,9 +469,12 @@
       portalId: "45700506",
       formId: "3f13304d-fb30-440b-9506-0327a0116575",
       target: "#hrisLpFormEmbed",
-      onFormReady: hideLoader
+      onFormReady: function () {
+        hideLoader();
+        window.phrLoadTrackers();
+      }
     });
-  }());
+  });
 </script>
 
 <!-- ═══════════════════════════════════════════════
@@ -784,9 +795,9 @@
            and module icon chips. Styles: .home-hero-* in styles.css. -->
       <div class="home-hero-visual">
         <div class="home-hero-card home-hero-card--back home-hero-card--filled"><img src="/uploads/2026/10/Hero_UI1.webp" alt="Lexi AI answering with a quarterly workforce overview chart of hires, exits and net change" width="650" height="406" loading="lazy"></div>
-        <img class="home-hero-img" src="/uploads/2026/10/home_hero_cover.webp" alt="HR leader smiling, thinking about her workforce" width="1086" height="1448" loading="lazy">
+        <img class="home-hero-img" src="/uploads/2026/10/home_hero_cover.webp" srcset="/uploads/2026/10/home_hero_cover-480w.webp 480w, /uploads/2026/10/home_hero_cover-720w.webp 720w, /uploads/2026/10/home_hero_cover-960w.webp 960w, /uploads/2026/10/home_hero_cover.webp 1086w" sizes="(max-width: 1024px) 420px, 480px" alt="HR leader smiling, thinking about her workforce" width="1086" height="1448" loading="lazy">
         <div class="home-hero-card home-hero-card--front home-hero-card--filled"><img src="/uploads/2026/10/Hero_UI2.webp" alt="Lexi AI search bar asking: What are the three workforce signals I should act on this quarter?" width="600" height="200" loading="lazy"></div>
-        <img class="home-hero-lexi" src="/uploads/2026/10/lexi_3d_icon.webp" alt="" width="1000" height="1000" aria-hidden="true" loading="lazy">
+        <img class="home-hero-lexi" src="/uploads/2026/10/lexi_3d_icon-240w.webp" alt="" width="240" height="240" aria-hidden="true" loading="lazy">
         <div class="home-hero-icon home-hero-icon--hr" title="HR"><img src="/uploads/2026/07/HRIcon.webp" alt="" width="24" height="24"></div>
         <div class="home-hero-icon home-hero-icon--pay" title="Pay"><img src="/uploads/2026/07/PayIcon.webp" alt="" width="24" height="24"></div>
         <div class="home-hero-icon home-hero-icon--time" title="Time"><img src="/uploads/2026/07/TimeIcon.webp" alt="" width="24" height="24"></div>

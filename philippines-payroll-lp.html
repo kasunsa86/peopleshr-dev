@@ -35,8 +35,9 @@
   <link rel="stylesheet" href="<?php echo asset_v('/css/navbar.css'); ?>" />
   <link rel="stylesheet" href="<?php echo asset_v('/css/footer.css'); ?>" />
   <link rel="stylesheet" href="<?php echo asset_v('/css/philippines-payroll-lp.css'); ?>" />
-  <!-- Start of HubSpot Embed Code -->
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/45700506.js"></script>
+  <!-- Start of HubSpot Embed Code (held until the hero form is ready, see inc/tracker-defer.php) -->
+  <?php $phr_defer_trackers = true; include __DIR__ . '/inc/tracker-defer.php'; ?>
+  <script>phrDeferScript('https://js-na2.hs-scripts.com/45700506.js', 'hs-script-loader');</script>
   <!-- End of HubSpot Embed Code -->
   <?php include __DIR__ . '/inc/ga4.php'; ?>
   <?php include __DIR__ . '/inc/geo-head.php'; ?>

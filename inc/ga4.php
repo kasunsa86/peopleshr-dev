@@ -17,7 +17,11 @@ $phr_ga4_host = strtolower(preg_replace('/:\d+$/', '', $_SERVER['HTTP_HOST'] ?? 
 if (in_array($phr_ga4_host, ['peopleshr.com', 'www.peopleshr.com', 'origin.peopleshr.com'], true)):
 ?>
   <!-- Google tag (gtag.js) -->
+<?php if (!empty($phr_defer_trackers)): /* see inc/tracker-defer.php */ ?>
+  <script>phrDeferScript('https://www.googletagmanager.com/gtag/js?id=G-HLKRR01ZPD');</script>
+<?php else: ?>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLKRR01ZPD"></script>
+<?php endif; ?>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
