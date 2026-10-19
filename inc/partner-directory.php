@@ -36,15 +36,6 @@ $phrPartnerRegions = [
         // Source: PeoplesHR Partner Directory Information sheet (confirmed for publication).
         'partners' => [
             [
-                // Logo: confirm the white-label agreement allows it before publishing.
-                'name'     => 'Mustard Seed Systems Corporation (MSSC)',
-                'type'     => 'strategic',
-                'services' => 'Sales & Implementation',
-                'logo'     => '/uploads/2026/11/mustardseeds.webp',
-                'desc'     => 'A Philippine business-technology provider with 25 years of helping local organizations move to the cloud, and host of the annual Cloud Business Summit.',
-                'website'  => 'https://mseedsystems.com/',
-            ],
-            [
                 'name'     => 'Bridge PayDay Solutions, Inc.',
                 'type'     => 'strategic',
                 'services' => 'Sales & Implementation',
@@ -59,22 +50,6 @@ $phrPartnerRegions = [
                 'logo'     => '/uploads/2026/11/amti_logo.webp',
                 'desc'     => null,
                 'website'  => 'https://amti.com.ph/',
-            ],
-            [
-                'name'     => 'Ark One Solutions Inc.',
-                'type'     => 'reseller',
-                'services' => 'Sales',
-                'logo'     => '/uploads/2026/11/arkone_logo.webp',
-                'desc'     => null,
-                'website'  => 'https://www.ark-one.com.ph/',
-            ],
-            [
-                'name'     => 'SMS Global Technologies Inc. (SMSGT)',
-                'type'     => 'reseller',
-                'services' => 'Sales',
-                'logo'     => '/uploads/2026/11/smsgt_logo.webp',
-                'desc'     => null,
-                'website'  => 'https://smsgt.com/',
             ],
             [
                 'name'     => 'Total Information Management Corporation (TIM)',
