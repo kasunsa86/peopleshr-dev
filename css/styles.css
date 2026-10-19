@@ -7690,6 +7690,7 @@ button.btn-primary {
 .pd-type--strategic{background:#dcfce7;color:#15803d;}
 .pd-type--reseller{background:#eff6ff;color:var(--blue);}
 .pd-type--referral{background:#fef3c7;color:#92400e;}
+.pd-type--distributor{background:#f3e8ff;color:#7e22ce;}
 
 .pd-panel[hidden]{display:none;}
 /* flex (not grid) so a region with one or two partners stays centred */
