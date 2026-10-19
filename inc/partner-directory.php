@@ -5,7 +5,7 @@
  * To add or edit a partner, change $phrPartnerRegions below; the markup
  * renders from it. Per partner:
  *   name   — company name (required)
- *   type   — 'strategic' | 'reseller' | 'referral' (keys of $phrPartnerTypes;
+ *   type   — 'strategic' | 'distributor' | 'reseller' | 'referral' (keys of $phrPartnerTypes;
  *            the signed partner category)
  *   services — optional, e.g. 'Sales' or 'Sales & Implementation'; shown
  *            under the name. Omit or null to hide.
@@ -14,17 +14,18 @@
  *            panel, so any logo shape works; ~800x450 or a transparent
  *            PNG/WebP at least 600px wide looks sharpest.
  *   desc   — one or two sentences, or null to hide
- *   email  — or null to hide the line
- *   phone  — as displayed, e.g. '+63 2 8271 150'; the tel: link strips
- *            spaces/dashes. null hides the line.
+ *   website — full URL, e.g. 'https://example.com/'; shown as the domain
+ *            and opens in a new tab. null hides the line. Partner email
+ *            addresses and phone numbers are deliberately not published.
  * A region with no partners shows a "talk to our team" message instead.
  * The first region is the tab that is open on page load. Within a region,
- * partners are ordered Strategic, then Reseller (Platinum/Gold tiers
- * first), then Referral, then A-Z. Individual referral partners are
+ * partners are ordered Strategic, then Distributor, then Reseller
+ * (Platinum/Gold tiers first), then Referral, then A-Z. Individual referral partners are
  * deliberately not listed.
  */
 $phrPartnerTypes = [
     'strategic' => 'Strategic Partner',
+    'distributor' => 'Distributor Partner',
     'reseller' => 'Reseller Partner',
     'referral' => 'Referral Partner',
 ];
@@ -35,23 +36,12 @@ $phrPartnerRegions = [
         // Source: PeoplesHR Partner Directory Information sheet (confirmed for publication).
         'partners' => [
             [
-                // Logo: confirm the white-label agreement allows it before publishing.
-                'name'     => 'Mustard Seed Systems Corporation (MSSC)',
-                'type'     => 'strategic',
-                'services' => 'Sales & Implementation',
-                'logo'     => '/uploads/2026/11/mustardseeds.webp',
-                'desc'     => 'A Philippine business-technology provider with 25 years of helping local organizations move to the cloud, and host of the annual Cloud Business Summit.',
-                'email'    => 'judith@mseedsystems.com',
-                'phone'    => null,
-            ],
-            [
                 'name'     => 'Bridge PayDay Solutions, Inc.',
                 'type'     => 'strategic',
                 'services' => 'Sales & Implementation',
                 'logo'     => '/uploads/2026/11/BridgePayday_logo.webp',
                 'desc'     => null,
-                'email'    => 'jackie@bridgepayday.ph',
-                'phone'    => '+63 917 630 6755',
+                'website'  => 'https://bridgepayday.ph/',
             ],
             [
                 'name'     => 'Accent Micro Technologies Inc. (AMTI)',
@@ -59,26 +49,7 @@ $phrPartnerRegions = [
                 'services' => 'Sales',
                 'logo'     => '/uploads/2026/11/amti_logo.webp',
                 'desc'     => null,
-                'email'    => 'Kar.Wong@amti.com.ph',
-                'phone'    => null,
-            ],
-            [
-                'name'     => 'Ark One Solutions Inc.',
-                'type'     => 'reseller',
-                'services' => 'Sales',
-                'logo'     => '/uploads/2026/11/arkone_logo.webp',
-                'desc'     => null,
-                'email'    => 'irwin_padrique@ark-one.com.ph',
-                'phone'    => '+63 917 883 9988',
-            ],
-            [
-                'name'     => 'SMS Global Technologies Inc. (SMSGT)',
-                'type'     => 'reseller',
-                'services' => 'Sales',
-                'logo'     => '/uploads/2026/11/smsgt_logo.webp',
-                'desc'     => null,
-                'email'    => 'bernie.deleon@smsgt.com',
-                'phone'    => null,
+                'website'  => 'https://amti.com.ph/',
             ],
             [
                 'name'     => 'Total Information Management Corporation (TIM)',
@@ -86,8 +57,7 @@ $phrPartnerRegions = [
                 'services' => 'Sales',
                 'logo'     => '/uploads/2026/11/tim_logo.webp',
                 'desc'     => null,
-                'email'    => 'sunver.bastes@timcorp.net.ph',
-                'phone'    => '+63 918 920 2615',
+                'website'  => null,
             ],
             [
                 'name'     => 'Amorsolo Consulting, Inc.',
@@ -95,8 +65,7 @@ $phrPartnerRegions = [
                 'services' => 'Sales',
                 'logo'     => '/uploads/2026/11/armosolo_logo.webp',
                 'desc'     => null,
-                'email'    => 'ioni@amorsoloconsulting.com',
-                'phone'    => null,
+                'website'  => 'https://amorsoloconsulting.com/',
             ],
             [
                 'name'     => 'EmergePH Online Consultancy Services',
@@ -104,8 +73,7 @@ $phrPartnerRegions = [
                 'services' => 'Sales',
                 'logo'     => '/uploads/2026/11/emergePH_logo.webp',
                 'desc'     => null,
-                'email'    => 'eli@emergeph.com',
-                'phone'    => null,
+                'website'  => 'https://emergeph.com/',
             ],
             [
                 'name'     => 'P2MSI',
@@ -113,8 +81,7 @@ $phrPartnerRegions = [
                 'services' => 'Sales',
                 'logo'     => '/uploads/2026/11/p2msi_logo.webp',
                 'desc'     => null,
-                'email'    => 'gppatanao@p2msi.com',
-                'phone'    => null,
+                'website'  => null,
             ],
         ],
     ],
@@ -126,32 +93,28 @@ $phrPartnerRegions = [
                 'type'  => 'reseller',
                 'logo'  => '/uploads/2026/11/ntt_data.webp',
                 'desc'  => null,
-                'email' => 'wiji.santoso@nttdata.com',
-                'phone' => null,
+                'website'=> 'https://www.nttdata.com/en-id',
             ],
             [
                 'name'  => 'Qualitas',
                 'type'  => 'reseller',
                 'logo'  => '/uploads/2026/11/qualitas_logo.webp',
                 'desc'  => null,
-                'email' => 'ignatia.octaviani@qualitas.co.id',
-                'phone' => null,
+                'website'=> 'https://qualitas.co.id/',
             ],
             [
                 'name'  => 'Accurate Indonesia',
                 'type'  => 'referral',
                 'logo'  => '/uploads/2026/11/accurate_indonesia_logo.webp',
                 'desc'  => null,
-                'email' => 'erfendhi.putra@cpssoft.com',
-                'phone' => '+62 857 1843 6283',
+                'website'=> 'https://accurate.id/',
             ],
             [
                 'name'  => 'Pratesis',
                 'type'  => 'referral',
                 'logo'  => '/uploads/2026/11/pratesis_logo.webp',
                 'desc'  => null,
-                'email' => 'marcino.waas@pratesis.com',
-                'phone' => null,
+                'website'=> 'https://pratesis.com/',
             ],
         ],
     ],
@@ -163,8 +126,7 @@ $phrPartnerRegions = [
                 'type'  => 'reseller',
                 'logo'  => '/uploads/2026/11/N&U_Software_logo.webp',
                 'desc'  => null,
-                'email' => 'nimali@nandusoftware.com',
-                'phone' => null,
+                'website'=> 'https://nandusoftware.com/',
             ],
         ],
     ],
@@ -174,18 +136,16 @@ $phrPartnerRegions = [
             [
                 'name'  => 'First Cambodia',
                 'type'  => 'reseller',
-                'logo'  => null,
+                'logo'  => '/uploads/2026/11/First_Capital_Cambodia.webp',
                 'desc'  => null,
-                'email' => 'voudda.im@first-cambodia.com',
-                'phone' => '+855 96 888 8278',
+                'website'=> 'https://first-cambodia.com/',
             ],
             [
                 'name'  => 'AdvancedMSP',
                 'type'  => 'reseller',
                 'logo'  => '/uploads/2026/11/advanced_msp_logo.webp',
                 'desc'  => null,
-                'email' => 'sayon.hem@advancedmsp.com',
-                'phone' => null,
+                'website'=> 'https://advancedmsp.com/',
             ],
         ],
     ],
@@ -193,12 +153,11 @@ $phrPartnerRegions = [
         'label'    => 'Bangladesh',
         'partners' => [
             [
-                'name'  => 'Dekko ISHO Technologies Ltd',
-                'type'  => 'reseller',
-                'logo'  => '/uploads/2026/11/dekko_isho.webp',
+                'name'  => 'DITECH',
+                'type'  => 'distributor',
+                'logo'  => '/uploads/2026/11/ditech_bangladesh.webp',
                 'desc'  => null,
-                'email' => 'rubayat@ditech.co',
-                'phone' => '+880 1717 464082',
+                'website'=> 'https://www.ditech.co/',
             ],
         ],
     ],
@@ -207,11 +166,10 @@ $phrPartnerRegions = [
         'partners' => [
             [
                 'name'  => 'Global Frontiers (Pvt) Ltd',
-                'type'  => 'reseller',
+                'type'  => 'distributor',
                 'logo'  => '/uploads/2026/11/global_frontiers_log0.webp',
                 'desc'  => 'Our partner in Nairobi, connecting Kenyan organizations with modern HR technology and co-hosting PeoplesHR\'s HR community events.',
-                'email' => 'dinuksha@globalfrontiers.io',
-                'phone' => '+94 76 745 1532',
+                'website'=> 'https://globalfrontiers.io/',
             ],
         ],
     ],
@@ -220,11 +178,10 @@ $phrPartnerRegions = [
         'partners' => [
             [
                 'name'  => 'Ensaan Technologies',
-                'type'  => 'reseller',
+                'type'  => 'distributor',
                 'logo'  => '/uploads/2026/11/ensaan_logo.webp',
                 'desc'  => 'A leading provider of HR software and talent management solutions across the Middle East, with deep expertise in deploying HR systems.',
-                'email' => 'pmandge@ensaantech.com',
-                'phone' => '+971 56 460 5880',
+                'website'=> 'https://ensaantech.com/',
             ],
         ],
     ],
@@ -254,6 +211,7 @@ $phrFirstRegion = key(array_slice($phrPartnerRegions, 0, 1, true));
       <p>Work with a PeoplesHR partner who knows your market. Choose your region to find a partner near you.</p>
       <ul class="pd-legend">
         <li><span class="pd-type pd-type--strategic"><?php echo $phrPartnerTypes['strategic']; ?></span> Works with PeoplesHR on sales and implementation</li>
+        <li><span class="pd-type pd-type--distributor"><?php echo $phrPartnerTypes['distributor']; ?></span> Distributes PeoplesHR through its own reseller network</li>
         <li><span class="pd-type pd-type--reseller"><?php echo $phrPartnerTypes['reseller']; ?></span> Buy PeoplesHR directly through this partner</li>
         <li><span class="pd-type pd-type--referral"><?php echo $phrPartnerTypes['referral']; ?></span> Introduces you to the PeoplesHR team</li>
       </ul>
@@ -291,14 +249,9 @@ $phrFirstRegion = key(array_slice($phrPartnerRegions, 0, 1, true));
 <?php if (!empty($phrP['desc'])): ?>
           <p class="pd-desc"><?php echo htmlspecialchars($phrP['desc']); ?></p>
 <?php endif; ?>
-<?php if (!empty($phrP['email']) || !empty($phrP['phone'])): ?>
+<?php if (!empty($phrP['website'])): ?>
           <ul class="pd-contact">
-<?php if (!empty($phrP['email'])): ?>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg><a href="mailto:<?php echo htmlspecialchars($phrP['email']); ?>"><?php echo htmlspecialchars($phrP['email']); ?></a></li>
-<?php endif; ?>
-<?php if (!empty($phrP['phone'])): ?>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:<?php echo htmlspecialchars(preg_replace('/[^\d+]/', '', $phrP['phone'])); ?>"><?php echo htmlspecialchars($phrP['phone']); ?></a></li>
-<?php endif; ?>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><a href="<?php echo htmlspecialchars($phrP['website']); ?>" target="_blank" rel="noopener"><?php echo htmlspecialchars(rtrim(preg_replace('#^https?://(www\.)?#', '', $phrP['website']), '/')); ?></a></li>
           </ul>
 <?php endif; ?>
           </div>
