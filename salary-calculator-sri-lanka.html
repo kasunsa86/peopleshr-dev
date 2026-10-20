@@ -1,0 +1,770 @@
+<?php require_once __DIR__ . '/inc/geo.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sri Lanka Salary &amp; APIT Tax Calculator 2026/27 (PAYE, EPF, ETF) • PeoplesHR</title>
+  <meta name="description" content="Free salary and APIT (PAYE) tax calculator for Sri Lanka. Work out take-home pay, net to gross salary, EPF/ETF and employer cost for 2026/27." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://peopleshr.com/salary-calculator-sri-lanka/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PeoplesHR" />
+  <meta property="og:title" content="Sri Lanka Salary &amp; APIT Tax Calculator 2026/27 (PAYE, EPF, ETF)" />
+  <meta property="og:description" content="Free salary and APIT (PAYE) tax calculator for Sri Lanka. Work out take-home pay, net to gross salary, EPF/ETF and employer cost for 2026/27." />
+  <meta property="og:url" content="https://peopleshr.com/salary-calculator-sri-lanka/" />
+  <meta property="og:image" content="https://peopleshr.com/uploads/2024/03/PeoplesHR-Logo-1200x630-1.webp" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sri Lanka Salary &amp; APIT Tax Calculator 2026/27 (PAYE, EPF, ETF)" />
+  <meta name="twitter:description" content="Free salary and APIT (PAYE) tax calculator for Sri Lanka. Work out take-home pay, net to gross salary, EPF/ETF and employer cost for 2026/27." />
+  <meta name="twitter:image" content="https://peopleshr.com/uploads/2024/03/PeoplesHR-Logo-1200x630-1.webp" />
+
+  <?php include __DIR__ . '/inc/seo-schema.php'; ?>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Sri Lanka Salary & APIT Tax Calculator 2026/27 (PAYE, EPF, ETF)",
+      "url": "https://peopleshr.com/salary-calculator-sri-lanka/",
+      "description": "Free salary and APIT (PAYE) tax calculator for Sri Lanka. Work out take-home pay, net to gross salary, EPF/ETF and employer cost for 2026/27.",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "LKR"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "PeoplesHR",
+        "url": "https://peopleshr.com/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the tax-free salary in Sri Lanka for 2026/27?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Employees get personal relief of Rs. 1,800,000 a year, which is Rs. 150,000 a month. A monthly taxable salary up to Rs. 150,000 has no APIT deducted."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is APIT calculated for 2026/27?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Income above the Rs. 1,800,000 personal relief is taxed at 6% on the first Rs. 1,000,000, then 18%, 24% and 30% on each next Rs. 500,000, and 36% on the rest. These rates took effect on 1 April 2025 and no changes have been announced for 2026/27. Monthly APIT under Table 01 spreads the annual bands evenly across 12 months."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is APIT the same as PAYE?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, for salaries. APIT (Advance Personal Income Tax) replaced PAYE under the Inland Revenue Act No. 24 of 2017. Many people still call it PAYE. It's the income tax employers deduct from monthly salary."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is EPF deducted before APIT is worked out?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The employee's 8% EPF contribution doesn't reduce taxable employment income, so APIT is calculated on the full taxable salary."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which earnings count for EPF and ETF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "EPF and ETF are based on total earnings: basic salary plus allowances such as cost-of-living, special and fixed allowances. Overtime and certain other payments are excluded. Use the EPF/ETF tick on each allowance to match how your organisation treats it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the net to gross salary calculator work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Enter the take-home salary you want to pay. The calculator keeps your allowances and deductions as entered and finds the basic salary that produces that net amount after EPF, APIT and deductions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are bonuses included?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Bonuses, arrears and other lump-sum payments are taxed under separate APIT tables. This calculator covers regular monthly pay from primary employment only."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="<?php echo asset_v('/css/styles.css'); ?>" />
+   <link rel="stylesheet" href="<?php echo asset_v('/css/navbar.css'); ?>" />
+   <link rel="stylesheet" href="<?php echo asset_v('/css/footer.css'); ?>" />
+   <link rel="stylesheet" href="<?php echo asset_v('/css/salary-calculator-sri-lanka.css'); ?>" />
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/45700506.js"></script>
+  <!-- End of HubSpot Embed Code -->
+  <?php include __DIR__ . '/inc/ga4.php'; ?>
+  <?php include __DIR__ . '/inc/geo-head.php'; ?>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <link rel="describedby" href="/llms.txt" type="text/markdown">
+</head>
+
+<body>
+
+
+
+<div class="nv-root">
+
+  <!-- ============================= NAVBAR ============================= -->
+  <header class="nv-bar" id="nvBar">
+    <div class="nv-inner">
+
+      <a class="nv-logo" href="/" aria-label="PeoplesHR home">
+        <img src="/uploads/2021/07/logo.webp" alt="PeoplesHR">
+      </a>
+
+      <nav aria-label="Primary">
+        <ul class="nv-menu" id="nvMenu">
+
+          <!-- PRODUCTS (mega) -->
+          <li class="nv-item has-mega" data-nv="dropdown">
+            <a class="nv-link" href="/products/" aria-expanded="false" aria-haspopup="true">
+              Products
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-mega">
+                  <div class="nv-grid">
+                    <div class="nv-tile">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/HRIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>HR</b><span>The foundation that actually thinks</span></span>
+                      <a href="/products/core-hr/" class="lqd-overlay z-index-2" target="_self" aria-label="HR"></a>
+                    </div>
+                    <a class="nv-tile" href="/products/payroll-system/">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/PayIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>Pay</b><span>Globally compliant, less complicated</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/talent-acquisition/">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/TalentIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>Talent</b><span>Hiring smarter, not harder</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/time-and-attendance/">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/TimeIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>Time</b><span>Beyond clock watching</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/people-engagement/">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/EngagementIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>Engagement</b><span>Engagement beyond annual surveys</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/people-analytics/">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/InsightsIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>Insight</b><span>Intelligence that drives action</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/mobile-app/">
+                      <span class="nv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2.4"/><path d="M11 18h2"/></svg></span>
+                      <span class="nv-tt"><b>Mobile App</b><span>Work happens everywhere</span></span>
+                    </a>
+                  </div>
+                  <div class="nv-mega-foot">
+                    <p><b>Meet Lexi — PeoplesHR AI</b>Turn any HR action into a simple conversation.</p>
+                    <a class="nv-ghost" href="/ai-x/">
+                      Explore PeoplesHR AI
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- SOLUTIONS (mega columns) -->
+          <li class="nv-item has-mega" data-nv="dropdown">
+            <a class="nv-link" href="/solutions/" aria-expanded="false" aria-haspopup="true">
+              Solutions
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card">
+                  <div class="nv-cols">
+                    <div class="nv-col">
+                      <p class="nv-eyebrow">Industries</p>
+                      <ul class="nv-list">
+                        <li><a href="/solutions/banking-finance-insurance-industries/">Banking, Finance &amp; Insurance<small>Compliance, accuracy and control</small></a></li>
+                        <li><a href="/solutions/hr-software-for-hospitality-industry/">Hospitality<small>Control labour costs across every shift</small></a></li>
+                        <li><a href="/solutions/hr-software-for-manufacturing-industry/">Manufacturing<small>Keep your production lines moving</small></a></li>
+                        <li><a href="/solutions/hr-software-for-professional-and-business-services-industry/">Professional &amp; Business Services<small>Scales with projects, clients and people</small></a></li>
+                        <li><a href="/solutions/hr-software-for-retail-industry/">Retail<small>Keep stores staffed and on target</small></a></li>
+                        <li><a href="/solutions/hr-software-for-it-and-ites-industry/">IT &amp; ITES<small>Connected, compliant teams anywhere</small></a></li>
+                        <li><a href="/solutions/hr-software-for-transportation-and-logistics-industry/">Transportation &amp; Logistics<small>Moves as fast as your fleet</small></a></li>
+                        <li><a href="/solutions/public-sector/">Public Sector<small>Government-wide HR transformation</small></a></li>
+                      </ul>
+                    </div>
+                    <div class="nv-col">
+                      <p class="nv-eyebrow">By Role</p>
+                      <ul class="nv-list">
+                        <li><a href="/solutions/chro/">People Strategy Leaders<small>When the board asks about ROI</small></a></li>
+                        <li><a href="/solutions/cfo/">Financial Strategy Leaders<small>When the numbers finally add up</small></a></li>
+                        <li><a href="/solutions/cio/">Technology Strategy Leaders<small>Technology that works with you</small></a></li>
+                      </ul>
+                    </div>
+                    <div class="nv-col">
+                      <p class="nv-eyebrow">Specialized Solutions</p>
+                      <ul class="nv-list">
+                        <li><a href="/solutions/peopleshr-academy/">PeoplesHR Academy<small>Master PeoplesHR, transform operations</small></a></li>
+                        <li><a href="/solutions/outsourcing/">Payroll Outsourcing<small>Accuracy, compliance &amp; cost savings</small></a></li>
+                        <li><a href="/solutions/peopleshr-tracking/">Access & Attendance Devices<small>Secure your workforce &amp; assets</small></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- CUSTOMERS (direct) -->
+          <li class="nv-item">
+            <a class="nv-link" href="/customers/">Customers</a>
+          </li>
+
+          <!-- RESOURCES (simple) -->
+          <li class="nv-item has-simple" data-nv="dropdown">
+            <button class="nv-link" aria-expanded="false" aria-haspopup="true">
+              Resources
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-simple">
+                  <ul class="nv-list">
+                    <li><a href="/customers/">Case Studies<small>Transformative journeys</small></a></li>
+                    <li><a href="/webinars/">Webinars<small>Learn from the HR experts</small></a></li>
+                    <li><a href="/blog/">Blog<small>Insights, stories and updates</small></a></li>
+                    <li><a href="/events/">Events<small>Insights and networking</small></a></li>
+                    <li><a href="/hr-ebooks-and-guides/">HR eBooks &amp; Guides<small>Build your HR knowledge</small></a></li>
+                    <li><a href="/news/">News<small>Latest from PeoplesHR</small></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- COMPANY (simple) -->
+          <li class="nv-item has-simple" data-nv="dropdown">
+            <button class="nv-link" aria-expanded="false" aria-haspopup="true">
+              Company
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-simple">
+                  <ul class="nv-list">
+                    <li><a href="/company/">About PeoplesHR<small>Our journey as an HR powerhouse</small></a></li>
+                    <li><a href="/careers/">Careers<small>Thrive in your career at PeoplesHR</small></a></li>
+                    <li><a href="/community/">Community<small>Your hub for the HR landscape</small></a></li>
+                    <li><a href="/partner-with-peopleshr/">Partners<small>Unlock endless growth</small></a></li>
+                    <li><a href="/regions/">Regions<small>Growth across APAC and MEA</small></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- PRICING (dropdown) -->
+          <li class="nv-item has-simple" data-nv="dropdown">
+            <a class="nv-link" href="/view-plans/" aria-expanded="false" aria-haspopup="true">
+              Pricing
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-simple nv-card--wide">
+                  <ul class="nv-list">
+                    <li><a href="/view-plans/">View Pricing Plans<small>Plans built around your team's size</small></a></li>
+                  </ul>
+                  <a class="nv-promo-tile" href="/roi-calculator/">
+                    <span class="nv-promo-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/></svg>
+                    </span>
+                    <span class="nv-promo-text">
+                      <b>PeoplesHR ROI Calculator</b>
+                      <span>Run the Numbers. Let the ROI Speak. Instant, clear results tailored for your business.</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- INTERACTIVE DEMOS (direct + badge) -->
+          <li class="nv-item">
+            <a class="nv-link" href="/interactive-demos/">
+              Interactive Demos
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <div class="nv-actions">
+        <a class="nv-cta" href="/get-in-touch/">Request a Demo</a>
+        <button class="nv-burger" id="nvBurger" aria-label="Open menu" aria-expanded="false"><span></span></button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ===================== ANNOUNCEMENT BAR ===================== -->
+  <div class="nv-ann" id="nvAnn" role="region" aria-label="Site announcement">
+    <div class="nv-ann-inner">
+      <span class="nv-ann-badge">New</span>
+      <p class="nv-ann-text">PeoplesHR now comes in three clear packages for you to know exactly what you're buying &#x1F4B8;
+        <a href="/view-plans/">View Packages
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </p>
+      <button class="nv-ann-close" id="nvAnnClose" aria-label="Dismiss announcement">&times;</button>
+    </div>
+  </div>
+
+  <!-- ===================== MOBILE PANEL ===================== -->
+  <div class="nv-scrim" id="nvScrim"></div>
+  <aside class="nv-panel" id="nvPanel" aria-label="Mobile menu" aria-hidden="true">
+    <div class="nv-panel-head">
+      <img src="/uploads/2021/07/logo.webp" alt="PeoplesHR">
+      <button class="nv-close" id="nvClose" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="nv-panel-body">
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Products
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/products/core-hr/">HR</a>
+          <a href="/products/payroll-system/">Pay</a>
+          <a href="/products/talent-acquisition/">Talent</a>
+          <a href="/products/time-and-attendance/">Time</a>
+          <a href="/products/people-engagement/">Engagement</a>
+          <a href="/products/people-analytics/">Insight</a>
+          <a href="/products/mobile-app/">Mobile App</a>
+          <a href="/ai-x/">Explore PeoplesHR AI</a>
+        </div></div>
+      </div>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Solutions
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <p class="nv-sub-label">Industries</p>
+          <a href="/solutions/banking-finance-insurance-industries/">Banking, Finance &amp; Insurance</a>
+          <a href="/solutions/hr-software-for-hospitality-industry/">Hospitality</a>
+          <a href="/solutions/hr-software-for-manufacturing-industry/">Manufacturing</a>
+          <a href="/solutions/hr-software-for-professional-and-business-services-industry/">Professional &amp; Business Services</a>
+          <a href="/solutions/hr-software-for-retail-industry/">Retail</a>
+          <a href="/solutions/hr-software-for-it-and-ites-industry/">IT &amp; ITES</a>
+          <a href="/solutions/hr-software-for-transportation-and-logistics-industry/">Transportation &amp; Logistics</a>
+          <a href="/solutions/public-sector/">Public Sector</a>
+          <p class="nv-sub-label">By Role</p>
+          <a href="/solutions/chro/">People Strategy Leaders</a>
+          <a href="/solutions/cfo/">Financial Strategy Leaders</a>
+          <a href="/solutions/cio/">Technology Strategy Leaders</a>
+          <p class="nv-sub-label">Specialized Solutions</p>
+          <a href="/solutions/peopleshr-academy/">PeoplesHR Academy</a>
+          <a href="/solutions/outsourcing/">Payroll Outsourcing</a>
+          <a href="/solutions/peopleshr-tracking/">Access & Attendance Devices</a>
+        </div></div>
+      </div>
+
+      <a class="nv-mlink" href="/customers/">Customers</a>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Resources
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/customers/">Case Studies</a>
+          <a href="/webinars/">Webinars</a>
+          <a href="/blog/">Blog</a>
+          <a href="/events/">Events</a>
+          <a href="/hr-ebooks-and-guides/">HR eBooks &amp; Guides</a>
+          <a href="/news/">News</a>
+        </div></div>
+      </div>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Company
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/company/">About PeoplesHR</a>
+          <a href="/careers/">Careers</a>
+          <a href="/community/">Community</a>
+          <a href="/partner-with-peopleshr/">Partners</a>
+          <a href="/regions/">Regions</a>
+        </div></div>
+      </div>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Pricing
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/view-plans/">View Pricing Plans</a>
+          <a href="/roi-calculator/">PeoplesHR ROI Calculator</a>
+        </div></div>
+      </div>
+
+      <a class="nv-mlink" href="/interactive-demos/">Interactive Demos</a>
+
+    </div>
+    <div class="nv-panel-foot">
+      <a class="nv-cta" href="/get-in-touch/">Request a Demo</a>
+    </div>
+  </aside>
+
+</div><!-- /.nv-root -->
+
+<!-- end of navbar -->
+
+<!-- ═══════════════════════════════════════════════
+     SRI LANKA SALARY CALCULATOR (scoped tool, own CSS/JS)
+     ═══════════════════════════════════════════════ -->
+<div class="tclk-scope">
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="brand">
+        <div>
+          <h1><img class="flag" src="/uploads/2024/03/flag-sri-lanka.png" alt="Flag of Sri Lanka" width="44" height="24">Sri Lanka Salary &amp; APIT Tax Calculator 2026/27</h1>
+          <p>Work out take-home pay from gross salary, or the gross salary needed for a target net pay.</p>
+        </div>
+        <div class="hero-actions"><button class="btn btn-light" data-open="rules">Rates &amp; Rules</button></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="app">
+    <div class="shell">
+
+      <div class="tabs" role="tablist" aria-label="Calculation direction">
+        <button class="tab active" role="tab" aria-selected="true" data-mode="gross">Gross to Net</button>
+        <button class="tab" role="tab" aria-selected="false" data-mode="net">Net to Gross</button>
+      </div>
+
+      <section class="view">
+        <div class="notice"><b>Privacy:</b> Calculations run only in your browser. Nothing you enter is sent or stored.</div>
+
+        <div class="grid2">
+
+          <!-- 1. Earnings -->
+          <section class="panel">
+            <h2>1. Monthly earnings</h2>
+            <p class="sub">Basic salary and allowances paid each month</p>
+
+            <div class="field" id="basicField">
+              <label for="basic">Basic salary</label>
+              <div class="money"><span>Rs.</span><input id="basic" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00"></div>
+            </div>
+            <div class="field hidden" id="targetField">
+              <label for="target">Target net (take-home) salary</label>
+              <div class="money"><span>Rs.</span><input id="target" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00"></div>
+              <p class="hint">Allowances and deductions below stay as entered; the calculator solves for the basic salary.</p>
+            </div>
+
+            <div class="list-head">
+              <div>
+                <h3>Allowances</h3>
+                <p class="hint">Tick whether each one counts for EPF/ETF and for APIT.</p>
+              </div>
+              <button class="btn btn-ghost btn-sm" id="addAllow"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Add allowance</button>
+            </div>
+            <div id="allowList" class="line-list"></div>
+          </section>
+
+          <!-- 2. Deductions -->
+          <section class="panel">
+            <h2>2. Contributions &amp; deductions</h2>
+            <p class="sub">Statutory contributions and other monthly deductions</p>
+
+            <div class="contrib-grid">
+              <div class="field">
+                <span class="field-label">EPF / ETF</span>
+                <label class="check check--box"><input type="checkbox" id="epfMember" checked>Employee is an EPF/ETF member</label>
+              </div>
+              <div class="field">
+                <label for="erRate">Employer EPF rate</label>
+                <select id="erRate">
+                  <option value="0.12" selected>12% (statutory minimum)</option>
+                  <option value="0.15">15%</option>
+                </select>
+              </div>
+            </div>
+            <div class="contrib-stats" aria-live="polite">
+              <div class="contrib-stat"><small>Employee EPF (8%)</small><b id="epfEeStat">Rs. 0.00</b></div>
+              <div class="contrib-stat"><small id="epfErStatLabel">Employer EPF (12%)</small><b id="epfErStat">Rs. 0.00</b></div>
+              <div class="contrib-stat"><small>Employer ETF (3%)</small><b id="etfStat">Rs. 0.00</b></div>
+            </div>
+            <p class="hint">Worked out from EPF/ETF-liable earnings. Only the employee's 8% EPF is deducted from salary.</p>
+            <p id="epfNote" class="hint hidden">EPF and ETF are not calculated for this employee.</p>
+
+            <div class="list-head">
+              <div>
+                <h3>Other deductions</h3>
+                <p class="hint">Loans, advances, welfare and other after-tax deductions.</p>
+              </div>
+              <button class="btn btn-ghost btn-sm" id="addDed"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Add deduction</button>
+            </div>
+            <div id="dedList" class="line-list"></div>
+
+            <div class="result">
+              <div class="result-row"><span id="resALabel">Monthly APIT</span><strong id="resA">Rs. 0.00</strong></div>
+              <div class="divider"></div>
+              <div class="result-row"><span id="resBLabel">Net monthly salary</span><b id="resB">Rs. 0.00</b></div>
+            </div>
+            <p id="zeroNote" class="hint hint--warn hidden">Your allowances alone already cover this net salary, so no basic salary is needed.</p>
+            <p id="negNote" class="hint hint--warn hidden">Deductions are more than the salary left after EPF and APIT, so take-home is negative. Check the amounts entered.</p>
+          </section>
+        </div>
+
+        <!-- Overview -->
+        <section class="dashboard is-collapsed" id="dash">
+          <div class="dash-head">
+            <button class="dash-toggle" id="dashToggle" aria-expanded="false" aria-controls="dashBody">
+              <span>
+                <b>Monthly and annual overview</b>
+                <span class="sub sub--tight">Employee take-home, employer cost and APIT bands</span>
+              </span>
+            </button>
+            <div class="toggle">
+              <button id="eeView">Employee view</button>
+              <button id="erView" class="active">Employer cost</button>
+            </div>
+            <button class="dash-caret-btn" id="dashCaret" aria-expanded="false" aria-controls="dashBody" aria-label="Show overview">
+              <svg class="dash-caret" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+          </div>
+
+          <div id="dashBody" class="dash-body">
+          <div id="eeKpis" class="kpis kpis--five hidden">
+            <div class="kpi"><small>Gross earnings</small><b id="kGross">Rs. 0.00</b><span id="kGrossY">Rs. 0.00 / yr</span></div>
+            <div class="kpi"><small>Employee EPF (8%)</small><b id="kEpf">Rs. 0.00</b><span id="kEpfY">Rs. 0.00 / yr</span></div>
+            <div class="kpi"><small>APIT</small><b id="kTax">Rs. 0.00</b><span id="kTaxY">Rs. 0.00 / yr</span></div>
+            <div class="kpi"><small>Other deductions</small><b id="kDed">Rs. 0.00</b><span id="kDedY">Rs. 0.00 / yr</span></div>
+            <div class="kpi good"><small>Net take-home</small><b id="kNet">Rs. 0.00</b><span id="kNetY">Rs. 0.00 / yr</span></div>
+          </div>
+          <div id="erKpis" class="kpis">
+            <div class="kpi"><small>Gross earnings</small><b id="erGross">Rs. 0.00</b><span id="erGrossY">Rs. 0.00 / yr</span></div>
+            <div class="kpi"><small id="erEpfLabel">Employer EPF (12%)</small><b id="erEpf">Rs. 0.00</b><span id="erEpfY">Rs. 0.00 / yr</span></div>
+            <div class="kpi"><small>Employer ETF (3%)</small><b id="erEtf">Rs. 0.00</b><span id="erEtfY">Rs. 0.00 / yr</span></div>
+            <div class="kpi good"><small>Total cost to employer</small><b id="erTotal">Rs. 0.00</b><span id="erTotalY">Rs. 0.00 / yr</span></div>
+          </div>
+          <p class="footnote">Total monthly EPF credited to the employee's account (employee + employer): <b id="erFund">Rs. 0.00</b>. Annual figures are 12 × the monthly amounts and exclude bonuses.</p>
+
+          <div class="bracket">
+            <div class="bracket-top">
+              <div><small>Current APIT band</small><b id="bracketLabel">Tax-free (personal relief)</b></div>
+              <div class="bracket-right"><small>Taxable monthly income</small><b id="taxableLabel">Rs. 0.00</b></div>
+            </div>
+            <div class="track"><div id="bracketFill" class="fill"></div></div>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Monthly taxable income band</th><th>Rate</th><th>Income in band</th><th>APIT</th></tr></thead>
+              <tbody id="bandRows"></tbody>
+              <tfoot><tr><th colspan="3">Total monthly APIT</th><th id="bandTotal">Rs. 0.00</th></tr></tfoot>
+            </table>
+          </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn btn-ghost" id="resetCalc">Reset</button>
+            <button class="btn btn-primary" data-open="breakdown">View calculation breakdown</button>
+          </div>
+        </section>
+
+        <section class="guide" id="how-it-works">
+          <h2>How take-home salary is calculated in Sri Lanka</h2>
+          <p>Net salary is gross earnings minus the employee's 8% EPF contribution, APIT (often still called PAYE) and any other deductions. On top of the gross salary, the employer pays 12% EPF and 3% ETF, so the total cost of an employee is higher than their gross pay.</p>
+          <div class="guide-grid">
+            <div>
+              <h3>Example: Rs. 300,000 monthly basic salary</h3>
+              <div class="table-wrap">
+                <table>
+                  <tbody>
+                    <tr><td>Gross salary</td><td>Rs. 300,000.00</td></tr>
+                    <tr><td>Employee EPF (8%)</td><td>− Rs. 24,000.00</td></tr>
+                    <tr><td>APIT (24% marginal band)</td><td>− Rs. 18,500.00</td></tr>
+                    <tr class="is-total"><td>Net take-home salary</td><td>Rs. 257,500.00</td></tr>
+                    <tr><td>Employer EPF (12%)</td><td>Rs. 36,000.00</td></tr>
+                    <tr><td>Employer ETF (3%)</td><td>Rs. 9,000.00</td></tr>
+                    <tr class="is-total"><td>Total cost to employer</td><td>Rs. 345,000.00</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3>Monthly APIT tax table 2026/27</h3>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Monthly taxable income</th><th>Rate</th><th>Max tax in band</th></tr></thead>
+                  <tbody>
+                    <tr><td>Up to Rs. 150,000</td><td>0%</td><td>Rs. 0</td></tr>
+                    <tr><td>Rs. 150,001 – 233,333</td><td>6%</td><td>Rs. 5,000</td></tr>
+                    <tr><td>Rs. 233,334 – 275,000</td><td>18%</td><td>Rs. 7,500</td></tr>
+                    <tr><td>Rs. 275,001 – 316,667</td><td>24%</td><td>Rs. 10,000</td></tr>
+                    <tr><td>Rs. 316,668 – 358,333</td><td>30%</td><td>Rs. 12,500</td></tr>
+                    <tr><td>Above Rs. 358,333</td><td>36%</td><td>No limit</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <h3>Net to gross: finding the salary for a target take-home</h3>
+          <p>When you agree a take-home figure with a new hire, switch to <b>Net to Gross</b> and enter that amount. The calculator works backwards through APIT and EPF to give the basic salary and gross pay needed, plus the full employer cost.</p>
+          <p class="updated">Last updated: October 2026. Rates follow the IRD APIT tables effective 1 April 2025; no changes have been announced for Y/A 2026/27.</p>
+        </section>
+
+        <section class="cta">
+          <div>
+            <h3>Run Sri Lankan payroll without the spreadsheets</h3>
+            <p>PeoplesHR applies EPF, ETF and APIT automatically, with statutory returns and payslips built in.</p>
+          </div>
+          <a class="btn btn-light" href="/region-sri-lanka/">Explore PeoplesHR</a>
+        </section>
+
+        <section class="faq" id="faq">
+          <h2>Frequently asked questions</h2>
+          <details>
+            <summary>What is the tax-free salary in Sri Lanka for 2026/27?</summary>
+            <p>Employees get personal relief of Rs. 1,800,000 a year, which is Rs. 150,000 a month. A monthly taxable salary up to Rs. 150,000 has no APIT deducted.</p>
+          </details>
+          <details>
+            <summary>How is APIT calculated for 2026/27?</summary>
+            <p>Income above the Rs. 1,800,000 personal relief is taxed at 6% on the first Rs. 1,000,000, then 18%, 24% and 30% on each next Rs. 500,000, and 36% on the rest. These rates took effect on 1 April 2025 and no changes have been announced for 2026/27. Monthly APIT under <a href="https://www.ird.gov.lk/en/publications/APIT_Tax_Tables/2025-2026/Table%20-%201/02.%20APIT_2526_Table_01_Text.pdf" target="_blank" rel="noopener">Table 01</a> spreads the annual bands evenly across 12 months. See the <a href="https://www.ird.gov.lk/en/publications/SitePages/apit_tax_tables.aspx" target="_blank" rel="noopener">Inland Revenue Department APIT tables</a>.</p>
+          </details>
+          <details>
+            <summary>Is APIT the same as PAYE?</summary>
+            <p>Yes, for salaries. APIT (Advance Personal Income Tax) replaced PAYE under the Inland Revenue Act No. 24 of 2017. Many people still call it PAYE. It's the income tax employers deduct from monthly salary.</p>
+          </details>
+          <details>
+            <summary>Is EPF deducted before APIT is worked out?</summary>
+            <p>No. The employee's 8% EPF contribution doesn't reduce taxable employment income, so APIT is calculated on the full taxable salary. Contribution rules are published by the <a href="https://epf.lk/" target="_blank" rel="noopener">Employees’ Provident Fund</a>.</p>
+          </details>
+          <details>
+            <summary>Which earnings count for EPF and ETF?</summary>
+            <p>EPF and ETF are based on "total earnings": basic salary plus allowances such as cost-of-living, special and fixed allowances. Overtime and certain other payments are excluded. Use the EPF/ETF tick on each allowance to match how your organisation treats it. For guidance, see the <a href="https://www.labourdept.gov.lk/" target="_blank" rel="noopener">Department of Labour</a>, the <a href="https://epf.lk/" target="_blank" rel="noopener">EPF</a> and the <a href="https://www.etfb.lk/" target="_blank" rel="noopener">Employees’ Trust Fund Board</a>.</p>
+          </details>
+          <details>
+            <summary>How does the net to gross salary calculator work?</summary>
+            <p>Enter the take-home salary you want to pay. The calculator keeps your allowances and deductions as entered and finds the basic salary that produces that net amount after EPF, APIT and deductions.</p>
+          </details>
+          <details>
+            <summary>Are bonuses included?</summary>
+            <p>No. Bonuses, arrears and other lump-sum payments are taxed under separate <a href="https://www.ird.gov.lk/en/publications/SitePages/apit_tax_tables.aspx" target="_blank" rel="noopener">APIT tables</a>. This calculator covers regular monthly pay from primary employment only.</p>
+          </details>
+        </section>
+      </section>
+
+    </div>
+  </main>
+
+  <div id="backdrop" class="drawer-backdrop"></div>
+  <aside id="rulesDrawer" class="drawer" aria-label="Rates and rules">
+    <div class="drawer-head">
+      <div><small>Sri Lanka payroll reference</small><h2>Rates &amp; Rules</h2></div>
+      <button class="btn btn-ghost" data-close>Close</button>
+    </div>
+    <div class="drawer-body">
+      <div class="rule">
+        <h3>APIT, Y/A 2026/27</h3>
+        <ul>
+          <li>Same rates as Y/A 2025/26 (effective 1 April 2025); no changes announced for 2026/27.</li>
+          <li>Personal relief: Rs. 1,800,000 a year (Rs. 150,000 a month).</li>
+          <li>6% on the first Rs. 1,000,000 of taxable income after relief.</li>
+          <li>18%, 24% and 30% on each of the next three Rs. 500,000 bands.</li>
+          <li>36% on the balance.</li>
+          <li>Based on Table 01: regular monthly profits from primary employment, resident employees.</li>
+        </ul>
+        <p class="rule-src">Source: <a href="https://www.ird.gov.lk/en/publications/APIT_Tax_Tables/2025-2026/Table%20-%201/02.%20APIT_2526_Table_01_Text.pdf" target="_blank" rel="noopener">IRD APIT Table 01 (2025/26)</a> · <a href="https://www.ird.gov.lk/en/publications/SitePages/apit_tax_tables.aspx" target="_blank" rel="noopener">All APIT tables</a></p>
+      </div>
+      <div class="rule">
+        <h3>Monthly APIT bands</h3>
+        <ul>
+          <li>Up to Rs. 150,000: 0%</li>
+          <li>Rs. 150,000 – 233,333: 6%</li>
+          <li>Rs. 233,333 – 275,000: 18%</li>
+          <li>Rs. 275,000 – 316,667: 24%</li>
+          <li>Rs. 316,667 – 358,333: 30%</li>
+          <li>Above Rs. 358,333: 36%</li>
+        </ul>
+      </div>
+      <div class="rule">
+        <h3>Employees' Provident Fund (EPF)</h3>
+        <ul>
+          <li>Employee: 8% of total earnings, deducted from salary.</li>
+          <li>Employer: minimum 12% of total earnings (some employers pay 15%).</li>
+          <li>The employee contribution doesn't reduce income for APIT.</li>
+        </ul>
+        <p class="rule-src">Source: <a href="https://epf.lk/" target="_blank" rel="noopener">Employees’ Provident Fund</a> · <a href="https://www.labourdept.gov.lk/" target="_blank" rel="noopener">Department of Labour</a></p>
+      </div>
+      <div class="rule">
+        <h3>Employees' Trust Fund (ETF)</h3>
+        <ul>
+          <li>Employer only: 3% of total earnings.</li>
+          <li>Nothing is deducted from the employee's salary.</li>
+        </ul>
+        <p class="rule-src">Source: <a href="https://www.etfb.lk/" target="_blank" rel="noopener">Employees’ Trust Fund Board</a></p>
+      </div>
+      <p class="footnote"><b>Important:</b> This is an informational estimator. Actual payroll can depend on residency, secondary employment, lump-sum payments, benefits in kind and the latest Inland Revenue Department guidance.</p>
+    </div>
+  </aside>
+  <aside id="breakDrawer" class="drawer" aria-label="Calculation breakdown">
+    <div class="drawer-head">
+      <div><small>Calculation trace</small><h2>How the estimate was calculated</h2></div>
+      <button class="btn btn-ghost" data-close>Close</button>
+    </div>
+    <div id="breakBody" class="drawer-body"></div>
+  </aside>
+
+  <div class="sticky-net">
+    <div><small id="stickyLabel">Estimated take-home</small><b id="stickyNet">Rs. 0.00</b></div>
+    <button class="btn btn-light" data-open="breakdown">Breakdown</button>
+  </div>
+</div>
+<!-- ═══════════════════════════════════════════════
+     END SRI LANKA SALARY CALCULATOR
+     ═══════════════════════════════════════════════ -->
+
+<!-- footer start -->
+<?php include __DIR__ . '/inc/footer.php'; ?>
+<!-- footer end -->
+
+<!-- JS -->
+<script src="<?php echo asset_v('/js/phr.js'); ?>"></script>
+<script src="<?php echo asset_v('/js/navbar.js'); ?>"></script>
+<script src="<?php echo asset_v('/js/salary-calculator-sri-lanka.js'); ?>"></script>
+
+</body>
+</html>
