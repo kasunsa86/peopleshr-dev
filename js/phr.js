@@ -359,66 +359,23 @@ const LAZY_SECTIONS = {
   pay:        `      <div class="dg-cat-header">
         <div class="dg-cat-header-left">
           <h2 class="dg-section-heading">Accurate payroll. Zero compliance risk.</h2>
-          <p class="dg-cat-desc">From timesheets to final payslips, automate your entire payroll cycle with built-in statutory compliance for Sri Lanka and beyond.</p>
+          <p class="dg-cat-desc">Automate your entire payroll cycle, right through to final payslips, with built-in statutory compliance for Sri Lanka and beyond.</p>
         </div>
         <div class="dg-cat-count-box">
-          <div class="dg-cat-count-num">3</div>
+          <div class="dg-cat-count-num">1</div>
           <div class="dg-cat-count-lbl">Demos available</div>
         </div>
       </div>
       <div class="dg-grid">
-        <div class="dg-card" onclick="gatedDemo('REPLACE_PAY_RUN_ID')">
+        <div class="dg-card" onclick="gatedDemo('cmvgf2zs70069wb0jv6aa5v55')">
           <div class="dg-thumb dg-thumb-timepay">
-            <div class="dg-thumb-ui">
-              <div class="dg-ui-bar"></div>
-              <div class="dg-ui-row"><div class="dg-ui-pill"></div><div class="dg-ui-pill w55"></div></div>
-              <div class="dg-ui-bar s"></div>
-            </div>
+            <img src="../uploads/2026/08/Payroll_Anomaly_Detection.webp" alt="Payroll Anomaly Detection" class="dg-thumb-image">
             <div class="dg-thumb-overlay"><div class="dg-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
-            
           </div>
           <div class="dg-card-body">
             <div class="dg-card-tag">Payroll</div>
-            <div class="dg-card-title">Payroll Processing &amp; Monthly Run</div>
-            <div class="dg-card-desc">One-click payroll runs with automatic EPF/ETF, PAYE calculations, and bank file generation for all major Sri Lankan banks.</div>
-            <div class="dg-card-footer">
-              <button class="dg-card-cta">Watch Demo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-            </div>
-          </div>
-        </div>
-        <div class="dg-card" onclick="gatedDemo('REPLACE_PAY_LEAVE_ID')">
-          <div class="dg-thumb dg-thumb-timepay">
-            <div class="dg-thumb-ui">
-              <div class="dg-ui-bar"></div>
-              <div class="dg-ui-row"><div class="dg-ui-pill"></div><div class="dg-ui-pill w55"></div></div>
-              <div class="dg-ui-bar s"></div>
-            </div>
-            <div class="dg-thumb-overlay"><div class="dg-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
-            
-          </div>
-          <div class="dg-card-body">
-            <div class="dg-card-tag">Leave</div>
-            <div class="dg-card-title">Leave &amp; Absence Management</div>
-            <div class="dg-card-desc">Configure leave policies, approval workflows, accrual rules, and carry-forward limits, all without IT support.</div>
-            <div class="dg-card-footer">
-              <button class="dg-card-cta">Watch Demo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-            </div>
-          </div>
-        </div>
-        <div class="dg-card" onclick="gatedDemo('REPLACE_PAY_EXPENSE_ID')">
-          <div class="dg-thumb dg-thumb-timepay">
-            <div class="dg-thumb-ui">
-              <div class="dg-ui-bar"></div>
-              <div class="dg-ui-row"><div class="dg-ui-pill"></div><div class="dg-ui-pill w55"></div></div>
-              <div class="dg-ui-bar s"></div>
-            </div>
-            <div class="dg-thumb-overlay"><div class="dg-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
-            
-          </div>
-          <div class="dg-card-body">
-            <div class="dg-card-tag">Expenses</div>
-            <div class="dg-card-title">Expense Claims &amp; Reimbursement</div>
-            <div class="dg-card-desc">Mobile receipt capture, multi-level approvals, and direct payroll integration for seamless reimbursements.</div>
+            <div class="dg-card-title">Payroll Anomaly Detection</div>
+            <div class="dg-card-desc">Flag errors in overtime, deductions, and other calculations before you process payroll, so every run goes out right the first time.</div>
             <div class="dg-card-footer">
               <button class="dg-card-cta">Watch Demo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
             </div>
@@ -438,7 +395,7 @@ const LAZY_SECTIONS = {
       <div class="dg-grid">
         <div class="dg-card" onclick="gatedDemo('cmov2pgrk05pu9rr9ct8hjufa')">
           <div class="dg-thumb dg-thumb-timepay">
-            <img src="../uploads/2026/05/Manage_Leave_Applications_Approvals.webp" alt="Manage Leave Applications & Approvals" class="dg-thumb-image">
+            <img src="../uploads/2026/08/Manage_Leave_Applications_Approvals.webp" alt="Manage Leave Applications & Approvals" class="dg-thumb-image">
             <div class="dg-thumb-overlay"><div class="dg-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
             <div class="dg-thumb-new"><span class="new-tag">NEW</span></div>
           </div>
@@ -453,7 +410,7 @@ const LAZY_SECTIONS = {
         </div>
         <div class="dg-card" onclick="gatedDemo('cmovhp1dj13hj9rr9on8k7xga')">
           <div class="dg-thumb dg-thumb-timepay">
-            <img src="../uploads/2026/05/Configure_Employee_Shift_Schedules_Roster_Groups.webp" alt="Configure Employee Shift Schedules & Roster Groups" class="dg-thumb-image">
+            <img src="../uploads/2026/08/Configure_Employee_Shift_Schedules_Roster_Groups.webp" alt="Configure Employee Shift Schedules & Roster Groups" class="dg-thumb-image">
             <div class="dg-thumb-overlay"><div class="dg-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
             
           </div>

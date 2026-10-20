@@ -5691,8 +5691,10 @@ button.btn-primary {
 .dg-cats-inner .industry-tab{
   white-space:nowrap;flex-shrink:0;
   font-size:13.5px;font-weight:600;
-  padding:9px 22px;
+  padding:9px 22px 9px 16px;
+  display:inline-flex;align-items:center;gap:8px;
 }
+.dg-cats-inner .dg-tab-ic{width:20px;height:20px;object-fit:contain;flex-shrink:0;}
 
 /* Main content wrapper */
 .dg-main{padding:60px 48px 80px;background:var(--bg-light);}

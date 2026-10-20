@@ -75,6 +75,7 @@ Key interpretation notes:
 
 - [Regions served](https://peopleshr.com/regions/): Regional presence and country-specific PeoplesHR pages across Asia-Pacific, the Middle East and Africa.
 - [Indonesia](https://peopleshr.com/indonesia/): Indonesian-language overview of HR, attendance, payroll, BPJS, PPh21, THR and local implementation support.
+- [Sri Lanka salary calculator](https://peopleshr.com/salary-calculator-sri-lanka/): Gross-to-net and net-to-gross salary calculator with EPF, ETF, APIT (PAYE) for Y/A 2026/27 and custom deductions; indicative only, verify outputs against current Inland Revenue Department rules before operational use.
 
 ## Industries
 
