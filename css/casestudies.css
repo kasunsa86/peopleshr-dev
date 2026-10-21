@@ -397,7 +397,7 @@ a{text-decoration:none;color:inherit;}
 a:focus:not(:focus-visible){outline:none;}
 ul{list-style:none;}
 svg{display:block;}
-@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important;animation-duration:.01ms!important;}}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important;}}
 
 /* ==========================================================================
    Keyframes used by kept rules below

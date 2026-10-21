@@ -9484,6 +9484,11 @@ button.btn-primary {
 @media(max-width:768px){
   .logo-slider-track{animation-duration:45s;}
 }
+/* Reduce Motion: navbar.css squashes every animation to .01ms, which made
+   these infinite marquees replay thousands of times a second (iOS). */
+@media(prefers-reduced-motion:reduce){
+  .logo-slider-track,.logo-track,.cs-logo-row{animation:none !important;}
+}
 
 /* indonesia-lp.html — floating WhatsApp button, fixed bottom-right. */
 .idn-whatsapp-float{
