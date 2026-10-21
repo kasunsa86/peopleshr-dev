@@ -130,15 +130,41 @@ const phrAssetBase = phrScriptTag ? phrScriptTag.src.replace(/js\/phr(?:\.v\d+)?
    half can be narrower than the viewport, so the track visibly runs out of
    logos before it wraps back around. Repeats the underlying set until each
    half is at least as wide as its container, and stretches the animation
-   duration by the same factor so the scroll speed stays the same. Tracks
-   that already have enough logos to fill the screen are left untouched. */
+   duration by the same factor so the scroll speed stays the same.
+   Measuring waits for the logo images: they have no width attributes, so
+   before they load the track is only as wide as its gaps. The loop
+   distance is then pinned in px (--logo-shift) and the animation
+   restarted, because Safari resolves the -50% keyframe once at animation
+   start and never re-resolves it as the track grows, which threw the
+   speed off. */
 function parseSeconds(v) {
   const n = parseFloat(v);
   if (Number.isNaN(n)) return null;
   return v.trim().endsWith('ms') ? n / 1000 : n;
 }
+function whenImagesReady(el, cb) {
+  const pending = Array.from(el.querySelectorAll('img')).filter(img => !img.complete);
+  if (!pending.length) return cb();
+  let left = pending.length, done = false;
+  const finish = () => { if (!done) { done = true; cb(); } };
+  pending.forEach(img => {
+    const one = () => { if (--left === 0) finish(); };
+    img.addEventListener('load', one, { once: true });
+    img.addEventListener('error', one, { once: true });
+  });
+  setTimeout(finish, 4000); // lazy images that never load mustn't stall the marquee
+}
+function pinLogoLoop(track) {
+  track.style.setProperty('--logo-shift', -(track.scrollWidth / 2) + 'px');
+  track.style.animationName = 'none';
+  void track.offsetWidth; // reflow so the restarted animation picks up the px shift
+  track.style.animationName = '';
+}
 function ensureSeamlessLogoLoop(track) {
   if (!track) return;
+  whenImagesReady(track, () => repeatLogoLoop(track));
+}
+function repeatLogoLoop(track) {
   const children = Array.from(track.children);
   if (!children.length || children.length % 2 !== 0) return;
   const half = children.length / 2;
@@ -153,15 +179,28 @@ function ensureSeamlessLogoLoop(track) {
 
   let repeats = 1;
   while (unitWidth * repeats < targetWidth && repeats < 12) repeats++;
-  if (repeats <= 1) return;
+  if (repeats > 1) {
+    const oneHalf = firstHalfHTML.repeat(repeats);
+    track.innerHTML = oneHalf + oneHalf;
 
-  const oneHalf = firstHalfHTML.repeat(repeats);
-  track.innerHTML = oneHalf + oneHalf;
-
-  const currentDuration = parseSeconds(getComputedStyle(track).animationDuration);
-  if (currentDuration) track.style.animationDuration = (currentDuration * repeats) + 's';
+    const currentDuration = parseSeconds(getComputedStyle(track).animationDuration);
+    if (currentDuration) track.style.animationDuration = (currentDuration * repeats) + 's';
+  }
+  pinLogoLoop(track);
 }
 document.querySelectorAll('.logo-slider-track, .logo-track:not(.logo-track--static)').forEach(ensureSeamlessLogoLoop);
+// logo sizes change across breakpoints (e.g. phone rotation); width-only so iOS URL-bar resizes don't restart it
+let logoLoopWidth = window.innerWidth, logoLoopTimer;
+window.addEventListener('resize', () => {
+  if (window.innerWidth === logoLoopWidth) return;
+  logoLoopWidth = window.innerWidth;
+  clearTimeout(logoLoopTimer);
+  logoLoopTimer = setTimeout(() => {
+    document.querySelectorAll('.logo-slider-track, .logo-track:not(.logo-track--static)').forEach(track => {
+      if (track.style.getPropertyValue('--logo-shift')) pinLogoLoop(track);
+    });
+  }, 200);
+});
 
 const industryLogos = {
   manufacturing: [
