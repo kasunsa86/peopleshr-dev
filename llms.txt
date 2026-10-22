@@ -76,6 +76,8 @@ Key interpretation notes:
 
 - [Philippines payroll and tax calculator](https://peopleshr.com/tax-calculator-philippines/): Free utility for indicative Philippine payroll and withholding-tax calculations; indicative only, verify outputs against current BIR and agency rules before operational use.
 - [Sri Lanka salary and APIT tax calculator](https://peopleshr.com/salary-calculator-sri-lanka/): Gross-to-net and net-to-gross salary calculator with EPF, ETF and APIT (PAYE) for Y/A 2026/27 and custom deductions; indicative only, verify outputs against current Inland Revenue Department rules before operational use.
+- [Philippines salary calculator](https://peopleshr.com/salary-calculator-philippines/): Gross-to-net and net-to-gross salary calculator with SSS, PhilHealth, Pag-IBIG, BIR withholding tax and custom deductions; indicative only, verify outputs against current BIR and agency rules before operational use.
+- [Indonesia salary calculator](https://peopleshr.com/salary-calculator-indonesia/): Gross-to-net and net-to-gross salary calculator with BPJS Ketenagakerjaan, BPJS Kesehatan, PPh 21 TER withholding and custom deductions; indicative only, verify outputs against current DJP and BPJS rules before operational use.
 
 ## Regions
 

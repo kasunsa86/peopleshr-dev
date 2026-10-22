@@ -112,6 +112,8 @@
         <ul class="ft-links">
           <li><a href="/tax-calculator-philippines/">Philippines Tax Calculator</a></li>
           <li><a href="/salary-calculator-sri-lanka/">Sri Lanka Salary Calculator</a></li>
+          <li><a href="/salary-calculator-philippines/">Philippines Salary Calculator</a></li>
+          <li><a href="/salary-calculator-indonesia/">Indonesia Salary Calculator</a></li>
           <li><a href="/roi-calculator/">ROI Calculator</a></li>
         </ul>
         <p class="ft-sub">Explore</p>
