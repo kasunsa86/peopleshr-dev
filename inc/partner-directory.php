@@ -89,11 +89,11 @@ $phrPartnerRegions = [
         'label'    => 'Indonesia',
         'partners' => [
             [
-                'name'  => 'NTT DATA',
+                'name'  => 'Pratesis',
                 'type'  => 'reseller',
-                'logo'  => '/uploads/2026/11/ntt_data.webp',
+                'logo'  => '/uploads/2026/11/pratesis_logo.webp',
                 'desc'  => null,
-                'website'=> 'https://www.nttdata.com/en-id',
+                'website'=> 'https://pratesis.com/',
             ],
             [
                 'name'  => 'Qualitas',
@@ -101,20 +101,6 @@ $phrPartnerRegions = [
                 'logo'  => '/uploads/2026/11/qualitas_logo.webp',
                 'desc'  => null,
                 'website'=> 'https://qualitas.co.id/',
-            ],
-            [
-                'name'  => 'Accurate Indonesia',
-                'type'  => 'referral',
-                'logo'  => '/uploads/2026/11/accurate_indonesia_logo.webp',
-                'desc'  => null,
-                'website'=> 'https://accurate.id/',
-            ],
-            [
-                'name'  => 'Pratesis',
-                'type'  => 'referral',
-                'logo'  => '/uploads/2026/11/pratesis_logo.webp',
-                'desc'  => null,
-                'website'=> 'https://pratesis.com/',
             ],
         ],
     ],
@@ -231,13 +217,18 @@ $phrFirstRegion = key(array_slice($phrPartnerRegions, 0, 1, true));
       <ul class="pd-grid">
 <?php foreach ($phrRegion['partners'] as $phrP): $phrType = $phrP['type'] ?? null; ?>
         <li class="pd-card">
+<?php if (!empty($phrP['website'])): // Logo links out too; tabindex/aria-hidden keep it out of the tab order since the domain link below already covers it ?>
+          <a class="pd-thumb" href="<?php echo htmlspecialchars($phrP['website']); ?>" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<?php else: ?>
           <div class="pd-thumb">
+<?php endif; ?>
 <?php if (!empty($phrP['logo'])): ?>
             <img src="<?php echo htmlspecialchars($phrP['logo']); ?>" alt="<?php echo htmlspecialchars($phrP['name']); ?> logo" loading="lazy">
 <?php else: ?>
             <span class="pd-logo-initials" aria-hidden="true"><?php echo phr_partner_initials($phrP['name']); ?></span>
 <?php endif; ?>
-          </div>
+          <?php echo !empty($phrP['website']) ? '</a>' : '</div>'; ?>
+
           <div class="pd-body">
 <?php if ($phrType && isset($phrPartnerTypes[$phrType])): ?>
           <span class="pd-type pd-type--<?php echo $phrType; ?>"><?php echo $phrPartnerTypes[$phrType]; ?></span>
