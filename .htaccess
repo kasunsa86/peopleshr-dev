@@ -516,7 +516,6 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ /404.html [L]
 
-# Dev site: only reachable from company networks (keep /.well-known open for SSL renewal)
 RewriteEngine On
 RewriteCond %{REQUEST_URI} !^/\.well-known/ [NC]
 RewriteCond %{REMOTE_ADDR} !^122\.255\.43\.174$
