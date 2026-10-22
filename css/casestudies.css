@@ -397,7 +397,7 @@ a{text-decoration:none;color:inherit;}
 a:focus:not(:focus-visible){outline:none;}
 ul{list-style:none;}
 svg{display:block;}
-@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important;}}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important}*:not(.logo-slider-track):not(.logo-track):not(.cs-logo-row){animation-duration:.01ms!important;animation-iteration-count:1!important;}}
 
 /* ==========================================================================
    Keyframes used by kept rules below
@@ -833,6 +833,7 @@ svg{display:block;}
     will-change: transform;
   }
 .cs-logo-row--left  { animation: logo-left  70s linear infinite; margin-bottom: 28px; }
+@media(max-width:768px){.cs-logo-row--left{animation-duration:61s;}} /* mobile: ~15% faster */
 .cs-logo-item {
     flex: 0 0 auto;
     display: flex;
