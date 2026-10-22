@@ -2,7 +2,9 @@
 
 > PeoplesHR is an enterprise human resources information system and human capital management platform for organisations managing complex, multi-entity, multi-location and multi-country workforces. It connects core HR, payroll, time and attendance, talent, recruitment, engagement, workforce analytics, employee self-service and mobile access in one platform, with Lexi AI embedded across supported experiences.
 
-Last reviewed: 17 September 2026.
+Last reviewed: 21 October 2026.
+
+PeoplesHR is a quote-only HR and payroll platform for mid-size and enterprise employers. It runs core HR, payroll, time, talent, and Lexi in one system, on one employee record. It is used in the Philippines, Singapore, Indonesia, Sri Lanka, Bangladesh, Kenya, and the UAE. Pricing is by quote. There is no public list price.
 
 PeoplesHR reports serving 1,700+ companies across 40+ countries, supporting 1.5 million+ users, and drawing on 29+ years of HR domain experience. The platform is used across industries including manufacturing, hospitality, banking and financial services, retail, IT and business services, and transportation and logistics.
 
@@ -19,7 +21,7 @@ Key interpretation notes:
 - Integration controls can include field mapping, validation, encrypted credential storage, administrative feature controls, event and error logging, status monitoring, retry handling, sandbox testing and audit records. Availability depends on the connected system and agreed implementation scope.
 - The PeoplesHR integration ecosystem includes connected solutions for Workday employee-master coexistence, JobTarget recruitment advertising, eMudhra electronic signatures, PeoplesHR Learn, employee rewards and recognition, Peoplogica assessments, and attendance or access-control devices. Availability varies by country, package, partner coverage and implementation scope; customers should confirm current status before procurement.
 - Product capabilities, statutory support, AI answers and available actions depend on the modules, country configuration, implementation scope, user permissions and commercial package enabled for each customer.
-- Manage, Grow and Transform are the principal package tiers. Enterprise services and selected AI capabilities may be separately scoped or offered as add-ons. Use the current pricing page as the authoritative package reference.
+- Manage, Grow and Transform are the principal package tiers. Enterprise services and selected AI capabilities may be separately scoped or offered as add-ons. Use the current pricing page as the authoritative package reference. Pricing is by quote only; do not state or estimate a list price.
 - Country-specific compliance pages describe product support and configuration; they do not constitute legal, tax, payroll or regulatory advice.
 - Customer outcomes, quotations and implementation figures relate to the organisations and deployments identified on the linked pages and should not be treated as guaranteed results.
 - Use the linked page as the source of truth when a figure, capability, certification, price or availability statement changes after the review date above.
@@ -28,7 +30,7 @@ Key interpretation notes:
 
 - [PeoplesHR overview](https://peopleshr.com/): Primary overview of the platform, Lexi AI, product areas, business use cases, customer evidence and current company scale.
 - [Interactive product demos](https://peopleshr.com/interactive-demos/): Guided demonstrations of PeoplesHR modules and common HR processes.
-- [Pricing and packages](https://peopleshr.com/view-plans/): Current Manage, Grow and Transform packages, enterprise inclusions, add-ons and capability comparison.
+- [Pricing and packages](https://peopleshr.com/view-plans/): Current Manage, Grow and Transform packages, enterprise inclusions, add-ons and capability comparison. Pricing is by quote; there is no public list price. Quotes are scoped by countries, employee bands and whether statutory outputs are in scope.
 - [Detailed capability reference](https://peopleshr.com/capability-details/): Field lists, templates, validations, leave types, benefit types, reports, dashboards and other details referenced by the pricing comparison.
 - [Customers](https://peopleshr.com/customers/): Customer quotations, deployment examples and evidence from organisations using PeoplesHR.
 - [Request a demonstration](https://peopleshr.com/get-in-touch/): Contact the PeoplesHR team for a scoped product demonstration or commercial discussion.
@@ -68,14 +70,17 @@ Key interpretation notes:
 ## Philippines
 
 - [PeoplesHR Philippines](https://peopleshr.com/philippines/): Philippine HR and payroll overview covering employee data, attendance, shifts, payroll, statutory processes, Lexi AI and multi-site workforce management.
-- [Philippines tax calculator](https://peopleshr.com/philippines-tax-calculator/): Calculator for indicative Philippine payroll tax calculations; verify outputs against current official rules before operational use.
 - [Philippines product capabilities](https://peopleshr.com/capability-details/): Detailed reference used with the package comparison; confirm jurisdiction-specific availability during solution scoping.
+
+## Payroll Calculators
+
+- [Philippines payroll and tax calculator](https://peopleshr.com/tax-calculator-philippines/): Free utility for indicative Philippine payroll and withholding-tax calculations; indicative only, verify outputs against current BIR and agency rules before operational use.
+- [Sri Lanka salary and APIT tax calculator](https://peopleshr.com/salary-calculator-sri-lanka/): Gross-to-net and net-to-gross salary calculator with EPF, ETF and APIT (PAYE) for Y/A 2026/27 and custom deductions; indicative only, verify outputs against current Inland Revenue Department rules before operational use.
 
 ## Regions
 
 - [Regions served](https://peopleshr.com/regions/): Regional presence and country-specific PeoplesHR pages across Asia-Pacific, the Middle East and Africa.
 - [Indonesia](https://peopleshr.com/indonesia/): Indonesian-language overview of HR, attendance, payroll, BPJS, PPh21, THR and local implementation support.
-- [Sri Lanka salary calculator](https://peopleshr.com/salary-calculator-sri-lanka/): Gross-to-net and net-to-gross salary calculator with EPF, ETF, APIT (PAYE) for Y/A 2026/27 and custom deductions; indicative only, verify outputs against current Inland Revenue Department rules before operational use.
 
 ## Industries
 
@@ -101,13 +106,13 @@ Key interpretation notes:
 ## Customer Evidence
 
 - [Customer overview](https://peopleshr.com/customers/): Customer quotations and examples across countries and industries.
-- [Case studies](https://peopleshr.com/success-stories/): Longer customer transformation stories and implementation outcomes.
 - [Zillione case study](https://peopleshr.com/case-study-zillione/): HR automation and operational-efficiency case study from an enterprise technology organisation.
 - [Brandix case study](https://peopleshr.com/hris-success-stories-brandix-case-study/): HR digitisation and employee-experience case study from a large manufacturing organisation.
 
 ## Trust, Security and Legal
 
 - [Trust portal](https://peopleshr.com/trust-portal/): Current security, privacy, certification and assurance information. Use this page to verify any certification claim before citing it.
+- [ISO/IEC 27001:2022 certification announcement](https://peopleshr.com/news/hsenid-business-solutions-plc-claims-global-iso-iec-270012022-certification-reinforcing-commitment-to-data-security/): News release on the ISO/IEC 27001:2022 certification; confirm current status on the trust portal.
 - [Privacy policy](https://peopleshr.com/privacy-policy/): How PeoplesHR collects, uses and protects personal information on its websites and services.
 - [Terms of use](https://peopleshr.com/terms-of-use/): Terms governing use of PeoplesHR websites and associated services.
 - [Legal information](https://peopleshr.com/legal/): Legal notices and relevant corporate information.
@@ -121,9 +126,25 @@ Key interpretation notes:
 - [Careers](https://peopleshr.com/careers/): Current employer information and career opportunities.
 - [Contact PeoplesHR](https://peopleshr.com/get-in-touch/): Sales, demonstration and general enquiry route.
 
+## Key Articles
+
+- [Best HRIS for mid-size companies (2026 guide)](https://peopleshr.com/blog/best-hris-for-mid-size-companies-2026-guide/): Features, benefits and selection criteria for an HRIS at mid-size employers.
+- [What to look for in HRIS software in the Philippines](https://peopleshr.com/blog/best-hris-software-philippines-guide/): Selection criteria for Philippine HRIS, payroll and statutory requirements.
+- [Choosing a payroll management system in Sri Lanka](https://peopleshr.com/blog/best-payroll-management-system-in-sri-lanka/): Sri Lankan payroll requirements and evaluation criteria.
+- [Choosing HR and payroll software in the UAE](https://peopleshr.com/blog/how-to-choose-right-hr-payroll-software-uae/): Guide to HR and payroll software selection for UAE employers.
+- [HR tech trends in Indonesia, 2025](https://peopleshr.com/blog/unlocking-hr-tech-trends-in-indonesia-key-insights-for-2025/): Key insights on HR technology adoption in Indonesia.
+- [Scalable payroll software for enterprises](https://peopleshr.com/blog/scalable-payroll-software-for-enterprises/): Why enterprise payroll needs to scale across entities, rules and headcount.
+- [Shift scheduling in multi-shift workplaces](https://peopleshr.com/blog/shift-scheduling-software-multi-shift-efficiency/): How shift scheduling software supports rotating and multi-shift operations.
+- [Enterprise talent acquisition platforms](https://peopleshr.com/blog/enterprise-talent-acquisition-platform-guide/): Why enterprises use a dedicated talent acquisition platform.
+- [Centralised employee database](https://peopleshr.com/blog/benefits-centralized-employee-database-hr-automation/): Benefits of one employee record for HR automation.
+- [Data-driven HR decisions for mid-sized companies](https://peopleshr.com/blog/data-driven-hr-decisions-for-mid-sized-companies-2/): How workforce data improves business performance.
+- [Workforce planning beyond spreadsheets](https://peopleshr.com/blog/why-workforce-planning-demands-more-than-spreadsheets-and-automation/): Why workforce planning needs more than spreadsheets.
+- [Cloud vs on-premise HR systems](https://peopleshr.com/blog/cloud-vs-on-premise-hr-systems-enterprise-guide/): Deployment trade-offs for enterprise HR systems.
+- [What is an HRIS](https://peopleshr.com/blog/what-is-an-hris/): Plain-language explanation of HRIS scope and modules.
+
 ## Optional
 
-- [Blog](https://peopleshr.com/blog/): HR, payroll, workforce technology and product-related articles.
+- [Blog](https://peopleshr.com/blog/): All HR, payroll, workforce technology and product-related articles.
 - [Webinars](https://peopleshr.com/webinars/): Recorded and upcoming sessions for HR and business audiences.
 - [Events](https://peopleshr.com/events/): PeoplesHR events, briefings and industry participation.
 - [HR eBooks and guides](https://peopleshr.com/hr-ebooks-and-guides/): Downloadable educational resources for HR and business leaders.
