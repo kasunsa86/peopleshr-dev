@@ -20,3 +20,6 @@ php.ini
 # Blog migration tool: cached WordPress data and local virtualenv.
 tools/blog-migration/.cache/
 .venv/
+
+# Claude Code settings: per-person, never shared.
+.claude/
