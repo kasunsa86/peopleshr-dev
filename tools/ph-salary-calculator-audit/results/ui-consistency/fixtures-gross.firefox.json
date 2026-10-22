@@ -1,0 +1,217 @@
+{
+ "name": "fixtures-gross",
+ "project": "firefox",
+ "executed": 26,
+ "passed": 26,
+ "failed": 0,
+ "cases": [
+  {
+   "id": "G1000",
+   "input": {
+    "basic": 1000
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "G4999.99",
+   "input": {
+    "basic": 4999.99
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "G5000",
+   "input": {
+    "basic": 5000
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "G8000",
+   "input": {
+    "basic": 8000
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "G10000",
+   "input": {
+    "basic": 10000
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "G12345.67",
+   "input": {
+    "basic": 12345.67
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "G15000",
+   "input": {
+    "basic": 15000
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "G18000",
+   "input": {
+    "basic": 18000
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "G21000",
+   "input": {
+    "basic": 21000
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "G25000",
+   "input": {
+    "basic": 25000
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "G30000",
+   "input": {
+    "basic": 30000
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "G33333",
+   "input": {
+    "basic": 33333
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "G35000",
+   "input": {
+    "basic": 35000
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "G40000",
+   "input": {
+    "basic": 40000
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "G45000.5",
+   "input": {
+    "basic": 45000.5
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "G66667",
+   "input": {
+    "basic": 66667
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "G75000",
+   "input": {
+    "basic": 75000
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "G120000",
+   "input": {
+    "basic": 120000
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "G166667",
+   "input": {
+    "basic": 166667
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "G250000",
+   "input": {
+    "basic": 250000
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "G500000",
+   "input": {
+    "basic": 500000
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "G666667",
+   "input": {
+    "basic": 666667
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "G750000",
+   "input": {
+    "basic": 750000
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "G1000000",
+   "input": {
+    "basic": 1000000
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "G2500000",
+   "input": {
+    "basic": 2500000
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "G10000000",
+   "input": {
+    "basic": 10000000
+   },
+   "pass": true,
+   "errors": []
+  }
+ ]
+}

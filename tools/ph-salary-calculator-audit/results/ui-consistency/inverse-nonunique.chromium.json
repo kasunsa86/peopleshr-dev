@@ -1,0 +1,39 @@
+{
+ "name": "inverse-nonunique",
+ "project": "chromium",
+ "executed": 5,
+ "passed": 5,
+ "failed": 0,
+ "cases": [
+  {
+   "id": "target 980",
+   "returnedBasic": 1494.95,
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "target 984.5",
+   "returnedBasic": 1499.49,
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "target 18800",
+   "returnedBasic": 20538.46,
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "target 9140",
+   "returnedBasic": 10092.31,
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "target 4600",
+   "returnedBasic": 5204.08,
+   "pass": true,
+   "errors": []
+  }
+ ]
+}

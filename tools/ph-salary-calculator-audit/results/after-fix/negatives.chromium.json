@@ -1,0 +1,14 @@
+{
+ "name": "negatives",
+ "project": "chromium",
+ "executed": 1,
+ "passed": 1,
+ "failed": 0,
+ "cases": [
+  {
+   "id": "negative allowance & deduction",
+   "pass": true,
+   "errors": []
+  }
+ ]
+}

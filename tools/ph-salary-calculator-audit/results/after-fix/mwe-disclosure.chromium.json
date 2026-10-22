@@ -1,0 +1,14 @@
+{
+ "name": "mwe-disclosure",
+ "project": "chromium",
+ "executed": 1,
+ "passed": 1,
+ "failed": 0,
+ "cases": [
+  {
+   "id": "MWE assumption disclosed",
+   "pass": true,
+   "errors": []
+  }
+ ]
+}

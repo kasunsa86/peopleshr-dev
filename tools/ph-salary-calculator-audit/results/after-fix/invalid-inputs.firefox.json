@@ -1,0 +1,69 @@
+{
+ "name": "invalid-inputs",
+ "project": "firefox",
+ "executed": 12,
+ "passed": 12,
+ "failed": 0,
+ "cases": [
+  {
+   "id": "gross \"-5000\"",
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "net \"-5000\"",
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "gross \"1e400\"",
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "net \"1e400\"",
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "gross \"1e15\"",
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "net \"1e15\"",
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "gross \"0.001\"",
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "net \"0.001\"",
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "gross \"99999999999\"",
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "net \"99999999999\"",
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "gross \"\"",
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "net \"\"",
+   "pass": true,
+   "errors": []
+  }
+ ]
+}
