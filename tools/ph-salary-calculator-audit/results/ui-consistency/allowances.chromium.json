@@ -1,0 +1,364 @@
+{
+ "name": "allowances",
+ "project": "chromium",
+ "executed": 22,
+ "passed": 22,
+ "failed": 0,
+ "cases": [
+  {
+   "id": "1x 9000 c=true t=true",
+   "input": {
+    "basic": 9000,
+    "allowances": [
+     {
+      "amount": 3500.55,
+      "contrib": true,
+      "tax": true
+     }
+    ]
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "1x 9000 c=true t=false",
+   "input": {
+    "basic": 9000,
+    "allowances": [
+     {
+      "amount": 3500.55,
+      "contrib": true,
+      "tax": false
+     }
+    ]
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "1x 9000 c=false t=true",
+   "input": {
+    "basic": 9000,
+    "allowances": [
+     {
+      "amount": 3500.55,
+      "contrib": false,
+      "tax": true
+     }
+    ]
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "1x 9000 c=false t=false",
+   "input": {
+    "basic": 9000,
+    "allowances": [
+     {
+      "amount": 3500.55,
+      "contrib": false,
+      "tax": false
+     }
+    ]
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "1x 18000 c=true t=true",
+   "input": {
+    "basic": 18000,
+    "allowances": [
+     {
+      "amount": 3500.55,
+      "contrib": true,
+      "tax": true
+     }
+    ]
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "1x 18000 c=true t=false",
+   "input": {
+    "basic": 18000,
+    "allowances": [
+     {
+      "amount": 3500.55,
+      "contrib": true,
+      "tax": false
+     }
+    ]
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "1x 18000 c=false t=true",
+   "input": {
+    "basic": 18000,
+    "allowances": [
+     {
+      "amount": 3500.55,
+      "contrib": false,
+      "tax": true
+     }
+    ]
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "1x 18000 c=false t=false",
+   "input": {
+    "basic": 18000,
+    "allowances": [
+     {
+      "amount": 3500.55,
+      "contrib": false,
+      "tax": false
+     }
+    ]
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "1x 30000 c=true t=true",
+   "input": {
+    "basic": 30000,
+    "allowances": [
+     {
+      "amount": 3500.55,
+      "contrib": true,
+      "tax": true
+     }
+    ]
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "1x 30000 c=true t=false",
+   "input": {
+    "basic": 30000,
+    "allowances": [
+     {
+      "amount": 3500.55,
+      "contrib": true,
+      "tax": false
+     }
+    ]
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "1x 30000 c=false t=true",
+   "input": {
+    "basic": 30000,
+    "allowances": [
+     {
+      "amount": 3500.55,
+      "contrib": false,
+      "tax": true
+     }
+    ]
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "1x 30000 c=false t=false",
+   "input": {
+    "basic": 30000,
+    "allowances": [
+     {
+      "amount": 3500.55,
+      "contrib": false,
+      "tax": false
+     }
+    ]
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "1x 80000 c=true t=true",
+   "input": {
+    "basic": 80000,
+    "allowances": [
+     {
+      "amount": 3500.55,
+      "contrib": true,
+      "tax": true
+     }
+    ]
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "1x 80000 c=true t=false",
+   "input": {
+    "basic": 80000,
+    "allowances": [
+     {
+      "amount": 3500.55,
+      "contrib": true,
+      "tax": false
+     }
+    ]
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "1x 80000 c=false t=true",
+   "input": {
+    "basic": 80000,
+    "allowances": [
+     {
+      "amount": 3500.55,
+      "contrib": false,
+      "tax": true
+     }
+    ]
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "1x 80000 c=false t=false",
+   "input": {
+    "basic": 80000,
+    "allowances": [
+     {
+      "amount": 3500.55,
+      "contrib": false,
+      "tax": false
+     }
+    ]
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "mixed 3",
+   "input": {
+    "basic": 25000,
+    "allowances": [
+     {
+      "amount": 2000,
+      "contrib": true,
+      "tax": true
+     },
+     {
+      "amount": 2500,
+      "contrib": false,
+      "tax": false
+     },
+     {
+      "amount": 1200.4,
+      "contrib": true,
+      "tax": false
+     }
+    ]
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "multiple taxable",
+   "input": {
+    "basic": 40000,
+    "allowances": [
+     {
+      "amount": 5000,
+      "contrib": true,
+      "tax": true
+     },
+     {
+      "amount": 7000.75,
+      "contrib": true,
+      "tax": true
+     },
+     {
+      "amount": 333.33,
+      "contrib": false,
+      "tax": true
+     }
+    ]
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "zero-value",
+   "input": {
+    "basic": 30000,
+    "allowances": [
+     {
+      "amount": 0,
+      "contrib": true,
+      "tax": true
+     },
+     {
+      "amount": 0,
+      "contrib": false,
+      "tax": false
+     }
+    ]
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "allowances only, no basic",
+   "input": {
+    "basic": 0,
+    "allowances": [
+     {
+      "amount": 15000,
+      "contrib": true,
+      "tax": true
+     }
+    ]
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "allowance pushes SSS to max",
+   "input": {
+    "basic": 20000,
+    "allowances": [
+     {
+      "amount": 20000,
+      "contrib": true,
+      "tax": true
+     }
+    ]
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "allowance crosses Pag-IBIG 1,500",
+   "input": {
+    "basic": 1000,
+    "allowances": [
+     {
+      "amount": 600,
+      "contrib": true,
+      "tax": false
+     }
+    ]
+   },
+   "pass": true,
+   "errors": []
+  }
+ ]
+}

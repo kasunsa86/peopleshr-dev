@@ -1,0 +1,16 @@
+{
+ "name": "over-deduction",
+ "project": "chromium",
+ "executed": 1,
+ "passed": 0,
+ "failed": 1,
+ "cases": [
+  {
+   "id": "deductions > pay",
+   "pass": false,
+   "errors": [
+    "no warning shown when deductions exceed pay"
+   ]
+  }
+ ]
+}

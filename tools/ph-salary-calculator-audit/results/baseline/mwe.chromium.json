@@ -1,0 +1,55 @@
+{
+ "name": "mwe",
+ "project": "chromium",
+ "executed": 3,
+ "passed": 2,
+ "failed": 1,
+ "cases": [
+  {
+   "id": "MWE basic only",
+   "input": {
+    "basic": 15000,
+    "mwe": true
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "MWE + taxable allowance",
+   "input": {
+    "basic": 15000,
+    "mwe": true,
+    "allowances": [
+     {
+      "amount": 30000,
+      "contrib": true,
+      "tax": true
+     }
+    ]
+   },
+   "pass": false,
+   "errors": [
+    "MWE + taxable allowance phEe: page 1125 vs expected 375",
+    "MWE + taxable allowance net: page 40549.95 vs expected 41299.95",
+    "MWE + taxable allowance erPh: page 1125 vs expected 375",
+    "MWE + taxable allowance erCost: page 49855 vs expected 49105"
+   ]
+  },
+  {
+   "id": "MWE + non-taxable allowance",
+   "input": {
+    "basic": 15000,
+    "mwe": true,
+    "allowances": [
+     {
+      "amount": 2500,
+      "contrib": false,
+      "tax": false
+     }
+    ]
+   },
+   "pass": true,
+   "errors": []
+  }
+ ]
+}

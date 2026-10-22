@@ -1,0 +1,89 @@
+{
+ "name": "pagibig",
+ "project": "chromium",
+ "executed": 10,
+ "passed": 10,
+ "failed": 0,
+ "cases": [
+  {
+   "id": "HDMF@0",
+   "input": {
+    "basic": 0
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "HDMF@1000",
+   "input": {
+    "basic": 1000
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "HDMF@1500",
+   "input": {
+    "basic": 1500
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "HDMF@1500.01",
+   "input": {
+    "basic": 1500.01
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "HDMF@5000",
+   "input": {
+    "basic": 5000
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "HDMF@9999.99",
+   "input": {
+    "basic": 9999.99
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "HDMF@10000",
+   "input": {
+    "basic": 10000
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "HDMF@10000.01",
+   "input": {
+    "basic": 10000.01
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "HDMF@50000",
+   "input": {
+    "basic": 50000
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "HDMF@100000",
+   "input": {
+    "basic": 100000
+   },
+   "pass": true,
+   "errors": []
+  }
+ ]
+}

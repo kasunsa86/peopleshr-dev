@@ -1,0 +1,14 @@
+{
+ "name": "over-deduction",
+ "project": "chromium",
+ "executed": 1,
+ "passed": 1,
+ "failed": 0,
+ "cases": [
+  {
+   "id": "deductions > pay",
+   "pass": true,
+   "errors": []
+  }
+ ]
+}

@@ -1,0 +1,180 @@
+{
+ "name": "bir-direct",
+ "project": "chromium",
+ "executed": 19,
+ "passed": 19,
+ "failed": 0,
+ "cases": [
+  {
+   "id": "BIR@0",
+   "input": {
+    "basic": 0,
+    "covered": false
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "BIR@20832.99",
+   "input": {
+    "basic": 20832.99,
+    "covered": false
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "BIR@20833",
+   "input": {
+    "basic": 20833,
+    "covered": false
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "BIR@20833.01",
+   "input": {
+    "basic": 20833.01,
+    "covered": false
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "BIR@33332",
+   "input": {
+    "basic": 33332,
+    "covered": false
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "BIR@33332.5",
+   "input": {
+    "basic": 33332.5,
+    "covered": false
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "BIR@33332.99",
+   "input": {
+    "basic": 33332.99,
+    "covered": false
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "BIR@33333",
+   "input": {
+    "basic": 33333,
+    "covered": false
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "BIR@33333.01",
+   "input": {
+    "basic": 33333.01,
+    "covered": false
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "BIR@66666.99",
+   "input": {
+    "basic": 66666.99,
+    "covered": false
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "BIR@66667",
+   "input": {
+    "basic": 66667,
+    "covered": false
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "BIR@66667.01",
+   "input": {
+    "basic": 66667.01,
+    "covered": false
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "BIR@166666.99",
+   "input": {
+    "basic": 166666.99,
+    "covered": false
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "BIR@166667",
+   "input": {
+    "basic": 166667,
+    "covered": false
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "BIR@166667.01",
+   "input": {
+    "basic": 166667.01,
+    "covered": false
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "BIR@666666.99",
+   "input": {
+    "basic": 666666.99,
+    "covered": false
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "BIR@666667",
+   "input": {
+    "basic": 666667,
+    "covered": false
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "BIR@666667.01",
+   "input": {
+    "basic": 666667.01,
+    "covered": false
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "BIR@1000000",
+   "input": {
+    "basic": 1000000,
+    "covered": false
+   },
+   "pass": true,
+   "errors": []
+  }
+ ]
+}

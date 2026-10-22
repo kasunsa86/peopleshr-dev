@@ -1,0 +1,148 @@
+{
+ "name": "philhealth",
+ "project": "chromium",
+ "executed": 14,
+ "passed": 11,
+ "failed": 3,
+ "cases": [
+  {
+   "id": "PH@0",
+   "input": {
+    "basic": 0
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "PH@5000",
+   "input": {
+    "basic": 5000
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "PH@9999.99",
+   "input": {
+    "basic": 9999.99
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "PH@10000",
+   "input": {
+    "basic": 10000
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "PH@10000.01",
+   "input": {
+    "basic": 10000.01
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "PH@20000",
+   "input": {
+    "basic": 20000
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "PH@50000",
+   "input": {
+    "basic": 50000
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "PH@99999.99",
+   "input": {
+    "basic": 99999.99
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "PH@100000",
+   "input": {
+    "basic": 100000
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "PH@100000.01",
+   "input": {
+    "basic": 100000.01
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "PH@250000",
+   "input": {
+    "basic": 250000
+   },
+   "pass": true,
+   "errors": []
+  },
+  {
+   "id": "PH-allow@20000+10000",
+   "input": {
+    "basic": 20000,
+    "allowances": [
+     {
+      "amount": 10000,
+      "contrib": true,
+      "tax": true
+     }
+    ]
+   },
+   "pass": false,
+   "errors": [
+    "EE 750 != 500 (MBS 20000)"
+   ]
+  },
+  {
+   "id": "PH-allow@50000+60000",
+   "input": {
+    "basic": 50000,
+    "allowances": [
+     {
+      "amount": 60000,
+      "contrib": true,
+      "tax": true
+     }
+    ]
+   },
+   "pass": false,
+   "errors": [
+    "EE 2500 != 1250 (MBS 50000)"
+   ]
+  },
+  {
+   "id": "PH-allow@9000+5000",
+   "input": {
+    "basic": 9000,
+    "allowances": [
+     {
+      "amount": 5000,
+      "contrib": true,
+      "tax": true
+     }
+    ]
+   },
+   "pass": false,
+   "errors": [
+    "EE 350 != 250 (MBS 9000)"
+   ]
+  }
+ ]
+}
