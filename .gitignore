@@ -17,8 +17,9 @@ cgi-bin/
 .user.ini
 php.ini
 
-# Blog migration tool: cached WordPress data and local virtualenv.
-tools/blog-migration/.cache/
+# Local dev tools (blog generator, calculator test suite) and virtualenv:
+# kept on the developer machine, never deployed.
+tools/
 .venv/
 
 # Claude Code settings: per-person, never shared.
