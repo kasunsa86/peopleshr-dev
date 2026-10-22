@@ -396,6 +396,7 @@ html{scrollbar-gutter:stable;}
    it. Full opacity keeps them legible regardless of what's behind them. */
 .ph-trust-strip .client-logo{opacity:1;}
 .ph-trust-strip .logo-slider-track{gap:36px;animation-duration:43.2s;}
+@media(max-width:768px){.ph-trust-strip .logo-slider-track{animation-duration:37.6s;}} /* mobile: ~15% faster */
 
 /* --- 2. Compliance strip (title + badge row, right after hero) ---- */
 /* (.ph-compliance-* rules live in styles.css, shared with philippines-hris.html) */

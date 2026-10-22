@@ -2750,6 +2750,7 @@ svg{display:block;}
   animation: scroll-logos 50s linear infinite;
 }
 .logo-track:hover { animation-play-state: paused; }
+@media(max-width:768px){.logo-track{animation-duration:43.5s;}} /* mobile: ~15% faster */
 @keyframes scroll-logos {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
@@ -9182,6 +9183,7 @@ button.btn-primary {
 .hris-lp .home-hero-g2{align-self:flex-start;margin-top:20px;}
 .hris-lp .home-trust-strip{margin-top:28px;}
 .hris-lp .home-trust-strip .logo-slider-track{animation-duration:43.2s;}
+@media(max-width:768px){.hris-lp .home-trust-strip .logo-slider-track{animation-duration:37.6s;}} /* mobile: ~15% faster */
 /* Hero labels as a clean checklist instead of the shared bordered chips
    (five stacked chips of uneven width read as ragged next to the big
    heading): no box, a green tick in a soft green circle, larger text. */
@@ -9482,15 +9484,13 @@ button.btn-primary {
 
 /* Site-wide: slow down the logo-carousel marquee on mobile (was the
    shared 20s used at every width, which reads too fast on a narrow
-   screen with logos passing quickly). Desktop/tablet keep 20s. */
+   screen with logos passing quickly). Desktop/tablet keep 20s.
+   39s is ~15% faster than the earlier 45s mobile setting. */
 @media(max-width:768px){
-  .logo-slider-track{animation-duration:45s;}
+  .logo-slider-track{animation-duration:39s;}
 }
-/* Reduce Motion: navbar.css squashes every animation to .01ms, which made
-   these infinite marquees replay thousands of times a second (iOS). */
-@media(prefers-reduced-motion:reduce){
-  .logo-slider-track,.logo-track,.cs-logo-row{animation:none !important;}
-}
+/* Reduce Motion: navbar.css and casestudies.css squash animations to .01ms
+   but exclude these marquee tracks, so they keep their normal speed. */
 
 /* indonesia-lp.html — floating WhatsApp button, fixed bottom-right. */
 .idn-whatsapp-float{
@@ -9746,6 +9746,7 @@ button.btn-primary {
 .home-trust-strip .client-logos .client-logo img{height:36px !important;max-width:88px !important;}
 .home-trust-strip .client-logo{opacity:1;}
 .home-trust-strip .logo-slider-track{gap:36px;animation-duration:35.7s;} /* ~21% faster than the PH strip's 43.2s (two +10% steps) */
+@media(max-width:768px){.home-trust-strip .logo-slider-track{animation-duration:31s;}} /* mobile: ~15% faster */
 /* Soft fade at both ends. A mask (not white overlays) so it blends into the hero gradient behind it. */
 .home-trust-strip .client-logos{
   -webkit-mask-image:linear-gradient(to right,transparent,#000 7%,#000 93%,transparent);

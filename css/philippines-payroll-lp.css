@@ -93,6 +93,7 @@
 .pay-lp .hero-wrap .trust-badges{gap:12px;margin:0 0 36px;}
 .pay-lp .home-trust-strip{margin-top:44px;}
 .pay-lp .home-trust-strip .logo-slider-track{animation-duration:43.2s;}
+@media(max-width:768px){.pay-lp .home-trust-strip .logo-slider-track{animation-duration:37.6s;}} /* mobile: ~15% faster */
 /* Hero fills the screen below the navbar (60px) and announcement bar
    (~44px; reclaimed once it's dismissed), content vertically centred.
    Desktop only -- on tablet/mobile the hero stacks and is taller anyway. */
