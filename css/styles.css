@@ -6418,7 +6418,9 @@ button.btn-primary {
 .wb-rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
 
 /* Recording card */
-.wb-rec-card{background:#fff;border-radius:18px;border:1.5px solid #cbd5e1;overflow:hidden;transition:all .25s;cursor:pointer;}
+.wb-rec-card{background:#fff;border-radius:18px;border:1.5px solid #cbd5e1;overflow:hidden;transition:all .25s;cursor:pointer;scroll-margin-top:120px;}
+/* Card opened from a /webinars/#rec-N link (e.g. from a blog post) */
+.wb-rec-card:target{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.18);}
 .wb-rec-card:hover{border-color:rgba(37,99,235,.3);box-shadow:0 8px 32px rgba(13,27,62,.1);transform:translateY(-3px);}
 .wb-rec-thumb{aspect-ratio:16/9;position:relative;overflow:hidden;}
 .wb-rec-thumb-inner{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
@@ -9483,6 +9485,11 @@ button.btn-primary {
    screen with logos passing quickly). Desktop/tablet keep 20s. */
 @media(max-width:768px){
   .logo-slider-track{animation-duration:45s;}
+}
+/* Reduce Motion: navbar.css squashes every animation to .01ms, which made
+   these infinite marquees replay thousands of times a second (iOS). */
+@media(prefers-reduced-motion:reduce){
+  .logo-slider-track,.logo-track,.cs-logo-row{animation:none !important;}
 }
 
 /* indonesia-lp.html — floating WhatsApp button, fixed bottom-right. */

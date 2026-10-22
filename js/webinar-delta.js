@@ -471,7 +471,7 @@ function renderRecordings(recordings) {
         : '';
 
       return `
-      <div class="wb-rec-card"${v.gated ? ' data-gated="1"' : ''}${v.youtubeId ? ` data-ytid="${v.youtubeId}" data-title="${v.title.replace(/"/g, '&quot;')}"` : ' data-pending="1"'}>
+      <div class="wb-rec-card" id="${v.id}"${v.gated ? ' data-gated="1"' : ''}${v.youtubeId ? ` data-ytid="${v.youtubeId}" data-title="${v.title.replace(/"/g, '&quot;')}"` : ' data-pending="1"'}>
         <div class="wb-rec-thumb" style="${thumbStyle}${v.gated ? 'filter:brightness(.7);' : ''}">
           ${youtubeThumb}
           ${v.gated
@@ -800,15 +800,30 @@ async function init() {
     // Wire up video + gate modals
     renderModal();
     renderGateModal();
-    document.getElementById('wb-body').addEventListener('click', e => {
-      const recCard = e.target.closest('.wb-rec-card[data-ytid]');
-      if (!recCard) return;
+    const openRecording = recCard => {
       if (recCard.dataset.gated) {
         openGateModal(recCard.dataset.ytid, recCard.dataset.title);
       } else {
         openVideoModal(recCard.dataset.ytid, recCard.dataset.title);
       }
+    };
+    document.getElementById('wb-body').addEventListener('click', e => {
+      const recCard = e.target.closest('.wb-rec-card[data-ytid]');
+      if (recCard) openRecording(recCard);
     });
+
+    // Deep link to one recording: /webinars/#rec-10 scrolls to its card and
+    // opens it (blog posts link here). The cards are rendered after the
+    // browser's own jump to the hash, so do it ourselves.
+    const openFromHash = () => {
+      const id = decodeURIComponent(location.hash.slice(1));
+      const recCard = id && document.getElementById(id);
+      if (!recCard || !recCard.matches('.wb-rec-card[data-ytid]')) return;
+      recCard.scrollIntoView({ block: 'center' });
+      openRecording(recCard);
+    };
+    openFromHash();
+    window.addEventListener('hashchange', openFromHash);
 
     // Kick off interactive features after DOM is ready
     initSlider();
