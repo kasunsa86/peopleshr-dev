@@ -1,0 +1,270 @@
+/* ═══════════════════════════════════════════════════════════════
+   YEAR-END PAYROLL READINESS CHECKLIST · PHILIPPINES 2026
+   (/year-end-payroll-checklist-ph-2026.html)
+
+   Everything here is scoped under .yepc-scope, the same pattern as
+   css/tax-calculator-philippines.css (.tcph-scope): a self-contained
+   interactive tool that reuses the real site header/footer/fonts/reset
+   (styles.css) but defines its own component classes, scoped so nothing
+   here can leak onto the rest of the site, and nothing sitewide can leak
+   in and override this tool's own look.
+   ═══════════════════════════════════════════════════════════════ */
+
+.yepc-scope{
+  /* Page tokens. --navy/--blue/--muted/--line are hardcoded to the exact
+     same hex values as the real sitewide --navy/--blue/--text-muted/--border
+     (see :root in styles.css) so this page matches the rest of the site.
+     They're hardcoded rather than written as var(--navy) etc. because a
+     custom property that references itself by the same name (--navy:var(--navy))
+     is a cyclic reference per the CSS spec and resolves to nothing -- every
+     background using it would silently fail to transparent while explicit
+     light text colors stayed put, which is exactly the invisible-text bug
+     this caused. The rest are page-only accent/status colors with no
+     sitewide equivalent yet. */
+  --navy:#0d1b3e; --navy-2:#0c2185; --blue:#2563eb; --blue-ink:#1d4fc4; --sky:#5696ee;
+  --ink:#0d1b3e; --muted:#6b7280; --line:#e2e8f0; --soft:#f3f6fb;
+  --orange:#b9470b; --orange-bg:#fdefe2; --green:#17723f; --green-bg:#e4f4ea; --gold:#e0a54a; --red:#b42318; --red-bg:#fdecea;
+  --radius:16px; --shadow:0 1px 2px rgba(12,26,61,.06),0 6px 24px rgba(12,26,61,.06);
+  color:var(--ink);
+}
+.yepc-scope *{box-sizing:border-box}
+.yepc-scope a{color:var(--blue-ink)}
+.yepc-scope h1,.yepc-scope h2,.yepc-scope h3{line-height:1.15;letter-spacing:-.02em;margin:0}
+.yepc-scope h2{font-size:clamp(1.35rem,2.6vw,1.9rem);font-weight:800;text-wrap:balance;margin-bottom:14px}
+.yepc-scope h3{font-size:1.05rem;font-weight:700;margin-bottom:8px}
+.yepc-scope p{margin:0}
+.yepc-scope .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.yepc-scope .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.yepc-scope :focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:6px}
+html:not(.js) .yepc-scope .js-only{display:none!important}
+.yepc-scope .accent{color:var(--blue)}
+.yepc-scope .kicker{font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-ink);margin-bottom:8px}
+.yepc-scope .lede{color:var(--muted);font-size:.95rem;margin-top:10px;max-width:68ch}
+.yepc-scope section.block{padding:64px 0;scroll-margin-top:64px}
+
+.yepc-scope section.block.alt{background:var(--soft)}
+
+/* ---------- buttons ---------- */
+.yepc-scope .ye-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:12px 20px;font:inherit;font-weight:700;text-decoration:none;cursor:pointer;border:2px solid transparent;transition:transform .15s ease,background .15s ease;line-height:1.2}
+.yepc-scope .ye-btn:hover{transform:translateY(-1px)}
+.yepc-scope .ye-btn-primary{background:var(--blue);color:#fff}
+.yepc-scope .ye-btn-primary:hover{background:#1f55d0}
+.yepc-scope .ye-btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.yepc-scope .ye-btn-ghost:hover{border-color:var(--blue)}
+.yepc-scope .ye-btn-outline{background:#fff;color:var(--blue-ink);border-color:var(--blue)}
+.yepc-scope .ye-btn-sm{padding:8px 14px;font-size:.88rem}
+
+/* ---------- hero + countdown card ---------- */
+.yepc-scope .ye-hero{position:relative;color:#fff;background:
+  linear-gradient(180deg,rgba(13,27,62,0) 40%,rgba(12,33,133,.65) 100%),
+  repeating-linear-gradient(115deg,rgba(255,255,255,.035) 0 1px,transparent 1px 90px),
+  repeating-linear-gradient(25deg,rgba(255,255,255,.03) 0 1px,transparent 1px 120px),
+  var(--navy);overflow:hidden}
+.yepc-scope .ye-hero .wrap{display:block;padding:40px 20px 56px}
+.yepc-scope .ye-partner-lockup{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-bottom:22px}
+.yepc-scope .ye-partner-logo{height:26px;width:auto;display:block}
+.yepc-scope .ye-partner-divider{width:1px;height:28px;background:rgba(255,255,255,.3);flex:0 0 auto}
+.yepc-scope .ye-hero h1{font-size:clamp(1.7rem,4.5vw,2.6rem);font-weight:800;margin:14px 0;letter-spacing:-.03em;color:#fff}
+.yepc-scope .ye-hero h1 .l2{color:var(--sky);display:block}
+.yepc-scope .ye-answer{font-size:.95rem;color:#e2e8ff;max-width:60ch}
+.yepc-scope .ye-answer strong{color:#fff}
+.yepc-scope .ye-hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.yepc-scope .ye-trust{display:inline-flex;align-items:center;gap:6px;background:var(--green-bg);color:var(--green);border:1px solid #bfe3cd;border-radius:999px;padding:4px 12px;font-size:.78rem;font-weight:700;margin-bottom:20px}
+
+/* ---------- progress rings (shared by hero + checklist heads) ---------- */
+.yepc-scope .ye-ring-wrap{position:relative;width:56px;height:56px;flex:0 0 auto}
+.yepc-scope .ye-ring-wrap.lg{width:76px;height:76px}
+.yepc-scope .ye-ring{width:100%;height:100%;transform:rotate(-90deg)}
+.yepc-scope .ye-ring circle{fill:none;stroke-width:4.5}
+.yepc-scope .ye-ring .bg{stroke:var(--line)}
+.yepc-scope .ye-ring .fg{stroke:var(--blue);stroke-linecap:round;transition:stroke-dasharray .5s ease}
+.yepc-scope .ye-hero .ye-ring .bg{stroke:rgba(255,255,255,.18)}
+.yepc-scope .ye-hero .ye-ring .fg{stroke:var(--sky)}
+.yepc-scope .ye-ring-wrap .pct{position:absolute;inset:0;display:grid;place-items:center;font-size:.8rem;font-weight:800;font-variant-numeric:tabular-nums}
+.yepc-scope .ye-ring-wrap.lg .pct{font-size:1rem}
+.yepc-scope .ye-ring-wrap.done .fg{stroke:#2fa863}
+.yepc-scope .ye-ring-wrap[aria-valuenow="0"] .fg{opacity:0}
+
+/* ---------- checklist ---------- */
+.yepc-scope .ye-cl-body{display:flex;gap:28px;align-items:flex-start;margin-top:8px}
+.yepc-scope .ye-cl-main{flex:1;min-width:0}
+.yepc-scope .ye-cl-overall{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 22px 8px 8px;flex:0 0 240px;position:sticky;top:76px}
+.yepc-scope .ye-cl-overall p{font-size:.92rem;color:var(--muted)}
+.yepc-scope .ye-cl-overall b{color:var(--ink)}
+.yepc-scope .ye-behind-all{margin-top:18px;background:var(--red-bg);color:var(--red);border:1px solid #f5c2bd;border-radius:12px;padding:12px 16px;font-weight:600}
+.yepc-scope .ye-months{display:grid;gap:22px;margin-top:28px}
+.yepc-scope .ye-month{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:var(--shadow)}
+.yepc-scope .ye-month.is-now{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.12),var(--shadow)}
+.yepc-scope .ye-m-head{display:flex;gap:16px;align-items:center}
+.yepc-scope .ye-m-progress{display:flex;flex-direction:column;align-items:center;gap:4px;flex:0 0 auto}
+.yepc-scope .ye-m-clear{background:none;border:0;font:inherit;font-size:.72rem;font-weight:600;color:var(--muted);text-decoration:underline;cursor:pointer;padding:2px}
+.yepc-scope .ye-m-clear:hover{color:var(--blue-ink)}
+.yepc-scope .ye-m-tag{background:var(--navy);color:#fff;font-weight:800;font-size:.85rem;border-radius:8px;padding:8px 12px;letter-spacing:.06em}
+.yepc-scope .ye-m-title{flex:1}
+.yepc-scope .ye-m-title h3{font-size:1.3rem}
+.yepc-scope .ye-m-title p{color:var(--muted);font-size:.93rem}
+.yepc-scope .ye-now-pill{display:inline-block;background:var(--blue);color:#fff;font-size:.68rem;font-weight:800;letter-spacing:.1em;border-radius:999px;padding:2px 8px;margin-left:8px;vertical-align:middle;text-transform:uppercase}
+.yepc-scope .ye-nudge{margin-top:14px;background:var(--red-bg);color:var(--red);border-radius:10px;padding:10px 14px;font-size:.92rem;font-weight:600}
+.yepc-scope .ye-items{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 22px}
+.yepc-scope .ye-item{position:relative}
+.yepc-scope .ye-item input{position:absolute;left:12px;top:15px;width:22px;height:22px;margin:0;appearance:none;-webkit-appearance:none;border:2px solid var(--blue);border-radius:6px;background:#fff;cursor:pointer;transition:background .15s}
+.yepc-scope .ye-item input:checked{background:var(--blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23fff' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round' d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/16px no-repeat}
+.yepc-scope .ye-item label{display:block;padding:12px 12px 12px 46px;border-radius:12px;cursor:pointer;transition:background .15s}
+.yepc-scope .ye-item label:hover{background:var(--soft)}
+.yepc-scope .ye-item .t{display:block;font-weight:700}
+.yepc-scope .ye-item .d{display:block;color:var(--muted);font-size:.92rem;margin-top:2px}
+.yepc-scope .ye-item input:checked+label .t{text-decoration:line-through;text-decoration-color:rgba(13,27,62,.35);color:var(--muted)}
+.yepc-scope .ye-quote{background:var(--navy);color:#e2e8ff;border-radius:16px;padding:22px 24px 22px 64px;position:relative;font-size:1.02rem}
+.yepc-scope .ye-quote::before{content:"\201C";position:absolute;left:22px;top:6px;font-size:3.4rem;color:var(--sky);font-weight:800;line-height:1}
+.yepc-scope .ye-quote strong{color:#fff}
+.yepc-scope .ye-note{margin-top:18px;background:var(--orange-bg);border:1px solid #f3c79e;border-radius:12px;padding:14px 18px;font-size:.94rem}
+.yepc-scope .ye-cl-tools{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.yepc-scope .ye-linkbtn{background:none;border:0;color:var(--blue-ink);font:inherit;font-weight:600;text-decoration:underline;cursor:pointer;padding:4px}
+
+/* ---------- key dates timeline ---------- */
+.yepc-scope .ye-filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;align-items:center}
+.yepc-scope .ye-filters button{font:inherit;font-size:.86rem;font-weight:700;border:1.5px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:7px 14px;cursor:pointer}
+.yepc-scope .ye-filters button[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.yepc-scope .ye-filters .ye-cal-btn{margin-left:auto;border-color:var(--blue);color:var(--blue-ink)}
+.yepc-scope .ye-timeline{list-style:none;margin:22px 0 0;padding:0;position:relative}
+.yepc-scope .ye-timeline::before{content:"";position:absolute;left:127px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.yepc-scope .ye-kd{display:grid;grid-template-columns:104px 28px 110px 1fr auto;gap:0 12px;align-items:center;padding:12px 8px 12px 0;border-bottom:1px solid var(--line)}
+.yepc-scope .ye-kd-date{text-align:right}
+.yepc-scope .ye-kd-date .dow{display:block;font-size:.78rem;color:var(--muted)}
+.yepc-scope .ye-kd-date time{font-weight:800;font-size:1.05rem}
+.yepc-scope .ye-kd-dot{width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--blue);justify-self:center;position:relative;z-index:1}
+.yepc-scope .ye-kd[data-types~="PAY"] .ye-kd-dot{border-color:var(--orange)}
+.yepc-scope .ye-kd[data-types~="HOLIDAY"] .ye-kd-dot{border-color:#7a8397}
+.yepc-scope .ye-kd-text{font-size:.96rem}
+.yepc-scope .ye-kd.is-key{background:var(--orange-bg);border-radius:12px}
+.yepc-scope .ye-kd.is-key .ye-kd-date time,.yepc-scope .ye-kd.is-key .ye-kd-text{color:var(--orange);font-weight:700}
+.yepc-scope .ye-kd.is-past{opacity:.55}
+.yepc-scope .ye-kd.is-next .ye-kd-dot{background:var(--blue);box-shadow:0 0 0 6px rgba(37,99,235,.18)}
+.yepc-scope .ye-kd.is-next .ye-kd-date::after{content:"Next";display:block;width:max-content;margin:4px 0 0 auto;font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:var(--blue);color:#fff;border-radius:999px;padding:1px 8px}
+.yepc-scope .ye-kd[hidden]{display:none}
+.yepc-scope .ye-chips{display:flex;gap:4px;flex-wrap:wrap}
+.yepc-scope .ye-chip{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.06em;border-radius:6px;padding:3px 8px}
+.yepc-scope .ye-chip-pay{background:#fbe0c8;color:#9a3a06}
+.yepc-scope .ye-chip-bir{background:#e3ecfd;color:var(--blue-ink)}
+.yepc-scope .ye-chip-dole{background:var(--green-bg);color:var(--green)}
+.yepc-scope .ye-chip-holiday{background:#eceef2;color:#3d4659}
+.yepc-scope .ye-cal-btn{font:inherit;font-size:.82rem;font-weight:700;border:1.5px solid var(--blue);color:var(--blue-ink);background:#fff;border-radius:999px;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.yepc-scope .ye-cal-btn:hover{background:#eef3fe}
+.yepc-scope .ye-foot{color:var(--muted);font-size:.86rem;margin-top:14px}
+.yepc-scope .ye-next-card{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-top:28px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 22px;box-shadow:var(--shadow)}
+.yepc-scope .ye-next-card p{color:var(--muted);font-size:.95rem}
+.yepc-scope .ye-next-card b{display:block;color:var(--ink);font-size:1.05rem;margin-bottom:2px}
+
+/* ---------- what changed + rates ---------- */
+.yepc-scope .ye-changes{list-style:none;padding:0;margin:20px 0 0;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;counter-reset:c}
+.yepc-scope .ye-changes li{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px 16px 58px;position:relative;counter-increment:c}
+.yepc-scope .ye-changes li::before{content:counter(c);position:absolute;left:16px;top:15px;width:30px;height:30px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:800}
+.yepc-scope .ye-changes p{color:var(--muted);font-size:.94rem;margin-top:6px}
+
+/* ---------- pattern section: data-flow SVG + "better way" + demo card ---------- */
+.yepc-scope .ye-pattern-section{padding:52px 0 64px;background:linear-gradient(180deg,#fff 0%,#fff 55%,var(--soft) 100%);border-top:1px solid var(--line);scroll-margin-top:64px}
+.yepc-scope .ye-section-center{text-align:center;margin-bottom:18px}
+.yepc-scope .ye-section-center h2{text-wrap:balance;max-width:880px;margin:0 auto}
+.yepc-scope .ye-section-center .lede{margin:12px auto 0;max-width:620px}
+.yepc-scope .ye-flow-wrap{max-width:860px;margin:0 auto}
+.yepc-scope .ye-flow-svg{display:block;width:100%;height:auto;overflow:visible;font-family:inherit}
+.yepc-scope .ye-flow-line{fill:none;stroke:#e2e8f0;stroke-width:2}
+.yepc-scope .ye-dot-in{fill:#f97316}
+.yepc-scope .ye-dot-out{fill:#3b82f6}
+.yepc-scope .ye-node-c{fill:#fff;stroke:#eef2f7;stroke-width:1}
+.yepc-scope .ye-node-i,.yepc-scope .ye-out-i{fill:none;stroke:var(--blue);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.yepc-scope .ye-out-i{stroke:var(--ink)}
+.yepc-scope .ye-node-t{font-size:15px;font-weight:700;fill:var(--ink)}
+.yepc-scope .ye-node.is-hot .ye-node-i{stroke:#dc2626}
+.yepc-scope .ye-ot-ring{fill:none;stroke:#ef4444;stroke-width:2;opacity:0}
+.yepc-scope .ye-hub-ring{fill:none;stroke:#bfdbfe;stroke-width:2;stroke-dasharray:4 6}
+.yepc-scope .ye-hub-i{fill:none;stroke:#93c5fd;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.yepc-scope .ye-hub-t{font-size:18px;font-weight:800;fill:#fff}
+.yepc-scope .ye-err-core{fill:#dc2626}
+.yepc-scope .ye-err-halo{fill:#ef4444;opacity:.18}
+.yepc-scope .ye-err-fill{fill:#fef2f2;stroke:#ef4444;stroke-width:2;opacity:0}
+.yepc-scope .ye-err-tag-bg{fill:#fef2f2;stroke:#fecaca;stroke-width:1}
+.yepc-scope .ye-err-tag-ic{fill:#dc2626}
+.yepc-scope .ye-err-tag-x{font-size:11px;font-weight:900;fill:#fff}
+.yepc-scope .ye-err-tag-t{font-size:13px;font-weight:700;fill:#b91c1c}
+.yepc-scope .ye-flow-legend{display:flex;justify-content:center;gap:12px 28px;flex-wrap:wrap;margin-top:14px;font-size:.9rem;color:var(--muted)}
+.yepc-scope .ye-fl-item{display:inline-flex;align-items:center;gap:8px}
+.yepc-scope .ye-fl-dot{width:10px;height:10px;border-radius:50%;background:#f97316;flex-shrink:0}
+.yepc-scope .ye-fl-dot.is-err{background:#dc2626;box-shadow:0 0 0 4px rgba(239,68,68,.18)}
+.yepc-scope .ye-pattern-bridge{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;margin-top:44px;padding-top:40px;border-top:1px dashed var(--line)}
+.yepc-scope .ye-auto-copy p{font-size:.95rem;color:var(--ink);margin-bottom:16px;max-width:460px}
+.yepc-scope .ye-auto-copy .ye-btn{margin-top:8px}
+.yepc-scope .ye-auto-copy p.kicker{font-size:.78rem;max-width:none;margin-bottom:8px}
+.yepc-scope .ye-demo-card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);max-width:480px;justify-self:end;width:100%}
+.yepc-scope .ye-demo-thumb{display:block;background:#0f5f4a;line-height:0}
+.yepc-scope .ye-demo-thumb img{display:block;width:100%;height:auto;aspect-ratio:292/150;object-fit:cover;transition:transform .3s ease}
+.yepc-scope .ye-demo-thumb:hover img{transform:scale(1.03)}
+.yepc-scope .ye-demo-body{padding:20px 22px 22px}
+.yepc-scope .ye-demo-tag{font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-ink)}
+.yepc-scope .ye-demo-body h3{font-size:1.25rem;margin:6px 0 8px}
+.yepc-scope .ye-demo-body p:not(.ye-demo-tag){color:var(--muted);font-size:.95rem;margin-bottom:16px}
+
+/* ---------- calendar email popup ---------- */
+.yepc-scope .ye-cal-modal{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(13,27,62,.6);backdrop-filter:blur(4px)}
+.yepc-scope .ye-cal-modal[hidden]{display:none}
+.yepc-scope .ye-cal-box{background:#fff;border-radius:20px;max-width:440px;width:100%;padding:28px;box-shadow:0 30px 80px rgba(0,0,0,.35);position:relative}
+.yepc-scope .ye-cal-box h2{font-size:1.4rem;margin:6px 0 8px}
+.yepc-scope .ye-cal-box .lede{margin-top:0;font-size:.95rem}
+.yepc-scope .ye-cal-close{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:10px;border:0;background:var(--soft);color:var(--ink);font-size:1.2rem;cursor:pointer}
+.yepc-scope .ye-cal-box .ye-btn{width:100%;margin-top:16px}
+.yepc-scope .ye-cal-done{background:var(--green-bg);color:var(--green);border-radius:12px;padding:14px;font-weight:700;margin-top:14px}
+.yepc-scope .ye-field{display:flex;flex-direction:column;gap:6px;margin-top:14px}
+.yepc-scope .ye-field label{font-weight:700;font-size:.92rem}
+.yepc-scope .ye-field input{font:inherit;padding:11px 12px;border:1.5px solid #8a94a8;border-radius:10px;background:#fff;color:var(--ink);width:100%}
+.yepc-scope .ye-field input:focus-visible{outline:3px solid var(--gold);outline-offset:1px;border-color:var(--blue)}
+.yepc-scope .ye-field input[aria-invalid="true"]{border-color:var(--red)}
+.yepc-scope .ye-hint{font-size:.82rem;color:var(--muted);font-weight:500}
+.yepc-scope .ye-consent{font-size:.8rem;color:var(--muted);margin-top:12px}
+
+/* ---------- debug panel (?debug=1) ---------- */
+.yepc-scope .ye-debug{position:fixed;right:12px;bottom:12px;z-index:99;width:340px;max-height:40vh;overflow:auto;background:#0b1020;color:#9ef0b0;font:12px/1.4 ui-monospace,Menlo,Consolas,monospace;border-radius:10px;padding:10px;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.yepc-scope .ye-debug b{color:#fff}
+
+/* ---------- responsive ---------- */
+@media (max-width:980px){
+  .yepc-scope .ye-pattern-bridge{grid-template-columns:1fr;gap:28px}
+  .yepc-scope .ye-demo-card{justify-self:stretch;max-width:none}
+}
+@media (max-width:760px){
+  .yepc-scope section.block{padding:48px 0}
+  .yepc-scope .ye-changes,.yepc-scope .ye-items{grid-template-columns:1fr}
+  .yepc-scope .ye-cl-body{flex-direction:column}
+  .yepc-scope .ye-cl-overall{position:static;flex-basis:auto;width:100%;margin-bottom:12px;order:-1}
+  .yepc-scope .ye-timeline::before{left:7px}
+  .yepc-scope .ye-kd{grid-template-columns:16px 1fr auto;grid-template-areas:"dot date cal" "dot chips cal" "dot text text";gap:4px 12px;align-items:start;padding:12px 0}
+  .yepc-scope .ye-kd-dot{grid-area:dot;margin-top:6px}
+  .yepc-scope .ye-kd-date{grid-area:date;text-align:left}
+  .yepc-scope .ye-kd-date .dow{display:inline;margin-right:6px}
+  .yepc-scope .ye-kd.is-next .ye-kd-date::after{display:inline-block;margin:0 0 0 8px;vertical-align:middle}
+  .yepc-scope .ye-kd .ye-chips{grid-area:chips}
+  .yepc-scope .ye-kd-text{grid-area:text}
+  .yepc-scope .ye-kd .ye-cal-btn{grid-area:cal}
+  .yepc-scope .ye-kd.is-key{padding-left:6px;padding-right:6px}
+  .yepc-scope .ye-filters .ye-cal-btn{margin-left:0}
+  .yepc-scope .ye-m-head{flex-wrap:wrap}
+  .yepc-scope .ye-m-title{order:3;flex-basis:100%}
+  .yepc-scope .ye-m-head .ye-ring-wrap{margin-left:auto}
+  .yepc-scope .ye-flow-wrap,.yepc-scope .ye-flow-legend{display:none}
+  .yepc-scope .ye-pattern-section{padding:36px 0 44px}
+  .yepc-scope .ye-pattern-bridge{margin-top:28px;padding-top:28px}
+  .yepc-scope .ye-next-card .ye-btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){
+  .yepc-scope .ye-ring .fg{transition:none}
+}
+@media print{
+  .yepc-scope .ye-hero-ctas,.yepc-scope .ye-filters,.yepc-scope .ye-cal-btn,.yepc-scope .ye-cl-tools,.yepc-scope .ye-m-clear,.yepc-scope .ye-debug,.yepc-scope .ye-nudge,.yepc-scope .ye-behind-all,.yepc-scope .ye-pattern-section{display:none!important}
+  .yepc-scope .ye-hero{background:#fff!important;color:#000}
+  .yepc-scope .ye-hero h1,.yepc-scope .ye-answer,.yepc-scope .ye-answer strong{color:#000}
+  .yepc-scope section.block{padding:14pt 0}
+  .yepc-scope section.block.alt{background:#fff}
+  .yepc-scope .ye-month,.yepc-scope .ye-kd,.yepc-scope .ye-changes li,.yepc-scope .ye-quote{break-inside:avoid;box-shadow:none}
+  .yepc-scope .ye-kd[hidden]{display:grid!important}
+  .yepc-scope .ye-quote{background:#fff;color:#000;border:1px solid #999}
+  .yepc-scope a{color:#000;text-decoration:none}
+}
