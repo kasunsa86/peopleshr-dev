@@ -121,14 +121,28 @@
 .tclk-scope .cta{margin-top:24px;background:linear-gradient(120deg,#175cd3,#5925dc);color:#fff;border-radius:18px;padding:22px;display:flex;justify-content:space-between;gap:18px;align-items:center}
 .tclk-scope .cta h3{margin:0;font-size:18px}
 .tclk-scope .cta p{margin:4px 0 0;color:#e9d7fe}
-.tclk-scope .faq{margin-top:28px}
+.tclk-scope .guide{margin-top:24px;border:1px solid var(--line);border-radius:22px;padding:22px;background:#fff;box-shadow:0 8px 24px rgba(16,24,40,.06)}
+.tclk-scope .guide h2{margin:0 0 8px;font-size:20px}
+.tclk-scope .guide h3{margin:18px 0 8px}
+.tclk-scope .guide p{margin:0 0 10px;color:#475467;font-size:14px;max-width:860px}
+.tclk-scope .guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.tclk-scope .guide .table-wrap{margin-top:0}
+.tclk-scope .guide table{min-width:0}
+.tclk-scope .guide tr.is-total td{font-weight:800;color:var(--ink);background:#f9fafb}
+.tclk-scope .guide .updated{font-size:12px;color:var(--muted);margin-top:14px}
 .tclk-scope .faq h2{margin:0 0 12px}
 .tclk-scope details{border:1px solid var(--line);border-radius:14px;padding:0 16px;margin-bottom:8px;background:#fff}
 .tclk-scope summary{cursor:pointer;padding:14px 0;font-weight:700;font-size:14px;list-style:none;display:flex;justify-content:space-between;gap:12px}
 .tclk-scope summary::-webkit-details-marker{display:none}
-.tclk-scope summary:after{content:"+";color:var(--brand);font-weight:800}
-.tclk-scope details[open] summary:after{content:"−"}
+.tclk-scope summary:after{content:"";flex:none;align-self:center;width:8px;height:8px;margin:0 4px 3px 0;border-right:2px solid var(--brand);border-bottom:2px solid var(--brand);transform:rotate(45deg);transition:transform .2s ease}
+.tclk-scope details[open] summary:after{content:"";margin:3px 4px 0 0;transform:rotate(-135deg)}
 .tclk-scope details p{margin:0 0 14px;color:#475467;font-size:13px}
+.tclk-scope details.card-toggle{border:0;border-radius:0;padding:0;margin:0;background:none}
+.tclk-scope details.card-toggle>summary{padding:0;align-items:center}
+.tclk-scope details.card-toggle>summary h2{margin:0}
+.tclk-scope details.card-toggle>summary:after{content:"";flex:none;width:10px;height:10px;margin:0 6px 4px 0;border-right:2.5px solid var(--brand);border-bottom:2.5px solid var(--brand);transform:rotate(45deg);transition:transform .2s ease}
+.tclk-scope details.card-toggle[open]>summary:after{content:"";margin:4px 6px 0 0;transform:rotate(-135deg)}
+.tclk-scope details.card-toggle[open]>summary{margin-bottom:10px}
 .tclk-scope details a,.tclk-scope .rule a{color:var(--brand);font-weight:600;text-decoration:underline;text-underline-offset:2px}
 .tclk-scope .rule-src{margin:10px 0 0;font-size:12px;color:var(--muted)}
 
@@ -155,6 +169,7 @@
   .tclk-scope .kpis--five{grid-template-columns:repeat(3,1fr)}
 }
 @media(max-width:850px){
+  .tclk-scope .guide-grid{grid-template-columns:1fr}
   .tclk-scope .grid2{grid-template-columns:1fr}
   .tclk-scope .kpis,.tclk-scope .kpis--five{grid-template-columns:1fr 1fr}
   .tclk-scope .brand{flex-wrap:wrap}
@@ -163,6 +178,7 @@
 @media(max-width:520px){
   .tclk-scope .view{padding:14px}
   .tclk-scope .panel{padding:14px}
+  .tclk-scope .guide{padding:16px}
   .tclk-scope .contrib-grid{grid-template-columns:1fr}
   .tclk-scope .contrib-stats{grid-template-columns:1fr}
   .tclk-scope .contrib-stat{display:flex;justify-content:space-between;align-items:center}
@@ -193,7 +209,7 @@
   .tclk-scope{padding-bottom:75px}
 }
 @media print{
-  .tclk-scope .hero,.tclk-scope .tabs,.tclk-scope .notice,.tclk-scope .actions,.tclk-scope .cta,.tclk-scope .faq,.tclk-scope .sticky-net{display:none!important}
+  .tclk-scope .hero,.tclk-scope .tabs,.tclk-scope .notice,.tclk-scope .actions,.tclk-scope .below,.tclk-scope .sticky-net{display:none!important}
   .tclk-scope .app{margin:0;padding:0}
   .tclk-scope .shell{box-shadow:none;border:0}
 }

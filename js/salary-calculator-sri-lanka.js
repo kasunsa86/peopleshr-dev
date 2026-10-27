@@ -183,4 +183,9 @@ $('backdrop').addEventListener('click',closeDrawers);
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawers()});
 
 drawLists();render();
+
+// Reveal the guide, examples, CTA and FAQ cards one by one as they scroll into view
+(()=>{const cards=document.querySelectorAll('.tclk-scope .below > section');if(!cards.length||!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+const io=new IntersectionObserver(entries=>{entries.filter(e=>e.isIntersecting).forEach((e,i)=>{const el=e.target;el.style.transitionDelay=(i*150)+'ms';el.style.opacity='1';el.style.transform='translateY(0)';io.unobserve(el)})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+cards.forEach(el=>{el.style.opacity='0';el.style.transform='translateY(24px)';el.style.transition='opacity .5s ease, transform .5s ease';io.observe(el)})})();
 })();

@@ -23,12 +23,9 @@
 
   <?php include __DIR__ . '/inc/seo-schema.php'; ?>
 
-  <!-- The demo form sits in the hero, so warm the HubSpot form hosts and start
-       downloading the v2 embed from the head (defer runs it before
-       DOMContentLoaded, where the inline script below creates the form). -->
-  <link rel="preconnect" href="https://js-na2.hsforms.net" />
-  <link rel="preconnect" href="https://forms-na2.hsforms.com" crossorigin />
-  <script src="https://js-na2.hsforms.net/forms/embed/v2.js" defer></script>
+  <!-- The hero form is a native form (see #hrisForm below) that posts straight
+       to HubSpot's Forms API on submit, so no HubSpot embed script or iframe
+       loads on this page at all -- nothing to warm a preconnect for. -->
 
   <!-- CSS -->
   <link rel="stylesheet" href="<?php echo asset_v('/css/styles.css'); ?>" />
@@ -439,11 +436,72 @@
           <p>Fill in your details to explore a demo built around your HR needs.</p>
         </div>
         <div class="hero-form-body">
-          <div class="pay-form-loading" role="status">
-            <span class="pay-form-loading-spinner" aria-hidden="true"></span>
-            Loading form…
-          </div>
-          <div id="hrisLpFormEmbed"></div>
+          <form class="hris-form" id="hrisForm" novalidate>
+            <div class="hris-form-progress" aria-hidden="true"><span class="on"></span><span></span></div>
+
+            <input type="hidden" name="utm_source" id="hrisUtmSource">
+            <input type="hidden" name="utm_medium" id="hrisUtmMedium">
+            <input type="hidden" name="utm_campaign" id="hrisUtmCampaign">
+            <input type="hidden" name="utm_term" id="hrisUtmTerm">
+            <input type="hidden" name="utm_content" id="hrisUtmContent">
+
+            <section class="hris-form-step is-active" data-step="0">
+              <div class="hris-form-field">
+                <label for="hrisFirstName">First Name</label>
+                <input id="hrisFirstName" name="firstname" type="text" autocomplete="given-name">
+              </div>
+              <div class="hris-form-field">
+                <label for="hrisLastName">Last Name</label>
+                <input id="hrisLastName" name="lastname" type="text" autocomplete="family-name">
+              </div>
+              <div class="hris-form-field">
+                <label for="hrisEmail">Work Email <span class="hris-req">*</span></label>
+                <input id="hrisEmail" name="email" type="email" inputmode="email" autocomplete="email" required>
+                <p class="hris-form-err">Please enter a valid work email.</p>
+              </div>
+              <button type="button" class="hris-form-btn hris-form-btn--primary" data-hris-next>Next</button>
+            </section>
+
+            <section class="hris-form-step" data-step="1">
+              <div class="hris-form-field">
+                <label for="hrisPhone">Contact Number <span class="hris-req">*</span></label>
+                <input id="hrisPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+63 912 345 6789" required>
+                <p class="hris-form-err">Please enter your contact number.</p>
+              </div>
+              <div class="hris-form-field">
+                <label for="hrisEmployees">Number of Employees <span class="hris-req">*</span></label>
+                <select id="hrisEmployees" name="numemployees" required>
+                  <option value="" disabled selected>Select a range</option>
+                  <option value="1-50">1 - 50</option>
+                  <option value="51-200">51 - 200</option>
+                  <option value="201-500">201 - 500</option>
+                  <option value="501-1000">501 - 1,000</option>
+                  <option value="1000+">1,000+</option>
+                </select>
+                <p class="hris-form-err">Please select your company size.</p>
+              </div>
+              <div class="hris-form-field">
+                <label for="hrisIndustry">Industry Category <span class="hris-req">*</span></label>
+                <select id="hrisIndustry" name="industry_type__cloned_" required>
+                  <option value="" disabled selected>Select your industry</option>
+                  <option value="Banking, Finance & Insurance">Banking, Finance &amp; Insurance</option>
+                  <option value="Hospitality">Hospitality</option>
+                  <option value="Manufacturing">Manufacturing</option>
+                  <option value="Professional & Business Services">Professional &amp; Business Services</option>
+                  <option value="Retail">Retail</option>
+                  <option value="IT & ITES">IT &amp; ITES</option>
+                  <option value="Transportation & Logistics">Transportation &amp; Logistics</option>
+                  <option value="Other">Other</option>
+                </select>
+                <p class="hris-form-err">Please select your industry.</p>
+              </div>
+              <p class="hris-form-apierror" id="hrisFormApiError" hidden>Sorry, something went wrong. Please check your connection and try again.</p>
+              <div class="hris-form-actions">
+                <button type="button" class="hris-form-btn hris-form-btn--ghost" data-hris-back>Back</button>
+                <button type="submit" class="hris-form-btn hris-form-btn--primary" id="hrisSubmitBtn">Submit</button>
+              </div>
+            </section>
+          </form>
         </div>
       </div>
     </div>
@@ -451,30 +509,113 @@
   </div>
 </div>
 
-<!-- This is a legacy HubSpot form, which the newer .hs-form-frame embed
-     (used on philippines-payroll-lp.html) can't render, so it uses the v2
-     embed (loaded deferred from the head). The "Loading form…" spinner above
-     is removed once the form is ready, or after 15s so a blocked embed never
-     leaves it spinning. Form ready also releases the held-back trackers. -->
+<!-- Native hero form: posts straight to HubSpot's Forms API (api.hsforms.com,
+     already allowed by the sitewide CSP), same pattern as the PMAP event page
+     (63rd-pmap-annual-conference.html). No HubSpot script/iframe loads on this
+     page, so the form itself never has a load delay -- only the POST on submit
+     touches HubSpot. On success it redirects to /thank-you-for-submission/,
+     matching this form's configured HubSpot redirect action. -->
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    function hideLoader() {
-      var loader = document.querySelector('.hero-form-body .pay-form-loading');
-      if (loader) loader.parentNode.removeChild(loader);
-    }
-    setTimeout(hideLoader, 15000);
-    if (!window.hbspt) { hideLoader(); return; }
-    hbspt.forms.create({
-      region: "na2",
-      portalId: "45700506",
-      formId: "3f13304d-fb30-440b-9506-0327a0116575",
-      target: "#hrisLpFormEmbed",
-      onFormReady: function () {
-        hideLoader();
-        window.phrLoadTrackers();
-      }
+(function () {
+  var HS_PORTAL_ID = '45700506';
+  var HS_FORM_ID = '9aeb1002-d301-479a-b063-0a4767ed12d4';
+
+  var form = document.getElementById('hrisForm');
+  if (!form) return;
+
+  var params = new URLSearchParams(location.search);
+  ['source', 'medium', 'campaign', 'term', 'content'].forEach(function (key) {
+    var el = document.getElementById('hrisUtm' + key.charAt(0).toUpperCase() + key.slice(1));
+    if (el) el.value = params.get('utm_' + key) || '';
+  });
+
+  var steps = form.querySelectorAll('.hris-form-step');
+  var bars = form.querySelectorAll('.hris-form-progress span');
+  var current = 0;
+
+  function show(i) {
+    steps[current].classList.remove('is-active');
+    current = i;
+    steps[current].classList.add('is-active');
+    bars.forEach(function (b, n) { b.classList.toggle('on', n <= i); });
+    var first = steps[current].querySelector('input,select');
+    if (first && window.matchMedia('(min-width:600px)').matches) first.focus();
+  }
+
+  function validateStep(step) {
+    var ok = true;
+    step.querySelectorAll('[required]').forEach(function (el) {
+      var v = el.value.trim();
+      var bad = !v || (el.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
+      el.closest('.hris-form-field').classList.toggle('invalid', bad);
+      if (bad && ok) { el.focus(); ok = false; }
+    });
+    return ok;
+  }
+
+  form.addEventListener('input', function (e) {
+    var f = e.target.closest('.hris-form-field');
+    if (f) f.classList.remove('invalid');
+  });
+  form.addEventListener('change', function (e) {
+    var f = e.target.closest('.hris-form-field');
+    if (f) f.classList.remove('invalid');
+  });
+
+  form.querySelectorAll('[data-hris-next]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      if (validateStep(steps[current])) show(current + 1);
     });
   });
+  form.querySelectorAll('[data-hris-back]').forEach(function (btn) {
+    btn.addEventListener('click', function () { show(current - 1); });
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!validateStep(steps[current])) return;
+
+    var btn = document.getElementById('hrisSubmitBtn');
+    var errEl = document.getElementById('hrisFormApiError');
+    btn.disabled = true;
+    btn.textContent = 'Submitting…';
+    errEl.hidden = true;
+
+    var hutk = (document.cookie.match(/(?:^|;\s*)hubspotutk=([^;]+)/) || [])[1];
+
+    var fields = [
+      { name: 'firstname', value: form.firstname.value.trim() },
+      { name: 'lastname', value: form.lastname.value.trim() },
+      { name: 'email', value: form.email.value.trim() },
+      { name: 'phone', value: form.phone.value.trim() },
+      { name: 'numemployees', value: document.getElementById('hrisEmployees').value },
+      { name: 'industry_type__cloned_', value: document.getElementById('hrisIndustry').value },
+      { name: 'utm_source', value: form.utm_source.value },
+      { name: 'utm_medium', value: form.utm_medium.value },
+      { name: 'utm_campaign', value: form.utm_campaign.value },
+      { name: 'utm_term', value: form.utm_term.value },
+      { name: 'utm_content', value: form.utm_content.value }
+    ].filter(function (f) { return f.value; });
+
+    fetch('https://api.hsforms.com/submissions/v3/integration/submit/' + HS_PORTAL_ID + '/' + HS_FORM_ID, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        fields: fields,
+        context: { pageUri: location.href, pageName: document.title, hutk: hutk }
+      })
+    }).then(function (r) {
+      if (!r.ok) throw new Error(r.status);
+      return r.json();
+    }).then(function (data) {
+      window.location.href = (data && data.redirectUri) || '/thank-you-for-submission/';
+    }).catch(function () {
+      btn.disabled = false;
+      btn.textContent = 'Submit';
+      errEl.hidden = false;
+    });
+  });
+})();
 </script>
 
 <!-- ═══════════════════════════════════════════════

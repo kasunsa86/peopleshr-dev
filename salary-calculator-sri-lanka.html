@@ -603,27 +603,15 @@
             <button class="btn btn-primary" data-open="breakdown">View calculation breakdown</button>
           </div>
         </section>
+      </section>
 
-        <section class="guide" id="how-it-works">
-          <h2>How take-home salary is calculated in Sri Lanka</h2>
+    </div>
+
+    <div class="below">
+        <section class="guide" id="how-it-works"><details class="card-toggle">
+          <summary><h2>How take-home salary is calculated in Sri Lanka</h2></summary>
           <p>Net salary is gross earnings minus the employee's 8% EPF contribution, APIT (often still called PAYE) and any other deductions. On top of the gross salary, the employer pays 12% EPF and 3% ETF, so the total cost of an employee is higher than their gross pay.</p>
           <div class="guide-grid">
-            <div>
-              <h3>Example: Rs. 300,000 monthly basic salary</h3>
-              <div class="table-wrap">
-                <table>
-                  <tbody>
-                    <tr><td>Gross salary</td><td>Rs. 300,000.00</td></tr>
-                    <tr><td>Employee EPF (8%)</td><td>− Rs. 24,000.00</td></tr>
-                    <tr><td>APIT (24% marginal band)</td><td>− Rs. 18,500.00</td></tr>
-                    <tr class="is-total"><td>Net take-home salary</td><td>Rs. 257,500.00</td></tr>
-                    <tr><td>Employer EPF (12%)</td><td>Rs. 36,000.00</td></tr>
-                    <tr><td>Employer ETF (3%)</td><td>Rs. 9,000.00</td></tr>
-                    <tr class="is-total"><td>Total cost to employer</td><td>Rs. 345,000.00</td></tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
             <div>
               <h3>Monthly APIT tax table 2026/27</h3>
               <div class="table-wrap">
@@ -640,11 +628,51 @@
                 </table>
               </div>
             </div>
+            <div>
+              <h3>Net to gross: finding the salary for a target take-home</h3>
+              <p>When you agree a take-home figure with a new hire, switch to <b>Net to Gross</b> and enter that amount. The calculator works backwards through APIT and EPF to give the basic salary and gross pay needed, plus the full employer cost.</p>
+            </div>
           </div>
-          <h3>Net to gross: finding the salary for a target take-home</h3>
-          <p>When you agree a take-home figure with a new hire, switch to <b>Net to Gross</b> and enter that amount. The calculator works backwards through APIT and EPF to give the basic salary and gross pay needed, plus the full employer cost.</p>
           <p class="updated">Last updated: October 2026. Rates follow the IRD APIT tables effective 1 April 2025; no changes have been announced for Y/A 2026/27.</p>
-        </section>
+        </details></section>
+
+        <section class="guide" id="examples"><details class="card-toggle">
+          <summary><h2>Sri Lanka take-home salary examples</h2></summary>
+          <p>These examples use a monthly basic salary with no allowances or other deductions, and the standard 12% employer EPF rate. Enter your own figures above for an exact estimate.</p>
+          <div class="guide-grid">
+            <div>
+              <h3>Step by step: Rs. 300,000 monthly basic salary</h3>
+              <div class="table-wrap">
+                <table>
+                  <tbody>
+                    <tr><td>Gross salary</td><td>Rs. 300,000.00</td></tr>
+                    <tr><td>Employee EPF (8%)</td><td>− Rs. 24,000.00</td></tr>
+                    <tr><td>APIT (24% marginal band)</td><td>− Rs. 18,500.00</td></tr>
+                    <tr class="is-total"><td>Net take-home salary</td><td>Rs. 257,500.00</td></tr>
+                    <tr><td>Employer EPF (12%)</td><td>Rs. 36,000.00</td></tr>
+                    <tr><td>Employer ETF (3%)</td><td>Rs. 9,000.00</td></tr>
+                    <tr class="is-total"><td>Total cost to employer</td><td>Rs. 345,000.00</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>APIT is Rs. 5,000 + Rs. 7,500 for the 6% and 18% bands, plus 24% of the Rs. 25,000 above Rs. 275,000.</p>
+            </div>
+            <div>
+              <h3>Take-home salary and employer cost at other salaries</h3>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Basic salary</th><th>APIT</th><th>Net salary</th><th>Employer cost</th></tr></thead>
+                  <tbody>
+                    <tr><td>Rs. 100,000</td><td>Rs. 0.00</td><td>Rs. 92,000.00</td><td>Rs. 115,000.00</td></tr>
+                    <tr><td>Rs. 200,000</td><td>Rs. 3,000.00</td><td>Rs. 181,000.00</td><td>Rs. 230,000.00</td></tr>
+                    <tr><td>Rs. 300,000</td><td>Rs. 18,500.00</td><td>Rs. 257,500.00</td><td>Rs. 345,000.00</td></tr>
+                    <tr><td>Rs. 500,000</td><td>Rs. 86,000.00</td><td>Rs. 374,000.00</td><td>Rs. 575,000.00</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </details></section>
 
         <section class="cta">
           <div>
@@ -654,8 +682,8 @@
           <a class="btn btn-light" href="/region-sri-lanka/">Explore PeoplesHR</a>
         </section>
 
-        <section class="faq" id="faq">
-          <h2>Frequently asked questions</h2>
+        <section class="faq guide" id="faq">
+          <h2>Sri Lanka salary calculator FAQs</h2>
           <details>
             <summary>What is the tax-free salary in Sri Lanka for 2026/27?</summary>
             <p>Employees get personal relief of Rs. 1,800,000 a year, which is Rs. 150,000 a month. A monthly taxable salary up to Rs. 150,000 has no APIT deducted.</p>
@@ -685,8 +713,6 @@
             <p>No. Bonuses, arrears and other lump-sum payments are taxed under separate <a href="https://www.ird.gov.lk/en/publications/SitePages/apit_tax_tables.aspx" target="_blank" rel="noopener">APIT tables</a>. This calculator covers regular monthly pay from primary employment only.</p>
           </details>
         </section>
-      </section>
-
     </div>
   </main>
 
