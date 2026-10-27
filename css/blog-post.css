@@ -74,3 +74,8 @@
   .bp-cta-inner{padding:36px 22px;}
   .bp-related{padding:64px 16px;}
 }
+
+/* Tick-box checklists */
+.bp-body ul.bp-checklist{list-style:none;padding-left:0;}
+.bp-checklist li{position:relative;padding-left:32px;}
+.bp-checklist li::before{content:"";position:absolute;left:0;top:.35em;width:18px;height:18px;border:2px solid var(--blue);border-radius:4px;}
