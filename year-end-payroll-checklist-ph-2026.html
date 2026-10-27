@@ -670,9 +670,10 @@
     <button type="button" class="ye-cal-close" id="ye-cal-close" aria-label="Close">&times;</button>
     <h2 id="yeCalH">Never miss a year-end payroll date</h2>
     <form id="ye-cal-form" novalidate>
+      <div class="ye-field"><label for="ye-cal-name">Full name</label><input id="ye-cal-name" name="fullname" type="text" autocomplete="name" required aria-required="true" aria-describedby="ye-cal-err-name"><span class="ye-hint" id="ye-cal-err-name" role="alert"></span></div>
       <div class="ye-field"><label for="ye-cal-email">Work email</label><input id="ye-cal-email" name="email" type="email" autocomplete="email" required aria-required="true" aria-describedby="ye-cal-err"><span class="ye-hint" id="ye-cal-err" role="alert"></span></div>
       <button type="submit" class="ye-btn ye-btn-primary">Download the calendar file</button>
-      <p class="ye-consent">We'll only use your email to share year-end payroll resources from PeoplesHR. Unsubscribe any time. See our <a href="/privacy-policy/">privacy policy</a>.</p>
+      <p class="ye-consent">We'll only use your details to share year-end payroll resources from PeoplesHR. Unsubscribe any time. See our <a href="/privacy-policy/">privacy policy</a>.</p>
     </form>
     <p class="ye-cal-done" id="ye-cal-done" role="status" tabindex="-1" hidden>Your calendar file is downloading. Open it to add the dates.</p>
   </div>

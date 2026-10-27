@@ -293,11 +293,7 @@
     setSignal('calendar');
   }
   $$('[data-cal]').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var id = btn.dataset.cal;
-      if (LS.get('phr_ye_cal_ok', false)) runCal(id);
-      else openCal(id);
-    });
+    btn.addEventListener('click', function () { openCal(btn.dataset.cal); });
   });
 
   /* ---------- CTA + demo clicks (delegated) ---------- */
@@ -330,12 +326,50 @@
       method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
     }).then(function (r) { if (!r.ok) throw new Error('HubSpot ' + r.status); return r.json(); });
   }
+
+  /* ---------- shared contact ----------
+     Once either popup succeeds once, remember {firstname, lastname, email}
+     for this browser so the OTHER popup can skip asking again -- it still
+     submits to HubSpot in the background each time (so both signup sources
+     show up in the CRM), it just doesn't make the person retype anything. */
+  function getSavedContact() { return LS.get('phr_ye_contact', null); }
+  function saveContact(firstname, lastname, email) {
+    LS.set('phr_ye_contact', { firstname: firstname, lastname: lastname, email: email });
+  }
+
   var calModal = $('#ye-cal-modal'), calForm = $('#ye-cal-form'), pendingCal = 'all', lastFocus = null;
+  function finishCalSignup(firstname, lastname, email) {
+    var btn = $('button[type=submit]', calForm);
+    return submitToHubSpot({
+      firstname: firstname,
+      lastname: lastname,
+      email: email,
+      phr_intent_level: LS.get('phr_ye_intent', 'low'),
+      phr_signup_source: 'calendar'
+    }, HS_CAL_FORM_GUID).then(function () {
+      saveContact(firstname, lastname, email);
+      track('phr_ye_calendar_signup', { date_id: pendingCal }); // no email in the event, by design
+      setSignal('calendar_signup');
+      runCal(pendingCal);
+      calForm.hidden = true; var d = $('#ye-cal-done'); d.hidden = false; d.focus();
+      if (btn) btn.disabled = false;
+      setTimeout(closeCal, 2200);
+    });
+  }
   function openCal(id) {
     pendingCal = id; lastFocus = document.activeElement;
-    calForm.hidden = false; $('#ye-cal-done').hidden = true;
     calModal.hidden = false; document.body.style.overflow = 'hidden';
-    setTimeout(function () { $('#ye-cal-email').focus(); }, 30);
+    var saved = getSavedContact();
+    if (saved) {
+      calForm.hidden = true; $('#ye-cal-done').hidden = false;
+      finishCalSignup(saved.firstname, saved.lastname, saved.email).catch(function () {
+        calForm.hidden = false; $('#ye-cal-done').hidden = true;
+        $('#ye-cal-err').textContent = 'Something went wrong. Please try again.';
+      });
+      return;
+    }
+    calForm.hidden = false; $('#ye-cal-done').hidden = true;
+    setTimeout(function () { $('#ye-cal-name').focus(); }, 30);
   }
   function closeCal() {
     calModal.hidden = true; document.body.style.overflow = '';
@@ -347,21 +381,16 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !calModal.hidden) closeCal(); });
     calForm.addEventListener('submit', function (e) {
       e.preventDefault();
+      var name = $('#ye-cal-name'), nameErr = $('#ye-cal-err-name');
       var email = $('#ye-cal-email'), err = $('#ye-cal-err');
-      if (!email.value || !email.checkValidity()) {
-        err.textContent = 'Please enter a valid work email.'; email.setAttribute('aria-invalid', 'true'); email.focus(); return;
-      }
-      err.textContent = ''; email.removeAttribute('aria-invalid');
+      var ok = true, firstInvalid = null;
+      if (!name.value.trim()) { nameErr.textContent = 'Please enter your full name.'; name.setAttribute('aria-invalid', 'true'); ok = false; firstInvalid = firstInvalid || name; } else { nameErr.textContent = ''; name.removeAttribute('aria-invalid'); }
+      if (!email.value || !email.checkValidity()) { err.textContent = 'Please enter a valid work email.'; email.setAttribute('aria-invalid', 'true'); ok = false; firstInvalid = firstInvalid || email; } else { err.textContent = ''; email.removeAttribute('aria-invalid'); }
+      if (!ok) { firstInvalid.focus(); return; }
       var btn = $('button[type=submit]', calForm); btn.disabled = true;
-      submitToHubSpot({ email: email.value.trim(), phr_intent_level: LS.get('phr_ye_intent', 'low'), phr_signup_source: 'calendar' }, HS_CAL_FORM_GUID).then(function () {
-        LS.set('phr_ye_cal_ok', true);
-        track('phr_ye_calendar_signup', { date_id: pendingCal }); // no email in the event, by design
-        setSignal('calendar_signup');
-        runCal(pendingCal);
-        calForm.hidden = true; var d = $('#ye-cal-done'); d.hidden = false; d.focus();
-        btn.disabled = false;
-        setTimeout(closeCal, 2200);
-      }).catch(function () { btn.disabled = false; err.textContent = 'Something went wrong. Please try again.'; });
+      var nameParts = name.value.trim().split(/\s+/);
+      finishCalSignup(nameParts[0], nameParts.slice(1).join(' '), email.value.trim())
+        .catch(function () { btn.disabled = false; err.textContent = 'Something went wrong. Please try again.'; });
     });
   }
 
@@ -374,10 +403,41 @@
      firstname/lastname too so the CRM contact is complete. Full name is one
      field in the UI and split into first/last here, same as the PMAP page. */
   var downloadModal = $('#ye-download-modal'), downloadForm = $('#ye-download-form'), downloadLastFocus = null;
+  function finishDownload(firstname, lastname, email) {
+    var btn = $('button[type=submit]', downloadForm);
+    return submitToHubSpot({
+      firstname: firstname,
+      lastname: lastname,
+      email: email,
+      phr_intent_level: LS.get('phr_ye_intent', 'low'),
+      phr_signup_source: 'checklist_download'
+    }, HS_DOWNLOAD_FORM_GUID).then(function () {
+      saveContact(firstname, lastname, email);
+      track('phr_ye_checklist_download', {});
+      setSignal('cta', 'checklist_download');
+      if (btn) btn.disabled = false;
+      downloadForm.hidden = true;
+      var done = $('#ye-download-done'); done.hidden = false; done.focus();
+      var a = document.createElement('a');
+      a.href = '/uploads/2026/11/Year-End-Payroll.pdf';
+      a.download = 'PeoplesHR-Year-End-Payroll-Readiness-Checklist-PH-2026.pdf';
+      document.body.appendChild(a); a.click(); a.parentNode.removeChild(a);
+      setTimeout(closeDownloadModal, 2200);
+    });
+  }
   function openDownloadModal() {
     downloadLastFocus = document.activeElement;
-    downloadForm.hidden = false; $('#ye-download-done').hidden = true;
     downloadModal.hidden = false; document.body.style.overflow = 'hidden';
+    var saved = getSavedContact();
+    if (saved) {
+      downloadForm.hidden = true; $('#ye-download-done').hidden = false;
+      finishDownload(saved.firstname, saved.lastname, saved.email).catch(function () {
+        downloadForm.hidden = false; $('#ye-download-done').hidden = true;
+        $('#ye-download-err-email').textContent = 'Something went wrong. Please try again.';
+      });
+      return;
+    }
+    downloadForm.hidden = false; $('#ye-download-done').hidden = true;
     setTimeout(function () { $('#ye-download-name').focus(); }, 30);
   }
   function closeDownloadModal() {
@@ -398,24 +458,8 @@
       if (!ok) { firstInvalid.focus(); return; }
       var btn = $('button[type=submit]', downloadForm); btn.disabled = true;
       var nameParts = name.value.trim().split(/\s+/);
-      submitToHubSpot({
-        firstname: nameParts[0],
-        lastname: nameParts.slice(1).join(' '),
-        email: email.value.trim(),
-        phr_intent_level: LS.get('phr_ye_intent', 'low'),
-        phr_signup_source: 'checklist_download'
-      }, HS_DOWNLOAD_FORM_GUID).then(function () {
-        track('phr_ye_checklist_download', {});
-        setSignal('cta', 'checklist_download');
-        btn.disabled = false;
-        downloadForm.hidden = true;
-        var done = $('#ye-download-done'); done.hidden = false; done.focus();
-        var a = document.createElement('a');
-        a.href = '/uploads/2026/11/Year-End-Payroll.pdf';
-        a.download = 'PeoplesHR-Year-End-Payroll-Readiness-Checklist-PH-2026.pdf';
-        document.body.appendChild(a); a.click(); a.parentNode.removeChild(a);
-        setTimeout(closeDownloadModal, 2200);
-      }).catch(function () { btn.disabled = false; emailErr.textContent = 'Something went wrong. Please try again.'; });
+      finishDownload(nameParts[0], nameParts.slice(1).join(' '), email.value.trim())
+        .catch(function () { btn.disabled = false; emailErr.textContent = 'Something went wrong. Please try again.'; });
     });
   }
 
