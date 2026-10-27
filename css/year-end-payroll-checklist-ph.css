@@ -125,10 +125,12 @@ html:not(.js) .yepc-scope .js-only{display:none!important}
 .yepc-scope .ye-filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;align-items:center}
 .yepc-scope .ye-filters button{font:inherit;font-size:.86rem;font-weight:700;border:1.5px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:7px 14px;cursor:pointer}
 .yepc-scope .ye-filters button[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
-.yepc-scope .ye-filters .ye-cal-btn{margin-left:auto;border-color:var(--blue);color:var(--blue-ink)}
+.yepc-scope .ye-filters .ye-cal-btn{margin-left:auto;display:inline-flex;align-items:center;gap:8px;font-size:.95rem;font-weight:800;padding:11px 20px;background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 8px 20px rgba(37,99,235,.32);transition:background .15s ease,transform .15s ease,box-shadow .15s ease}
+.yepc-scope .ye-filters .ye-cal-btn:hover{background:#1f55d0;transform:translateY(-1px);box-shadow:0 10px 24px rgba(37,99,235,.4)}
+.yepc-scope .ye-filters .ye-cal-btn svg{width:18px;height:18px;flex:none}
 .yepc-scope .ye-timeline{list-style:none;margin:22px 0 0;padding:0;position:relative}
 .yepc-scope .ye-timeline::before{content:"";position:absolute;left:127px;top:8px;bottom:8px;width:2px;background:var(--line)}
-.yepc-scope .ye-kd{display:grid;grid-template-columns:104px 28px 110px 1fr auto;gap:0 12px;align-items:center;padding:12px 8px 12px 0;border-bottom:1px solid var(--line)}
+.yepc-scope .ye-kd{display:grid;grid-template-columns:104px 28px 110px 1fr;gap:0 12px;align-items:center;padding:12px 8px 12px 0;border-bottom:1px solid var(--line)}
 .yepc-scope .ye-kd-date{text-align:right}
 .yepc-scope .ye-kd-date .dow{display:block;font-size:.78rem;color:var(--muted)}
 .yepc-scope .ye-kd-date time{font-weight:800;font-size:1.05rem}
@@ -236,16 +238,15 @@ html:not(.js) .yepc-scope .js-only{display:none!important}
   .yepc-scope .ye-cl-body{flex-direction:column}
   .yepc-scope .ye-cl-overall{position:static;flex-basis:auto;width:100%;margin-bottom:12px;order:-1}
   .yepc-scope .ye-timeline::before{left:7px}
-  .yepc-scope .ye-kd{grid-template-columns:16px 1fr auto;grid-template-areas:"dot date cal" "dot chips cal" "dot text text";gap:4px 12px;align-items:start;padding:12px 0}
+  .yepc-scope .ye-kd{grid-template-columns:16px 1fr;grid-template-areas:"dot date" "dot chips" "dot text";gap:4px 12px;align-items:start;padding:12px 0}
   .yepc-scope .ye-kd-dot{grid-area:dot;margin-top:6px}
   .yepc-scope .ye-kd-date{grid-area:date;text-align:left}
   .yepc-scope .ye-kd-date .dow{display:inline;margin-right:6px}
   .yepc-scope .ye-kd.is-next .ye-kd-date::after{display:inline-block;margin:0 0 0 8px;vertical-align:middle}
   .yepc-scope .ye-kd .ye-chips{grid-area:chips}
   .yepc-scope .ye-kd-text{grid-area:text}
-  .yepc-scope .ye-kd .ye-cal-btn{grid-area:cal}
   .yepc-scope .ye-kd.is-key{padding-left:6px;padding-right:6px}
-  .yepc-scope .ye-filters .ye-cal-btn{margin-left:0}
+  .yepc-scope .ye-filters .ye-cal-btn{margin-left:0;width:100%;justify-content:center;margin-top:6px}
   .yepc-scope .ye-m-head{flex-wrap:wrap}
   .yepc-scope .ye-m-title{order:3;flex-basis:100%}
   .yepc-scope .ye-m-head .ye-ring-wrap{margin-left:auto}
