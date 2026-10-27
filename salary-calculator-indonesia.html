@@ -532,13 +532,45 @@
             <button class="btn btn-primary" data-open="breakdown">View calculation breakdown</button>
           </div>
         </section>
+      </section>
 
-        <section class="guide" id="how-it-works">
-          <h2>How take-home pay is calculated in Indonesia</h2>
+    </div>
+
+    <div class="below">
+        <section class="guide" id="how-it-works"><details class="card-toggle">
+          <summary><h2>How take-home pay is calculated in Indonesia</h2></summary>
           <p>Net pay is gross pay minus the employee's BPJS contributions (JHT, JP and BPJS Kesehatan), PPh 21 and any other deductions. From January to November, PPh 21 is withheld at a single TER rate applied to gross income, which includes the employer's JKK, JKM and BPJS Kesehatan premiums. In December the full-year tax is worked out under Article 17 and the balance is withheld. On top of gross pay, the employer pays its own BPJS shares.</p>
           <div class="guide-grid">
             <div>
-              <h3>Example: Rp 15,000,000 monthly basic salary (TK/0)</h3>
+              <h3>Annual PPh 21 rates (Article 17)</h3>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Annual taxable income</th><th>Rate</th><th>Max tax in band</th></tr></thead>
+                  <tbody>
+                    <tr><td>Up to Rp 60,000,000</td><td>5%</td><td>Rp 3,000,000</td></tr>
+                    <tr><td>Rp 60,000,001 – 250,000,000</td><td>15%</td><td>Rp 28,500,000</td></tr>
+                    <tr><td>Rp 250,000,001 – 500,000,000</td><td>25%</td><td>Rp 62,500,000</td></tr>
+                    <tr><td>Rp 500,000,001 – 5,000,000,000</td><td>30%</td><td>Rp 1,350,000,000</td></tr>
+                    <tr><td>Above Rp 5,000,000,000</td><td>35%</td><td>No limit</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>Annual taxable income is gross income less the 5% job expense allowance (up to Rp 6,000,000), the employee's JHT and JP, and PTKP (Rp 54,000,000 for TK/0).</p>
+            </div>
+            <div>
+              <h3>Net to gross: finding the salary for a target take-home</h3>
+              <p>When you agree a take-home figure with a new hire, switch to <b>Net to Gross</b> and enter that amount. The calculator works backwards through PPh 21 and BPJS to give the basic salary and gross pay needed, plus the full employer cost.</p>
+            </div>
+          </div>
+          <p class="updated">Last updated: October 2026. Rates follow PP 58/2023 and PMK 168/2023 (TER), UU HPP (Article 17) and the BPJS JP wage cap effective 1 March 2026.</p>
+        </details></section>
+
+        <section class="guide" id="examples"><details class="card-toggle">
+          <summary><h2>Indonesia take-home pay example</h2></summary>
+          <p>This example uses a monthly basic salary with no allowances or other deductions, for a single employee with no dependants (TK/0). Enter your own figures above for an exact estimate.</p>
+          <div class="guide-grid">
+            <div>
+              <h3>Step by step: Rp 15,000,000 monthly basic salary (TK/0)</h3>
               <div class="table-wrap">
                 <table>
                   <tbody>
@@ -556,29 +588,14 @@
                   </tbody>
                 </table>
               </div>
-              <p>The 7% TER rate applies to Rp 15,561,000: the salary plus the employer's JKK (Rp 36,000), JKM (Rp 45,000) and BPJS Kesehatan (Rp 480,000).</p>
             </div>
             <div>
-              <h3>Annual PPh 21 rates (Article 17)</h3>
-              <div class="table-wrap">
-                <table>
-                  <thead><tr><th>Annual taxable income</th><th>Rate</th><th>Max tax in band</th></tr></thead>
-                  <tbody>
-                    <tr><td>Up to Rp 60,000,000</td><td>5%</td><td>Rp 3,000,000</td></tr>
-                    <tr><td>Rp 60,000,001 – 250,000,000</td><td>15%</td><td>Rp 28,500,000</td></tr>
-                    <tr><td>Rp 250,000,001 – 500,000,000</td><td>25%</td><td>Rp 62,500,000</td></tr>
-                    <tr><td>Rp 500,000,001 – 5,000,000,000</td><td>30%</td><td>Rp 1,350,000,000</td></tr>
-                    <tr><td>Above Rp 5,000,000,000</td><td>35%</td><td>No limit</td></tr>
-                  </tbody>
-                </table>
-              </div>
-              <p>Annual taxable income is gross income less the 5% job expense allowance (up to Rp 6,000,000), the employee's JHT and JP, and PTKP (Rp 54,000,000 for TK/0).</p>
+              <h3>Why PPh 21 is worked out on more than the salary</h3>
+              <p>The 7% TER rate applies to Rp 15,561,000: the salary plus the employer's JKK (Rp 36,000), JKM (Rp 45,000) and BPJS Kesehatan (Rp 480,000). These employer premiums count as the employee's taxable income, even though they are not paid out.</p>
+              <p>The employee's own JHT and JP are not deducted before TER is applied. They reduce taxable income only in the December Article 17 calculation, which is why December withholding can differ from the other months.</p>
             </div>
           </div>
-          <h3>Net to gross: finding the salary for a target take-home</h3>
-          <p>When you agree a take-home figure with a new hire, switch to <b>Net to Gross</b> and enter that amount. The calculator works backwards through PPh 21 and BPJS to give the basic salary and gross pay needed, plus the full employer cost.</p>
-          <p class="updated">Last updated: October 2026. Rates follow PP 58/2023 and PMK 168/2023 (TER), UU HPP (Article 17) and the BPJS JP wage cap effective 1 March 2026.</p>
-        </section>
+        </details></section>
 
         <section class="cta">
           <div>
@@ -588,8 +605,8 @@
           <a class="btn btn-light" href="/indonesia/">Explore PeoplesHR</a>
         </section>
 
-        <section class="faq">
-          <h2>Frequently asked questions</h2>
+        <section class="faq guide" id="faq">
+          <h2>Indonesia salary calculator FAQs</h2>
           <details>
             <summary>How is PPh 21 calculated each month?</summary>
             <p>Since January 2024, employers withhold PPh 21 for January to November using the average effective rate (Tarif Efektif Rata-rata, TER) set by PP 58/2023 and PMK 168/2023. The TER rate is applied to the monthly gross income, which includes salary, taxable allowances and the JKK, JKM and BPJS Kesehatan premiums paid by the employer. There are three TER categories, A, B and C, based on PTKP status. See the <a href="https://www.pajak.go.id/" target="_blank" rel="noopener">Directorate General of Taxes</a>.</p>
@@ -615,8 +632,6 @@
             <p>No. The religious holiday allowance (Tunjangan Hari Raya, THR), bonuses and other irregular payments are added to gross income in the month they are paid, which can push that month into a higher TER rate. This calculator covers regular monthly pay only.</p>
           </details>
         </section>
-      </section>
-
     </div>
   </main>
 

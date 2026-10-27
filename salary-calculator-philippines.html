@@ -511,13 +511,45 @@
             <button class="btn btn-primary" data-open="breakdown">View calculation breakdown</button>
           </div>
         </section>
+      </section>
 
-        <section class="guide" id="how-it-works">
-          <h2>How take-home pay is calculated in the Philippines</h2>
+    </div>
+
+    <div class="below">
+        <section class="guide" id="how-it-works"><details class="card-toggle">
+          <summary><h2>How take-home pay is calculated in the Philippines</h2></summary>
           <p>Net pay is gross pay minus the employee's SSS, PhilHealth and Pag-IBIG contributions, BIR withholding tax and any other deductions. The contributions are deducted before tax, so withholding tax is worked out on what's left. On top of gross pay, the employer pays its own SSS (plus EC), PhilHealth and Pag-IBIG shares.</p>
           <div class="guide-grid">
             <div>
-              <h3>Example: ₱50,000 monthly basic salary</h3>
+              <h3>Monthly BIR withholding tax table</h3>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Monthly taxable compensation</th><th>Rate</th><th>Max tax in bracket</th></tr></thead>
+                  <tbody>
+                    <tr><td>Up to ₱20,833</td><td>0%</td><td>₱0</td></tr>
+                    <tr><td>₱20,833 – 33,333</td><td>15%</td><td>₱1,875</td></tr>
+                    <tr><td>₱33,333 – 66,667</td><td>20%</td><td>₱6,666.80</td></tr>
+                    <tr><td>₱66,667 – 166,667</td><td>25%</td><td>₱25,000</td></tr>
+                    <tr><td>₱166,667 – 666,667</td><td>30%</td><td>₱150,000</td></tr>
+                    <tr><td>Above ₱666,667</td><td>35%</td><td>No limit</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3>Net to gross: finding the salary for a target take-home</h3>
+              <p>When you agree a take-home figure with a new hire, switch to <b>Net to Gross</b> and enter that amount. The calculator works backwards through withholding tax and contributions to give the basic salary and gross pay needed, plus the full employer cost.</p>
+            </div>
+          </div>
+          <p class="updated">Last updated: October 2026. Rates follow the BIR withholding table effective 1 January 2023, SSS Circular 2024-006, PhilHealth Advisory 2025-0002 and Pag-IBIG Circular 460.</p>
+        </details></section>
+
+        <section class="guide" id="examples"><details class="card-toggle">
+          <summary><h2>Philippines take-home pay examples</h2></summary>
+          <p>These examples use a monthly basic salary with no allowances or other deductions. Enter your own figures above for an exact estimate.</p>
+          <div class="guide-grid">
+            <div>
+              <h3>Step by step: ₱50,000 monthly basic salary</h3>
               <div class="table-wrap">
                 <table>
                   <tbody>
@@ -537,26 +569,21 @@
               <p>Taxable compensation is ₱50,000 minus ₱3,200 in contributions, or ₱46,800. Tax is ₱1,875 plus 20% of the ₱13,467 above ₱33,333.</p>
             </div>
             <div>
-              <h3>Monthly BIR withholding tax table</h3>
+              <h3>Take-home pay and employer cost at other salaries</h3>
               <div class="table-wrap">
                 <table>
-                  <thead><tr><th>Monthly taxable compensation</th><th>Rate</th><th>Max tax in bracket</th></tr></thead>
+                  <thead><tr><th>Basic salary</th><th>Withholding tax</th><th>Net pay</th><th>Employer cost</th></tr></thead>
                   <tbody>
-                    <tr><td>Up to ₱20,833</td><td>0%</td><td>₱0</td></tr>
-                    <tr><td>₱20,833 – 33,333</td><td>15%</td><td>₱1,875</td></tr>
-                    <tr><td>₱33,333 – 66,667</td><td>20%</td><td>₱6,666.80</td></tr>
-                    <tr><td>₱66,667 – 166,667</td><td>25%</td><td>₱25,000</td></tr>
-                    <tr><td>₱166,667 – 666,667</td><td>30%</td><td>₱150,000</td></tr>
-                    <tr><td>Above ₱666,667</td><td>35%</td><td>No limit</td></tr>
+                    <tr><td>₱20,000</td><td>₱0.00</td><td>₱18,300.00</td><td>₱22,730.00</td></tr>
+                    <tr><td>₱30,000</td><td>₱1,007.55</td><td>₱26,542.45</td><td>₱33,980.00</td></tr>
+                    <tr><td>₱50,000</td><td>₱4,568.40</td><td>₱42,231.60</td><td>₱54,980.00</td></tr>
+                    <tr><td>₱100,000</td><td>₱15,762.55</td><td>₱79,787.45</td><td>₱106,230.00</td></tr>
                   </tbody>
                 </table>
               </div>
             </div>
           </div>
-          <h3>Net to gross: finding the salary for a target take-home</h3>
-          <p>When you agree a take-home figure with a new hire, switch to <b>Net to Gross</b> and enter that amount. The calculator works backwards through withholding tax and contributions to give the basic salary and gross pay needed, plus the full employer cost.</p>
-          <p class="updated">Last updated: October 2026. Rates follow the BIR withholding table effective 1 January 2023, SSS Circular 2024-006, PhilHealth Advisory 2025-0002 and Pag-IBIG Circular 460.</p>
-        </section>
+        </details></section>
 
         <section class="cta">
           <div>
@@ -566,8 +593,8 @@
           <a class="btn btn-light" href="/philippines/">Explore PeoplesHR</a>
         </section>
 
-        <section class="faq">
-          <h2>Frequently asked questions</h2>
+        <section class="faq guide" id="faq">
+          <h2>Philippines salary calculator FAQs</h2>
           <details>
             <summary>How is withholding tax calculated?</summary>
             <p>Under the TRAIN law withholding table in force from 1 January 2023, monthly taxable compensation up to ₱20,833 is tax-free. Above that, rates step up through 15%, 20%, 25% and 30% to 35% on compensation over ₱666,667. Taxable compensation is gross taxable pay minus the employee's SSS, PhilHealth and Pag-IBIG contributions. See the <a href="https://www.bir.gov.ph/" target="_blank" rel="noopener">Bureau of Internal Revenue</a>.</p>
@@ -590,11 +617,9 @@
           </details>
           <details>
             <summary>Is 13th-month pay included?</summary>
-            <p>No. 13th-month pay and other benefits are exempt up to ₱90,000 a year combined, and anything above that is taxed in the year-end annualization. For annualization and an illustrative BIR Form 2316, use our <a href="/tax-calculator-philippines/">Philippines Payroll &amp; Tax Calculator</a>.</p>
+            <p>No. 13th-month pay and other benefits are exempt up to ₱90,000 a year combined, and anything above that is taxed in the year-end annualization. For annualization and an illustrative BIR Form 2316, use our <a href="/tax-calculator-philippines/">Philippines Tax Calculator</a>.</p>
           </details>
         </section>
-      </section>
-
     </div>
   </main>
 
