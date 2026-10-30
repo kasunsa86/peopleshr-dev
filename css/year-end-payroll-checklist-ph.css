@@ -250,7 +250,14 @@ html:not(.js) .yepc-scope .js-only{display:none!important}
   .yepc-scope .ye-m-head{flex-wrap:wrap}
   .yepc-scope .ye-m-title{order:3;flex-basis:100%}
   .yepc-scope .ye-m-head .ye-ring-wrap{margin-left:auto}
-  .yepc-scope .ye-flow-wrap,.yepc-scope .ye-flow-legend{display:none}
+  /* same diagram as desktop, scaled to the screen: run into the side gutters and
+     enlarge the labels (the SVG is 1040 units wide, so 15px text would render ~5px) */
+  .yepc-scope .ye-flow-wrap{margin:0 -12px}
+  .yepc-scope .ye-node-t{font-size:20px}
+  .yepc-scope .ye-err-tag-t{font-size:14px}
+  .yepc-scope .ye-flow-legend{flex-direction:column;align-items:flex-start;gap:10px;margin-top:18px;font-size:.85rem}
+  .yepc-scope .ye-fl-item{align-items:flex-start}
+  .yepc-scope .ye-fl-dot{margin-top:5px}
   .yepc-scope .ye-pattern-section{padding:36px 0 44px}
   .yepc-scope .ye-pattern-bridge{margin-top:28px;padding-top:28px}
   .yepc-scope .ye-next-card .ye-btn{width:100%}
