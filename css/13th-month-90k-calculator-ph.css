@@ -1,0 +1,153 @@
+/* ═══════════════════════════════════════════════════════════════
+   13TH MONTH CALCULATOR: ₱90,000 CHECK · PHILIPPINES 2026
+   (/13th-month-90k-calculator-ph-2026.html)
+
+   Companion to the year-end checklist (css/year-end-payroll-checklist-ph.css)
+   and built the same way: everything is scoped under .m13-scope so it reuses
+   the real site header/footer/fonts/reset (styles.css) without leaking onto
+   the rest of the site, and nothing sitewide can leak in and override it.
+   ═══════════════════════════════════════════════════════════════ */
+
+.m13-scope{
+  /* Same hardcoded tokens as .yepc-scope (they match the sitewide --navy/--blue/
+     --text-muted/--border hex values). Hardcoded rather than var(--navy) etc.
+     because a property referencing itself by the same name is a cyclic
+     reference and resolves to nothing. */
+  --navy:#0d1b3e; --navy-2:#0c2185; --blue:#2563eb; --blue-ink:#1d4fc4; --sky:#5696ee;
+  --ink:#0d1b3e; --muted:#6b7280; --line:#e2e8f0; --soft:#f3f6fb;
+  --orange:#b9470b; --orange-bg:#fdefe2; --green:#17723f; --green-bg:#e4f4ea; --gold:#e0a54a; --red:#b42318; --red-bg:#fdecea;
+  --radius:16px; --shadow:0 1px 2px rgba(12,26,61,.06),0 6px 24px rgba(12,26,61,.06);
+  color:var(--ink);
+}
+.m13-scope *{box-sizing:border-box}
+.m13-scope a{color:var(--blue-ink)}
+.m13-scope h1,.m13-scope h2,.m13-scope h3{line-height:1.15;letter-spacing:-.02em;margin:0}
+.m13-scope h2{font-size:clamp(1.35rem,2.6vw,1.9rem);font-weight:800;text-wrap:balance;margin-bottom:14px}
+.m13-scope h3{font-size:1.05rem;font-weight:700;margin-bottom:8px}
+.m13-scope p{margin:0}
+.m13-scope .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.m13-scope :focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:6px}
+.m13-scope .accent{color:var(--blue)}
+.m13-scope .kicker{font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-ink);margin-bottom:8px}
+.m13-scope .lede{color:var(--muted);font-size:.95rem;margin-top:10px;max-width:68ch}
+.m13-scope section.block{padding:64px 0;scroll-margin-top:64px}
+.m13-scope section.block.alt{background:var(--soft)}
+
+/* ---------- buttons ---------- */
+.m13-scope .m13-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:12px 20px;font:inherit;font-weight:700;text-decoration:none;cursor:pointer;border:2px solid transparent;transition:transform .15s ease,background .15s ease;line-height:1.2}
+.m13-scope .m13-btn:hover{transform:translateY(-1px)}
+.m13-scope .m13-btn-primary{background:var(--blue);color:#fff}
+.m13-scope .m13-btn-primary:hover{background:#1f55d0}
+.m13-scope .m13-btn-outline{background:#fff;color:var(--blue-ink);border-color:var(--blue)}
+.m13-scope .m13-btn-sm{padding:8px 14px;font-size:.88rem}
+
+/* ---------- hero ---------- */
+.m13-scope .m13-hero{position:relative;color:#fff;background:
+  linear-gradient(180deg,rgba(13,27,62,0) 40%,rgba(12,33,133,.65) 100%),
+  repeating-linear-gradient(115deg,rgba(255,255,255,.035) 0 1px,transparent 1px 90px),
+  repeating-linear-gradient(25deg,rgba(255,255,255,.03) 0 1px,transparent 1px 120px),
+  var(--navy);overflow:hidden}
+.m13-scope .m13-hero .wrap{display:block;padding:40px 20px 56px}
+.m13-scope .m13-partner-lockup{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-bottom:22px}
+.m13-scope .m13-partner-logo{height:26px;width:auto;display:block}
+.m13-scope .m13-partner-divider{width:1px;height:28px;background:rgba(255,255,255,.3);flex:0 0 auto}
+.m13-scope .m13-hero h1{font-size:clamp(1.7rem,4.5vw,2.6rem);font-weight:800;margin:14px 0;letter-spacing:-.03em;color:#fff}
+.m13-scope .m13-hero h1 .l2{color:var(--sky);display:block}
+.m13-scope .m13-answer{font-size:.95rem;color:#e2e8ff;max-width:60ch}
+.m13-scope .m13-hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+
+/* ---------- the ₱90,000 check ---------- */
+.m13-scope .m13-est{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;margin-top:26px;align-items:start}
+.m13-scope .m13-panel{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:var(--shadow)}
+.m13-scope .m13-illus{display:inline-block;background:#fff4d6;color:#5c3d00;border:1px solid #f0d58a;font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:3px 10px}
+.m13-scope .m13-field{display:flex;flex-direction:column;gap:6px;margin-top:14px}
+.m13-scope .m13-field label{font-weight:700;font-size:.92rem}
+.m13-scope .m13-hint{font-size:.82rem;color:var(--muted);font-weight:500}
+.m13-scope .m13-field input{font:inherit;padding:11px 12px;border:1.5px solid #8a94a8;border-radius:10px;background:#fff;color:var(--ink);width:100%;margin:0}
+.m13-scope .m13-field select{font:inherit;font-size:.92rem;padding:11px 12px;border:1.5px solid #8a94a8;border-radius:10px;background:#fff;color:var(--ink);width:100%;margin:0}
+.m13-scope .m13-field select:focus-visible{outline:3px solid var(--gold);outline-offset:1px;border-color:var(--blue)}
+.m13-scope .m13-field input:focus-visible{outline:3px solid var(--gold);outline-offset:1px;border-color:var(--blue)}
+.m13-scope .m13-row2{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+.m13-scope .m13-dm-inputs{margin:18px 0 0;border:1px solid var(--line);border-radius:14px;padding:6px 16px 16px;min-width:0}
+.m13-scope .m13-dm-inputs legend{font-weight:800;padding:0 6px;font-size:.95rem}
+.m13-scope .m13-dm-inputs .m13-field label{font-weight:600}
+/* Labels in a row can wrap to different heights; let them grow so the inputs line up. */
+.m13-scope .m13-dm-inputs .m13-row2 .m13-field>label{flex:1}
+.m13-scope .m13-dm-inputs .m13-row2{gap:4px 14px}
+.m13-scope .m13-span2{grid-column:1/-1}
+.m13-scope .m13-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:center}
+.m13-scope .m13-span2 .m13-pair{gap:14px}
+.m13-scope .m13-pair-leave{grid-template-columns:.7fr 1.3fr}
+.m13-scope .m13-peso{position:relative}
+.m13-scope .m13-peso span{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-weight:700;pointer-events:none}
+.m13-scope .m13-peso input{padding-left:28px}
+.m13-scope .m13-result{position:sticky;top:96px}
+.m13-scope .m13-result h3{margin-top:12px}
+.m13-scope .m13-res-total{display:block;font-size:2.4rem;font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums;margin:6px 0}
+.m13-scope .m13-meter{height:14px;border-radius:999px;background:var(--soft);border:1px solid var(--line);overflow:hidden;margin:12px 0 6px}
+.m13-scope .m13-meter i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--sky));transition:width .4s ease}
+.m13-scope .m13-meter.over i{background:linear-gradient(90deg,#e8743b,var(--red))}
+.m13-scope .m13-meter-scale{display:flex;justify-content:space-between;font-size:.76rem;color:var(--muted)}
+.m13-scope .m13-res-lines{list-style:none;margin:16px 0 0;padding:0;font-size:.93rem}
+.m13-scope .m13-res-lines li{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px dashed var(--line)}
+.m13-scope .m13-res-lines li b{font-variant-numeric:tabular-nums;white-space:nowrap}
+.m13-scope .m13-res-lines .formula{display:block;font-size:.78rem;color:var(--muted)}
+.m13-scope .m13-verdict{margin-top:16px;border-radius:12px;padding:12px 14px;font-weight:700;background:var(--green-bg);color:var(--green)}
+.m13-scope .m13-verdict.over{background:var(--red-bg);color:var(--red)}
+.m13-scope .m13-verdict.idle{background:var(--soft);color:var(--muted);font-weight:600}
+.m13-scope .m13-fine{font-size:.8rem;color:var(--muted);margin-top:12px}
+
+
+/* ---------- 13th month basics + cross-link card ---------- */
+.m13-scope .m13-basics{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px}
+.m13-scope .m13-basics article{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}
+.m13-scope .m13-basics p{color:var(--muted);font-size:.95rem}
+.m13-scope .m13-next-card{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-top:28px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 22px;box-shadow:var(--shadow)}
+.m13-scope .m13-next-card p{color:var(--muted);font-size:.95rem}
+.m13-scope .m13-next-card b{display:block;color:var(--ink);font-size:1.05rem;margin-bottom:2px}
+
+/* ---------- "better way" + demo card (same look as the checklist page) ---------- */
+.m13-scope .m13-better{padding:48px 0 60px;background:linear-gradient(180deg,#fff 0%,#fff 55%,var(--soft) 100%);scroll-margin-top:64px}
+.m13-scope .m13-bridge{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.m13-scope .m13-auto-copy p{font-size:.95rem;color:var(--ink);margin-bottom:16px;max-width:460px}
+.m13-scope .m13-auto-copy p.kicker{font-size:.78rem;max-width:none;margin-bottom:8px;color:var(--blue-ink)}
+.m13-scope .m13-auto-copy .m13-btn{margin-top:8px}
+.m13-scope .m13-demo-card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);max-width:480px;justify-self:end;width:100%}
+.m13-scope .m13-demo-thumb{display:block;background:#0f5f4a;line-height:0}
+.m13-scope .m13-demo-thumb img{display:block;width:100%;height:auto;aspect-ratio:292/150;object-fit:cover;transition:transform .3s ease}
+.m13-scope .m13-demo-thumb:hover img{transform:scale(1.03)}
+.m13-scope .m13-demo-body{padding:20px 22px 22px}
+.m13-scope .m13-demo-tag{font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-ink)}
+.m13-scope .m13-demo-body h3{font-size:1.25rem;margin:6px 0 8px}
+.m13-scope .m13-demo-body p:not(.m13-demo-tag){color:var(--muted);font-size:.95rem;margin-bottom:16px}
+
+/* ---------- debug panel (?debug=1) ---------- */
+.m13-scope .m13-debug{position:fixed;right:12px;bottom:12px;z-index:99;width:340px;max-height:40vh;overflow:auto;background:#0b1020;color:#9ef0b0;font:12px/1.4 ui-monospace,Menlo,Consolas,monospace;border-radius:10px;padding:10px;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.m13-scope .m13-debug b{color:#fff}
+
+/* ---------- responsive ---------- */
+@media (max-width:980px){
+  .m13-scope .m13-est{grid-template-columns:1fr}
+  .m13-scope .m13-result{position:static}
+  .m13-scope .m13-bridge{grid-template-columns:1fr;gap:28px}
+  .m13-scope .m13-demo-card{justify-self:stretch;max-width:none}
+}
+@media (max-width:760px){
+  .m13-scope section.block{padding:48px 0}
+  .m13-scope .m13-row2,.m13-scope .m13-basics{grid-template-columns:1fr}
+  .m13-scope .m13-better{padding:36px 0 44px}
+  .m13-scope .m13-next-card .m13-btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){
+  .m13-scope .m13-meter i,.m13-scope .m13-demo-thumb img{transition:none}
+}
+@media print{
+  .m13-scope .m13-hero-ctas,.m13-scope .m13-better,.m13-scope .m13-debug{display:none!important}
+  .m13-scope .m13-hero{background:#fff!important;color:#000}
+  .m13-scope .m13-hero h1,.m13-scope .m13-answer{color:#000}
+  .m13-scope section.block{padding:14pt 0}
+  .m13-scope section.block.alt{background:#fff}
+  .m13-scope .m13-panel,.m13-scope .m13-basics article{break-inside:avoid;box-shadow:none}
+  .m13-scope .m13-result{position:static}
+  .m13-scope a{color:#000;text-decoration:none}
+}
