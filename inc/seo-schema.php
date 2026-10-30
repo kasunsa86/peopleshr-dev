@@ -112,6 +112,7 @@ $phrCrumbs = [
 
   // Webinars
   'webinar-indonesia-ai-in-hr.html'          => ['AI dalam HR (Indonesia)', 'webinars'],
+  'webinar-payroll-id.html'                  => ['Payroll Skala Besar (Indonesia)', 'webinars'],
   'webinar-indonesia.html'                   => ['Tiga Pilar Sumber Daya untuk ROI HR', 'webinars'],
   'webinar-peopleshr-walkthrough-v10-3.html' => ['PeoplesHR v10.3 Walkthrough', 'webinars'],
   'webinar-philippines.html'                 => ['AI Reskilling Strategy (Philippines)', 'webinars'],
