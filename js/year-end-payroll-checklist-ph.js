@@ -26,10 +26,9 @@
  *   medium = 3+ items ticked, OR a calendar add
  *   high   = calendar email given AND a CTA click
  *
- * HubSpot: both popups submit to the same portal form (45700506 /
- * 9fffb4ce-f1ff-4941-987c-2fd1db929518) -- the calendar popup only collects and
- * sends email (that's all it asks for); the download popup also sends firstname/
- * lastname, split from its one "full name" field.
+ * HubSpot: both popups embed the same real HubSpot form (portal 45700506 /
+ * legacy form 9fffb4ce-f1ff-4941-987c-2fd1db929518: firstname, lastname, email)
+ * with the v2 embed, so HubSpot itself collects and validates each signup.
  */
 (function () {
   'use strict';
@@ -304,163 +303,125 @@
     else { track('phr_ye_cta', { location: a.getAttribute('data-cta') }); setSignal('cta'); }
   });
 
-  /* ---------- HubSpot submit ----------
-     Submits straight to HubSpot's Forms API (api.hsforms.com, already allowed sitewide),
-     same pattern as the PMAP event page and the Philippines HRIS hero form. The calendar
-     popup and the download popup are two different forms (different fields), so each has
-     its own GUID below -- fill both in once those forms exist in the portal. */
+  /* ---------- HubSpot forms ----------
+     Both popups embed the real HubSpot form with the v2 embed (it's a legacy
+     form, which the newer .hs-form-frame embed can't render), created the first
+     time each popup opens so nothing loads until someone asks. These used to be
+     native forms posting to the Forms API, but HubSpot's non-HubSpot-forms
+     capture recorded those submissions as well, so every signup was counted
+     twice. HubSpot never captures its own embedded forms. */
   var HS_PORTAL_ID = '45700506';
-  var HS_CAL_FORM_GUID = '9fffb4ce-f1ff-4941-987c-2fd1db929518';
-  var HS_DOWNLOAD_FORM_GUID = '9fffb4ce-f1ff-4941-987c-2fd1db929518';
-  function submitToHubSpot(fields, formGuid) {
-    if (!formGuid || formGuid === 'TODO_FORM_GUID') {
-      if (DEBUG) console.warn('[hubspot] form GUID not set yet -- skipping submit (email not logged): ' + Object.keys(fields).join(', '));
-      return Promise.resolve({ skipped: true });
-    }
-    var hutk = (document.cookie.match(/(?:^|;\s*)hubspotutk=([^;]+)/) || [])[1];
-    var payload = {
-      fields: Object.keys(fields).map(function (k) { return { name: k, value: fields[k] }; }),
-      context: { hutk: hutk, pageUri: location.href, pageName: document.title }
-    };
-    return fetch('https://api.hsforms.com/submissions/v3/integration/submit/' + HS_PORTAL_ID + '/' + formGuid, {
-      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
-    }).then(function (r) { if (!r.ok) throw new Error('HubSpot ' + r.status); return r.json(); });
+  var HS_FORM_GUID = '9fffb4ce-f1ff-4941-987c-2fd1db929518';
+  var hsScript = null;
+  function loadHubSpotEmbed() {
+    if (!hsScript) hsScript = new Promise(function (resolve, reject) {
+      if (window.hbspt) return resolve();
+      var s = document.createElement('script');
+      s.src = 'https://js-na2.hsforms.net/forms/embed/v2.js';
+      s.onload = function () { window.hbspt ? resolve() : reject(); };
+      s.onerror = reject;
+      document.head.appendChild(s);
+    }).catch(function (e) { hsScript = null; throw e; });
+    return hsScript;
   }
-
-  /* ---------- shared contact ----------
-     Once either popup succeeds once, remember {firstname, lastname, email}
-     for this browser so the OTHER popup can skip asking again -- it still
-     submits to HubSpot in the background each time (so both signup sources
-     show up in the CRM), it just doesn't make the person retype anything. */
-  function getSavedContact() { return LS.get('phr_ye_contact', null); }
-  function saveContact(firstname, lastname, email) {
-    LS.set('phr_ye_contact', { firstname: firstname, lastname: lastname, email: email });
+  // Fills a hidden field if one with that name has been added to the HubSpot form.
+  function setHidden(form, name, value) {
+    var el = form && form.querySelector('input[name="' + name + '"]');
+    if (el) el.value = value;
   }
-
-  var calModal = $('#ye-cal-modal'), calForm = $('#ye-cal-form'), pendingCal = 'all', lastFocus = null;
-  function finishCalSignup(firstname, lastname, email) {
-    var btn = $('button[type=submit]', calForm);
-    return submitToHubSpot({
-      firstname: firstname,
-      lastname: lastname,
-      email: email,
-      phr_intent_level: LS.get('phr_ye_intent', 'low'),
-      phr_signup_source: 'calendar'
-    }, HS_CAL_FORM_GUID).then(function () {
-      saveContact(firstname, lastname, email);
-      track('phr_ye_calendar_signup', { date_id: pendingCal }); // no email in the event, by design
-      setSignal('calendar_signup');
-      runCal(pendingCal);
-      calForm.hidden = true; var d = $('#ye-cal-done'); d.hidden = false; d.focus();
-      if (btn) btn.disabled = false;
-      setTimeout(closeCal, 2200);
+  function embedForm(wrap, source, onSubmitted) {
+    if (wrap.dataset.hs) return; // already created (or being created)
+    wrap.dataset.hs = '1';
+    var loading = $('.ye-form-loading', wrap);
+    loading.hidden = false; loading.textContent = 'Loading form…';
+    loadHubSpotEmbed().then(function () {
+      hbspt.forms.create({
+        region: 'na2',
+        portalId: HS_PORTAL_ID,
+        formId: HS_FORM_GUID,
+        target: '#' + wrap.id + '-hs',
+        onFormReady: function () { loading.hidden = true; },
+        onFormSubmit: function ($form) {
+          var form = $form && $form.jquery ? $form[0] : $form;
+          setHidden(form, 'phr_signup_source', source);
+          setHidden(form, 'phr_intent_level', LS.get('phr_ye_intent', 'low'));
+        },
+        onFormSubmitted: onSubmitted
+      });
+    }).catch(function () {
+      delete wrap.dataset.hs;
+      loading.textContent = "The form couldn't load. Please check your connection and try again.";
     });
+  }
+
+  /* ---------- signed-up flag ----------
+     Once either popup's form has been submitted in this browser, both popups
+     skip the form and go straight to the download. */
+  function isSignedUp() { return !!LS.get('phr_ye_contact', null); }
+  function markSignedUp() { LS.set('phr_ye_contact', true); }
+
+  var calModal = $('#ye-cal-modal'), calSignup = $('#ye-cal-signup'), pendingCal = 'all', lastFocus = null;
+  function calDone() {
+    calSignup.hidden = true; var d = $('#ye-cal-done'); d.hidden = false; d.focus();
+    runCal(pendingCal);
+    setTimeout(closeCal, 2200);
   }
   function openCal(id) {
     pendingCal = id; lastFocus = document.activeElement;
     calModal.hidden = false; document.body.style.overflow = 'hidden';
-    var saved = getSavedContact();
-    if (saved) {
-      calForm.hidden = true; $('#ye-cal-done').hidden = false;
-      finishCalSignup(saved.firstname, saved.lastname, saved.email).catch(function () {
-        calForm.hidden = false; $('#ye-cal-done').hidden = true;
-        $('#ye-cal-err').textContent = 'Something went wrong. Please try again.';
-      });
-      return;
-    }
-    calForm.hidden = false; $('#ye-cal-done').hidden = true;
-    setTimeout(function () { $('#ye-cal-name').focus(); }, 30);
+    if (isSignedUp()) { calDone(); return; }
+    calSignup.hidden = false; $('#ye-cal-done').hidden = true;
+    embedForm(calSignup, 'calendar', function () {
+      markSignedUp();
+      track('phr_ye_calendar_signup', { date_id: pendingCal }); // no email in the event, by design
+      setSignal('calendar_signup');
+      calDone();
+    });
   }
   function closeCal() {
     calModal.hidden = true; document.body.style.overflow = '';
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
-  if (calModal && calForm) {
+  if (calModal && calSignup) {
     $('#ye-cal-close').addEventListener('click', closeCal);
     calModal.addEventListener('click', function (e) { if (e.target === calModal) closeCal(); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !calModal.hidden) closeCal(); });
-    calForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var name = $('#ye-cal-name'), nameErr = $('#ye-cal-err-name');
-      var email = $('#ye-cal-email'), err = $('#ye-cal-err');
-      var ok = true, firstInvalid = null;
-      if (!name.value.trim()) { nameErr.textContent = 'Please enter your full name.'; name.setAttribute('aria-invalid', 'true'); ok = false; firstInvalid = firstInvalid || name; } else { nameErr.textContent = ''; name.removeAttribute('aria-invalid'); }
-      if (!email.value || !email.checkValidity()) { err.textContent = 'Please enter a valid work email.'; email.setAttribute('aria-invalid', 'true'); ok = false; firstInvalid = firstInvalid || email; } else { err.textContent = ''; email.removeAttribute('aria-invalid'); }
-      if (!ok) { firstInvalid.focus(); return; }
-      var btn = $('button[type=submit]', calForm); btn.disabled = true;
-      var nameParts = name.value.trim().split(/\s+/);
-      finishCalSignup(nameParts[0], nameParts.slice(1).join(' '), email.value.trim())
-        .catch(function () { btn.disabled = false; err.textContent = 'Something went wrong. Please try again.'; });
-    });
   }
 
   /* ---------- download-checklist popup ----------
-     Same HubSpot submit pattern as the calendar popup, but asks for full
-     name and email before the actual download: a real PDF
-     (/uploads/2026/11/Year-End-Payroll.pdf) triggered right after a
-     successful submit, alongside a thank-you message. The real form (portal
-     45700506, form 9fffb4ce-f1ff-4941-987c-2fd1db929518) only requires email, but we send
-     firstname/lastname too so the CRM contact is complete. Full name is one
-     field in the UI and split into first/last here, same as the PMAP page. */
-  var downloadModal = $('#ye-download-modal'), downloadForm = $('#ye-download-form'), downloadLastFocus = null;
-  function finishDownload(firstname, lastname, email) {
-    var btn = $('button[type=submit]', downloadForm);
-    return submitToHubSpot({
-      firstname: firstname,
-      lastname: lastname,
-      email: email,
-      phr_intent_level: LS.get('phr_ye_intent', 'low'),
-      phr_signup_source: 'checklist_download'
-    }, HS_DOWNLOAD_FORM_GUID).then(function () {
-      saveContact(firstname, lastname, email);
-      track('phr_ye_checklist_download', {});
-      setSignal('cta', 'checklist_download');
-      if (btn) btn.disabled = false;
-      downloadForm.hidden = true;
-      var done = $('#ye-download-done'); done.hidden = false; done.focus();
-      var a = document.createElement('a');
-      a.href = '/uploads/2026/11/Year-End-Payroll.pdf';
-      a.download = 'PeoplesHR-Year-End-Payroll-Readiness-Checklist-PH-2026.pdf';
-      document.body.appendChild(a); a.click(); a.parentNode.removeChild(a);
-      setTimeout(closeDownloadModal, 2200);
-    });
+     Same HubSpot form as the calendar popup. After a successful submit the
+     real PDF (/uploads/2026/11/Year-End-Payroll.pdf) downloads alongside a
+     thank-you message. */
+  var downloadModal = $('#ye-download-modal'), downloadSignup = $('#ye-download-signup'), downloadLastFocus = null;
+  function downloadDone() {
+    downloadSignup.hidden = true;
+    var done = $('#ye-download-done'); done.hidden = false; done.focus();
+    var a = document.createElement('a');
+    a.href = '/uploads/2026/11/Year-End-Payroll.pdf';
+    a.download = 'PeoplesHR-Year-End-Payroll-Readiness-Checklist-PH-2026.pdf';
+    document.body.appendChild(a); a.click(); a.parentNode.removeChild(a);
+    setTimeout(closeDownloadModal, 2200);
   }
   function openDownloadModal() {
     downloadLastFocus = document.activeElement;
     downloadModal.hidden = false; document.body.style.overflow = 'hidden';
-    var saved = getSavedContact();
-    if (saved) {
-      downloadForm.hidden = true; $('#ye-download-done').hidden = false;
-      finishDownload(saved.firstname, saved.lastname, saved.email).catch(function () {
-        downloadForm.hidden = false; $('#ye-download-done').hidden = true;
-        $('#ye-download-err-email').textContent = 'Something went wrong. Please try again.';
-      });
-      return;
-    }
-    downloadForm.hidden = false; $('#ye-download-done').hidden = true;
-    setTimeout(function () { $('#ye-download-name').focus(); }, 30);
+    if (isSignedUp()) { downloadDone(); return; }
+    downloadSignup.hidden = false; $('#ye-download-done').hidden = true;
+    embedForm(downloadSignup, 'checklist_download', function () {
+      markSignedUp();
+      track('phr_ye_checklist_download', {});
+      setSignal('cta', 'checklist_download');
+      downloadDone();
+    });
   }
   function closeDownloadModal() {
     downloadModal.hidden = true; document.body.style.overflow = '';
     if (downloadLastFocus && downloadLastFocus.focus) downloadLastFocus.focus();
   }
-  if (downloadModal && downloadForm) {
+  if (downloadModal && downloadSignup) {
     $('#ye-download-close').addEventListener('click', closeDownloadModal);
     downloadModal.addEventListener('click', function (e) { if (e.target === downloadModal) closeDownloadModal(); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !downloadModal.hidden) closeDownloadModal(); });
-    downloadForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var name = $('#ye-download-name'), nameErr = $('#ye-download-err-name');
-      var email = $('#ye-download-email'), emailErr = $('#ye-download-err-email');
-      var ok = true, firstInvalid = null;
-      if (!name.value.trim()) { nameErr.textContent = 'Please enter your full name.'; name.setAttribute('aria-invalid', 'true'); ok = false; firstInvalid = firstInvalid || name; } else { nameErr.textContent = ''; name.removeAttribute('aria-invalid'); }
-      if (!email.value || !email.checkValidity()) { emailErr.textContent = 'Please enter a valid work email.'; email.setAttribute('aria-invalid', 'true'); ok = false; firstInvalid = firstInvalid || email; } else { emailErr.textContent = ''; email.removeAttribute('aria-invalid'); }
-      if (!ok) { firstInvalid.focus(); return; }
-      var btn = $('button[type=submit]', downloadForm); btn.disabled = true;
-      var nameParts = name.value.trim().split(/\s+/);
-      finishDownload(nameParts[0], nameParts.slice(1).join(' '), email.value.trim())
-        .catch(function () { btn.disabled = false; emailErr.textContent = 'Something went wrong. Please try again.'; });
-    });
   }
 
   /* ---------- init ---------- */

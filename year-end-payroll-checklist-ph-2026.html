@@ -664,32 +664,31 @@
 
 </main>
 
-<!-- Calendar email popup. The dates stay visible on the page; the calendar file asks for a work email once. -->
+<!-- Calendar email popup. The dates stay visible on the page; the calendar file asks for a work email once.
+     The form inside is HubSpot's own embed, created by js/year-end-payroll-checklist-ph.js on first open. -->
 <div class="ye-cal-modal" id="ye-cal-modal" role="dialog" aria-modal="true" aria-labelledby="yeCalH" hidden>
   <div class="ye-cal-box">
     <button type="button" class="ye-cal-close" id="ye-cal-close" aria-label="Close">&times;</button>
     <h2 id="yeCalH">Never miss a year-end payroll date</h2>
-    <form id="ye-cal-form" novalidate>
-      <div class="ye-field"><label for="ye-cal-name">Full name</label><input id="ye-cal-name" name="fullname" type="text" autocomplete="name" required aria-required="true" aria-describedby="ye-cal-err-name"><span class="ye-hint" id="ye-cal-err-name" role="alert"></span></div>
-      <div class="ye-field"><label for="ye-cal-email">Work email</label><input id="ye-cal-email" name="email" type="email" autocomplete="email" required aria-required="true" aria-describedby="ye-cal-err"><span class="ye-hint" id="ye-cal-err" role="alert"></span></div>
-      <button type="submit" class="ye-btn ye-btn-primary">Download the calendar file</button>
+    <div id="ye-cal-signup">
+      <p class="ye-form-loading" role="status">Loading form…</p>
+      <div id="ye-cal-signup-hs"></div>
       <p class="ye-consent">We'll only use your details to share year-end payroll resources from PeoplesHR. Unsubscribe any time. See our <a href="/privacy-policy/">privacy policy</a>.</p>
-    </form>
+    </div>
     <p class="ye-cal-done" id="ye-cal-done" role="status" tabindex="-1" hidden>Your calendar file is downloading. Open it to add the dates.</p>
   </div>
 </div>
 
-<!-- Download-checklist popup. Same pattern as the calendar popup, asks for name + work email once. -->
+<!-- Download-checklist popup. Same pattern as the calendar popup (HubSpot embed), asks for name + work email once. -->
 <div class="ye-cal-modal" id="ye-download-modal" role="dialog" aria-modal="true" aria-labelledby="yeDownloadH" hidden>
   <div class="ye-cal-box">
     <button type="button" class="ye-cal-close" id="ye-download-close" aria-label="Close">&times;</button>
     <h2 id="yeDownloadH">Download your checklist</h2>
-    <form id="ye-download-form" novalidate>
-      <div class="ye-field"><label for="ye-download-name">Full name</label><input id="ye-download-name" name="fullname" type="text" autocomplete="name" required aria-required="true" aria-describedby="ye-download-err-name"><span class="ye-hint" id="ye-download-err-name" role="alert"></span></div>
-      <div class="ye-field"><label for="ye-download-email">Work email</label><input id="ye-download-email" name="email" type="email" autocomplete="email" required aria-required="true" aria-describedby="ye-download-err-email"><span class="ye-hint" id="ye-download-err-email" role="alert"></span></div>
-      <button type="submit" class="ye-btn ye-btn-primary">Download Checklist</button>
+    <div id="ye-download-signup">
+      <p class="ye-form-loading" role="status">Loading form…</p>
+      <div id="ye-download-signup-hs"></div>
       <p class="ye-consent">We'll only use your details to share year-end payroll resources from PeoplesHR. Unsubscribe any time. See our <a href="/privacy-policy/">privacy policy</a>.</p>
-    </form>
+    </div>
     <p class="ye-cal-done" id="ye-download-done" role="status" tabindex="-1" hidden>Thank you! Your checklist is downloading now.</p>
   </div>
 </div>
