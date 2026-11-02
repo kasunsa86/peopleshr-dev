@@ -97,7 +97,7 @@ body{overflow-x:clip;}
   .wsi-page .csi-hero .csi-hero-stat:last-child{border-bottom:0;}
   .wsi-page .csi-body-inner{padding-top:32px;}
   #covered{display:none;}
-  /* "Is this session for you?" as one compact card: For and Product full width, Country + Language side by side */
+  /* "Is this session for you?" as one compact card */
   .wsi-page .csi-meta-block{display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;background:#fff;border:1px solid var(--border);border-radius:16px;padding:18px;}
   .wsi-page .csi-meta-block .csi-toc-heading,.wsi-page .wsi-meta-wide{grid-column:1/-1;}
   .wsi-page .csi-meta-block .csi-toc-heading{margin:0;}
