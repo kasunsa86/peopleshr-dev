@@ -1,0 +1,113 @@
+/* Webinar summary pages (/webinars/*-summary/). Builds on casestudies.css (csi-*)
+   and the webinars page styles in styles.css (wb-*, wreg-*, phr-faq). */
+/* Title band ("Night shift") + highlighted clause */
+.wsi-band{background:radial-gradient(75% 100% at 50% 0%,#dbeafe 0%,#e8f1ff 45%,rgba(240,246,255,.6) 75%,rgba(240,246,255,0) 100%);padding-bottom:60px;}
+.wsi-band .csi-header{padding-bottom:0;}
+.wsi-band .csi-back-link{color:var(--blue);}
+.wsi-band .csi-eyebrow{color:#1d4ed8;}
+.wsi-band .csi-title{color:var(--text-dark);font-size:46px;line-height:1.08;max-width:820px;}
+.wsi-hl{color:#ea580c;}
+.wsi-page .csi-hero{padding-top:24px;}
+
+/* Spec bar floating over the band edge */
+.wsi-spec{display:inline-flex;flex-wrap:wrap;align-items:center;background:#fff;border:1px solid var(--border);border-radius:18px;padding:6px;margin:30px 0 -40px;box-shadow:0 26px 50px -26px rgba(30,58,138,.35);position:relative;z-index:2;max-width:100%;}
+.wsi-spec>div{padding:9px 18px;}
+.wsi-spec>div+div{border-left:1px solid var(--border);}
+.wsi-spec b{display:block;font-size:14px;color:var(--text-dark);margin-top:2px;}
+.wsi-st{border:0;cursor:pointer;font-weight:700;font-size:13px;font-family:inherit;border-radius:12px;padding:10px 16px;color:#047857;background:#ecfdf5;}
+.wsi-st--lock{color:#9a3412;background:#fff7ed;}
+
+/* Hero cover (on csi-hero-img-card) */
+.wsi-cover{border:0;padding:0;width:100%;cursor:pointer;}
+.wsi-pills{position:absolute;top:16px;right:16px;display:flex;gap:8px;z-index:1;}
+.wsi-pills span,.wsi-ts{font-size:11px;font-weight:600;border-radius:999px;padding:5px 10px;}
+.wsi-pills span{color:#fff;background:rgba(255,255,255,.16);}
+.wsi-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:#fff;display:grid;place-items:center;}
+.wsi-page .wsi-learn{font-size:16.5px;font-weight:700;color:var(--text-dark);margin:0;}
+
+/* Timestamps */
+/* Play buttons: jump the recording to that moment */
+.wsi-ts{display:inline-flex;align-items:center;gap:6px;font-variant-numeric:tabular-nums;color:#1d4ed8;background:#dbeafe;border:1px solid #bfdbfe;border-radius:6px;white-space:nowrap;cursor:pointer;transition:background .15s,color .15s,box-shadow .15s;}
+.wsi-ts::before{content:"";flex:0 0 auto;width:7px;height:8px;background:currentColor;clip-path:polygon(0 0,100% 50%,0 100%);}
+.wsi-ts:hover,.wsi-ch:hover .wsi-ts{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 6px 16px -8px rgba(37,99,235,.8);}
+
+/* Q&A: site accordion (.phr-faq in styles.css, toggled by phr.js), full width in the article */
+.wsi-page .phr-faq{max-width:none;margin:0;}
+
+/* Takeaways grid + chapter rows */
+.wsi-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
+.wsi-grid .csi-sidebar-stat p{font-size:13.5px;margin:6px 0 0;}
+.wsi-ch{cursor:pointer;display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:start;}
+.wsi-ch .wsi-ts{font-size:15px;font-weight:700;justify-content:center;padding:6px 10px;}
+.wsi-ch .wsi-ts::before{width:8px;height:10px;}
+.wsi-ch h3{font-size:15px;font-weight:700;color:var(--text-dark);margin-bottom:4px;}
+
+/* Left panel stays in view while the article scrolls (static again at ≤860px via casestudies.css).
+   The aside stretches to the article's height so the panel has room to stick,
+   and body goes back to overflow-x:clip (casestudies.css sets hidden, which breaks sticky). */
+body{overflow-x:clip;}
+.wsi-page .csi-sidebar{align-self:stretch;}
+.wsi-page .csi-sidebar-sticky{top:96px;}
+.wsi-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;}
+.wsi-tags span{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;line-height:1;color:#1d4ed8;background:#eff6ff;border:1px solid #dbeafe;border-radius:999px;padding:6px 10px;}
+.wsi-tags img{width:16px;height:16px;object-fit:contain;margin:-3px 0 -3px -4px;}
+/* Module colours, taken from each module's icon (/uploads/2026/07/*Icon.webp) */
+.wsi-tags .wsi-tag--time{color:#c2410c;background:#fff7ed;border-color:#fed7aa;}
+.wsi-tags .wsi-tag--pay{color:#15803d;background:#f0fdf4;border-color:#bbf7d0;}
+.wsi-tags .wsi-tag--talent{color:#6d28d9;background:#f5f3ff;border-color:#ddd6fe;}
+.wsi-tags .wsi-tag--engagement{color:#0369a1;background:#f0f9ff;border-color:#bae6fd;}
+.wsi-tags .wsi-tag--insights{color:#4338ca;background:#eef2ff;border-color:#c7d2fe;}
+
+/* Speaker cards (wreg-speaker from the v10.3 lander) */
+.wsi-speakers{gap:10px;margin-bottom:28px;}
+.wsi-speakers .wreg-speaker{padding:14px;align-items:flex-start;}
+.wsi-speakers .wreg-speaker-av{width:44px;height:44px;}
+.wsi-mono{display:grid;place-items:center;font-size:20px;font-weight:800;color:#fff;background:#1e3a8a;}
+
+/* wb-cta-strip fitted to the article column */
+.wsi-page .wb-cta-strip{margin-top:0;flex-wrap:wrap;padding:40px 44px;}
+.wsi-page .wb-cta-strip-text{flex:1 1 260px;}
+.wsi-page .wb-cta-strip-text p{color:rgba(255,255,255,.65);margin:0;}
+
+/* More webinars (wb-rec-* cards from css/styles.css) */
+.wsi-more{padding:72px 0 96px;}
+.wsi-more .wb-rec-header{justify-content:space-between;flex-wrap:wrap;margin-bottom:28px;}
+.wsi-more-all{font-size:14px;font-weight:700;color:var(--blue);}
+.wsi-more .wb-rec-card{display:block;color:inherit;text-decoration:none;}
+.wsi-more .wb-rec-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+
+/* Members-only gate toggles [hidden]; .csi-hero-img-card's display:flex would otherwise keep the open cover visible */
+.wsi-page [hidden]{display:none !important;}
+
+/* Cover keeps YouTube's 16:9 (aspect-ratio from .csi-hero-img-card) at every width.
+   Desktop: centre the text column on the cover and tighten it to roughly the cover's height. */
+@media (min-width:861px){
+  .wsi-page .csi-hero-grid{align-items:center;}
+  .wsi-page .csi-hero-aside{gap:20px;padding-top:0;}
+  .wsi-page .csi-hero .csi-hero-stat{padding:13px 0;}
+  .wsi-page .wsi-learn{font-size:15.5px;}
+}
+@media (max-width:860px){
+  .wsi-band .csi-title{font-size:30px;}
+  /* Mobile: no spec card, video sits right under the title */
+  .wsi-band{padding-bottom:28px;}
+  .wsi-spec{display:none;}
+  .wsi-page .csi-hero{padding-top:0;padding-bottom:8px;}
+  /* One divider between hero and body: drop the last point's rule, keep the body's top border */
+  .wsi-page .csi-hero .csi-hero-stat:last-child{border-bottom:0;}
+  .wsi-page .csi-body-inner{padding-top:32px;}
+  #covered{display:none;}
+  /* "Is this session for you?" as one compact card: For and Product full width, Country + Language side by side */
+  .wsi-page .csi-meta-block{display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;background:#fff;border:1px solid var(--border);border-radius:16px;padding:18px;}
+  .wsi-page .csi-meta-block .csi-toc-heading,.wsi-page .wsi-meta-wide{grid-column:1/-1;}
+  .wsi-page .csi-meta-block .csi-toc-heading{margin:0;}
+  .wsi-page .csi-meta-block .csi-meta-rule{display:none;}
+  .wsi-page .csi-meta-block .csi-meta-group{padding:0;}
+}
+@media (max-width:768px){
+  /* styles.css stacks the strip into a column here; the 260px flex-basis would then become a height */
+  .wsi-page .wb-cta-strip-text{flex:none;}
+}
+@media (max-width:600px){
+  .wsi-grid{grid-template-columns:1fr;}
+}

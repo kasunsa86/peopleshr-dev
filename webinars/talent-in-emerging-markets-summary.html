@@ -1,0 +1,631 @@
+<?php require_once __DIR__ . '/../inc/geo.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hiring Talent in Emerging Markets | PeoplesHR Webinar</title>
+  <meta name="description" content="Webinar summary: why emerging markets now hold the best talent, how to build a brand candidates choose, the DICE hiring model, and staying compliant abroad." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://peopleshr.com/webinars/talent-in-emerging-markets-summary/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="PeoplesHR" />
+  <meta property="og:title" content="Finding talent in emerging markets: brand, DICE and compliance" />
+  <meta property="og:description" content="Webinar summary: why emerging markets now hold the best talent, how to build a brand candidates choose, the DICE hiring model, and staying compliant abroad." />
+  <meta property="og:url" content="https://peopleshr.com/webinars/talent-in-emerging-markets-summary/" />
+  <meta property="og:image" content="https://img.youtube.com/vi/ghOShodEj6s/maxresdefault.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Finding talent in emerging markets: brand, DICE and compliance" />
+  <meta name="twitter:description" content="Webinar summary: why emerging markets now hold the best talent, how to build a brand candidates choose, the DICE hiring model, and staying compliant abroad." />
+  <meta name="twitter:image" content="https://img.youtube.com/vi/ghOShodEj6s/maxresdefault.jpg" />
+
+  <?php $phrCrumbName = 'How to Search for Talent Skills in Emerging Markets: webinar summary'; include __DIR__ . '/../inc/seo-schema.php'; ?>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "How to Search for Talent Skills in Emerging Markets",
+  "description": "Charles H. Ferguson, General Manager APAC at Globalization Partners, on hiring talent in emerging markets: investing in brand equity, the DICE model for remote hires, talent arbitrage, compliance, and HR's priorities after the pandemic.",
+  "thumbnailUrl": "https://img.youtube.com/vi/ghOShodEj6s/maxresdefault.jpg",
+  "uploadDate": "2023-06-06",
+  "duration": "PT43M54S",
+  "embedUrl": "https://www.youtube.com/embed/ghOShodEj6s",
+  "contentUrl": "https://youtu.be/ghOShodEj6s",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "PeoplesHR",
+    "url": "https://peopleshr.com/"
+  }
+}
+  </script>
+
+  <link rel="stylesheet" href="<?php echo asset_v('/css/styles.css'); ?>" />
+  <link rel="stylesheet" href="<?php echo asset_v('/css/navbar.css'); ?>" />
+  <link rel="stylesheet" href="<?php echo asset_v('/css/footer.css'); ?>" />
+  <link rel="stylesheet" href="<?php echo asset_v('/css/casestudies.css'); ?>" />
+  <link rel="stylesheet" href="<?php echo asset_v('/css/webinar-summary.css'); ?>" />
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/45700506.js"></script>
+  <!-- End of HubSpot Embed Code -->
+  <?php include __DIR__ . '/../inc/ga4.php'; ?>
+  <?php include __DIR__ . '/../inc/geo-head.php'; ?>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <link rel="describedby" href="/llms.txt" type="text/markdown">
+</head>
+
+<body class="webinar-page">
+
+
+
+<div class="nv-root">
+
+  <!-- ============================= NAVBAR ============================= -->
+  <header class="nv-bar" id="nvBar">
+    <div class="nv-inner">
+
+      <a class="nv-logo" href="/" aria-label="PeoplesHR home">
+        <img src="/uploads/2021/07/logo.webp" alt="PeoplesHR">
+      </a>
+
+      <nav aria-label="Primary">
+        <ul class="nv-menu" id="nvMenu">
+
+          <!-- PRODUCTS (mega) -->
+          <li class="nv-item has-mega" data-nv="dropdown">
+            <a class="nv-link" href="/products/" aria-expanded="false" aria-haspopup="true">
+              Products
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-mega">
+                  <div class="nv-grid">
+                    <div class="nv-tile">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/HRIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>HR</b><span>The foundation that actually thinks</span></span>
+                      <a href="/products/core-hr/" class="lqd-overlay z-index-2" target="_self" aria-label="HR"></a>
+                    </div>
+                    <a class="nv-tile" href="/products/payroll-system/">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/PayIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>Pay</b><span>Globally compliant, less complicated</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/talent-acquisition/">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/TalentIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>Talent</b><span>Hiring smarter, not harder</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/time-and-attendance/">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/TimeIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>Time</b><span>Beyond clock watching</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/people-engagement/">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/EngagementIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>Engagement</b><span>Engagement beyond annual surveys</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/people-analytics/">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/InsightsIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>Insight</b><span>Intelligence that drives action</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/mobile-app/">
+                      <span class="nv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2.4"/><path d="M11 18h2"/></svg></span>
+                      <span class="nv-tt"><b>Mobile App</b><span>Work happens everywhere</span></span>
+                    </a>
+                  </div>
+                  <div class="nv-mega-foot">
+                    <p><b>Meet Lexi — PeoplesHR AI</b>Turn any HR action into a simple conversation.</p>
+                    <a class="nv-ghost" href="/ai-x/">
+                      Explore PeoplesHR AI
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- SOLUTIONS (mega columns) -->
+          <li class="nv-item has-mega" data-nv="dropdown">
+            <a class="nv-link" href="/solutions/" aria-expanded="false" aria-haspopup="true">
+              Solutions
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card">
+                  <div class="nv-cols">
+                    <div class="nv-col">
+                      <p class="nv-eyebrow">Industries</p>
+                      <ul class="nv-list">
+                        <li><a href="/solutions/banking-finance-insurance-industries/">Banking, Finance &amp; Insurance<small>Compliance, accuracy and control</small></a></li>
+                        <li><a href="/solutions/hr-software-for-hospitality-industry/">Hospitality<small>Control labour costs across every shift</small></a></li>
+                        <li><a href="/solutions/hr-software-for-manufacturing-industry/">Manufacturing<small>Keep your production lines moving</small></a></li>
+                        <li><a href="/solutions/hr-software-for-professional-and-business-services-industry/">Professional &amp; Business Services<small>Scales with projects, clients and people</small></a></li>
+                        <li><a href="/solutions/hr-software-for-retail-industry/">Retail<small>Keep stores staffed and on target</small></a></li>
+                        <li><a href="/solutions/hr-software-for-it-and-ites-industry/">IT &amp; ITES<small>Connected, compliant teams anywhere</small></a></li>
+                        <li><a href="/solutions/hr-software-for-transportation-and-logistics-industry/">Transportation &amp; Logistics<small>Moves as fast as your fleet</small></a></li>
+                      </ul>
+                    </div>
+                    <div class="nv-col">
+                      <p class="nv-eyebrow">By Role</p>
+                      <ul class="nv-list">
+                        <li><a href="/solutions/chro/">People Strategy Leaders<small>When the board asks about ROI</small></a></li>
+                        <li><a href="/solutions/cfo/">Financial Strategy Leaders<small>When the numbers finally add up</small></a></li>
+                        <li><a href="/solutions/cio/">Technology Strategy Leaders<small>Technology that works with you</small></a></li>
+                      </ul>
+                    </div>
+                    <div class="nv-col">
+                      <p class="nv-eyebrow">Specialized Solutions</p>
+                      <ul class="nv-list">
+                        <li><a href="/solutions/peopleshr-academy/">PeoplesHR Academy<small>Master PeoplesHR, transform operations</small></a></li>
+                        <li><a href="/solutions/outsourcing/">Payroll Outsourcing<small>Accuracy, compliance &amp; cost savings</small></a></li>
+                        <li><a href="/solutions/peopleshr-tracking/">Access & Attendance Devices<small>Secure your workforce &amp; assets</small></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- CUSTOMERS (direct) -->
+          <li class="nv-item">
+            <a class="nv-link" href="/customers/">Customers</a>
+          </li>
+
+          <!-- RESOURCES (simple) -->
+          <li class="nv-item has-simple" data-nv="dropdown">
+            <button class="nv-link" aria-expanded="false" aria-haspopup="true">
+              Resources
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-simple">
+                  <ul class="nv-list">
+                    <li><a href="/customers/">Case Studies<small>Transformative journeys</small></a></li>
+                    <li><a href="/webinars/">Webinars<small>Learn from the HR experts</small></a></li>
+                    <li><a href="/blog/">Blog<small>Insights, stories and updates</small></a></li>
+                    <li><a href="/events/">Events<small>Insights and networking</small></a></li>
+                    <li><a href="/hr-ebooks-and-guides/">HR eBooks &amp; Guides<small>Build your HR knowledge</small></a></li>
+                    <li><a href="/news/">News<small>Latest from PeoplesHR</small></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- COMPANY (simple) -->
+          <li class="nv-item has-simple" data-nv="dropdown">
+            <button class="nv-link" aria-expanded="false" aria-haspopup="true">
+              Company
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-simple">
+                  <ul class="nv-list">
+                    <li><a href="/company/">About PeoplesHR<small>Our journey as an HR powerhouse</small></a></li>
+                    <li><a href="/careers/">Careers<small>Thrive in your career at PeoplesHR</small></a></li>
+                    <li><a href="/community/">Community<small>Your hub for the HR landscape</small></a></li>
+                    <li><a href="/partner-with-peopleshr/">Partners<small>Unlock endless growth</small></a></li>
+                    <li><a href="/regions/">Regions<small>Growth across APAC and MEA</small></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- PRICING (dropdown) -->
+          <li class="nv-item has-simple" data-nv="dropdown">
+            <a class="nv-link" href="/view-plans/" aria-expanded="false" aria-haspopup="true">
+              Pricing
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-simple nv-card--wide">
+                  <ul class="nv-list">
+                    <li><a href="/view-plans/">View Pricing Plans<small>Plans built around your team's size</small></a></li>
+                  </ul>
+                  <a class="nv-promo-tile" href="/roi-calculator/">
+                    <span class="nv-promo-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/></svg>
+                    </span>
+                    <span class="nv-promo-text">
+                      <b>PeoplesHR ROI Calculator</b>
+                      <span>Run the Numbers. Let the ROI Speak. Instant, clear results tailored for your business.</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- INTERACTIVE DEMOS (direct + badge) -->
+          <li class="nv-item">
+            <a class="nv-link" href="/interactive-demos/">
+              Interactive Demos
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <div class="nv-actions">
+        <a class="nv-cta" href="/get-in-touch/">Request a Demo</a>
+        <button class="nv-burger" id="nvBurger" aria-label="Open menu" aria-expanded="false"><span></span></button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ===================== ANNOUNCEMENT BAR ===================== -->
+  <div class="nv-ann" id="nvAnn" role="region" aria-label="Site announcement">
+    <div class="nv-ann-inner">
+      <span class="nv-ann-badge">New</span>
+      <p class="nv-ann-text">PeoplesHR now comes in three clear packages for you to know exactly what you're buying &#x1F4B8;
+        <a href="/view-plans/">View Packages
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </p>
+      <button class="nv-ann-close" id="nvAnnClose" aria-label="Dismiss announcement">&times;</button>
+    </div>
+  </div>
+
+  <!-- ===================== MOBILE PANEL ===================== -->
+  <div class="nv-scrim" id="nvScrim"></div>
+  <aside class="nv-panel" id="nvPanel" aria-label="Mobile menu" aria-hidden="true">
+    <div class="nv-panel-head">
+      <img src="/uploads/2021/07/logo.webp" alt="PeoplesHR">
+      <button class="nv-close" id="nvClose" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="nv-panel-body">
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Products
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/products/core-hr/">HR</a>
+          <a href="/products/payroll-system/">Pay</a>
+          <a href="/products/talent-acquisition/">Talent</a>
+          <a href="/products/time-and-attendance/">Time</a>
+          <a href="/products/people-engagement/">Engagement</a>
+          <a href="/products/people-analytics/">Insight</a>
+          <a href="/products/mobile-app/">Mobile App</a>
+          <a href="/ai-x/">Explore PeoplesHR AI</a>
+        </div></div>
+      </div>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Solutions
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <p class="nv-sub-label">Industries</p>
+          <a href="/solutions/banking-finance-insurance-industries/">Banking, Finance &amp; Insurance</a>
+          <a href="/solutions/hr-software-for-hospitality-industry/">Hospitality</a>
+          <a href="/solutions/hr-software-for-manufacturing-industry/">Manufacturing</a>
+          <a href="/solutions/hr-software-for-professional-and-business-services-industry/">Professional &amp; Business Services</a>
+          <a href="/solutions/hr-software-for-retail-industry/">Retail</a>
+          <a href="/solutions/hr-software-for-it-and-ites-industry/">IT &amp; ITES</a>
+          <a href="/solutions/hr-software-for-transportation-and-logistics-industry/">Transportation &amp; Logistics</a>
+          <p class="nv-sub-label">By Role</p>
+          <a href="/solutions/chro/">People Strategy Leaders</a>
+          <a href="/solutions/cfo/">Financial Strategy Leaders</a>
+          <a href="/solutions/cio/">Technology Strategy Leaders</a>
+          <p class="nv-sub-label">Specialized Solutions</p>
+          <a href="/solutions/peopleshr-academy/">PeoplesHR Academy</a>
+          <a href="/solutions/outsourcing/">Payroll Outsourcing</a>
+          <a href="/solutions/peopleshr-tracking/">Access & Attendance Devices</a>
+        </div></div>
+      </div>
+
+      <a class="nv-mlink" href="/customers/">Customers</a>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Resources
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/customers/">Case Studies</a>
+          <a href="/webinars/">Webinars</a>
+          <a href="/blog/">Blog</a>
+          <a href="/events/">Events</a>
+          <a href="/hr-ebooks-and-guides/">HR eBooks &amp; Guides</a>
+          <a href="/news/">News</a>
+        </div></div>
+      </div>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Company
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/company/">About PeoplesHR</a>
+          <a href="/careers/">Careers</a>
+          <a href="/community/">Community</a>
+          <a href="/partner-with-peopleshr/">Partners</a>
+          <a href="/regions/">Regions</a>
+        </div></div>
+      </div>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Pricing
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/view-plans/">View Pricing Plans</a>
+          <a href="/roi-calculator/">PeoplesHR ROI Calculator</a>
+        </div></div>
+      </div>
+
+      <a class="nv-mlink" href="/interactive-demos/">Interactive Demos</a>
+
+    </div>
+    <div class="nv-panel-foot">
+      <a class="nv-cta" href="/get-in-touch/">Request a Demo</a>
+    </div>
+  </aside>
+
+</div><!-- /.nv-root -->
+
+<!-- Page-only additions for the webinar summary (test build).
+     The shell comes from casestudies.css (csi-*), the player from wb-modal-*,
+     the CTA from wb-cta-strip, Q&A from faq-*, stories from csi-download-cta.
+     Below are only the pieces the site has no existing style for. -->
+
+<!-- ============ WEBINAR SUMMARY (rec-17) ============
+     Built from the webinars/everywhereworkforce-summary.html template; styles in
+     css/webinar-summary.css, behaviour in js/webinar-summary.js.
+     data-gated: "false" = open webinar (no form). "true" = members-only:
+     2-min preview (data-preview-start/end) + HubSpot gate form. -->
+<main class="wsi-page" id="top" data-yt="ghOShodEj6s" data-gated="false" data-preview-start="0" data-preview-end="0">
+
+  <div class="wsi-band">
+    <div class="csi-back-wrap"><div class="csi-container">
+      <a href="/webinars/" class="csi-back-link"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true"><path d="M9 3L4.5 7.5 9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Back to webinars</a>
+    </div></div>
+    <header class="csi-header"><div class="csi-container">
+      <div class="csi-eyebrow">WEBINAR SUMMARY · HR &amp; PEOPLE</div>
+      <h1 class="csi-title"><span class="wsi-hl">The whole world is your talent pool:</span> how to find, attract and keep skills in emerging markets</h1>
+      <div class="wsi-spec">
+        <div><span class="csi-meta-label">FORMAT</span><b>On-demand webinar</b></div>
+        <div><span class="csi-meta-label">LENGTH</span><b>44 min</b></div>
+        <div><span class="csi-meta-label">CONDUCTED ON</span><b>Tue, 6 June 2023</b></div>
+        <div><span class="csi-meta-label">LANGUAGE</span><b>English</b></div>
+        <div>
+          <button type="button" class="wsi-st" data-gate="open" data-vid="0">● Free to watch ▶</button>
+        </div>
+      </div>
+    </div></header>
+  </div>
+
+  <section class="csi-hero"><div class="csi-container">
+    <div class="csi-hero-grid">
+      <div>
+        <button type="button" class="csi-hero-img-card wsi-cover" data-gate="open" data-vid="0" aria-label="Play the full recording">
+          <img class="csi-hero-cover-img" src="https://img.youtube.com/vi/ghOShodEj6s/maxresdefault.jpg" alt="How to Search for Talent Skills in Emerging Markets" width="1280" height="720">
+          <span class="wsi-pills"><span>Free to watch</span><span>44 min</span></span>
+          <span class="wsi-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 20 20"><path d="M7 5l9 5-9 5V5z" fill="#2563eb"/></svg></span>
+        </button>
+      </div>
+      <div class="csi-hero-aside">
+        <p class="csi-hero-desc">Charles H. Ferguson, General Manager APAC at Globalization Partners, explains why remote work has made the world one talent pool, and why small companies can now compete with Google for it. He covers building brand equity, the DICE model for remote hires, and the compliance work that has to come first.</p>
+        <div>
+          <div class="csi-meta-label">WATCH THE RECORDING AND LEARN HOW TO</div>
+          <div class="csi-hero-stats">
+            <div class="csi-hero-stat"><p class="wsi-learn">1. Build a brand that top candidates choose</p></div>
+            <div class="csi-hero-stat"><p class="wsi-learn">2. Assess remote hires with the DICE model</p></div>
+            <div class="csi-hero-stat"><p class="wsi-learn">3. Hire across borders without compliance risk</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div></section>
+
+  <div class="csi-body"><div class="csi-container csi-body-inner">
+    <aside class="csi-sidebar"><div class="csi-sidebar-sticky">
+      <div class="wreg-cover-speakers wsi-speakers">
+        <div class="csi-toc-heading">SPEAKERS</div>
+        <div class="wreg-speaker">
+          <img class="wreg-speaker-av" src="/uploads/2026/05/charles_ferguson.webp" alt="Charles H. Ferguson" loading="lazy">
+          <div class="wreg-speaker-info">
+            <div class="wreg-speaker-name">Charles H. Ferguson</div>
+            <div class="wreg-speaker-role">General Manager – APAC, Globalization Partners</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="csi-meta-block">
+        <div class="csi-toc-heading">IS THIS SESSION FOR YOU?</div>
+        <div class="csi-meta-group wsi-meta-wide"><span class="csi-meta-label">FOR</span><span class="csi-meta-value">HR leaders and founders hiring across borders or competing for scarce skills</span></div><div class="csi-meta-rule"></div>
+        <div class="csi-meta-group"><span class="csi-meta-label">COUNTRY</span><span class="csi-meta-value">🌏 Asia Pacific · emerging markets</span></div><div class="csi-meta-rule"></div>
+        <div class="csi-meta-group"><span class="csi-meta-label">LANGUAGE</span><span class="csi-meta-value">English</span></div><div class="csi-meta-rule"></div>
+        <div class="csi-meta-group wsi-meta-wide"><span class="csi-meta-label">TOPICS</span><span class="wsi-tags"><span>Global hiring</span><span>Employer brand</span><span>Remote work</span><span>Compliance</span><span class="wsi-tag--talent"><img src="/uploads/2026/07/TalentIcon.webp" alt="" width="16" height="16">Talent</span></span></div>
+      </div>
+
+    </div></aside>
+
+    <article class="csi-article">
+      <section class="csi-section" id="takeaways">
+        <h2 class="csi-section-heading">Key takeaways</h2>
+        <div class="wsi-grid">
+          <div class="csi-sidebar-stat" id="tk1"><a class="wsi-ts" href="https://youtu.be/ghOShodEj6s?t=187" data-t="187" target="_blank" rel="noopener">Watch from 03:07</a><p><strong>Invest in brand equity.</strong> If the whole world is your talent pool, small and mid-sized companies can compete with Google or Microsoft. What sets you apart is how visible your brand, culture and values are.</p></div>
+          <div class="csi-sidebar-stat" id="tk2"><a class="wsi-ts" href="https://youtu.be/ghOShodEj6s?t=616" data-t="616" target="_blank" rel="noopener">Watch from 10:16</a><p><strong>Revisit your mission, vision and values.</strong> Few companies have done this since the pandemic. Candidates want employers whose values match theirs, plus diversity and hybrid working, not just salary.</p></div>
+          <div class="csi-sidebar-stat" id="tk3"><a class="wsi-ts" href="https://youtu.be/ghOShodEj6s?t=860" data-t="860" target="_blank" rel="noopener">Watch from 14:20</a><p><strong>Hire remote talent with DICE.</strong> Look for Determination to overcome obstacles, Insights drawn from too much information, Curiosity to keep learning, and Engagement with empathy across every level and culture.</p></div>
+          <div class="csi-sidebar-stat" id="tk4"><a class="wsi-ts" href="https://youtu.be/ghOShodEj6s?t=1226" data-t="1226" target="_blank" rel="noopener">Watch from 20:26</a><p><strong>Think talent arbitrage, not labor arbitrage.</strong> Emerging markets are no longer just for cheaper labor. Oxford Economics found that in 2021, for the first time, the E7 had more university-educated people under 35 than the G7.</p></div>
+          <div class="csi-sidebar-stat" id="tk5"><a class="wsi-ts" href="https://youtu.be/ghOShodEj6s?t=1351" data-t="1351" target="_blank" rel="noopener">Watch from 22:31</a><p><strong>Plan compliance before you hire.</strong> Understand local contracts, statutory benefits, probation, severance and data rules. Check salary data across three or four sources before you make an offer.</p></div>
+          <div class="csi-sidebar-stat" id="tk6"><a class="wsi-ts" href="https://youtu.be/ghOShodEj6s?t=2086" data-t="2086" target="_blank" rel="noopener">Watch from 34:46</a><p><strong>HR's to-do list for a disrupted world.</strong> Reskilling, health and wellness, EQ training for leaders, a competency framework beyond the job, automation, updated rewards and remote-work policies aligned with IT.</p></div>
+        </div>
+      </section>
+
+      <section class="csi-section" id="covered">
+        <h2 class="csi-section-heading">What we covered</h2>
+        <p>Pick a time to play the recording from that moment, right here on the page.</p>
+        <div class="csi-hero-stats">
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/ghOShodEj6s?t=3" data-t="3" target="_blank" rel="noopener">00:03</a><div><h3>Introduction</h3><div class="csi-hero-stat-label">Searching for talent and skills in emerging markets.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/ghOShodEj6s?t=65" data-t="65" target="_blank" rel="noopener">01:05</a><div><h3>A polycrisis world</h3><div class="csi-hero-stat-label">The pandemic, the war in Ukraine and economic shocks, and what they mean for HR.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/ghOShodEj6s?t=187" data-t="187" target="_blank" rel="noopener">03:07</a><div><h3>Invest in brand equity</h3><div class="csi-hero-stat-label">How the balance of power shifted from employers to employees.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/ghOShodEj6s?t=312" data-t="312" target="_blank" rel="noopener">05:12</a><div><h3>The great resignation as an opportunity</h3><div class="csi-hero-stat-label">Why people reassessed their work, and moved abroad.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/ghOShodEj6s?t=495" data-t="495" target="_blank" rel="noopener">08:15</a><div><h3>Work without borders</h3><div class="csi-hero-stat-label">If a job can be done from Galle instead of Colombo, it can be done from another country.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/ghOShodEj6s?t=616" data-t="616" target="_blank" rel="noopener">10:16</a><div><h3>Mission, vision and values</h3><div class="csi-hero-stat-label">Why they need revisiting, and what candidates are looking for.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/ghOShodEj6s?t=800" data-t="800" target="_blank" rel="noopener">13:20</a><div><h3>Culture for remote teams</h3><div class="csi-hero-stat-label">Rethinking job descriptions and characteristics for remote work.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/ghOShodEj6s?t=860" data-t="860" target="_blank" rel="noopener">14:20</a><div><h3>The DICE model</h3><div class="csi-hero-stat-label">Determination, insights, curiosity and engagement.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/ghOShodEj6s?t=1043" data-t="1043" target="_blank" rel="noopener">17:23</a><div><h3>The human touch</h3><div class="csi-hero-stat-label">Building trust remotely, and G-P's internal shadow board.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/ghOShodEj6s?t=1165" data-t="1165" target="_blank" rel="noopener">19:25</a><div><h3>Talent arbitrage</h3><div class="csi-hero-stat-label">Why emerging markets now lead on young, educated talent.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/ghOShodEj6s?t=1351" data-t="1351" target="_blank" rel="noopener">22:31</a><div><h3>A robust hiring process</h3><div class="csi-hero-stat-label">Outsourcing, local laws, contracts, benefits and salary benchmarking.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/ghOShodEj6s?t=1534" data-t="1534" target="_blank" rel="noopener">25:34</a><div><h3>Where to research markets</h3><div class="csi-hero-stat-label">G-P's free Globalpedia, chambers of commerce, universities and investors.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/ghOShodEj6s?t=1655" data-t="1655" target="_blank" rel="noopener">27:35</a><div><h3>Audience Q&amp;A</h3><div class="csi-hero-stat-label">Return to office, moonlighting, HR policy and the great resignation.</div></div></div>
+        </div>
+      </section>
+
+      <section class="csi-section" id="qa">
+        <h2 class="csi-section-heading">Q&amp;A highlights</h2>
+        <div class="phr-faq">
+          <div class="phr-faq-item phr-faq-item--open">
+            <button type="button" class="phr-faq-item__trigger" aria-expanded="true">
+              Companies want people back in the office. Will remote work win in the end?
+              <span class="phr-faq-item__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#1565C0" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="phr-faq-item__body" style="max-height:none"><div class="phr-faq-item__body-inner">It depends, but the future of work is choice. Mix office and non-office days and let people choose what works for them. Many younger workers will come in for mentoring and connection, but if you mandate it, be ready to lose talent.</div></div>
+          </div>
+          <div class="phr-faq-item">
+            <button type="button" class="phr-faq-item__trigger" aria-expanded="false">
+              What are the legal risks when remote employees freelance on the side?
+              <span class="phr-faq-item__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#1565C0" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="phr-faq-item__body"><div class="phr-faq-item__body-inner">Manage on outcomes, not attendance. Protect yourself with non-compete, IP and conflict-of-interest clauses in a locally compliant contract, through your own entity, an employer of record or a reputable law firm. These are far easier to enforce with full-time employees than with freelancers.</div></div>
+          </div>
+          <div class="phr-faq-item">
+            <button type="button" class="phr-faq-item__trigger" aria-expanded="false">
+              Should HR document a policy on moonlighting?
+              <span class="phr-faq-item__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#1565C0" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="phr-faq-item__body"><div class="phr-faq-item__body-inner">Yes. If you don't document it, you can't enforce it. It is part of a wider list: reskilling, wellness, leadership EQ training, digitizing processes and aligning remote-work policies with IT.</div></div>
+          </div>
+          <div class="phr-faq-item">
+            <button type="button" class="phr-faq-item__trigger" aria-expanded="false">
+              Mid-level managers are leaving with years of knowledge. What can we do?
+              <span class="phr-faq-item__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#1565C0" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="phr-faq-item__body"><div class="phr-faq-item__body-inner">Document and digitize as much as you can, run knowledge-capture and mentoring programs, connect younger and older generations, and stay open to boomerang employees who regret leaving.</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="csi-section" id="next">
+        <div class="wb-cta-strip">
+          <div class="wb-cta-strip-text"><h3>Hire and pay people across borders with confidence</h3><p>Watch the full session, or talk to PeoplesHR about HR and payroll that stays compliant in every country you hire.</p></div>
+          <div class="wb-cta-strip-btns">
+            <a class="btn-primary" href="https://youtu.be/ghOShodEj6s" data-play>Watch the recording →</a>
+            <a class="cta-btn-ghost" href="/get-in-touch/">Book a demo</a>
+          </div>
+        </div>
+      </section>
+    </article>
+  </div></div>
+
+  <!-- More webinars: hand-picked recordings in the webinars page's card style.
+       Each links to that recording's summary page (summaryUrl in
+       js/webinar-delta.js). Copy titles, speakers and dates from that file
+       when swapping a card. -->
+  <section class="wsi-more"><div class="csi-container">
+    <div class="wb-rec-header">
+      <div class="wb-rec-title-block">
+        <div class="wb-rec-eyebrow">On-Demand</div>
+        <h2 class="wb-rec-h2">More webinars</h2>
+      </div>
+      <a class="wsi-more-all" href="/webinars/">See all webinars →</a>
+    </div>
+    <div class="wb-rec-grid">
+      <a class="wb-rec-card" href="/webinars/distributed-workforce-talent-mobility-summary/">
+        <div class="wb-rec-thumb">
+          <img src="https://img.youtube.com/vi/Opnd0QA7Tek/hqdefault.jpg" alt="" loading="lazy">
+          <span class="wb-preview-label">Preview</span>
+          <div class="wb-rec-thumb-inner"><div class="wb-rec-play"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 5l9 5-9 5V5z" fill="#2563eb"/></svg></div></div>
+        </div>
+        <div class="wb-rec-body">
+          <div class="wb-rec-meta">
+            <span class="wb-rec-cat-dot"><span style="width:6px;height:6px;border-radius:50%;background:#be185d;display:inline-block;"></span>HR &amp; People</span>
+            <div class="wb-rec-meta-right"><span class="wb-lang-badge">🇬🇧 English</span><span class="wb-rec-date-str">14 Nov 2024</span></div>
+          </div>
+          <div class="wb-rec-title">The Future of HR in a Distributed Workforce: Supercharging Global Talent Mobility with Technology</div>
+          <div class="wb-rec-footer">
+            <div class="wb-rec-speakers">
+            <div class="wb-rec-speaker"><img class="wb-rec-sp-av wb-rec-sp-photo" src="/uploads/2026/05/charlie_dyer.webp" alt="Charlie Dyer" loading="lazy"><div class="wb-rec-sp-info"><span class="wb-rec-sp-name">Charlie Dyer</span><span class="wb-rec-sp-role">Director, Product - Topia</span></div></div>
+            <div class="wb-rec-speaker"><div class="wb-rec-sp-av" style="background:#d1fae5;color:#065f46;">VW</div><div class="wb-rec-sp-info"><span class="wb-rec-sp-name">Vichalya Wijesuriya</span><span class="wb-rec-sp-role">Director Marketing, PeoplesHR</span></div></div>
+            </div>
+            <span class="wb-watch-btn">View summary <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5h6M5 2l3 3-3 3"/></svg></span>
+          </div>
+        </div>
+      </a>
+      <a class="wb-rec-card" href="/webinars/role-of-ai-in-hr-summary/">
+        <div class="wb-rec-thumb">
+          <img src="https://img.youtube.com/vi/wKQRUktg0Nw/hqdefault.jpg" alt="" loading="lazy">
+          <span class="wb-preview-label">Preview</span>
+          <div class="wb-rec-thumb-inner"><div class="wb-rec-play"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 5l9 5-9 5V5z" fill="#2563eb"/></svg></div></div>
+        </div>
+        <div class="wb-rec-body">
+          <div class="wb-rec-meta">
+            <span class="wb-rec-cat-dot"><span style="width:6px;height:6px;border-radius:50%;background:#be185d;display:inline-block;"></span>HR &amp; People</span>
+            <div class="wb-rec-meta-right"><span class="wb-lang-badge">🇬🇧 English</span><span class="wb-rec-date-str">28 Aug 2024</span></div>
+          </div>
+          <div class="wb-rec-title">The Role of AI in HR: Shaping Tomorrow's Workforce</div>
+          <div class="wb-rec-footer">
+            <div class="wb-rec-speakers">
+            <div class="wb-rec-speaker"><div class="wb-rec-sp-av" style="background:#fce7f3;color:#be185d;">TP</div><div class="wb-rec-sp-info"><span class="wb-rec-sp-name">Tarvinder Puri</span><span class="wb-rec-sp-role">Human Resources Director, ADP Advisory Services</span></div></div>
+            <div class="wb-rec-speaker"><img class="wb-rec-sp-av wb-rec-sp-photo" src="/uploads/2026/05/luxsho_logan.webp" alt="Luxsho Logan" loading="lazy"><div class="wb-rec-sp-info"><span class="wb-rec-sp-name">Luxsho Logan</span><span class="wb-rec-sp-role">Vice President, Sales - PeoplesHR</span></div></div>
+            </div>
+            <span class="wb-watch-btn">View summary <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5h6M5 2l3 3-3 3"/></svg></span>
+          </div>
+        </div>
+      </a>
+      <a class="wb-rec-card" href="/webinars/ai-reskilling-summary/">
+        <div class="wb-rec-thumb">
+          <img src="https://img.youtube.com/vi/LV-0qpcDQ_0/hqdefault.jpg" alt="" loading="lazy">
+          <span class="wb-preview-label">Preview</span>
+          <div class="wb-rec-thumb-inner"><div class="wb-rec-play"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 5l9 5-9 5V5z" fill="#2563eb"/></svg></div></div>
+        </div>
+        <div class="wb-rec-body">
+          <div class="wb-rec-meta">
+            <span class="wb-rec-cat-dot"><span style="width:6px;height:6px;border-radius:50%;background:#be185d;display:inline-block;"></span>HR &amp; People</span>
+            <div class="wb-rec-meta-right"><span class="wb-lang-badge">🇬🇧 English</span><span class="wb-rec-date-str">1 Sep 2026</span></div>
+          </div>
+          <div class="wb-rec-title">Why AI Reskilling Isn't Enough: A Practical Guide to Real Change</div>
+          <div class="wb-rec-footer">
+            <div class="wb-rec-speakers">
+            <div class="wb-rec-speaker"><img class="wb-rec-sp-av wb-rec-sp-photo" src="/uploads/2026/08/Eli.jpg" alt="Eli Harrell" loading="lazy"><div class="wb-rec-sp-info"><span class="wb-rec-sp-name">Eli Harrell</span><span class="wb-rec-sp-role">CEO, EmergePH</span></div></div>
+            <div class="wb-rec-speaker"><img class="wb-rec-sp-av wb-rec-sp-photo" src="/uploads/2026/06/manuel_ramos.webp" alt="Manuel Garcia-Ramos" loading="lazy"><div class="wb-rec-sp-info"><span class="wb-rec-sp-name">Manuel Garcia-Ramos</span><span class="wb-rec-sp-role">Country Director – Philippines, PeoplesHR</span></div></div>
+            </div>
+            <span class="wb-watch-btn">View summary <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5h6M5 2l3 3-3 3"/></svg></span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div></section>
+
+  <!-- Pop-up player: the webinars page's own modal styles (wb-modal-*) -->
+  <div class="wb-modal-backdrop" id="wsi-vm" role="dialog" aria-modal="true" aria-labelledby="wsi-vm-t">
+    <div class="wb-modal-box">
+      <button class="wb-modal-close" id="wsi-vm-x" type="button" aria-label="Close player">✕</button>
+      <div class="wb-modal-iframe-wrap"><iframe id="wsi-vm-if" title="Webinar recording" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+      <div class="wb-modal-title"><span id="wsi-vm-t">How to Search for Talent Skills in Emerging Markets</span> · <a id="wsi-vm-yt" href="https://youtu.be/ghOShodEj6s" target="_blank" rel="noopener">Watch on YouTube ↗</a></div>
+    </div>
+  </div>
+</main>
+
+<!-- footer start -->
+<?php include __DIR__ . '/../inc/footer.php'; ?>
+<!-- footer end -->
+
+<script src="<?php echo asset_v('/js/phr.js'); ?>"></script>
+<script src="<?php echo asset_v('/js/navbar.js'); ?>"></script>
+<script src="https://js-na2.hsforms.net/forms/embed/45700506.js" defer></script>
+<script src="<?php echo asset_v('/js/webinar-summary.js'); ?>"></script>
+
+</body>
+</html>

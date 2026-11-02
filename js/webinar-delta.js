@@ -32,7 +32,8 @@
             { "initials": "SM", "name": "Shawn Moses", "role": "Product Marketing Manager, PeoplesHR", "photo": "/uploads/2026/05/shawn_moses.webp", "color": "#e0f2fe", "textColor": "#0369a1" },
             { "initials": "AW", "name": "Aloka Weerawardane", "role": "Asst. Manager, Customer & Partner Marketing, PeoplesHR", "photo": "/uploads/2026/08/aloka-weerawardane-peopleshr.webp", "color": "#dbeafe", "textColor": "#2563eb" }
           ],
-          "watchUrl": "https://youtu.be/SrGdn9PUBlk"
+          "watchUrl": "https://youtu.be/SrGdn9PUBlk",
+          "summaryUrl": "/webinars/peopleshr-v10-3-summary/"
         },
         {
           "id": "rec-20",
@@ -44,10 +45,11 @@
           "youtubeId": "Ux9xORrEvkc",
           "thumbnailGradient": "linear-gradient(135deg,#1e3a8a,#7c3aed)",
           "speakers": [
-            { "initials": "IM", "name": "Iono Mendoza", "role": "CEO & Co-founder, Amorsolo Consulting", "photo": "/uploads/2026/06/iona_mendoza.webp", "color": "#ede9fe", "textColor": "#7c3aed" },
+            { "initials": "IM", "name": "Ioni Mendoza", "role": "CEO & Co-founder, Amorsolo Consulting", "photo": "/uploads/2026/06/iona_mendoza.webp", "color": "#ede9fe", "textColor": "#7c3aed" },
             { "initials": "MG", "name": "Manolo Garcia-Ramos", "role": "Country Director – Philippines, PeoplesHR", "photo": "/uploads/2026/06/manuel_ramos.webp", "color": "#dbeafe", "textColor": "#2563eb" }
           ],
-          "watchUrl": "https://youtu.be/Ux9xORrEvkc"
+          "watchUrl": "https://youtu.be/Ux9xORrEvkc",
+          "summaryUrl": "/webinars/agentic-ai-in-hr-summary/"
         },
         {
           "id": "rec-0",
@@ -61,7 +63,8 @@
           "speakers": [
             { "initials": "SM", "name": "Shawn Moses", "role": "Product Marketing Manager, PeoplesHR", "photo": "/uploads/2026/05/shawn_moses.webp", "color": "#e0f2fe", "textColor": "#0369a1" }
           ],
-          "watchUrl": "https://youtu.be/lBM73hj9Vfg"
+          "watchUrl": "https://youtu.be/lBM73hj9Vfg",
+          "summaryUrl": "/webinars/ai-intelligence-c-suite-summary/"
         },
         {
           "id": "rec-7",
@@ -75,7 +78,8 @@
           "speakers": [
             { "initials": "RS", "name": "Riyazi Samsudeen", "role": "Director Sales & Partner Management, PeoplesHR", "photo": "/uploads/2026/05/riyazi_samsudeen.webp", "color": "#ffedd5", "textColor": "#c2410c" }
           ],
-          "watchUrl": "https://youtu.be/StNpoZbNjVs"
+          "watchUrl": "https://youtu.be/StNpoZbNjVs",
+          "summaryUrl": "/webinars/everywhereworkforce-summary/"
         },
         {
           "id": "rec-8",
@@ -89,7 +93,8 @@
           "speakers": [
             { "initials": "SD", "name": "Sri Rejeki", "role": "Head of HR, PT Metrodata Electronics", "photo": "/uploads/2026/05/sri_rejeki.webp", "color": "#ccfbf1", "textColor": "#0f766e" }
           ],
-          "watchUrl": "https://youtu.be/iCLkCzA_EdE"
+          "watchUrl": "https://youtu.be/iCLkCzA_EdE",
+          "summaryUrl": "/webinars/ai-in-hr-hype-to-impact-summary/"
         },
         {
           "id": "rec-11",
@@ -103,7 +108,8 @@
           "speakers": [
             { "initials": "AG", "name": "Asitha Goonewardena", "role": "Chief Product Owner, PeoplesHR", "photo": "/uploads/2026/05/asitha_goonewardana.webp", "color": "#ffedd5", "textColor": "#c2410c" }
           ],
-          "watchUrl": "https://www.youtube.com/watch?v=cAbGKlIRjkQ"
+          "watchUrl": "https://www.youtube.com/watch?v=cAbGKlIRjkQ",
+          "summaryUrl": "/webinars/people-analytics-summary/"
         }
       ]
     },
@@ -123,7 +129,8 @@
           "speakers": [
             { "initials": "GA", "name": "Gustia R. Anasril", "role": "Chief HRGS Officer, Muliabara Group", "photo": "/uploads/2026/08/Gustia.jpeg", "color": "#ede9fe", "textColor": "#7c3aed" }
           ],
-          "watchUrl": "https://youtu.be/a9JBUMstgHg"
+          "watchUrl": "https://youtu.be/a9JBUMstgHg",
+          "summaryUrl": "/webinars/ai-in-hr-transformation-at-scale-summary/"
         },
         {
           "id": "rec-22",
@@ -138,7 +145,8 @@
             { "initials": "EH", "name": "Eli Harrell", "role": "CEO, EmergePH", "photo": "/uploads/2026/08/Eli.jpg", "color": "#dbeafe", "textColor": "#2563eb" },
             { "initials": "MG", "name": "Manuel Garcia-Ramos", "role": "Country Director – Philippines, PeoplesHR", "photo": "/uploads/2026/06/manuel_ramos.webp", "color": "#dbeafe", "textColor": "#2563eb" }
           ],
-          "watchUrl": "https://youtu.be/LV-0qpcDQ_0"
+          "watchUrl": "https://youtu.be/LV-0qpcDQ_0",
+          "summaryUrl": "/webinars/ai-reskilling-summary/"
         },
         {
           "id": "rec-19",
@@ -152,7 +160,8 @@
           "speakers": [
             { "initials": "MW", "name": "Marcino Waas", "role": "HR Technology Strategist & Digital Employee Journey Architect, Pratesis", "photo": "/uploads/2026/05/marcino_waas.webp", "color": "#dbeafe", "textColor": "#2563eb" }
           ],
-          "watchUrl": "https://youtu.be/HcNrcX5XKPk"
+          "watchUrl": "https://youtu.be/HcNrcX5XKPk",
+          "summaryUrl": "/webinars/resource-triangle-hr-roi-summary/"
         },
         {
           "id": "rec-9",
@@ -166,7 +175,8 @@
           "speakers": [
             { "initials": "RN", "name": "Dr. Rully C. Hamdani Nawawi, SP., MBA, CHRP", "role": "Director - PT Hutama Mandiri Cipta", "color": "#ede9fe", "textColor": "#7c3aed" }
           ],
-          "watchUrl": "https://youtu.be/E3hYTxXqLDQ"
+          "watchUrl": "https://youtu.be/E3hYTxXqLDQ",
+          "summaryUrl": "/webinars/talent-in-the-age-of-ai-summary/"
         },
         {
           "id": "rec-12",
@@ -181,7 +191,8 @@
             { "initials": "CD", "name": "Charlie Dyer", "role": "Director, Product - Topia", "photo": "/uploads/2026/05/charlie_dyer.webp", "color": "#dbeafe", "textColor": "#2563eb" },
             { "initials": "VW", "name": "Vichalya Wijesuriya", "role": "Director Marketing, PeoplesHR", "color": "#d1fae5", "textColor": "#065f46" }
           ],
-          "watchUrl": "https://youtu.be/Opnd0QA7Tek"
+          "watchUrl": "https://youtu.be/Opnd0QA7Tek",
+          "summaryUrl": "/webinars/distributed-workforce-talent-mobility-summary/"
         },
         {
           "id": "rec-13",
@@ -196,7 +207,8 @@
             { "initials": "TP", "name": "Tarvinder Puri", "role": "Human Resources Director, ADP Advisory Services", "color": "#fce7f3", "textColor": "#be185d" },
             { "initials": "LL", "name": "Luxsho Logan", "role": "Vice President, Sales - PeoplesHR", "photo": "/uploads/2026/05/luxsho_logan.webp", "color": "#ede9fe", "textColor": "#7c3aed" }
           ],
-          "watchUrl": "https://www.youtube.com/watch?v=wKQRUktg0Nw"
+          "watchUrl": "https://www.youtube.com/watch?v=wKQRUktg0Nw",
+          "summaryUrl": "/webinars/role-of-ai-in-hr-summary/"
         },
         {
           "id": "rec-14",
@@ -211,7 +223,8 @@
             { "initials": "LL", "name": "Luxsho Logan", "role": "Vice President, Sales - PeoplesHR", "photo": "/uploads/2026/05/luxsho_logan.webp", "color": "#ede9fe", "textColor": "#7c3aed" },
             { "initials": "KA", "name": "Dr. Kwame Annor", "role": "Senior HR Practitioner", "photo": "/uploads/2026/05/kwame_annor.webp", "color": "#fef9c3", "textColor": "#854d0e" }
           ],
-          "watchUrl": "https://www.youtube.com/watch?v=WZ8jdOzlhnk"
+          "watchUrl": "https://www.youtube.com/watch?v=WZ8jdOzlhnk",
+          "summaryUrl": "/webinars/ai-in-hr-friend-or-foe-summary/"
         },
         {
           "id": "rec-15",
@@ -225,7 +238,8 @@
           "speakers": [
             { "initials": "MG", "name": "Maheshi Gamage", "role": "Asst. Vice President, HR - Nations Trust Bank PLC", "photo": "/uploads/2026/05/maheshi_gamage.webp", "color": "#ccfbf1", "textColor": "#0f766e" }
           ],
-          "watchUrl": "https://www.youtube.com/watch?v=3tc7z2Bekps"
+          "watchUrl": "https://www.youtube.com/watch?v=3tc7z2Bekps",
+          "summaryUrl": "/webinars/ai-prompts-in-hr-summary/"
         },
         {
           "id": "rec-16",
@@ -239,7 +253,8 @@
           "speakers": [
             { "initials": "LL", "name": "Luxsho Logan", "role": "Vice President, Sales - PeoplesHR", "photo": "/uploads/2026/05/luxsho_logan.webp", "color": "#ede9fe", "textColor": "#7c3aed" }
           ],
-          "watchUrl": "https://www.youtube.com/watch?v=P0j0D4oUebc"
+          "watchUrl": "https://www.youtube.com/watch?v=P0j0D4oUebc",
+          "summaryUrl": "/webinars/ai-influence-on-hr-2024-summary/"
         },
         {
           "id": "rec-17",
@@ -253,7 +268,8 @@
           "speakers": [
             { "initials": "CF", "name": "Charles H. Ferguson", "role": "General Manager - APAC, Globalization Partners", "photo": "/uploads/2026/05/charles_ferguson.webp", "color": "#f0fdf4", "textColor": "#15803d" }
           ],
-          "watchUrl": "https://www.youtube.com/watch?v=ghOShodEj6s"
+          "watchUrl": "https://www.youtube.com/watch?v=ghOShodEj6s",
+          "summaryUrl": "/webinars/talent-in-emerging-markets-summary/"
         }
       ]
     },
@@ -274,7 +290,8 @@
             { "initials": "KG", "name": "Kapila Gajapala", "role": "Director, PeoplesHR Tracking", "color": "#fef3c7", "textColor": "#b45309" },
             { "initials": "MP", "name": "Mahinda Pathirana", "role": "Chief Information Security Officer, PeoplesHR", "photo": "/uploads/2026/10/mahinda_pathirana.webp", "color": "#dbeafe", "textColor": "#2563eb" }
           ],
-          "watchUrl": "https://youtu.be/pNKSu-Fp_BA"
+          "watchUrl": "https://youtu.be/pNKSu-Fp_BA",
+          "summaryUrl": "/webinars/compliance-data-governance-risk-clinic-summary/"
         },
         {
           "id": "rec-10",
@@ -289,7 +306,8 @@
             { "initials": "GP", "name": "Gigs P. Patano", "role": "", "color": "#fef9c3", "textColor": "#854d0e" },
             { "initials": "RS", "name": "Riyazi Samsudeen", "role": "Director Sales & Partner Management, PeoplesHR", "photo": "/uploads/2026/05/riyazi_samsudeen.webp", "color": "#ffedd5", "textColor": "#c2410c" }
           ],
-          "watchUrl": "https://www.youtube.com/watch?v=oVoOESPejnM"
+          "watchUrl": "https://www.youtube.com/watch?v=oVoOESPejnM",
+          "summaryUrl": "/webinars/philippines-payroll-summary/"
         },
         {
           "id": "rec-18",
@@ -304,7 +322,8 @@
             { "initials": "AG", "name": "Asitha Goonewardena", "role": "Chief Product Owner, PeoplesHR", "photo": "/uploads/2026/05/asitha_goonewardana.webp", "color": "#ffedd5", "textColor": "#c2410c" },
             { "initials": "RS", "name": "Riyazi Samsudeen", "role": "Director Sales & Partner Management, PeoplesHR", "photo": "/uploads/2026/05/riyazi_samsudeen.webp", "color": "#ffedd5", "textColor": "#c2410c" }
           ],
-          "watchUrl": "https://www.youtube.com/watch?v=mR7ll4k29h0"
+          "watchUrl": "https://www.youtube.com/watch?v=mR7ll4k29h0",
+          "summaryUrl": "/webinars/future-proof-payroll-summary/"
         }
       ]
     }
@@ -471,7 +490,7 @@ function renderRecordings(recordings) {
         : '';
 
       return `
-      <div class="wb-rec-card" id="${v.id}"${v.gated ? ' data-gated="1"' : ''}${v.youtubeId ? ` data-ytid="${v.youtubeId}" data-title="${v.title.replace(/"/g, '&quot;')}"` : ' data-pending="1"'}>
+      <div class="wb-rec-card" id="${v.id}"${v.summaryUrl ? ` data-summary="${v.summaryUrl}"` : ''}${v.gated ? ' data-gated="1"' : ''}${v.youtubeId ? ` data-ytid="${v.youtubeId}" data-title="${v.title.replace(/"/g, '&quot;')}"` : ' data-pending="1"'}>
         <div class="wb-rec-thumb" style="${thumbStyle}${v.gated ? 'filter:brightness(.7);' : ''}">
           ${youtubeThumb}
           ${v.gated
@@ -498,7 +517,7 @@ function renderRecordings(recordings) {
           <div class="wb-rec-footer">
             <div class="wb-rec-speakers">${speakersHTML}</div>
             ${v.youtubeId
-              ? `<button class="wb-watch-btn">Watch ${ICON_MINI_ARR}</button>`
+              ? `<button class="wb-watch-btn">${v.summaryUrl ? 'View summary' : 'Watch'} ${ICON_MINI_ARR}</button>`
               : `<span class="wb-watch-btn" style="opacity:.55;">Coming soon</span>`}
           </div>
         </div>
@@ -753,13 +772,20 @@ function buildGateForm() {
 function unlockGatedVideo() {
   closeGateModal();
   if (_gatePending) {
-    openVideoModal(_gatePending.youtubeId, _gatePending.title);
+    const { youtubeId, title, summaryUrl } = _gatePending;
     _gatePending = null;
+    if (summaryUrl) {
+      // The summary page reads this flag and skips its own gate
+      try { localStorage.setItem('wsi-unlocked:' + youtubeId, '1'); } catch (e) {}
+      location.href = summaryUrl;
+    } else {
+      openVideoModal(youtubeId, title);
+    }
   }
 }
 
-function openGateModal(youtubeId, title) {
-  _gatePending = { youtubeId, title };
+function openGateModal(youtubeId, title, summaryUrl) {
+  _gatePending = { youtubeId, title, summaryUrl };
   document.getElementById('wb-gate-modal').classList.add('open');
   document.body.style.overflow = 'hidden';
   buildGateForm();
@@ -800,9 +826,13 @@ async function init() {
     // Wire up video + gate modals
     renderModal();
     renderGateModal();
+    // Recordings with a summary page go there (it has the player). Members-only
+    // ones show the gate form first and go to the summary once it's submitted.
     const openRecording = recCard => {
       if (recCard.dataset.gated) {
-        openGateModal(recCard.dataset.ytid, recCard.dataset.title);
+        openGateModal(recCard.dataset.ytid, recCard.dataset.title, recCard.dataset.summary);
+      } else if (recCard.dataset.summary) {
+        location.href = recCard.dataset.summary;
       } else {
         openVideoModal(recCard.dataset.ytid, recCard.dataset.title);
       }
@@ -813,7 +843,7 @@ async function init() {
     });
 
     // Deep link to one recording: /webinars/#rec-10 scrolls to its card and
-    // opens it (blog posts link here). The cards are rendered after the
+    // opens it, or its summary page (blog posts link here). The cards are rendered after the
     // browser's own jump to the hash, so do it ourselves.
     const openFromHash = () => {
       const id = decodeURIComponent(location.hash.slice(1));
