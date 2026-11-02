@@ -1,0 +1,5 @@
+<?php
+// /webinars/ must keep serving webinars.html now that a webinars/ folder exists
+// (the folder holds the webinar summary pages, e.g. /webinars/everywhereworkforce-summary/).
+// Without this file Apache would treat /webinars/ as an empty folder and return 403.
+require __DIR__ . '/../webinars.html';

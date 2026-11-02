@@ -1,0 +1,689 @@
+<?php require_once __DIR__ . '/../inc/geo.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agentic AI in HR: What Leaders Need to Know | PeoplesHR Webinar</title>
+  <meta name="description" content="Webinar summary: what agentic AI is, real HR use cases, the governance questions every leader must answer, common traps, and Lexi AI in PeoplesHR." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://peopleshr.com/webinars/agentic-ai-in-hr-summary/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="PeoplesHR" />
+  <meta property="og:title" content="Agentic AI in HR: what every leader needs to know today" />
+  <meta property="og:description" content="Webinar summary: what agentic AI is, real HR use cases, the governance questions every leader must answer, common traps, and Lexi AI in PeoplesHR." />
+  <meta property="og:url" content="https://peopleshr.com/webinars/agentic-ai-in-hr-summary/" />
+  <meta property="og:image" content="https://img.youtube.com/vi/Ux9xORrEvkc/maxresdefault.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Agentic AI in HR: what every leader needs to know today" />
+  <meta name="twitter:description" content="Webinar summary: what agentic AI is, real HR use cases, the governance questions every leader must answer, common traps, and Lexi AI in PeoplesHR." />
+  <meta name="twitter:image" content="https://img.youtube.com/vi/Ux9xORrEvkc/maxresdefault.jpg" />
+
+  <?php $phrCrumbName = 'Agentic AI in HR: webinar summary'; include __DIR__ . '/../inc/seo-schema.php'; ?>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Agentic AI in HR: What Every Leader Needs to Know Today",
+  "description": "Ioni Mendoza of Amorsolo Consulting explains agentic AI, its HR use cases, governance questions and common pitfalls. Manolo Garcia-Ramos of PeoplesHR shows how Lexi AI applies it to recruitment and workforce intelligence.",
+  "thumbnailUrl": "https://img.youtube.com/vi/Ux9xORrEvkc/maxresdefault.jpg",
+  "uploadDate": "2026-06-23",
+  "duration": "PT1H7M52S",
+  "embedUrl": "https://www.youtube.com/embed/Ux9xORrEvkc",
+  "contentUrl": "https://youtu.be/Ux9xORrEvkc",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "PeoplesHR",
+    "url": "https://peopleshr.com/"
+  }
+}
+  </script>
+
+  <link rel="stylesheet" href="<?php echo asset_v('/css/styles.css'); ?>" />
+  <link rel="stylesheet" href="<?php echo asset_v('/css/navbar.css'); ?>" />
+  <link rel="stylesheet" href="<?php echo asset_v('/css/footer.css'); ?>" />
+  <link rel="stylesheet" href="<?php echo asset_v('/css/casestudies.css'); ?>" />
+  <link rel="stylesheet" href="<?php echo asset_v('/css/webinar-summary.css'); ?>" />
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/45700506.js"></script>
+  <!-- End of HubSpot Embed Code -->
+  <?php include __DIR__ . '/../inc/ga4.php'; ?>
+  <?php include __DIR__ . '/../inc/geo-head.php'; ?>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <link rel="describedby" href="/llms.txt" type="text/markdown">
+</head>
+
+<body class="webinar-page">
+
+
+
+<div class="nv-root">
+
+  <!-- ============================= NAVBAR ============================= -->
+  <header class="nv-bar" id="nvBar">
+    <div class="nv-inner">
+
+      <a class="nv-logo" href="/" aria-label="PeoplesHR home">
+        <img src="/uploads/2021/07/logo.webp" alt="PeoplesHR">
+      </a>
+
+      <nav aria-label="Primary">
+        <ul class="nv-menu" id="nvMenu">
+
+          <!-- PRODUCTS (mega) -->
+          <li class="nv-item has-mega" data-nv="dropdown">
+            <a class="nv-link" href="/products/" aria-expanded="false" aria-haspopup="true">
+              Products
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-mega">
+                  <div class="nv-grid">
+                    <div class="nv-tile">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/HRIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>HR</b><span>The foundation that actually thinks</span></span>
+                      <a href="/products/core-hr/" class="lqd-overlay z-index-2" target="_self" aria-label="HR"></a>
+                    </div>
+                    <a class="nv-tile" href="/products/payroll-system/">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/PayIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>Pay</b><span>Globally compliant, less complicated</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/talent-acquisition/">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/TalentIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>Talent</b><span>Hiring smarter, not harder</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/time-and-attendance/">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/TimeIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>Time</b><span>Beyond clock watching</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/people-engagement/">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/EngagementIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>Engagement</b><span>Engagement beyond annual surveys</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/people-analytics/">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/InsightsIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>Insight</b><span>Intelligence that drives action</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/mobile-app/">
+                      <span class="nv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2.4"/><path d="M11 18h2"/></svg></span>
+                      <span class="nv-tt"><b>Mobile App</b><span>Work happens everywhere</span></span>
+                    </a>
+                  </div>
+                  <div class="nv-mega-foot">
+                    <p><b>Meet Lexi — PeoplesHR AI</b>Turn any HR action into a simple conversation.</p>
+                    <a class="nv-ghost" href="/ai-x/">
+                      Explore PeoplesHR AI
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- SOLUTIONS (mega columns) -->
+          <li class="nv-item has-mega" data-nv="dropdown">
+            <a class="nv-link" href="/solutions/" aria-expanded="false" aria-haspopup="true">
+              Solutions
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card">
+                  <div class="nv-cols">
+                    <div class="nv-col">
+                      <p class="nv-eyebrow">Industries</p>
+                      <ul class="nv-list">
+                        <li><a href="/solutions/banking-finance-insurance-industries/">Banking, Finance &amp; Insurance<small>Compliance, accuracy and control</small></a></li>
+                        <li><a href="/solutions/hr-software-for-hospitality-industry/">Hospitality<small>Control labour costs across every shift</small></a></li>
+                        <li><a href="/solutions/hr-software-for-manufacturing-industry/">Manufacturing<small>Keep your production lines moving</small></a></li>
+                        <li><a href="/solutions/hr-software-for-professional-and-business-services-industry/">Professional &amp; Business Services<small>Scales with projects, clients and people</small></a></li>
+                        <li><a href="/solutions/hr-software-for-retail-industry/">Retail<small>Keep stores staffed and on target</small></a></li>
+                        <li><a href="/solutions/hr-software-for-it-and-ites-industry/">IT &amp; ITES<small>Connected, compliant teams anywhere</small></a></li>
+                        <li><a href="/solutions/hr-software-for-transportation-and-logistics-industry/">Transportation &amp; Logistics<small>Moves as fast as your fleet</small></a></li>
+                      </ul>
+                    </div>
+                    <div class="nv-col">
+                      <p class="nv-eyebrow">By Role</p>
+                      <ul class="nv-list">
+                        <li><a href="/solutions/chro/">People Strategy Leaders<small>When the board asks about ROI</small></a></li>
+                        <li><a href="/solutions/cfo/">Financial Strategy Leaders<small>When the numbers finally add up</small></a></li>
+                        <li><a href="/solutions/cio/">Technology Strategy Leaders<small>Technology that works with you</small></a></li>
+                      </ul>
+                    </div>
+                    <div class="nv-col">
+                      <p class="nv-eyebrow">Specialized Solutions</p>
+                      <ul class="nv-list">
+                        <li><a href="/solutions/peopleshr-academy/">PeoplesHR Academy<small>Master PeoplesHR, transform operations</small></a></li>
+                        <li><a href="/solutions/outsourcing/">Payroll Outsourcing<small>Accuracy, compliance &amp; cost savings</small></a></li>
+                        <li><a href="/solutions/peopleshr-tracking/">Access & Attendance Devices<small>Secure your workforce &amp; assets</small></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- CUSTOMERS (direct) -->
+          <li class="nv-item">
+            <a class="nv-link" href="/customers/">Customers</a>
+          </li>
+
+          <!-- RESOURCES (simple) -->
+          <li class="nv-item has-simple" data-nv="dropdown">
+            <button class="nv-link" aria-expanded="false" aria-haspopup="true">
+              Resources
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-simple">
+                  <ul class="nv-list">
+                    <li><a href="/customers/">Case Studies<small>Transformative journeys</small></a></li>
+                    <li><a href="/webinars/">Webinars<small>Learn from the HR experts</small></a></li>
+                    <li><a href="/blog/">Blog<small>Insights, stories and updates</small></a></li>
+                    <li><a href="/events/">Events<small>Insights and networking</small></a></li>
+                    <li><a href="/hr-ebooks-and-guides/">HR eBooks &amp; Guides<small>Build your HR knowledge</small></a></li>
+                    <li><a href="/news/">News<small>Latest from PeoplesHR</small></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- COMPANY (simple) -->
+          <li class="nv-item has-simple" data-nv="dropdown">
+            <button class="nv-link" aria-expanded="false" aria-haspopup="true">
+              Company
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-simple">
+                  <ul class="nv-list">
+                    <li><a href="/company/">About PeoplesHR<small>Our journey as an HR powerhouse</small></a></li>
+                    <li><a href="/careers/">Careers<small>Thrive in your career at PeoplesHR</small></a></li>
+                    <li><a href="/community/">Community<small>Your hub for the HR landscape</small></a></li>
+                    <li><a href="/partner-with-peopleshr/">Partners<small>Unlock endless growth</small></a></li>
+                    <li><a href="/regions/">Regions<small>Growth across APAC and MEA</small></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- PRICING (dropdown) -->
+          <li class="nv-item has-simple" data-nv="dropdown">
+            <a class="nv-link" href="/view-plans/" aria-expanded="false" aria-haspopup="true">
+              Pricing
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-simple nv-card--wide">
+                  <ul class="nv-list">
+                    <li><a href="/view-plans/">View Pricing Plans<small>Plans built around your team's size</small></a></li>
+                  </ul>
+                  <a class="nv-promo-tile" href="/roi-calculator/">
+                    <span class="nv-promo-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/></svg>
+                    </span>
+                    <span class="nv-promo-text">
+                      <b>PeoplesHR ROI Calculator</b>
+                      <span>Run the Numbers. Let the ROI Speak. Instant, clear results tailored for your business.</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- INTERACTIVE DEMOS (direct + badge) -->
+          <li class="nv-item">
+            <a class="nv-link" href="/interactive-demos/">
+              Interactive Demos
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <div class="nv-actions">
+        <a class="nv-cta" href="/get-in-touch/">Request a Demo</a>
+        <button class="nv-burger" id="nvBurger" aria-label="Open menu" aria-expanded="false"><span></span></button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ===================== ANNOUNCEMENT BAR ===================== -->
+  <div class="nv-ann" id="nvAnn" role="region" aria-label="Site announcement">
+    <div class="nv-ann-inner">
+      <span class="nv-ann-badge">New</span>
+      <p class="nv-ann-text">PeoplesHR now comes in three clear packages for you to know exactly what you're buying &#x1F4B8;
+        <a href="/view-plans/">View Packages
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </p>
+      <button class="nv-ann-close" id="nvAnnClose" aria-label="Dismiss announcement">&times;</button>
+    </div>
+  </div>
+
+  <!-- ===================== MOBILE PANEL ===================== -->
+  <div class="nv-scrim" id="nvScrim"></div>
+  <aside class="nv-panel" id="nvPanel" aria-label="Mobile menu" aria-hidden="true">
+    <div class="nv-panel-head">
+      <img src="/uploads/2021/07/logo.webp" alt="PeoplesHR">
+      <button class="nv-close" id="nvClose" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="nv-panel-body">
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Products
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/products/core-hr/">HR</a>
+          <a href="/products/payroll-system/">Pay</a>
+          <a href="/products/talent-acquisition/">Talent</a>
+          <a href="/products/time-and-attendance/">Time</a>
+          <a href="/products/people-engagement/">Engagement</a>
+          <a href="/products/people-analytics/">Insight</a>
+          <a href="/products/mobile-app/">Mobile App</a>
+          <a href="/ai-x/">Explore PeoplesHR AI</a>
+        </div></div>
+      </div>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Solutions
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <p class="nv-sub-label">Industries</p>
+          <a href="/solutions/banking-finance-insurance-industries/">Banking, Finance &amp; Insurance</a>
+          <a href="/solutions/hr-software-for-hospitality-industry/">Hospitality</a>
+          <a href="/solutions/hr-software-for-manufacturing-industry/">Manufacturing</a>
+          <a href="/solutions/hr-software-for-professional-and-business-services-industry/">Professional &amp; Business Services</a>
+          <a href="/solutions/hr-software-for-retail-industry/">Retail</a>
+          <a href="/solutions/hr-software-for-it-and-ites-industry/">IT &amp; ITES</a>
+          <a href="/solutions/hr-software-for-transportation-and-logistics-industry/">Transportation &amp; Logistics</a>
+          <p class="nv-sub-label">By Role</p>
+          <a href="/solutions/chro/">People Strategy Leaders</a>
+          <a href="/solutions/cfo/">Financial Strategy Leaders</a>
+          <a href="/solutions/cio/">Technology Strategy Leaders</a>
+          <p class="nv-sub-label">Specialized Solutions</p>
+          <a href="/solutions/peopleshr-academy/">PeoplesHR Academy</a>
+          <a href="/solutions/outsourcing/">Payroll Outsourcing</a>
+          <a href="/solutions/peopleshr-tracking/">Access & Attendance Devices</a>
+        </div></div>
+      </div>
+
+      <a class="nv-mlink" href="/customers/">Customers</a>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Resources
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/customers/">Case Studies</a>
+          <a href="/webinars/">Webinars</a>
+          <a href="/blog/">Blog</a>
+          <a href="/events/">Events</a>
+          <a href="/hr-ebooks-and-guides/">HR eBooks &amp; Guides</a>
+          <a href="/news/">News</a>
+        </div></div>
+      </div>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Company
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/company/">About PeoplesHR</a>
+          <a href="/careers/">Careers</a>
+          <a href="/community/">Community</a>
+          <a href="/partner-with-peopleshr/">Partners</a>
+          <a href="/regions/">Regions</a>
+        </div></div>
+      </div>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Pricing
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/view-plans/">View Pricing Plans</a>
+          <a href="/roi-calculator/">PeoplesHR ROI Calculator</a>
+        </div></div>
+      </div>
+
+      <a class="nv-mlink" href="/interactive-demos/">Interactive Demos</a>
+
+    </div>
+    <div class="nv-panel-foot">
+      <a class="nv-cta" href="/get-in-touch/">Request a Demo</a>
+    </div>
+  </aside>
+
+</div><!-- /.nv-root -->
+
+<!-- Page-only additions for the webinar summary (test build).
+     The shell comes from casestudies.css (csi-*), the player from wb-modal-*,
+     the CTA from wb-cta-strip, Q&A from faq-*, stories from csi-download-cta.
+     Below are only the pieces the site has no existing style for. -->
+
+<!-- ============ WEBINAR SUMMARY (rec-20) ============
+     Built from the webinars/everywhereworkforce-summary.html template; styles in
+     css/webinar-summary.css, behaviour in js/webinar-summary.js.
+     data-gated: "false" = open webinar (no form). "true" = members-only:
+     2-min preview (data-preview-start/end) + HubSpot gate form. -->
+<main class="wsi-page" id="top" data-yt="Ux9xORrEvkc" data-gated="false" data-preview-start="0" data-preview-end="0">
+
+  <div class="wsi-band">
+    <div class="csi-back-wrap"><div class="csi-container">
+      <a href="/webinars/" class="csi-back-link"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true"><path d="M9 3L4.5 7.5 9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Back to webinars</a>
+    </div></div>
+    <header class="csi-header"><div class="csi-container">
+      <div class="csi-eyebrow">WEBINAR SUMMARY · PRODUCT</div>
+      <h1 class="csi-title"><span class="wsi-hl">From answers to action:</span> what agentic AI means for HR, and the questions to answer before you switch it on</h1>
+      <div class="wsi-spec">
+        <div><span class="csi-meta-label">FORMAT</span><b>On-demand webinar</b></div>
+        <div><span class="csi-meta-label">LENGTH</span><b>68 min</b></div>
+        <div><span class="csi-meta-label">CONDUCTED ON</span><b>Tue, 23 June 2026</b></div>
+        <div><span class="csi-meta-label">LANGUAGE</span><b>English</b></div>
+        <div>
+          <button type="button" class="wsi-st" data-gate="open" data-vid="0">● Free to watch ▶</button>
+        </div>
+      </div>
+    </div></header>
+  </div>
+
+  <section class="csi-hero"><div class="csi-container">
+    <div class="csi-hero-grid">
+      <div>
+        <button type="button" class="csi-hero-img-card wsi-cover" data-gate="open" data-vid="0" aria-label="Play the full recording">
+          <img class="csi-hero-cover-img" src="https://img.youtube.com/vi/Ux9xORrEvkc/maxresdefault.jpg" alt="Agentic AI in HR: What Every Leader Needs to Know Today" width="1280" height="720">
+          <span class="wsi-pills"><span>Free to watch</span><span>68 min</span></span>
+          <span class="wsi-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 20 20"><path d="M7 5l9 5-9 5V5z" fill="#2563eb"/></svg></span>
+        </button>
+      </div>
+      <div class="csi-hero-aside">
+        <p class="csi-hero-desc">Ioni Mendoza, CEO of Amorsolo Consulting, explains in plain terms how agentic AI differs from the AI tools HR already uses, where it helps across the employee lifecycle, and the governance questions to settle first. Manolo Garcia-Ramos then shows Lexi AI in PeoplesHR finding recruitment bottlenecks and overtime hotspots in seconds.</p>
+        <div>
+          <div class="csi-meta-label">WATCH THE RECORDING AND LEARN HOW TO</div>
+          <div class="csi-hero-stats">
+            <div class="csi-hero-stat"><p class="wsi-learn">1. Tell agentic AI apart from chatbots and RPA</p></div>
+            <div class="csi-hero-stat"><p class="wsi-learn">2. Answer the governance questions before you deploy</p></div>
+            <div class="csi-hero-stat"><p class="wsi-learn">3. Spot hiring bottlenecks and overtime risks in seconds</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div></section>
+
+  <div class="csi-body"><div class="csi-container csi-body-inner">
+    <aside class="csi-sidebar"><div class="csi-sidebar-sticky">
+      <div class="wreg-cover-speakers wsi-speakers">
+        <div class="csi-toc-heading">SPEAKERS</div>
+        <div class="wreg-speaker">
+          <img class="wreg-speaker-av" src="/uploads/2026/06/iona_mendoza.webp" alt="Ioni Mendoza" loading="lazy">
+          <div class="wreg-speaker-info">
+            <div class="wreg-speaker-name">Ioni Mendoza</div>
+            <div class="wreg-speaker-role">CEO &amp; Co-founder, Amorsolo Consulting</div>
+          </div>
+        </div>
+        <div class="wreg-speaker">
+          <img class="wreg-speaker-av" src="/uploads/2026/06/manuel_ramos.webp" alt="Manolo Garcia-Ramos" loading="lazy">
+          <div class="wreg-speaker-info">
+            <div class="wreg-speaker-name">Manolo Garcia-Ramos</div>
+            <div class="wreg-speaker-role">Country Director – Philippines, PeoplesHR</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="csi-meta-block">
+        <div class="csi-toc-heading">IS THIS SESSION FOR YOU?</div>
+        <div class="csi-meta-group wsi-meta-wide"><span class="csi-meta-label">FOR</span><span class="csi-meta-value">CEOs, CHROs and HR managers deciding how and when to adopt agentic AI</span></div><div class="csi-meta-rule"></div>
+        <div class="csi-meta-group"><span class="csi-meta-label">COUNTRY</span><span class="csi-meta-value">🇵🇭 Philippines</span></div><div class="csi-meta-rule"></div>
+        <div class="csi-meta-group"><span class="csi-meta-label">LANGUAGE</span><span class="csi-meta-value">English</span></div><div class="csi-meta-rule"></div>
+        <div class="csi-meta-group wsi-meta-wide"><span class="csi-meta-label">PRODUCT</span><span class="wsi-tags"><span class="wsi-tag--insights"><img src="/uploads/2026/07/InsightsIcon.webp" alt="" width="16" height="16">Lexi AI</span><span class="wsi-tag--talent"><img src="/uploads/2026/07/TalentIcon.webp" alt="" width="16" height="16">Talent</span><span class="wsi-tag--hr"><img src="/uploads/2026/07/HRIcon.webp" alt="" width="16" height="16">HR</span><span>Self-service</span></span></div>
+      </div>
+
+    </div></aside>
+
+    <article class="csi-article">
+      <section class="csi-section" id="takeaways">
+        <h2 class="csi-section-heading">Key takeaways</h2>
+        <div class="wsi-grid">
+          <div class="csi-sidebar-stat" id="tk1"><a class="wsi-ts" href="https://youtu.be/Ux9xORrEvkc?t=307" data-t="307" target="_blank" rel="noopener">Watch from 05:07</a><p><strong>Doing nothing has a hidden cost.</strong> Early adopters are already building the learning curve and data advantage. As Ioni put it, AI won’t replace HR leaders, but HR leaders who use AI will replace those who don’t.</p></div>
+          <div class="csi-sidebar-stat" id="tk2"><a class="wsi-ts" href="https://youtu.be/Ux9xORrEvkc?t=491" data-t="491" target="_blank" rel="noopener">Watch from 08:11</a><p><strong>Agentic AI takes a goal, not a prompt.</strong> Ask for "three shortlisted candidates interviewed by Monday" and it posts the job, screens and assesses applicants, and books interviews around the manager’s calendar, adapting if someone can’t make it.</p></div>
+          <div class="csi-sidebar-stat" id="tk3"><a class="wsi-ts" href="https://youtu.be/Ux9xORrEvkc?t=1105" data-t="1105" target="_blank" rel="noopener">Watch from 18:25</a><p><strong>From reactive reports to early signals.</strong> Ioni's example: four stress-related leaves in one team, heavy overtime, 14 direct reports and no check-in for 60 days. Spotting the pattern lets HR step in before people leave.</p></div>
+          <div class="csi-sidebar-stat" id="tk4"><a class="wsi-ts" href="https://youtu.be/Ux9xORrEvkc?t=1289" data-t="1289" target="_blank" rel="noopener">Watch from 21:29</a><p><strong>Three governance questions come first.</strong> Who is accountable for each decision, and which ones are high-risk? Where does a human stay in the loop? Is your data clean? With AI it is no longer garbage in, garbage out, but garbage in, landfill out.</p></div>
+          <div class="csi-sidebar-stat" id="tk5"><a class="wsi-ts" href="https://youtu.be/Ux9xORrEvkc?t=1475" data-t="1475" target="_blank" rel="noopener">Watch from 24:35</a><p><strong>Avoid the common traps.</strong> Full autonomy too early, dirty data, settling for easy wins, no governance, unchecked bias, and no data processing agreement under the Data Privacy Act and National Privacy Commission rules.</p></div>
+          <div class="csi-sidebar-stat" id="tk6"><a class="wsi-ts" href="https://youtu.be/Ux9xORrEvkc?t=2584" data-t="2584" target="_blank" rel="noopener">Watch from 43:04</a><p><strong>Lexi is built inside PeoplesHR.</strong> Lexi Insights answers leadership questions from your own data, while Smart Navigator and Super Agent help employees find things and get them done. Unlike ChatGPT, it knows your organization.</p></div>
+        </div>
+      </section>
+
+      <section class="csi-section" id="covered">
+        <h2 class="csi-section-heading">What we covered</h2>
+        <p>Pick a time to play the recording from that moment, right here on the page.</p>
+        <div class="csi-hero-stats">
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/Ux9xORrEvkc?t=0" data-t="0" target="_blank" rel="noopener">00:00</a><div><h3>Welcome and agenda</h3><div class="csi-hero-stat-label">Why agentic AI is a now conversation, not a future one.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/Ux9xORrEvkc?t=184" data-t="184" target="_blank" rel="noopener">03:04</a><div><h3>Meet Ioni Mendoza</h3><div class="csi-hero-stat-label">Three decades in HR, and the human layer AI needs.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/Ux9xORrEvkc?t=246" data-t="246" target="_blank" rel="noopener">04:06</a><div><h3>The landscape</h3><div class="csi-hero-stat-label">Adoption forecasts, and the compounding cost of waiting.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/Ux9xORrEvkc?t=368" data-t="368" target="_blank" rel="noopener">06:08</a><div><h3>What agentic AI is</h3><div class="csi-hero-stat-label">A smart intern versus an experienced recruiting coordinator.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/Ux9xORrEvkc?t=675" data-t="675" target="_blank" rel="noopener">11:15</a><div><h3>How it fits your tech ecosystem</h3><div class="csi-hero-stat-label">A smart layer on top of HR, finance, IT and other systems.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/Ux9xORrEvkc?t=799" data-t="799" target="_blank" rel="noopener">13:19</a><div><h3>Use cases: recruitment and onboarding</h3><div class="csi-hero-stat-label">Faster shortlisting and onboarding that adapts to each new hire.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/Ux9xORrEvkc?t=921" data-t="921" target="_blank" rel="noopener">15:21</a><div><h3>Use case: performance management</h3><div class="csi-hero-stat-label">Less chasing, fewer spreadsheets and flagged outliers.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/Ux9xORrEvkc?t=1045" data-t="1045" target="_blank" rel="noopener">17:25</a><div><h3>Use case: employee self-service</h3><div class="csi-hero-stat-label">Sick-leave questions answered and actioned, even in Filipino.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/Ux9xORrEvkc?t=1105" data-t="1105" target="_blank" rel="noopener">18:25</a><div><h3>Use case: workforce intelligence</h3><div class="csi-hero-stat-label">Connecting leave, overtime and span of control before people burn out.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/Ux9xORrEvkc?t=1289" data-t="1289" target="_blank" rel="noopener">21:29</a><div><h3>Three governance questions</h3><div class="csi-hero-stat-label">Accountability, human in the loop, and clean data.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/Ux9xORrEvkc?t=1475" data-t="1475" target="_blank" rel="noopener">24:35</a><div><h3>Common traps and how to avoid them</h3><div class="csi-hero-stat-label">From full autonomy too early to missing data agreements.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/Ux9xORrEvkc?t=1720" data-t="1720" target="_blank" rel="noopener">28:40</a><div><h3>Agentic AI versus RPA</h3><div class="csi-hero-stat-label">Learning and adapting versus fixed rules.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/Ux9xORrEvkc?t=1781" data-t="1781" target="_blank" rel="noopener">29:41</a><div><h3>Your HRIS is the foundation</h3><div class="csi-hero-stat-label">Why an HRIS decision is now an AI-readiness decision.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/Ux9xORrEvkc?t=1904" data-t="1904" target="_blank" rel="noopener">31:44</a><div><h3>Q&amp;A with Ioni</h3><div class="csi-hero-stat-label">Jobs, privacy, getting started and candidate fraud.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/Ux9xORrEvkc?t=2398" data-t="2398" target="_blank" rel="noopener">39:58</a><div><h3>AI is only as good as its data</h3><div class="csi-hero-stat-label">Manolo Garcia-Ramos on building foundation and intelligence together.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/Ux9xORrEvkc?t=2584" data-t="2584" target="_blank" rel="noopener">43:04</a><div><h3>Meet Lexi</h3><div class="csi-hero-stat-label">Lexi Insights, Smart Navigator and Super Agent.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/Ux9xORrEvkc?t=2770" data-t="2770" target="_blank" rel="noopener">46:10</a><div><h3>Lexi in recruitment</h3><div class="csi-hero-stat-label">Parsing CVs, scoring candidates and scheduling interviews.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/Ux9xORrEvkc?t=2954" data-t="2954" target="_blank" rel="noopener">49:14</a><div><h3>Finding recruitment bottlenecks</h3><div class="csi-hero-stat-label">Offer-stage and acceptance rates, and candidates waiting too long.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/Ux9xORrEvkc?t=3014" data-t="3014" target="_blank" rel="noopener">50:14</a><div><h3>Which teams carry the overtime?</h3><div class="csi-hero-stat-label">An answer for the CFO in seconds, not days.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/Ux9xORrEvkc?t=3200" data-t="3200" target="_blank" rel="noopener">53:20</a><div><h3>What is the AI built on?</h3><div class="csi-hero-stat-label">Domain expertise and your own data, not a generic model.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/Ux9xORrEvkc?t=3322" data-t="3322" target="_blank" rel="noopener">55:22</a><div><h3>About Amorsolo Consulting</h3><div class="csi-hero-stat-label">Advisory, fractional HR and an upcoming HR foundation playbook.</div></div></div>
+          <div class="csi-hero-stat wsi-ch"><a class="wsi-ts" href="https://youtu.be/Ux9xORrEvkc?t=3658" data-t="3658" target="_blank" rel="noopener">60:58</a><div><h3>Audience Q&amp;A</h3><div class="csi-hero-stat-label">Languages, salary benchmarking, data agreements and Lexi versus ChatGPT.</div></div></div>
+        </div>
+      </section>
+
+      <section class="csi-section" id="qa">
+        <h2 class="csi-section-heading">Q&amp;A highlights</h2>
+        <div class="phr-faq">
+          <div class="phr-faq-item phr-faq-item--open">
+            <button type="button" class="phr-faq-item__trigger" aria-expanded="true">
+              Is agentic AI going to replace HR professionals?
+              <span class="phr-faq-item__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#1565C0" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="phr-faq-item__body" style="max-height:none"><div class="phr-faq-item__body-inner">No. It takes over the repetitive work so HR can grow its data literacy, co-lead AI governance with legal, IT and finance, and handle the sensitive people issues and negotiations nobody wants to leave to AI.</div></div>
+          </div>
+          <div class="phr-faq-item">
+            <button type="button" class="phr-faq-item__trigger" aria-expanded="false">
+              How is the organization's privacy protected when we use AI agents?
+              <span class="phr-faq-item__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#1565C0" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="phr-faq-item__body"><div class="phr-faq-item__body-inner">Stay compliant with the Philippines' Data Privacy Act and National Privacy Commission circulars, make sure your vendor is compliant too, and back it with your own internal policies.</div></div>
+          </div>
+          <div class="phr-faq-item">
+            <button type="button" class="phr-faq-item__trigger" aria-expanded="false">
+              How do we get started with agentic AI in HR?
+              <span class="phr-faq-item__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#1565C0" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="phr-faq-item__body"><div class="phr-faq-item__body-inner">Be honest about whether your data is clean and your policies and workflows are in place. Pilot it in one workflow, usually recruitment, and build the ROI case to win sponsorship from leadership.</div></div>
+          </div>
+          <div class="phr-faq-item">
+            <button type="button" class="phr-faq-item__trigger" aria-expanded="false">
+              How long does it take to implement?
+              <span class="phr-faq-item__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#1565C0" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="phr-faq-item__body"><div class="phr-faq-item__body-inner">Typically 8 to 12 weeks, depending on the complexity of your operation. A strong data foundation makes it quicker; fragmented data takes longer.</div></div>
+          </div>
+          <div class="phr-faq-item">
+            <button type="button" class="phr-faq-item__trigger" aria-expanded="false">
+              Can AI check candidate authenticity and prevent fraud?
+              <span class="phr-faq-item__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#1565C0" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="phr-faq-item__body"><div class="phr-faq-item__body-inner">Keep a background-check step in your workflow. Do not rely on AI to decide alone; identify where a human or specialist check has to step in.</div></div>
+          </div>
+          <div class="phr-faq-item">
+            <button type="button" class="phr-faq-item__trigger" aria-expanded="false">
+              Is Lexi available in Filipino?
+              <span class="phr-faq-item__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#1565C0" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="phr-faq-item__body"><div class="phr-faq-item__body-inner">Yes. Lexi is multilingual and works in Filipino and Tagalog, as well as Bisaya and Hiligaynon. The team has tested Kapampangan too.</div></div>
+          </div>
+          <div class="phr-faq-item">
+            <button type="button" class="phr-faq-item__trigger" aria-expanded="false">
+              Can AI compare our salaries with similar industries?
+              <span class="phr-faq-item__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#1565C0" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="phr-faq-item__body"><div class="phr-faq-item__body-inner">Connecting to external data sources to compare salary competitiveness is on the PeoplesHR product roadmap.</div></div>
+          </div>
+          <div class="phr-faq-item">
+            <button type="button" class="phr-faq-item__trigger" aria-expanded="false">
+              Could we start with AI before signing a data processing agreement?
+              <span class="phr-faq-item__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#1565C0" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="phr-faq-item__body"><div class="phr-faq-item__body-inner">You can explore and plan on solid fundamentals, but deployment always needs a data processing agreement and employee consent under the law.</div></div>
+          </div>
+          <div class="phr-faq-item">
+            <button type="button" class="phr-faq-item__trigger" aria-expanded="false">
+              How is Lexi different from asking ChatGPT about HR data?
+              <span class="phr-faq-item__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#1565C0" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="phr-faq-item__body"><div class="phr-faq-item__body-inner">ChatGPT knows nothing about your organization beyond the files you give it. Lexi answers from your own payroll, attendance and headcount data, and keeps that knowledge when people leave. Don't feed employee data into public AI tools.</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="csi-section" id="stories">
+        <h2 class="csi-section-heading">Resources from the session</h2>
+        <div class="csi-download-cta">
+          <div class="csi-download-text"><div class="csi-download-eyebrow">TOOL · ROI</div><div class="csi-download-heading">PeoplesHR ROI Calculator</div><div class="csi-download-body">Build the business case for HR automation and AI before you pitch it to leadership.</div></div>
+          <a class="csi-download-btn" href="/roi-calculator/">Try the calculator →</a>
+        </div>
+      </section>
+
+      <section class="csi-section" id="next">
+        <div class="wb-cta-strip">
+          <div class="wb-cta-strip-text"><h3>See Lexi work on your own HR data</h3><p>Watch the full session, or book a personalized walkthrough of Lexi Insights, Smart Navigator and Super Agent.</p></div>
+          <div class="wb-cta-strip-btns">
+            <a class="btn-primary" href="https://youtu.be/Ux9xORrEvkc" data-play>Watch the recording →</a>
+            <a class="cta-btn-ghost" href="/get-in-touch/">Book a demo</a>
+          </div>
+        </div>
+      </section>
+    </article>
+  </div></div>
+
+  <!-- More webinars: hand-picked recordings in the webinars page's card style.
+       Each links to that recording's summary page (summaryUrl in
+       js/webinar-delta.js). Copy titles, speakers and dates from that file
+       when swapping a card. -->
+  <section class="wsi-more"><div class="csi-container">
+    <div class="wb-rec-header">
+      <div class="wb-rec-title-block">
+        <div class="wb-rec-eyebrow">On-Demand</div>
+        <h2 class="wb-rec-h2">More webinars</h2>
+      </div>
+      <a class="wsi-more-all" href="/webinars/">See all webinars →</a>
+    </div>
+    <div class="wb-rec-grid">
+      <a class="wb-rec-card" href="/webinars/#rec-21">
+        <div class="wb-rec-thumb" style="filter:brightness(.7);">
+          <img src="https://img.youtube.com/vi/SrGdn9PUBlk/hqdefault.jpg" alt="" loading="lazy">
+          <span class="wb-preview-label wb-gated-label"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Members only</span>
+          <div class="wb-rec-thumb-inner"><div class="wb-rec-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div></div>
+        </div>
+        <div class="wb-rec-body">
+          <div class="wb-rec-meta">
+            <span class="wb-rec-cat-dot"><span style="width:6px;height:6px;border-radius:50%;background:#2563eb;display:inline-block;"></span>Product</span>
+            <div class="wb-rec-meta-right"><span class="wb-lang-badge">🇬🇧 English</span><span class="wb-rec-date-str">19 Aug 2026</span></div>
+          </div>
+          <div class="wb-rec-title">PeoplesHR v10.3: People Intelligence, Wherever You Are</div>
+          <div class="wb-rec-footer">
+            <div class="wb-rec-speakers">
+            <div class="wb-rec-speaker"><img class="wb-rec-sp-av wb-rec-sp-photo" src="/uploads/2026/05/shawn_moses.webp" alt="Shawn Moses" loading="lazy"><div class="wb-rec-sp-info"><span class="wb-rec-sp-name">Shawn Moses</span><span class="wb-rec-sp-role">Product Marketing Manager, PeoplesHR</span></div></div>
+            <div class="wb-rec-speaker"><img class="wb-rec-sp-av wb-rec-sp-photo" src="/uploads/2026/08/aloka-weerawardane-peopleshr.webp" alt="Aloka Weerawardane" loading="lazy"><div class="wb-rec-sp-info"><span class="wb-rec-sp-name">Aloka Weerawardane</span><span class="wb-rec-sp-role">Asst. Manager, Customer &amp; Partner Marketing, PeoplesHR</span></div></div>
+            </div>
+            <span class="wb-watch-btn">View summary <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5h6M5 2l3 3-3 3"/></svg></span>
+          </div>
+        </div>
+      </a>
+      <a class="wb-rec-card" href="/webinars/ai-intelligence-c-suite-summary/">
+        <div class="wb-rec-thumb">
+          <img src="https://img.youtube.com/vi/lBM73hj9Vfg/hqdefault.jpg" alt="" loading="lazy">
+          <span class="wb-preview-label">Preview</span>
+          <div class="wb-rec-thumb-inner"><div class="wb-rec-play"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 5l9 5-9 5V5z" fill="#2563eb"/></svg></div></div>
+        </div>
+        <div class="wb-rec-body">
+          <div class="wb-rec-meta">
+            <span class="wb-rec-cat-dot"><span style="width:6px;height:6px;border-radius:50%;background:#2563eb;display:inline-block;"></span>Product</span>
+            <div class="wb-rec-meta-right"><span class="wb-lang-badge">🇬🇧 English</span><span class="wb-rec-date-str">19 May 2026</span></div>
+          </div>
+          <div class="wb-rec-title">The AI Intelligence Your C-Suite Needs</div>
+          <div class="wb-rec-footer">
+            <div class="wb-rec-speakers">
+            <div class="wb-rec-speaker"><img class="wb-rec-sp-av wb-rec-sp-photo" src="/uploads/2026/05/shawn_moses.webp" alt="Shawn Moses" loading="lazy"><div class="wb-rec-sp-info"><span class="wb-rec-sp-name">Shawn Moses</span><span class="wb-rec-sp-role">Product Marketing Manager, PeoplesHR</span></div></div>
+            </div>
+            <span class="wb-watch-btn">View summary <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5h6M5 2l3 3-3 3"/></svg></span>
+          </div>
+        </div>
+      </a>
+      <a class="wb-rec-card" href="/webinars/ai-reskilling-summary/">
+        <div class="wb-rec-thumb">
+          <img src="https://img.youtube.com/vi/LV-0qpcDQ_0/hqdefault.jpg" alt="" loading="lazy">
+          <span class="wb-preview-label">Preview</span>
+          <div class="wb-rec-thumb-inner"><div class="wb-rec-play"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 5l9 5-9 5V5z" fill="#2563eb"/></svg></div></div>
+        </div>
+        <div class="wb-rec-body">
+          <div class="wb-rec-meta">
+            <span class="wb-rec-cat-dot"><span style="width:6px;height:6px;border-radius:50%;background:#be185d;display:inline-block;"></span>HR &amp; People</span>
+            <div class="wb-rec-meta-right"><span class="wb-lang-badge">🇬🇧 English</span><span class="wb-rec-date-str">1 Sep 2026</span></div>
+          </div>
+          <div class="wb-rec-title">Why AI Reskilling Isn't Enough: A Practical Guide to Real Change</div>
+          <div class="wb-rec-footer">
+            <div class="wb-rec-speakers">
+            <div class="wb-rec-speaker"><img class="wb-rec-sp-av wb-rec-sp-photo" src="/uploads/2026/08/Eli.jpg" alt="Eli Harrell" loading="lazy"><div class="wb-rec-sp-info"><span class="wb-rec-sp-name">Eli Harrell</span><span class="wb-rec-sp-role">CEO, EmergePH</span></div></div>
+            <div class="wb-rec-speaker"><img class="wb-rec-sp-av wb-rec-sp-photo" src="/uploads/2026/06/manuel_ramos.webp" alt="Manuel Garcia-Ramos" loading="lazy"><div class="wb-rec-sp-info"><span class="wb-rec-sp-name">Manuel Garcia-Ramos</span><span class="wb-rec-sp-role">Country Director – Philippines, PeoplesHR</span></div></div>
+            </div>
+            <span class="wb-watch-btn">View summary <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5h6M5 2l3 3-3 3"/></svg></span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div></section>
+
+  <!-- Pop-up player: the webinars page's own modal styles (wb-modal-*) -->
+  <div class="wb-modal-backdrop" id="wsi-vm" role="dialog" aria-modal="true" aria-labelledby="wsi-vm-t">
+    <div class="wb-modal-box">
+      <button class="wb-modal-close" id="wsi-vm-x" type="button" aria-label="Close player">✕</button>
+      <div class="wb-modal-iframe-wrap"><iframe id="wsi-vm-if" title="Webinar recording" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+      <div class="wb-modal-title"><span id="wsi-vm-t">Agentic AI in HR: What Every Leader Needs to Know Today</span> · <a id="wsi-vm-yt" href="https://youtu.be/Ux9xORrEvkc" target="_blank" rel="noopener">Watch on YouTube ↗</a></div>
+    </div>
+  </div>
+</main>
+
+<!-- footer start -->
+<?php include __DIR__ . '/../inc/footer.php'; ?>
+<!-- footer end -->
+
+<script src="<?php echo asset_v('/js/phr.js'); ?>"></script>
+<script src="<?php echo asset_v('/js/navbar.js'); ?>"></script>
+<script src="https://js-na2.hsforms.net/forms/embed/45700506.js" defer></script>
+<script src="<?php echo asset_v('/js/webinar-summary.js'); ?>"></script>
+
+</body>
+</html>
