@@ -76,7 +76,7 @@
           "youtubeId": "StNpoZbNjVs",
           "thumbnailGradient": "linear-gradient(135deg,#1e40af,#3b82f6)",
           "speakers": [
-            { "initials": "RS", "name": "Riyazi Samsudeen", "role": "Director Sales & Partner Management, PeoplesHR", "photo": "/uploads/2026/05/riyazi_samsudeen.webp", "color": "#ffedd5", "textColor": "#c2410c" }
+            { "initials": "RS", "name": "Riyazi Samsudeen", "role": "Former Director Sales & Partner Management, PeoplesHR", "photo": "/uploads/2026/05/riyazi_samsudeen.webp", "color": "#ffedd5", "textColor": "#c2410c" }
           ],
           "watchUrl": "https://youtu.be/StNpoZbNjVs",
           "summaryUrl": "/webinars/everywhereworkforce-summary/"
@@ -304,7 +304,7 @@
           "thumbnailGradient": "linear-gradient(135deg,#78350f,#f59e0b)",
           "speakers": [
             { "initials": "GP", "name": "Gigs P. Patano", "role": "", "color": "#fef9c3", "textColor": "#854d0e" },
-            { "initials": "RS", "name": "Riyazi Samsudeen", "role": "Director Sales & Partner Management, PeoplesHR", "photo": "/uploads/2026/05/riyazi_samsudeen.webp", "color": "#ffedd5", "textColor": "#c2410c" }
+            { "initials": "RS", "name": "Riyazi Samsudeen", "role": "Former Director Sales & Partner Management, PeoplesHR", "photo": "/uploads/2026/05/riyazi_samsudeen.webp", "color": "#ffedd5", "textColor": "#c2410c" }
           ],
           "watchUrl": "https://www.youtube.com/watch?v=oVoOESPejnM",
           "summaryUrl": "/webinars/philippines-payroll-summary/"
@@ -320,7 +320,7 @@
           "thumbnailGradient": "linear-gradient(135deg,#78350f,#f59e0b)",
           "speakers": [
             { "initials": "AG", "name": "Asitha Goonewardena", "role": "Former Chief Product Owner, PeoplesHR", "photo": "/uploads/2026/05/asitha_goonewardana.webp", "color": "#ffedd5", "textColor": "#c2410c" },
-            { "initials": "RS", "name": "Riyazi Samsudeen", "role": "Director Sales & Partner Management, PeoplesHR", "photo": "/uploads/2026/05/riyazi_samsudeen.webp", "color": "#ffedd5", "textColor": "#c2410c" }
+            { "initials": "RS", "name": "Riyazi Samsudeen", "role": "Former Director Sales & Partner Management, PeoplesHR", "photo": "/uploads/2026/05/riyazi_samsudeen.webp", "color": "#ffedd5", "textColor": "#c2410c" }
           ],
           "watchUrl": "https://www.youtube.com/watch?v=mR7ll4k29h0",
           "summaryUrl": "/webinars/future-proof-payroll-summary/"
