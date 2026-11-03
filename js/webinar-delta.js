@@ -205,7 +205,7 @@
           "thumbnailGradient": "linear-gradient(135deg,#7c2d12,#f97316)",
           "speakers": [
             { "initials": "TP", "name": "Tarvinder Puri", "role": "Human Resources Director, ADP Advisory Services", "color": "#fce7f3", "textColor": "#be185d" },
-            { "initials": "LL", "name": "Luxsho Logan", "role": "Vice President, Sales - PeoplesHR", "photo": "/uploads/2026/05/luxsho_logan.webp", "color": "#ede9fe", "textColor": "#7c3aed" }
+            { "initials": "LL", "name": "Luxsho Logan", "role": "Former Vice President, Sales - PeoplesHR", "photo": "/uploads/2026/05/luxsho_logan.webp", "color": "#ede9fe", "textColor": "#7c3aed" }
           ],
           "watchUrl": "https://www.youtube.com/watch?v=wKQRUktg0Nw",
           "summaryUrl": "/webinars/role-of-ai-in-hr-summary/"
@@ -220,7 +220,7 @@
           "youtubeId": "WZ8jdOzlhnk",
           "thumbnailGradient": "linear-gradient(135deg,#581c87,#a855f7)",
           "speakers": [
-            { "initials": "LL", "name": "Luxsho Logan", "role": "Vice President, Sales - PeoplesHR", "photo": "/uploads/2026/05/luxsho_logan.webp", "color": "#ede9fe", "textColor": "#7c3aed" },
+            { "initials": "LL", "name": "Luxsho Logan", "role": "Former Vice President, Sales - PeoplesHR", "photo": "/uploads/2026/05/luxsho_logan.webp", "color": "#ede9fe", "textColor": "#7c3aed" },
             { "initials": "KA", "name": "Dr. Kwame Annor", "role": "Senior HR Practitioner", "photo": "/uploads/2026/05/kwame_annor.webp", "color": "#fef9c3", "textColor": "#854d0e" }
           ],
           "watchUrl": "https://www.youtube.com/watch?v=WZ8jdOzlhnk",
@@ -251,7 +251,7 @@
           "youtubeId": "P0j0D4oUebc",
           "thumbnailGradient": "linear-gradient(135deg,#1e3a8a,#60a5fa)",
           "speakers": [
-            { "initials": "LL", "name": "Luxsho Logan", "role": "Vice President, Sales - PeoplesHR", "photo": "/uploads/2026/05/luxsho_logan.webp", "color": "#ede9fe", "textColor": "#7c3aed" }
+            { "initials": "LL", "name": "Luxsho Logan", "role": "Former Vice President, Sales - PeoplesHR", "photo": "/uploads/2026/05/luxsho_logan.webp", "color": "#ede9fe", "textColor": "#7c3aed" }
           ],
           "watchUrl": "https://www.youtube.com/watch?v=P0j0D4oUebc",
           "summaryUrl": "/webinars/ai-influence-on-hr-2024-summary/"
