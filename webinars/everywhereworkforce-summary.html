@@ -388,12 +388,11 @@
       <h1 class="csi-title"><span class="wsi-hl">Empower, don't centralize:</span> how mobile HR reaches the frontline teams who never sit at a desk</h1>
       <div class="wsi-spec">
         <div><span class="csi-meta-label">FORMAT</span><b>On-demand webinar</b></div>
-        <div><span class="csi-meta-label">LENGTH</span><b>36 min</b></div>
-        <div><span class="csi-meta-label">CONDUCTED ON</span><b>Fri, 10 April 2026</b></div>
+        <div><span class="csi-meta-label">CONDUCTED ON</span><b>Friday, 10 April 2026</b></div>
         <div><span class="csi-meta-label">LANGUAGE</span><b>English</b></div>
         <div>
           <button type="button" class="wsi-st" data-gate="open" data-vid="0">● Free to watch ▶</button>
-          <button type="button" class="wsi-st wsi-st--lock" data-gate="form" data-vid="637" data-end="757" data-label="2-min preview: 7:00 AM, a factory in Laguna" hidden>🔒 Locked · 2-min preview</button>
+          <button type="button" class="wsi-st wsi-st--lock" data-gate="form" data-preview data-vid="637" data-end="757" data-label="2-min preview: 7:00 AM, a factory in Laguna" hidden>🔒 Locked · 2-min preview</button>
         </div>
       </div>
     </div></header>
@@ -404,22 +403,16 @@
       <div>
         <button type="button" class="csi-hero-img-card wsi-cover" data-gate="open" data-vid="0" aria-label="Play the full recording">
           <img class="csi-hero-cover-img" src="https://img.youtube.com/vi/StNpoZbNjVs/maxresdefault.jpg" alt="The EverywhereWorkforce: A Live Look at HR Tech Built for Mobility" width="1280" height="720">
-          <span class="wsi-pills"><span>Free to watch</span><span>36 min</span></span>
+          <span class="wsi-pills"><span>Free to watch</span></span>
           <span class="wsi-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 20 20"><path d="M7 5l9 5-9 5V5z" fill="#2563eb"/></svg></span>
         </button>
         <div data-gate="form" hidden>
-          <button type="button" class="csi-hero-img-card wsi-cover" data-vid="637" data-end="757" data-label="2-min preview: 7:00 AM, a factory in Laguna" aria-label="Watch the 2-minute preview">
-            <img class="csi-hero-cover-img" src="https://img.youtube.com/vi/StNpoZbNjVs/maxresdefault.jpg" alt="" loading="lazy">
-            <span class="wsi-pills"><span>▶ Watch 2-min preview</span><span>🔒 Full session 36 min</span></span>
-            <span class="wsi-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 20 20"><path d="M7 5l9 5-9 5V5z" fill="#2563eb"/></svg></span>
-          </button>
-          <div class="csi-download-cta">
-            <div class="csi-download-text">
-              <h3 class="dg-gate-title">Unlock This Recording</h3>
-              <p class="dg-gate-sub">Fill in your details to watch the full session. Takeaways, chapters and Q&amp;A on this page stay open.</p>
-              <!-- Same HubSpot gate form the webinars page uses (marketing to confirm). -->
-              <div class="hs-form-frame" data-region="na2" data-form-id="93181f13-b063-4e09-a572-345dbda4b062" data-portal-id="45700506"></div>
-            </div>
+          <div class="wsi-cover-wrap">
+            <button type="button" class="csi-hero-img-card wsi-cover" data-vid="0" aria-label="Unlock the full recording">
+              <img class="csi-hero-cover-img" src="https://img.youtube.com/vi/StNpoZbNjVs/maxresdefault.jpg" alt="" loading="lazy">
+              <span class="wsi-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 20 20"><path d="M7 5l9 5-9 5V5z" fill="#2563eb"/></svg></span>
+            </button>
+            <span class="wsi-pills"><button type="button" data-preview data-vid="637" data-end="757" data-label="2-min preview: 7:00 AM, a factory in Laguna">▶ Watch 2-min preview</button><span>🔒 Full session</span></span>
           </div>
         </div>
       </div>
@@ -641,6 +634,23 @@
       <div class="wb-modal-title"><span id="wsi-vm-t">The EverywhereWorkforce: A Live Look at HR Tech Built for Mobility</span> · <a id="wsi-vm-yt" href="https://youtu.be/StNpoZbNjVs" target="_blank" rel="noopener">Watch on YouTube ↗</a></div>
     </div>
   </div>
+  <!-- Members-only gate: pops up when a play button is used before the form is filled. -->
+  <div class="dg-gate-overlay" id="wsi-gm" role="dialog" aria-modal="true" aria-labelledby="wsi-gm-t">
+    <div class="dg-gate-card">
+      <button type="button" class="dg-gate-close" id="wsi-gm-x" aria-label="Close">&#x2715;</button>
+      <div class="dg-gate-header">
+        <div class="dg-gate-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <h3 class="dg-gate-title" id="wsi-gm-t">Unlock This Recording</h3>
+        <p class="dg-gate-sub">Fill in your details to watch the full session. Takeaways, chapters and Q&amp;A on this page stay open.</p>
+      </div>
+      <!-- Same HubSpot gate form the webinars page uses; built by webinar-summary.js on first open. -->
+      <div class="wsi-gm-body"><div>
+        <div class="dg-gate-loading" id="wsi-gm-loading"><div class="dg-gate-spinner"></div>Loading form&hellip;</div>
+        <div id="wsi-gm-form"></div>
+      </div></div>
+    </div>
+  </div>
+
 </main>
 
 <!-- footer start -->

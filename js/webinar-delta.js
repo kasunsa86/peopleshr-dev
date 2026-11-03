@@ -826,13 +826,13 @@ async function init() {
     // Wire up video + gate modals
     renderModal();
     renderGateModal();
-    // Recordings with a summary page go there (it has the player). Members-only
-    // ones show the gate form first and go to the summary once it's submitted.
+    // Recordings with a summary page go there (it has the player), members-only
+    // ones too: their summary page asks for the gate form when a video is played.
     const openRecording = recCard => {
-      if (recCard.dataset.gated) {
-        openGateModal(recCard.dataset.ytid, recCard.dataset.title, recCard.dataset.summary);
-      } else if (recCard.dataset.summary) {
+      if (recCard.dataset.summary) {
         location.href = recCard.dataset.summary;
+      } else if (recCard.dataset.gated) {
+        openGateModal(recCard.dataset.ytid, recCard.dataset.title, recCard.dataset.summary);
       } else {
         openVideoModal(recCard.dataset.ytid, recCard.dataset.title);
       }
