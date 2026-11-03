@@ -106,7 +106,7 @@
           "youtubeId": "cAbGKlIRjkQ",
           "thumbnailGradient": "linear-gradient(135deg,#1e40af,#3b82f6)",
           "speakers": [
-            { "initials": "AG", "name": "Asitha Goonewardena", "role": "Chief Product Owner, PeoplesHR", "photo": "/uploads/2026/05/asitha_goonewardana.webp", "color": "#ffedd5", "textColor": "#c2410c" }
+            { "initials": "AG", "name": "Asitha Goonewardena", "role": "Former Chief Product Owner, PeoplesHR", "photo": "/uploads/2026/05/asitha_goonewardana.webp", "color": "#ffedd5", "textColor": "#c2410c" }
           ],
           "watchUrl": "https://www.youtube.com/watch?v=cAbGKlIRjkQ",
           "summaryUrl": "/webinars/people-analytics-summary/"
@@ -319,7 +319,7 @@
           "youtubeId": "mR7ll4k29h0",
           "thumbnailGradient": "linear-gradient(135deg,#78350f,#f59e0b)",
           "speakers": [
-            { "initials": "AG", "name": "Asitha Goonewardena", "role": "Chief Product Owner, PeoplesHR", "photo": "/uploads/2026/05/asitha_goonewardana.webp", "color": "#ffedd5", "textColor": "#c2410c" },
+            { "initials": "AG", "name": "Asitha Goonewardena", "role": "Former Chief Product Owner, PeoplesHR", "photo": "/uploads/2026/05/asitha_goonewardana.webp", "color": "#ffedd5", "textColor": "#c2410c" },
             { "initials": "RS", "name": "Riyazi Samsudeen", "role": "Director Sales & Partner Management, PeoplesHR", "photo": "/uploads/2026/05/riyazi_samsudeen.webp", "color": "#ffedd5", "textColor": "#c2410c" }
           ],
           "watchUrl": "https://www.youtube.com/watch?v=mR7ll4k29h0",
