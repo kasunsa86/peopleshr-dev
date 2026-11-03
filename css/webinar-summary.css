@@ -49,7 +49,10 @@ body{overflow-x:clip;}
 .wsi-page .csi-sidebar{align-self:stretch;}
 .wsi-page .csi-sidebar-sticky{top:96px;}
 .wsi-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;}
-.wsi-tags span{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;line-height:1;color:#1d4ed8;background:#eff6ff;border:1px solid #dbeafe;border-radius:999px;padding:6px 10px;}
+.wsi-tags span,.wsi-tags a{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;line-height:1;color:#1d4ed8;background:#eff6ff;border:1px solid #dbeafe;border-radius:999px;padding:6px 10px;}
+/* Module chips link to their product page */
+.wsi-tags a{text-decoration:none;transition:border-color .2s,box-shadow .2s,transform .2s;}
+.wsi-tags a:hover,.wsi-tags a:focus-visible{border-color:currentColor;box-shadow:0 4px 12px -6px currentColor;transform:translateY(-1px);}
 .wsi-tags img{width:16px;height:16px;object-fit:contain;margin:-3px 0 -3px -4px;}
 /* Module colours, taken from each module's icon (/uploads/2026/07/*Icon.webp) */
 .wsi-tags .wsi-tag--time{color:#c2410c;background:#fff7ed;border-color:#fed7aa;}
