@@ -6499,7 +6499,7 @@ button.btn-primary {
   .wb-featured-title{font-size:1.15rem;line-height:1.35;}
   .wb-featured-desc{font-size:.875rem;margin-bottom:20px;-webkit-line-clamp:4;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;}
   .wb-featured-meta{flex-wrap:wrap;gap:6px;}
-  .wb-speakers{gap:10px;}
+  .wb-speakers{gap:10px;margin-bottom:18px;}
   .wb-speaker-av{width:46px;height:46px;font-size:13px;}
   .wb-speaker-name{font-size:14px;}
   .wb-speaker-role{font-size:11px;max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
