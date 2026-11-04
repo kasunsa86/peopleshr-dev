@@ -342,7 +342,7 @@
 const GRAD_CLASSES = ['','wb-uc-thumb-grad-1','wb-uc-thumb-grad-2','wb-uc-thumb-grad-3','wb-uc-thumb-grad-4','wb-uc-thumb-grad-5'];
 
 // Drawn flags: Windows shows flag emoji as letters ("GB", "ID")
-const FLAG_SVG = (inner, vb) => `<svg width="14" height="10" viewBox="${vb}" preserveAspectRatio="none" aria-hidden="true" style="display:inline-block;vertical-align:-1px;margin-right:4px;border-radius:1px;box-shadow:0 0 0 .5px rgba(13,27,62,.25);">${inner}</svg>`;
+const FLAG_SVG = (inner, vb) => `<svg width="18" height="12" viewBox="${vb}" preserveAspectRatio="none" aria-hidden="true" style="display:inline-block;vertical-align:-2px;margin-right:5px;border-radius:1px;box-shadow:0 0 0 .5px rgba(13,27,62,.25);">${inner}</svg>`;
 const LANG_FLAG = {
   'English': FLAG_SVG('<rect width="60" height="30" fill="#012169"/><path d="M0 0L60 30M60 0L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0L60 30M60 0L0 30" stroke="#C8102E" stroke-width="2"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/>', '0 0 60 30'),
   'Bahasa': FLAG_SVG('<rect width="3" height="1" fill="#CE1126"/><rect y="1" width="3" height="1" fill="#fff"/>', '0 0 3 2')

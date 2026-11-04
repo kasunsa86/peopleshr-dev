@@ -6339,10 +6339,10 @@ button.btn-primary {
 .wb-featured-title{font-size:clamp(1.5rem,2.5vw,2rem);font-weight:800;color:var(--navy);letter-spacing:-.03em;line-height:1.2;margin-bottom:16px;}
 .wb-featured-desc{font-size:.95rem;color:var(--text-body);line-height:1.75;margin-bottom:28px;max-width:440px;}
 .wb-speakers{display:flex;gap:20px;margin-bottom:32px;flex-wrap:wrap;}
-.wb-speaker{display:flex;align-items:center;gap:10px;}
-.wb-speaker-av{width:40px;height:40px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;object-fit:cover;}
-.wb-speaker-name{font-size:13px;font-weight:700;color:var(--navy);line-height:1.2;}
-.wb-speaker-role{font-size:11px;color:var(--text-muted);}
+.wb-speaker{display:flex;align-items:center;gap:12px;}
+.wb-speaker-av{width:56px;height:56px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;flex-shrink:0;object-fit:cover;}
+.wb-speaker-name{font-size:16px;font-weight:700;color:var(--navy);line-height:1.2;}
+.wb-speaker-role{font-size:12px;color:var(--text-muted);}
 .wb-featured-footer{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
 .wb-date-chip{display:flex;align-items:center;gap:8px;background:var(--bg-card);border-radius:10px;padding:10px 16px;font-size:13px;font-weight:600;color:var(--navy);}
 .wb-date-chip svg{flex-shrink:0;color:var(--blue);}
@@ -6494,9 +6494,9 @@ button.btn-primary {
   .wb-featured-desc{font-size:.875rem;margin-bottom:20px;-webkit-line-clamp:4;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;}
   .wb-featured-meta{flex-wrap:wrap;gap:6px;}
   .wb-speakers{gap:10px;}
-  .wb-speaker-av{width:34px;height:34px;font-size:10px;}
-  .wb-speaker-name{font-size:12px;}
-  .wb-speaker-role{font-size:10px;max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .wb-speaker-av{width:46px;height:46px;font-size:13px;}
+  .wb-speaker-name{font-size:14px;}
+  .wb-speaker-role{font-size:11px;max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
   .wb-featured-footer{flex-direction:column;align-items:stretch;gap:10px;}
   .wb-date-chip{font-size:12px;padding:8px 12px;align-self:flex-start;}
   .wb-featured-footer .btn-primary{width:100%;justify-content:center;margin-left:0 !important;}
