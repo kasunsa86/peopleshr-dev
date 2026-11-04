@@ -6334,7 +6334,7 @@ button.btn-primary {
 .wb-featured-left{padding:48px;display:flex;flex-direction:column;justify-content:space-between;}
 .wb-featured-meta{display:flex;align-items:center;gap:10px;margin-bottom:24px;flex-wrap:wrap;}
 .wb-live-badge{display:inline-flex;align-items:center;gap:6px;background:#eff6ff;border:1px solid #bfdbfe;color:#2563eb;font-size:11px;font-weight:700;letter-spacing:.8px;padding:5px 12px;border-radius:100px;}
-.wb-live-dot{width:6px;height:6px;border-radius:50%;background:#2563eb;animation:pulse-dot 1.4s ease-in-out infinite;}
+.wb-live-dot{width:6px;height:6px;border-radius:50%;background:#ef4444;animation:pulse-dot 1.4s ease-in-out infinite;}
 .wb-cat-pill{display:inline-block;background:#eff6ff;border:1px solid #bfdbfe;color:var(--blue);font-size:11px;font-weight:700;letter-spacing:.5px;padding:5px 14px;border-radius:100px;}
 .wb-featured-title{font-size:clamp(1.5rem,2.5vw,2rem);font-weight:800;color:var(--navy);letter-spacing:-.03em;line-height:1.2;margin-bottom:16px;}
 .wb-featured-desc{font-size:.95rem;color:var(--text-body);line-height:1.75;margin-bottom:28px;max-width:440px;}
@@ -6435,7 +6435,8 @@ button.btn-primary {
 .wb-rec-date-str{font-size:11px;color:var(--text-muted);}
 .wb-rec-meta-right{display:flex;align-items:center;gap:6px;}
 .wb-lang-badge{font-size:9px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;background:#f0f4ff;color:#2563eb;border:1px solid #dbeafe;border-radius:4px;padding:2px 6px;white-space:nowrap;}
-.wb-featured-left .wb-lang-badge{display:inline-block;margin-bottom:16px;}
+.wb-lang{display:inline-flex;align-items:center;gap:7px;vertical-align:middle;}
+.wb-featured-left .wb-lang{margin-bottom:16px;}
 .wb-rec-title{font-size:14px;font-weight:700;color:var(--navy);line-height:1.45;margin-bottom:12px;}
 .wb-rec-footer{display:flex;align-items:center;gap:8px;padding-top:12px;border-top:1px solid #f1f5f9;}
 .wb-rec-speakers{display:flex;flex-direction:column;gap:7px;flex:1;min-width:0;}
