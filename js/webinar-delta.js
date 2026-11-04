@@ -1,15 +1,16 @@
 ﻿const WEBINAR_DATA = {
   "featured": {
-    "title": "Is Your Payroll Ready for the Year-End?",
-    "language": "English",
-    "description": "December does not create payroll errors, it exposes them. Join Sharon Aytona for a live look at where year-end payroll gaps usually start (annualization reconciliation, data quality issues, and taxable/non-taxable benefit classification) while there's still time to fix them.",
-    "date": "2026-10-09T15:00:00+08:00",
-    "dateLabel": "9 Oct 2026",
-    "timeLabel": "3:00 PM PHT",
-    "registerUrl": "/webinar-year-end-payroll-ph/",
-    "coverImage": "/uploads/2026/10/upcoming_cover.webp",
+    "title": "Mengelola Penggajian dalam Skala Besar: Realita Perusahaan di Indonesia",
+    "language": "Bahasa",
+    "description": "Menggaji ribuan karyawan di banyak lokasi berarti menghadapi UMK yang berbeda, shift dan lembur yang terus berubah, PPh 21 TER, BPJS, hingga perhitungan ulang pajak di bulan Desember. Diana Lesalim, yang pernah mengelola payroll untuk lebih dari 45.000 karyawan, berbagi apa yang sering salah, apa yang berhasil, dan bagaimana tim payroll bisa tetap tenang menjelang tutup tahun.",
+    "date": "2026-11-19T11:00:00+07:00",
+    "dateLabel": "19 Nov 2026",
+    "timeLabel": "11:00 AM WIB",
+    "registerUrl": "/webinar-payroll-id/",
+    "coverImage": "/uploads/2026/10/Diana-Lesalim.jpg",
+    "coverPosition": "center 30%",
     "speakers": [
-      { "initials": "SA", "name": "Sharon Aytona", "role": "Consultant, Bridge PayDay Solutions &amp; President, Thinktank Professional Services Inc.", "photo": "/uploads/2026/10/Sharon.jpg", "color": "#fce7f3", "textColor": "#be185d" }
+      { "initials": "DL", "name": "Diana Lesalim", "role": "Head of Compensation &amp; Benefits, Ceria Corporation", "photo": "/uploads/2026/10/Diana-Lesalim.jpg", "color": "#ede9fe", "textColor": "#7c3aed" }
     ]
   },
   "upcoming": [],
@@ -397,7 +398,7 @@ function renderFeatured(f) {
         <a href="${f.registerUrl}" class="btn-primary wb-featured-cta">Register Free ${ICON_ARROW}</a>
       </div>
     </div>
-    <div class="wb-featured-right"${f.coverImage ? ` style="background-image:linear-gradient(135deg,rgba(13,27,62,.55),rgba(13,27,62,.7)),url('${f.coverImage}');background-size:cover;background-position:center;"` : ''}>
+    <div class="wb-featured-right"${f.coverImage ? ` style="background-image:linear-gradient(135deg,rgba(13,27,62,.55),rgba(13,27,62,.7)),url('${f.coverImage}');background-size:cover;background-position:${f.coverPosition || 'center'};"` : ''}>
       <div class="wb-countdown">
         <div class="wb-countdown-label">Starts in</div>
         <div class="wb-countdown-tiles">
