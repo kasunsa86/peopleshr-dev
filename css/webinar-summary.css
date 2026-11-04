@@ -36,9 +36,20 @@
 #wsi-gm.form-in .dg-gate-header{margin-bottom:20px;}
 #wsi-gm.form-in .wsi-gm-body{grid-template-rows:1fr;opacity:1;}
 #wsi-gm.form-in .wsi-gm-body>div{transform:none;}
+/* Play icon: pops in, the arrow slides in, then two rings pulse out like a "now playing" signal */
+#wsi-gm .dg-gate-icon{position:relative;}
+#wsi-gm .dg-gate-icon::before,#wsi-gm .dg-gate-icon::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--blue,#2563eb);opacity:0;pointer-events:none;}
+#wsi-gm.active .dg-gate-icon{animation:wsi-gm-pop .6s cubic-bezier(.34,1.56,.64,1) .1s both;}
+#wsi-gm.active .dg-gate-icon svg{animation:wsi-gm-arrow .5s cubic-bezier(.2,.8,.2,1) .45s both;}
+#wsi-gm.active .dg-gate-icon::before{animation:wsi-gm-ring 2.4s cubic-bezier(.2,.6,.3,1) .7s infinite;}
+#wsi-gm.active .dg-gate-icon::after{animation:wsi-gm-ring 2.4s cubic-bezier(.2,.6,.3,1) 1.5s infinite;}
+@keyframes wsi-gm-pop{from{transform:scale(0) rotate(-90deg);}to{transform:none;}}
+@keyframes wsi-gm-arrow{from{transform:translateX(-10px);opacity:0;}to{transform:none;opacity:1;}}
+@keyframes wsi-gm-ring{0%{transform:scale(1);opacity:.55;}100%{transform:scale(1.75);opacity:0;}}
 @media (prefers-reduced-motion:reduce){
   #wsi-gm.active .dg-gate-card{animation:none;}
   #wsi-gm .dg-gate-header,#wsi-gm .wsi-gm-body,#wsi-gm .wsi-gm-body>div{transition:none;}
+  #wsi-gm.active .dg-gate-icon,#wsi-gm.active .dg-gate-icon svg,#wsi-gm.active .dg-gate-icon::before,#wsi-gm.active .dg-gate-icon::after{animation:none;}
 }
 .wsi-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:#fff;display:grid;place-items:center;}
 .wsi-page .wsi-learn{font-size:16.5px;font-weight:700;color:var(--text-dark);margin:0;}

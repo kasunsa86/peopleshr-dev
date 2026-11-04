@@ -39,7 +39,12 @@
   // keeps its own form), built the first time the pop-up opens
   function buildForm(){if(formBuilt)return;formBuilt=true;
     function create(){hbspt.forms.create({region:'na2',portalId:'45700506',formId:'9c1fb962-eff8-4402-b53c-71fd085903d9',target:'#wsi-gm-form',
-      onFormReady:function(){var l=$('#wsi-gm-loading');if(l)l.style.display='none';},onFormSubmitted:unlock});}
+      onFormReady:function(f){var l=$('#wsi-gm-loading');if(l)l.style.display='none';centerButton(f);},onFormSubmitted:unlock});}
+    // The form renders in HubSpot's own (same-origin) iframe, so centre its button from inside it
+    function centerButton(f){var el=f&&(f.jquery?f[0]:f),d=el&&el.ownerDocument;
+      if(!d||!d.getElementById){var fr=$('#wsi-gm-form iframe');try{d=fr&&fr.contentDocument;}catch(e){d=null;}}
+      if(!d||d.getElementById('wsi-gm-css'))return;
+      var s=d.createElement('style');s.id='wsi-gm-css';s.textContent='.hs_submit .actions,.submitted-message{text-align:center!important;}';(d.head||d.body).appendChild(s);}
     if(window.hbspt&&hbspt.forms&&hbspt.forms.create)create();
     else{var s=document.createElement('script');s.charset='utf-8';s.src='https://js-na2.hsforms.net/forms/embed/v2.js';s.onload=create;document.head.appendChild(s);}}
   function openGate(t){pending=t;gateFocus=document.activeElement;buildForm();
