@@ -904,19 +904,21 @@ async function init() {
   setTimeout(reveal, 15000);
 }());
 
-/* Phones: fade the hero form in once it scrolls into view (stays shown after) */
+/* Phones: the hero form's title and description stay shown; its fields fade in once
+   they scroll into view (and stay shown after) */
 (function () {
   const col = document.getElementById('wbHeroForm');
-  if (!col || !('IntersectionObserver' in window) || !matchMedia('(max-width:768px)').matches ||
+  const fields = col && col.querySelector('.hs-form-frame');
+  if (!fields || !('IntersectionObserver' in window) || !matchMedia('(max-width:768px)').matches ||
       matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   col.classList.add('wb-reveal');
   const io = new IntersectionObserver(entries => {
     if (entries.some(e => e.isIntersecting)) { col.classList.add('wb-in'); io.disconnect(); }
-  }, { rootMargin: '0px 0px -45% 0px' });   // wait until its top passes the middle of the screen
+  }, { rootMargin: '0px 0px -45% 0px' });   // wait until the fields pass the middle of the screen
   // Start once the page has its final layout, or it can count as "in view" mid-load;
   // 2.5s fallback in case a slow third-party embed holds up the load event
   let started = false;
-  const start = () => { if (!started) { started = true; io.observe(col); } };
+  const start = () => { if (!started) { started = true; io.observe(fields); } };
   if (document.readyState === 'complete') start();
   else { window.addEventListener('load', start); setTimeout(start, 2500); }
 }());
