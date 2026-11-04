@@ -6277,7 +6277,11 @@ button.btn-primary {
 @media(max-width:768px){
   .wb-hero-form-col{flex:none;width:100%;min-height:710px;}
   .wb-hero-form-col .wb-notify-inner{padding:20px 20px 4px;}
+  /* Phones: the form fades and slides up as it scrolls into view (class added by webinar-delta.js) */
+  .wb-hero-form-col.wb-reveal{opacity:0;transform:translateY(40px) scale(.97);transition:opacity .8s ease-out,transform .9s cubic-bezier(.2,.8,.2,1);}
+  .wb-hero-form-col.wb-reveal.wb-in{opacity:1;transform:none;}
 }
+@media(prefers-reduced-motion:reduce){.wb-hero-form-col.wb-reveal{opacity:1;transform:none;transition:none;}}
 
 /* Floating speaker avatars/icons around the hero title on the webinar hub */
 .wb-hero-float-decor{position:absolute;inset:0;pointer-events:none;z-index:1;}
