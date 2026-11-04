@@ -189,7 +189,7 @@
           "thumbnailGradient": "linear-gradient(135deg,#9d174d,#ec4899)",
           "speakers": [
             { "initials": "CD", "name": "Charlie Dyer", "role": "Director, Product - Topia", "photo": "/uploads/2026/05/charlie_dyer.webp", "color": "#dbeafe", "textColor": "#2563eb" },
-            { "initials": "VW", "name": "Vichalya Wijesuriya", "role": "Director Marketing, PeoplesHR", "color": "#d1fae5", "textColor": "#065f46" }
+            { "initials": "VW", "name": "Vichalya Wijesuriya", "role": "Former Director Marketing, PeoplesHR", "color": "#d1fae5", "textColor": "#065f46" }
           ],
           "watchUrl": "https://youtu.be/Opnd0QA7Tek",
           "summaryUrl": "/webinars/distributed-workforce-talent-mobility-summary/"
