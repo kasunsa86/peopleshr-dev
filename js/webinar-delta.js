@@ -914,7 +914,7 @@ async function init() {
   col.classList.add('wb-reveal');
   const io = new IntersectionObserver(entries => {
     if (entries.some(e => e.isIntersecting)) { col.classList.add('wb-in'); io.disconnect(); }
-  }, { rootMargin: '0px 0px -45% 0px' });   // wait until the fields pass the middle of the screen
+  }, { rootMargin: '0px 0px -30% 0px' });   // wait until the fields are about a third of the way up the screen
   // Start once the page has its final layout, or it can count as "in view" mid-load;
   // 2.5s fallback in case a slow third-party embed holds up the load event
   let started = false;

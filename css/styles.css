@@ -6279,7 +6279,7 @@ button.btn-primary {
   .wb-hero-form-col .wb-notify-inner{padding:20px 20px 4px;}
   /* Phones: title + description stay put; the form fields fade and slide up as they
      scroll into view (class added by webinar-delta.js) */
-  .wb-hero-form-col.wb-reveal .wb-form-loading,.wb-hero-form-col.wb-reveal .hs-form-frame{opacity:0;transform:translateY(28px);transition:opacity .9s ease-out,transform 1s cubic-bezier(.2,.8,.2,1);}
+  .wb-hero-form-col.wb-reveal .wb-form-loading,.wb-hero-form-col.wb-reveal .hs-form-frame{opacity:0;transform:translateY(28px);transition:opacity .45s ease-out,transform .5s cubic-bezier(.2,.8,.2,1);}
   .wb-hero-form-col.wb-reveal.wb-in .wb-form-loading,.wb-hero-form-col.wb-reveal.wb-in .hs-form-frame{opacity:1;transform:none;}
 }
 @media(prefers-reduced-motion:reduce){.wb-hero-form-col.wb-reveal .wb-form-loading,.wb-hero-form-col.wb-reveal .hs-form-frame{opacity:1;transform:none;transition:none;}}
