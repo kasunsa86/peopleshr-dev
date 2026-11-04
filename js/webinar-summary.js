@@ -20,7 +20,7 @@
     if(gated){unlocked=true;try{localStorage.setItem(KEY,'1');}catch(e){}applyGate();openVideo(0);}
     else if(gm&&gm.classList.contains('active'))unlock();});
 
-  // Open webinars: the first play asks for the same HubSpot form in a pop-up (message first,
+  // Open webinars: the first play asks for a short HubSpot form in a pop-up (message first,
   // then the form ~0.8s later); once submitted, this webinar plays from the point clicked.
   var gm=null,pending=0,formBuilt=false,formTimer,gateFocus=null;
   var FORM_DELAY=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches?0:800;
@@ -35,9 +35,10 @@
     $('#wsi-gm-x').addEventListener('click',closeGate);
     gm.addEventListener('click',function(e){if(e.target===gm)closeGate();});
   }
-  // Same HubSpot v2 embed as the webinars page gate, built the first time the pop-up opens
+  // HubSpot v2 embed of the on-demand first-play form (name, work email, phone; members-only
+  // keeps its own form), built the first time the pop-up opens
   function buildForm(){if(formBuilt)return;formBuilt=true;
-    function create(){hbspt.forms.create({region:'na2',portalId:'45700506',formId:'93181f13-b063-4e09-a572-345dbda4b062',target:'#wsi-gm-form',
+    function create(){hbspt.forms.create({region:'na2',portalId:'45700506',formId:'9c1fb962-eff8-4402-b53c-71fd085903d9',target:'#wsi-gm-form',
       onFormReady:function(){var l=$('#wsi-gm-loading');if(l)l.style.display='none';},onFormSubmitted:unlock});}
     if(window.hbspt&&hbspt.forms&&hbspt.forms.create)create();
     else{var s=document.createElement('script');s.charset='utf-8';s.src='https://js-na2.hsforms.net/forms/embed/v2.js';s.onload=create;document.head.appendChild(s);}}
