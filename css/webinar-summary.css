@@ -22,6 +22,22 @@
 .wsi-pills{position:absolute;top:16px;right:16px;display:flex;gap:8px;z-index:1;}
 .wsi-pills span,.wsi-ts{font-size:11px;font-weight:600;border-radius:999px;padding:5px 10px;}
 .wsi-pills span{color:#fff;background:rgba(255,255,255,.16);}
+/* First-play gate pop-up on open webinars (built by webinar-summary.js; dg-gate-* from casestudies.css) */
+#wsi-gm:not(.active){visibility:hidden;}
+#wsi-gm .dg-gate-card{margin-top:0;max-height:90vh;overflow-y:auto;animation:none;}
+/* Opens as a short message first, then the form slides open under it (timing in webinar-summary.js) */
+#wsi-gm.active .dg-gate-card{animation:wsi-gm-in .3s ease;}
+@keyframes wsi-gm-in{from{transform:translateY(16px) scale(.96);opacity:0;}to{transform:none;opacity:1;}}
+#wsi-gm .dg-gate-header{margin-bottom:0;transition:margin-bottom .8s cubic-bezier(.45,0,.2,1);}
+#wsi-gm .wsi-gm-body{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .8s cubic-bezier(.45,0,.2,1),opacity .6s ease-out .2s;}
+#wsi-gm .wsi-gm-body>div{overflow:hidden;min-height:0;transform:translateY(12px);transition:transform .8s cubic-bezier(.45,0,.2,1);}
+#wsi-gm.form-in .dg-gate-header{margin-bottom:20px;}
+#wsi-gm.form-in .wsi-gm-body{grid-template-rows:1fr;opacity:1;}
+#wsi-gm.form-in .wsi-gm-body>div{transform:none;}
+@media (prefers-reduced-motion:reduce){
+  #wsi-gm.active .dg-gate-card{animation:none;}
+  #wsi-gm .dg-gate-header,#wsi-gm .wsi-gm-body,#wsi-gm .wsi-gm-body>div{transition:none;}
+}
 .wsi-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:#fff;display:grid;place-items:center;}
 .wsi-page .wsi-learn{font-size:16.5px;font-weight:700;color:var(--text-dark);margin:0;}
 
