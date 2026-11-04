@@ -16,6 +16,7 @@
 .wsi-spec b{display:block;font-size:14px;color:var(--text-dark);margin-top:2px;}
 .wsi-st{border:0;cursor:pointer;font-weight:700;font-size:13px;font-family:inherit;border-radius:12px;padding:10px 16px;color:#047857;background:#ecfdf5;}
 .wsi-st--lock{color:#9a3412;background:#fff7ed;}
+.wsi-st-m{display:none;}   /* phone label, see the max-width:860px block */
 
 /* Hero cover (on csi-hero-img-card) */
 .wsi-cover{border:0;padding:0;width:100%;cursor:pointer;}
@@ -108,16 +109,19 @@ body{overflow-x:clip;}
 }
 @media (max-width:860px){
   .wsi-band .csi-title{font-size:30px;}
-  /* Mobile: the spec card sits under the title as a 2x2 grid (Format | Conducted on, Language | status) */
+  /* Mobile: the spec card sits under the title in two rows: Conducted on | Language,
+     then a full-width "On-demand" play button (Format is dropped; the button says it) */
   .wsi-band{padding-bottom:28px;}
   .wsi-spec{display:grid;grid-template-columns:1fr 1fr;width:100%;margin:22px 0 0;}
   .wsi-spec>div{padding:10px 12px;}
+  .wsi-spec>div:first-child{display:none;}
   .wsi-spec b{font-size:13px;}
-  .wsi-spec .wsi-st{font-size:12px;padding:9px 12px;text-align:center;}
   .wsi-spec>div+div{border-left:0;}
-  .wsi-spec>div:nth-child(even){border-left:1px solid var(--border);}
-  .wsi-spec>div:nth-child(n+3){border-top:1px solid var(--border);}
-  .wsi-spec>div:last-child{display:flex;align-items:center;}
+  .wsi-spec>div:nth-child(3){border-left:1px solid var(--border);}
+  .wsi-spec>div:last-child{grid-column:1/-1;border-top:1px solid var(--border);padding-top:12px;}
+  .wsi-spec .wsi-st{width:100%;font-size:13px;padding:11px 12px;text-align:center;}
+  .wsi-st-d{display:none;}
+  .wsi-st-m{display:inline;}
   .wsi-page .csi-hero{padding-top:0;padding-bottom:8px;}
   /* One divider between hero and body: drop the last point's rule, keep the body's top border */
   .wsi-page .csi-hero .csi-hero-stat:last-child{border-bottom:0;}
