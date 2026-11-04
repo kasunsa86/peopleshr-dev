@@ -6503,8 +6503,8 @@ button.btn-primary {
   .wb-speaker-av{width:46px;height:46px;font-size:13px;}
   .wb-speaker-name{font-size:14px;}
   .wb-speaker-role{font-size:11px;max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-  .wb-featured-footer{flex-direction:column;align-items:stretch;gap:10px;}
-  .wb-date-chip{font-size:12px;padding:8px 12px;align-self:flex-start;}
+  .wb-featured-footer{flex-direction:row;flex-wrap:wrap;align-items:center;gap:10px;}
+  .wb-date-chip{font-size:12px;padding:8px 12px;flex:1 1 0;justify-content:center;white-space:nowrap;}
   .wb-featured-footer .btn-primary{width:100%;justify-content:center;margin-left:0 !important;}
 
   /* Countdown panel move above card content on mobile */

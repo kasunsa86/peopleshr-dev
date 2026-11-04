@@ -400,7 +400,7 @@ function renderFeatured(f) {
       <div class="wb-featured-footer">
         <div class="wb-date-chip">${ICON_CALENDAR} ${f.dateLabel}</div>
         <div class="wb-date-chip">${ICON_CLOCK} ${f.timeLabel}</div>
-        <a href="${f.registerUrl}" class="btn-primary wb-featured-cta">Register Free ${ICON_ARROW}</a>
+        <a href="${f.registerUrl}" class="btn-primary wb-featured-cta">Register for Free ${ICON_ARROW}</a>
       </div>
     </div>
     <div class="wb-featured-right"${f.coverImage ? ` style="background-image:linear-gradient(135deg,rgba(13,27,62,.55),rgba(13,27,62,.7)),url('${f.coverImage}');background-size:cover;background-position:${f.coverPosition || 'center'};"` : ''}>
