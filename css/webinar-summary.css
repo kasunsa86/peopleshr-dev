@@ -108,9 +108,16 @@ body{overflow-x:clip;}
 }
 @media (max-width:860px){
   .wsi-band .csi-title{font-size:30px;}
-  /* Mobile: no spec card, video sits right under the title */
+  /* Mobile: the spec card sits under the title as a 2x2 grid (Format | Conducted on, Language | status) */
   .wsi-band{padding-bottom:28px;}
-  .wsi-spec{display:none;}
+  .wsi-spec{display:grid;grid-template-columns:1fr 1fr;width:100%;margin:22px 0 0;}
+  .wsi-spec>div{padding:10px 12px;}
+  .wsi-spec b{font-size:13px;}
+  .wsi-spec .wsi-st{font-size:12px;padding:9px 12px;text-align:center;}
+  .wsi-spec>div+div{border-left:0;}
+  .wsi-spec>div:nth-child(even){border-left:1px solid var(--border);}
+  .wsi-spec>div:nth-child(n+3){border-top:1px solid var(--border);}
+  .wsi-spec>div:last-child{display:flex;align-items:center;}
   .wsi-page .csi-hero{padding-top:0;padding-bottom:8px;}
   /* One divider between hero and body: drop the last point's rule, keep the body's top border */
   .wsi-page .csi-hero .csi-hero-stat:last-child{border-bottom:0;}
