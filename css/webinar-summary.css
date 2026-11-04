@@ -16,7 +16,10 @@
 .wsi-spec b{display:block;font-size:14px;color:var(--text-dark);margin-top:2px;}
 .wsi-st{border:0;cursor:pointer;font-weight:700;font-size:13px;font-family:inherit;border-radius:12px;padding:10px 16px;color:#047857;background:#ecfdf5;}
 .wsi-st--lock{color:#9a3412;background:#fff7ed;}
-.wsi-st-m{display:none;}   /* phone label, see the max-width:860px block */
+/* Open-webinar button: a slowly blinking green dot, On-demand, then the play arrow (desktop and phones) */
+.wsi-st-m{display:inline-flex;align-items:center;gap:8px;vertical-align:middle;}
+.wsi-dot{width:9px;height:9px;border-radius:50%;background:currentColor;animation:wsi-blink 2.4s ease-in-out infinite;}
+.wsi-st-arr{margin-left:4px;}
 .wsi-st-ico{margin-right:.3em;}
 
 /* Hero cover (on csi-hero-img-card) */
@@ -133,11 +136,6 @@ body{overflow-x:clip;}
   .wsi-spec>div:last-child{grid-column:1/-1;border-top:1px solid var(--border);padding-top:12px;}
   .wsi-spec>div:nth-child(2),.wsi-spec>div:nth-child(3){text-align:center;}
   .wsi-spec .wsi-st{width:100%;font-size:13px;padding:11px 12px;text-align:center;}
-  .wsi-st-d{display:none;}
-  /* Bottom button: a text-height status dot that slowly blinks, then On-demand, then the play arrow */
-  .wsi-st-m{display:inline-flex;align-items:center;gap:8px;vertical-align:middle;}
-  .wsi-dot{width:9px;height:9px;border-radius:50%;background:currentColor;animation:wsi-blink 2.4s ease-in-out infinite;}
-  .wsi-st-arr{margin-left:4px;}
   .wsi-spec .wsi-st-ico{display:inline-block;margin-right:8px;animation:wsi-blink 2.4s ease-in-out infinite;}
   .wsi-page .csi-hero{padding-top:0;padding-bottom:8px;}
   /* One divider between hero and body: drop the last point's rule, keep the body's top border */
