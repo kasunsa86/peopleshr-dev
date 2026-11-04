@@ -347,9 +347,9 @@ const LANG_FLAG = {
   'English': FLAG_SVG('<rect width="60" height="30" fill="#012169"/><path d="M0 0L60 30M60 0L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0L60 30M60 0L0 30" stroke="#C8102E" stroke-width="2"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/>', '0 0 60 30'),
   'Bahasa': FLAG_SVG('<rect width="3" height="1" fill="#CE1126"/><rect y="1" width="3" height="1" fill="#fff"/>', '0 0 3 2')
 };
-function langBadge(lang) {
+function langBadge(lang, withFlag) {   // flag only on the featured upcoming webinar
   if (!lang) return '';
-  const flag = LANG_FLAG[lang] || '';
+  const flag = withFlag ? (LANG_FLAG[lang] || "") : "";
   return `<span class="wb-lang">${flag}<span class="wb-lang-badge">${lang}</span></span>`;
 }
 
@@ -393,7 +393,7 @@ function renderFeatured(f) {
           <span class="wb-live-badge"><span class="wb-live-dot"></span>UPCOMING</span>
         </div>
         <h2 class="wb-featured-title">${f.title}</h2>
-        ${langBadge(f.language)}
+        ${langBadge(f.language, true)}
         <p class="wb-featured-desc">${f.description}</p>
         <div class="wb-speakers">${speakersHTML}</div>
       </div>
