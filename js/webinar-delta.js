@@ -1,8 +1,8 @@
 ﻿const WEBINAR_DATA = {
   "featured": {
-    "title": "Mengelola Penggajian dalam Skala Besar: Realita Perusahaan di Indonesia",
+    "title": "Managing Payroll at Scale: The Reality for Companies in Indonesia",
     "language": "Bahasa",
-    "description": "Menggaji ribuan karyawan di banyak lokasi berarti menghadapi UMK yang berbeda, shift dan lembur yang terus berubah, PPh 21 TER, BPJS, hingga perhitungan ulang pajak di bulan Desember. Diana Lesalim, yang pernah mengelola payroll untuk lebih dari 45.000 karyawan, berbagi apa yang sering salah, apa yang berhasil, dan bagaimana tim payroll bisa tetap tenang menjelang tutup tahun.",
+    "description": "Paying thousands of employees across many locations means handling different regional minimum wages (UMK), shifts and overtime that keep changing, PPh 21 TER, BPJS and the December tax recalculation. Diana Lesalim, who has run payroll for more than 45,000 employees, shares what often goes wrong, what works, and how payroll teams can stay calm heading into year-end.",
     "date": "2026-11-19T11:00:00+07:00",
     "dateLabel": "19 Nov 2026",
     "timeLabel": "11:00 AM WIB",
@@ -341,11 +341,16 @@
 
 const GRAD_CLASSES = ['','wb-uc-thumb-grad-1','wb-uc-thumb-grad-2','wb-uc-thumb-grad-3','wb-uc-thumb-grad-4','wb-uc-thumb-grad-5'];
 
-const LANG_FLAG = { 'English': '\uD83C\uDDEC\uD83C\uDDE7', 'Bahasa': '\uD83C\uDDEE\uD83C\uDDE9' };
+// Drawn flags: Windows shows flag emoji as letters ("GB", "ID")
+const FLAG_SVG = (inner, vb) => `<svg width="14" height="10" viewBox="${vb}" preserveAspectRatio="none" aria-hidden="true" style="display:inline-block;vertical-align:-1px;margin-right:4px;border-radius:1px;box-shadow:0 0 0 .5px rgba(13,27,62,.25);">${inner}</svg>`;
+const LANG_FLAG = {
+  'English': FLAG_SVG('<rect width="60" height="30" fill="#012169"/><path d="M0 0L60 30M60 0L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0L60 30M60 0L0 30" stroke="#C8102E" stroke-width="2"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/>', '0 0 60 30'),
+  'Bahasa': FLAG_SVG('<rect width="3" height="1" fill="#CE1126"/><rect y="1" width="3" height="1" fill="#fff"/>', '0 0 3 2')
+};
 function langBadge(lang) {
   if (!lang) return '';
   const flag = LANG_FLAG[lang] || '';
-  return `<span class="wb-lang-badge">${flag} ${lang}</span>`;
+  return `<span class="wb-lang-badge">${flag}${lang}</span>`;
 }
 
 // Ã¢"â‚¬Ã¢"â‚¬ Icons (reusable SVG strings) Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬
