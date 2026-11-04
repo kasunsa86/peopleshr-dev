@@ -28,8 +28,8 @@
     gm=document.createElement('div');gm.className='dg-gate-overlay';gm.id='wsi-gm';
     gm.setAttribute('role','dialog');gm.setAttribute('aria-modal','true');gm.setAttribute('aria-labelledby','wsi-gm-t');
     gm.innerHTML='<div class="dg-gate-card"><button type="button" class="dg-gate-close" id="wsi-gm-x" aria-label="Close">&#x2715;</button>'+
-      '<div class="dg-gate-header"><div class="dg-gate-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>'+
-      '<h3 class="dg-gate-title" id="wsi-gm-t">Unlock This Recording</h3><p class="dg-gate-sub">Fill in your details to watch the full session. Takeaways, chapters and Q&amp;A on this page stay open.</p></div>'+
+      '<div class="dg-gate-header"><div class="dg-gate-icon"><svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M7 5l9 5-9 5V5z" fill="currentColor"/></svg></div>'+
+      '<h3 class="dg-gate-title" id="wsi-gm-t">Your session is ready</h3><p class="dg-gate-sub">Tell us a little about you and the recording starts right away. It takes under a minute, and you only do it once.</p></div>'+
       '<div class="wsi-gm-body"><div><div class="dg-gate-loading" id="wsi-gm-loading"><div class="dg-gate-spinner"></div>Loading form&hellip;</div><div id="wsi-gm-form"></div></div></div></div>';
     document.body.appendChild(gm);
     $('#wsi-gm-x').addEventListener('click',closeGate);
