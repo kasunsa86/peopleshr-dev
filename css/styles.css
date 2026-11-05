@@ -6284,22 +6284,20 @@ button.btn-primary {
 }
 @media(prefers-reduced-motion:reduce){.wb-hero-form-col.wb-reveal .wb-form-loading,.wb-hero-form-col.wb-reveal .hs-form-frame{opacity:1;transform:none;transition:none;}}
 
-/* Floating speaker avatars/icons around the hero title on the webinar hub */
+/* Floating recording thumbnails around the hero title on the webinar hub (filled by webinar-delta.js) */
 .wb-hero-float-decor{position:absolute;inset:0;pointer-events:none;z-index:1;}
-.wb-float{position:absolute;border-radius:50%;box-shadow:0 10px 24px -8px rgba(13,27,62,.25);animation:wbFloat 6s ease-in-out infinite;}
-.wb-float-av{width:52px;height:52px;object-fit:cover;border:3px solid #fff;}
-.wb-float-ic{width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:var(--ic,var(--blue));border:3px solid #fff;}
-.wb-float-ic svg{width:42%;height:42%;}
-.wb-float-1{top:0%;left:2%;width:78px;height:78px;border-width:4px;animation-duration:7s;animation-delay:0s;}
-.wb-float-2{top:4%;left:34%;width:34px;height:34px;animation-duration:6.5s;animation-delay:.6s;}
-.wb-float-6{top:14%;left:16%;width:55px;height:55px;animation-duration:6.2s;animation-delay:.9s;}
-.wb-float-5{top:2%;left:46%;width:37px;height:37px;animation-duration:7.2s;animation-delay:1.6s;}
-.wb-float-3{top:78%;left:0%;width:67px;height:67px;animation-duration:7.5s;animation-delay:1.2s;}
-.wb-float-4{top:86%;left:28%;width:37px;height:37px;animation-duration:6.8s;animation-delay:.3s;}
-.wb-float-7{top:74%;left:42%;width:39px;height:39px;animation-duration:7.8s;animation-delay:.2s;}
-.wb-float-8{top:92%;left:12%;width:60px;height:60px;animation-duration:6.6s;animation-delay:1.4s;}
-@keyframes wbFloat{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-16px) rotate(4deg);}}
-@media(prefers-reduced-motion:reduce){.wb-float{animation:none;}}
+.wb-float-th{position:absolute;width:220px;background:#fff;border-radius:14px;padding:7px;box-shadow:0 18px 38px -14px rgba(13,27,62,.4);color:#0d1b3e;text-decoration:none;pointer-events:auto;animation:wbFloat 7s ease-in-out infinite;transition:box-shadow .2s;}
+.wb-float-th:hover{box-shadow:0 22px 44px -14px rgba(37,99,235,.5);}
+.wb-float-th-img{position:relative;display:block;border-radius:9px;overflow:hidden;aspect-ratio:16/9;background:#1e3a8a;}
+.wb-float-th-img img{display:block;width:100%;height:100%;object-fit:cover;}
+.wb-float-th-img::after{content:"";position:absolute;left:50%;top:50%;width:36px;height:36px;margin:-18px 0 0 -18px;border-radius:50%;background:rgba(255,255,255,.92) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M8 6l7 4-7 4z' fill='%232563eb'/%3E%3C/svg%3E") center/16px no-repeat;}
+.wb-float-th-t{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:12.5px;font-weight:700;line-height:1.3;padding:7px 4px 2px;}
+.wb-float-th-1{left:0%;top:-2%;--r:-5deg;animation-duration:7s;}
+.wb-float-th-2{left:26%;top:3%;--r:4deg;animation-duration:6.6s;animation-delay:.5s;}
+.wb-float-th-3{left:2%;top:82%;--r:3deg;animation-duration:7.4s;animation-delay:1s;}
+.wb-float-th-4{left:28%;top:90%;--r:-4deg;animation-duration:6.8s;animation-delay:1.5s;}
+@keyframes wbFloat{0%,100%{transform:translateY(0) rotate(var(--r,0deg));}50%{transform:translateY(-12px) rotate(calc(var(--r,0deg) + 1.5deg));}}
+@media(prefers-reduced-motion:reduce){.wb-float-th{animation:none;transform:rotate(var(--r,0deg));}}
 @media(max-width:1024px){.wb-hero-float-decor{display:none;}}
 
 /* .wb-hero-title/.wb-page-hero/.wb-featured-right are shared with the

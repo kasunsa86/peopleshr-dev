@@ -923,4 +923,18 @@ async function init() {
   else { window.addEventListener('load', start); setTimeout(start, 2500); }
 }());
 
+/* Hero: four recent open recordings float around the title (large screens);
+   each opens its summary page */
+(function () {
+  const box = document.getElementById('wbHeroThumbs');
+  if (!box) return;
+  const picks = WEBINAR_DATA.recordings.flatMap(g => g.videos)
+    .filter(v => v.summaryUrl && !v.gated && v.youtubeId).slice(0, 4);
+  box.innerHTML = picks.map((v, i) => `
+    <a class="wb-float-th wb-float-th-${i + 1}" href="${v.summaryUrl}">
+      <span class="wb-float-th-img"><img src="https://img.youtube.com/vi/${v.youtubeId}/mqdefault.jpg" alt="" loading="lazy"></span>
+      <span class="wb-float-th-t">${v.title}</span>
+    </a>`).join('');
+}());
+
 init();
