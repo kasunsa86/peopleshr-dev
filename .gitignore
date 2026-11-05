@@ -22,5 +22,7 @@ php.ini
 tools/
 .venv/
 
-# Claude Code settings: per-person, never shared.
-.claude/
+# Claude Code settings: per-person, never shared. Shared skills (.claude/skills/)
+# are the exception, so every Claude builds pages the same way.
+.claude/*
+!.claude/skills/
