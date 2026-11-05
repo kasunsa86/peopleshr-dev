@@ -925,7 +925,7 @@ async function init() {
 
 /* Hero: the last four webinars held float around the title (large screens):
    newest top left, then top right, bottom left, bottom right. A click grows the
-   thumbnail, then blows it out to fill the screen before opening the summary.
+   thumbnail where it is, then the page quickly fades into the summary.
    Members-only ones open the same gate as their recording card instead. */
 (function () {
   const box = document.getElementById('wbHeroThumbs');
@@ -949,31 +949,22 @@ async function init() {
     if (a.dataset.gated) { const card = document.getElementById(a.dataset.rec); if (card) card.click(); return; }
     if (calm || !a.animate) { location.href = a.href; return; }
     const go = () => { location.href = a.href; };
-    const r = a.getBoundingClientRect(), img = a.querySelector('img');
-    // 1) the card grows a little and straightens
-    a.style.animation = 'none';
-    a.animate([{ transform: getComputedStyle(a).transform }, { transform: 'scale(1.1)' }], { duration: 220, easing: 'cubic-bezier(.2,.8,.2,1)', fill: 'forwards' });
-    // 2) a copy of its picture blows out to fill the screen
-    const blow = document.createElement('div');
-    blow.className = 'wb-float-th-blow';
-    blow.style.cssText = `left:${r.left}px;top:${r.top}px;width:${r.width}px;height:${r.height}px;background-image:url('${img.src}');`;
-    blow.innerHTML = '<i></i>';
-    document.body.appendChild(blow);
-    // ...and washes into the light page colour as it fills the screen, so it flows into the summary page
-    blow.firstChild.animate([{ opacity: 0 }, { opacity: 0, offset: .45 }, { opacity: 1 }], { duration: 520, delay: 200, easing: 'ease-in', fill: 'forwards' });
-    const out = blow.animate([
-      { left: r.left + 'px', top: r.top + 'px', width: r.width + 'px', height: r.height + 'px', borderRadius: '14px', opacity: 0 },
-      { opacity: 1, offset: .15 },
-      { left: '0px', top: '0px', width: innerWidth + 'px', height: innerHeight + 'px', borderRadius: '0px', opacity: 1 }
-    ], { duration: 520, delay: 200, easing: 'cubic-bezier(.7,0,.3,1)', fill: 'forwards' });
-    out.onfinish = go;
-    setTimeout(go, 1200);   // in case the animation never reports back
+    // 1) the card grows a little where it is, keeping its tilt
+    const tilt = getComputedStyle(a).transform;
+    a.style.animation = 'none'; a.style.transform = tilt; a.style.zIndex = 3;
+    a.animate([{ transform: tilt }, { transform: tilt + ' scale(1.12)' }], { duration: 260, easing: 'cubic-bezier(.2,.8,.2,1)', fill: 'forwards' });
+    // 2) then the page quickly fades out into the summary
+    const fade = document.createElement('div');
+    fade.className = 'wb-page-fade';
+    document.body.appendChild(fade);
+    fade.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 240, delay: 220, easing: 'ease-in', fill: 'forwards' }).onfinish = go;
+    setTimeout(go, 900);   // in case the animation never reports back
   });
-  // Coming back with the browser's Back button: clear the blow-out
+  // Coming back with the browser's Back button: clear the fade
   window.addEventListener('pageshow', e => {
     if (!e.persisted) return;
-    document.querySelectorAll('.wb-float-th-blow').forEach(n => n.remove());
-    box.querySelectorAll('.wb-float-th').forEach(n => { n.getAnimations().forEach(x => x.cancel()); n.style.animation = ''; });
+    document.querySelectorAll('.wb-page-fade').forEach(n => n.remove());
+    box.querySelectorAll('.wb-float-th').forEach(n => { n.getAnimations().forEach(x => x.cancel()); n.style.animation = n.style.transform = n.style.zIndex = ''; });
   });
 }());
 

@@ -6296,9 +6296,7 @@ button.btn-primary {
 .wb-float-th-2{left:26%;top:3%;--r:4deg;animation-duration:6.6s;animation-delay:.5s;}
 .wb-float-th-3{left:2%;top:82%;--r:3deg;animation-duration:7.4s;animation-delay:1s;}
 .wb-float-th-4{left:28%;top:90%;--r:-4deg;animation-duration:6.8s;animation-delay:1.5s;}
-.wb-float-th-blow{position:fixed;z-index:10000;background:#0d1b3e center/cover no-repeat;box-shadow:0 30px 80px -20px rgba(13,27,62,.6);pointer-events:none;}
-.wb-float-th-blow::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(13,27,62,.15),rgba(37,99,235,.35));}
-.wb-float-th-blow i{position:absolute;inset:0;z-index:1;background:#eef2ff;opacity:0;}
+.wb-page-fade{position:fixed;inset:0;z-index:10000;background:#eef2ff;opacity:0;pointer-events:none;}
 @keyframes wbFloat{0%,100%{transform:translateY(0) rotate(var(--r,0deg));}50%{transform:translateY(-12px) rotate(calc(var(--r,0deg) + 1.5deg));}}
 @media(prefers-reduced-motion:reduce){.wb-float-th{animation:none;transform:rotate(var(--r,0deg));}}
 @media(max-width:1024px){.wb-hero-float-decor{display:none;}}
