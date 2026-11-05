@@ -1,15 +1,16 @@
 ﻿const WEBINAR_DATA = {
   "featured": {
-    "title": "Is Your Payroll Ready for the Year-End?",
-    "language": "English",
-    "description": "December does not create payroll errors, it exposes them. Join Sharon Aytona for a live look at where year-end payroll gaps usually start (annualization reconciliation, data quality issues, and taxable/non-taxable benefit classification) while there's still time to fix them.",
-    "date": "2026-10-09T15:00:00+08:00",
-    "dateLabel": "9 Oct 2026",
-    "timeLabel": "3:00 PM PHT",
-    "registerUrl": "/webinar-year-end-payroll-ph/",
-    "coverImage": "/uploads/2026/10/upcoming_cover.webp",
+    "title": "Managing Payroll at Scale: The Reality for Companies in Indonesia",
+    "language": "Bahasa",
+    "description": "Paying thousands of employees across many locations means handling different regional minimum wages (UMK), shifts and overtime that keep changing, PPh 21 TER, BPJS and the December tax recalculation. Diana Lesalim, who has run payroll for more than 45,000 employees, shares what often goes wrong, what works, and how payroll teams can stay calm heading into year-end.",
+    "date": "2026-11-19T11:00:00+07:00",
+    "dateLabel": "19 Nov 2026",
+    "timeLabel": "11:00 AM WIB",
+    "registerUrl": "/webinar-payroll-id/",
+    "coverImage": "/uploads/2026/10/Diana-Lesalim.jpg",
+    "coverPosition": "center 30%",
     "speakers": [
-      { "initials": "SA", "name": "Sharon Aytona", "role": "Consultant, Bridge PayDay Solutions &amp; President, Thinktank Professional Services Inc.", "photo": "/uploads/2026/10/Sharon.jpg", "color": "#fce7f3", "textColor": "#be185d" }
+      { "initials": "DL", "name": "Diana Lesalim", "role": "Head of Compensation &amp; Benefits, Ceria Corporation", "photo": "/uploads/2026/10/Diana-Lesalim.jpg", "color": "#ede9fe", "textColor": "#7c3aed" }
     ]
   },
   "upcoming": [],
@@ -76,7 +77,7 @@
           "youtubeId": "StNpoZbNjVs",
           "thumbnailGradient": "linear-gradient(135deg,#1e40af,#3b82f6)",
           "speakers": [
-            { "initials": "RS", "name": "Riyazi Samsudeen", "role": "Director Sales & Partner Management, PeoplesHR", "photo": "/uploads/2026/05/riyazi_samsudeen.webp", "color": "#ffedd5", "textColor": "#c2410c" }
+            { "initials": "RS", "name": "Riyazi Samsudeen", "role": "Former Director Sales & Partner Management, PeoplesHR", "photo": "/uploads/2026/05/riyazi_samsudeen.webp", "color": "#ffedd5", "textColor": "#c2410c" }
           ],
           "watchUrl": "https://youtu.be/StNpoZbNjVs",
           "summaryUrl": "/webinars/everywhereworkforce-summary/"
@@ -106,7 +107,7 @@
           "youtubeId": "cAbGKlIRjkQ",
           "thumbnailGradient": "linear-gradient(135deg,#1e40af,#3b82f6)",
           "speakers": [
-            { "initials": "AG", "name": "Asitha Goonewardena", "role": "Chief Product Owner, PeoplesHR", "photo": "/uploads/2026/05/asitha_goonewardana.webp", "color": "#ffedd5", "textColor": "#c2410c" }
+            { "initials": "AG", "name": "Asitha Goonewardena", "role": "Former Chief Product Owner, PeoplesHR", "photo": "/uploads/2026/05/asitha_goonewardana.webp", "color": "#ffedd5", "textColor": "#c2410c" }
           ],
           "watchUrl": "https://www.youtube.com/watch?v=cAbGKlIRjkQ",
           "summaryUrl": "/webinars/people-analytics-summary/"
@@ -189,7 +190,7 @@
           "thumbnailGradient": "linear-gradient(135deg,#9d174d,#ec4899)",
           "speakers": [
             { "initials": "CD", "name": "Charlie Dyer", "role": "Director, Product - Topia", "photo": "/uploads/2026/05/charlie_dyer.webp", "color": "#dbeafe", "textColor": "#2563eb" },
-            { "initials": "VW", "name": "Vichalya Wijesuriya", "role": "Director Marketing, PeoplesHR", "color": "#d1fae5", "textColor": "#065f46" }
+            { "initials": "VW", "name": "Vichalya Wijesuriya", "role": "Former Director Marketing, PeoplesHR", "color": "#d1fae5", "textColor": "#065f46" }
           ],
           "watchUrl": "https://youtu.be/Opnd0QA7Tek",
           "summaryUrl": "/webinars/distributed-workforce-talent-mobility-summary/"
@@ -205,7 +206,7 @@
           "thumbnailGradient": "linear-gradient(135deg,#7c2d12,#f97316)",
           "speakers": [
             { "initials": "TP", "name": "Tarvinder Puri", "role": "Human Resources Director, ADP Advisory Services", "color": "#fce7f3", "textColor": "#be185d" },
-            { "initials": "LL", "name": "Luxsho Logan", "role": "Vice President, Sales - PeoplesHR", "photo": "/uploads/2026/05/luxsho_logan.webp", "color": "#ede9fe", "textColor": "#7c3aed" }
+            { "initials": "LL", "name": "Luxsho Logan", "role": "Former Vice President, Sales - PeoplesHR", "photo": "/uploads/2026/05/luxsho_logan.webp", "color": "#ede9fe", "textColor": "#7c3aed" }
           ],
           "watchUrl": "https://www.youtube.com/watch?v=wKQRUktg0Nw",
           "summaryUrl": "/webinars/role-of-ai-in-hr-summary/"
@@ -220,7 +221,7 @@
           "youtubeId": "WZ8jdOzlhnk",
           "thumbnailGradient": "linear-gradient(135deg,#581c87,#a855f7)",
           "speakers": [
-            { "initials": "LL", "name": "Luxsho Logan", "role": "Vice President, Sales - PeoplesHR", "photo": "/uploads/2026/05/luxsho_logan.webp", "color": "#ede9fe", "textColor": "#7c3aed" },
+            { "initials": "LL", "name": "Luxsho Logan", "role": "Former Vice President, Sales - PeoplesHR", "photo": "/uploads/2026/05/luxsho_logan.webp", "color": "#ede9fe", "textColor": "#7c3aed" },
             { "initials": "KA", "name": "Dr. Kwame Annor", "role": "Senior HR Practitioner", "photo": "/uploads/2026/05/kwame_annor.webp", "color": "#fef9c3", "textColor": "#854d0e" }
           ],
           "watchUrl": "https://www.youtube.com/watch?v=WZ8jdOzlhnk",
@@ -251,7 +252,7 @@
           "youtubeId": "P0j0D4oUebc",
           "thumbnailGradient": "linear-gradient(135deg,#1e3a8a,#60a5fa)",
           "speakers": [
-            { "initials": "LL", "name": "Luxsho Logan", "role": "Vice President, Sales - PeoplesHR", "photo": "/uploads/2026/05/luxsho_logan.webp", "color": "#ede9fe", "textColor": "#7c3aed" }
+            { "initials": "LL", "name": "Luxsho Logan", "role": "Former Vice President, Sales - PeoplesHR", "photo": "/uploads/2026/05/luxsho_logan.webp", "color": "#ede9fe", "textColor": "#7c3aed" }
           ],
           "watchUrl": "https://www.youtube.com/watch?v=P0j0D4oUebc",
           "summaryUrl": "/webinars/ai-influence-on-hr-2024-summary/"
@@ -277,6 +278,22 @@
       "category": "Finance & Payroll",
       "categoryColor": "#d97706",
       "videos": [
+        {
+          "id": "rec-25",
+          "title": "Is Your Payroll Ready for Year-End?",
+          "date": "9 Oct 2026",
+          "duration": "",
+          "views": "",
+          "language": "English",
+          "youtubeId": "vG3kd1DOS9M",
+          "thumbnailGradient": "linear-gradient(135deg,#1e3a8a,#3b82f6)",
+          "speakers": [
+            { "initials": "SA", "name": "Sharon Aytona", "role": "Consultant, Bridge PayDay Solutions &amp; President, Thinktank Professional Services Inc.", "photo": "/uploads/2026/10/Sharon.jpg", "color": "#fce7f3", "textColor": "#be185d" },
+            { "initials": "MG", "name": "Manolo Garcia-Ramos", "role": "Country Director – Philippines, PeoplesHR", "photo": "/uploads/2026/06/manuel_ramos.webp", "color": "#dbeafe", "textColor": "#2563eb" }
+          ],
+          "watchUrl": "https://youtu.be/vG3kd1DOS9M",
+          "summaryUrl": "/webinars/year-end-payroll-philippines-summary/"
+        },
         {
           "id": "rec-24",
           "title": "The Compliance and Data Governance Risk Clinic",
@@ -304,7 +321,7 @@
           "thumbnailGradient": "linear-gradient(135deg,#78350f,#f59e0b)",
           "speakers": [
             { "initials": "GP", "name": "Gigs P. Patano", "role": "", "color": "#fef9c3", "textColor": "#854d0e" },
-            { "initials": "RS", "name": "Riyazi Samsudeen", "role": "Director Sales & Partner Management, PeoplesHR", "photo": "/uploads/2026/05/riyazi_samsudeen.webp", "color": "#ffedd5", "textColor": "#c2410c" }
+            { "initials": "RS", "name": "Riyazi Samsudeen", "role": "Former Director Sales & Partner Management, PeoplesHR", "photo": "/uploads/2026/05/riyazi_samsudeen.webp", "color": "#ffedd5", "textColor": "#c2410c" }
           ],
           "watchUrl": "https://www.youtube.com/watch?v=oVoOESPejnM",
           "summaryUrl": "/webinars/philippines-payroll-summary/"
@@ -319,8 +336,8 @@
           "youtubeId": "mR7ll4k29h0",
           "thumbnailGradient": "linear-gradient(135deg,#78350f,#f59e0b)",
           "speakers": [
-            { "initials": "AG", "name": "Asitha Goonewardena", "role": "Chief Product Owner, PeoplesHR", "photo": "/uploads/2026/05/asitha_goonewardana.webp", "color": "#ffedd5", "textColor": "#c2410c" },
-            { "initials": "RS", "name": "Riyazi Samsudeen", "role": "Director Sales & Partner Management, PeoplesHR", "photo": "/uploads/2026/05/riyazi_samsudeen.webp", "color": "#ffedd5", "textColor": "#c2410c" }
+            { "initials": "AG", "name": "Asitha Goonewardena", "role": "Former Chief Product Owner, PeoplesHR", "photo": "/uploads/2026/05/asitha_goonewardana.webp", "color": "#ffedd5", "textColor": "#c2410c" },
+            { "initials": "RS", "name": "Riyazi Samsudeen", "role": "Former Director Sales & Partner Management, PeoplesHR", "photo": "/uploads/2026/05/riyazi_samsudeen.webp", "color": "#ffedd5", "textColor": "#c2410c" }
           ],
           "watchUrl": "https://www.youtube.com/watch?v=mR7ll4k29h0",
           "summaryUrl": "/webinars/future-proof-payroll-summary/"
@@ -340,11 +357,16 @@
 
 const GRAD_CLASSES = ['','wb-uc-thumb-grad-1','wb-uc-thumb-grad-2','wb-uc-thumb-grad-3','wb-uc-thumb-grad-4','wb-uc-thumb-grad-5'];
 
-const LANG_FLAG = { 'English': '\uD83C\uDDEC\uD83C\uDDE7', 'Bahasa': '\uD83C\uDDEE\uD83C\uDDE9' };
-function langBadge(lang) {
+// Drawn flags: Windows shows flag emoji as letters ("GB", "ID")
+const FLAG_SVG = (inner, vb) => `<svg width="22" height="15" viewBox="${vb}" preserveAspectRatio="none" aria-hidden="true" style="display:inline-block;vertical-align:middle;border-radius:1px;box-shadow:0 0 0 .5px rgba(13,27,62,.25);">${inner}</svg>`;
+const LANG_FLAG = {
+  'English': FLAG_SVG('<rect width="60" height="30" fill="#012169"/><path d="M0 0L60 30M60 0L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0L60 30M60 0L0 30" stroke="#C8102E" stroke-width="2"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/>', '0 0 60 30'),
+  'Bahasa': FLAG_SVG('<rect width="3" height="1" fill="#CE1126"/><rect y="1" width="3" height="1" fill="#fff"/>', '0 0 3 2')
+};
+function langBadge(lang, withFlag) {   // flag only on the featured upcoming webinar
   if (!lang) return '';
-  const flag = LANG_FLAG[lang] || '';
-  return `<span class="wb-lang-badge">${flag} ${lang}</span>`;
+  const flag = withFlag ? (LANG_FLAG[lang] || "") : "";
+  return `<span class="wb-lang">${flag}<span class="wb-lang-badge">${lang}</span></span>`;
 }
 
 // Ã¢"â‚¬Ã¢"â‚¬ Icons (reusable SVG strings) Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬
@@ -387,17 +409,17 @@ function renderFeatured(f) {
           <span class="wb-live-badge"><span class="wb-live-dot"></span>UPCOMING</span>
         </div>
         <h2 class="wb-featured-title">${f.title}</h2>
-        ${langBadge(f.language)}
+        ${langBadge(f.language, true)}
         <p class="wb-featured-desc">${f.description}</p>
         <div class="wb-speakers">${speakersHTML}</div>
       </div>
       <div class="wb-featured-footer">
         <div class="wb-date-chip">${ICON_CALENDAR} ${f.dateLabel}</div>
         <div class="wb-date-chip">${ICON_CLOCK} ${f.timeLabel}</div>
-        <a href="${f.registerUrl}" class="btn-primary wb-featured-cta">Register Free ${ICON_ARROW}</a>
+        <a href="${f.registerUrl}" class="btn-primary wb-featured-cta">Register for Free ${ICON_ARROW}</a>
       </div>
     </div>
-    <div class="wb-featured-right"${f.coverImage ? ` style="background-image:linear-gradient(135deg,rgba(13,27,62,.55),rgba(13,27,62,.7)),url('${f.coverImage}');background-size:cover;background-position:center;"` : ''}>
+    <div class="wb-featured-right"${f.coverImage ? ` style="background-image:linear-gradient(135deg,rgba(13,27,62,.55),rgba(13,27,62,.7)),url('${f.coverImage}');background-size:cover;background-position:${f.coverPosition || 'center'};"` : ''}>
       <div class="wb-countdown">
         <div class="wb-countdown-label">Starts in</div>
         <div class="wb-countdown-tiles">
@@ -896,6 +918,70 @@ async function init() {
     if (!e.detail || !e.detail.formId || e.detail.formId === formId) setTimeout(reveal, 800);
   });
   setTimeout(reveal, 15000);
+}());
+
+/* Phones: the hero form's title and description stay shown; its fields fade in once
+   they scroll into view (and stay shown after) */
+(function () {
+  const col = document.getElementById('wbHeroForm');
+  const fields = col && col.querySelector('.hs-form-frame');
+  if (!fields || !('IntersectionObserver' in window) || !matchMedia('(max-width:768px)').matches ||
+      matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  col.classList.add('wb-reveal');
+  const io = new IntersectionObserver(entries => {
+    if (entries.some(e => e.isIntersecting)) { col.classList.add('wb-in'); io.disconnect(); }
+  }, { rootMargin: '0px 0px -30% 0px' });   // wait until the fields are about a third of the way up the screen
+  // Start once the page has its final layout, or it can count as "in view" mid-load;
+  // 2.5s fallback in case a slow third-party embed holds up the load event
+  let started = false;
+  const start = () => { if (!started) { started = true; io.observe(fields); } };
+  if (document.readyState === 'complete') start();
+  else { window.addEventListener('load', start); setTimeout(start, 2500); }
+}());
+
+/* Hero: the last four webinars held float around the title (large screens):
+   newest top left, then top right, bottom left, bottom right. A click grows the
+   thumbnail where it is, then the page quickly fades into the summary.
+   Members-only ones open the same gate as their recording card instead. */
+(function () {
+  const box = document.getElementById('wbHeroThumbs');
+  if (!box) return;
+  const MONTHS = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
+  const heldOn = d => { const [day, mon, yr] = String(d).split(' '); return new Date(+yr, MONTHS.indexOf(String(mon).slice(0, 3).toLowerCase()), +day).getTime() || 0; };
+  const picks = WEBINAR_DATA.recordings.flatMap(g => g.videos)
+    .filter(v => v.summaryUrl && v.youtubeId)
+    .sort((a, b) => heldOn(b.date) - heldOn(a.date)).slice(0, 4);
+  box.innerHTML = picks.map((v, i) => `
+    <a class="wb-float-th wb-float-th-${i + 1}" href="${v.summaryUrl}" data-rec="${v.id}"${v.gated ? ' data-gated="1"' : ''}>
+      <span class="wb-float-th-img"><img src="https://img.youtube.com/vi/${v.youtubeId}/mqdefault.jpg" alt="" loading="lazy"></span>
+      <span class="wb-float-th-t">${v.title}</span>
+    </a>`).join('');
+
+  const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  box.addEventListener('click', e => {
+    const a = e.target.closest('.wb-float-th');
+    if (!a || e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;   // new-tab clicks behave as normal links
+    e.preventDefault();
+    if (a.dataset.gated) { const card = document.getElementById(a.dataset.rec); if (card) card.click(); return; }
+    if (calm || !a.animate) { location.href = a.href; return; }
+    const go = () => { location.href = a.href; };
+    // 1) the card grows a little where it is, keeping its tilt
+    const tilt = getComputedStyle(a).transform;
+    a.style.animation = 'none'; a.style.transform = tilt; a.style.zIndex = 3;
+    a.animate([{ transform: tilt }, { transform: tilt + ' scale(1.12)' }], { duration: 450, easing: 'cubic-bezier(.2,.8,.2,1)', fill: 'forwards' });
+    // 2) then the page quickly fades out into the summary
+    const fade = document.createElement('div');
+    fade.className = 'wb-page-fade';
+    document.body.appendChild(fade);
+    fade.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 240, delay: 380, easing: 'ease-in', fill: 'forwards' }).onfinish = go;
+    setTimeout(go, 1100);   // in case the animation never reports back
+  });
+  // Coming back with the browser's Back button: clear the fade
+  window.addEventListener('pageshow', e => {
+    if (!e.persisted) return;
+    document.querySelectorAll('.wb-page-fade').forEach(n => n.remove());
+    box.querySelectorAll('.wb-float-th').forEach(n => { n.getAnimations().forEach(x => x.cancel()); n.style.animation = n.style.transform = n.style.zIndex = ''; });
+  });
 }());
 
 init();
