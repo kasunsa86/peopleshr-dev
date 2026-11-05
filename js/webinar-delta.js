@@ -279,6 +279,22 @@
       "categoryColor": "#d97706",
       "videos": [
         {
+          "id": "rec-25",
+          "title": "Is Your Payroll Ready for Year-End?",
+          "date": "9 Oct 2026",
+          "duration": "",
+          "views": "",
+          "language": "English",
+          "youtubeId": "vG3kd1DOS9M",
+          "thumbnailGradient": "linear-gradient(135deg,#1e3a8a,#3b82f6)",
+          "speakers": [
+            { "initials": "SA", "name": "Sharon Aytona", "role": "Consultant, Bridge PayDay Solutions &amp; President, Thinktank Professional Services Inc.", "photo": "/uploads/2026/10/Sharon.jpg", "color": "#fce7f3", "textColor": "#be185d" },
+            { "initials": "MG", "name": "Manolo Garcia-Ramos", "role": "Country Director – Philippines, PeoplesHR", "photo": "/uploads/2026/06/manuel_ramos.webp", "color": "#dbeafe", "textColor": "#2563eb" }
+          ],
+          "watchUrl": "https://youtu.be/vG3kd1DOS9M",
+          "summaryUrl": "/webinars/year-end-payroll-philippines-summary/"
+        },
+        {
           "id": "rec-24",
           "title": "The Compliance and Data Governance Risk Clinic",
           "date": "7 Oct 2026",
