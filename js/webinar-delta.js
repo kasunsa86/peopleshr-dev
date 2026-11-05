@@ -952,13 +952,13 @@ async function init() {
     // 1) the card grows a little where it is, keeping its tilt
     const tilt = getComputedStyle(a).transform;
     a.style.animation = 'none'; a.style.transform = tilt; a.style.zIndex = 3;
-    a.animate([{ transform: tilt }, { transform: tilt + ' scale(1.12)' }], { duration: 260, easing: 'cubic-bezier(.2,.8,.2,1)', fill: 'forwards' });
+    a.animate([{ transform: tilt }, { transform: tilt + ' scale(1.12)' }], { duration: 450, easing: 'cubic-bezier(.2,.8,.2,1)', fill: 'forwards' });
     // 2) then the page quickly fades out into the summary
     const fade = document.createElement('div');
     fade.className = 'wb-page-fade';
     document.body.appendChild(fade);
-    fade.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 240, delay: 220, easing: 'ease-in', fill: 'forwards' }).onfinish = go;
-    setTimeout(go, 900);   // in case the animation never reports back
+    fade.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 240, delay: 380, easing: 'ease-in', fill: 'forwards' }).onfinish = go;
+    setTimeout(go, 1100);   // in case the animation never reports back
   });
   // Coming back with the browser's Back button: clear the fade
   window.addEventListener('pageshow', e => {
