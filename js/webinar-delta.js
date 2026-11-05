@@ -923,18 +923,58 @@ async function init() {
   else { window.addEventListener('load', start); setTimeout(start, 2500); }
 }());
 
-/* Hero: four recent open recordings float around the title (large screens);
-   each opens its summary page */
+/* Hero: the last four webinars held float around the title (large screens):
+   newest top left, then top right, bottom left, bottom right. A click grows the
+   thumbnail, then blows it out to fill the screen before opening the summary.
+   Members-only ones open the same gate as their recording card instead. */
 (function () {
   const box = document.getElementById('wbHeroThumbs');
   if (!box) return;
+  const MONTHS = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
+  const heldOn = d => { const [day, mon, yr] = String(d).split(' '); return new Date(+yr, MONTHS.indexOf(String(mon).slice(0, 3).toLowerCase()), +day).getTime() || 0; };
   const picks = WEBINAR_DATA.recordings.flatMap(g => g.videos)
-    .filter(v => v.summaryUrl && !v.gated && v.youtubeId).slice(0, 4);
+    .filter(v => v.summaryUrl && v.youtubeId)
+    .sort((a, b) => heldOn(b.date) - heldOn(a.date)).slice(0, 4);
   box.innerHTML = picks.map((v, i) => `
-    <a class="wb-float-th wb-float-th-${i + 1}" href="${v.summaryUrl}">
+    <a class="wb-float-th wb-float-th-${i + 1}" href="${v.summaryUrl}" data-rec="${v.id}"${v.gated ? ' data-gated="1"' : ''}>
       <span class="wb-float-th-img"><img src="https://img.youtube.com/vi/${v.youtubeId}/mqdefault.jpg" alt="" loading="lazy"></span>
       <span class="wb-float-th-t">${v.title}</span>
     </a>`).join('');
+
+  const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  box.addEventListener('click', e => {
+    const a = e.target.closest('.wb-float-th');
+    if (!a || e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;   // new-tab clicks behave as normal links
+    e.preventDefault();
+    if (a.dataset.gated) { const card = document.getElementById(a.dataset.rec); if (card) card.click(); return; }
+    if (calm || !a.animate) { location.href = a.href; return; }
+    const go = () => { location.href = a.href; };
+    const r = a.getBoundingClientRect(), img = a.querySelector('img');
+    // 1) the card grows a little and straightens
+    a.style.animation = 'none';
+    a.animate([{ transform: getComputedStyle(a).transform }, { transform: 'scale(1.1)' }], { duration: 220, easing: 'cubic-bezier(.2,.8,.2,1)', fill: 'forwards' });
+    // 2) a copy of its picture blows out to fill the screen
+    const blow = document.createElement('div');
+    blow.className = 'wb-float-th-blow';
+    blow.style.cssText = `left:${r.left}px;top:${r.top}px;width:${r.width}px;height:${r.height}px;background-image:url('${img.src}');`;
+    blow.innerHTML = '<i></i>';
+    document.body.appendChild(blow);
+    // ...and washes into the light page colour as it fills the screen, so it flows into the summary page
+    blow.firstChild.animate([{ opacity: 0 }, { opacity: 0, offset: .45 }, { opacity: 1 }], { duration: 520, delay: 200, easing: 'ease-in', fill: 'forwards' });
+    const out = blow.animate([
+      { left: r.left + 'px', top: r.top + 'px', width: r.width + 'px', height: r.height + 'px', borderRadius: '14px', opacity: 0 },
+      { opacity: 1, offset: .15 },
+      { left: '0px', top: '0px', width: innerWidth + 'px', height: innerHeight + 'px', borderRadius: '0px', opacity: 1 }
+    ], { duration: 520, delay: 200, easing: 'cubic-bezier(.7,0,.3,1)', fill: 'forwards' });
+    out.onfinish = go;
+    setTimeout(go, 1200);   // in case the animation never reports back
+  });
+  // Coming back with the browser's Back button: clear the blow-out
+  window.addEventListener('pageshow', e => {
+    if (!e.persisted) return;
+    document.querySelectorAll('.wb-float-th-blow').forEach(n => n.remove());
+    box.querySelectorAll('.wb-float-th').forEach(n => { n.getAnimations().forEach(x => x.cancel()); n.style.animation = ''; });
+  });
 }());
 
 init();
