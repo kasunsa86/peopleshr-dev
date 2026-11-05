@@ -129,12 +129,11 @@ body{overflow-x:clip;}
   .wsi-band{padding-bottom:28px;}
   .wsi-spec{display:grid;grid-template-columns:1fr 1fr;width:100%;margin:22px 0 0;}
   .wsi-spec>div{padding:10px 12px;}
-  .wsi-spec>div:first-child{display:none;}
   .wsi-spec b{font-size:13px;}
   .wsi-spec>div+div{border-left:0;}
-  .wsi-spec>div:nth-child(3){border-left:1px solid var(--border);}
+  .wsi-spec>div:nth-child(2){border-left:1px solid var(--border);}
   .wsi-spec>div:last-child{grid-column:1/-1;border-top:1px solid var(--border);padding-top:12px;}
-  .wsi-spec>div:nth-child(2),.wsi-spec>div:nth-child(3){text-align:center;}
+  .wsi-spec>div:nth-child(1),.wsi-spec>div:nth-child(2){text-align:center;}
   .wsi-spec .wsi-st{width:100%;font-size:13px;padding:11px 12px;text-align:center;}
   .wsi-spec .wsi-st-ico{display:inline-block;margin-right:8px;animation:wsi-blink 2.4s ease-in-out infinite;}
   .wsi-page .csi-hero{padding-top:0;padding-bottom:8px;}
