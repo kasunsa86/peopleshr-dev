@@ -534,6 +534,7 @@ nav{
   transition:transform .2s;cursor:default;
 }
 .accred-badge:hover{transform:translateY(-4px);}
+a.accred-badge,a.ft-cert,a.tk-compliance-badge,a.trust-badge-box{cursor:pointer;text-decoration:none;}
 .accred-badges .accred-badge img {
   height: 90px !important;
   max-width: 140px !important;
