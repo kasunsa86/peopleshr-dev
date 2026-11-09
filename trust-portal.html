@@ -1338,7 +1338,7 @@
   <div class="trust-doc-panel active" data-doc-panel="certificates">
     <div class="trust-doc-grid">
 
-      <div class="trust-doc-card" id="iso-27001">
+      <div class="trust-doc-card" data-cert="iso-27001">
         <div class="trust-doc-card-img-wrap" data-doc-open data-doc-src="/uploads/2024/10/hSenid_Business_Solutions_PLC_2026.jpg" data-doc-caption="ISMS Certification ISO/IEC 27001:2022">
           <img src="/uploads/2024/10/hSenid_Business_Solutions_PLC_2026.jpg" alt="ISMS Certification ISO/IEC 27001:2022">
         </div>
@@ -1348,7 +1348,7 @@
         </button>
       </div>
 
-      <div class="trust-doc-card" id="iso-27017">
+      <div class="trust-doc-card" data-cert="iso-27017">
         <div class="trust-doc-card-img-wrap" data-doc-open data-doc-src="/uploads/2026/11/hSenid-ISO-27017-2015-certificate-2026.webp" data-doc-caption="Cloud Security ISO/IEC 27017:2015">
           <img src="/uploads/2026/11/hSenid-ISO-27017-2015-certificate-2026-212x300.webp" alt="Cloud Security ISO/IEC 27017:2015">
         </div>
@@ -1358,7 +1358,7 @@
         </button>
       </div>
 
-      <div class="trust-doc-card" id="iso-9001">
+      <div class="trust-doc-card" data-cert="iso-9001">
         <div class="trust-doc-card-img-wrap" data-doc-open data-doc-src="/uploads/2024/10/Child-Certificate_hSenid-Business-Solutions-PLC-_2025-1.png" data-doc-caption="Management System Certificate – ISO 9001:2015">
           <img src="/uploads/2024/10/Child-Certificate_hSenid-Business-Solutions-PLC-_2025-1-221x300.png" alt="Management System Certificate ISO 9001:2015">
         </div>
@@ -1378,7 +1378,7 @@
         </button>
       </div>
 
-      <div class="trust-doc-card" id="ethical-trading">
+      <div class="trust-doc-card" data-cert="ethical-trading">
         <div class="trust-doc-card-img-wrap" data-doc-open data-doc-src="/uploads/2024/10/certificates_3.webp" data-doc-caption="Certificate of Ethical Trading">
           <img src="/uploads/2024/10/certificates_3-232x300.webp" alt="Certificate of Ethical Trading">
         </div>
@@ -1388,7 +1388,7 @@
         </button>
       </div>
 
-      <div class="trust-doc-card" id="ph-npc">
+      <div class="trust-doc-card" data-cert="ph-npc">
         <div class="trust-doc-card-img-wrap" data-doc-open data-doc-src="/uploads/2025/08/Screenshot_2.webp" data-doc-caption="Certificate of Philippines NPC Registered Data Processing System">
           <img src="/uploads/2025/08/Screenshot_2-246x300.webp" alt="Certificate of Philippines NPC Registered Data Processing System">
         </div>
@@ -1772,25 +1772,25 @@
 
   /* Deep links from certification logos site-wide: /trust-portal/#iso-27017 etc.
      Shows the Certificates tab, brings the card into view and opens it. */
-  function openCertById(id, scroll) {
-    var card = id && document.getElementById(id);
-    if (!card || !card.classList.contains('trust-doc-card')) return false;
+  function openCertById(id) {
+    /* Cards carry data-cert (not id) so the browser never auto-jumps to them. */
+    var card = id && /^[a-z0-9-]+$/.test(id) && document.querySelector('.trust-doc-card[data-cert="' + id + '"]');
+    if (!card) return false;
     var tab = document.querySelector('.trust-doc-tab[data-doc-tab="certificates"]');
     if (tab && !tab.classList.contains('active')) tab.click();
-    if (scroll) card.scrollIntoView({ block: 'center' });
     var opener = card.querySelector('[data-doc-open]');
     if (opener) openLightbox(opener.getAttribute('data-doc-src'), opener.getAttribute('data-doc-caption'));
     return true;
   }
 
-  openCertById(location.hash.slice(1), true);
-  window.addEventListener('hashchange', function () { openCertById(location.hash.slice(1), true); });
+  openCertById(location.hash.slice(1));
+  window.addEventListener('hashchange', function () { openCertById(location.hash.slice(1)); });
 
-  /* Same-page badge links (hero badges): open the certificate without jumping the page. */
+  /* Same-page badge links (hero badges): open the certificate in place. */
   document.querySelectorAll('a[href^="#"]').forEach(function (a) {
     a.addEventListener('click', function (e) {
       var id = a.getAttribute('href').slice(1);
-      if (openCertById(id, false)) {
+      if (openCertById(id)) {
         e.preventDefault();
         history.replaceState(null, '', '#' + id);
       }
