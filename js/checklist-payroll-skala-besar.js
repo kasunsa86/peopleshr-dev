@@ -100,17 +100,26 @@ function ptUpdate(fromZero){const pct=Math.round(cur.done/cur.tot*100);ptN.textC
 let ptTimer=0;
 function ptToggle(show){if(show===ptShown)return;ptShown=show;clearTimeout(ptTimer);ptBox.classList.toggle('show',show);ptBox.setAttribute('aria-hidden',String(!show));
  if(show){ptC.style.transition='none';ptC.style.strokeDashoffset=RING_C.toFixed(2);ptV.textContent='0%';ptTimer=setTimeout(()=>ptUpdate(true),420);}}
-// rootMargin keeps it from flickering at the edge: the ribbon must be fully past the sticky navbar
-if('IntersectionObserver' in window){new IntersectionObserver(es=>{es.forEach(en=>ptToggle(!en.isIntersecting&&en.boundingClientRect.top<0));},{threshold:0,rootMargin:'-90px 0px 0px 0px'}).observe(document.getElementById('rib'));}
-function render(){const pd=payday(),today=D(TODAY);let tot=0,done=0,nextUp=null;
- LAYERS.forEach(L=>{const bx=boxes.filter(b=>b.dataset.id.startsWith(L.id+'-'));const d=bx.filter(b=>b.checked).length;tot+=bx.length;done+=d;
+/* "past the ribbon" and "inside the checklist" are read from real positions on scroll (rAF-throttled), not only
+   IntersectionObserver: an instant jump from above the ribbon to below it never crosses it, so IO would miss it.
+   The 90px offset keeps the ribbon fully behind the sticky navbar before anything switches (no flicker at the edge). */
+const rib=document.getElementById('rib'),stack=document.querySelector('#checklist .stackwrap');
+const mbar=document.getElementById('mbar'),navBar=document.getElementById('nvBar');let ribPast=false,inChecklist=false,posRaf=0;
+function mbarTop(){let t=0;if(navBar){const cs=getComputedStyle(navBar),r=navBar.getBoundingClientRect();if((cs.position==='fixed'||cs.position==='sticky')&&r.bottom>0)t=Math.round(r.bottom);}mbar.style.setProperty('--mbar-top',(t+8)+'px');}
+function mbarSync(){if(!mbar)return;const show=ribPast&&inChecklist;if(show)mbarTop();mbar.classList.toggle('show',show);mbar.setAttribute('aria-hidden',String(!show));mbar.tabIndex=show?0:-1;}
+function readPos(){posRaf=0;const r=rib.getBoundingClientRect();ribPast=r.bottom<90;ptToggle(ribPast); // desktop side ring
+ if(stack){const s=stack.getBoundingClientRect();inChecklist=s.top<innerHeight*0.6&&s.bottom>140;}mbarSync();}
+function onPos(){if(!posRaf)posRaf=requestAnimationFrame(readPos);}
+addEventListener('scroll',onPos,{passive:true});addEventListener('resize',onPos);readPos();
+function render(){const pd=payday(),today=D(TODAY);let tot=0,done=0,nextUp=null;const layerDone=[];
+ LAYERS.forEach(L=>{const bx=boxes.filter(b=>b.dataset.id.startsWith(L.id+'-'));const d=bx.filter(b=>b.checked).length;tot+=bx.length;done+=d;layerDone.push(d);
   const s=addDays(pd,L.win[0]),e=L.id==='komunikasi'?new Date(Date.UTC(pd.getUTCFullYear(),pd.getUTCMonth()+1,20)):addDays(pd,L.win[1]);
   const lbl=L.id==='komunikasi'?('Hari H, '+fmtShort(pd)+' s.d. '+fmtShort(e)):(L.win[0]===L.win[1]?'H'+L.win[0]:'H'+L.win[0]+' s.d. H'+L.win[1])+' · '+fmtShort(s)+(L.win[0]===L.win[1]?'':' – '+fmtShort(e));
   const hl=L.id==='komunikasi'?'Hari H s.d. tgl 20 bulan berikutnya':(L.win[0]===L.win[1]?'H'+L.win[0]:'H'+L.win[0]+' s.d. H'+L.win[1]);
   document.querySelector('[data-win="'+L.id+'"]').textContent=hl;
   const tile=x=>'<span class="lw-t"><span class="lw-m">'+BLN3[x.getUTCMonth()].toUpperCase()+'</span><span class="lw-d tnum">'+x.getUTCDate()+'</span><span class="lw-w">'+HARI[x.getUTCDay()].slice(0,3)+'</span></span>';
   const lw=document.querySelector('[data-lwin="'+L.id+'"]');lw.setAttribute('aria-label','Kerjakan '+lbl);
-  lw.innerHTML=tile(s)+(+s===+e?'':'<span class="lw-ar" aria-hidden="true"><i></i></span>'+tile(e));
+  lw.innerHTML=tile(s)+(+s===+e?'':'<span class="lw-ar" aria-hidden="true"><i></i></span>'+tile(e));lw.classList.toggle('prog',d>0);
   const cl=document.querySelector('[data-clear="'+L.id+'"]');cl.disabled=d===0;
   const art=document.getElementById('lapis-'+L.id);const isNow=today>=s&&today<=e;const late=today>e&&d<bx.length;
   art.classList.toggle('is-now',isNow);art.querySelector('.pill.now').hidden=!isNow;art.querySelector('.pill.late').hidden=!late;
@@ -120,6 +129,12 @@ function render(){const pd=payday(),today=D(TODAY);let tot=0,done=0,nextUp=null;
  rendered=true;
  const pct=Math.round(done/tot*100);tweenPct(pct,done,tot);
  const wasAll=cur.done===cur.tot;cur={done,tot};if(ptShown){ptUpdate(false);if(done===tot&&!wasAll)celebrate(ptBox);}
+ if(mbar){const pc=Math.round(done/tot*100);document.getElementById("mbar-n").textContent=done+"/"+tot+" cek";document.getElementById("mb-pct").textContent=pc+"%";
+  document.getElementById("mb-rc").style.strokeDashoffset=(94.25*(1-done/tot)).toFixed(2);
+  const ci=nextUp?LAYERS.indexOf(nextUp.L):-1;
+  document.getElementById("mb-dots").innerHTML=layerDone.map((v,i)=>"<span class=\""+(v===5?"done":i===ci?"cur"+(nextUp.late?" late":""):"")+"\">"+(v===5?"✓":(i+1))+"</span>").join("<em></em>");
+  if(nextUp){document.getElementById("mbar-t").textContent=(nextUp.late?"Terlambat · ":"")+"Lapis "+(ci+1)+" · "+nextUp.L.name;mbar.href="#lapis-"+nextUp.L.id;}
+  else{document.getElementById("mbar-t").textContent="Semua cek selesai";mbar.href="#checklist";}}
  document.getElementById('ring-c').style.strokeDashoffset=(RING_C*(1-done/tot)).toFixed(2);
  const ring=document.getElementById('ring');const wasFull=ring.classList.contains('full');ring.classList.toggle('full',done===tot);if(done===tot&&!wasFull){ring.classList.remove('full');void ring.offsetWidth;ring.classList.add('full');}
  // calendar tile + payday line

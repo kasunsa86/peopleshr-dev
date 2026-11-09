@@ -243,13 +243,33 @@
 .psb-scope .lw-w{display:block;font-size:9px;font-weight:700;color:var(--muted);padding-bottom:4px}
 .psb-scope .lw-ar{width:16px;height:2px;background:var(--line);position:relative}
 .psb-scope .lw-ar i{position:absolute;right:-1px;top:-4px;border:5px solid transparent;border-left:6px solid var(--line);border-right:0}
-.psb-scope .layer[data-layer="data"] .lw-m{background:var(--orange)}
-.psb-scope .layer.is-now .lw-m{background:var(--blue)}
+/* date tiles: orange on every layer until it has at least one tick, then green (JS sets .lwin.prog) */
+.psb-scope .lw-m{background:var(--orange);transition:background .35s}
+.psb-scope .lwin.prog .lw-m{background:var(--green)}
+.psb-scope .lwin.prog .lw-t{border-color:#bbf7d0}
 .psb-scope .layer.is-now .lw-t{border-color:#bfd3fb;box-shadow:0 0 0 3px rgba(37,99,235,.1)}
 .psb-scope .lclear{border:1.5px solid var(--line);background:#fff;color:var(--muted);font:inherit;font-size:12px;font-weight:700;border-radius:999px;padding:4px 11px;cursor:pointer;transition:color .2s,border-color .2s,opacity .2s}
 .psb-scope .lclear:hover:not(:disabled){color:var(--red);border-color:#fca5a5}
 .psb-scope .lclear:disabled{opacity:.45;cursor:default}
-@media (max-width:620px){.psb-scope .lh{flex-direction:column}.psb-scope .lmeta{align-items:flex-start;flex-direction:row;flex-wrap:wrap}}
+/* layer header on phones (option B): [number | LAPIS label + title | small date tiles], description below, clear button at the right.
+   Pure CSS on the desktop markup: .ln / its inner div / .lmeta become display:contents so their children sit in one grid. */
+@media (max-width:620px){
+.psb-scope .layer{padding:16px 16px 6px}
+.psb-scope .lh{display:grid;grid-template-columns:30px minmax(0,1fr) auto;column-gap:10px;row-gap:0;align-items:center;margin-bottom:4px}
+.psb-scope .lh .ln,.psb-scope .lh .ln > div,.psb-scope .lh .lmeta{display:contents}
+.psb-scope .ln .num{grid-column:1;grid-row:1/3;width:30px;height:30px;font-size:14px}
+.psb-scope .lh .lk{grid-column:2;grid-row:1;align-self:end;font-size:9.5px;letter-spacing:.12em}
+.psb-scope .layer .lh h3{grid-column:2;grid-row:2;align-self:start;font-size:18px;margin:0}
+.psb-scope .layer .lh .ln p{grid-column:1/-1;grid-row:3;margin:8px 0 0;font-size:13px}
+.psb-scope .lh .lwin{grid-column:3;grid-row:1/3;gap:3px}
+.psb-scope .lh .lmeta-row{grid-column:1/-1;grid-row:4;justify-content:flex-end;margin-top:8px}
+.psb-scope .lw-t{width:36px;border-radius:7px;box-shadow:none}
+.psb-scope .lw-m{font-size:7.5px;padding:2px 0 1px}
+.psb-scope .lw-d{font-size:15px;padding:3px 0 1px}
+.psb-scope .lw-w{font-size:7.5px;padding-bottom:3px}
+.psb-scope .lw-ar{width:8px}.psb-scope .lw-ar i{display:none}
+.psb-scope .lclear{font-size:11.5px;padding:3px 10px}
+}
 .psb-scope .pill{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:999px}
 .psb-scope .pill.now{background:#dbeafe;color:var(--blue)}
 .psb-scope .pill.late{background:var(--orange-soft);color:#c2410c}
@@ -378,6 +398,7 @@
 .psb-scope .rt b{display:block;font-size:22px;font-weight:800;color:var(--navy-2);margin:2px 0 4px;letter-spacing:-.02em}
 .psb-scope .rt-s{display:block;font-size:12.5px;color:var(--muted);line-height:1.45}
 @media (prefers-reduced-motion:reduce){.psb-scope .rt{transition:none}}
+@media (max-width:560px){.psb-scope .rt{text-align:center}.psb-scope .rt-ic{margin:0 auto 10px}} /* phones: rates cards centred */
 @media (max-width:900px){.psb-scope .changes{grid-template-columns:1fr}
 .psb-scope .rates{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .psb-scope .pattern{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
@@ -420,14 +441,87 @@
 .psb-scope h2,.psb-scope h3{font-family:inherit}
 @media (max-width:900px){.psb-scope .rates .rt:last-child{grid-column:1/-1}}
 .psb-scope .demo .thumb img{width:100%;height:100%;object-fit:cover;display:block}
-/* ribbon on phones: [calendar | payday] row, then [next-up | ring] row */
+/* data-flow, phone version (<=560px): one SVG built for phone width. Staggered 4+4 icon tiles, every input linked to
+   Payroll by a line (row-1 lines run down through the gaps of row 2), Payroll pill, three outputs. SMIL dots, same
+   6s error story as desktop: Lembur pulses, the red dot reaches Payroll, then Slip gaji turns red with the tag. */
+.psb-scope .flow-m{display:none}
 @media (max-width:560px){
-.psb-scope .rib{display:grid;grid-template-columns:72px 1fr;gap:12px 14px;align-items:center}
-.psb-scope .rb-info{flex-basis:auto}
-.psb-scope .rb-next{grid-column:1/-1;order:0;border-radius:14px;padding:10px 12px;gap:4px 8px}
-.psb-scope .rb-next span:last-child{flex-basis:100%;font-size:12.5px}
-.psb-scope .rib .ring{grid-column:1/-1;order:0;border-left:0;padding:10px 0 0;border-top:1px solid var(--line);gap:12px}
-.psb-scope .rib .ring svg{width:52px;height:52px}
-.psb-scope .rib .ring .v{font-size:24px;display:flex;align-items:baseline;gap:8px}
-.psb-scope .rib .ring .v small{margin-top:0;font-size:12.5px}
+.psb-scope .flow-card .fl-svg{display:none}
+.psb-scope .flow-m{display:block;padding:2px 0 0}
+.psb-scope .fm-svg{display:block;width:100%;height:auto;overflow:visible;font-family:inherit}
+.psb-scope .fm-line{fill:none;stroke:#e2e8f0;stroke-width:1.6}
+.psb-scope .fm-dot{fill:var(--orange)}.psb-scope .fm-dot.o{fill:var(--blue-2)}
+.psb-scope .fm-tile{fill:#f1f5ff;stroke:#dbe7fd;stroke-width:1}.psb-scope .fm-tile.o{fill:#fff;stroke:#e2e8f0}
+.psb-scope .fm-node.hot .fm-tile{fill:#fee2e2;stroke:#fecaca}
+.psb-scope .fm-hot-ring{fill:none;stroke:#ef4444;stroke-width:2;opacity:0}
+.psb-scope .fm-i{fill:none;stroke:var(--blue);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.psb-scope .fm-node.hot .fm-i{stroke:var(--red)}
+.psb-scope .fm-o{fill:none;stroke:var(--navy-2);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.psb-scope .fm-t{font-size:10.5px;font-weight:700;fill:var(--ink);stroke:#fff;stroke-width:5px;stroke-linejoin:round;paint-order:stroke} /* white halo: lines pass cleanly behind labels */.psb-scope .fm-t.o{font-size:11px}
+.psb-scope .fm-hub{fill:#0d1b3e}
+.psb-scope .fm-hub-ring{fill:none;stroke:#ef4444;stroke-width:3;opacity:0}
+.psb-scope .fm-hub-i{fill:none;stroke:#93c5fd;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.psb-scope .fm-hub-t{font-size:14px;font-weight:800;fill:#fff}
+.psb-scope .fm-bad{fill:#fef2f2;stroke:#ef4444;stroke-width:1.5;opacity:0}
+.psb-scope .fm-err-c{fill:var(--red)}.psb-scope .fm-err-h{fill:#ef4444;opacity:.18}
+.psb-scope .fm-tag-bg{fill:#fef2f2;stroke:#fecaca;stroke-width:1}.psb-scope .fm-tag-t{font-size:11px;font-weight:800;fill:#b91c1c}
+}
+/* phone progress bar under the navbar (<=900px, where the side panel is hidden): five-step layer tracker
+   (done = green check, current = orange, late = red) + current layer and count + mini ring with % */
+.psb-scope .mbar{display:none}
+@media (max-width:900px){
+.psb-scope .mbar{display:flex;align-items:center;gap:10px;position:fixed;left:12px;right:12px;top:var(--mbar-top,72px);z-index:55;background:#fff;color:var(--navy-2);border:1px solid var(--line);border-radius:16px;padding:7px 8px 7px 10px;box-shadow:0 10px 24px rgba(13,27,62,.16);text-decoration:none;opacity:0;transform:translateY(-12px);pointer-events:none;transition:opacity .25s ease,transform .35s cubic-bezier(.22,1,.36,1)}
+.psb-scope .mbar.show{opacity:1;transform:none;pointer-events:auto}
+.psb-scope .mb-dots{display:flex;align-items:center;gap:3px;flex:none}
+.psb-scope .mb-dots span{width:21px;height:21px;border-radius:50%;display:grid;place-items:center;font-size:10px;font-weight:800;background:#e2e8f0;color:#64748b;transition:background .3s,color .3s,box-shadow .3s}
+.psb-scope .mb-dots span.done{background:var(--green);color:#fff}
+.psb-scope .mb-dots span.cur{background:var(--orange);color:#fff;box-shadow:0 0 0 3px rgba(249,115,22,.22)}
+.psb-scope .mb-dots span.cur.late{background:var(--red);box-shadow:0 0 0 3px rgba(220,38,38,.2)}
+.psb-scope .mb-dots em{width:5px;height:2px;background:#e2e8f0;flex:none}
+.psb-scope .mb-tx{flex:1;min-width:0;text-align:right;line-height:1.2}
+.psb-scope .mb-tx b{display:block;font-size:12.5px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.psb-scope .mb-tx small{font-size:10.5px;font-weight:700;color:var(--muted)}
+.psb-scope .mb-ring{position:relative;width:38px;height:38px;flex:none}
+.psb-scope .mb-ring svg{width:38px;height:38px;transform:rotate(-90deg)}
+.psb-scope #mb-rc{transition:stroke-dashoffset .6s cubic-bezier(.22,1,.36,1)}
+.psb-scope .mb-ring b{position:absolute;inset:0;display:grid;place-items:center;font-size:9.5px;font-weight:800;letter-spacing:-.02em}
+}
+@media (max-width:379px){.psb-scope .mb-dots em{display:none}.psb-scope .mb-dots span{width:19px;height:19px}}
+@media (max-width:900px) and (prefers-reduced-motion:reduce){.psb-scope .mbar,.psb-scope .mb-dots span,.psb-scope #mb-rc{transition:none}}
+@media (max-width:900px){.psb-scope .layer{scroll-margin-top:130px}} /* jumping from the bar keeps the layer title clear of navbar + bar */
+@media print{.psb-scope .mbar{display:none!important}}
+/* ribbon on phones: ONE row = [calendar tile | next-up | ring with % inside].
+   The long payday line is dropped (the tile shows the date); tapping the tile still opens the payday editor,
+   which then appears as a full-width row below. */
+@media (max-width:560px){
+.psb-scope .rib{display:grid;grid-template-columns:52px minmax(0,1fr) 54px;gap:10px;align-items:center;padding:10px 12px}
+.psb-scope .rb-cal{order:1}.psb-scope .rib .rb-next{order:2;flex-basis:auto}.psb-scope .rib .ring{order:3}
+.psb-scope .rb-cal{width:52px;border-radius:10px}
+.psb-scope .rb-cal::before{left:11px;right:11px;height:6px;top:-3px}
+.psb-scope .rb-cal .m{font-size:9.5px;padding:4px 0 2px;border-radius:9px 9px 0 0}
+.psb-scope .rb-cal .d{font-size:20px;padding:4px 0 1px}
+.psb-scope .rb-cal .w{font-size:8.5px;padding-bottom:5px}
+.psb-scope .rb-info{display:contents}
+.psb-scope .rb-l1{display:none}
+.psb-scope .rb-edit{grid-column:1/-1;order:5;margin-top:2px;flex-wrap:nowrap;gap:6px;padding-top:10px;border-top:1px solid var(--line)}
+.psb-scope .rb-edit label{font-size:11.5px;white-space:nowrap}
+.psb-scope .rb-edit select{flex:1 1 auto;min-width:0;font-size:13px;padding:5px 6px}
+.psb-scope .rb-edit input{flex:none;width:50px;font-size:13px;padding:5px 6px}
+.psb-scope .rb-next{min-width:0;border-radius:12px;padding:8px 10px;gap:3px 6px}
+.psb-scope .rb-next .k{font-size:8.5px;letter-spacing:.1em;padding:3px 7px}
+.psb-scope .rb-next b{font-size:13px}
+.psb-scope .rb-next span:last-child{flex-basis:100%;font-size:11.5px;line-height:1.3}
+.psb-scope .rib .ring{position:relative;width:54px;height:54px;border-left:0;padding:0;gap:0}
+.psb-scope .rib .ring svg{width:54px;height:54px}
+.psb-scope .rib .ring .v{position:absolute;inset:0;display:grid;place-items:center;font-size:13.5px;letter-spacing:-.02em}
+.psb-scope .rib .ring .v small{display:none}
+}
+/* small phones (<380px, e.g. 360px): drop the BERIKUTNYA tag (the orange block already says "next"), slightly smaller tile and ring */
+@media (max-width:379px){
+.psb-scope .rib{grid-template-columns:46px minmax(0,1fr) 48px;gap:8px}
+.psb-scope .rb-cal{width:46px}.psb-scope .rb-cal .d{font-size:18px}
+.psb-scope .rib .rb-next .k{display:none}
+.psb-scope .rib .rb-next span:last-child{font-size:11px}
+.psb-scope .rib .ring,.psb-scope .rib .ring svg{width:48px;height:48px}
+.psb-scope .rib .ring .v{font-size:12.5px}
 }
