@@ -128,13 +128,46 @@
 .psb-scope .bar b{color:#fff;font-weight:800}
 .psb-scope .note{font-size:12.5px;color:#9fb3e6;margin-top:16px;border-top:1px solid rgba(255,255,255,.1);padding-top:12px}
 .psb-scope .warn{background:var(--orange-soft);color:#9a3412;border-radius:10px;padding:10px 12px;font-size:13px;margin-top:6px}
-.psb-scope table.t{width:100%;border-collapse:collapse;font-size:14.5px;background:#fff}
-.psb-scope .tw{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r)}
-.psb-scope table.t th,.psb-scope table.t td{text-align:left;padding:13px 16px;border-bottom:1px solid #edf2fb;vertical-align:top}
-.psb-scope table.t th{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:var(--canvas)}
-.psb-scope table.t td:first-child{font-weight:800;color:var(--navy-2)}
-.psb-scope table.t td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
-.psb-scope table.t tr:last-child td{border-bottom:0}
+/* 02 · Tarif: comparison rows (one slim row per program). Bar = employer (solid) + employee (light) share, scaled
+   to the largest total (JHT 5,7%); JKK shows its 0,24% to 1,74% range as solid + striped. Desktop = 6 columns;
+   <=900px each row becomes a compact block (name + rates, bar, cap chip, basis). .rr-l labels show only there. */
+.psb-scope .rrs{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:6px 20px}
+.psb-scope .rr{--c:var(--blue);--cs:#e0eaff;display:grid;grid-template-columns:34px 220px 116px 84px minmax(120px,1fr) 160px minmax(0,1.35fr);column-gap:16px;align-items:center;padding:13px 0;border-top:1px solid #edf2fb}
+.psb-scope .rr-hd{border-top:0;padding:12px 0 8px;font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.psb-scope .rr-hd span:first-child{grid-column:1/3}
+.psb-scope .rr-green{--c:var(--green);--cs:#dcfce7}.psb-scope .rr-blue{--c:var(--blue);--cs:#e0eaff}.psb-scope .rr-navy{--c:var(--navy);--cs:#e3e6f6}.psb-scope .rr-orange{--c:var(--orange);--cs:var(--orange-soft)}.psb-scope .rr-sky{--c:var(--sky);--cs:#e0f2fe}
+.psb-scope .rr-ic{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:var(--cs);color:var(--c)}
+.psb-scope .rr-ic svg{width:18px;height:18px}
+.psb-scope .rr-nm{min-width:0;line-height:1.25}
+.psb-scope .rr-nm small{display:block;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--c)}
+.psb-scope .rr-nm b{display:block;font-size:14px;font-weight:800;color:var(--navy-2)}
+.psb-scope .rr-er b{font-size:20px;font-weight:800;color:var(--navy-2);letter-spacing:-.02em;white-space:nowrap}
+.psb-scope .rr-ee b{font-size:15px;font-weight:700;color:#475569}
+.psb-scope .rr-l{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.psb-scope .rr-bar{display:flex;gap:2px;height:8px;border-radius:99px;background:var(--canvas);overflow:hidden}
+.psb-scope .rr-bar i,.psb-scope .rr-key i{display:block;height:100%;border-radius:99px;background:var(--c,var(--navy-2))}
+.psb-scope .rr-bar i.e,.psb-scope .rr-key i.e{background:color-mix(in srgb,var(--c,var(--navy-2)) 35%,#fff)}
+.psb-scope .rr-bar i.rng{background:linear-gradient(90deg,var(--c) 0 var(--lo),transparent var(--lo)),repeating-linear-gradient(135deg,var(--c) 0 3px,color-mix(in srgb,var(--c) 30%,#fff) 3px 6px)}
+.psb-scope .rr .chip{display:inline-block;font-size:11.5px;font-weight:800;border-radius:999px;padding:4px 10px;background:var(--cs);color:var(--navy-2);white-space:nowrap}
+.psb-scope .rr .chip.none{background:var(--canvas);color:var(--muted)}
+.psb-scope .rr-bs{font-size:12.5px;color:var(--muted);line-height:1.45}
+.psb-scope .rr-key{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:12px;font-size:12px;color:var(--muted)}
+.psb-scope .rr-key span{display:inline-flex;align-items:center;gap:7px}.psb-scope .rr-key i{width:18px;height:6px}
+.psb-scope .rr-key span:last-child{margin-left:auto}
+@media (max-width:900px){
+.psb-scope .rrs{padding:2px 14px}
+.psb-scope .rr-hd{display:none}
+.psb-scope .rr{grid-template-columns:34px minmax(0,1fr) auto auto;grid-template-areas:"ic nm er ee" "bar bar bar bar" "cap cap cap cap" "bs bs bs bs";gap:8px 10px;padding:14px 0}
+.psb-scope .rr:nth-child(2){border-top:0}
+.psb-scope .rr-ic{grid-area:ic}.psb-scope .rr-nm{grid-area:nm}.psb-scope .rr-er{grid-area:er;text-align:right}.psb-scope .rr-ee{grid-area:ee;text-align:right}
+.psb-scope .rr-bar{grid-area:bar}.psb-scope .rr-cap{grid-area:cap}.psb-scope .rr-bs{grid-area:bs;font-size:12px}
+.psb-scope .rr-er .rr-l,.psb-scope .rr-ee .rr-l{position:static;width:auto;height:auto;clip:auto;display:block;font-size:9.5px;font-weight:700;color:var(--muted)}
+.psb-scope .rr-bs .rr-l{position:static;width:auto;height:auto;clip:auto;font-weight:800;color:#94a3b8}
+.psb-scope .rr-cap .rr-l{position:static;width:auto;height:auto;clip:auto;font-size:inherit;font-weight:700;color:var(--muted)}
+.psb-scope .rr-er b{font-size:18px}.psb-scope .rr-ee b{font-size:13.5px}
+.psb-scope .rr-orange .rr-er b{font-size:14.5px} /* JKK range: keeps the name to two lines */
+.psb-scope .rr-key span:last-child{margin-left:0;flex-basis:100%}
+}
 .psb-scope .rules{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .psb-scope .rule{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px}
 .psb-scope .rule h3{font-size:18px;margin-bottom:8px}
@@ -152,3 +185,52 @@
 .psb-scope h2,.psb-scope h3{font-family:inherit}
 @media (max-width:900px){.psb-scope .rates div:last-child{grid-column:1/-1}}
 .psb-scope .demo .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+/* Hitung button + stale result state (inputs no longer recalc live; see js) */
+.psb-scope .calc-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-top:6px;padding-top:18px;border-top:1px solid var(--line)}
+.psb-scope .calc-btn{gap:10px;box-shadow:0 8px 18px rgba(249,115,22,.28);transition:background .2s,transform .2s,box-shadow .2s}
+.psb-scope .calc-btn:hover{transform:translateY(-1px);box-shadow:0 12px 24px rgba(249,115,22,.36)}
+.psb-scope .calc-btn svg{width:18px;height:18px;flex:none}
+.psb-scope .calc-btn.pulse{animation:calcPulse 1.8s ease-in-out infinite}
+@keyframes calcPulse{0%,100%{box-shadow:0 8px 18px rgba(249,115,22,.28),0 0 0 0 rgba(249,115,22,.35)}50%{box-shadow:0 8px 18px rgba(249,115,22,.28),0 0 0 7px rgba(249,115,22,0)}}
+.psb-scope .stale-note{font-size:12.5px;font-weight:700;color:#c2410c}
+.psb-scope .stale-tag{display:inline-block;margin-left:10px;font-size:9.5px;letter-spacing:.1em;color:#fff;background:rgba(249,115,22,.85);border-radius:999px;padding:3px 8px;vertical-align:1px}
+.psb-scope .out .big,.psb-scope .out .sub,.psb-scope .out .kpis,.psb-scope .out .bars{transition:opacity .25s}
+.psb-scope .out.is-stale .big,.psb-scope .out.is-stale .sub,.psb-scope .out.is-stale .kpis,.psb-scope .out.is-stale .bars{opacity:.45}
+.psb-scope .out.flash{animation:outFlash .8s ease}
+@keyframes outFlash{0%{box-shadow:0 0 0 0 rgba(32,160,248,0)}30%{box-shadow:0 0 0 4px rgba(32,160,248,.45)}100%{box-shadow:0 0 0 0 rgba(32,160,248,0)}}
+
+@media (prefers-reduced-motion:reduce){.psb-scope .calc-btn.pulse,.psb-scope .out.flash{animation:none}}
+/* less white space between 02 (rates) and 03 (rules) */
+.psb-scope #tarif.s{padding-bottom:44px}
+.psb-scope #aturan.s{padding-top:52px}
+/* Reset (Atur ulang) next to Hitung */
+.psb-scope .reset-btn{gap:8px;padding:12px 18px;font-size:14px}
+.psb-scope .reset-btn svg{width:16px;height:16px;flex:none}
+/* back to the form: only when form and result are stacked */
+.psb-scope .back-calc{display:none}
+@media (max-width:920px){
+.psb-scope .back-calc{display:inline-flex;align-items:center;gap:7px;margin:0 0 14px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:#fff;font:inherit;font-size:13px;font-weight:800;border-radius:999px;padding:7px 14px 7px 11px;cursor:pointer}
+.psb-scope .back-calc svg{width:15px;height:15px}
+}
+/* section spacing: 01 simulator -> 02 rates */
+.psb-scope #simulator.s{padding-bottom:48px}
+.psb-scope #tarif.s{padding-top:48px}
+@media (max-width:920px){.psb-scope #simulator.s{padding-top:32px;padding-bottom:28px}.psb-scope #tarif.s{padding-top:32px}.psb-scope #simulator .shead{margin-bottom:16px}}
+/* phones: the whole form (with Hitung + Atur ulang) fits on one screen; hints are hidden there */
+@media (max-width:560px){
+.psb-scope .panel{padding:14px 14px 12px}
+.psb-scope .fld{margin-bottom:11px}
+.psb-scope .fld label,.psb-scope .fld .lab{font-size:12.5px;margin-bottom:5px}
+.psb-scope .fld .hint{display:none}
+.psb-scope .fld input[type=text],.psb-scope .fld select{padding:8px 11px;font-size:15px}
+.psb-scope .seg{gap:6px;flex-wrap:nowrap}
+.psb-scope .seg button{flex:1 1 0;min-width:0;padding:6px 9px;font-size:12.5px}
+.psb-scope .seg button small{font-size:9.5px;line-height:1.25}
+.psb-scope .fld .seg[style]{margin-top:6px!important}
+.psb-scope .slider{margin-top:6px}
+.psb-scope .calc-row{margin-top:2px;padding-top:12px;gap:8px;flex-wrap:nowrap}
+.psb-scope .calc-btn{flex:1;justify-content:center;padding:12px 14px;font-size:14px}
+.psb-scope .reset-btn{padding:11px 13px;font-size:13px}
+.psb-scope .stale-note{flex-basis:100%;order:3}
+.psb-scope .calc-row:has(.stale-note:not([hidden])){flex-wrap:wrap}
+}

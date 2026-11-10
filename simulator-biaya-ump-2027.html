@@ -389,7 +389,7 @@
 <div class="shead"><div><p class="eyebrow">01 · Simulator</p><h2>Satu kenaikan kecil, <em>dikali seluruh payroll</em></h2>
 <p class="lede">Angka di bawah adalah contoh. Ganti dengan data Anda; tidak ada yang dikirim ke mana pun.</p></div></div>
 <div class="sim">
-<form class="panel" id="f" novalidate onsubmit="return false">
+<form class="panel" id="f" novalidate>
 <div class="fld"><label for="n">Karyawan yang dibayar di tingkat upah minimum</label><input type="text" id="n" inputmode="numeric" value="2.000">
 <p class="hint">Termasuk karyawan sedikit di atas UMP/UMK bila kebijakan Anda menjaga jarak upah (struktur skala upah).</p></div>
 <div class="fld"><label for="w">Upah minimum 2026 di lokasi mereka (Rp/bulan)</label><input type="text" id="w" inputmode="numeric" value="5.729.876">
@@ -402,9 +402,11 @@
 <p class="hint">Pakai tarif yang tertera di kepesertaan BPJS Ketenagakerjaan perusahaan Anda.</p></div>
 <div class="fld"><label for="ot">Total biaya lembur kelompok ini per bulan (opsional)</label><input type="text" id="ot" inputmode="numeric" value="0">
 <p class="hint">Upah lembur dihitung dari 1/173 upah sebulan, jadi ikut naik dengan persentase yang sama.</p></div>
+<div class="calc-row"><button type="submit" class="btn primary calc-btn" id="calc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2.5"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15v3M8 18h.01M12 18h.01"/></svg>Hitung biaya 2027</button><button type="button" class="btn outline reset-btn" id="reset"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>Atur ulang</button><span class="stale-note" id="stale-note" role="status" hidden>Data berubah. Klik Hitung untuk memperbarui hasil.</span></div>
 </form>
-<div class="out" aria-live="polite">
-<div class="lbl">Tambahan biaya 2027</div>
+<div class="out" id="out" aria-live="polite">
+<button type="button" class="back-calc" id="back-calc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>Kembali ke kalkulator</button>
+<div class="lbl">Tambahan biaya 2027<span class="stale-tag" id="stale-tag" hidden>Belum diperbarui</span></div>
 <div class="big tnum" id="o-year">Rp0</div>
 <div class="sub" id="o-sub"></div>
 <div class="kpis">
@@ -427,15 +429,15 @@
 
 <section class="s" id="tarif"><div class="wrap">
 <div class="shead"><div><p class="eyebrow">02 · Tarif yang dipakai</p><h2>Iuran pemberi kerja yang <em>ikut naik</em></h2></div></div>
-<div class="tw"><table class="t">
-<thead><tr><th>Program</th><th>Pemberi kerja</th><th>Karyawan</th><th>Batas upah</th><th>Dasar</th></tr></thead>
-<tbody>
-<tr><td>BPJS Kesehatan</td><td class="n">4%</td><td class="n">1%</td><td class="n">Rp12.000.000</td><td>Perpres 63/2022 jo. 59/2024. Tidak ada kenaikan iuran per Oktober 2026.</td></tr>
-<tr><td>Jaminan Hari Tua (JHT)</td><td class="n">3,7%</td><td class="n">2%</td><td class="n">Tanpa batas</td><td>PP 46/2015</td></tr>
-<tr><td>Jaminan Pensiun (JP)</td><td class="n">2%</td><td class="n">1%</td><td class="n">Rp11.086.300</td><td>Sejak Maret 2026, surat BPJS B/1226/022026. Disesuaikan lagi setiap Maret.</td></tr>
-<tr><td>Jaminan Kecelakaan Kerja (JKK)</td><td class="n">0,24% – 1,74%</td><td class="n">–</td><td class="n">Tanpa batas</td><td>Sesuai kelompok risiko usaha</td></tr>
-<tr><td>Jaminan Kematian (JKM)</td><td class="n">0,3%</td><td class="n">–</td><td class="n">Tanpa batas</td><td>PP 44/2015</td></tr>
-</tbody></table></div>
+<div class="rrs" role="list" aria-label="Tarif iuran per program">
+<div class="rr rr-hd" aria-hidden="true"><span>Program</span><span>Pemberi kerja</span><span>Karyawan</span><span>Porsi</span><span>Batas upah</span><span>Dasar</span></div>
+<div class="rr rr-green" role="listitem"><span class="rr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg></span><span class="rr-nm"><small>Kesehatan</small><b>BPJS Kesehatan</b></span><span class="rr-er"><small class="rr-l">Pemberi kerja</small><b class="tnum">4%</b></span><span class="rr-ee"><small class="rr-l">Karyawan</small><b class="tnum">1%</b></span><span class="rr-bar" aria-hidden="true"><i style="width:70.2%"></i><i class="e" style="width:17.5%"></i></span><span class="rr-cap"><span class="chip"><small class="rr-l">Batas upah </small>Rp12.000.000</span></span><span class="rr-bs"><small class="rr-l">Dasar: </small>Perpres 63/2022 jo. 59/2024. Tidak ada kenaikan iuran per Oktober 2026.</span></div>
+<div class="rr rr-blue" role="listitem"><span class="rr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg></span><span class="rr-nm"><small>Ketenagakerjaan</small><b>Jaminan Hari Tua (JHT)</b></span><span class="rr-er"><small class="rr-l">Pemberi kerja</small><b class="tnum">3,7%</b></span><span class="rr-ee"><small class="rr-l">Karyawan</small><b class="tnum">2%</b></span><span class="rr-bar" aria-hidden="true"><i style="width:64.9%"></i><i class="e" style="width:35.1%"></i></span><span class="rr-cap"><span class="chip none"><small class="rr-l">Batas upah </small>Tanpa batas</span></span><span class="rr-bs"><small class="rr-l">Dasar: </small>PP 46/2015</span></div>
+<div class="rr rr-navy" role="listitem"><span class="rr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="rr-nm"><small>Ketenagakerjaan</small><b>Jaminan Pensiun (JP)</b></span><span class="rr-er"><small class="rr-l">Pemberi kerja</small><b class="tnum">2%</b></span><span class="rr-ee"><small class="rr-l">Karyawan</small><b class="tnum">1%</b></span><span class="rr-bar" aria-hidden="true"><i style="width:35.1%"></i><i class="e" style="width:17.5%"></i></span><span class="rr-cap"><span class="chip"><small class="rr-l">Batas upah </small>Rp11.086.300</span></span><span class="rr-bs"><small class="rr-l">Dasar: </small>Sejak Maret 2026, surat BPJS B/1226/022026. Disesuaikan lagi setiap Maret.</span></div>
+<div class="rr rr-orange" role="listitem"><span class="rr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M12 8v5M12 16h.01"/></svg></span><span class="rr-nm"><small>Ketenagakerjaan</small><b>Jaminan Kecelakaan Kerja (JKK)</b></span><span class="rr-er"><small class="rr-l">Pemberi kerja</small><b class="tnum">0,24% – 1,74%</b></span><span class="rr-ee"><small class="rr-l">Karyawan</small><b class="tnum">–</b></span><span class="rr-bar" aria-hidden="true"><i class="rng" style="--lo:13.8%;width:30.5%"></i></span><span class="rr-cap"><span class="chip none"><small class="rr-l">Batas upah </small>Tanpa batas</span></span><span class="rr-bs"><small class="rr-l">Dasar: </small>Sesuai kelompok risiko usaha</span></div>
+<div class="rr rr-sky" role="listitem"><span class="rr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 18 0z"/><path d="M12 12v6a2 2 0 0 0 4 0"/></svg></span><span class="rr-nm"><small>Ketenagakerjaan</small><b>Jaminan Kematian (JKM)</b></span><span class="rr-er"><small class="rr-l">Pemberi kerja</small><b class="tnum">0,3%</b></span><span class="rr-ee"><small class="rr-l">Karyawan</small><b class="tnum">–</b></span><span class="rr-bar" aria-hidden="true"><i style="width:5.3%"></i></span><span class="rr-cap"><span class="chip none"><small class="rr-l">Batas upah </small>Tanpa batas</span></span><span class="rr-bs"><small class="rr-l">Dasar: </small>PP 44/2015</span></div>
+</div>
+<div class="rr-key" aria-hidden="true"><span><i></i>Pemberi kerja</span><span><i class="e"></i>Karyawan</span><span>Panjang bar dibandingkan antarprogram</span></div>
 <p class="foot">Jaminan Kehilangan Pekerjaan (JKP) tidak menambah iuran pemberi kerja, sehingga tidak dihitung di simulator.</p>
 </div></section>
 
