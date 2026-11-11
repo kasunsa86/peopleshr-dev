@@ -362,7 +362,7 @@ $cal27Next = $cal27Num === 12 ? null : array_values(cal27_months())[$cal27Num]['
 
   <section class="cal27-body" id="cal27Entry"
     data-month="<?php echo $cal27Num; ?>" data-slug="<?php echo $cal27Slug; ?>"
-    data-portal="<?php echo CAL27_HS_PORTAL; ?>" data-form="<?php echo CAL27_HS_FORM_ID; ?>">
+    data-portal="<?php echo CAL27_HS_PORTAL; ?>" data-form="<?php echo CAL27_HS_FORM_ID; ?>" data-mode="photo">
     <h2>Enter the <?php echo $cal27['name']; ?> draw</h2>
     <ol class="cal27-steps">
       <li><span class="cal27-n">1</span><div><b>Snap</b><p>Take a clear photo of your solved puzzle on the calendar page.</p></div></li>
@@ -371,10 +371,23 @@ $cal27Next = $cal27Num === 12 ? null : array_values(cal27_months())[$cal27Num]['
     </ol>
 
     <div class="cal27-state" data-state="open">
-      <div id="cal27Form" class="cal27-form"></div>
-    </div>
-    <div class="cal27-state cal27-msg" data-state="pending" hidden>
-      <p>The entry form is on its way. Please check back soon.</p>
+      <div id="cal27FormWrap"><div id="cal27Form" class="cal27-form"></div></div>
+      <div id="cal27Pending" class="cal27-msg" hidden>
+        <p>The entry form is on its way. Please check back soon.</p>
+      </div>
+<?php if ($cal27['share']):
+  $cal27PlayUrl = 'https://peopleshr.com/calendar-2027/' . $cal27Slug . '-play/';
+  $cal27WaText = 'Play the PeoplesHR ' . $cal27['name'] . ' calendar game and join the draw: ' . $cal27PlayUrl; ?>
+      <div id="cal27Share" class="cal27-share" data-url="<?php echo $cal27PlayUrl; ?>" hidden>
+        <h3>You're in. Now pass it on.</h3>
+        <p>Share this link with your colleagues. They can play the same <?php echo strtolower($cal27['game']); ?> online and join the <?php echo $cal27['name']; ?> draw too.</p>
+        <div class="cal27-copyrow">
+          <input id="cal27ShareUrl" type="text" readonly aria-label="Link to share" value="<?php echo $cal27PlayUrl; ?>" />
+          <button type="button" class="cal27-btn cal27-copy">Copy link</button>
+        </div>
+        <a class="cal27-wa" href="https://wa.me/?text=<?php echo rawurlencode($cal27WaText); ?>" target="_blank" rel="noopener">Share on WhatsApp</a>
+      </div>
+<?php endif; ?>
     </div>
     <div class="cal27-state cal27-msg" data-state="before" hidden>
       <p>The <?php echo $cal27['name']; ?> game opens on 1 <?php echo $cal27['name'] . ' ' . CAL27_YEAR; ?>. Scan the QR code on your calendar to play this month's game.</p>
