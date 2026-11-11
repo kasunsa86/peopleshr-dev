@@ -22,18 +22,18 @@ const CAL27_YEAR = 2027;
 function cal27_months()
 {
     return [
-        'january'   => ['name' => 'January',   'theme' => 'New Beginnings',             'game' => 'Crossword',     'share' => true],
-        'february'  => ['name' => 'February',  'theme' => 'Valentines',                 'game' => 'Find the word', 'share' => false],
-        'march'     => ['name' => 'March',     'theme' => 'Brand Names',                'game' => 'Crossword',     'share' => false],
-        'april'     => ['name' => 'April',     'theme' => 'Avurudu, 30 Years',          'game' => 'Find the word', 'share' => false],
-        'may'       => ['name' => 'May',       'theme' => 'PeoplesHR Module Suites',    'game' => 'Crossword',     'share' => false],
-        'june'      => ['name' => 'June',      'theme' => '6 Months Gone, 6 More to Go', 'game' => 'Find the word', 'share' => true],
-        'july'      => ['name' => 'July',      'theme' => 'Friendship',                 'game' => 'Crossword',     'share' => false],
-        'august'    => ['name' => 'August',    'theme' => 'Wellness',                   'game' => 'Find the word', 'share' => false],
-        'september' => ['name' => 'September', 'theme' => 'Growth',                     'game' => 'Crossword',     'share' => false],
-        'october'   => ['name' => 'October',   'theme' => 'Halloween',                  'game' => 'Find the word', 'share' => false],
-        'november'  => ['name' => 'November',  'theme' => 'AI Future',                  'game' => 'Crossword',     'share' => false],
-        'december'  => ['name' => 'December',  'theme' => 'Christmas',                  'game' => 'Find the word', 'share' => true],
+        'january'   => ["headline" => "Let's go! 8 words to kick off the year!", 'name' => 'January',   'theme' => 'New Beginnings',             'game' => 'Crossword',     'share' => true],
+        'february'  => ["headline" => "Love is in the air! 7 things that make work lovable!", 'name' => 'February',  'theme' => 'Valentines',                 'game' => 'Find the word', 'share' => false],
+        'march'     => ["headline" => "Know us better? 5 words, all about PeoplesHR!", 'name' => 'March',     'theme' => 'Brand Names',                'game' => 'Crossword',     'share' => false],
+        'april'     => ["headline" => "Avurudu is here! 7 words of the season!", 'name' => 'April',     'theme' => 'Avurudu, 30 Years',          'game' => 'Find the word', 'share' => false],
+        'may'       => ["headline" => "From hire to retire! 7 words from the PeoplesHR platform!", 'name' => 'May',       'theme' => 'PeoplesHR Module Suites',    'game' => 'Crossword',     'share' => false],
+        'june'      => ["headline" => "Time for mid-year feedback, served free like a dansala! 6 words to find!", 'name' => 'June',      'theme' => '6 Months Gone, 6 More to Go', 'game' => 'Find the word', 'share' => true],
+        'july'      => ["headline" => "Every great job needs a great friend! 6 words to find!", 'name' => 'July',      'theme' => 'Friendship',                 'game' => 'Crossword',     'share' => false],
+        'august'    => ["headline" => "This month is all about wellness! 6 words to find!", 'name' => 'August',    'theme' => 'Wellness',                   'game' => 'Find the word', 'share' => false],
+        'september' => ["headline" => "Level up! 7 words to grow your career!", 'name' => 'September', 'theme' => 'Growth',                     'game' => 'Crossword',     'share' => false],
+        'october'   => ["headline" => "Boo! 6 spooky HR words to find!", 'name' => 'October',   'theme' => 'Halloween',                  'game' => 'Find the word', 'share' => false],
+        'november'  => ["headline" => "Plan ahead, the future is here! 6 words to find!", 'name' => 'November',  'theme' => 'AI Future',                  'game' => 'Crossword',     'share' => false],
+        'december'  => ["headline" => "Ho ho ho! 6 festive words to find!", 'name' => 'December',  'theme' => 'Christmas',                  'game' => 'Find the word', 'share' => true],
     ];
 }
 
@@ -49,6 +49,16 @@ function cal27_today($preview = null)
     }
     return new DateTimeImmutable('now', $tz);
 }
+
+/**
+ * HubSpot form that stores every monthly entry (portal 45700506). Leave
+ * the ID empty until the form exists: the month pages then say the entry
+ * form is on its way instead of showing a broken form. Hidden fields on
+ * the form: calendar_2027_month (e.g. "march") and calendar_2027_entry_type
+ * ("photo" from the calendar, "online" from the shared game).
+ */
+const CAL27_HS_PORTAL = '45700506';
+const CAL27_HS_FORM_ID = '';
 
 /** The path the QR should open on a given day. */
 function cal27_route(DateTimeInterface $day)

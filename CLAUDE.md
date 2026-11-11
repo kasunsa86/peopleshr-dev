@@ -25,4 +25,5 @@ One QR code is printed on all 12 pages of the 2027 calendar. It encodes `https:/
 - `calendar.html` is a 302 redirect, never cached, that picks the page from today's date in Colombo time: `/calendar-2027/coming-soon/` before 2027, `/calendar-2027/<month>/` during 2027, `/calendar-2027/thank-you/` after. Rules and the month list live in `inc/calendar-2027.php`.
 - Test a switchover with `/calendar/?preview=2027-03-01`.
 - Pages under `calendar-2027/` use `css/calendar-2027.css`, scoped to `.cal27-scope`.
+- Month pages `calendar-2027/<month>.html` read their copy from `inc/calendar-2027.php` and embed the HubSpot entry form (`CAL27_HS_FORM_ID`). Pages are cached at CloudFront for a day, so `js/calendar-2027.js` opens and closes the form in the browser on Colombo time; `?preview=YYYY-MM-DD` works there too.
 - Each month is open 1st to last day, no late entries. January, June and December also give entrants a share link so colleagues can play online.

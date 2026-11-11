@@ -22,3 +22,11 @@
   .cal27-scope .cal27-body{padding:24px 20px;}
   .cal27-scope .cal27-steps{grid-template-columns:minmax(0,1fr);}
 }
+/* Month pages */
+.cal27-scope .cal27-meta{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px 24px;}
+.cal27-scope .cal27-meta li{display:flex;flex-direction:column;gap:2px;font-size:15px;color:var(--navy);font-weight:600;}
+.cal27-scope .cal27-meta b{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);}
+.cal27-scope .cal27-state[hidden]{display:none;}
+.cal27-scope .cal27-msg{display:flex;flex-direction:column;gap:16px;padding:20px;border-radius:12px;background:var(--bg-card);}
+.cal27-scope .cal27-msg p{margin:0;font-size:15px;line-height:1.6;color:var(--text-body);}
+.cal27-scope .cal27-form{min-height:120px;}
