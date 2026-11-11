@@ -1,0 +1,77 @@
+/* PeoplesHR 2027 calendar pages (/calendar-2027/*). Every rule is scoped
+   to .cal27-scope so nothing leaks onto the rest of the site. */
+.cal27-scope{--cal27-accent:#d9772b;background:var(--bg-light);padding:56px 24px 80px;}
+.cal27-scope .cal27-hero,.cal27-scope .cal27-body{max-width:760px;margin:0 auto;}
+.cal27-scope .cal27-hero{display:flex;flex-direction:column;gap:14px;padding-bottom:32px;}
+.cal27-scope .cal27-eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--cal27-accent);}
+.cal27-scope h1{margin:0;font-size:clamp(30px,5vw,44px);line-height:1.15;font-weight:800;color:var(--navy);text-wrap:balance;}
+.cal27-scope .cal27-lead{margin:0;font-size:17px;line-height:1.6;color:var(--text-body);max-width:60ch;}
+.cal27-scope .cal27-body{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;gap:20px;}
+.cal27-scope h2{margin:0;font-size:22px;font-weight:700;color:var(--navy);}
+.cal27-scope .cal27-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;}
+.cal27-scope .cal27-steps li{display:flex;flex-direction:column;gap:10px;min-width:0;}
+.cal27-scope .cal27-n{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:14px;color:#fff;background:var(--blue);}
+.cal27-scope .cal27-steps b{display:block;color:var(--navy);font-size:15.5px;}
+.cal27-scope .cal27-steps p{margin:4px 0 0;font-size:14px;line-height:1.5;color:var(--text-muted);}
+.cal27-scope .cal27-note{margin:0;font-size:14.5px;line-height:1.6;color:var(--text-body);}
+.cal27-scope .cal27-btn{align-self:flex-start;display:inline-flex;align-items:center;background:var(--blue);color:#fff;font-size:13.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;text-decoration:none;padding:14px 28px;border-radius:999px;transition:background .18s ease;}
+.cal27-scope .cal27-btn:hover{background:#1d4ed8;}
+.cal27-scope .cal27-btn:focus-visible{outline:3px solid var(--blue-light);outline-offset:3px;}
+@media (max-width:820px){
+  .cal27-scope{padding:40px 16px 64px;}
+  .cal27-scope .cal27-body{padding:24px 20px;}
+  .cal27-scope .cal27-steps{grid-template-columns:minmax(0,1fr);}
+}
+/* Month pages */
+.cal27-scope .cal27-meta{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px 24px;}
+.cal27-scope .cal27-meta li{display:flex;flex-direction:column;gap:2px;font-size:15px;color:var(--navy);font-weight:600;}
+.cal27-scope .cal27-meta b{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);}
+.cal27-scope .cal27-state[hidden]{display:none;}
+.cal27-scope .cal27-msg{display:flex;flex-direction:column;gap:16px;padding:20px;border-radius:12px;background:var(--bg-card);}
+.cal27-scope .cal27-msg p{margin:0;font-size:15px;line-height:1.6;color:var(--text-body);}
+.cal27-scope .cal27-form{min-height:120px;}
+/* Share block (Jan, Jun, Dec) */
+.cal27-scope .cal27-share{display:flex;flex-direction:column;gap:12px;margin-top:8px;padding:20px;border-radius:12px;border:2px solid var(--cal27-accent);background:#fff8f1;}
+.cal27-scope .cal27-share[hidden]{display:none;}
+.cal27-scope .cal27-share h3{margin:0;font-size:18px;color:var(--navy);}
+.cal27-scope .cal27-share p{margin:0;font-size:14.5px;line-height:1.6;color:var(--text-body);}
+.cal27-scope .cal27-copyrow{display:flex;gap:8px;flex-wrap:wrap;}
+.cal27-scope .cal27-copyrow input{flex:1 1 240px;min-width:0;padding:12px 14px;border:1px solid var(--border);border-radius:10px;font-size:14px;color:var(--navy);background:#fff;}
+.cal27-scope .cal27-copyrow .cal27-btn{align-self:auto;}
+.cal27-scope .cal27-wa{font-size:14px;font-weight:600;color:var(--blue);}
+#cal27FormWrap[hidden],#cal27Pending[hidden]{display:none;}
+/* Online game (Jan, Jun, Dec play pages) */
+.cal27-scope .cal27-game{display:flex;flex-direction:column;gap:12px;}
+.cal27-scope .cal27-gamehead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;}
+.cal27-scope .cal27-progress{font-size:14px;font-weight:700;color:var(--blue);font-variant-numeric:tabular-nums;}
+.cal27-scope .cal27-howto{margin:0;font-size:14px;color:var(--text-muted);}
+.cal27-scope .cal27-play{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:28px;align-items:start;}
+.cal27-scope .cal27-grid{display:grid;gap:4px;max-width:440px;width:100%;}
+.cal27-scope .cal27-ws{aspect-ratio:1;border:1px solid var(--border);border-radius:8px;background:#fff;font:700 clamp(14px,2.4vw,18px)/1 inherit;color:var(--navy);cursor:pointer;padding:0;}
+.cal27-scope .cal27-ws:hover{border-color:var(--blue-light);}
+.cal27-scope .cal27-ws:focus-visible{outline:3px solid var(--blue-light);outline-offset:1px;}
+.cal27-scope .cal27-ws.is-start{background:var(--blue);color:#fff;border-color:var(--blue);}
+.cal27-scope .cal27-ws.is-found{background:#dcfce7;border-color:#22c55e;color:#14532d;}
+.cal27-scope .cal27-grid.is-xw{gap:3px;}
+.cal27-scope .cal27-xc{position:relative;aspect-ratio:1;border-radius:6px;}
+.cal27-scope .cal27-xc.is-block{background:transparent;}
+.cal27-scope .cal27-xc input{width:100%;height:100%;border:1px solid #cbd5e1;border-radius:6px;background:#fff;text-align:center;font:700 clamp(14px,2.6vw,18px)/1 inherit;color:var(--navy);text-transform:uppercase;padding:0;}
+.cal27-scope .cal27-xc input:focus{outline:3px solid var(--blue-light);outline-offset:0;border-color:var(--blue);}
+.cal27-scope .cal27-xc.is-given input{background:var(--bg-card);color:var(--text-muted);}
+.cal27-scope .cal27-xc.is-ok input{background:#dcfce7;border-color:#22c55e;color:#14532d;}
+.cal27-scope .cal27-xn{position:absolute;top:2px;left:4px;font-size:9.5px;font-weight:700;color:var(--text-muted);pointer-events:none;}
+.cal27-scope .cal27-clues{display:flex;flex-direction:column;gap:10px;min-width:0;}
+.cal27-scope .cal27-clues h3{margin:6px 0 0;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);}
+.cal27-scope .cal27-clues ul,.cal27-scope .cal27-clues ol,.cal27-scope .cal27-xlist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;}
+.cal27-scope .cal27-clues li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;font-size:14px;line-height:1.45;color:var(--text-body);cursor:default;}
+.cal27-scope .cal27-xlist li{cursor:pointer;}
+.cal27-scope .cal27-clues li b{color:var(--navy);min-width:20px;}
+.cal27-scope .cal27-clues li.is-found{color:#15803d;}
+.cal27-scope .cal27-clues li.is-found b{text-decoration:line-through;color:#15803d;}
+.cal27-scope .cal27-solved{display:flex;flex-direction:column;gap:12px;padding-top:12px;border-top:1px solid var(--border);}
+.cal27-scope .cal27-solved[hidden]{display:none;}
+.cal27-scope .cal27-solved p{margin:0;font-size:14.5px;color:var(--text-body);}
+@media (max-width:820px){
+  .cal27-scope .cal27-play{grid-template-columns:minmax(0,1fr);}
+  .cal27-scope .cal27-grid{max-width:none;}
+}
