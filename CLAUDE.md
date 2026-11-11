@@ -17,3 +17,12 @@ Interactive resource pages that follow a webinar, for example `year-end-payroll-
 - Check every change at desktop (1440px) and mobile (390px) widths. Breakpoints in the Indonesian pages are 920px, 900px and 820px.
 - Dates, rates and rules on these pages are researched and cited. Don't change a figure without a source. The Indonesian sources are listed in the pull request that added the pages.
 - No em-dashes in copy, no overclaims about the product, no competitor names.
+
+## 2027 printed calendar (Sri Lanka)
+
+One QR code is printed on all 12 pages of the 2027 calendar. It encodes `https://peopleshr.com/calendar/` and must never change after print.
+
+- `calendar.html` is a 302 redirect, never cached, that picks the page from today's date in Colombo time: `/calendar-2027/coming-soon/` before 2027, `/calendar-2027/<month>/` during 2027, `/calendar-2027/thank-you/` after. Rules and the month list live in `inc/calendar-2027.php`.
+- Test a switchover with `/calendar/?preview=2027-03-01`.
+- Pages under `calendar-2027/` use `css/calendar-2027.css`, scoped to `.cal27-scope`.
+- Each month is open 1st to last day, no late entries. January, June and December also give entrants a share link so colleagues can play online.

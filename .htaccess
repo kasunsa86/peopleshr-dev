@@ -132,6 +132,12 @@ ErrorDocument 404 /404.html
         Header unset Cache-Control
         Header always set Cache-Control "no-store"
     </Files>
+    # calendar.html is the 2027 calendar QR redirect: it must switch at
+    # midnight Colombo time, so CloudFront may never keep a copy.
+    <Files "calendar.html">
+        Header unset Cache-Control
+        Header always set Cache-Control "no-store"
+    </Files>
 </IfModule>
 
 # ============================================================
