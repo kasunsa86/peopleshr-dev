@@ -71,6 +71,7 @@ Key interpretation notes:
 
 - [PeoplesHR Philippines](https://peopleshr.com/philippines/): Philippine HR and payroll overview covering employee data, attendance, shifts, payroll, statutory processes, Lexi AI and multi-site workforce management.
 - [Philippines product capabilities](https://peopleshr.com/capability-details/): Detailed reference used with the package comparison; confirm jurisdiction-specific availability during solution scoping.
+- [13th Month Pay 2026: DOLE Labor Advisory No. 21 Explained](https://peopleshr.com/news/13th-month-pay-2026-dole-labor-advisory-21/): Deadline (24 Dec 2026), compliance report (15 Jan 2027), formula and DOLE's worked examples.
 
 ## Payroll Calculators
 
