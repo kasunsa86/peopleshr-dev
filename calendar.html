@@ -1,0 +1,28 @@
+<?php
+/**
+ * /calendar/ -- the URL printed in the QR code on every page of the 2027
+ * calendar. It shows nothing itself: it sends the visitor to this month's
+ * page (see inc/calendar-2027.php for the rules).
+ *
+ * Always a 302 and never cached, so the month switches at midnight Colombo
+ * time at the CloudFront edge too. (Apache's "Header set" for .html only
+ * applies to 2xx responses, so the page cache rule doesn't touch this
+ * redirect; .htaccess also marks this file no-store as a second guard.)
+ *
+ * Test a switchover with /calendar/?preview=2027-03-01
+ */
+require_once __DIR__ . '/inc/calendar-2027.php';
+
+$preview = isset($_GET['preview']) ? $_GET['preview'] : null;
+$target = cal27_route(cal27_today($preview))
+    . '?utm_source=calendar-2027&utm_medium=qr&utm_campaign=calendar-2027';
+// Carry a test date through to the month page so a whole journey can be
+// previewed end to end.
+if (is_string($preview) && preg_match('/^\d{4}-\d{2}-\d{2}$/', $preview)) {
+    $target .= '&preview=' . $preview;
+}
+
+header('Cache-Control: no-store, max-age=0');
+header('X-Robots-Tag: noindex, nofollow');
+header('Location: ' . $target, true, 302);
+exit;
