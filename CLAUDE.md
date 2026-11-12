@@ -9,7 +9,7 @@ Pages under `webinars/*-summary.html` (served at `/webinars/<slug>-summary/`) ar
 - Work on a branch named `webinar/<slug>` and open a pull request. Never push to `main`; Kasun reviews, merges and deploys.
 - When you change the layout, behaviour or copy rules of the summary pages, update the guide in the same pull request.
 
-## Webinar lead-asset pages (checklists and calculators)
+## Webinar lead-asset pages (checklists, calculators and other tools)
 
 Interactive resource pages that follow a webinar, for example `year-end-payroll-checklist-ph-2026.html` + `13th-month-90k-calculator-ph-2026.html` (Philippines) and `checklist-payroll-skala-besar-2026.html` + `simulator-biaya-ump-2027.html` (Indonesia, Bahasa Indonesia).
 
@@ -17,3 +17,4 @@ Interactive resource pages that follow a webinar, for example `year-end-payroll-
 - Check every change at desktop (1440px) and mobile (390px) widths. Breakpoints in the Indonesian pages are 920px, 900px and 820px.
 - Dates, rates and rules on these pages are researched and cited. Don't change a figure without a source. The Indonesian sources are listed in the pull request that added the pages.
 - No em-dashes in copy, no overclaims about the product, no competitor names.
+- Full guide for building new ones from a webinar deck (any format: checklist, calculator, scorecard, benchmark, calendar, template): `.claude/skills/webinar-lead-assets/SKILL.md` (loads as the `webinar-lead-assets` skill). Start from the newest lead-asset page in the repo. Branch `lead-asset/<slug>`, open a pull request, never push to `main`. If you change how these pages look or behave, update the guide in the same pull request.
