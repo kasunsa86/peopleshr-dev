@@ -103,7 +103,7 @@ function cal27_today($preview = null)
  * link runs the journey as a demo, a normal visit says entries open soon).
  * Form fields used: firstname, lastname, company, jobtitle, email, the file
  * field below, and the hidden fields
- * the form: calendar_2027_month (e.g. "march") and calendar_2027_entry_type
+ * calendar_2027_month (e.g. "march") and calendar_2027_entry_type
  * ("photo" from the calendar, "online" from the shared game).
  */
 const CAL27_HS_PORTAL = '45700506';
