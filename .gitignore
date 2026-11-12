@@ -26,3 +26,15 @@ tools/
 # are the exception, so every Claude builds pages the same way.
 .claude/*
 !.claude/skills/
+
+# Live quote secrets (HubSpot token). Created by hand on the server; see
+# inc/quote-secrets.example.php.
+inc/quote-secrets.php
+
+# Downloaded copies of the live .htaccess (e.g. "htaccess (2)"): they hold the
+# CloudFront origin-lock secret. The repo copy .htaccess is unaffected.
+htaccess*
+
+# Local copy of the live .htaccess (holds the origin-lock secret). Already
+# tracked, so it is also marked skip-worktree locally; never commit it.
+.htaccess

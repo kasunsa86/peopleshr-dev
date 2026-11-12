@@ -1,0 +1,33 @@
+{
+  "info": {
+    "_postman_id": "edb574f6-30a2-4c6c-94c5-8ff53bb10c4e",
+    "name": "Website Pricing API v1",
+    "description": "Public external operations for Website Pricing API. Set baseUrl and apiKey in the active environment. No credentials are included.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": { "type": "bearer", "bearer": [{ "key": "token", "value": "{{apiKey}}", "type": "string" }] },
+  "variable": [
+    { "key": "baseUrl", "value": "https://YOUR_CONFIGURED_HOST/api", "type": "string" },
+    { "key": "apiKey", "value": "PASTE_YOUR_CREDENTIAL_IN_POSTMAN_VAULT", "type": "string", "description": "Use a Postman secret variable or vault; never commit the real credential." },
+    { "key": "region", "value": "LK", "type": "string" }
+  ],
+  "item": [
+    {
+      "name": "Get current price list",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Accept", "value": "application/json" }],
+        "url": { "raw": "{{baseUrl}}/integrations/v1/website-pricing/price-list?region={{region}}", "host": ["{{baseUrl}}"], "path": ["integrations", "v1", "website-pricing", "price-list"], "query": [{ "key": "region", "value": "{{region}}" }] }
+      }
+    },
+    {
+      "name": "Calculate website pricing",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Accept", "value": "application/json" }, { "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"region\": \"{{region}}\",\n  \"headcount\": 75,\n  \"modules\": [\n    { \"module\": \"hr\", \"tier\": \"manage\" },\n    { \"module\": \"time\", \"tier\": \"manage\" },\n    { \"module\": \"pay\", \"tier\": \"manage\" }\n  ],\n  \"invoicingFrequency\": \"annual\",\n  \"websiteQuoteReference\": \"DOCS-EXAMPLE-001\"\n}", "options": { "raw": { "language": "json" } } },
+        "url": { "raw": "{{baseUrl}}/integrations/v1/website-pricing/price", "host": ["{{baseUrl}}"], "path": ["integrations", "v1", "website-pricing", "price"] }
+      }
+    }
+  ]
+}

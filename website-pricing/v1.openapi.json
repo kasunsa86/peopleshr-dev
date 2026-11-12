@@ -1,0 +1,397 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Website Pricing API",
+    "version": "1.0.0",
+    "description": "Read-only website pricing calculations using the active Sales Portal price books, tier presets and pricing services.",
+    "x-documentation": {
+      "documentationVersion": "v1",
+      "purpose": "Calculate subscription, Professional Services and first-year pricing for a selected region, headcount and module tiers.",
+      "integrationFlow": [
+        "Request an integration client and operation permissions from an Integration Services administrator.",
+        "Store the issued bearer credential in server-side configuration on the website server.",
+        "Call the price-list operation for the selected region and use its module tier options.",
+        "Submit the selected mandatory modules and tiers to the price operation.",
+        "Use the returned data and requestId to handle the result and follow up on support requests."
+      ],
+      "environments": {
+        "development": "Local DEV. The documentation page shows the current local base URL when opened on localhost. It is for development machines only.",
+        "staging": "Shown only when an authorized deployment configures INTEGRATION_PUBLIC_BASE_URL_STAGING.",
+        "production": "Shown only when an authorized deployment configures INTEGRATION_PUBLIC_BASE_URL_PRODUCTION."
+      },
+      "gettingStarted": [
+        "Ask an Integration Services administrator to register your client and grant website-pricing.price-list and website-pricing.price for the target environment.",
+        "Receive the credential through the approved secure handoff. The complete secret is shown only once when issued.",
+        "Store the credential in a server-side environment variable or secrets facility. Do not put it in browser JavaScript, source control or logs.",
+        "Call GET /api/integrations/v1/website-pricing/price-list?region=LK first to read the currently available tiers and regional minimum headcount.",
+        "Call POST /api/integrations/v1/website-pricing/price with the required modules and a tier returned by price-list.",
+        "A successful response contains data, apiVersion and requestId. Keep requestId for support correlation."
+      ],
+      "authentication": [
+        "Send Authorization: Bearer <credential> on every request.",
+        "Send Accept: application/json. For POST, also send Content-Type: application/json.",
+        "Credentials are environment-bound and require explicit permission for each operation.",
+        "Expired, revoked or rotation-expired credentials return 401. Disabled clients, APIs, operations, environment mismatches and missing operation grants return 403.",
+        "The server stores a digest of each credential. It cannot recover a lost secret; request a rotation from the administrator."
+      ],
+      "versioning": [
+        "The /v1 URL identifies the major contract version. The response apiVersion currently reports 1.0.0.",
+        "A compatible change may add optional response fields. A change to required request fields, existing field meaning or response structure requires a new major route version.",
+        "Use the exact specification version linked from this page when generating clients."
+      ],
+      "pricingNotes": [
+        "HR, Time and Pay are mandatory. Each module may be selected once.",
+        "Use the price-list response to determine tiers currently available for each module and the regional minimum headcount.",
+        "The price operation applies the existing Sales Portal pricing behavior. Annual invoicing is the only supported invoicing frequency.",
+        "Taxes are excluded. The response includes subscription and Professional Services amounts and their first-year total.",
+        "The price-list endpoint returns approved external rate fields. Do not treat values from an old response as current; fetch the list for the target region and environment."
+      ],
+      "errorHandling": [
+        "401 invalid_credentials or credential_inactive: verify the server-side credential or request a rotation.",
+        "403 client_disabled, environment_mismatch, api_disabled, operation_disabled or operation_forbidden: contact the Integration Services administrator.",
+        "422 validation_failed or a pricing validation code: check error.details and correct the request fields, mandatory modules and available tiers.",
+        "429 rate_limited or client_rate_limited: wait before retrying. Use bounded exponential backoff and avoid retrying validation errors.",
+        "409 pricing_region_unavailable or pricing_configuration_unavailable: the requested pricing configuration is unavailable; retry later or contact support.",
+        "5xx operation_failed or authorization_unavailable: retry transient failures with a bounded policy and include requestId when contacting support."
+      ]
+    }
+  },
+  "servers": [
+    {
+      "url": "/api",
+      "description": "API root on the same authorized host as this documentation. Select the configured environment shown on the documentation page."
+    }
+  ],
+  "tags": [
+    { "name": "Website Pricing", "description": "Read-only website pricing operations." }
+  ],
+  "components": {
+    "securitySchemes": {
+      "integrationBearer": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "dai_<key-id>.<secret>",
+        "description": "Use a credential issued for your integration client and target environment. Never include a real credential in examples or browser code."
+      }
+    },
+    "schemas": {
+      "RegionCode": { "type": "string", "enum": ["PH", "LK"], "description": "PH is Philippines; LK is Sri Lanka." },
+      "ModuleId": { "type": "string", "enum": ["hr", "time", "pay", "talent", "engagement", "recruitment", "insights"] },
+      "Tier": { "type": "string", "enum": ["manage", "grow", "transform"], "description": "The selected tier must also be present for that module in the price-list response for the region." },
+      "ModuleSelection": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["module", "tier"],
+        "properties": {
+          "module": { "$ref": "#/components/schemas/ModuleId" },
+          "tier": { "$ref": "#/components/schemas/Tier" }
+        }
+      },
+      "PriceRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["region", "headcount", "modules", "invoicingFrequency"],
+        "properties": {
+          "region": { "$ref": "#/components/schemas/RegionCode" },
+          "headcount": { "type": "integer", "minimum": 1, "maximum": 1000000 },
+          "modules": { "type": "array", "minItems": 3, "maxItems": 7, "uniqueItems": true, "items": { "$ref": "#/components/schemas/ModuleSelection" } },
+          "invoicingFrequency": { "type": "string", "enum": ["annual"] },
+          "websiteQuoteReference": { "type": "string", "minLength": 1, "maxLength": 100, "description": "Optional caller-supplied reference. It is echoed in the response and does not create a Portal quote." }
+        },
+        "example": {
+          "region": "LK",
+          "headcount": 75,
+          "modules": [
+            { "module": "hr", "tier": "manage" },
+            { "module": "time", "tier": "manage" },
+            { "module": "pay", "tier": "manage" }
+          ],
+          "invoicingFrequency": "annual",
+          "websiteQuoteReference": "DOCS-EXAMPLE-001"
+        }
+      },
+      "Region": {
+        "type": "object",
+        "required": ["code", "name", "priceBookKey"],
+        "properties": {
+          "code": { "$ref": "#/components/schemas/RegionCode" },
+          "name": { "type": "string" },
+          "priceBookKey": { "type": "string" }
+        }
+      },
+      "ModulePrice": {
+        "type": "object",
+        "required": ["module", "tier", "annualListAmount", "allocatedHiringManagers", "hiringManagerAllowanceApplied"],
+        "properties": {
+          "module": { "$ref": "#/components/schemas/ModuleId" },
+          "tier": { "$ref": "#/components/schemas/Tier" },
+          "annualListAmount": { "type": "number", "minimum": 0 },
+          "allocatedHiringManagers": { "type": "integer", "nullable": true },
+          "hiringManagerAllowanceApplied": { "type": "integer", "nullable": true }
+        }
+      },
+      "Discount": {
+        "type": "object",
+        "required": ["type", "percent", "amount"],
+        "properties": {
+          "type": { "type": "string", "enum": ["annual_upfront"] },
+          "percent": { "type": "number", "minimum": 0 },
+          "amount": { "type": "number", "minimum": 0 }
+        }
+      },
+      "SubscriptionPricing": {
+        "type": "object",
+        "required": ["modules", "annualSubtotal", "discounts", "annualTotal", "monthlyEquivalent"],
+        "properties": {
+          "modules": { "type": "array", "items": { "$ref": "#/components/schemas/ModulePrice" } },
+          "annualSubtotal": { "type": "number", "minimum": 0 },
+          "discounts": { "type": "array", "items": { "$ref": "#/components/schemas/Discount" } },
+          "annualTotal": { "type": "number", "minimum": 0 },
+          "monthlyEquivalent": { "type": "number", "minimum": 0 }
+        }
+      },
+      "ProfessionalServicesComponent": {
+        "type": "object",
+        "required": ["module", "externalAmount", "effortDays"],
+        "properties": {
+          "module": { "type": "string" },
+          "externalAmount": { "type": "number", "minimum": 0 },
+          "effortDays": { "type": "number", "minimum": 0 }
+        }
+      },
+      "ProfessionalServicesBundle": {
+        "type": "object",
+        "required": ["module", "externalAmount", "effortDays", "components"],
+        "properties": {
+          "module": { "type": "string" },
+          "externalAmount": { "type": "number", "minimum": 0 },
+          "effortDays": { "type": "number", "minimum": 0 },
+          "components": { "type": "array", "items": { "$ref": "#/components/schemas/ProfessionalServicesComponent" } }
+        }
+      },
+      "PricingVersions": {
+        "type": "object",
+        "required": ["subscriptionFormulaVersion", "professionalServicesFormulaVersion", "priceBookVersion"],
+        "properties": {
+          "subscriptionFormulaVersion": { "type": "string" },
+          "professionalServicesFormulaVersion": { "type": "string" },
+          "priceBookVersion": { "type": "string" }
+        }
+      },
+      "PriceResult": {
+        "type": "object",
+        "required": ["websiteQuoteReference", "submittedHeadcount", "pricedHeadcount", "region", "currency", "invoicingFrequency", "subscription", "professionalServices", "firstYearTotal", "pricingVersion", "requestId", "tax"],
+        "properties": {
+          "websiteQuoteReference": { "type": "string", "nullable": true },
+          "submittedHeadcount": { "type": "integer", "minimum": 1 },
+          "pricedHeadcount": { "type": "integer", "minimum": 1 },
+          "region": { "$ref": "#/components/schemas/Region" },
+          "currency": { "type": "string" },
+          "invoicingFrequency": { "type": "string", "enum": ["annual"] },
+          "subscription": { "$ref": "#/components/schemas/SubscriptionPricing" },
+          "professionalServices": {
+            "type": "object",
+            "required": ["oneTimeTotal", "bundles"],
+            "properties": {
+              "oneTimeTotal": { "type": "number", "minimum": 0 },
+              "bundles": { "type": "array", "items": { "$ref": "#/components/schemas/ProfessionalServicesBundle" } }
+            }
+          },
+          "firstYearTotal": { "type": "number", "minimum": 0, "description": "subscription.annualTotal plus professionalServices.oneTimeTotal." },
+          "pricingVersion": { "$ref": "#/components/schemas/PricingVersions" },
+          "requestId": { "type": "string", "nullable": true },
+          "tax": {
+            "type": "object",
+            "required": ["included", "note"],
+            "properties": { "included": { "type": "boolean", "enum": [false] }, "note": { "type": "string" } }
+          }
+        }
+      },
+      "PriceResponse": {
+        "type": "object",
+        "required": ["data", "apiVersion", "requestId"],
+        "properties": {
+          "data": { "$ref": "#/components/schemas/PriceResult" },
+          "apiVersion": { "type": "string", "example": "1.0.0" },
+          "requestId": { "type": "string", "nullable": true }
+        }
+      },
+      "HeadcountBand": {
+        "type": "object",
+        "required": ["key", "minimum", "maximum"],
+        "properties": {
+          "key": { "type": "string" },
+          "minimum": { "type": "integer", "minimum": 1 },
+          "maximum": { "type": "integer", "nullable": true }
+        }
+      },
+      "AvailableModule": {
+        "type": "object",
+        "required": ["module", "tiers", "required"],
+        "properties": {
+          "module": { "$ref": "#/components/schemas/ModuleId" },
+          "tiers": { "type": "array", "items": { "$ref": "#/components/schemas/Tier" } },
+          "required": { "type": "boolean" }
+        }
+      },
+      "SubscriptionRate": {
+        "type": "object",
+        "required": ["module", "tier", "headcountBand", "ratePerEmployeeMonth"],
+        "properties": {
+          "module": { "$ref": "#/components/schemas/ModuleId" },
+          "tier": { "$ref": "#/components/schemas/Tier" },
+          "headcountBand": { "type": "string" },
+          "ratePerEmployeeMonth": { "type": "number", "minimum": 0, "description": "Approved external subscription rate. The live value is returned by price-list and is not embedded in this specification." }
+        }
+      },
+      "ProfessionalServicesRate": {
+        "type": "object",
+        "required": ["role", "ratePerDay"],
+        "properties": {
+          "role": { "type": "string", "enum": ["IE", "BA", "PM"] },
+          "ratePerDay": { "type": "number", "minimum": 0, "description": "Approved external Professional Services rate. The live value is returned by price-list and is not embedded in this specification." }
+        }
+      },
+      "PriceListResult": {
+        "type": "object",
+        "required": ["region", "currency", "priceBookVersion", "subscriptionFormulaVersion", "professionalServicesFormulaVersion", "proposalBuilderVersion", "minimumHeadcount", "annualUpfrontDiscountPercent", "headcountBands", "modules", "subscriptionRates", "professionalServicesRates", "recruitmentAllowance"],
+        "properties": {
+          "region": { "$ref": "#/components/schemas/Region" },
+          "currency": { "type": "string" },
+          "priceBookVersion": { "type": "string" },
+          "subscriptionFormulaVersion": { "type": "string" },
+          "professionalServicesFormulaVersion": { "type": "string" },
+          "proposalBuilderVersion": { "type": "string" },
+          "minimumHeadcount": { "type": "integer", "minimum": 1 },
+          "annualUpfrontDiscountPercent": { "type": "number", "minimum": 0 },
+          "headcountBands": { "type": "array", "items": { "$ref": "#/components/schemas/HeadcountBand" } },
+          "modules": { "type": "array", "items": { "$ref": "#/components/schemas/AvailableModule" } },
+          "subscriptionRates": { "type": "array", "items": { "$ref": "#/components/schemas/SubscriptionRate" } },
+          "professionalServicesRates": { "type": "array", "items": { "$ref": "#/components/schemas/ProfessionalServicesRate" } },
+          "recruitmentAllowance": { "type": "string" }
+        }
+      },
+      "PriceListResponse": {
+        "type": "object",
+        "required": ["data", "apiVersion", "requestId"],
+        "properties": {
+          "data": { "$ref": "#/components/schemas/PriceListResult" },
+          "apiVersion": { "type": "string", "example": "1.0.0" },
+          "requestId": { "type": "string", "nullable": true }
+        }
+      },
+      "ApiError": {
+        "type": "object",
+        "required": ["error"],
+        "properties": {
+          "error": {
+            "type": "object",
+            "required": ["code", "message", "requestId"],
+            "properties": {
+              "code": { "type": "string" },
+              "message": { "type": "string" },
+              "requestId": { "type": "string", "nullable": true },
+              "details": { "type": "array", "items": { "type": "object", "properties": { "path": { "type": "string" }, "code": { "type": "string" } } } }
+            }
+          }
+        }
+      }
+    },
+    "parameters": {
+      "AcceptHeader": { "name": "Accept", "in": "header", "required": false, "schema": { "type": "string", "enum": ["application/json"] }, "example": "application/json" },
+      "RequestIdHeader": { "name": "X-Request-ID", "in": "header", "required": false, "description": "Optional caller correlation ID. The response includes the normalized requestId.", "schema": { "type": "string", "maxLength": 128 } }
+    },
+    "responses": {
+      "BadRequest": { "description": "HTTPS is required for the current environment.", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ApiError" } } } },
+      "Unauthorized": { "description": "Credential is missing, invalid, expired or revoked.", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ApiError" } } } },
+      "Forbidden": { "description": "Client, API, operation or environment access is unavailable or not authorized.", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ApiError" } } } },
+      "ConfigurationConflict": { "description": "The requested region or pricing configuration is unavailable.", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ApiError" } } } },
+      "ValidationError": { "description": "The request did not meet operation or pricing requirements. Validation issues are included in error.details.", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ApiError" } } } },
+      "RateLimited": { "description": "The applicable integration request limit has been reached.", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ApiError" } } } },
+      "ServerError": { "description": "The operation could not be completed.", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ApiError" } } } },
+      "ServiceUnavailable": { "description": "Authorization or active pricing configuration is temporarily unavailable.", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ApiError" } } } }
+    }
+  },
+  "paths": {
+    "/integrations/v1/website-pricing/price": {
+      "post": {
+        "tags": ["Website Pricing"],
+        "operationId": "website-pricing.price",
+        "summary": "Calculate website pricing",
+        "description": "Calculates annual subscription pricing and one-time Professional Services amounts using the existing Sales Portal calculation services. HR, Time and Pay are required. Each module may appear once. A tier must be available for the selected module in the selected region's price-list response.",
+        "security": [{ "integrationBearer": [] }],
+        "parameters": [
+          { "$ref": "#/components/parameters/AcceptHeader" },
+          { "$ref": "#/components/parameters/RequestIdHeader" }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/PriceRequest" },
+              "examples": {
+                "annualPrice": {
+                  "summary": "Mandatory modules with a placeholder tier",
+                  "value": {
+                    "region": "LK",
+                    "headcount": 75,
+                    "modules": [
+                      { "module": "hr", "tier": "manage" },
+                      { "module": "time", "tier": "manage" },
+                      { "module": "pay", "tier": "manage" }
+                    ],
+                    "invoicingFrequency": "annual",
+                    "websiteQuoteReference": "DOCS-EXAMPLE-001"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Calculated subscription, Professional Services and first-year amounts. Taxes are excluded.",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/PriceResponse" } } }
+          },
+          "400": { "$ref": "#/components/responses/BadRequest" },
+          "401": { "$ref": "#/components/responses/Unauthorized" },
+          "403": { "$ref": "#/components/responses/Forbidden" },
+          "409": { "$ref": "#/components/responses/ConfigurationConflict" },
+          "422": { "$ref": "#/components/responses/ValidationError" },
+          "429": { "$ref": "#/components/responses/RateLimited" },
+          "500": { "$ref": "#/components/responses/ServerError" },
+          "503": { "$ref": "#/components/responses/ServiceUnavailable" }
+        }
+      }
+    },
+    "/integrations/v1/website-pricing/price-list": {
+      "get": {
+        "tags": ["Website Pricing"],
+        "operationId": "website-pricing.price-list",
+        "summary": "Get the current price list",
+        "description": "Returns approved external subscription and Professional Services rate fields, module tier availability, regional headcount bands and active pricing versions for PH or LK. Fetch this response for the target environment before selecting tiers. The specification intentionally contains no live rate-card values.",
+        "security": [{ "integrationBearer": [] }],
+        "parameters": [
+          { "$ref": "#/components/parameters/AcceptHeader" },
+          { "$ref": "#/components/parameters/RequestIdHeader" },
+          { "name": "region", "in": "query", "required": true, "description": "PH for Philippines or LK for Sri Lanka.", "schema": { "$ref": "#/components/schemas/RegionCode" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Current approved price-list fields and configuration versions for the region.",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/PriceListResponse" } } }
+          },
+          "400": { "$ref": "#/components/responses/BadRequest" },
+          "401": { "$ref": "#/components/responses/Unauthorized" },
+          "403": { "$ref": "#/components/responses/Forbidden" },
+          "409": { "$ref": "#/components/responses/ConfigurationConflict" },
+          "422": { "$ref": "#/components/responses/ValidationError" },
+          "429": { "$ref": "#/components/responses/RateLimited" },
+          "500": { "$ref": "#/components/responses/ServerError" },
+          "503": { "$ref": "#/components/responses/ServiceUnavailable" }
+        }
+      }
+    }
+  },
+  "security": [{ "integrationBearer": [] }]
+}

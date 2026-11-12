@@ -424,6 +424,10 @@
 /* same blue CTA styling as the navbar's "Request a Demo" button */
 .pc-cta-inner .pc-btn{margin-top:26px;background:var(--grow);color:#fff;box-shadow:0 8px 20px -10px rgba(37,99,235,.7)}
 .pc-cta-inner .pc-btn:hover{background:#1d4ed8;box-shadow:0 12px 26px -10px rgba(37,99,235,.8)}
+/* Secondary CTA beside "Request a Live Quote" */
+.pc-cta-inner .pc-btn+.pc-btn{margin-left:10px}
+.pc-cta-inner .pc-btn-quiet{background:#fff;border-color:var(--line);color:var(--ink);box-shadow:none}
+.pc-cta-inner .pc-btn-quiet:hover{background:var(--bg-soft);border-color:var(--muted-2);box-shadow:none}
 
 @media(max-width:900px){
   /* swipeable horizontal carousel instead of a vertical stack — cards

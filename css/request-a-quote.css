@@ -1,0 +1,147 @@
+/* ═══════════════════════════════════════════════════════════════════
+   request-a-quote.css
+   Request a Live Quote page only. All classes are prefixed .rq- and
+   scoped under .rq-scope; tokens match the pricing page (pricing.css).
+   ═══════════════════════════════════════════════════════════════════ */
+.rq-scope{
+  --ink:#0F1C2E; --ink-2:#334155; --muted:#64748B; --muted-2:#94A3B8;
+  --line:#E7EAF0; --bg-soft:#F8FAFC;
+  --accent:#2563EB; --accent-dark:#1d4ed8; --accent-tint:#EFF6FF; --accent-line:#BFDBFE;
+  --ok:#059669; --ok-tint:#ECFDF5; --err:#B42318;
+  --radius:16px; --radius-sm:10px;
+  --shadow-lg:0 2px 6px rgba(15,28,46,.05),0 20px 48px rgba(15,28,46,.10);
+  --display:'Plus Jakarta Sans',system-ui,sans-serif;
+  --brand-blue:#338CFC; --brand-green:#49CE7F; --brand-orange:#F99121; /* logo mark */
+  font-family:var(--display);color:var(--ink);line-height:1.55;
+  position:relative;overflow:hidden;isolation:isolate;background:var(--bg-soft);
+}
+
+/* Background: three heavily blurred brand-colour spheres drifting slowly.
+   Only transform animates, so the blur is painted once and composited. */
+.rq-bg{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.rq-orb{position:absolute;width:46vmax;height:46vmax;border-radius:50%;filter:blur(110px);opacity:.32;will-change:transform}
+.rq-orb-blue{background:var(--brand-blue);top:-18vmax;left:-12vmax;animation:rq-drift-a 26s ease-in-out infinite alternate}
+.rq-orb-green{background:var(--brand-green);bottom:-20vmax;right:-14vmax;animation:rq-drift-b 32s ease-in-out infinite alternate}
+.rq-orb-orange{background:var(--brand-orange);top:35%;left:40%;width:34vmax;height:34vmax;opacity:.3;animation:rq-drift-c 38s ease-in-out infinite alternate}
+@keyframes rq-drift-a{to{transform:translate(38vw,30vh) scale(1.15)}}
+@keyframes rq-drift-b{to{transform:translate(-40vw,-34vh) scale(.9)}}
+@keyframes rq-drift-c{0%{transform:translate(32vw,-30vh)}50%{transform:translate(-8vw,20vh) scale(1.2)}100%{transform:translate(-48vw,-10vh) scale(.95)}}
+.rq-scope,.rq-scope *{box-sizing:border-box}
+.rq-scope button,.rq-scope input{font:inherit}
+.rq-scope p{margin:0}
+
+/* Centered card */
+.rq-main{min-height:calc(100vh - 64px);display:flex;align-items:center;justify-content:center;padding:56px 16px}
+.rq-card{width:100%;max-width:680px;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow-lg);padding:36px 40px}
+
+/* Header and progress */
+.rq-head{margin-bottom:28px}
+.rq-title{margin:0 0 18px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.rq-progress{height:6px;border-radius:999px;background:var(--line);overflow:hidden}
+.rq-progress-bar{display:block;height:100%;width:0;border-radius:inherit;background:var(--accent);transition:width .3s ease}
+.rq-count{margin-top:8px !important;font-size:13px;color:var(--muted)}
+
+/* Steps */
+.rq-step{border:0;margin:0;padding:0;min-width:0}
+.rq-step[hidden]{display:none}
+.rq-q{display:block;width:100%;margin:0 0 18px;padding:0;font-size:clamp(20px,3vw,24px);font-weight:700;line-height:1.25;letter-spacing:-.02em;color:var(--ink);outline:none}
+.rq-hint{margin:-10px 0 18px !important;font-size:14px;color:var(--muted)}
+.rq-picked{font-weight:600;color:var(--ink-2)}
+
+/* Answer options */
+.rq-options{display:grid;gap:10px}
+.rq-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.rq-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.rq-opt{position:relative;display:flex;align-items:center;gap:12px;padding:14px 16px;border:1.5px solid var(--line);border-radius:var(--radius-sm);background:#fff;cursor:pointer;transition:border-color .15s ease,background .15s ease,box-shadow .15s ease}
+.rq-opt:hover{border-color:var(--accent-line);background:var(--bg-soft)}
+.rq-opt input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.rq-opt-mark{flex:none;width:18px;height:18px;border:1.5px solid var(--muted-2);border-radius:50%;background:#fff;transition:border-color .15s ease,background .15s ease}
+.rq-opt input[type=checkbox]+.rq-opt-mark{border-radius:5px}
+.rq-opt-text{font-size:15px;font-weight:500;color:var(--ink-2)}
+.rq-opt-desc{display:block;margin-top:2px;font-size:13px;font-weight:400;line-height:1.4;color:var(--muted)}
+.rq-opt:has(input:checked){border-color:var(--accent);background:var(--accent-tint)}
+.rq-opt input:checked+.rq-opt-mark{border-color:var(--accent);background:var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/12px no-repeat}
+.rq-opt input:checked~.rq-opt-text{color:var(--ink)}
+.rq-opt input:focus-visible+.rq-opt-mark{box-shadow:0 0 0 3px var(--accent-line)}
+.rq-opt:has(input:disabled){opacity:.5;cursor:not-allowed}
+.rq-opt:has(input:disabled):hover{border-color:var(--line);background:#fff}
+
+/* Package step: one card per module with a tier switch */
+.rq-tier-1{--tier:#059669;--tier-tint:#ECFDF5}
+.rq-tier-2{--tier:#2563EB;--tier-tint:#EFF6FF}
+.rq-tier-3{--tier:#7C3AED;--tier-tint:#F6F3FF}
+.rq-tier-key{display:flex;flex-wrap:wrap;gap:6px 18px;margin:0 0 18px;padding:0;list-style:none;font-size:13px;color:var(--muted)}
+.rq-tier-key b{color:var(--tier);margin-right:2px}
+.rq-loading{font-size:14px;color:var(--muted)}
+.rq-loading[hidden]{display:none}
+.rq-sub{margin:22px 0 10px;font-size:15px;font-weight:700;color:var(--ink)}
+.rq-sub[hidden]{display:none}
+.rq-mods{display:grid;gap:10px}
+.rq-mods[hidden]{display:none}
+.rq-mod{padding:14px 16px;border:1.5px solid var(--line);border-radius:var(--radius-sm);background:#fff}
+.rq-mod[hidden]{display:none}
+.rq-mod.is-off{background:var(--bg-soft)}
+.rq-mod-head{display:flex;gap:12px;align-items:flex-start}
+.rq-mod-icon{flex:none;width:36px;height:36px;border-radius:9px}
+.rq-mod-name{font-size:15px;font-weight:700;color:var(--ink)}
+.rq-mod-blurb{margin-top:2px !important;font-size:13px;color:var(--muted);line-height:1.45}
+.rq-seg{display:flex;gap:6px;margin-top:12px}
+.rq-seg-opt{position:relative;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:40px;padding:6px 4px;border:1.5px solid var(--line);border-radius:9px;background:#fff;font-size:13px;font-weight:600;color:var(--ink-2);text-align:center;cursor:pointer;transition:border-color .15s ease,background .15s ease}
+.rq-seg-opt:hover{border-color:var(--accent-line)}
+.rq-seg-opt input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.rq-seg-opt[hidden]{display:none}
+.rq-seg-opt:has(input:checked){border-color:var(--tier,var(--muted-2));background:var(--tier-tint,var(--bg-soft));color:var(--tier,var(--ink))}
+.rq-seg-opt:has(input:focus-visible){box-shadow:0 0 0 3px var(--accent-line)}
+.rq-seg-opt:has(input:disabled){opacity:.4;cursor:not-allowed}
+.rq-seg-opt:has(input:disabled):hover{border-color:var(--line)}
+.rq-seg-opt.is-rec::after{content:"Recommended";font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--tier)}
+
+/* Contact fields */
+.rq-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.rq-field{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600;color:var(--ink-2)}
+.rq-field-wide{grid-column:1/-1}
+.rq-field input{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:var(--radius-sm);font-size:15px;font-weight:500;color:var(--ink);background:#fff;transition:border-color .15s ease,box-shadow .15s ease}
+.rq-field input::placeholder{color:var(--muted-2)}
+.rq-field input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-tint)}
+.rq-field input[aria-invalid=true]{border-color:var(--err)}
+.rq-field-number{max-width:240px}
+.rq-sr{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.rq-trap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.rq-legal{margin-top:16px !important;font-size:13px;color:var(--muted)}
+.rq-legal a{color:var(--accent);text-decoration:underline}
+
+/* Errors and navigation */
+.rq-error{min-height:1.4em;margin-top:16px !important;font-size:14px;font-weight:600;color:var(--err)}
+.rq-error:empty{min-height:0;margin-top:0 !important}
+.rq-error a{color:inherit;text-decoration:underline}
+.rq-nav{display:flex;justify-content:space-between;gap:12px;margin-top:28px}
+.rq-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border:1.5px solid transparent;border-radius:999px;background:var(--accent);color:#fff;font-size:15px;font-weight:700;text-decoration:none;cursor:pointer;box-shadow:0 8px 20px -10px rgba(37,99,235,.7);transition:background .2s ease,box-shadow .2s ease,transform .15s ease}
+.rq-btn:hover{background:var(--accent-dark)}
+.rq-btn:active{transform:translateY(1px)}
+.rq-btn:disabled{opacity:.6;cursor:wait}
+.rq-btn[hidden]{display:none}
+.rq-btn-ghost{background:#fff;border-color:var(--line);color:var(--ink);box-shadow:none}
+.rq-btn-ghost:hover{background:var(--bg-soft);border-color:var(--muted-2)}
+#rqNext{margin-left:auto}
+
+/* Done */
+.rq-done{text-align:center;padding:12px 0}
+.rq-done[hidden]{display:none}
+.rq-done-icon{display:inline-grid;place-items:center;width:64px;height:64px;margin-bottom:20px;border-radius:50%;background:var(--ok-tint);color:var(--ok)}
+.rq-done-icon svg{width:30px;height:30px}
+.rq-done p{max-width:46ch;margin:0 auto 12px;font-size:16px;color:var(--ink-2)}
+.rq-done .rq-btn{margin-top:16px}
+
+@media (max-width:640px){
+  .rq-main{align-items:flex-start;padding:24px 16px 48px}
+  .rq-card{padding:24px 20px;border-radius:18px}
+  .rq-cols-2,.rq-cols-3,.rq-fields{grid-template-columns:minmax(0,1fr)}
+  .rq-cols-3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  /* Three tiers fit one row; optional modules (four options) go 2 x 2. */
+  .rq-seg{flex-wrap:wrap}
+  .rq-seg:has(.rq-seg-none:not([hidden])) .rq-seg-opt{flex:1 1 calc(50% - 3px)}
+}
+@media (prefers-reduced-motion:reduce){
+  .rq-progress-bar,.rq-opt,.rq-btn,.rq-seg-opt{transition:none}
+  .rq-orb{animation:none}
+}

@@ -1,0 +1,516 @@
+<?php
+require_once __DIR__ . '/inc/geo.php';
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request a Live Quote &bull; PeoplesHR</title>
+  <meta name="description" content="Answer a few questions about your business and get a PeoplesHR quote tailored to your HR, payroll and workforce needs." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://peopleshr.com/request-a-quote/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PeoplesHR" />
+  <meta property="og:title" content="Request a Live Quote" />
+  <meta property="og:description" content="Answer a few questions about your business and get a PeoplesHR quote tailored to your HR, payroll and workforce needs." />
+  <meta property="og:url" content="https://peopleshr.com/request-a-quote/" />
+  <meta property="og:image" content="https://peopleshr.com/uploads/2024/03/PeoplesHR-Logo-1200x630-1.webp" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Request a Live Quote" />
+  <meta name="twitter:description" content="Answer a few questions about your business and get a PeoplesHR quote tailored to your HR, payroll and workforce needs." />
+  <meta name="twitter:image" content="https://peopleshr.com/uploads/2024/03/PeoplesHR-Logo-1200x630-1.webp" />
+
+  <?php include __DIR__ . '/inc/seo-schema.php'; ?>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="<?php echo asset_v('/css/styles.css'); ?>" />
+   <link rel="stylesheet" href="<?php echo asset_v('/css/navbar.css'); ?>" />
+   <link rel="stylesheet" href="<?php echo asset_v('/css/footer.css'); ?>" />
+   <link rel="stylesheet" href="<?php echo asset_v('/css/request-a-quote.css'); ?>" />
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/45700506.js"></script>
+  <!-- End of HubSpot Embed Code -->
+  <?php include __DIR__ . '/inc/ga4.php'; ?>
+  <?php include __DIR__ . '/inc/geo-head.php'; ?>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <link rel="describedby" href="/llms.txt" type="text/markdown">
+</head>
+
+<body>
+
+
+
+<div class="nv-root">
+
+  <!-- ============================= NAVBAR ============================= -->
+  <header class="nv-bar" id="nvBar">
+    <div class="nv-inner">
+
+      <a class="nv-logo" href="/" aria-label="PeoplesHR home">
+        <img src="/uploads/2021/07/logo.webp" alt="PeoplesHR">
+      </a>
+
+      <nav aria-label="Primary">
+        <ul class="nv-menu" id="nvMenu">
+
+          <!-- PRODUCTS (mega) -->
+          <li class="nv-item has-mega" data-nv="dropdown">
+            <a class="nv-link" href="/products/" aria-expanded="false" aria-haspopup="true">
+              Products
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-mega">
+                  <div class="nv-grid">
+                    <div class="nv-tile">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/HRIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>HR</b><span>The foundation that actually thinks</span></span>
+                      <a href="/products/core-hr/" class="lqd-overlay z-index-2" target="_self" aria-label="HR"></a>
+                    </div>
+                    <a class="nv-tile" href="/products/payroll-system/">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/PayIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>Pay</b><span>Globally compliant, less complicated</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/talent-acquisition/">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/TalentIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>Talent</b><span>Hiring smarter, not harder</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/time-and-attendance/">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/TimeIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>Time</b><span>Beyond clock watching</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/people-engagement/">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/EngagementIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>Engagement</b><span>Engagement beyond annual surveys</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/people-analytics/">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/InsightsIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>Insight</b><span>Intelligence that drives action</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/mobile-app/">
+                      <span class="nv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2.4"/><path d="M11 18h2"/></svg></span>
+                      <span class="nv-tt"><b>Mobile App</b><span>Work happens everywhere</span></span>
+                    </a>
+                  </div>
+                  <div class="nv-mega-foot">
+                    <p><b>Meet Lexi - PeoplesHR AI</b>Turn any HR action into a simple conversation.</p>
+                    <a class="nv-ghost" href="/ai-x/">
+                      Explore PeoplesHR AI
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- SOLUTIONS (mega columns) -->
+          <li class="nv-item has-mega" data-nv="dropdown">
+            <a class="nv-link" href="/solutions/" aria-expanded="false" aria-haspopup="true">
+              Solutions
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card">
+                  <div class="nv-cols">
+                    <div class="nv-col">
+                      <p class="nv-eyebrow">Industries</p>
+                      <ul class="nv-list">
+                        <li><a href="/solutions/banking-finance-insurance-industries/">Banking, Finance &amp; Insurance<small>Compliance, accuracy and control</small></a></li>
+                        <li><a href="/solutions/hr-software-for-hospitality-industry/">Hospitality<small>Control labour costs across every shift</small></a></li>
+                        <li><a href="/solutions/hr-software-for-manufacturing-industry/">Manufacturing<small>Keep your production lines moving</small></a></li>
+                        <li><a href="/solutions/hr-software-for-professional-and-business-services-industry/">Professional &amp; Business Services<small>Scales with projects, clients and people</small></a></li>
+                        <li><a href="/solutions/hr-software-for-retail-industry/">Retail<small>Keep stores staffed and on target</small></a></li>
+                        <li><a href="/solutions/hr-software-for-it-and-ites-industry/">IT &amp; ITES<small>Connected, compliant teams anywhere</small></a></li>
+                        <li><a href="/solutions/hr-software-for-transportation-and-logistics-industry/">Transportation &amp; Logistics<small>Moves as fast as your fleet</small></a></li>
+                      </ul>
+                    </div>
+                    <div class="nv-col">
+                      <p class="nv-eyebrow">By Role</p>
+                      <ul class="nv-list">
+                        <li><a href="/solutions/chro/">People Strategy Leaders<small>When the board asks about ROI</small></a></li>
+                        <li><a href="/solutions/cfo/">Financial Strategy Leaders<small>When the numbers finally add up</small></a></li>
+                        <li><a href="/solutions/cio/">Technology Strategy Leaders<small>Technology that works with you</small></a></li>
+                      </ul>
+                    </div>
+                    <div class="nv-col">
+                      <p class="nv-eyebrow">Specialized Solutions</p>
+                      <ul class="nv-list">
+                        <li><a href="/solutions/peopleshr-academy/">PeoplesHR Academy<small>Master PeoplesHR, transform operations</small></a></li>
+                        <li><a href="/solutions/outsourcing/">Payroll Outsourcing<small>Accuracy, compliance &amp; cost savings</small></a></li>
+                        <li><a href="/solutions/peopleshr-tracking/">Access & Attendance Devices<small>Secure your workforce &amp; assets</small></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- CUSTOMERS (direct) -->
+          <li class="nv-item">
+            <a class="nv-link" href="/customers/">Customers</a>
+          </li>
+
+          <!-- RESOURCES (simple) -->
+          <li class="nv-item has-simple" data-nv="dropdown">
+            <button class="nv-link" aria-expanded="false" aria-haspopup="true">
+              Resources
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-simple">
+                  <ul class="nv-list">
+                    <li><a href="/customers/">Case Studies<small>Transformative journeys</small></a></li>
+                    <li><a href="/webinars/">Webinars<small>Learn from the HR experts</small></a></li>
+                    <li><a href="/blog/">Blog<small>Insights, stories and updates</small></a></li>
+                    <li><a href="/events/">Events<small>Insights and networking</small></a></li>
+                    <li><a href="/hr-ebooks-and-guides/">HR eBooks &amp; Guides<small>Build your HR knowledge</small></a></li>
+                    <li><a href="/news/">News<small>Latest from PeoplesHR</small></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- COMPANY (simple) -->
+          <li class="nv-item has-simple" data-nv="dropdown">
+            <button class="nv-link" aria-expanded="false" aria-haspopup="true">
+              Company
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-simple">
+                  <ul class="nv-list">
+                    <li><a href="/company/">About PeoplesHR<small>Our journey as an HR powerhouse</small></a></li>
+                    <li><a href="/careers/">Careers<small>Thrive in your career at PeoplesHR</small></a></li>
+                    <li><a href="/community/">Community<small>Your hub for the HR landscape</small></a></li>
+                    <li><a href="/partner-with-peopleshr/">Partners<small>Unlock endless growth</small></a></li>
+                    <li><a href="/regions/">Regions<small>Growth across APAC and MEA</small></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- PRICING (dropdown) -->
+          <li class="nv-item has-simple" data-nv="dropdown">
+            <a class="nv-link" href="/view-plans/" aria-expanded="false" aria-haspopup="true">
+              Pricing
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-simple nv-card--wide">
+                  <ul class="nv-list">
+                    <li><a href="/view-plans/">View Pricing Plans<small>Plans built around your team's size</small></a></li>
+                  </ul>
+                  <a class="nv-promo-tile" href="/roi-calculator/">
+                    <span class="nv-promo-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/></svg>
+                    </span>
+                    <span class="nv-promo-text">
+                      <b>PeoplesHR ROI Calculator</b>
+                      <span>Run the Numbers. Let the ROI Speak. Instant, clear results tailored for your business.</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- INTERACTIVE DEMOS (direct + badge) -->
+          <li class="nv-item">
+            <a class="nv-link" href="/interactive-demos/">
+              Interactive Demos
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <div class="nv-actions">
+        <a class="nv-cta" href="/get-in-touch/">Request a Demo</a>
+        <button class="nv-burger" id="nvBurger" aria-label="Open menu" aria-expanded="false"><span></span></button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ===================== ANNOUNCEMENT BAR ===================== -->
+  <div class="nv-ann" id="nvAnn" role="region" aria-label="Site announcement">
+    <div class="nv-ann-inner">
+      <span class="nv-ann-badge">New</span>
+      <p class="nv-ann-text">PeoplesHR now comes in three clear packages for you to know exactly what you're buying &#x1F4B8;
+        <a href="/view-plans/">View Packages
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </p>
+      <button class="nv-ann-close" id="nvAnnClose" aria-label="Dismiss announcement">&times;</button>
+    </div>
+  </div>
+
+  <!-- ===================== MOBILE PANEL ===================== -->
+  <div class="nv-scrim" id="nvScrim"></div>
+  <aside class="nv-panel" id="nvPanel" aria-label="Mobile menu" aria-hidden="true">
+    <div class="nv-panel-head">
+      <img src="/uploads/2021/07/logo.webp" alt="PeoplesHR">
+      <button class="nv-close" id="nvClose" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="nv-panel-body">
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Products
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/products/core-hr/">HR</a>
+          <a href="/products/payroll-system/">Pay</a>
+          <a href="/products/talent-acquisition/">Talent</a>
+          <a href="/products/time-and-attendance/">Time</a>
+          <a href="/products/people-engagement/">Engagement</a>
+          <a href="/products/people-analytics/">Insight</a>
+          <a href="/products/mobile-app/">Mobile App</a>
+          <a href="/ai-x/">Explore PeoplesHR AI</a>
+        </div></div>
+      </div>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Solutions
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <p class="nv-sub-label">Industries</p>
+          <a href="/solutions/banking-finance-insurance-industries/">Banking, Finance &amp; Insurance</a>
+          <a href="/solutions/hr-software-for-hospitality-industry/">Hospitality</a>
+          <a href="/solutions/hr-software-for-manufacturing-industry/">Manufacturing</a>
+          <a href="/solutions/hr-software-for-professional-and-business-services-industry/">Professional &amp; Business Services</a>
+          <a href="/solutions/hr-software-for-retail-industry/">Retail</a>
+          <a href="/solutions/hr-software-for-it-and-ites-industry/">IT &amp; ITES</a>
+          <a href="/solutions/hr-software-for-transportation-and-logistics-industry/">Transportation &amp; Logistics</a>
+          <p class="nv-sub-label">By Role</p>
+          <a href="/solutions/chro/">People Strategy Leaders</a>
+          <a href="/solutions/cfo/">Financial Strategy Leaders</a>
+          <a href="/solutions/cio/">Technology Strategy Leaders</a>
+          <p class="nv-sub-label">Specialized Solutions</p>
+          <a href="/solutions/peopleshr-academy/">PeoplesHR Academy</a>
+          <a href="/solutions/outsourcing/">Payroll Outsourcing</a>
+          <a href="/solutions/peopleshr-tracking/">Access & Attendance Devices</a>
+        </div></div>
+      </div>
+
+      <a class="nv-mlink" href="/customers/">Customers</a>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Resources
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/customers/">Case Studies</a>
+          <a href="/webinars/">Webinars</a>
+          <a href="/blog/">Blog</a>
+          <a href="/events/">Events</a>
+          <a href="/hr-ebooks-and-guides/">HR eBooks &amp; Guides</a>
+          <a href="/news/">News</a>
+        </div></div>
+      </div>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Company
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/company/">About PeoplesHR</a>
+          <a href="/careers/">Careers</a>
+          <a href="/community/">Community</a>
+          <a href="/partner-with-peopleshr/">Partners</a>
+          <a href="/regions/">Regions</a>
+        </div></div>
+      </div>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Pricing
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/view-plans/">View Pricing Plans</a>
+          <a href="/roi-calculator/">PeoplesHR ROI Calculator</a>
+        </div></div>
+      </div>
+
+      <a class="nv-mlink" href="/interactive-demos/">Interactive Demos</a>
+
+    </div>
+    <div class="nv-panel-foot">
+      <a class="nv-cta" href="/get-in-touch/">Request a Demo</a>
+    </div>
+  </aside>
+
+</div><!-- /.nv-root -->
+
+
+<!-- end of navbar -->
+<!-- ═══════════════════════════════════════════════
+     REQUEST A LIVE QUOTE (scoped tool, own CSS/JS)
+     Questions and tier logic: inc/quote-tiers.php
+     Submissions: quote-submit.php
+     ═══════════════════════════════════════════════ -->
+<?php
+require_once __DIR__ . '/inc/quote-tiers.php';
+$rqQuestions = phr_quote_questions();
+$rqTotal = count($rqQuestions) + 2; // plus the package and contact steps
+// Option grids: short answers sit side by side, sentences stack.
+$rqCols = ['industry' => 2];
+$rqStep = 0;
+?>
+<div class="rq-scope">
+  <div class="rq-bg" aria-hidden="true">
+    <span class="rq-orb rq-orb-blue"></span>
+    <span class="rq-orb rq-orb-green"></span>
+    <span class="rq-orb rq-orb-orange"></span>
+  </div>
+  <main class="rq-main">
+    <div class="rq-card">
+
+      <form class="rq-form" id="rqForm" novalidate>
+        <div class="rq-head">
+          <h1 class="rq-title">Request a live quote</h1>
+          <div class="rq-progress" role="progressbar" aria-label="Quote progress" aria-valuemin="1" aria-valuemax="<?php echo $rqTotal; ?>" aria-valuenow="1">
+            <span class="rq-progress-bar" id="rqBar"></span>
+          </div>
+          <p class="rq-count" id="rqCount">Step 1 of <?php echo $rqTotal; ?></p>
+        </div>
+
+<?php foreach ($rqQuestions as $rqId => $rqQ): $rqStep++; $rqMulti = $rqQ['type'] === 'multi'; ?>
+        <fieldset class="rq-step" data-type="<?php echo $rqQ['type']; ?>" data-name="<?php echo $rqId; ?>"<?php echo $rqMulti && isset($rqQ['max']) ? ' data-max="' . $rqQ['max'] . '"' : ''; ?><?php echo $rqStep > 1 ? ' hidden' : ''; ?>>
+          <legend class="rq-q" tabindex="-1"><?php echo htmlspecialchars($rqQ['title']); ?></legend>
+<?php if (!empty($rqQ['hint'])): ?>
+          <p class="rq-hint"><?php echo htmlspecialchars($rqQ['hint']); ?> <span class="rq-picked" aria-live="polite"></span></p>
+<?php endif; ?>
+<?php if ($rqQ['type'] === 'number'): ?>
+          <label class="rq-field rq-field-number">
+            <span class="rq-sr">Number of employees</span>
+            <input type="text" name="<?php echo $rqId; ?>" inputmode="numeric" autocomplete="off" maxlength="9" placeholder="<?php echo htmlspecialchars($rqQ['placeholder']); ?>" data-min="<?php echo $rqQ['min']; ?>" data-max="<?php echo $rqQ['max']; ?>" required>
+          </label>
+<?php else: ?>
+          <div class="rq-options<?php echo isset($rqCols[$rqId]) ? ' rq-cols-' . $rqCols[$rqId] : ''; ?>">
+<?php foreach ($rqQ['options'] as $rqVal => $rqOpt): ?>
+            <label class="rq-opt">
+              <input type="<?php echo $rqMulti ? 'checkbox' : 'radio'; ?>" name="<?php echo $rqId; ?>" value="<?php echo htmlspecialchars($rqVal); ?>">
+              <span class="rq-opt-mark" aria-hidden="true"></span>
+              <span class="rq-opt-text"><?php echo htmlspecialchars($rqOpt['label']); ?><?php if (!empty($rqOpt['desc'])): ?><small class="rq-opt-desc"><?php echo htmlspecialchars($rqOpt['desc']); ?></small><?php endif; ?></span>
+            </label>
+<?php endforeach; ?>
+          </div>
+<?php endif; ?>
+        </fieldset>
+
+<?php endforeach; ?>
+        <fieldset class="rq-step" data-type="package" hidden>
+          <legend class="rq-q" tabindex="-1">Your recommended package</legend>
+          <p class="rq-hint">Based on your answers, we've selected the best-fit tier for each module. Switch any tier, or add an optional module, before getting your quote.</p>
+          <ul class="rq-tier-key">
+<?php foreach (PHR_QUOTE_TIERS as $rqRank => $rqTier): ?>
+            <li><b class="rq-tier-<?php echo $rqRank; ?>"><?php echo $rqTier; ?></b> <?php echo PHR_QUOTE_TIER_TAGS[$rqRank]; ?></li>
+<?php endforeach; ?>
+          </ul>
+          <p class="rq-loading" id="rqPkgLoading" aria-live="polite">Building your package…</p>
+          <div class="rq-mods" id="rqModsRequired"></div>
+          <h3 class="rq-sub" id="rqModsOptionalTitle" hidden>Optional add-ons</h3>
+          <div class="rq-mods" id="rqModsOptional">
+<?php foreach (PHR_QUOTE_BUNDLES as $rqId => $rqB): ?>
+            <div class="rq-mod" data-bundle="<?php echo $rqId; ?>" hidden>
+              <div class="rq-mod-head">
+                <img class="rq-mod-icon" src="<?php echo $rqB['icon']; ?>" alt="" width="36" height="36" loading="lazy">
+                <div>
+                  <p class="rq-mod-name"><?php echo $rqB['name']; ?></p>
+                  <p class="rq-mod-blurb"><?php echo htmlspecialchars($rqB['blurb']); ?></p>
+                </div>
+              </div>
+              <div class="rq-seg" role="radiogroup" aria-label="<?php echo $rqB['name']; ?> tier">
+                <label class="rq-seg-opt rq-seg-none"><input type="radio" name="pkg-<?php echo $rqId; ?>" value="0"><span>Not now</span></label>
+<?php foreach (PHR_QUOTE_TIERS as $rqRank => $rqTier): ?>
+                <label class="rq-seg-opt rq-tier-<?php echo $rqRank; ?>"><input type="radio" name="pkg-<?php echo $rqId; ?>" value="<?php echo $rqRank; ?>"<?php echo $rqRank < $rqB['floor'] ? ' disabled' : ''; ?>><span><?php echo $rqTier; ?></span></label>
+<?php endforeach; ?>
+              </div>
+            </div>
+<?php endforeach; ?>
+          </div>
+        </fieldset>
+
+        <fieldset class="rq-step" data-type="contact" hidden>
+          <legend class="rq-q" tabindex="-1">Where should we send your quote?</legend>
+          <p class="rq-hint">A member of our sales team will use these details to follow up.</p>
+          <div class="rq-fields">
+            <label class="rq-field">
+              <span>First name</span>
+              <input type="text" name="firstName" autocomplete="given-name" maxlength="80" required>
+            </label>
+            <label class="rq-field">
+              <span>Last name</span>
+              <input type="text" name="lastName" autocomplete="family-name" maxlength="80" required>
+            </label>
+            <label class="rq-field rq-field-wide">
+              <span>Work email</span>
+              <input type="email" name="email" autocomplete="email" maxlength="160" required>
+            </label>
+            <label class="rq-field rq-field-wide">
+              <span>Organization</span>
+              <input type="text" name="company" autocomplete="organization" maxlength="160" required>
+            </label>
+            <label class="rq-field rq-field-wide">
+              <span>Phone number</span>
+              <input type="tel" name="phone" autocomplete="tel" maxlength="30" pattern="\+?[0-9 \(\)\.\-]{7,30}" placeholder="+63 912 345 6789" required>
+            </label>
+            <!-- Honeypot: hidden from people, filled in by bots. -->
+            <label class="rq-trap" aria-hidden="true">
+              <span>Website</span>
+              <input type="text" name="website" tabindex="-1" autocomplete="off">
+            </label>
+          </div>
+          <p class="rq-legal">By submitting, you agree to our <a href="/privacy-policy/">Privacy Policy</a>.</p>
+        </fieldset>
+
+        <p class="rq-error" id="rqError" role="alert"></p>
+
+        <div class="rq-nav">
+          <button type="button" class="rq-btn rq-btn-ghost" id="rqBack" hidden>Back</button>
+          <button type="submit" class="rq-btn" id="rqNext">Next</button>
+        </div>
+        <noscript><p class="rq-error">Please enable JavaScript to request a quote, or <a href="/get-in-touch/">contact us</a>.</p></noscript>
+      </form>
+
+      <div class="rq-done" id="rqDone" hidden>
+        <span class="rq-done-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <h2 class="rq-q" id="rqDoneTitle" tabindex="-1">Thank you!</h2>
+        <p>A representative of our sales team will get in touch with you to obtain some additional information for your quote.</p>
+        <p>In the meantime, your quote has been generated and sent to our sales team. We've also emailed you a copy of your answers.</p>
+        <a class="rq-btn" href="/view-plans/">Back to plans</a>
+      </div>
+
+    </div>
+  </main>
+</div>
+<!-- ═══════════════════════════════════════════════
+     END REQUEST A LIVE QUOTE
+     ═══════════════════════════════════════════════ -->
+
+<!-- footer start -->
+<?php include __DIR__ . '/inc/footer.php'; ?>
+<!-- footer end -->
+
+<!-- JS -->
+<script src="<?php echo asset_v('/js/phr.js'); ?>"></script>
+<script src="<?php echo asset_v('/js/navbar.js'); ?>"></script>
+<script src="<?php echo asset_v('/js/request-a-quote.js'); ?>"></script>
+
+</body>
+</html>
