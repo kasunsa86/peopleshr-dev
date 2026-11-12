@@ -21,6 +21,9 @@ $cal27Next = $cal27Num === 12 ? null : array_values(cal27_months())[$cal27Num]['
   <link rel="stylesheet" href="<?php echo asset_v('/css/styles.css'); ?>" />
   <link rel="stylesheet" href="<?php echo asset_v('/css/navbar.css'); ?>" />
   <link rel="stylesheet" href="<?php echo asset_v('/css/footer.css'); ?>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@700;800&family=Noto+Sans+Sinhala:wght@600&display=swap" />
   <link rel="stylesheet" href="<?php echo asset_v('/css/calendar-2027.css'); ?>" />
   <!-- Start of HubSpot Embed Code -->
   <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/45700506.js"></script>
@@ -348,48 +351,7 @@ $cal27Next = $cal27Num === 12 ? null : array_values(cal27_months())[$cal27Num]['
 
 <!-- end of navbar -->
 
-<div class="cal27-scope">
-  <section class="cal27-hero">
-    <span class="cal27-eyebrow">PeoplesHR 2027 Calendar &middot; <?php echo $cal27['name']; ?> &middot; Play online</span>
-    <h1><?php echo htmlspecialchars($cal27['headline']); ?></h1>
-    <p class="cal27-lead">A colleague shared this game with you. Solve it here, then add your details to join the <?php echo $cal27['name']; ?> draw.</p>
-  </section>
-
-  <section class="cal27-body" id="cal27Entry"
-    data-month="<?php echo $cal27Num; ?>" data-slug="<?php echo $cal27Slug; ?>"
-    data-portal="<?php echo CAL27_HS_PORTAL; ?>" data-form="<?php echo CAL27_HS_FORM_ID; ?>" data-mode="online">
-    <div class="cal27-state" data-state="open">
-      <div class="cal27-game" id="cal27Game" data-slug="<?php echo $cal27Slug; ?>">
-        <div class="cal27-gamehead">
-          <h2><?php echo $cal27['game']; ?></h2>
-          <span class="cal27-progress" aria-live="polite"></span>
-        </div>
-        <p class="cal27-howto"><?php echo $cal27['game'] === 'Crossword' ? 'Tap a clue or a square and type. A word turns green when it is right.' : 'Tap the first letter of a word, then its last letter. Words run across, down or diagonally.'; ?></p>
-        <div class="cal27-play">
-          <div class="cal27-grid"></div>
-          <div class="cal27-clues"></div>
-        </div>
-      </div>
-      <div id="cal27Solved" class="cal27-solved" hidden>
-        <h2>Solved! Now enter the <?php echo $cal27['name']; ?> draw.</h2>
-        <p>Add your details below. One winner from this month's entries gets a treat to share with their team.</p>
-        <div id="cal27FormWrap" hidden><div id="cal27Form" class="cal27-form"></div></div>
-        <div id="cal27Pending" class="cal27-msg" hidden>
-          <p>The entry form is on its way. Please check back soon.</p>
-        </div>
-      </div>
-    </div>
-    <div class="cal27-state cal27-msg" data-state="before" hidden>
-      <p>The <?php echo $cal27['name']; ?> game opens on 1 <?php echo $cal27['name'] . ' ' . CAL27_YEAR; ?>.</p>
-      <a class="cal27-btn" href="/calendar/">See this month's game</a>
-    </div>
-    <div class="cal27-state cal27-msg" data-state="after" hidden>
-      <p>The <?php echo $cal27['name']; ?> game closed on <?php echo $cal27Last . ' ' . $cal27['name'] . ' ' . CAL27_YEAR; ?>. Thanks for stopping by.</p>
-      <a class="cal27-btn" href="/">Visit PeoplesHR</a>
-    </div>
-    <noscript><p class="cal27-note">Please turn on JavaScript to play.</p></noscript>
-  </section>
-</div>
+<?php $cal27View = 'play'; include __DIR__ . '/../inc/calendar-2027-page.php'; ?>
 
 <!-- footer start -->
 <?php include __DIR__ . '/../inc/footer.php'; ?>

@@ -13,6 +13,9 @@
   <link rel="stylesheet" href="<?php echo asset_v('/css/styles.css'); ?>" />
   <link rel="stylesheet" href="<?php echo asset_v('/css/navbar.css'); ?>" />
   <link rel="stylesheet" href="<?php echo asset_v('/css/footer.css'); ?>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@700;800&family=Noto+Sans+Sinhala:wght@600&display=swap" />
   <link rel="stylesheet" href="<?php echo asset_v('/css/calendar-2027.css'); ?>" />
   <!-- Start of HubSpot Embed Code -->
   <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/45700506.js"></script>
@@ -341,21 +344,23 @@
 <!-- end of navbar -->
 
 <div class="cal27-scope">
-  <section class="cal27-hero">
-    <span class="cal27-eyebrow">PeoplesHR 2027 Calendar</span>
-    <h1>The first game opens on 1 January 2027.</h1>
-    <p class="cal27-lead">Thanks for scanning. Keep your calendar handy: from 1 January, this same QR code opens each month's puzzle and entry page.</p>
-  </section>
-  <section class="cal27-body">
-    <h2>How it works</h2>
-    <ol class="cal27-steps">
-      <li><span class="cal27-n">1</span><div><b>Solve the puzzle</b><p>Each month has a crossword or find-the-word game printed on the page.</p></div></li>
-      <li><span class="cal27-n">2</span><div><b>Scan the QR code</b><p>The same code on every page opens that month's entry page.</p></div></li>
-      <li><span class="cal27-n">3</span><div><b>Snap and submit</b><p>Send a photo of your answers with your details to enter the monthly draw.</p></div></li>
-    </ol>
-    <p class="cal27-note">Each month's game is open from the 1st to the last day of that month. One winner is picked every month and gets a treat to share with their team.</p>
-    <a class="cal27-btn" href="/">Visit PeoplesHR</a>
-  </section>
+  <div class="wrap">
+    <header class="month"><h1>2027<span class="dot">.</span><span class="yr">PeoplesHR calendar</span></h1></header>
+    <div class="rule" aria-hidden="true"></div>
+    <section class="card">
+      <p class="eyebrow">Opens 1 January 2027</p>
+      <h2>Thanks for scanning! The first game opens on 1 January.</h2>
+      <p class="prize">WIN A TREAT TO SHARE!</p>
+      <p class="lede">Keep your calendar handy. From 1 January, this same QR code opens each month's game and entry page.</p>
+      <ol class="cal27-list">
+        <li><b>Solve the puzzle</b> printed on each month's page.</li>
+        <li><b>Scan the QR code</b> on that page.</li>
+        <li><b>Snap and submit</b> a photo of your answer with your details.</li>
+      </ol>
+      <p class="lede">Each month's game is open from the 1st to the last day of that month. One winner is picked every month and gets a treat to share with their team.</p>
+      <a class="btn primary" style="text-decoration:none;align-self:flex-start" href="/">Visit PeoplesHR</a>
+    </section>
+  </div>
 </div>
 
 <!-- footer start -->

@@ -21,6 +21,9 @@ $cal27Next = $cal27Num === 12 ? null : array_values(cal27_months())[$cal27Num]['
   <link rel="stylesheet" href="<?php echo asset_v('/css/styles.css'); ?>" />
   <link rel="stylesheet" href="<?php echo asset_v('/css/navbar.css'); ?>" />
   <link rel="stylesheet" href="<?php echo asset_v('/css/footer.css'); ?>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@700;800&family=Noto+Sans+Sinhala:wght@600&display=swap" />
   <link rel="stylesheet" href="<?php echo asset_v('/css/calendar-2027.css'); ?>" />
   <!-- Start of HubSpot Embed Code -->
   <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/45700506.js"></script>
@@ -348,58 +351,7 @@ $cal27Next = $cal27Num === 12 ? null : array_values(cal27_months())[$cal27Num]['
 
 <!-- end of navbar -->
 
-<div class="cal27-scope">
-  <section class="cal27-hero">
-    <span class="cal27-eyebrow">PeoplesHR 2027 Calendar &middot; <?php echo $cal27['name']; ?></span>
-    <h1><?php echo htmlspecialchars($cal27['headline']); ?></h1>
-    <p class="cal27-lead">Solved this month's <?php echo strtolower($cal27['game']); ?> on your calendar? Snap a photo of it, add your details and you're in the <?php echo $cal27['name']; ?> draw.</p>
-    <ul class="cal27-meta">
-      <li><b>Theme</b><?php echo htmlspecialchars($cal27['theme']); ?></li>
-      <li><b>Game</b><?php echo $cal27['game']; ?></li>
-      <li><b>Open</b>1 to <?php echo $cal27Last . ' ' . $cal27['name'] . ' ' . CAL27_YEAR; ?></li>
-    </ul>
-  </section>
-
-  <section class="cal27-body" id="cal27Entry"
-    data-month="<?php echo $cal27Num; ?>" data-slug="<?php echo $cal27Slug; ?>"
-    data-portal="<?php echo CAL27_HS_PORTAL; ?>" data-form="<?php echo CAL27_HS_FORM_ID; ?>" data-mode="photo">
-    <h2>Enter the <?php echo $cal27['name']; ?> draw</h2>
-    <ol class="cal27-steps">
-      <li><span class="cal27-n">1</span><div><b>Snap</b><p>Take a clear photo of your solved puzzle on the calendar page.</p></div></li>
-      <li><span class="cal27-n">2</span><div><b>Add your details</b><p>Name, company, job title and work email, so we can reach you if you win.</p></div></li>
-      <li><span class="cal27-n">3</span><div><b>Submit</b><p>One winner from this month's entries gets a treat to share with their team.</p></div></li>
-    </ol>
-
-    <div class="cal27-state" data-state="open">
-      <div id="cal27FormWrap"><div id="cal27Form" class="cal27-form"></div></div>
-      <div id="cal27Pending" class="cal27-msg" hidden>
-        <p>The entry form is on its way. Please check back soon.</p>
-      </div>
-<?php if ($cal27['share']):
-  $cal27PlayUrl = 'https://peopleshr.com/calendar-2027/' . $cal27Slug . '-play/';
-  $cal27WaText = 'Play the PeoplesHR ' . $cal27['name'] . ' calendar game and join the draw: ' . $cal27PlayUrl; ?>
-      <div id="cal27Share" class="cal27-share" data-url="<?php echo $cal27PlayUrl; ?>" hidden>
-        <h3>You're in. Now pass it on.</h3>
-        <p>Share this link with your colleagues. They can play the same <?php echo strtolower($cal27['game']); ?> online and join the <?php echo $cal27['name']; ?> draw too.</p>
-        <div class="cal27-copyrow">
-          <input id="cal27ShareUrl" type="text" readonly aria-label="Link to share" value="<?php echo $cal27PlayUrl; ?>" />
-          <button type="button" class="cal27-btn cal27-copy">Copy link</button>
-        </div>
-        <a class="cal27-wa" href="https://wa.me/?text=<?php echo rawurlencode($cal27WaText); ?>" target="_blank" rel="noopener">Share on WhatsApp</a>
-      </div>
-<?php endif; ?>
-    </div>
-    <div class="cal27-state cal27-msg" data-state="before" hidden>
-      <p>The <?php echo $cal27['name']; ?> game opens on 1 <?php echo $cal27['name'] . ' ' . CAL27_YEAR; ?>. Scan the QR code on your calendar to play this month's game.</p>
-      <a class="cal27-btn" href="/calendar/">Go to this month's game</a>
-    </div>
-    <div class="cal27-state cal27-msg" data-state="after" hidden>
-      <p>Entries for <?php echo $cal27['name']; ?> closed on <?php echo $cal27Last . ' ' . $cal27['name'] . ' ' . CAL27_YEAR; ?>.<?php if ($cal27Next) { echo ' The ' . $cal27Next . ' game is open now.'; } ?></p>
-      <a class="cal27-btn" href="/calendar/">Go to this month's game</a>
-    </div>
-    <noscript><p class="cal27-note">Please turn on JavaScript to send your entry.</p></noscript>
-  </section>
-</div>
+<?php $cal27View = 'scan'; include __DIR__ . '/../inc/calendar-2027-page.php'; ?>
 
 <!-- footer start -->
 <?php include __DIR__ . '/../inc/footer.php'; ?>

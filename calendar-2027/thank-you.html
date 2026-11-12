@@ -13,6 +13,9 @@
   <link rel="stylesheet" href="<?php echo asset_v('/css/styles.css'); ?>" />
   <link rel="stylesheet" href="<?php echo asset_v('/css/navbar.css'); ?>" />
   <link rel="stylesheet" href="<?php echo asset_v('/css/footer.css'); ?>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@700;800&family=Noto+Sans+Sinhala:wght@600&display=swap" />
   <link rel="stylesheet" href="<?php echo asset_v('/css/calendar-2027.css'); ?>" />
   <!-- Start of HubSpot Embed Code -->
   <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/45700506.js"></script>
@@ -341,16 +344,16 @@
 <!-- end of navbar -->
 
 <div class="cal27-scope">
-  <section class="cal27-hero">
-    <span class="cal27-eyebrow">PeoplesHR 2027 Calendar</span>
-    <h1>That's a wrap on 2027.</h1>
-    <p class="cal27-lead">Thank you for playing along all year. The 2027 calendar games are now closed.</p>
-  </section>
-  <section class="cal27-body">
-    <h2>Stay in touch</h2>
-    <p class="cal27-note">Follow PeoplesHR for what's next, or talk to our team about making HR simpler in 2028.</p>
-    <a class="cal27-btn" href="/get-in-touch/">Talk to us</a>
-  </section>
+  <div class="wrap">
+    <header class="month"><h1>2027<span class="dot">.</span><span class="yr">That's a wrap</span></h1></header>
+    <div class="rule" aria-hidden="true"></div>
+    <section class="card">
+      <p class="eyebrow">The 2027 games are closed</p>
+      <h2>Thank you for playing along all year.</h2>
+      <p class="lede">Follow PeoplesHR for what's next, or talk to our team about making HR simpler in 2028.</p>
+      <a class="btn primary" style="text-decoration:none;align-self:flex-start" href="/get-in-touch/">Talk to us</a>
+    </section>
+  </div>
 </div>
 
 <!-- footer start -->
