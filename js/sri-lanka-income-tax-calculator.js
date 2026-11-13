@@ -29,7 +29,7 @@ function paye(monthly,key){
   let rest=Math.max(0,monthly-R.relief/12),tax=0,rate=0;
   for(const [w,r] of R.bands){
     const b={w:w/12,r};
-    if(rest<=0)break;
+    if(rest<0.005)break; /* ignore float leftovers so a salary exactly on a band edge (e.g. Rs. 275,000) shows the lower band */
     const used=Math.min(rest,b.w);
     tax+=used*b.r;rate=b.r;rest-=used;
   }
