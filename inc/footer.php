@@ -111,6 +111,8 @@
         <h2 class="ft-h">Calculators</h2>
         <ul class="ft-links">
           <li><a href="/tax-calculator-philippines/">Philippines Tax Calculator</a></li>
+          <li><a href="/salary-calculator-sri-lanka/">Sri Lanka Salary Calculator</a></li>
+          <li><a href="/salary-calculator-indonesia/">Indonesia Salary Calculator</a></li>
         </ul>
         <p class="ft-sub">Explore</p>
         <ul class="ft-links">
