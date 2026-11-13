@@ -2,7 +2,7 @@
 /* Sri Lanka Income Tax Calculator (PAYE) (simple).
    Two rule sets, switched by the toggle:
    Opens on 'proposed' (Budget 2027), as asked by Nilendra; 'current' is the 2026/27 view.
-   Every result also shows tax under both rule sets and the monthly/yearly difference.
+   The green pill under take-home pay shows the monthly saving under Budget 2027.
    - 'current': APIT Table 01 (regular monthly profits from primary employment), IRD tax table Y/A 2025/26,
      from Inland Revenue (Amendment) Act No. 02 of 2025, effective 01.04.2025 (unchanged for 2026/27).
      Relief Rs. 1,800,000 a year, then 6% on 1,000,000, 18% / 24% / 30% on each 500,000, 36% on the rest.
@@ -116,19 +116,8 @@ function calculate(){
   $('slpEpfEr').textContent=fmt(gross*EPF_ER);
   $('slpEtf').textContent=fmt(gross*ETF);
 
-  /* Comparison: shown on every result, whichever rules are selected */
-  const taxNow=paye(gross,'current').tax,taxNew=paye(gross,'proposed').tax,saving=Math.max(0,taxNow-taxNew);
-  $('slpCmpCur').textContent=fmt(taxNow);
-  $('slpCmpNew').textContent=fmt(taxNew);
-  if(saving>0){
-    $('slpCmpLabel').textContent='You save under Budget 2027';
-    $('slpCmpSave').textContent=fmt(saving)+' a month';
-    $('slpCmpYear').textContent=fmt(saving*12)+' a year';
-  }else{
-    $('slpCmpLabel').textContent='Difference';
-    $('slpCmpSave').textContent='No change';
-    $('slpCmpYear').textContent='Tax-free under both';
-  }
+  /* Monthly saving under Budget 2027, shown as a single pill under take-home pay */
+  const saving=Math.max(0,paye(gross,'current').tax-paye(gross,'proposed').tax);
   $('slpSaving').textContent=mode==='proposed'?fmt(saving)+' less tax a month than now':fmt(saving)+' less tax a month from April 2027';
   $('slpSaving').classList.toggle('hidden',saving<=0);
 
