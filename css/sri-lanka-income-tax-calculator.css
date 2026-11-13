@@ -1,0 +1,192 @@
+/* Sri Lanka Income Tax Calculator (simple) — every selector scoped to .slp-scope */
+/* Colours come from the site tokens in css/styles.css (:root). Only local extras are defined here. */
+.slp-scope{--ink:var(--text-dark);--line:var(--border);--soft:var(--bg-light);--blue-dark:#1d4ed8;--green:#067647;--greenbg:#ecfdf3;--red:#d92d20}
+.slp-scope,.slp-scope *{box-sizing:border-box}
+.slp-scope{font-family:'Plus Jakarta Sans',sans-serif;color:var(--ink);background:var(--bg-light);position:relative;overflow:hidden;isolation:isolate;line-height:1.45;padding-bottom:72px}
+.slp-scope button,.slp-scope input{font:inherit}
+.slp-scope .hidden{display:none!important}
+
+/* Background: blurred blue and green brand-colour spheres drifting slowly (same technique as request-a-quote.css).
+   Only transform animates, so the blur is painted once and composited. */
+.slp-scope .slp-bg{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.slp-scope .slp-orb{position:absolute;width:46vmax;height:46vmax;border-radius:50%;filter:blur(110px);opacity:.28;will-change:transform}
+.slp-scope .slp-orb-blue{background:#338CFC;top:6vmax;left:-14vmax;animation:slp-drift-a 26s ease-in-out infinite alternate}
+/* Green orb sits at the bottom of the first screen, beside the calculator, not at the bottom of the long page */
+.slp-scope .slp-orb-green{background:#49CE7F;top:calc(100vh - 22vmax);right:-14vmax;animation:slp-drift-b 32s ease-in-out infinite alternate}
+@keyframes slp-drift-a{to{transform:translate(28vw,16vh) scale(1.1)}}
+@keyframes slp-drift-b{to{transform:translate(-30vw,12vh) scale(.9)}}
+@media (prefers-reduced-motion:reduce){.slp-scope .slp-orb{animation:none}}
+
+/* Hero */
+.slp-scope .slp-hero{background:transparent;padding:56px 16px 32px;text-align:center}
+.slp-scope .slp-hero h1{margin:0;font-size:clamp(26px,4.4vw,38px);font-weight:700;letter-spacing:-.5px;line-height:1.15;color:var(--ink)}
+.slp-scope .slp-hero p{margin:10px auto 0;color:var(--muted);font-size:15px;max-width:460px}
+/* PeoplesHR logo above the title */
+.slp-scope .slp-brand-logo{display:block;height:40px;width:auto;margin:0 auto 22px}
+
+/* Card */
+/* The calculator is the main card: blue-tinted border, deeper shadow and a blue-to-green strip on top.
+   The reference cards below (.slp-table-card) are deliberately flatter so the two never look alike. */
+/* The strip is a background layer (not a separate element), so the card's own rounded corners clip it exactly */
+.slp-scope .slp-card{position:relative;max-width:560px;margin:0 auto;background:linear-gradient(90deg,var(--blue),#49CE7F) top/100% 6px no-repeat border-box,var(--bg-white);border:1px solid var(--phr-border);border-top-color:transparent;border-radius:20px;box-shadow:0 2px 4px rgba(13,71,161,.06),0 24px 56px rgba(13,71,161,.16)}
+.slp-scope .slp-wrap{padding:0 16px}
+.slp-scope .slp-form{padding:28px}
+.slp-scope .slp-label{display:block;font-size:13px;font-weight:700;color:var(--text-body);margin:0 0 8px}
+
+/* Rules toggle */
+.slp-scope .slp-toggle{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:var(--bg-card);border-radius:12px;padding:4px;margin:0 0 22px}
+.slp-scope .slp-toggle button{border:0;background:transparent;border-radius:9px;min-height:44px;padding:10px 8px;font-size:14px;font-weight:700;color:var(--muted);cursor:pointer;transition:background .15s,color .15s,box-shadow .15s}
+.slp-scope .slp-toggle button[aria-pressed=true]{background:var(--bg-white);color:var(--blue);box-shadow:0 1px 3px rgba(16,24,40,.12)}
+.slp-scope .slp-proposed{margin:-12px 0 20px;font-size:12px;font-weight:600;color:#b54708;text-align:center}
+.slp-scope .slp-proposed--now{color:var(--muted)}
+.slp-scope .slp-saving{display:inline-block;margin-top:10px;font-style:normal;font-size:13px;font-weight:700;color:var(--green);background:var(--greenbg);border-radius:999px;padding:4px 12px}
+
+/* Money input */
+.slp-scope .slp-money{display:flex;align-items:center;border:1px solid var(--border);border-radius:12px;background:var(--bg-white);transition:border-color .15s,box-shadow .15s}
+.slp-scope .slp-money:focus-within{border-color:var(--blue);box-shadow:0 0 0 4px var(--phr-blue-50)}
+.slp-scope .slp-money span{padding:0 0 0 14px;color:var(--muted);font-weight:600;font-size:15px}
+.slp-scope .slp-money input{flex:1;min-width:0;border:0;outline:0;background:transparent;padding:14px 14px 14px 8px;font-size:17px;font-weight:600;color:var(--ink)}
+.slp-scope .slp-money input::placeholder{color:#98a2b3;font-weight:500}
+.slp-scope .slp-money--sm input{padding:11px 12px 11px 6px;font-size:15px}
+.slp-scope .slp-money--sm span{font-size:14px;padding-left:12px}
+.slp-scope input[type=number]{-moz-appearance:textfield;appearance:textfield}
+.slp-scope input[type=number]::-webkit-outer-spin-button,.slp-scope input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+
+/* Allowances */
+.slp-scope .slp-allow{margin-top:22px}
+.slp-scope .slp-allow-list{display:grid;gap:10px}
+.slp-scope .slp-allow-list:not(:empty){margin-bottom:12px}
+.slp-scope .slp-row{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr) 40px;gap:8px;align-items:center}
+.slp-scope .slp-name{width:100%;border:1px solid var(--border);border-radius:12px;padding:11px 12px;font-size:15px;color:var(--ink);outline:0;transition:border-color .15s,box-shadow .15s}
+.slp-scope .slp-name:focus{border-color:var(--blue);box-shadow:0 0 0 4px var(--phr-blue-50)}
+.slp-scope .slp-name::placeholder{color:#98a2b3}
+.slp-scope .slp-remove{width:40px;height:44px;border:0;border-radius:10px;background:transparent;color:var(--muted);cursor:pointer;display:grid;place-items:center}
+.slp-scope .slp-remove:hover{background:#fef3f2;color:var(--red)}
+.slp-scope .slp-add{display:inline-flex;align-items:center;gap:8px;min-height:44px;border:1px dashed var(--phr-border);background:var(--phr-blue-30);color:var(--blue);font-weight:700;font-size:14px;padding:10px 14px;border-radius:12px;cursor:pointer;transition:background .15s}
+.slp-scope .slp-add:hover{background:var(--phr-blue-50)}
+.slp-scope .slp-add .slp-plus{width:22px;height:22px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center}
+.slp-scope svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+/* Calculate */
+.slp-scope .slp-calc{width:100%;margin-top:26px;border:0;border-radius:12px;background:var(--blue);color:#fff;font-weight:700;font-size:16px;padding:15px;cursor:pointer;transition:background .15s,transform .1s}
+.slp-scope .slp-calc:hover{background:var(--blue-dark)}
+.slp-scope .slp-calc:active{transform:scale(.99)}
+.slp-scope .slp-error{margin:10px 0 0;color:var(--red);font-size:13px;font-weight:600}
+
+/* Results */
+.slp-scope .slp-results{border-top:1px solid var(--line);padding:26px 28px 28px;background:var(--bg-white);transition:opacity .2s}
+.slp-scope .slp-results.is-stale{opacity:.45}
+/* "Powered by PeoplesHR" footer inside the calculator card, so the logo is in every screenshot of a result */
+.slp-scope .slp-powered{display:flex;align-items:center;justify-content:center;gap:10px;padding:14px 16px;border-top:1px solid var(--line);background:var(--phr-blue-30);border-radius:0 0 19px 19px;text-decoration:none;font-size:12px;font-weight:600;color:var(--muted);transition:background .15s}
+.slp-scope .slp-powered:hover{background:var(--phr-blue-50)}
+.slp-scope .slp-powered img{display:block;height:22px;width:auto}
+.slp-scope .slp-net{text-align:center;padding:4px 0 22px}
+.slp-scope .slp-net small{display:block;font-size:13px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.06em}
+.slp-scope .slp-net b{display:block;font-size:clamp(30px,7vw,40px);letter-spacing:-.5px;color:var(--ink);margin-top:4px}
+.slp-scope .slp-net span{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.slp-scope .slp-lines{background:var(--bg-white);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.slp-scope .slp-line{display:flex;justify-content:space-between;gap:12px;padding:13px 16px;font-size:15px}
+.slp-scope .slp-line+.slp-line{border-top:1px solid var(--bg-card)}
+.slp-scope .slp-line span{color:var(--text-body)}
+.slp-scope .slp-line b{font-weight:700;white-space:nowrap}
+.slp-scope .slp-line .slp-tag{display:inline-block;font-style:normal;margin-left:6px;font-size:11px;font-weight:700;color:var(--blue);background:var(--phr-blue-30);border-radius:999px;padding:2px 8px;vertical-align:1px}
+.slp-scope .slp-line--minus b{color:var(--red)}
+.slp-scope .slp-line--total{background:var(--greenbg)}
+.slp-scope .slp-line--total span,.slp-scope .slp-line--total b{color:var(--green);font-weight:700}
+.slp-scope .slp-sub{margin:20px 0 8px;font-size:13px;font-weight:700;color:var(--text-body)}
+/* Tax table */
+/* Reference cards: see-through, no shadow, smaller radius */
+.slp-scope .slp-section-label{max-width:560px;margin:56px auto 0;display:flex;align-items:center;gap:12px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.slp-scope .slp-section-label::before,.slp-scope .slp-section-label::after{content:"";flex:1;height:1px;background:var(--line)}
+.slp-scope .slp-table-card{max-width:560px;margin:16px auto 0;background:rgba(255,255,255,.55);border:1px solid var(--line);border-radius:16px;padding:22px 24px}
+.slp-scope .slp-table-card h2{margin:0;font-size:18px;font-weight:700;color:var(--ink)}
+.slp-scope .slp-table-sub{margin:4px 0 14px;font-size:13px;color:var(--muted)}
+.slp-scope .slp-table-sub a{color:var(--blue);text-decoration:underline}
+.slp-scope .slp-table{width:100%;border-collapse:collapse;font-size:14px}
+.slp-scope .slp-table th{text-align:left;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;padding:0 0 8px;border-bottom:1px solid var(--line)}
+.slp-scope .slp-table th:last-child,.slp-scope .slp-table td:last-child{text-align:right;white-space:nowrap;padding-left:12px}
+.slp-scope .slp-table td{padding:11px 0;border-bottom:1px solid var(--bg-card);color:var(--text-body)}
+.slp-scope .slp-table tr:last-child td{border-bottom:0}
+.slp-scope .slp-table td:last-child{font-weight:700;color:var(--ink)}
+.slp-scope .slp-table tr.is-current td{background:var(--phr-blue-30);color:var(--blue)}
+.slp-scope .slp-table tr.is-current td:first-child{border-radius:10px 0 0 10px;padding-left:10px}
+.slp-scope .slp-table tr.is-current td:last-child{border-radius:0 10px 10px 0;padding-right:10px;color:var(--blue)}
+.slp-scope .slp-you{display:inline-block;margin-left:8px;font-size:11px;font-weight:700;color:#fff;background:var(--blue);border-radius:999px;padding:1px 8px;vertical-align:1px}
+
+/* Worked example */
+.slp-scope .slp-example h2{margin-bottom:12px}
+.slp-scope .slp-example .slp-table th:nth-child(2),.slp-scope .slp-example .slp-table td:nth-child(2){text-align:right;white-space:nowrap;padding-left:12px}
+.slp-scope .slp-example .slp-table td{padding:9px 0}
+.slp-scope .slp-example .slp-table td:nth-child(2){font-weight:700;color:var(--ink)}
+.slp-scope .slp-example .slp-ex-net td{color:var(--green);font-weight:700}
+.slp-scope .slp-ex-foot{margin:10px 0 0;font-size:12px;color:var(--muted)}
+
+.slp-scope .slp-updated{margin:10px auto 0!important;font-size:12px!important;color:var(--muted)!important}
+.slp-scope .slp-compare .slp-table td:nth-child(2),.slp-scope .slp-compare .slp-table td:last-child{font-weight:600}
+.slp-scope .slp-compare .slp-table td:first-child{font-weight:700;color:var(--ink)}
+.slp-scope .slp-compare .slp-table td:last-child{color:var(--blue)}
+
+/* FAQ */
+/* Same look as the FAQ on the salary and tax calculators: bordered rounded items with a chevron */
+/* No outer card around the FAQ: the questions sit straight on the page */
+.slp-scope .slp-table-card.slp-faq{background:none;border:0;border-radius:0;padding:0;margin-top:40px}
+.slp-scope .slp-faq h2{margin:0 0 12px}
+.slp-scope .slp-faq-item{border:1px solid var(--line);border-radius:14px;padding:0 16px;margin-bottom:8px;background:var(--bg-white)}
+.slp-scope .slp-faq-item:last-child{margin-bottom:0}
+.slp-scope .slp-faq-item summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:12px;padding:14px 0;font-size:14px;font-weight:700;color:var(--ink)}
+.slp-scope .slp-faq-item summary::-webkit-details-marker{display:none}
+.slp-scope .slp-faq-item summary::after{content:"";flex:none;align-self:center;width:8px;height:8px;margin:0 4px 3px 0;border-right:2px solid var(--blue);border-bottom:2px solid var(--blue);transform:rotate(45deg);transition:transform .2s ease}
+.slp-scope .slp-faq-item[open] summary::after{margin:3px 4px 0 0;transform:rotate(-135deg)}
+.slp-scope .slp-faq-item p{margin:0 0 14px;font-size:13px;color:#475467}
+.slp-scope .slp-faq-item a{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+
+/* Disclaimer */
+.slp-scope .slp-disclaimer{max-width:560px;margin:24px auto 0;font-size:12px;line-height:1.55;color:var(--muted)}
+.slp-scope .slp-disclaimer p{margin:0}
+.slp-scope .slp-disclaimer b{color:var(--text-body)}
+.slp-scope .slp-disclaimer ul{margin:6px 0 8px;padding-left:18px;list-style:disc}
+.slp-scope .slp-disclaimer li{margin:3px 0}
+.slp-scope .slp-disclaimer a{color:var(--blue);text-decoration:underline}
+.slp-scope .slp-more{text-align:center;margin:22px 0 0;font-size:14px;color:var(--muted)}
+.slp-scope .slp-more a{color:var(--blue);font-weight:700;text-decoration:none}
+.slp-scope .slp-more a:hover{text-decoration:underline}
+.slp-scope .slp-results:not(.hidden){animation:slpIn .3s ease}
+@keyframes slpIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.slp-scope .slp-results:not(.hidden){animation:none}}
+
+/* Mobile */
+@media (max-width:560px){
+  .slp-scope .slp-hero{padding:36px 16px 24px}
+  .slp-scope .slp-hero p{font-size:14px}
+  .slp-scope .slp-brand-logo{height:32px;margin-bottom:18px}
+  .slp-scope .slp-form{padding:22px 18px}
+  .slp-scope .slp-results{padding:22px 18px}
+  .slp-scope .slp-row{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr) 32px;gap:6px}
+    .slp-scope .slp-name{padding:11px 10px}
+  .slp-scope .slp-money--sm span{padding-left:10px}
+  .slp-scope .slp-line{font-size:14px;padding:12px 14px}
+  .slp-scope .slp-toggle button{font-size:13px;padding:10px 4px}
+  /* Phones: "Budget 2027" only, so both toggle labels stay on one line */
+  .slp-scope .slp-long{display:none}
+  /* 16px inputs stop iOS Safari zooming in on focus */
+  .slp-scope .slp-money input,.slp-scope .slp-name,.slp-scope .slp-money--sm input{font-size:16px}
+  .slp-scope .slp-remove{width:32px;height:44px}
+  .slp-scope .slp-table-card{padding:20px 18px;margin-top:14px}
+  .slp-scope .slp-section-label{margin-top:40px}
+  .slp-scope .slp-table{font-size:13px}
+}
+
+/* Small phones (320 to 380px): keep result rows on one line with large figures */
+@media (max-width:380px){
+  .slp-scope .slp-form,.slp-scope .slp-results{padding-left:14px;padding-right:14px}
+  .slp-scope .slp-line{font-size:13px;padding:11px 12px;gap:8px}
+  .slp-scope .slp-allow-list{gap:14px}
+  .slp-scope .slp-row{grid-template-columns:minmax(0,1fr) 32px;row-gap:6px}
+  .slp-scope .slp-row .slp-name{grid-column:1;grid-row:1}
+  .slp-scope .slp-row .slp-money{grid-column:1;grid-row:2}
+  .slp-scope .slp-row .slp-remove{grid-column:2;grid-row:1/3;align-self:center}
+  .slp-scope .slp-long{display:none}
+  .slp-scope .slp-line .slp-tag{margin-left:4px;padding:2px 6px;font-size:10px}
+  .slp-scope .slp-table-card{padding:18px 14px}
+  .slp-scope .slp-toggle button{font-size:12px}
+}
