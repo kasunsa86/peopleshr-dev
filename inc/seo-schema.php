@@ -54,6 +54,7 @@ $phrCrumbs = [
   'success-stories.html'         => ['Success Stories', null],
   'tax-calculator-philippines.html' => ['Philippines Payroll & Tax Calculator', null],
   'salary-calculator-sri-lanka.html' => ['Sri Lanka Salary & APIT Tax Calculator', null],
+  'sri-lanka-income-tax-calculator.html' => ['Sri Lanka Income Tax Calculator 2027', null],
   'salary-calculator-philippines.html' => ['Philippines Salary Calculator', null],
   'salary-calculator-indonesia.html' => ['Indonesia Salary Calculator', null],
   'terms-of-use.html'            => ['Terms of Use', null],

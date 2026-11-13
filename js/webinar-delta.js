@@ -47,7 +47,7 @@
           "thumbnailGradient": "linear-gradient(135deg,#1e3a8a,#7c3aed)",
           "speakers": [
             { "initials": "IM", "name": "Ioni Mendoza", "role": "CEO & Co-founder, Amorsolo Consulting", "photo": "/uploads/2026/06/iona_mendoza.webp", "color": "#ede9fe", "textColor": "#7c3aed" },
-            { "initials": "MG", "name": "Manuel Garcia-Ramos", "role": "Country Sales Director – Philippines, PeoplesHR", "photo": "/uploads/2026/06/manuel_ramos.webp", "color": "#dbeafe", "textColor": "#2563eb" }
+            { "initials": "MG", "name": "Manolo Garcia-Ramos", "role": "Country Director – Philippines, PeoplesHR", "photo": "/uploads/2026/06/manuel_ramos.webp", "color": "#dbeafe", "textColor": "#2563eb" }
           ],
           "watchUrl": "https://youtu.be/Ux9xORrEvkc",
           "summaryUrl": "/webinars/agentic-ai-in-hr-summary/"
@@ -144,7 +144,7 @@
           "thumbnailGradient": "linear-gradient(135deg,#9d174d,#ec4899)",
           "speakers": [
             { "initials": "EH", "name": "Eli Harrell", "role": "CEO, EmergePH", "photo": "/uploads/2026/08/Eli.jpg", "color": "#dbeafe", "textColor": "#2563eb" },
-            { "initials": "MG", "name": "Manuel Garcia-Ramos", "role": "Country Sales Director – Philippines, PeoplesHR", "photo": "/uploads/2026/06/manuel_ramos.webp", "color": "#dbeafe", "textColor": "#2563eb" }
+            { "initials": "MG", "name": "Manuel Garcia-Ramos", "role": "Country Director – Philippines, PeoplesHR", "photo": "/uploads/2026/06/manuel_ramos.webp", "color": "#dbeafe", "textColor": "#2563eb" }
           ],
           "watchUrl": "https://youtu.be/LV-0qpcDQ_0",
           "summaryUrl": "/webinars/ai-reskilling-summary/"
@@ -289,7 +289,7 @@
           "thumbnailGradient": "linear-gradient(135deg,#1e3a8a,#3b82f6)",
           "speakers": [
             { "initials": "SA", "name": "Sharon Aytona", "role": "Consultant, Bridge PayDay Solutions &amp; President, Thinktank Professional Services Inc.", "photo": "/uploads/2026/10/Sharon.jpg", "color": "#fce7f3", "textColor": "#be185d" },
-            { "initials": "MG", "name": "Manuel Garcia-Ramos", "role": "Country Sales Director – Philippines, PeoplesHR", "photo": "/uploads/2026/06/manuel_ramos.webp", "color": "#dbeafe", "textColor": "#2563eb" }
+            { "initials": "MG", "name": "Manolo Garcia-Ramos", "role": "Country Director – Philippines, PeoplesHR", "photo": "/uploads/2026/06/manuel_ramos.webp", "color": "#dbeafe", "textColor": "#2563eb" }
           ],
           "watchUrl": "https://youtu.be/vG3kd1DOS9M",
           "summaryUrl": "/webinars/year-end-payroll-philippines-summary/"

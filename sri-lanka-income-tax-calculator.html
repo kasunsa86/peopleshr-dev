@@ -1,0 +1,607 @@
+<?php require_once __DIR__ . '/inc/geo.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sri Lanka Income Tax Calculator 2027 | Budget 2027 • PeoplesHR</title>
+  <meta name="description" content="Sri Lanka income tax calculator for Budget 2027. See your PAYE/APIT tax, EPF and take-home pay under the new Rs. 162,500 tax-free threshold and compare it with the current 2026/27 rates." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://peopleshr.com/sri-lanka-income-tax-calculator/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PeoplesHR" />
+  <meta property="og:title" content="Sri Lanka Income Tax Calculator 2027 (Budget 2027 vs current 2026/27)" />
+  <meta property="og:description" content="See your PAYE tax, EPF and take-home pay under the Budget 2027 income tax proposal (Rs. 162,500 tax-free, new 12% band) and compare it with the current 2026/27 rates." />
+  <meta property="og:url" content="https://peopleshr.com/sri-lanka-income-tax-calculator/" />
+  <meta property="og:image" content="https://peopleshr.com/uploads/2024/03/PeoplesHR-Logo-1200x630-1.webp" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sri Lanka Income Tax Calculator 2027 (Budget 2027 vs current 2026/27)" />
+  <meta name="twitter:description" content="See your PAYE tax, EPF and take-home pay under the Budget 2027 income tax proposal (Rs. 162,500 tax-free, new 12% band) and compare it with the current 2026/27 rates." />
+  <meta name="twitter:image" content="https://peopleshr.com/uploads/2024/03/PeoplesHR-Logo-1200x630-1.webp" />
+
+  <?php include __DIR__ . '/inc/seo-schema.php'; ?>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Sri Lanka Income Tax Calculator 2027",
+      "datePublished": "2026-11-12",
+      "dateModified": "2026-11-13",
+      "url": "https://peopleshr.com/sri-lanka-income-tax-calculator/",
+      "description": "Sri Lanka income tax calculator for Budget 2027. See your PAYE/APIT tax, EPF and take-home pay under the new Rs. 162,500 tax-free threshold and compare it with the current 2026/27 rates.",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "provider": {
+        "@type": "Organization",
+        "name": "PeoplesHR",
+        "url": "https://peopleshr.com/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the new income tax proposal in Sri Lanka's Budget 2027?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Budget 2027, presented on 12 November 2026, proposes raising the tax-free threshold from Rs. 1,800,000 to Rs. 1,950,000 a year (Rs. 162,500 a month). Income above that would be taxed at 6% on the next Rs. 850,000, then 12%, 18%, 24% and 30% on each next Rs. 600,000, and 36% on the rest. The 12% band is new."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When do the Budget 2027 income tax changes start?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "They are proposed to apply from 1 April 2027, the start of the 2027/28 year of assessment. They are not yet law and need Parliament to pass an amendment to the Inland Revenue Act. Until then, the current rates (the 2025/26 tax tables, still in force for 2026/27) continue to apply."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much less tax will I pay under Budget 2027?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Anyone earning Rs. 162,500 or more a month would pay between Rs. 750 and Rs. 15,750 less tax a month. For example, a Rs. 300,000 monthly salary would be taxed Rs. 13,250 instead of Rs. 18,500. Enter your salary above to see your own figure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the tax-free salary limit in Sri Lanka?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Under the 2025/26 rates, which still apply for 2026/27, the first Rs. 150,000 of monthly salary (Rs. 1,800,000 a year) is tax-free. Budget 2027 proposes raising this to Rs. 162,500 a month (Rs. 1,950,000 a year) from 1 April 2027."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is APIT the same as PAYE?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, for salaries. APIT (Advance Personal Income Tax) is the income tax your employer deducts from your monthly salary. It replaced the older PAYE system, but many people still call it PAYE."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is EPF deducted before income tax is worked out?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Your 8% EPF contribution does not reduce your taxable income, so PAYE tax is worked out on your full salary."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="<?php echo asset_v('/css/styles.css'); ?>" />
+  <link rel="stylesheet" href="<?php echo asset_v('/css/navbar.css'); ?>" />
+  <link rel="stylesheet" href="<?php echo asset_v('/css/footer.css'); ?>" />
+  <link rel="stylesheet" href="<?php echo asset_v('/css/sri-lanka-income-tax-calculator.css'); ?>" />
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/45700506.js"></script>
+  <!-- End of HubSpot Embed Code -->
+  <?php include __DIR__ . '/inc/ga4.php'; ?>
+  <?php include __DIR__ . '/inc/geo-head.php'; ?>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <link rel="describedby" href="/llms.txt" type="text/markdown">
+</head>
+
+<body>
+
+
+
+<div class="nv-root">
+
+  <!-- ============================= NAVBAR ============================= -->
+  <header class="nv-bar" id="nvBar">
+    <div class="nv-inner">
+
+      <a class="nv-logo" href="/" aria-label="PeoplesHR home">
+        <img src="/uploads/2021/07/logo.webp" alt="PeoplesHR">
+      </a>
+
+      <nav aria-label="Primary">
+        <ul class="nv-menu" id="nvMenu">
+
+          <!-- PRODUCTS (mega) -->
+          <li class="nv-item has-mega" data-nv="dropdown">
+            <a class="nv-link" href="/products/" aria-expanded="false" aria-haspopup="true">
+              Products
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-mega">
+                  <div class="nv-grid">
+                    <div class="nv-tile">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/HRIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>HR</b><span>The foundation that actually thinks</span></span>
+                      <a href="/products/core-hr/" class="lqd-overlay z-index-2" target="_self" aria-label="HR"></a>
+                    </div>
+                    <a class="nv-tile" href="/products/payroll-system/">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/PayIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>Pay</b><span>Globally compliant, less complicated</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/talent-acquisition/">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/TalentIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>Talent</b><span>Hiring smarter, not harder</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/time-and-attendance/">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/TimeIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>Time</b><span>Beyond clock watching</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/people-engagement/">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/EngagementIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>Engagement</b><span>Engagement beyond annual surveys</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/people-analytics/">
+                      <span class="nv-ic nv-ic-img"><img src="/uploads/2026/07/InsightsIcon.webp" alt="" width="24" height="24"></span>
+                      <span class="nv-tt"><b>Insight</b><span>Intelligence that drives action</span></span>
+                    </a>
+                    <a class="nv-tile" href="/products/mobile-app/">
+                      <span class="nv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2.4"/><path d="M11 18h2"/></svg></span>
+                      <span class="nv-tt"><b>Mobile App</b><span>Work happens everywhere</span></span>
+                    </a>
+                  </div>
+                  <div class="nv-mega-foot">
+                    <p><b>Meet Lexi — PeoplesHR AI</b>Turn any HR action into a simple conversation.</p>
+                    <a class="nv-ghost" href="/ai-x/">
+                      Explore PeoplesHR AI
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- SOLUTIONS (mega columns) -->
+          <li class="nv-item has-mega" data-nv="dropdown">
+            <a class="nv-link" href="/solutions/" aria-expanded="false" aria-haspopup="true">
+              Solutions
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card">
+                  <div class="nv-cols">
+                    <div class="nv-col">
+                      <p class="nv-eyebrow">Industries</p>
+                      <ul class="nv-list">
+                        <li><a href="/solutions/banking-finance-insurance-industries/">Banking, Finance &amp; Insurance<small>Compliance, accuracy and control</small></a></li>
+                        <li><a href="/solutions/hr-software-for-hospitality-industry/">Hospitality<small>Control labour costs across every shift</small></a></li>
+                        <li><a href="/solutions/hr-software-for-manufacturing-industry/">Manufacturing<small>Keep your production lines moving</small></a></li>
+                        <li><a href="/solutions/hr-software-for-professional-and-business-services-industry/">Professional &amp; Business Services<small>Scales with projects, clients and people</small></a></li>
+                        <li><a href="/solutions/hr-software-for-retail-industry/">Retail<small>Keep stores staffed and on target</small></a></li>
+                        <li><a href="/solutions/hr-software-for-it-and-ites-industry/">IT &amp; ITES<small>Connected, compliant teams anywhere</small></a></li>
+                        <li><a href="/solutions/hr-software-for-transportation-and-logistics-industry/">Transportation &amp; Logistics<small>Moves as fast as your fleet</small></a></li>
+                        <li><a href="/solutions/public-sector/">Public Sector<small>Government-wide HR transformation</small></a></li>
+                      </ul>
+                    </div>
+                    <div class="nv-col">
+                      <p class="nv-eyebrow">By Role</p>
+                      <ul class="nv-list">
+                        <li><a href="/solutions/chro/">People Strategy Leaders<small>When the board asks about ROI</small></a></li>
+                        <li><a href="/solutions/cfo/">Financial Strategy Leaders<small>When the numbers finally add up</small></a></li>
+                        <li><a href="/solutions/cio/">Technology Strategy Leaders<small>Technology that works with you</small></a></li>
+                      </ul>
+                    </div>
+                    <div class="nv-col">
+                      <p class="nv-eyebrow">Specialized Solutions</p>
+                      <ul class="nv-list">
+                        <li><a href="/solutions/peopleshr-academy/">PeoplesHR Academy<small>Master PeoplesHR, transform operations</small></a></li>
+                        <li><a href="/solutions/outsourcing/">Payroll Outsourcing<small>Accuracy, compliance &amp; cost savings</small></a></li>
+                        <li><a href="/solutions/peopleshr-tracking/">Access & Attendance Devices<small>Secure your workforce &amp; assets</small></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- CUSTOMERS (direct) -->
+          <li class="nv-item">
+            <a class="nv-link" href="/customers/">Customers</a>
+          </li>
+
+          <!-- RESOURCES (simple) -->
+          <li class="nv-item has-simple" data-nv="dropdown">
+            <button class="nv-link" aria-expanded="false" aria-haspopup="true">
+              Resources
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-simple nv-split">
+                  <div class="nv-split-col">
+                    <p class="nv-eyebrow">Learn</p>
+                    <ul class="nv-list">
+                      <li><a href="/customers/">Case Studies<small>Transformative journeys</small></a></li>
+                      <li><a href="/webinars/">Webinars<small>Learn from the HR experts</small></a></li>
+                      <li><a href="/blog/">Blog<small>Insights, stories and updates</small></a></li>
+                      <li><a href="/events/">Events<small>Insights and networking</small></a></li>
+                      <li><a href="/hr-ebooks-and-guides/">HR eBooks &amp; Guides<small>Build your HR knowledge</small></a></li>
+                      <li><a href="/news/">News<small>Latest from PeoplesHR</small></a></li>
+                    </ul>
+                  </div>
+                  <div class="nv-split-col nv-split-calc">
+                    <p class="nv-eyebrow">Calculators</p>
+                    <ul class="nv-list">
+                      <li><a href="/salary-calculator-sri-lanka/">Sri Lanka Salary Calculator<small>APIT, EPF and ETF</small></a></li>
+                      <li><a href="/sri-lanka-income-tax-calculator/">Sri Lanka Income Tax Calculator<small>Budget 2027 PAYE rates</small></a></li>
+                      <li><a href="/salary-calculator-philippines/">Philippines Salary Calculator<small>SSS, PhilHealth and Pag-IBIG</small></a></li>
+                      <li><a href="/tax-calculator-philippines/">Philippines Tax Calculator<small>Withholding tax and BIR 2316</small></a></li>
+                      <li><a href="/salary-calculator-indonesia/">Indonesia Salary Calculator<small>PPh 21 TER and BPJS</small></a></li>
+                      <li><a href="/roi-calculator/">ROI Calculator<small>Estimate your return on PeoplesHR</small></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- COMPANY (simple) -->
+          <li class="nv-item has-simple" data-nv="dropdown">
+            <button class="nv-link" aria-expanded="false" aria-haspopup="true">
+              Company
+              <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="nv-pop">
+              <div class="nv-pop-inner">
+                <div class="nv-card nv-simple">
+                  <ul class="nv-list">
+                    <li><a href="/company/">About PeoplesHR<small>Our journey as an HR powerhouse</small></a></li>
+                    <li><a href="/careers/">Careers<small>Thrive in your career at PeoplesHR</small></a></li>
+                    <li><a href="/community/">Community<small>Your hub for the HR landscape</small></a></li>
+                    <li><a href="/partner-with-peopleshr/">Partners<small>Unlock endless growth</small></a></li>
+                    <li><a href="/regions/">Regions<small>Growth across APAC and MEA</small></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- PRICING (direct) -->
+          <li class="nv-item">
+            <a class="nv-link" href="/view-plans/">Pricing</a>
+          </li>
+
+          <!-- INTERACTIVE DEMOS (direct + badge) -->
+          <li class="nv-item">
+            <a class="nv-link" href="/interactive-demos/">
+              Interactive Demos
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <div class="nv-actions">
+        <a class="nv-cta" href="/get-in-touch/">Request a Demo</a>
+        <button class="nv-burger" id="nvBurger" aria-label="Open menu" aria-expanded="false"><span></span></button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Announcement bar intentionally left out on this page -->
+
+  <!-- ===================== MOBILE PANEL ===================== -->
+  <div class="nv-scrim" id="nvScrim"></div>
+  <aside class="nv-panel" id="nvPanel" aria-label="Mobile menu" aria-hidden="true">
+    <div class="nv-panel-head">
+      <img src="/uploads/2021/07/logo.webp" alt="PeoplesHR">
+      <button class="nv-close" id="nvClose" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="nv-panel-body">
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Products
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/products/core-hr/">HR</a>
+          <a href="/products/payroll-system/">Pay</a>
+          <a href="/products/talent-acquisition/">Talent</a>
+          <a href="/products/time-and-attendance/">Time</a>
+          <a href="/products/people-engagement/">Engagement</a>
+          <a href="/products/people-analytics/">Insight</a>
+          <a href="/products/mobile-app/">Mobile App</a>
+          <a href="/ai-x/">Explore PeoplesHR AI</a>
+        </div></div>
+      </div>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Solutions
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <p class="nv-sub-label">Industries</p>
+          <a href="/solutions/banking-finance-insurance-industries/">Banking, Finance &amp; Insurance</a>
+          <a href="/solutions/hr-software-for-hospitality-industry/">Hospitality</a>
+          <a href="/solutions/hr-software-for-manufacturing-industry/">Manufacturing</a>
+          <a href="/solutions/hr-software-for-professional-and-business-services-industry/">Professional &amp; Business Services</a>
+          <a href="/solutions/hr-software-for-retail-industry/">Retail</a>
+          <a href="/solutions/hr-software-for-it-and-ites-industry/">IT &amp; ITES</a>
+          <a href="/solutions/hr-software-for-transportation-and-logistics-industry/">Transportation &amp; Logistics</a>
+          <a href="/solutions/public-sector/">Public Sector</a>
+          <p class="nv-sub-label">By Role</p>
+          <a href="/solutions/chro/">People Strategy Leaders</a>
+          <a href="/solutions/cfo/">Financial Strategy Leaders</a>
+          <a href="/solutions/cio/">Technology Strategy Leaders</a>
+          <p class="nv-sub-label">Specialized Solutions</p>
+          <a href="/solutions/peopleshr-academy/">PeoplesHR Academy</a>
+          <a href="/solutions/outsourcing/">Payroll Outsourcing</a>
+          <a href="/solutions/peopleshr-tracking/">Access & Attendance Devices</a>
+        </div></div>
+      </div>
+
+      <a class="nv-mlink" href="/customers/">Customers</a>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Resources
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/customers/">Case Studies</a>
+          <a href="/webinars/">Webinars</a>
+          <a href="/blog/">Blog</a>
+          <a href="/events/">Events</a>
+          <a href="/hr-ebooks-and-guides/">HR eBooks &amp; Guides</a>
+          <a href="/news/">News</a>
+          <div class="nv-sub-label">Calculators</div>
+          <a href="/salary-calculator-sri-lanka/">Sri Lanka Salary Calculator</a>
+          <a href="/sri-lanka-income-tax-calculator/">Sri Lanka Income Tax Calculator</a>
+          <a href="/salary-calculator-philippines/">Philippines Salary Calculator</a>
+          <a href="/tax-calculator-philippines/">Philippines Tax Calculator</a>
+          <a href="/salary-calculator-indonesia/">Indonesia Salary Calculator</a>
+          <a href="/roi-calculator/">ROI Calculator</a>
+        </div></div>
+      </div>
+
+      <div class="nv-acc" data-acc>
+        <button class="nv-acc-btn" aria-expanded="false">Company
+          <svg class="nv-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nv-acc-body"><div class="nv-acc-inner">
+          <a href="/company/">About PeoplesHR</a>
+          <a href="/careers/">Careers</a>
+          <a href="/community/">Community</a>
+          <a href="/partner-with-peopleshr/">Partners</a>
+          <a href="/regions/">Regions</a>
+        </div></div>
+      </div>
+
+      <a class="nv-mlink" href="/view-plans/">Pricing</a>
+
+      <a class="nv-mlink" href="/interactive-demos/">Interactive Demos</a>
+
+    </div>
+    <div class="nv-panel-foot">
+      <a class="nv-cta" href="/get-in-touch/">Request a Demo</a>
+    </div>
+  </aside>
+
+</div><!-- /.nv-root -->
+
+<!-- end of navbar -->
+
+<!-- ═══════════════════════════════════════════════
+     SRI LANKA INCOME TAX CALCULATOR (simple, scoped tool, own CSS/JS)
+     ═══════════════════════════════════════════════ -->
+<div class="slp-scope">
+  <div class="slp-bg" aria-hidden="true">
+    <span class="slp-orb slp-orb-blue"></span>
+    <span class="slp-orb slp-orb-green"></span>
+  </div>
+
+  <header class="slp-hero">
+    <img class="slp-brand-logo" src="/uploads/2021/07/logo.webp" alt="PeoplesHR" width="250" height="47">
+    <h1>Sri Lanka Income Tax Calculator 2027</h1>
+    <p>See your monthly PAYE tax, EPF and take-home pay under the Budget 2027 income tax proposal, and how much you save compared with the current 2026/27 rates.</p>
+    <p class="slp-updated">Last updated <time datetime="2026-11-13">13 November 2026</time>, after the Budget 2027 speech of 12 November.</p>
+  </header>
+
+  <main class="slp-wrap">
+    <div class="slp-card">
+
+      <form id="slpForm" class="slp-form" novalidate>
+        <div class="slp-toggle" role="group" aria-label="Tax rules">
+          <button type="button" data-rules="proposed" aria-pressed="true">Budget 2027<span class="slp-long"> (from Apr 2027)</span></button>
+          <button type="button" data-rules="current" aria-pressed="false">Current 2026/27</button>
+        </div>
+        <p id="slpProposedNote" class="slp-proposed">Proposed rates from Budget 2027, effective 1 April 2027 (Y/A 2027/28), pending legislation.</p>
+        <p id="slpCurrentNote" class="slp-proposed slp-proposed--now hidden">Rates in force now, for 2026/27 (until 31 March 2027).</p>
+
+        <label class="slp-label" for="slpBasic">Basic salary (monthly)</label>
+        <div class="slp-money">
+          <span>Rs.</span>
+          <input id="slpBasic" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00" autocomplete="off">
+        </div>
+        <p id="slpError" class="slp-error hidden">Enter your basic salary.</p>
+
+        <div class="slp-allow">
+          <span class="slp-label">Allowances (monthly)</span>
+          <div id="slpAllowList" class="slp-allow-list"></div>
+          <button type="button" id="slpAdd" class="slp-add">
+            <span class="slp-plus"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
+            Add allowance
+          </button>
+        </div>
+
+        <button type="submit" class="slp-calc">Calculate</button>
+      </form>
+
+      <section id="slpResults" class="slp-results hidden" aria-live="polite">
+        <div class="slp-net">
+          <small>Take-home pay</small>
+          <b id="slpNet">Rs. 0.00</b>
+          <span id="slpNetYear"></span>
+          <em id="slpSaving" class="slp-saving hidden"></em>
+        </div>
+
+        <div class="slp-lines">
+          <div class="slp-line"><span>Gross salary</span><b id="slpGross"></b></div>
+          <div class="slp-line slp-line--minus"><span>PAYE tax<span class="slp-tag" id="slpRate"></span></span><b id="slpTax"></b></div>
+          <div class="slp-line slp-line--minus"><span>EPF (8%)</span><b id="slpEpfEe"></b></div>
+          <div class="slp-line slp-line--total"><span>Take-home pay</span><b id="slpTakeHome"></b></div>
+        </div>
+
+        <p class="slp-sub">Budget 2027 vs current rates</p>
+        <div class="slp-lines slp-cmp">
+          <div class="slp-line"><span>PAYE tax now (2026/27)</span><b id="slpCmpCur"></b></div>
+          <div class="slp-line"><span>PAYE tax under Budget 2027</span><b id="slpCmpNew"></b></div>
+          <div class="slp-line slp-line--save"><span id="slpCmpLabel">You save</span><b><span id="slpCmpSave"></span><small id="slpCmpYear"></small></b></div>
+        </div>
+
+        <p class="slp-sub">Paid by your employer</p>
+        <div class="slp-lines">
+          <div class="slp-line"><span>EPF (12%)</span><b id="slpEpfEr"></b></div>
+          <div class="slp-line"><span>ETF (3%)</span><b id="slpEtf"></b></div>
+        </div>
+      </section>
+
+      <a class="slp-powered" href="/region-sri-lanka/">
+        <span>Powered by</span>
+        <img src="/uploads/2021/07/logo.webp" alt="PeoplesHR" width="250" height="47" loading="lazy">
+      </a>
+    </div>
+
+    <p class="slp-section-label">Tax rates explained</p>
+
+    <section class="slp-table-card slp-example slp-compare" aria-labelledby="slpChangesTitle">
+      <h2 id="slpChangesTitle">What changed in Budget 2027</h2>
+      <p class="slp-table-sub">Proposed rates from Budget 2027, effective 1 April 2027 (Y/A 2027/28), pending legislation. Monthly figures.</p>
+      <table class="slp-table">
+        <thead><tr><th scope="col">Band</th><th scope="col">Now (2026/27)</th><th scope="col">Budget 2027</th></tr></thead>
+        <tbody>
+          <tr><td>Tax-free</td><td>Rs. 150,000</td><td>Rs. 162,500</td></tr>
+          <tr><td>6%</td><td>Next Rs. 83,333</td><td>Next Rs. 70,833</td></tr>
+          <tr><td>12%</td><td>No band</td><td>Next Rs. 50,000</td></tr>
+          <tr><td>18%</td><td>Next Rs. 41,667</td><td>Next Rs. 50,000</td></tr>
+          <tr><td>24%</td><td>Next Rs. 41,667</td><td>Next Rs. 50,000</td></tr>
+          <tr><td>30%</td><td>Next Rs. 41,667</td><td>Next Rs. 50,000</td></tr>
+          <tr><td>36%</td><td>Above Rs. 358,333</td><td>Above Rs. 433,333</td></tr>
+        </tbody>
+      </table>
+      <p class="slp-ex-foot">Yearly, the tax-free amount rises from Rs. 1,800,000 to Rs. 1,950,000 and a new 12% band is added. Anyone earning Rs. 162,500 or more a month would pay Rs. 750 to Rs. 15,750 less tax a month.</p>
+    </section>
+
+    <section class="slp-table-card" aria-labelledby="slpTableTitle">
+      <h2 id="slpTableTitle">Budget 2027 proposed tax table</h2>
+      <p id="slpTableSub" class="slp-table-sub">Monthly. Proposed in the <a href="https://www.treasury.gov.lk/web/budget" target="_blank" rel="noopener">Budget Speech</a> from 1 April 2027, not yet law.</p>
+      <table class="slp-table">
+        <thead><tr><th scope="col">Monthly taxable income</th><th scope="col">Tax rate</th></tr></thead>
+        <tbody id="slpTableBody">
+          <tr><td>Up to Rs. 162,500</td><td>0%</td></tr>
+          <tr><td>Rs. 162,500 to Rs. 233,333</td><td>6%</td></tr>
+          <tr><td>Rs. 233,333 to Rs. 283,333</td><td>12%</td></tr>
+          <tr><td>Rs. 283,333 to Rs. 333,333</td><td>18%</td></tr>
+          <tr><td>Rs. 333,333 to Rs. 383,333</td><td>24%</td></tr>
+          <tr><td>Rs. 383,333 to Rs. 433,333</td><td>30%</td></tr>
+          <tr><td>Above Rs. 433,333</td><td>36%</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="slp-table-card slp-example" aria-labelledby="slpExampleTitle">
+      <h2 id="slpExampleTitle">Budget 2027 example: Rs. 300,000 salary</h2>
+      <table class="slp-table">
+        <thead><tr><th scope="col"></th><th scope="col">Now (2026/27)</th><th scope="col">Budget 2027</th></tr></thead>
+        <tbody>
+          <tr><td>PAYE tax</td><td>Rs. 18,500</td><td>Rs. 13,250</td></tr>
+          <tr><td>EPF 8%</td><td>Rs. 24,000</td><td>Rs. 24,000</td></tr>
+          <tr class="slp-ex-net"><td>Take-home pay</td><td>Rs. 257,500</td><td>Rs. 262,750</td></tr>
+        </tbody>
+      </table>
+      <p class="slp-ex-foot">Now (2026/27): 6% on Rs. 83,333, 18% on Rs. 41,667 and 24% on Rs. 25,000 above the Rs. 150,000 tax-free amount. Budget 2027: 6% on Rs. 70,833, 12% on Rs. 50,000 and 18% on Rs. 16,667 above Rs. 162,500.</p>
+    </section>
+
+    <section class="slp-table-card slp-faq" aria-labelledby="slpFaqTitle">
+      <h2 id="slpFaqTitle">Budget 2027 income tax FAQs</h2>
+      <details class="slp-faq-item">
+        <summary>What is the new income tax proposal in Sri Lanka&#39;s Budget 2027?</summary>
+        <p>Budget 2027, presented on 12 November 2026, proposes raising the tax-free threshold from Rs. 1,800,000 to Rs. 1,950,000 a year (Rs. 162,500 a month). Income above that would be taxed at 6% on the next Rs. 850,000, then 12%, 18%, 24% and 30% on each next Rs. 600,000, and 36% on the rest. The 12% band is new.</p>
+      </details>
+      <details class="slp-faq-item">
+        <summary>When do the Budget 2027 income tax changes start?</summary>
+        <p>They are proposed to apply from 1 April 2027, the start of the 2027/28 year of assessment. They are not yet law and need Parliament to pass an amendment to the Inland Revenue Act. Until then, the current rates (the 2025/26 tax tables, still in force for 2026/27) continue to apply.</p>
+      </details>
+      <details class="slp-faq-item">
+        <summary>How much less tax will I pay under Budget 2027?</summary>
+        <p>Anyone earning Rs. 162,500 or more a month would pay between Rs. 750 and Rs. 15,750 less tax a month. For example, a Rs. 300,000 monthly salary would be taxed Rs. 13,250 instead of Rs. 18,500. Enter your salary above to see your own figure.</p>
+      </details>
+      <details class="slp-faq-item">
+        <summary>What is the tax-free salary limit in Sri Lanka?</summary>
+        <p>Under the 2025/26 rates, which still apply for 2026/27, the first Rs. 150,000 of monthly salary (Rs. 1,800,000 a year) is tax-free. Budget 2027 proposes raising this to Rs. 162,500 a month (Rs. 1,950,000 a year) from 1 April 2027.</p>
+      </details>
+      <details class="slp-faq-item">
+        <summary>Is APIT the same as PAYE?</summary>
+        <p>Yes, for salaries. APIT (Advance Personal Income Tax) is the income tax your employer deducts from your monthly salary. It replaced the older PAYE system, but many people still call it PAYE.</p>
+      </details>
+      <details class="slp-faq-item">
+        <summary>Is EPF deducted before income tax is worked out?</summary>
+        <p>No. Your 8% EPF contribution does not reduce your taxable income, so PAYE tax is worked out on your full salary.</p>
+      </details>
+    </section>
+
+    <div class="slp-disclaimer">
+      <p><b>Disclaimer:</b> This calculator gives an estimate for general information only and is not tax, legal or financial advice.</p>
+      <ul>
+        <li>It covers regular monthly salary from primary employment for Sri Lankan tax residents, using APIT Table 01. Bonuses, arrears, secondary employment, benefits in kind and other lump-sum payments are not included.</li>
+        <li><a href="https://www.epf.lk/" target="_blank" rel="noopener">EPF</a> and <a href="https://www.etfb.lk/" target="_blank" rel="noopener">ETF</a> are worked out on basic salary plus all allowances. Some allowances may not be liable for EPF and ETF, so your actual figures can differ.</li>
+        <li>2025/26 rates follow the IRD <a href="https://www.ird.gov.lk/en/publications/APIT_Tax_Tables/2025-2026/Table%20-%201/02.%20APIT_2526_Table_01.pdf" target="_blank" rel="noopener">APIT Table 01</a> under the <a href="https://documents.gov.lk/view/acts/2025/3/02-2025_E.pdf" target="_blank" rel="noopener">Inland Revenue (Amendment) Act No. 02 of 2025</a>, in force from 1 April 2025 and still applying for 2026/27.</li>
+        <li>Budget 2027 rates are proposals from the <a href="https://www.treasury.gov.lk/web/budget" target="_blank" rel="noopener">Budget Speech of 12 November 2026</a>. They take effect only if Parliament passes the amending law, and the final figures and IRD tables may change.</li>
+      </ul>
+      <p>For your exact deductions, check with your employer or the <a href="https://www.ird.gov.lk/" target="_blank" rel="noopener">Inland Revenue Department</a>.</p>
+    </div>
+    <p class="slp-more">Need net to gross or employer cost? <a href="/salary-calculator-sri-lanka/">Try the full salary calculator</a></p>
+  </main>
+
+</div>
+<!-- ═══════════════════════════════════════════════
+     END SRI LANKA INCOME TAX CALCULATOR
+     ═══════════════════════════════════════════════ -->
+
+<!-- footer start -->
+<?php include __DIR__ . '/inc/footer.php'; ?>
+<!-- footer end -->
+
+<!-- JS -->
+<script src="<?php echo asset_v('/js/phr.js'); ?>"></script>
+<script src="<?php echo asset_v('/js/navbar.js'); ?>"></script>
+<script src="<?php echo asset_v('/js/sri-lanka-income-tax-calculator.js'); ?>"></script>
+
+</body>
+</html>
