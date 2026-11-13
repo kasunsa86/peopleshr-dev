@@ -1222,6 +1222,30 @@
   }
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePop(); });
 
+  /* Remembers that this browser has already submitted a form on the
+     pricing page, so the capability-details gate is shown only once.
+     localStorage first, a first-party cookie as a fallback (private
+     windows, blocked storage). Kept for 180 days. */
+  var CAP_GATE_KEY = 'phr_capgate_ok';
+  var CAP_GATE_DAYS = 180;
+  function capGateRemember() {
+    var until = Date.now() + CAP_GATE_DAYS * 864e5;
+    try { localStorage.setItem(CAP_GATE_KEY, String(until)); } catch (err) {}
+    try { document.cookie = CAP_GATE_KEY + '=1; max-age=' + (CAP_GATE_DAYS * 86400) + '; path=/; SameSite=Lax' + (location.protocol === 'https:' ? '; Secure' : ''); } catch (err) {}
+  }
+  function capGateUnlocked() {
+    try { var v = Number(localStorage.getItem(CAP_GATE_KEY)); if (v && v > Date.now()) return true; } catch (err) {}
+    try { return document.cookie.split('; ').indexOf(CAP_GATE_KEY + '=1') !== -1; } catch (err) { return false; }
+  }
+  /* Open the capability page in a new tab; if the browser blocks the
+     new tab (it can after an async form submit), go there in this tab. */
+  function openCapTarget(url) {
+    var w = null;
+    try { w = window.open(url, '_blank'); } catch (err) {}
+    if (w) { try { w.opener = null; } catch (err) {} return; }
+    window.location.href = url;
+  }
+
   /* "Contact Us" modal — same .hs-modal-overlay/.hs-modal shell used
      sitewide for HubSpot-embedded lead forms (see phrhome.js), just
      wired to this page's own form instance. The embed script and the
@@ -1250,7 +1274,8 @@
           portalId: '45700506',
           formId: 'b81c63d0-40ff-4a93-a69d-d3d904c6dc65',
           region: 'na2',
-          target: '#pcContactFormContainer'
+          target: '#pcContactFormContainer',
+          onFormSubmitted: function () { capGateRemember(); }
         });
       });
     }
@@ -1274,14 +1299,14 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && hsModal.classList.contains('active')) closeHsModal(); });
   }
 
-  /* capability-details gate modal — every .pc-cell-link in the
+  /* capability-details gate modal: every .pc-cell-link in the
      comparison table points at /capability-details/#..., opened in a
-     new tab. Rather than navigating straight there, intercept the
-     click, collect a lead through this form, then open the original
-     target once the form is submitted. Links that are still bare "#"
-     placeholders (e.g. on the Bahasa page, not yet wired to real
-     capability-details anchors) are left alone — there's nothing to
-     gate on the way to nowhere. */
+     new tab. The first time, intercept the click, collect a lead through
+     this form, then open the original target once the form is submitted.
+     After any form on this page has been submitted (this one or Let's
+     Talk), remember it on this browser and send later clicks straight
+     to the capability page, with no popup. Links that are still bare "#"
+     placeholders (e.g. on the Bahasa page) are left alone. */
   var capGateModal = document.getElementById('pcCapGateModal');
   if (capGateModal) {
     var capGateClose = document.getElementById('pcCapGateModalClose');
@@ -1298,8 +1323,9 @@
           region: 'na2',
           target: '#pcCapGateFormContainer',
           onFormSubmitted: function () {
+            capGateRemember();
             closeCapGateModal();
-            if (capGateTargetUrl) window.open(capGateTargetUrl, '_blank', 'noopener');
+            if (capGateTargetUrl) openCapTarget(capGateTargetUrl);
           }
         });
       });
@@ -1322,6 +1348,7 @@
       var href = a.getAttribute('href');
       if (!href || href === '#') { e.preventDefault(); return; }
       e.preventDefault();
+      if (capGateUnlocked()) { openCapTarget(href); return; }
       openCapGateModal(href);
     });
     if (capGateClose) capGateClose.addEventListener('click', closeCapGateModal);
