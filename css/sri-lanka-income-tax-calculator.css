@@ -94,11 +94,6 @@
 .slp-scope .slp-line--total{background:var(--greenbg)}
 .slp-scope .slp-line--total span,.slp-scope .slp-line--total b{color:var(--green);font-weight:700}
 .slp-scope .slp-sub{margin:20px 0 8px;font-size:13px;font-weight:700;color:var(--text-body)}
-/* Budget 2027 vs current comparison, shown on every result */
-.slp-scope .slp-line--save{background:var(--greenbg)}
-.slp-scope .slp-line--save span,.slp-scope .slp-line--save b{color:var(--green);font-weight:700}
-.slp-scope .slp-line--save b{text-align:right}
-.slp-scope .slp-line--save small{display:block;font-size:12px;font-weight:600;opacity:.85}
 /* Tax table */
 /* Reference cards: see-through, no shadow, smaller radius */
 .slp-scope .slp-section-label{max-width:560px;margin:56px auto 0;display:flex;align-items:center;gap:12px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
