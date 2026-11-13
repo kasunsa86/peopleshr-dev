@@ -10,11 +10,11 @@
    Only transform animates, so the blur is painted once and composited. */
 .slp-scope .slp-bg{position:absolute;inset:0;z-index:-1;pointer-events:none}
 .slp-scope .slp-orb{position:absolute;width:46vmax;height:46vmax;border-radius:50%;filter:blur(110px);opacity:.28;will-change:transform}
-.slp-scope .slp-orb-blue{background:#338CFC;top:-18vmax;left:-12vmax;animation:slp-drift-a 26s ease-in-out infinite alternate}
+.slp-scope .slp-orb-blue{background:#338CFC;top:6vmax;left:-14vmax;animation:slp-drift-a 26s ease-in-out infinite alternate}
 /* Green orb sits at the bottom of the first screen, beside the calculator, not at the bottom of the long page */
-.slp-scope .slp-orb-green{background:#49CE7F;top:calc(100vh - 30vmax);right:-14vmax;animation:slp-drift-b 32s ease-in-out infinite alternate}
-@keyframes slp-drift-a{to{transform:translate(38vw,30vh) scale(1.15)}}
-@keyframes slp-drift-b{to{transform:translate(-36vw,8vh) scale(.9)}}
+.slp-scope .slp-orb-green{background:#49CE7F;top:calc(100vh - 22vmax);right:-14vmax;animation:slp-drift-b 32s ease-in-out infinite alternate}
+@keyframes slp-drift-a{to{transform:translate(28vw,16vh) scale(1.1)}}
+@keyframes slp-drift-b{to{transform:translate(-30vw,12vh) scale(.9)}}
 @media (prefers-reduced-motion:reduce){.slp-scope .slp-orb{animation:none}}
 
 /* Hero */
